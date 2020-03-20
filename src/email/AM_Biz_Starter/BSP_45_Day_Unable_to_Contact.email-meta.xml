@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP Unable to Contact</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BSP 45-Day Unable to Contact</name>
+    <style>none</style>
+    <subject>Enter Subject</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I’m sorry that I was unable to reach you. I was just calling to see how everything is going with you and the business that we helped you establish.
+
+As your Account Manager, if there is anything I can help you with, please don’t hesitate to reach out and I will be happy to assist. It has been a pleasure working with you.
+
+You can contact me directly at (855) 787-1951 x{!User.Extension}, Monday–Friday from 6 am – 6pm PT or simply reply to his message. If I’m unavailable, you can also email bizhelp@legalzoom.com to reach the next available member of my team.
+
+
+{!User.FirstName}
+Business Account Manager
+(855) 787-1951 x{!User.Extension}
+BizHelp@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

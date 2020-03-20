@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>QS TOS Not Accepted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QS TOS Not Accepted</name>
+    <style>none</style>
+    <subject>Subject</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Your LegalZoom order is not currently being processed because we are awaiting your acceptance of the terms and conditions for your order. This is a required step before we can proceed.
+
+To complete this step, simply log into your LegalZoom account as an existing user by following the link below. As soon as you log in, our system will present you with the terms and conditions for your order and will allow you to accept so we can proceed.
+
+My Account
+
+Or, copy and paste the following link into your browser:  https://www.legalzoom.com/MyAccount
+
+In case you do not have your password, I also sent you an email today that will allow you to reset the password for your account if you need to do so. If you would like assistance while logging into your account, please feel free to contact me as I will be glad to help.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

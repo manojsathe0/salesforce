@@ -1,0 +1,95 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom_banner.jpg"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName} {!Contact.LastName},<br/><br/>
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in forming your Corporation.  We simplify the process for you by preparing and filing the Articles of Incorporation with your respective Secretary of State, and by drafting customized, state-specific Bylaws & Resolutions for your business.<br/><br/>
+ 
+For your reference, general information regarding establishing a Corporation has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below.  By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.<br/><br/>
+ 
+A Corporation is a state-specific business entity that provides several advantages as a business structure.  Corporations are separate and distinct legal entities that provide the people involved in the business with personal liability protection, separating personal assets from business assets.  This liability protection shields personal assets from any debts or liabilities that are incurred by the business.  A Corporation also provides name exclusivity in the state where it is registered, ensuring that other Corporations cannot use the same business name in the state.  Once a Corporation is established, it is able to conduct business, open a bank account, hire employees, and own property.<br/><br/>
+ 
+For your convenience, we have listed below all relevant pricing, as well as some additional services that may be beneficial to your business.<br/><br/>
+ 
+<b>CORPORATION</b><br/>
+Express Gold - $369.00 + state fee - (7-10 business days)*<br/>
+Standard - $239.00 + state fee + shipping - (20-35 business days)<br/>
+Economy - $99.00 + state fee + shipping - (20-35 business days)<br/><br/>
+ 
+To view the state fee for your state, please follow the "PACKAGE DETAILS" link below and select your state from the drop-down list.<br/><br/>
+ 
+GET STARTED<br/>
+http://www.legalzoom.com/legal-incorporation/incorporation-overview.html<br/>
+PACKAGE DETAILS<br/>
+http://www.legalzoom.com/legal-incorporation/incorporation-packages.html<br/><br/>
+ 
+<b>ADDITIONAL SERVICES</b><br/>
+EIN Obtainment - $79.00 ($49.00 with Express Gold package)<br/>
+S-Corporation Obtainment - $80.00 ($35.00 with Express Gold package)<br/>
+Registered Agent - $159.00/year<br/>
+Business License Compliance Package - $74.99<br/><br/>
+ 
+* Some states may have delays which affect the listed turnaround time.  To determine if your state is affected, please contact a Specialist at the phone number listed below.<br/><br/>
+ 
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.<br/><br/><br/>
+ 
+ 
+Best regards,<br/><br/>
+ 
+[!User.FirstName}<br/>
+(800) 773-0888 x{!User.Extension}<br/>
+www.legalzoom.com<br/>
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div><div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

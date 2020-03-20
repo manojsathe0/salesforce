@@ -1,0 +1,5 @@
+<apex:page standardController="Compliance_Review__c" recordSetVar="complianceReviews">
+  <script type="text/javascript">
+    window.top.location = "{!URLFOR('/'+$ObjectType.Compliance_Review__c.keyPrefix)}";
+  </script>
+</apex:page>

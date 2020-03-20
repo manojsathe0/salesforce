@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip1830</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Gerry R.</name>
+    <style>none</style>
+    <textOnly>Gerry R.
+Intellectual Property Division
+www.LegalZoom.com
+{!snippetVariable.ccphone} ext. 1830</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>nomicro</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>No Microsoft Software</name>
+    <style>none</style>
+    <subject>No Microsoft Software</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your inquiry
+
+We apologize for any inconvenience but the Microsoft Accounting download is no longer being offered by Microsoft. Unfortunately we cannot offer an alternative download at this time. This feature was offered to our Express Gold customers as a perk and our customers were not charged for the download.
+
+LegalZoom is proud to offer one of the following features for our Express Gold Customers:
+
+? Official Company Seal ($30 value) 
+? 20 Customized Membership Certificates 
+? Membership Transfer Ledger 
+? Priority Rush service, 7-10 business days or less (vs. 20-35 business days for our regular service) 
+? Federal Tax ID (EIN) application preparation 
+? Two-day FedEx delivery of final package 
+
+Again, we apologize for any inconvenience.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>IR2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Sharing Company Information</name>
+    <style>none</style>
+    <subject>Sharing Company Information</subject>
+    <textOnly>LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

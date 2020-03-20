@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMCONSULT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SCHEDULING APPOINTMENTS EMAIL/If Customer shows interest</name>
+    <style>none</style>
+    <subject>Scheduling Attorney and Tax Consultations by Email</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+It was a pleasure speaking with you today. You indicated you are interested in speaking with a plan attorney or tax consultant. You may address issues like tracking business expenses, complying with state and local laws, and tax issues. Call me directly at 877-808-1908 X5271 and I can help you set up a consultation, or if you prefer, you may schedule an appointment online by following the instructions below.
+
+To Schedule an Attorney Consultation:
+
+1. Login to LegalZoom.com via this link:
+https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess=
+2. Under &quot;Existing Member,&quot; enter in your email address and password, and click submit. If you do not know your account password, you can request a password reset email on the sign-in page.
+3. Once on your account page, click on the grey &quot;Business Advantage&quot; tab.
+4. Click on &quot;Request an Attorney Consultation.&quot;
+5. Complete the short survey and submit.
+6. Click on the orange &quot;Schedule a Consultation&quot; button.
+7. Select an attorney and click on the &quot;View Schedule&quot; link on the right.
+8. Scroll down to view the attorney&apos;s availability. The available times are displayed in white.
+9. Click on your desired appointment time. Then click on &quot;Make Appointment.&quot;
+10. You will receive a confirmation email with your appointment details.
+
+To Schedule a Tax Consultation:
+
+1. Login to LegalZoom.com via this link: https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess=
+2. Under &quot;Existing Member,&quot; enter in your email address and password, and then submit. If you do not know your account password, you can request a password reset email on the sign-in page.
+3. Once on your account page, click on the grey &quot;Business Advantage&quot; tab.
+4. Click on &quot;Schedule a Tax Consultation.&quot;
+5. Scroll down to view the calendar and select a date. The available dates are in bold print.
+6. Under &quot;Appointment Time,&quot; click on the dropdown button to view available times.
+7. Complete the &quot;Question or Topic for Discussion&quot; box. You may also upload any documents for the tax professional to review by clicking the &quot;Browse&quot; button.
+8. Enter in your contact telephone number.
+9. Click the orange &quot;Submit&quot; button.
+10. You will receive a confirmation email with your appointment details.
+
+Best Regards,
+
+[Account Manager] [ext.XXXX]
+Account Management Services
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

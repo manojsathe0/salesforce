@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr41</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Problem - Pseudonym in q&apos;naire but pseudonym box not checked</name>
+    <style>none</style>
+    <subject>Order on Hold: Copyright Application Pseudonym Inconsistency</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+There appears to be a problem with your order. Your application will not be filed with the U.S. Copyright Office until this problem is resolved, so please respond to this email as soon as possible.
+
+Specifically, in the questionnaire, you listed [Pseudonym] as the author’s pseudonym (fictitious name). However, you did not indicate that the author’s contribution to the work was pseudonymous.
+
+To resolve this problem, please reply directly to this email and confirm whether or not the work was created under the pseudonym that you listed in the questionnaire. If the work was NOT created under the pseudonym listed, please let us know if your application should be revised to remove the pseudonym and identify a different name for the author. To read more about pseudonymous works, click here.
+
+If you have any questions or would like additional information, you can reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate your prompt attention to this matter.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

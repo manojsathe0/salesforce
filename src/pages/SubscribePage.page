@@ -1,0 +1,120 @@
+<apex:page showHeader="false">
+ <head>
+        <apex:includeScript value="{!$Resource.json2_js}" />
+        <apex:includeScript value="{!URLFOR($Resource.cometd, 'dojo/dojo.js')}" />
+
+        <script>
+            var token = '{!$Api.Session_ID}';
+            dojo.require('dojox.cometd');
+            dojo.require('dojox.cometd.timestamp');
+            dojo.require('dojox.cometd.ack');
+            
+            var theTopic = getQueryVariable("topic");
+
+            function getQueryVariable(variable) {
+              var query = window.location.search.substring(1);
+              var vars = query.split("&");
+              for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                  return pair[1];
+                }
+              } 
+              alert('Query Variable ' + variable + ' not found');
+            }
+
+            dojo.ready(function() {
+
+                var datastream = {
+                    _topic: null,
+                    _connected: false,
+                    _disconnecting: false,
+                    _topicsubscription: null,
+                    _token: null,
+                    _clientid: '3MVG9lKcPoNINVBJL81nlIzB6Z7TFQtwfc6rMsiZXaW_yUy2Dv35Ayfe248X4yEMgEz0GmNDK5QMJ0MSFZdha',
+                    _loginURL: location.protocol + '//' + location.host + '//' + 'services/oauth2/authorize',
+
+                    _init: function() {
+                        datastream.subscribe('/topic/' + theTopic);
+                    },
+
+                    subscribe: function(topic) {
+                        var cometdURL = location.protocol + '//' + location.host + '/cometd/23.0';
+                        var auth = 'OAuth ' + token;
+                        dojox.cometd.configure({
+                            url: cometdURL,
+                            requestHeaders: {
+                                Authorization: auth
+                            }
+                        });
+                        dojox.cometd.handshake();
+                        datastream._disconnecting = false;
+
+                        
+                        datastream._topic = topic;
+
+                        // dojo.addClass('join', 'hidden');
+                        // dojo.removeClass('joined', 'hidden');
+                        datastream._topicsubscription = dojox.cometd.subscribe(datastream._topic, datastream.receive);
+                        console.log('subscribed to ' + theTopic);
+
+                    },
+
+                    _unsubscribe: function() {
+                        if (datastream._topicsubscription) {
+                            dojox.cometd.unsubscribe(datastream._topicsubscription);
+                        }
+                        datastream._topicsubscription = null;
+                    },
+
+                    leave: function() {
+                        datastream._unsubscribe();
+                        dojox.cometd.disconnect();
+
+                        // switch the input form
+                        // dojo.removeClass('join', 'hidden');
+                        // dojo.addClass('joined', 'hidden');
+
+                        // dojo.byId('topic').focus();
+
+                        datastream._topic = null;
+                        datastream._disconnecting = true;
+                    },
+
+                    receive: function(message) {
+                        var datastream = dojo.byId('datastream');
+                        data = message.data;
+
+                        var stringify = JSON.stringify(data, null, '\t');
+                        console.log('stringify ' + stringify);
+                        var obj = JSON.parse(stringify);
+                        console.log('owned by ' + obj.sobject.OwnerId);
+
+                        if('{!$User.id}' == obj.sobject.OwnerId){
+                            console.log('calling parent with ' + obj.sobject.Id);
+                            window.parent.foundUpdate(obj.sobject.Id);
+                        }
+                            
+                        // datastream.innerHTML += '<span class=\'text\'>' + '_____________ ' + '</span><br/>';
+                        // datastream.scrollTop = datastream.scrollHeight - datastream.clientHeight;
+                    },
+
+                    display: function(text) {
+                        var datastream = dojo.byId('datastream');
+                        // datastream.innerHTML += '<span class=\'data\'><span class=\'text\'>' + text + '</span></span><br/>';
+                        // datastream.scrollTop = datastream.scrollHeight - datastream.clientHeight;
+                    }
+                };
+
+                dojo.addOnLoad(datastream, '_init');
+
+                dojo.addOnUnload(function() {
+                    dojox.cometd.disconnect();
+                });
+            });
+        </script>
+    </head>
+    <div id="demo">
+        <div id="datastream"></div>
+    </div>
+</apex:page>

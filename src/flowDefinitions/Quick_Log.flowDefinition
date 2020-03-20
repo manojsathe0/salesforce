@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>7</activeVersionNumber>
+    <description>IN USE IN PRODUCTION - Accessible via the Quick Log button the the Lead and Opportunity Search Page Layouts. Allows an agent to search for Leads or Opportunities in the system. If no results found, makes a quick Lead or Opportunity.</description>
+    <masterLabel>Quick Log</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP SNE Info</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BSP SNE Additional Information</name>
+    <style>none</style>
+    <subject>Enter Subject</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Here is a link to all of the packages that we discussed today: http://www.legalzoom.com/limited-liability-company/limited-liability-company-packages.html
+
+Express Gold: $--- including your EIN, Sales and Use Tax Permit preparation, and all the research on the city, county, and state level for the specific licenses and permits your business will require. This package will also have a 7-10 business day turn-around time for your LLC to be formed, as well as further support from attorneys and tax professionals.
+
+Standard: $--- including your EIN, Sales and Use Tax Permit preparation, and all the research on the city, county, and state level for the specific licenses and permits your business will require. This package will also have a 20-35 business day turn-around time for your LLC to be formed.
+
+Economy: $--- including your EIN, Sales and Use Tax Permit preparation, and all the research on the city, county, and state level for the specific licenses and permits your business will require. This package will also have a 20-35 business day turn-around time for your LLC to be formed.
+
+**Any of these packages can be paid for using Zazma (Our partner finance company).  If you are approved for Zazma and you decide to use their service you will pay nothing up front and work out a payment plan with them over the next 60 days.  Using Zazma to fund your order will allow you to build business credit from the start, because they will be able to act as a business credit reference when you go to obtain your DUNS number or try to enter into city or state contracts.  Once you are approved for Zazma, you are always approved and you can use their funding with different vendors.  Also, each time you use Zazma, the amount you are approved for increases 10%!
+
+**Any of these packages can be broken up into 3-payments with no interest or fees and it does not slow down the process.
+
+The Registered Agent is the point of contact with the state for any state correspondence or subpoenas.  They are required to be present at a physical location Monday through Friday during normal business hours.  The Registered Agent’s name and address will be public knowledge and listed on the state website.  If you fulfill these requirements and are fine with your information being public, then you can act as your own Registered Agent.
+
+If you choose to use LegalZoom as the Registered Agent, then not only do we fulfill these requirements, but we also filter out any junk mail or solicitations sent to the Registered Agent. We only forward relevant correspondence from the state to an address of your choice.  Also, we will supply you with an online Compliance Calendar which will keep you up to date on any state or federal requirements for your business on a monthly basis.  The Registered Agent service is $159 a year and it is not charged until we actually start serving as the Registered Agent (when your documents are filed with the state). Finally, if you choose to use LegalZoom as the Registered Agent, you are not locked into the service. While the service does auto-renew, you can change your Registered Agent at any time with a simple state filing. Once this filing is complete, your Registered Agent is officially changed.
+
+I hope this clears up any questions that you had and I look forward to speaking with you on: DATE-TIME
+
+If you have any questions in the meantime, please call me directly at (855) 787-1951 x{!User.Extension}, Monday–Friday from 6 am – 6pm PT or simply reply to his message.
+
+
+{!User.FirstName}
+Business Account Manager
+(855) 787-1951 x{!User.Extension}
+BizHelp@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

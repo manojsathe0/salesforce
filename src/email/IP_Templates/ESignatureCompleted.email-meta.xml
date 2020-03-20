@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Esigdone</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>E-Signature Completed</name>
+    <style>none</style>
+    <subject>E-Signature Completed</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+
+Our records show that you have completed your Electronic Signature and your application has already been submitted to the United States Patent and Trademark Office (USPTO).
+
+Soon, you will receive a final package from us which will contain a copy of your original application and a serial number for your application with the USPTO.
+
+Using the information provided in your packet, you can check the status of your application online here. Please note that it takes approximately 3-4 weeks for the USPTO to have your serial number on file in order to check status.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

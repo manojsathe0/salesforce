@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>step 212</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Step 2 Info</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order #</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+LegalZoom has partnered with top Patent firms to bring you an affordable and convenient way to file a Patent for your invention.
+
+If you are ready to proceed with the preparation and filing of your non-provisional Utility Patent application (whether you&apos;ve used LegalZoom&apos;s initial patent search and attorney consultation service, or conducted a Patent search on your own), please click here for your purchase options.
+
+Note: You must have your Technical Drawings completed before submitting a Step 2 order. If you do not have Patent Drawings, visit here for more information.
+
+Please feel free to contact our {!snippetVariable.ipbsi_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ip_phone}.  Our {!snippetVariable.ipbsi_dept_full} business hours are {!snippetVariable.ip_hours}.
+
+Thank you for choosing LegalZoom and we look forward to hearing from you soon.
+
+Best Regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

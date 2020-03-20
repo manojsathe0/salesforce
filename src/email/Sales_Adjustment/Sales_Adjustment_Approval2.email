@@ -1,0 +1,23 @@
+<p>You have received a Sales Adjustment to approve. Please see the links below for further assistance.</p>
+<p>Sales Adjustment: &nbsp;
+<a href="{!Sales_Adjustment__c.Link}">{!Sales_Adjustment__c.Name}</a><br/>
+Agent: {!Sales_Adjustment__c.Agent__c}<br/>
+Type of Adjustment: {!Sales_Adjustment__c.Type_of_Adjustment__c}<br/>
+Amount of Adjustment: {!Sales_Adjustment__c.Amount_of_Adjustment_del__c}<br/>
+Additional Notes:<br/>
+{!Sales_Adjustment__c.Additional_Notes__c}<br/>
+<br/>
+To approve or reject this item, reply to this email with
+the word APPROVE, APPROVED, YES, REJECT, REJECTED, or NO
+in the first line of the email message, or click this link: &nbsp;
+<a href="{!LEFT(Sales_Adjustment__c.Link, LEN(Sales_Adjustment__c.Link) - 15)}p/process/ProcessInstanceWorkitemWizardStageManager?id={!Workitem.ID}">Click here</a>
+</p>
+<p>Click below to see all items you have pending approval:<br/>
+<a href="{!LEFT(Sales_Adjustment__c.Link, LEN(Sales_Adjustment__c.Link) - 15)}04i">Items To Approve</a>
+</p>
+<p>Note: For salesforce.com to process your response the word 
+APPROVE, APPROVED, YES, REJECT, REJECTED, or NO must be in 
+the very first line of the reply email. Also, any comment
+must be in the second line which will be stored with the approval 
+request in the Adjustment record.
+</p>

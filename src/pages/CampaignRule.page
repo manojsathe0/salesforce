@@ -1,0 +1,337 @@
+<apex:page standardController="Campaign" showHeader="false" sidebar="false" extensions="CampaignRuleController">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript">
+		// helper, top element of an array w/o removing it
+Array.prototype.peek = function () {
+  return this[this.length - 1];
+};
+
+function infixToPostfixRe(reStr) {
+
+  
+  var output = [];
+  var stack = [];
+  var formulaTokens = reStr.split('');
+  for (var k = 0, length = formulaTokens.length; k < length;  k++) {
+
+    // current char
+    var c = formulaTokens[k];
+    
+    if (c == '(')
+      stack.push(c);
+
+    else if (c == ')') {
+      while (stack.peek() != '(') {
+        output.push(stack.pop())
+      }
+      stack.pop(); // pop '('
+    }
+
+    // else work with the stack
+    else {
+      while (stack.length) {
+        var peekedChar = stack.peek();
+
+        var peekedCharPrecedence = precedenceOf(peekedChar);
+        var currentCharPrecedence = precedenceOf(c);
+
+        if (peekedCharPrecedence >= currentCharPrecedence) {
+          output.push(stack.pop());
+        } else {
+          break;
+        }
+      }
+      stack.push(c);
+    }
+
+  } // end for loop
+
+
+while (stack.length)
+    output.push(stack.pop());
+
+  var result = output.join("");
+  return result;
+}
+
+// precedence
+var precedenceMap = {
+  '(': 1,
+  '&': 2, // alternate
+  '|': 3 // concatenate
+ // else 4
+};
+
+function precedenceOf(c) {
+  return precedenceMap[c] || 4;
+}
+
+
+function parenthesesAreBalanced(s)
+{
+  var parentheses = "[]{}()",
+    stack = [], //Parentheses stack
+    i, //Index in the string
+    c; //Character in the string
+  var formulaTokens = s.split('');
+  for (i = 0; c = formulaTokens[i++];)
+  {
+    var bracePosition = parentheses.indexOf(c),
+      braceType;
+    //~ is truthy for any number but -1
+    if (!~bracePosition)
+      continue;
+
+    braceType = bracePosition % 2 ? 'closed' : 'open';
+
+    if (braceType === 'closed')
+    {
+      //If there is no open parenthese at all, return false OR
+      //if the opening parenthese does not match ( they should be neighbours )
+      if (!stack.length || parentheses.indexOf(stack.pop()) != bracePosition - 1)
+        return false;
+    }
+    else
+    {
+      stack.push(c);
+    }
+  }
+  //If anything is left on the stack <- not balanced
+  return !stack.length;
+}
+	
+	function addOtherAllowedValues(operandsAndOperators)
+	{
+		operandsAndOperators.push('(');
+		operandsAndOperators.push(')');
+		operandsAndOperators.push('|');
+		operandsAndOperators.push('&');
+	}
+
+	var entryRuleOperatorAndOperands = new Array();
+	addOtherAllowedValues(entryRuleOperatorAndOperands);
+	
+	var exitRuleOperatorAndOperands = new Array();
+	addOtherAllowedValues(exitRuleOperatorAndOperands);
+	
+	//console.log(entryRuleOperatorAndOperands);
+	//console.log(typeof(entryRuleOperatorAndOperands));
+	//(1&2)|(3&4&(2|(1&3)))
+	var $j = jQuery.noConflict();
+	function updateCampaignEntryFormula()
+	{
+		var infixValue = $j("input[id$='campaignEntryId']").val();
+		infixValue = infixValue.replace(/\s+/g, '');
+		var splittedExpression = infixValue.split('');
+		//console.log(splittedExpression);
+		for(var i=0; i< splittedExpression.length; i++) 
+		{
+		  if ($j.inArray(splittedExpression[i], entryRuleOperatorAndOperands) == -1)
+		  {
+		  	alert('Inavlid Formula Expression.Use of non-available operands');
+		  	return;
+		  }		
+		}
+		var postfixValueObject = new Object();
+		var theResult = checkValidExpression(infixValue , splittedExpression , postfixValueObject);
+		if(theResult)
+		{
+			updateCampaignEntry(infixValue , postfixValue);
+		}
+	}
+	function updateCampaignExitFormula()
+	{
+		var infixValue = $j("input[id$='campaignExitId']").val();
+		infixValue = infixValue.replace(/\s+/g, '');
+		var splittedExpression = infixValue.split('');
+		for(var i=0; i< splittedExpression.length; i++) 
+		{
+		  if ($j.inArray(splittedExpression[i], exitRuleOperatorAndOperands) == -1)
+		  {
+		  	alert('Inavlid Formula Expression.Use of non-available operands');
+		  	return;
+		  }		
+		}
+		var postfixValueObject = new Object(); //passing the object by reference 
+		var theResult = checkValidExpression(infixValue , splittedExpression , postfixValueObject);
+		
+		if(theResult)
+		{
+			
+			updateCampaignExit(infixValue , postfixValueObject.theValue);
+		}
+	}
+
+
+	function checkValidExpression(theValue , expressionTokens , postfixValueObject)
+	{
+		if(parenthesesAreBalanced(theValue))
+		{
+			postfixValue = infixToPostfixRe(theValue);
+			
+			
+			var isValidPostfix = checkValidPostfix(postfixValue);
+			if(isValidPostfix)
+			{
+				var isBracketRequired = checkBracesBetweenConsecutiveDifferentOperators(expressionTokens);
+				if(isBracketRequired)
+				{
+					alert('Invalid Formula Expression.Brackets are required between consecutive different operators.');	
+					return false;
+				}
+			}
+			else
+			{
+				alert('Invalid Formula Expression');
+				return false;
+			}
+					
+		}
+		else
+		{
+			alert('Invalid Formula Expression.Paranthesis not balanced');
+			return false;
+		}
+		postfixValueObject.theValue = postfixValue;
+		return true;
+	}
+
+	
+	//Number of operands must equal no. of operators + 1. To check this keep a check variable. check=0. Increment this for every operand and decrement for each operator.If finally its value is 1,then expression is valid.
+	function checkValidPostfix(postfixExpression)
+	{
+		var check = 0;
+
+		var postfixTokens = postfixExpression.split('');
+		
+		//console.log(postfixTokens);
+		for(var i=0; i<postfixTokens.length; i++)
+		{
+			if(postfixTokens[i] != '|' && postfixTokens[i] != '&')
+			{
+				++check;
+			}
+			else
+			{
+				--check;
+			}
+		}
+		if(check == 1)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	function checkBracesBetweenConsecutiveDifferentOperators(infixExpressionTokens)
+	{
+		var hasConsecutiveDiffOperator = false;
+		var operatorCount = 0; 
+		var lastOperator = '';
+		for(var i=0; i<infixExpressionTokens.length; i++)
+		{
+			
+			//console.log(infixExpressionTokens[i]);
+			if(infixExpressionTokens[i] == '|' || infixExpressionTokens[i] == '&')
+			{
+				if(lastOperator != infixExpressionTokens[i])
+				{
+					//console.log(lastOperator);
+					if(i>2)
+					{
+						if(infixExpressionTokens[i-2] != '(' && infixExpressionTokens[i-1] != ')')
+						{
+							
+							return true;
+						}
+					}
+				}
+				lastOperator = infixExpressionTokens[i];
+				++operatorCount;
+			}
+			
+			
+		}
+		return false;
+	}
+
+	</script>   
+	<style type="text/css">
+	h1{font-size:18pt;color:lightcoral;}
+	.bigText{height:40px;font-size:18pt;}
+	</style>
+	<script type="text/javascript">
+		<apex:repeat value="{!entryRuleIds}" var="theRule">
+			entryRuleOperatorAndOperands.push('{!theRule}');
+		</apex:repeat>
+		
+		<apex:repeat value="{!exitRuleIds}" var="theRule">
+			exitRuleOperatorAndOperands.push('{!theRule}');
+		</apex:repeat>
+	</script>
+
+	<apex:outputPanel style="margin:20px;" id="mainBlock">
+	 <apex:form >
+	 	<apex:actionFunction action="{!updateCampaignEntry}" name="updateCampaignEntry" rerender="mainBlock">
+        	<apex:param name="infixValue" assignTo="{!entryInfix}" value="" />
+        	<apex:param name="postfixValue" assignTo="{!entryPostfix}" value="" />
+    	</apex:actionFunction>
+
+    	<apex:actionFunction action="{!updateCampaignExit}" name="updateCampaignExit" rerender="mainBlock">
+        	<apex:param name="infixValue" assignTo="{!exitInfix}" value="" />
+        	<apex:param name="postfixValue" assignTo="{!exitPostfix}" value="" />
+    	</apex:actionFunction>
+
+
+
+	 	
+		<div style="margin-top:20px;"></div>
+		<div style="margin:0px auto;width:60%;background:lightsteelblue">
+			<div>
+				<h1>Campaign Formula for {!Campaign.Name}</h1>
+			</div>
+			<div style="margin-bottom:10px">
+				<table>
+					<tr>
+						<td style="width:140px;">
+				 			<apex:outputLabel value="Entry Rule : " style="font-size:16pt;color:green"/>
+			        	</td>
+			        	<td style="width:800px;">
+			        		<apex:inputField value="{!Campaign.Campaign_Entry_Formula__c}" id="campaignEntryId" styleClass="bigText"  />=========>
+			        		<apex:outputLabel value="{!Campaign.Postfix_Expression_Entry__c}" styleClass="bigText" />
+			        	</td>
+			        </tr>
+		        
+					<tr>
+						<td style="width:140px;"></td>
+						<td>	        
+			        		<button type="button" onClick="updateCampaignEntryFormula();" style="font-size:12pt">Update Campaign Entry</button>	
+			        	</td>
+			        </tr>
+			        <tr>
+			        	<td  style="width:140px;">
+		        			<apex:outputLabel value="Exit Rule : " style="font-size:16pt;color:red"/>
+		        		</td>
+		        		<td style="width:800px;">
+			        		<apex:inputField value="{!Campaign.Campaign_Exit_Formula__c}" id="campaignExitId" styleClass="bigText"/>=========>
+			        		<apex:outputLabel value="{!Campaign.Postfix_Expression_Exit__c}" styleClass="bigText" /> <br />
+		        		</td>
+		        	</tr>
+		        	<tr>
+		        		<td style="width:140px;"></td>
+			        	<td>
+			        		<button type="button" onClick="updateCampaignExitFormula();" style="font-size:12pt">Update Campaign Exit</button>
+		        		</td>
+	        		</tr>
+	        	</table>
+	        </div>
+        </div>
+       
+    </apex:form>
+    </apex:outputPanel>
+    <br />
+
+    <apex:relatedList list="Campaign_Rules__r" pageSize="10"/>
+
+   
+</apex:page>

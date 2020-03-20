@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>mcamp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Marketing Campaign Auto-Reply</name>
+    <style>none</style>
+    <subject>Marketing Campaign Auto-Reply</subject>
+    <textOnly>Dear LegalZoom Customer,
+
+Unfortunately you have reached an email address that does not accept incoming email.  Please choose from one of the options that follow to ensure that your inquiry is properly handled.
+
+You can quickly find the answers to many of your questions at the LegalZoom Support Center located at https://www.legalzoom.com/customer-support/customer-support.html. Visit anytime to check the status of your order, look up the answers to commonly asked questions, contact a Customer Support Specialist, or browse our easy-to-read Education Center.
+
+If you need to contact us regarding a specific question or issue, please visit: www.legalzoom.com/questions.html.
+
+If you wish to be removed from this mailing list, please do so by clicking on the following link: http://sdm3.rm04.net/ui/modules/display/optOut.jsp.
+
+Thank you for choosing LegalZoom, America&apos;s #1 legal document service. We look forward to serving you.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

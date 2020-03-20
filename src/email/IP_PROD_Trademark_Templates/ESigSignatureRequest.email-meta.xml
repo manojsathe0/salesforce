@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>sig1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>E-Sig Signature Request</name>
+    <style>none</style>
+    <subject>E-Sig Signature Request</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Please note that an email has been sent to you, requesting your electronic signature for your Trademark Application form, the last step in the application process.  ***The e-signature must be completed in two weeks or the link will expire and a $25 reprocessing fee will be assessed.***  Please complete the following steps:
+
+1.  Follow the &quot;Click Here&quot; link in the body of your email request.
+2.  Review the information contained within the application.  If you would like to make a change to the application, please send a written request via email to trademarks@legalzoom.com.  
+3.  Complete the electronic signature portion of the application.  Instructions are at the bottom of the form.
+
+Once you have successfully signed your application, LegalZoom will prepare to submit it to the United States and Patent Office with the required payment. Shortly thereafter, a confirmation email will be sent to you with your assigned serial number for reference.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

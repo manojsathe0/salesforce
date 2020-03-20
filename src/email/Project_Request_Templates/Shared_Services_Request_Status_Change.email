@@ -1,0 +1,14 @@
+****STATUS CHANGE NOTIFICATION**** 
+
+Project Request Approver: {!Shared_Services_Requests__c.Project_Request_Approver__c}
+Request Number:{!Shared_Services_Requests__c.Request__c}
+Project Request Name: {!Shared_Services_Requests__c.Name}
+
+New Status: {!Shared_Services_Requests__c.Request_Status__c}
+
+Edited By: {!Shared_Services_Requests__c.LastModifiedBy}
+Edited On: {!Shared_Services_Requests__c.LastModifiedDate}
+
+Please click the following link to view Approved Project Request:
+------------------------------------- 
+{!Shared_Services_Requests__c.Link}

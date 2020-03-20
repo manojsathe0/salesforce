@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LTcars&amp;ca</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Living Trusts ? Check. Acc.s and Cars</name>
+    <style>none</style>
+    <subject>Living Trusts ? Check. Acc.s and Cars</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+LegalZoom is solely a legal document preparation service.  LegalZoom is not an attorney and can only provide self help services at your specific direction.  As such, we are not able to give legal advice on your specific situation.
+
+However, the following are some basic reasons why certain accounts or items are not generally funded to a Living Trust.
+
+Checking account balances generally (and regularly) fluctuate. Having a Pour-Over Will as a supporting document to a Living Trust allows a person to leave the remainder of the estate that is not transferred into the trust (for example, checking accounts) to heirs.
+
+Property that is of little value need not be placed in a living trust, because it may be exempt from probate or subject to a streamlined probate process.  Most cars are not of high value and most insurance companies may be reluctant to insure a car owned by a trust. If, however, the car is of high value, it may make sense to check with the insurance company to see if it will insure cars owned by trusts.  In any case, a Pour-Over Will generally covers the distribution of a car to heirs.
+
+If you wish to find an attorney to answer your legal questions, we can provide you with links that will help you find an attorney. For California and Georgia customers, please visit www.handleonthelaw.com. For all other states, you can get help at www.legal.respond.com and www.lawinfo.com. Please note that LegalZoom does not endorse any of the aforementioned sites or attorneys.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

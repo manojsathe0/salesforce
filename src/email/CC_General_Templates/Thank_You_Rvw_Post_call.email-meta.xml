@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Rvw Invite #1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Thank You Rvw - Post call</name>
+    <style>none</style>
+    <subject>Thank you for your review</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+It was a pleasure speaking with you. Thank you again for helping spread  the word about LegalZoom being the first place to go for your legal needs. Just click here: http://content.legalzoom.com/sempub/reviews to post your LegalZoom review.
+
+Best regards,
+
+{!User.Name}
+Customer Experience Representative
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

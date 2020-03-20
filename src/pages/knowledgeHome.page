@@ -1,0 +1,40 @@
+<apex:page controller="KnowledgeController" showHeader="false" title="Public Knowledge Base" cache="{!cachePage}" expires="{!cacheMaxAge}"  language="{!currentLanguage}" standardStylesheets="false">
+
+    <apex:composition template="knowledgeLayout">
+    <apex:define name="content">
+        <apex:variable var="cpt" value="{!0}" />
+        <apex:outputPanel styleClass="pkbLeft" layout="block">
+            <c:knowledgeCategories />
+        </apex:outputPanel>
+           
+        <apex:outputPanel styleClass="pkbMain" layout="block">
+            <apex:outputPanel styleClass="pkbResultPanel" layout="block">
+                <apex:outputPanel styleClass="pkbResultTopBlue" layout="block" />
+                <apex:outputPanel styleClass="pkbResultInner" layout="block">
+
+                    <apex:outputPanel styleClass="pkbResultSelectedCategories" layout="block">
+                        <!--<h2>{!$Label.PKB_MostPopular}</h2> -->
+                        <apex:outputPanel layout="block">                
+                            <ul>
+                                <knowledge:articleList articleVar="article"
+                                    categories="{!categoryGroupName}:{!rootCategoryName}"
+                                    sortBy="mostViewed"
+                                    pageSize="10"
+                                    language="{!currentLanguage}"
+                                >
+                                    <li class="pkbArticle"><a href="{!URLFOR($Action.KnowledgeArticle.View, article.id) + '&' + languageParameterName + '=' +currentLanguage}">{!article.title}</a></li>
+                                    <br/>
+                                </knowledge:articleList>
+                            </ul>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:outputPanel>
+        </apex:outputPanel>
+        
+
+        
+    </apex:define>
+    </apex:composition>
+    
+</apex:page>

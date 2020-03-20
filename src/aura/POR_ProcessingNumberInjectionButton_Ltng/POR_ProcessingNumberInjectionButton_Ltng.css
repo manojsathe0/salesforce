@@ -1,0 +1,8 @@
+.THIS.hideSpinner {
+	display: none;
+}
+
+
+.THIS.showSpinner {
+	display: block;
+}

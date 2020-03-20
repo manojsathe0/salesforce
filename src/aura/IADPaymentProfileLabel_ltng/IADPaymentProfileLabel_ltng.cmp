@@ -1,0 +1,9 @@
+<aura:component controller="IADPaymentProfileLabelController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="profileLabel" type="String" />
+    <aura:attribute name="paymentProfileId" type="String" />
+    <!-- <aura:handler name="init" action="{!c.populatePaymentLabel}" value="{!this}" /> -->
+    <aura:handler event="c:IADPaymentProfileLabel" action="{!c.populatePaymentLabel}" />
+    <div id="paymentProfileLabel">
+        <lightning:input class="slds-size_1-of-2" label="Payment Method" name="paymethod" value="{!v.profileLabel}" disabled="true" />
+    </div>
+</aura:component>

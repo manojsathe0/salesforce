@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP Welcome - Other States</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BSP Welcome - Other States</name>
+    <style>none</style>
+    <subject>Welcome!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Congratulations on taking the first steps towards starting your new business! Here are the details of your scheduled consultation with the attorney:
+
+Attorney Name: ---
+Date/time: ---
+Details:  I will call you at --- and connect you with the attorney.
+
+If you have any questions or need to reschedule your consultation, please call me directly at (855) 787-1951 x{!User.Extension}, Monday–Friday from 6 am – 6pm PT or simply reply to his message. If I’m unavailable, you can also email bizhelp@legalzoom.com to reach the next available member of my team.
+
+As your dedicated account manager, I&apos;ll be your primary point of contact for all your business formation needs. My commitment to you is this—I will do whatever possible to help make sure you have the right information to make the best decisions for you—and hopefully, I can also help save you money in the process!
+
+Thank you for reaching out to the LegalZoom Business Starter Team. I look forward to speaking with you soon.
+
+
+{!User.FirstName}
+Business Account Manager
+(855) 787-1951 x{!User.Extension}
+BizHelp@legalzoom.com
+
+Consultation Terms:
+The consultation and Roadmap, although provided by an independent attorney, are for general informational purposes only and are not legal advice. The attorney may not be licensed in your state. The consultation and Roadmap are do not create an attorney-client relationship between you and the attorney and do not replace advice of competent counsel licensed in your state.
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

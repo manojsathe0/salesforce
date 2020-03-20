@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>help1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Customer may cause harm to him/herself</name>
+    <style>none</style>
+    <subject>Customer may cause harm to him/herself</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for taking the time to contact LegalZoom.
+
+LegalZoom cares deeply about our Customers.  Parts of your message created concern that your well-being might be at risk.  If you are at immediate risk for suicide or self harm, please call 911 right away to obtain medical and/or psychiatric assistance.  In addition, please be aware that there are many easily accessible and complimentary resources available to assist you over the telephone.  These include the National Suicide Prevention Lifeline at 1.800.273.TALK (8255), a free, 24-hour hotline available to anyone in suicidal crisis or emotional distress.
+
+[If applicable, use a template to answer the specific question.  Just because someone may be distraught, doesn?t mean they don?t want an answer.  Giving them a helpful answer could be particularly important. That being said, do NOT attempt to provide any legal or psychiatric advice or counseling, even if the customer is desperate.  We are not trained, licensed or authorized to provide any such advice or counseling.]
+
+Thank you again for contacting us.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

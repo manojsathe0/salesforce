@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tm sou2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SOU Prepped</name>
+    <style>none</style>
+    <subject>Next Steps for order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We have received all your Trademark materials and are working on completing your filing. Shortly, you should expect to receive a time-sensitive email from LegalZoom requesting your electronic signature (e-signature) for your application. The application will include instructions on how to complete your signature.
+
+Please review your application thoroughly before signing. Once it has been signed and filed, most aspects cannot be changed or modified in any way, and all application fees are non-refundable.
+
+Upon confirmation of your e-signature, LegalZoom will complete your order by filing your application with the U.S. Patent &amp; Trademark Office (USPTO) and paying the required filing fee(s). You will receive a confirmation email which will include your USPTO serial number, which allows you to track the status of your application online.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

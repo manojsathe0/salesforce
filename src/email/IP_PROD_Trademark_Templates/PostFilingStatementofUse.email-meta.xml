@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2tm</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post Filing Statement of Use</name>
+    <style>none</style>
+    <subject>Post Filing Statement of Use</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Our records indicate that your Trademark Application was filed on an “Intent-to-Use” basis. Although “Intent-to-Use” applications are a viable way to protect your mark before using it in commerce, the following will need to be submitted to the US Patent and Trademark Office (USPTO) within 6 months of receiving your Notice of Allowance:
+
+1. A Statement of Use: a sworn statement attesting to the use of the mark in commerce.
+2. $100 filing fee per class of goods or services.
+3. A specimen that demonstrates how the mark is being used in commerce for every classification of goods and services included on your application. A specimen is not just a picture of your Trademark or logo. Instead, a specimen is a real world example of how your mark is currently being used in commerce.
+
+For services, acceptable specimens include brochures, flyers, advertisements, yellow page listings and internet websites. Business cards or stationery are usually not acceptable. For goods (products), acceptable specimens include labels or tags attached to the product, packaging material, instruction manuals and containers which display the Trademark.
+
+You must file a Statement of Use within six (6) months of the mailing date stamped on the Notice of Allowance UNLESS, within that same period, you submit a request for a six-month extension of time to file the Statement of Use. You must file the request within six (6) months of the issue date of the Notice of Allowance, or previously granted extension period. You may request up to five (5) extensions of time. For more information on how to file a Statement of Use or extension, please visit here.
+
+LegalZoom can also help you file your Statement of Use form for a marginal cost. For more information, please visit here.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

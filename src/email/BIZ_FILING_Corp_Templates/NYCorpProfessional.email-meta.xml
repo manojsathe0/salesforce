@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>corpnyprof</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NY Corp Professional</name>
+    <style>none</style>
+    <subject>NY Corp Professional</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your incorporation order.  Due to the complexity of filing your corporation as a professional entity in New York, please review the following information.  
+
+Filing as a professional corporation in New York requires 3 stages: (1) obtain consent for your professional corporation from the New York State Education Department (NYSED), (2) file the Certificate of Incorporation with the NY Secretary of State, and (3) provide certified copy of your Articles of Incorporation to the NYSED.
+
+In order to complete your order, please follow the steps listed below.
+
+Steps to complete Stage 1:
+
+•  You must authorize an additional charge of $110.00 for the filing fees to obtain the required consent from the NYSED ($90.00) and to notify the NYSED upon filing of the Certificate of Incorporation ($20.00).  Please reply to this email with the authorization to charge your credit card on file for the additional fee.
+•  Fax a copy of your license to (323) 962-8300.  Please include your name and order number on the fax coversheet to ensure proper routing of your document to our processing team.
+•  In accordance with the NY state law, each shareholder and/or director of the corporation must be a licensed [business activity].  Please contact us if your corporation does not meet this requirement.   
+•  If you have additional shareholders or directors, we will also need the license for each individual.  You can fax the license(s) to (323) 962-8300.  Please include your name and order number on the fax coversheet to ensure proper routing of your document to our processing team.
+•  Upon receipt of all license(s), we will prepare and email the Articles of Incorporation for your signature.  We cannot prepare your Articles of Incorporation without the proper license on file.
+ 
+
+If you have any questions regarding your order, please contact our {!snippetVariable.cc_dept_full} at {!snippetVariable.ccphone} or customercare@legalzoom.com. Please include your order number in your correspondences for prompt service.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

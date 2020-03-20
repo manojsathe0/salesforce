@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Undeliverable 1st class</name>
+    <style>none</style>
+    <subject>Undeliverable 1st class</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Your recently completed order has returned to our office as &quot;undeliverable.&quot;
+
+The shipping address we have on file for your account is:
+
+{!Contact.FirstName} {!Contact.LastName}
+{!Contact.MailingStreet}
+{!Contact.MailingCity}, {!Contact.MailingState} {!Contact.MailingPostalCode}
+
+Please confirm the address that is noted above or provide an updated shipping address so that we may expedite a reshipment. We apologize for any inconvenience this may have caused.
+
+It is very important to us that you receive your order in a timely manner. As a courtesy, we have attached a copy of your completed documents.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+*You must have the Acrobat® Reader® application to view the attached files. You can download this application for free from: http://get.adobe.com/reader/.
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

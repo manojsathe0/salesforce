@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IAD Case Status Reasons</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IAD Case Status Reasons</value>
+    </caseValues>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>Attorney Services</masterLabel>
+            <translation><!-- Attorney Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Services</masterLabel>
+            <translation><!-- Business Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intellectual Property</masterLabel>
+            <translation><!-- Intellectual Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Services</masterLabel>
+            <translation><!-- Personal Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Record Type --></label>
+        <name>Record_Type__c</name>
+        <picklistValues>
+            <masterLabel>Problem</masterLabel>
+            <translation><!-- Problem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Inquiry</masterLabel>
+            <translation><!-- Service Inquiry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status Reason --></label>
+        <name>Status_Reason__c</name>
+        <picklistValues>
+            <masterLabel>--None--</masterLabel>
+            <translation><!-- - - None- -  --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assigned for Customer Outreach</masterLabel>
+            <translation><!-- Assigned for Customer Outreach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assigned for Resolution</masterLabel>
+            <translation><!-- Assigned for Resolution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto Closed (Timeout) - Unresolved</masterLabel>
+            <translation><!-- Auto Closed (Timeout) - Unresolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBB</masterLabel>
+            <translation><!-- BBB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Submitting Materials</masterLabel>
+            <translation><!-- Customer Submitting Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Submitting Revision</masterLabel>
+            <translation><!-- Customer Submitting Revision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer didn&apos;t have needed info</masterLabel>
+            <translation><!-- Customer didn&apos;t have needed info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer not reached (VM/disconnect)</masterLabel>
+            <translation><!-- Customer not reached (VM/disconnect) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer-Requested Item Complete</masterLabel>
+            <translation><!-- Customer-Requested Item Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Sent, Pending Response</masterLabel>
+            <translation><!-- Email Sent, Pending Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalated Customer</masterLabel>
+            <translation><!-- Escalated Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issue Resolved (non Proofer resolution)</masterLabel>
+            <translation><!-- Issue Resolved (non Proofer resolution) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LZ Research Required</masterLabel>
+            <translation><!-- LZ Research Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LZML</masterLabel>
+            <translation><!-- LZML --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Order Problem (Case created in error)</masterLabel>
+            <translation><!-- No Order Problem (Case created in error) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Cancelled</masterLabel>
+            <translation><!-- Order Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proceeding As Is/No Update Required</masterLabel>
+            <translation><!-- Proceeding As Is/No Update Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proofer Updated</masterLabel>
+            <translation><!-- Proofer Updated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision Placed (after 7 day closure)</masterLabel>
+            <translation><!-- Revision Placed (after 7 day closure) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision Placed for Customer</masterLabel>
+            <translation><!-- Revision Placed for Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision Placed on LZ.com</masterLabel>
+            <translation><!-- Revision Placed on LZ.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VIP</masterLabel>
+            <translation><!-- VIP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalated</masterLabel>
+            <translation><!-- Escalated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LZ Working on Case</masterLabel>
+            <translation><!-- LZ Working on Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on Customer</masterLabel>
+            <translation><!-- Waiting on Customer --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>IAD Case Status Reasons Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Answer__ka.Answer__kav$ArticleType</field>
+    </columns>
+    <columns>
+        <field>Answer__ka$ArticleNumber</field>
+    </columns>
+    <columns>
+        <field>Answer__ka.Answer__kav$PublishStatus</field>
+    </columns>
+    <columns>
+        <field>Answer__ka$FirstPublishedDate</field>
+    </columns>
+    <columns>
+        <field>Answer__ka.Answer__kav$Title</field>
+    </columns>
+    <columns>
+        <field>Answer__ka.Answer__kav$Summary</field>
+    </columns>
+    <columns>
+        <field>Answer__ka.Answer__kav$Answer__c</field>
+    </columns>
+    <description>Pulling article information to search or mass update.</description>
+    <filter>
+        <criteriaItems>
+            <column>Answer__ka.Answer__kav$IsLatestVersion</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Answer__ka.Answer__kav$PublishStatus</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Articles - Answers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Article_Type_Answers__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Answer__ka.Answer__kav$PublishStatus</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Answer__ka$ArchivedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

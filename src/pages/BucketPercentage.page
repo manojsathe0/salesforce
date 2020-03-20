@@ -1,0 +1,93 @@
+<apex:page controller="BucketPercentageController" id="thePage" sidebar="False" docType="html-5.0">
+    <apex:pageMessages escape="false"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style type="text/css">
+    .bucketHeader{
+        font-size: 22px;
+        font-weight: bold;
+    }
+    .bucketText{
+        font-size: 17px;
+    } 
+    .bucketTable{
+        width:200px;
+        height:3px;
+    }
+    .bucketPercentage{font-size: 16px; width:35px;height:20px;}
+    </style>
+    <script type="text/javascript">
+        var bucketPercentageTotal = {!total};
+         var $j = jQuery.noConflict();
+         $j(function () 
+         {
+             $j("#totalBucketPercentage").html(bucketPercentageTotal);
+         });
+         
+         function updateTotalBucketPercentage()
+         {
+             var totalValue = 0;
+             $j( ".bucketPercentage" ).each(function( index )
+             {
+                 totalValue += parseInt($j(this).val()); 
+             });
+             $j("#totalBucketPercentage").html(totalValue);
+         }
+         
+    </script>
+    <apex:form >
+        <apex:pageBlock Title="Buckets Dashboard" ><br/>
+            <apex:panelgrid columns="5" width="100%" columnClasses="bucketTable">
+                 <apex:panelGroup styleClass="bucketHeader">Bucket Name</apex:panelGroup>
+                 <apex:panelGroup styleClass="bucketHeader">Old Percentage</apex:panelGroup>
+                 <apex:panelGroup styleClass="bucketHeader">New Percentage</apex:panelGroup>
+                 <apex:panelGroup styleClass="bucketHeader">Total Score</apex:panelGroup>
+            </apex:panelgrid><br/><br/>
+            <apex:repeat value="{!buckets}" var="theBucket" id="theRepeat">
+                <apex:panelgrid columns="5" width="100%" columnClasses="bucketTable" cellpadding="1"  bgcolor="#E2E2E2">
+                    <apex:panelGroup styleClass="tabel">
+                        <apex:outputLink value="/apex/Bucketpercentage" id="theLink" styleClass="bucketText">{!theBucket.Name}<apex:param name="BUCKETID" value="{!theBucket.Id}"/></apex:outputLink>
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:OutputText value="{!theBucket.Bucket_Percentage__c}" styleClass="bucketText"/>
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!theBucket.Bucket_Percentage__c}" styleClass="bucketPercentage"><!-- onchange="updateTotalBucketPercentage();">-->
+                        </apex:outputText>
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                     <apex:OutputText value="{!theBucket.Total_Bucket_Score__c}" styleClass="bucketText"/>
+                    </apex:panelGroup>
+                 </apex:panelgrid><br/>        
+            </apex:repeat>
+        </apex:pageBlock>
+            <div style="font-size: 22px;font-weight: bold;"><h3>Total Percentage: </h3>
+            <spam id="totalBucketPercentage"></spam></div><br/>
+                  <apex:commandButton action="{!UpdateBuckets}" value="Update"/>&nbsp;&nbsp;&nbsp;&nbsp;<br/><br/><br/><br/>
+                
+    <apex:pageBlock Title="{!bucketCriteria[0].Lead_Scoring_Bucket__r.Name}" rendered="{!bucketCriteria.size>0}" ><br/>
+        <apex:panelgrid columns="3" width="100%" columnClasses="bucketTable">
+                 <apex:panelGroup styleClass="bucketHeader">Criteria</apex:panelGroup>
+                 <apex:panelGroup styleClass="bucketHeader">Active/Inactive</apex:panelGroup>
+                 <apex:panelGroup styleClass="bucketHeader">Points</apex:panelGroup>
+        </apex:panelgrid><br/>
+        <apex:repeat value="{!bucketCriteria}" var="criteria" id="theRepeat" >
+                <apex:panelgrid columns="5" width="100%" columnClasses="bucketTable" cellpadding="1"  bgcolor="#E2E2E2">
+                    <apex:panelGroup >
+                        <apex:outputText value="{!criteria.Criteria__c}"/>
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:inputCheckbox value="{!criteria.Active__c}"/>
+                    </apex:panelGroup>
+                    <apex:panelGroup >
+                        <apex:OutputText value="{!criteria.Points__c}" styleClass="bucketPercentage" rendered="{!IF(criteria.Time_Sensitive__c == False,True,False)}"/>
+                        <apex:outputText value="{!criteria.Points__c}" styleClass="bucketPercentage" rendered="{!IF(criteria.Time_Sensitive__c == True,True,False)}"/>
+                    </apex:panelGroup>
+                 </apex:panelgrid><br/>        
+            </apex:repeat>
+          <apex:commandButton action="{!updateCriteria}" value="Save" id="theButton"/>  
+      </apex:pageBlock>
+      <apex:pageBlock rendered="{!bucketCriteria.size=0 && bucketId != null}"><br/>
+      <apex:outputText > This bucket has no criteria</apex:outputText>
+      </apex:pageBlock>
+    </apex:form>  
+</apex:page>

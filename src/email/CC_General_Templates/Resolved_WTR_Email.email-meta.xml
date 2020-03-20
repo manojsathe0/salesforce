@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>wtr-resolved</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Resolved WTR Email</name>
+    <style>none</style>
+    <subject>Your Feedback</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your time today. I appreciate you giving us the opportunity to assist you with your order. 
+
+As I mentioned on the phone, I’d love to get your feedback about your experience today. 
+
+Take Survey 
+
+Please don&apos;t hesitate to contact us again if there is anything else we can help with.
+
+Best wishes,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom is not a law firm and is not a substitute for an attorney or law firm. LegalZoom cannot provide legal advice and can only provide self-help services at your specific direction. LegalZoom, Inc. is a registered and bonded legal document assistant, #0104, Los Angeles County (exp. 12/13). Prices, features, terms and conditions are subject to change without notice.
+
+Please add services@emails.legalzoom.com to your address book.
+
+LegalZoom is located at 101 N. Brand Blvd., 11th Floor, Glendale, CA 91203
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,16 @@
+<apex:component controller="IADMessageBoxController">
+    <apex:attribute name="theMessages" type="IADMessage[]" description="IAD Message" required="true"/>
+    <br />
+    <apex:outputPanel rendered="{!theMessages.size > 0}" style="z-index:100">
+        <div class="slds-notify_container"  style = "position:relative;">
+         <apex:repeat value="{!theMessages}" var="theMessage" id="theMessageRepeater">
+              <div class="slds-notify slds-notify--alert slds-theme--{!theMessage.msgType} slds-theme--alert-texture" role="alert" style = "margin-bottom:3px;">
+               <h2>
+                    {!theMessage.message}
+                </h2>
+              </div>
+          </apex:repeat>
+        </div>
+        </apex:outputPanel>
+    
+</apex:component>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LWTvsLW</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Difference Between Last Will and LivWill</name>
+    <style>none</style>
+    <subject>Difference Between Last Will and LivWill</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+
+Thank you for your recent inquiry.  In regards to your question, a Last Will and Testament is a document that states your wishes on how your estate is to be distributed upon your passing. 
+
+A Living Will on the other hand, is a different document that is active while the person is still alive and covers advance healthcare directives and addresses issues such as the desire to be or not to be sustained on artificial life support in the event of a terminal illness, coma, or vegetative state.  A Living Will does not determine how your estate will be distributed upon your passing.
+
+I have included a complimentary ?Estate Planning Guide? to help you become more familiar with LegalZoom&apos;s documents.
+
+Please do not hesitate to contact us if we can be of further assistance. Simply reply to this email or call us toll free at (800) 962-7490 .
+ 
+Best regards,
+ 
+[Your Name]
+{!snippetVariable.ccs_full}
+{!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

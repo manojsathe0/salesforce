@@ -1,0 +1,13 @@
+<!--
+ - Created by jboles on 10/31/2016.
+ -->
+
+<apex:component controller="IADPaymentProfileLabelController" allowDml="true" >
+    <apex:actionFunction name="populatePaymentProfile" action="{!populatePaymentProfile}" rerender="paymentProfileLabel" status="statusUpdating" oncomplete="checkValue();" />
+    <apex:attribute assignTo="{!paymentProfileId}" name="theProfileId" description="The payment profile to get the label" type="String" />
+
+    <apex:outputPanel id="paymentProfileLabel">
+        <c:IADMessageBox theMessages="{!dataservice.iadMessages}" rendered="{!dataservice.iadMessages.size>0}" />
+        {!paymentProfileLabel}
+    </apex:outputPanel>
+</apex:component>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_36207309</developerName>
+        <masterLabel>cc ip xfer queues</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Case.Queue__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>IP BSI</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP BSI Outgoing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Copyright Billing Updates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Copyright Materials</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Copyright Order Updates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Copyright Post Filing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Copyrights</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Partners and Firms</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Patent Billing Updates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Patent Order Updates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Patents</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Patent Drawings</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Patent Materials</sourceValue>
+            </sourceValues>
+            <value>cc ip xfer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>IP Patent Search Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Sales Charge Payment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Billing Updates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Domestic Rep</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Faxes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Materials</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Monitoring</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Office Actions</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Order Updates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademarks</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Search</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademark Search Approvals</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IP Trademarks Goods and Services</sourceValue>
+            </sourceValues>
+            <value>cc ip xfer 2</value>
+        </values>
+    </buckets>
+    <filter>
+        <criteriaItems>
+            <column>EMAIL.STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2,3,4</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Email to Case User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Created_By_User_Division__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_36207309</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC IP Emails Sent &amp; Xfer</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseEmail</reportType>
+    <scope>queue</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>EMAIL.MESSAGE_DATE</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

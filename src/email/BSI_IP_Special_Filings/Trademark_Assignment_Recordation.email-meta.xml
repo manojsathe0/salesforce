@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Trademark Assignment Recordation</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Trademark Assignment Recordation</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in filing a Trademark Assignment Recordation to change the listed owner(s) of your Trademark registration.  We simplify the process for you by preparing and filing the Assignment Recordation with the US Patent &amp; Trademark Office (USPTO).
+
+For your reference, general information regarding Assignment Recordation filings has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact an Intellectual Property Specialist at the phone number listed below.  By speaking with a Specialist, we will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+
+Trademark Assignment Recordations are used to change the listed owner(s) a Trademark registration with the USPTO from one party to another.  This allows the USPTO to keep current records on the owner(s) of a Trademark, and have proper contact information for the actual owner(s).
+ 
+For your convenience, we have listed all relevant pricing below.
+ 
+TRADEMARK ASSIGNMENT RECORDATION - $59.00 + $40.00 USPTO filing fee
+
+GET STARTED
+http://www.legalzoom.com/trademarks-assignment/trademarks-assignment-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/trademarks-assignment/trademarks-assignment-pricing.html
+
+ADDITIONAL SERVICES
+Updated Registration Certificate - $100.00
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

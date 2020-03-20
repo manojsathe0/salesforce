@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ls20</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>L&amp;S Switch to Used in Commerce</name>
+    <style>none</style>
+    <subject>L&amp;S Switch to Used in Commerce</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Your application indicates that your Trademark is to be filed under an “Intent to Use” filing basis with the US Patent and Trademark Office (USPTO). Under an &quot;Intent to Use&quot; filing basis, a specimen is not required.
+
+Applicants may apply for a Trademark under one of two types of filing basis (“Intent to Use” or “Used in Commerce”).
+Under an “Intent to Use” filing basis, the applicant has not used his/her mark in connection with the goods and/or services listed on his/her application. Under “Intent to Use” filing basis, a specimen is not required.
+
+Under a “Used in Commerce” filing basis, the applicant is currently using his/her mark in connection with the goods and/or services listed on his/her application. If a “Used in Commerce” filing basis is selected, the following information is necessary to proceed:
+
+1. A specimen. A specimen that demonstrates how the mark is being used in commerce for every classification of goods and services included on your application. A specimen is not just a picture of your Trademark or logo. Instead, a specimen is a real world example of how your mark is currently being used in commerce.
+
+For services, acceptable specimens include brochures, flyers, advertisements, yellow page listings and internet websites. Business cards or stationery are usually not acceptable. For goods (products), acceptable specimens include labels or tags attached to the product, packaging material, instruction manuals and containers which display the Trademark.
+
+See Examples: http://www.legalzoom.com/trademarks-faq/what-is-a-trademark-specimen.html
+
+2. Date of first use anywhere (MM/DD/YYYY)
+
+3. Date of first use in commerce (MM/DD/YYYY) 
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards, 
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

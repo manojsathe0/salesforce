@@ -1,0 +1,7 @@
+Case Id: {!Case.Id}
+Case Number: {!Case.CaseNumber}
+Case Status: {!Case.Status}
+Account Name/Login Id: {!Case.Account}
+Case Owner: {!Case.OwnerFullName}
+Case Owner Id: {!Case.OwnerId}
+Queue: {!Case.Queue__c}

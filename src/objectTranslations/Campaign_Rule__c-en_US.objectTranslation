@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Campaign Rule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Campaign Rules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Across Orders --></label>
+        <name>Across_Orders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Process --></label>
+        <name>Base_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Product Line --></label>
+        <name>Base_Product_Line__c</name>
+        <picklistValues>
+            <masterLabel>Attorney Services</masterLabel>
+            <translation><!-- Attorney Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Formations</masterLabel>
+            <translation><!-- Business Formations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intellectual Property</masterLabel>
+            <translation><!-- Intellectual Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Forms</masterLabel>
+            <translation><!-- Legal Forms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Services</masterLabel>
+            <translation><!-- Personal Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Base Product Name --></label>
+        <name>Base_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Campaign Rules --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Child Product Name --></label>
+        <name>Child_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days To Look --></label>
+        <name>Days_To_Look__c</name>
+        <picklistValues>
+            <masterLabel>Last Sales Activity</masterLabel>
+            <translation><!-- Last Sales Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead/Contact Modified</masterLabel>
+            <translation><!-- Lead/Contact Modified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Since</masterLabel>
+            <translation><!-- Member Since --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Entry/Exit --></label>
+        <name>Entry_Exit__c</name>
+        <picklistValues>
+            <masterLabel>Entry</masterLabel>
+            <translation><!-- Entry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exit</masterLabel>
+            <translation><!-- Exit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Field To Evaluate --></label>
+        <name>Field_To_Evaluate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Value --></label>
+        <name>Field_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Purchased --></label>
+        <name>Has_Purchased__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Days --></label>
+        <name>Number_of_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Object__c</name>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead</masterLabel>
+            <translation><!-- Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order__c</masterLabel>
+            <translation><!-- Order__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task</masterLabel>
+            <translation><!-- Task --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rule Id --></label>
+        <name>Rule_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <layouts>
+        <layout>Campaign Rule Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Campaign Rule-Days Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Campaign Rule-Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Campaign Rule-Status Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Days Rule --></label>
+        <name>Days_Rule</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- General Rule --></label>
+        <name>General_Rule</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Product Rule --></label>
+        <name>Product_Rule</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Status Rule --></label>
+        <name>Status_Rule</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

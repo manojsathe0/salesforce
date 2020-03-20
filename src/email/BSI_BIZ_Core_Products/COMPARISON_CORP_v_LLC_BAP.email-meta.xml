@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>COMPARISON - CORP v LLC (BAP)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>COMPARISON - CORP v LLC (BAP)</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs. In regard to your inquiry, LegalZoom can assist you in forming your Corporation or Limited Liability Company (LLC). We simplify the process for you by preparing and filing the Articles of Formation with your respective Secretary of State, and by drafting customized, state-specific internal documents for your business.
+
+To help you make an informed decision, provided below is a comparison of Corporations and LLCs and some of the similarities and differences between them.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below. By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+
+Corporations and LLCs are state-specific business entities that provide several advantages as a business structure.  Corporations and LLCs are separate and distinct legal entities that provide the people involved in the business with personal liability protection, separating personal assets from business assets.  This liability protection shields personal assets from any debts or liabilities that are incurred by the business.  Corporations and LLCs also provide name exclusivity in the state in which it is registered, ensuring that other Corporations and LLCs cannot use the same business name in the state.
+
+Corporations require more formalities than an LLC. Corporations are required to designate directors, officers, and shareholders, although one person can hold all necessary positions.  Corporations also require to that annual shareholder and director meetings be held and written minutes of these meetings must be kept on company records.  LLCs do not necessarily have these requirements.
+
+LLCs also provide some tax flexibility.  You may choose to be taxed as a pass-through entity (such as a sole proprietorship or partnership), as a C-Corporation, or as an S-Corporation.  Pass-through entities typically report business income and expenses with the owner&apos;s personal tax return(s), while Corporations file a separate corporate tax return.  C-Corporations are subject to double taxation, meaning that profits are taxed at the corporate level, and possibly taxed a second time at the individual level.  S-Corporations are subject to single-taxation, and are taxed similarly to pass-through entities, while potentially providing more tax benefits than a pass-through entity.  For further information on tax structure, please consult an accountant or CPA.
+
+
+For specific legal or tax advice, we offer our Business Advantage Pro (BAP) membership to provide you with access to licensed attorneys and tax professionals.  This service provides unlimited half-hour consultations on new legal and/or tax matters with licensed attorneys and tax professionals to help you ensure you are making the best choice from a legal and/or tax perspective.  In addition, this membership provides unlimited access to our Legal Forms database, which includes over 100 legal business forms, and one free Copyright registration per month (excluding US Copyright Office filing fees).
+
+The link below gives a detailed comparison between these business structures to assist you in determining the best structure to suit your needs.
+
+COMPARISON CHART
+http://www.legalzoom.com/business/business-types/compare-business-structures.html
+
+For your convenience, we have listed below all relevant pricing, as well as some additional services that may be beneficial to your business.
+
+BUSINESS ADVANTAGE PRO
+6-Month - $161.94 ($26.99/month)
+12-Month - $287.88 ($23.99/month)
+
+GET STARTED
+http://www.legalzoom.com/attorneys-lawyers/legal-plans/business.html
+
+LIMITED LIABILITY COMPANY
+Express Gold - $359.00 + state fee - (7-10 business days)*
+Standard - $289.00 + state fee + shipping - (20-35 business days)
+Economy - $149.00 + state fee + shipping - (20-35 business days)
+
+To view the state fee for your state, please follow the &quot;PACKAGE DETAILS&quot; link below and select your state from the drop-down list.
+
+GET STARTED
+http://www.legalzoom.com/limited-liability-company/limited-liability-company-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/limited-liability-company/limited-liability-company-packages.html
+
+CORPORATION
+Express Gold - $369.00 + state fee - (7-10 business days)*
+Standard - $239.00 + state fee + shipping - (20-35 business days)
+Economy - $149.00 + state fee + shipping - (20-35 business days)
+
+To view the state fee for your state, please follow the &quot;PACKAGE DETAILS&quot; link below and select your state from the drop-down list.
+
+GET STARTED
+http://www.legalzoom.com/legal-incorporation/incorporation-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/legal-incorporation/incorporation-packages.html
+
+ADDITIONAL SERVICES
+EIN Obtainment - $79.00 ($49.00 with Express Gold package)
+S-Corporation Obtainment - $80.00 ($35.00 with Express Gold package)
+Registered Agent - $159.00/year
+Business License Compliance Package - $74.99
+
+* Some states may have delays which affect the listed turnaround time.  To determine if your state is affected, please contact a Specialist at the phone number listed below.
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+
+
+Sincerely,
+
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+Privacy Policy
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+
+Please add services@emails.legalzoom.com to your address book.
+
+
+This email was sent to: {!Contact.Email}
+
+LegalZoom is located 101 N. Brand Blvd., 11th Floor, Glendale, CA 91203
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

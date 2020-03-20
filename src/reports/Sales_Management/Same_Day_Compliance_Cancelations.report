@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order__c.Order_Items__r.Order360__r$Order__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Order_Items__r$Customer_Login_c__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Order_Items__r$Product_Name__c</field>
+    </columns>
+    <columns>
+        <field>Order__c$Order_Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Order__c$Order_Date_Time_Modified__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Order_Items__r.Order360__r$Order_Matching_Activity__c.Manager__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Order_Items__r.Order360__r$Agent_Name__c</field>
+    </columns>
+    <description>Comp. Auto-renew Turn-offs on the same day as order placed</description>
+    <filter>
+        <criteriaItems>
+            <column>Order__c.Order_Items__r$Product_Name__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>compliance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order__c.Order_Items__r$Subscription_Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Active Won&apos;t Renew</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order__c.Order_Items__r.Order360__r$Agent__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Agent 1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Same-Day Compliance Cancelations</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Active_Revenue_With_Order_item_And_Order__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Order__c.Order_Items__r$Order_Item_Date_Time_Created__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,206 @@
+<aura:component controller ="ITPContactController_ltng"  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="status" type="String" />
+    <aura:attribute name="statusdescription" type="String" />
+    <aura:attribute name="eligibility" type="String" />
+    <aura:attribute name="firstname" type="String" />
+    <aura:attribute name="lastname" type="String" />
+    <aura:attribute name="Email" type="String" />
+    <aura:attribute name="itpfirstname" type="String" />
+    <aura:attribute name="itplastname" type="String" />
+    <aura:attribute name="itpEmail" type="String" />
+    <aura:attribute name="Inivitationstatus" type="String" />
+    <aura:attribute name="Accounttype" type="String" />
+    <aura:attribute name="primarycontactName" type="String" />
+    <aura:attribute name="deactivatereason" type="String"  />
+    <aura:attribute name="Inivitationsentdate" type="String" />
+    <aura:attribute name="Inivitationaccepteddate" type="String" />
+    <aura:attribute name="Inivitationexpirydate" type="String" />
+    <aura:attribute name="subscribernumber" type="String" />
+    <aura:attribute name="invitationFlag" type="boolean" default="false" /> 
+    <aura:attribute name="showSendCancelButtonFlag" type="boolean" default="false" />
+    <aura:attribute name="showPopup" type="boolean" default="false" />
+    <aura:attribute name="productInvitationId" type="String" default="0" />
+    <aura:attribute name="customerId" type="String" default="0" />
+    <aura:attribute name="currentLoginUserName" type="String"  />
+    <aura:attribute name="popupMessage" type="String" default="" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    <lightning:spinner variant="brand" size="medium" aura:id="mySpinner1" alternativeText="Loading" />
+    <div class="slds-p-horizontal--small">
+        <p>
+            <b>Activation Status  : </b>   <lightning:formattedText title="Activation Status" 
+                                                                    value="{!v.status}"/>
+        </p>
+        
+        <p >
+            <b> Activation  Description:  </b> <lightning:formattedText title="Activation Status description " 
+                                                                        value="{!v.statusdescription}"/>
+        </p>
+        
+        <p >
+            <b> Account Type : </b>  <lightning:formattedText title="Accounttype" 
+                                                              value="{!v.Accounttype }"/>
+        </p>
+        <aura:if  isTrue="{!v.Accounttype =='PlusOne'}">
+            <p>
+                <b>  Invitation Recieved From: </b>  <lightning:formattedText title="Invitaion Recieved From" 
+                                                                              value="{!v.primarycontactName }"/>
+                
+            </p>
+        </aura:if>
+        <p >
+            <b> Invitation Eligibility: </b>  <lightning:formattedText title="Eligibility " 
+                                                                       value="{!v.eligibility}"/>
+        </p>
+        <br/>
+        <lightning:button variant="brand"  class="{!v.status=='Deactivated'||v.status=='Not Enrolled'?'slds-hide':'slds-m-bottom_medium'}" label="Deactivate ITP"   aura:id="updatebutton" onclick="{!c.deactivate }" />
+        
+        <aura:if isTrue="{!v.invitationFlag}">
+            <p class="slds-align_absolute-center slds-text-heading--small slds-p-bottom_small" style="text-transform: uppercase;
+                                                                                                      font-size: .875rem;
+                                                                                                      letter-spacing: .0625em;    color: rgb(0, 109, 204);">  Invitation Details   </p>
+            
+            <p>
+                <b> First Name:  </b> <lightning:input title="First Name "   value="{!v.itpfirstname}"/>
+            </p>
+            <p>
+                <b> Last Name: </b>  <lightning:input title="Last Name " value="{!v.itplastname}"/>
+            </p>            
+            <p>
+                <b>  Email: </b>  <lightning:input title="Email"  value="{!v.itpEmail}"/>
+            </p>
+            <br/>
+            <aura:if isTrue="{!v.showSendCancelButtonFlag}">
+                <ul class="slds-button-group-row slds-m-horizontal_xx-small">
+                    <button class="slds-button slds-button--brand" onclick="{!c.showPopup}">Send</button>
+                    <button class="slds-button slds-button--brand slds-p-right_x-small" onclick="{!c.cancel}">Cancel</button>
+                </ul>
+            </aura:if>
+            
+        </aura:if >
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <aura:if  isTrue="{! and(v.Accounttype !='PlusOne',!v.invitationFlag)}">
+            
+            <p class="slds-align_absolute-center slds-text-heading--small slds-p-bottom_small" style="text-transform: uppercase;
+                                                                                                      font-size: .875rem;
+                                                                                                      letter-spacing: .0625em;    color: rgb(0, 109, 204);">  Invitation Details   </p>
+            
+            <p>
+                <b> First Name:  </b> <lightning:formattedText title="First Name " 
+                                                               value="{!v.firstname}"/>
+            </p>
+            <p>
+                <b> Last Name: </b>  <lightning:formattedText title="Last Name " 
+                                                              value="{!v.lastname}"/>
+            </p>
+            
+            <p>
+                <b>  Email: </b>  <lightning:formattedText title="Email" 
+                                                           value="{!v.Email}"/>
+            </p>
+            
+            <p>
+                <b> Status:  </b> <lightning:formattedText title="Status " 
+                                                           value="{!v.Inivitationstatus}"/>
+            </p>
+            
+            <p>
+                <b> Date sent : </b> 
+                <lightning:formattedDateTime value="{!v.Inivitationsentdate}" year="numeric" month="numeric" day="numeric"  hour="2-digit" minute="2-digit"  timeZone="GMT"  /> 
+            </p>
+            
+            <p >
+                <b>Accepted Date: </b>  
+                <lightning:formattedDateTime value="{!v.Inivitationaccepteddate}" year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit"   timeZone="GMT"  /> 
+            </p>
+            
+            <p>
+                <b> Expiry Date:  </b>
+                <lightning:formattedDateTime value="{!v.Inivitationexpirydate}" year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit"  timeZone="GMT"  />  
+            </p>
+            
+            
+        </aura:if> 
+        
+        <ul class="slds-button-group-row">
+            <aura:if isTrue="{!and(v.eligibility=='Yes',!v.showSendCancelButtonFlag)}">
+                <li class="slds-button-group-item">
+                    
+                    
+                    <lightning:button  variant="brand"  class="{!v.lpitpfree? 'slds-hide':''}"  onclick="{!c.showDetailsToEnter}">Send/Resend Invite</lightning:button> 
+                    
+                    <!-- class="{!v.status=='Not Enrolled'?'slds-hide':''}"-->
+                    
+                    
+                </li>
+            </aura:if>
+            
+            
+        </ul>
+    </div>
+    <!--<aura:if  isTrue="{!v.Accounttype !='PlusOne'}"> -->
+    
+    <div aura:id="miscItemPanel1234" style="display:none">
+        <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    DeActivate
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <form class="slds-form_stacked">
+                        
+                        <lightning:input aura:id="reasonfield1234" label="Reason"
+                                         name="deactivatereason"
+                                         value="{!v.deactivatereason}" required="true"/> 
+                    </form>
+                </div>                        
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button--brand" onclick="{!c.deactivateaccount}">Yes</button>
+                    <button class="slds-button slds-button--brand"  onclick="{!c.hidedeactivatemodal}">No</button>
+                </div>
+            </div>
+        </div>
+        <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+    </div>
+    
+    <!--</aura:if>  -->
+    <aura:if isTrue="{!v.showPopup}" >
+        <div class="slds">                       
+            <div aria-hidden="{!v.popupFlag}" role="dialog" class="slds-modal slds-modal--prompt slds-fade-in-open" aura:id="modaldialog">
+                <div class="slds-modal__container">                               
+                    <div class="slds-modal__header slds-theme_alt-inverse">
+                        <button class="slds-button  slds-modal__close slds-button--icon-inverse" onclick="{!c.hidePopup}">
+                            
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading--medium">Alert</h2>
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium slds-theme_alert-texture">
+                        <div>
+                            <p>{!v.popupMessage}</p> 
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer slds-theme_shade ">
+                        <button class="slds-button slds-button--neutral" onclick="{!c.closeModel}" >Cancel</button>
+                        <aura:if isTrue="{!v.cancelInvite}">
+                            
+                            <aura:set attribute="else">
+                                <button class="slds-button slds-button--brand" onclick="{!c.sendOrResendInvitation}">Yes</button>
+                            </aura:set>
+                        </aura:if> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

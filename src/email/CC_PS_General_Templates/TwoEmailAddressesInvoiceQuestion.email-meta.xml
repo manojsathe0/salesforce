@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2EmAddInvq</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Two Email Addresses ? Invoice Question</name>
+    <style>none</style>
+    <subject>Two Email Addresses ? Invoice Question</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+We apologize for the inconvenience regarding the issue of respective email addresses.  The following is some information that may be of help to you.
+
+The login name for both orders is [Email Address].  Our billing department automatically generates invoices to the login email address for each account, which is why you have been receiving invoices only at this email address.
+
+However, any emails you and your spouse receive from LegalZoom&apos;s {!snippetVariable.cc_dept_full}, relative to each respective order, will be sent to each respective email address listed in your contact information in our files.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

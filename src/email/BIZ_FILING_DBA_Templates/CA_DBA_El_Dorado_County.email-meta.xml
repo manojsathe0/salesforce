@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cadbaeldorado</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CA DBA - El Dorado County</name>
+    <style>none</style>
+    <subject>CA DBA - El Dorado County</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your DBA order.  Please follow the steps listed below to complete your order.
+
+Next steps:
+• Do not make any changes to the attached document as it will result in delays with your order.  If you need to make changes, please contact our Customer Support.
+• Print four (4) copies of the document on white paper using black ink.  Please do not use color ink.
+• Please have the designated registrant(s) sign the documents where indicated.  Please only use black ink.
+• Please include a copy of the Articles of Incorporation/Organization for your DBA Registrant along with the signed documents. The county requires that we provide a copy of the filed Articles of Incorporation/Organization when filing your DBA under your Corporation/LLC Registrant.
+• Mail the documents to our address listed below.  Please note that we cannot accept faxes as the state office will only accept original signed documents.
+
+Courier Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd.
+10th Flr.
+Glendale, CA 91203
+
+USPS Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd., 10th Flr.
+POB 29096
+Glendale, CA 91203
+
+If you have any questions regarding your order, please contact our {!snippetVariable.cc_dept_full} at {!snippetVariable.ccphone} or customercare@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,158 @@
+<apex:page standardcontroller="Contact" extensions="LogCallContactController" showHeader="false">
+<apex:slds rendered="{! !isClassic}" />
+   	<script type="text/javascript" src="/canvas/sdk/js/publisher.js"></script>
+   <apex:includeScript value="/support/console/31.0/integration.js"/>
+     <apex:includeScript value="{!URLFOR($Resource.zenform, 'jquery.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.zenform, 'style.css')}"/>
+     <apex:includeScript value="{!URLFOR($Resource.zenform, 'zen-form.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.zenform, 'zen-form.css')}"/> 
+      <script type="text/javascript">
+        var isSaved = 'false';
+        function refreshCurrentTab() 
+        {
+           
+            if(isSaved == 'true')
+            {
+                sforce.console.getEnclosingTabId(refreshTab);
+                isSaved = false;
+            }
+        }
+        var refreshTab = function refreshTab(result) {
+            var tabId = result.id;
+            sforce.console.refreshSubtabById(tabId, true, null);
+        };
+
+        function validateFields()
+        {
+            
+            if($('.description').val() != '' && $('.contactStatus').val() != '--None--')
+                createTaskSuccess();
+            else
+                createTaskFail();
+        }
+
+     </script>
+     <style type="text/css">
+         .tenPercent{width:10%}
+         .twentyPercent{width:20%}
+         .thirtyPercent{width:30%}
+         even{background:#C6D3E4; height:30px;}
+        .odd{background:#F5FBFB;height:30px;}
+        .theHeader{
+          border: 1px solid  #95B6B5;
+          text-align:left;
+          padding-left:6px;
+          font-weight: bold;
+          padding-top:8px;
+        }
+         .theHeadMain{background:#C9E7E9;height:30px;}
+
+        table 
+        {
+            border-collapse: collapse;
+        }
+
+        td 
+        {
+            padding-bottom: .5em;
+        }
+     </style>    
+    <div style="overflow-y:scroll; height:500px;"> 
+        <apex:form > 
+           <apex:actionFunction action="{!createTask}" name="createTaskFail" rerender="out" status="statusUpdating" 
+            /> 
+            <apex:actionFunction action="{!createTask}" name="createTaskSuccess" rerender="out" status="statusUpdating" 
+            /> 
+        <apex:outputPanel id="out" >
+             <script type="text/javascript">
+                 isSaved = '{!isSaved}';
+                 refreshCurrentTab();
+                 
+             </script>
+            <div class="input-wrap">
+                <label>Call Type</label>
+                <apex:inputField value="{!theTask.Inbound_Outbound__c}" required="true" styleClass="contactStatus"/>
+             </div>
+                 
+            <div class="input-wrap">
+                <label>Contact Status</label>
+                <apex:inputField value="{!theTask.Contact_Status__c}" required="true" styleClass="contactStatus"/>
+             </div>
+              <div class="input-wrap">
+                <label>Lead Status</label>
+                <apex:inputField value="{!theTask.Lead_Status__c}" required="true" styleClass="contactStatus"/>
+             </div>
+             <div class="input-wrap">
+                <label>Comments</label>
+                <apex:inputField value="{!theTask.Description}" required="true" style="height:92px;" styleClass="description"/>
+             </div>
+             <apex:outputPanel layout="block" rendered="{!SubscriptionItems.size>0 && allowSubscriptionSave}" >
+             <div>
+                <label style="margin-right:20px;">Is Subcription Save?</label>
+                <apex:inputField value="{!theTask.Is_Subscription_Activity__c}" />             
+              </div>
+              <br/>
+              <div>
+                <table>
+                    <thead>
+                        <tr class="theHeadMain">
+                            <td class="tenPercent">Select</td>
+                            <td class="thirtyPercent">Product</td>
+                            <td class="twentyPercent">Start Date</td>
+                            <td class="twentyPercent">End Date</td>
+                            <td class="twentyPercent">Parent Order#</td>
+                            <td class="twentyPercent">Status</td> 
+                        </tr>
+                    </thead>
+                    <thead>
+                        <td>
+                            <td>
+                                
+                            </td>
+                        </td>
+                    </thead>
+                    <tbody>
+                        <apex:variable value="{!1}" var="rowNum"/>
+                        <apex:repeat value="{!SubscriptionItems}" var="theSubscriptionItem">
+                        <tr class="{!IF(MOD(rowNum,2) == 0 , 'even','odd')} mainRow">
+                            <td><apex:inputCheckbox value="{!theSubscriptionItem.isSelected}"/></td>
+                            <td>{!theSubscriptionItem.productName}</td>
+                            <td>{!theSubscriptionItem.subscriptionStartDate}</td>
+                            <td>{!theSubscriptionItem.subscriptionEndDate}</td>
+                            <td>{!theSubscriptionItem.parentOrderNumber}</td>
+                            <td>{!theSubscriptionItem.susbcriptionStatus}</td>
+                            </tr>
+                            <tr  class="body">
+                                <td > Reason</td>
+                                <td colspan="4">
+                                    <apex:selectList value="{!theSubscriptionItem.cancellationReason}" size="1" styleClass="contactStatus">
+                                    <apex:selectOptions value="{!CancellationReasons}"></apex:selectOptions>
+                                    </apex:selectList>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </tbody>
+                </table>
+             </div>
+             </apex:outputPanel>
+                <br />
+               <button type="button" onclick="this.disabled=true;validateFields();" 
+        style="padding:5px 10px;float:right; 
+        font-size:13px; font-weight:bold; line-height: 
+        18px;background-color:#0271BF;background-image:-moz-linear-gradient(#2DADDC, #0271BF);background-repeat:repeat-x;border-color:#096EB3;" 
+        id="addopportunitybutton">Log a Call</button>
+            <apex:actionStatus id="statusUpdating">
+                  <apex:facet name="start">
+                    <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+                  </apex:facet>
+                  <apex:facet name="stop">
+                      <apex:pageMessages /> 
+                  </apex:facet>
+            </apex:actionStatus>
+        </apex:outputPanel>
+        </apex:form>
+            
+      
+        
+    </div>  
+</apex:page>

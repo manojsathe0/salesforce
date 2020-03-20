@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#698dc9</color>
+        <height>5</height>
+    </bottomLine>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <logo>Images/LZ_Logo_New.png</logo>
+        <verticalAlignment>Middle</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <logo>Images/Salesforce_Logo_Small.png</logo>
+        <verticalAlignment>Middle</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#698dc9</color>
+        <height>5</height>
+    </middleLine>
+    <name>Salesforce Request Letterhead</name>
+    <topLine>
+        <color>#698dc9</color>
+        <height>5</height>
+    </topLine>
+</Letterhead>

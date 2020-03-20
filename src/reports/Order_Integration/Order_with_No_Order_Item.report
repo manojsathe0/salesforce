@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Order__c.Order_Payment_Status__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Date_Time_Modified__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Order_Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Order_Date_Time_Modified__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Base_Product__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2 and 3 AND 4</booleanFilter>
+        <criteriaItems>
+            <column>Order__c.Order_Item_Count__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order__c.Base_Product__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Business Advantage Pro Annual Membership</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order__c.Order_Payment_Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Cancelled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order__c.Base_Product__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Attorney Consultation</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Order with No Order Item</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Order__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Order__c.Date_Time_Created__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <endDate>2014-06-29</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-05-28</startDate>
+    </timeFrameFilter>
+</Report>

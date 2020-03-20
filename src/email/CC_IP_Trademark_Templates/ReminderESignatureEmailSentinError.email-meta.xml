@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>esigerror</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Reminder E-Signature Email Sent in Error</name>
+    <style>none</style>
+    <subject>Reminder E-Signature Email Sent in Error</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+ 
+Please disregard the customer service e-mail sent to you reminding you to sign the electronic signature form.  This is an automated e-mail and was sent to you in error.  Please rest assured that your application has been submitted to the United States Patent and Trademark Office (USPTO) and will be reviewed by an examining attorney.
+  
+Please expect to receive your packet containing your USPTO serial number in the next 5-7 business days.  In addition, please note that it takes approximately 3-4 weeks for the USPTO to have your serial number on file in order to check status.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

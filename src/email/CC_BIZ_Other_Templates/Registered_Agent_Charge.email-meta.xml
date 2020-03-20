@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>racharge</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Registered Agent Charge</name>
+    <style>none</style>
+    <subject>Registered Agent Charge</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry regarding LegalZoom Registered Agent Services.
+
+A Registered Agent for a business entity is responsible for receiving official correspondence and legal notices on behalf of the entity.  The requirements for qualification of a Registered Agent will vary from state to state.  Typically though, a Registered Agent is required to be an individual person over the age of 18, or an existing business entity in good standing with the state, with a physical street address in the state of formation, at which they will be present during normal business hours.  
+
+With LegalZoom&apos;s Registered Agent service, you will have additional privacy as the name and address of the Registered Agent is public information.  LegalZoom will also filter out unsolicited mail and forward any official correspondence to you, ensuring that you will receive important documents in a timely manner.  Additionally, you will be provided with a LegalZoom Compliance Calendar that notifies you of any upcoming requirements, in order to maintain your company and keep it in good standing.  The charge for this service is $159.00 per year.
+
+If you are interested in learning more about this service, please call us at (888) 381-8758 Monday – Friday 6am-7pm PT, or Saturday 10am-2pm PT.  You could also simply reply to this email with any further questions or concerns.
+
+Thank you again for choosing LegalZoom and we look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

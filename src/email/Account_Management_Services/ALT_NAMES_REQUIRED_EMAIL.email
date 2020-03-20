@@ -1,0 +1,34 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center"><tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+</td></tr></table><table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;"><center><b>Please Respond with Alternate Business Names</b></center><br/>
+Dear {!Contact.FirstName},<br/><br/>
+After conducting a name search, we have discovered that your requested [Entity Type] name choices are not available.<br/><br/>
+Please respond to me via email with three (3) other choices, in order of preference, or call me at (877) 808-1918 M-F, 9:00 AM – 6 PM PT. After I receive your reply, we will conduct another search to determine if the proposed names are available.<br/><br/>
+Please contact me at your earliest convenience to avoid any delays in your order. We are not able to file your documents with the Secretary of State unless your [Entity Type] name is available.<br/><br/>
+Best Regards,<br/><br/>
+[<b>Account Manager</b>] [ext.XXXX]<br/>
+Account Management Services<br/>
+T: 877-808-1918, M-F 9:00 am – 6 pm PT<br/><br/>
+<a href="http://www.legalzoom.com" target="_blank">
+<img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  width="97" height="28" alt="LegalZoom.com" border="0"></a>
+<br><br>{!snippetVariable.ccsincerely}<br><br>{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<br>
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br>
+{!snippetVariable.lz_website}</p></div>
+<div class="emailBody"><p class="templateBody"></p>
+</div><div class="emailFooter"><p><br></td></tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center"><tr>
+<td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+<br>  <br>
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. <br /><br />Please add services@emails.legalzoom.com to your address book. <br />
+<br />This email was sent to: {!Contact.Email}
+<br><br>&copy; LegalZoom.com, Inc. All rights reserved.
+</span></td></tr></table></body></p></div></html>

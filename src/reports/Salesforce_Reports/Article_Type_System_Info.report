@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Systems_Info__ka$ArticleNumber</field>
+    </columns>
+    <columns>
+        <field>Systems_Info__ka.Systems_Info__kav$IsLatestVersion</field>
+    </columns>
+    <columns>
+        <field>Systems_Info__ka.Systems_Info__kav$VersionNumber</field>
+    </columns>
+    <columns>
+        <field>Systems_Info__ka.Systems_Info__kav$Title</field>
+    </columns>
+    <columns>
+        <field>Systems_Info__ka$CreatedBy</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Systems_Info__ka.Systems_Info__kav$IsLatestVersion</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Article Type: System Info</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Article_Type_System_Info__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Systems_Info__ka$ArchivedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

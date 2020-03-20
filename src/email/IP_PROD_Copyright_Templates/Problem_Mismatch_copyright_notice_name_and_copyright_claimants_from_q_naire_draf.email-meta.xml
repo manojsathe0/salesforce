@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>cr44_draft</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Problem - Mismatch copyright notice name and copyright claimants from q&apos;naire_dr</name>
+    <style>none</style>
+    <subject>Order on Hold: Copyright Application Inconsistency Between Copyright Claimant(s) Name and Copyright Notice</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+There appears to be a problem with your order. Your application will not be filed with the U.S. Copyright Office until this problem is resolved, so please respond to this email as soon as possible.
+
+Specifically, the name of the copyright claimant(s) that you identified in the questionnaire does not match the name in the copyright notice on the copy of the work that you submitted. The name of the copyright claimant(s) that you identified is [Claimant Name], but the copyright notice on the copy of the work reads [Copyright Notice].
+
+To resolve this problem, please reply to this email and select ONE of the following options:
+
+1.  Submit a new copy of the work that matches the copyright claimant(s) that you identified in the questionnaire.
+
+2.  Revise the copyright claimant(s) in the questionnaire to match the copyright claimant(s) identified in the copyright notice on the work that you submitted. If you decide to revise the copyright claimant(s), please provide the following information:
+
+Full Name:
+Year of Birth [YYYY]:
+Country of Residence:
+Address:
+
+3.  Have us submit the application with the information that you previously provided in the questionnaire. During examination of the application, if the copyright examiner raises questions regarding this matter, you will be responsible for responding to the request with the appropriate information.
+
+If you have any questions or would like additional information, you can reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate your prompt attention to this matter.
+
+Best regards,
+
+The LegalZoom Team
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

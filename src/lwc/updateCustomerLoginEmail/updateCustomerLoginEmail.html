@@ -1,0 +1,72 @@
+<!--
+ @author :  Harsha Reddy <sxreddy@legalzoom.com>
+ @file Description : STORY B-38226
+ @desc Created on 2019-04-09 8:33:06 pm
+ -->
+<template>
+    <template if:true={emailAddress}>
+        <div
+            class="slds-form-element slds-form-element_readonly slds-m-bottom_xx-small slds-form-element_edit slds-grow slds-hint-parent override--slds-form-element">
+            <div class="test-id__field-label-container">
+                <span class="test-id__field-label slds-form-element__label">
+                    Customer Login Email
+                </span>
+            </div>
+            <div class="slds-form-element__control slds-grid itemBody">
+                <span class="test-id__field-value slds-form-element__static slds-grow slds-form-element_separator">
+                    <span class="uiOutputText">
+                        {emailAddress}
+                    </span>
+                </span>
+                <lightning-button variant="base" label="edit" title="Edit Action" onclick={handleClick}
+                    class="slds-m-left_x-small">
+                </lightning-button>
+            </div>
+        </div>
+    </template>
+
+    <template if:true={openEditScreen}>
+        <div class="demo-only" style="height: 100%;">
+            <section class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div if:true={spinner}>
+                        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                    </div>
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close" size="medium">
+                            </lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Please Enter New Customer Login Email Below:
+                        </h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <form>
+                            <div if:true={error} class="slds-notify slds-notify_alert  slds-theme_error">
+                                <span class="slds-m-right_x-small">
+                                    <lightning-icon iconn-name="utility:error" variant="inverse" size="xx-small"
+                                        class="slds-icon-text-error"></lightning-icon>
+                                </span>
+                                <p>
+                                    <lightning-formatted-text value={error}></lightning-formatted-text>
+                                </p>
+                            </div>
+                            <lightning-input label="Customer Login Email" type="text" value={newEmailAddress}
+                                name="custLogin" onchange={handleEmailChange} required>
+                            </lightning-input>
+                        </form>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                        &nbsp;
+                        <lightning-button variant="brand" label="Update" onclick={saveMethod}></lightning-button>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </template>
+</template>

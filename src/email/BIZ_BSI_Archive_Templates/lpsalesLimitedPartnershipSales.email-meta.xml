@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>lpsales - Limited Partnership Sales</name>
+    <style>none</style>
+    <subject>lpsales - Limited Partnership Sales</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.
+
+A Limited Partnership is a business entity comprised of two or more partners who operate or manage a business together.  In every Limited Partnership (LP), there are two types of partners?general partners and limited partners.
+
+General partners control the company&apos;s day-to-day operations and take on the legal debts and obligations of the business.  Because they are responsible for any debts or lawsuits incurred by the company, general partners frequently also form corporations or LLCs to protect themselves from liability.
+
+Limited partners contribute capital to the partnership but do not participate in the daily operations of the company. As an added benefit, they are also shielded from company debts and other liabilities. Limited partnerships are a great choice for individuals who lack the time or expertise to run a business but would like to share in the profits.
+
+For your convenience, I have provided additional information and links to begin your LP formation:
+
+Economy LP Package   {!snippetVariable.econlp_pricing}
+{!snippetVariable.econlp_turnaround}
+Standard LP Package   {!snippetVariable.stdlp_pricing}
+{!snippetVariable.stdlp_turnaround}
+Express Gold LP Package   {!snippetVariable.goldlp_pricing}
+{!snippetVariable.goldlp_turnaround}
+ 
+Get Started:
+{!snippetVariable.lp_application}
+Additional Pricing Information:
+{!snippetVariable.lp_pricelink}
+Additional LP Information:
+{!snippetVariable.lp_edcenter}
+
+I recommend the Express Gold Package because it offers significant benefits. The Gold Package includes free preparation of your Tax ID application (for easy self-filing) OR a {!snippetVariable.ein_prep} discount toward LegalZoom&apos;s complete Tax ID Obtainment Service. Most importantly, it will expedite your filing process, reducing the waiting period to {!snippetVariable.goldlp_turnaround}. Other packages take {!snippetVariable.econlp_turnaround}.
+
+Also, you may want to consider using LegalZoom&apos;s Registered Agent Service. Setting up a registered agent is a state requirement for all LPs. LegalZoom&apos;s Registered Agent Service ensures professional handling of your company?s state correspondence and also helps ensure your privacy. We offer Registered Agent Services at an affordable rate of {!snippetVariable.ra_firstyrpackage}.
+
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at $biz_phone $biz_hours.
+
+Best regards, 
+
+[ Your Name ]
+{!snippetVariable.bizbsi_address}
+{!snippetVariable.bizbsi_phone}
+{!snippetVariable.bizbsi_fax}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

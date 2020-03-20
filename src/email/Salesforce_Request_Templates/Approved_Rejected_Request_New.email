@@ -1,0 +1,11 @@
+****ADJUSTMENT REQUEST UPDATE**** 
+
+Status: {!Salesforce_Request__c.Status__c}
+Order Number: {!Salesforce_Request__c.Order_Number__c}
+Adjustment Type: {!Salesforce_Request__c.Adjustment_Type__c} 
+Reason for Adjustment: {!Salesforce_Request__c.Reason_for_Adjustment__c}
+
+
+Please click the link below to view additional comments made on this request:
+------------------------------------- 
+ {!Salesforce_Request__c.Link}

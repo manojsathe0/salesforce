@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ls13</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>L&amp;S Logo Literal Element No Match</name>
+    <style>none</style>
+    <subject>L&amp;S Logo Literal Element No Match</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+We have received your logo. However, the US Patent and Trademark Office (USPTO) requires that the literal element contained within the logo be completely identical to the literal element listed in the application.  No additional words, letters or punctuation marks may appear on your logo if they are not listed on the application.  Your literal element as specified on LegalZoom&apos;s preliminary application is &quot;XXXXXXXXX &quot;.  However, the black-and-white logo you sent us displays the literal element &quot;XXXXXXXXX&quot;.  
+
+To resolve this issue, please reply to this email and select ONE of the following options:  
+
+1.  Submit a different logo that matches the literal element as specified on the application   
+2.  Amend the application to match the literal element displayed on the current logo 
+3.  Submit the logo and literal element as is. During examination of your application, if your assigned examining attorney raises questions regarding this matter, the applicant will be responsible for responding to the request with the appropriate information.
+
+To read more about the literal element, visit: http://legalzoom.force.com/LZPKB/articles/Answer/2396
+
+With this in mind, please reply to this email and let me know how you would like us to proceed with your application.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

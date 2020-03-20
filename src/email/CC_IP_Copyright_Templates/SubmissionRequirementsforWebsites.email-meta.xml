@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CRwebsite</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Submission Requirements for Websites</name>
+    <style>none</style>
+    <subject>Submission Requirements for Websites</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+
+There are two options for submission of materials to register your website: 
+
+Option 1: 
+
+A computer disk (clearly labeled with the title and author) containing the entire work and in addition, representative portions of the authorship being registered in a format that can be examined by the Office (printout, audiocassette, or videotape). 
+
+If the work is short (e.g., 5 pages of text or artwork, or 3 minutes of music, sounds, or audiovisual material), deposit the entire work and confirm that it is complete. If the work is longer, deposit 5 representative pages or 3 representative minutes. This identifying material should include the title and author, and the copyright notice, if any.
+
+OR
+
+Option 2: 
+
+A reproduction of the entire work, regardless of length. Send the format appropriate for the authorship being registered, for example, a printout, audio cassette, or videotape. No computer disk is required.
+
+For further information, please visit the following link:  
+
+http://www.copyright.gov/circs/circ66.html
+
+Please send your materials to us by mail or courier.  Materials can be sent to the following address:
+
+{!snippetVariable.ip_address_cr_materials}
+
+Registration is for the exact copy of the work submitted.  Once you have submitted your website content to the Library of Congress, any changes made afterwards would need to be filed with the Library of Congress on a separate application. 
+
+Copyright does not protect any future work or changes. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

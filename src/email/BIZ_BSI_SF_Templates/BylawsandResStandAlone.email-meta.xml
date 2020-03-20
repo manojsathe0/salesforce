@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>brbsi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Bylaws and Res (Stand Alone)</name>
+    <style>none</style>
+    <subject>Bylaws and Res (Stand Alone)</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs. In regard to your inquiry, LegalZoom can assist you to create your Corporation?s Bylaws and Resolutions and make the process easy for you. The Bylaws and Resolutions are your Corporation?s internal documents that contain the operating rules and regulations of your Corporation. The documents also contain important information such as ownership distribution, management structure, indemnification clause, and banking resolution.
+
+For your convenience, I have provided a summary of the fees and the link to get started below.
+
+BYLAWS AND RESOLUTIONS
+Standard Package | $99.00 + shipping (7-10 business days)
+Rush Package | $199.00 (3-5 business days)
+
+TO GET STARTED:
+http://www.legalzoom.com/additional-business-services/stand-alone-bylaws-resolutions.html
+
+Please feel free to contact us at (888) 381-8758 if you have any further questions.  Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}&lt;br/&gt; 
+{!User.Title}&lt;br/&gt; 
+{!User.CompanyName}&lt;br/&gt; 
+{!User.Address}&lt;br/&gt; 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

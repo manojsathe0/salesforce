@@ -1,0 +1,429 @@
+<apex:page controller="IADHighlightsPanelContactController" showHeader="true"  docType="html-5.0" standardStylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:includeScript value="/support/console/35.0/integration.js"/>
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" /> 
+         <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.lziad, 'main.css')}"/>
+
+        <script type = "text/javascript">
+           
+            var boxId,oauthId,userId,appURL,appId;
+            var listener = function (result) {
+              //location.reload(true);
+                refreshPage();
+            };
+            sforce.console.addEventListener('VerifiedEvent', listener);
+
+            function displayModal(theId){
+                console.log('displaying modal');
+                document.getElementById(theId).style.display="block";
+            }
+            function hideModal(theId){
+                console.log('hiding modal');
+                document.getElementById(theId).style.display="none";
+            }
+            function launchPasswordRequest()
+            {
+                displayModal('passwordResetPopover');
+               
+            }
+            window.onscroll = function (event) {
+              window.scrollTo(0, 0);
+             
+            }
+            
+            function openPrimaryContact() 
+            {
+               if('{!orderId}' != null && '{!orderId}' != '')
+               {
+                  sforce.console.fireEvent('FocusContactPage', '{!contactId}', null);
+                  sforce.console.openPrimaryTab(null, '/{!contactId}',true,'{!contactName}');
+                  
+               }
+            }
+            var pageFocusListner = function (result) {
+                
+                if(result.message == '{!contactId}' && ('{!orderId}' == '' || '{!orderId}' == null))
+                {
+                   sforce.console.getEnclosingPrimaryTabId(focusMe);
+                }
+            };
+
+            var focusMe = function focusMe(result) {
+                var tabId = result.id;
+                sforce.console.focusPrimaryTabById(tabId, null);
+                
+            };
+
+            //Add a listener for the 'SampleEvent' event type
+            sforce.console.addEventListener('FocusContactPage', pageFocusListner);
+
+
+            $(document).ready(function() {
+                var index = 0;
+                $(".tel").css("display", "none");
+                $(".tel").each(function(index) {
+                    $(this).css("display", "none");
+                    $next = $(this).next("span");
+                    $next.css("display", "inline");
+                    var timerId = setInterval(function(){
+                       if(index>=50){ //50 = 5 seconds
+                           clearInterval(timerId);
+                       }
+                       $next.css("display", "inline");
+                       $(this).css("display", "none");
+                    },100);
+                });
+            });
+            
+            appId = '{!contactService.appId}';
+            appURL = '{!contactService.appURL}';
+            function openBoxPage()
+            {
+                var boxURL = appURL+"/#/root?aid="+appId+"&st=active&imp=false&cid="+userId+"&bid="+boxId+"&at="+oauthId; 
+                window.open(boxURL,"_blank","resizable=yes,width=800,height=600");
+            }
+            window.onload = function() 
+            {
+              populateCustomer();
+            };
+            function hideAdvisory(theId){
+                document.getElementById(theId).style.display="none";
+                closeAdvisory();
+            }
+            
+
+        </script>
+        <style>
+            body {
+              overflow: hidden;
+              -ms-scroll-limit: 0 0 0 0;
+            }
+            #advPopover{display:none;
+                        position:fixed;
+                        right: 12px;
+                        top:30px;
+                        z-index:1200;}
+           #passwordResetPopover{display:none;
+                                position:fixed;
+                                right: 25px;
+                                top:6px;
+                                z-index:1200;}
+
+            #background{position:fixed; z-index:999;}
+             #theAdvisory select {
+              border: 1px solid #808080;
+            }
+        </style>
+          </head>
+<body>            
+<div class = "slds">
+
+        <apex:form id="popUpForms" >
+                <apex:outputPanel rendered="{!passwordReset}">
+                  <script type = "text/javascript">
+                      launchPasswordRequest();
+                      setTimeout(function(){hideModal('passwordResetPopover');resetPasswordFlag();}, 2000);
+                  </script>
+                </apex:outputPanel>
+                 <apex:actionFunction name="resetPasswordFlag" action="{!resetPasswordFlag}" rerender="popUpForms"  />
+                 <apex:actionFunction name="resetPassword" action="{!resetPassword}" rerender="popUpForms" status="statusUpdatingPassword" />
+                 <apex:actionFunction name="updateAdv" action="{!updateAdv}" rerender="advisoryPanel,popUpForms" />
+                 <apex:actionFunction name="closeAdvisory" action="{!closeAdvisory}" rerender="popUpForms" />
+                <apex:outputPanel id="advPopover" rendered="{!NOT(ISNULL(contactId))}">
+                     <div id ="advPopover">
+                        <div class="slds-popover slds-nubbin--top-right" role="dialog" style="float:right !important">
+                                <div class="slds-popover__body" style = "padding:0px;">
+
+                                        <div class="slds-p-around--medium slds-grid slds-grid--align-center slds-wrap" style = "padding:8px;">
+
+                                            <div class="slds-col--padded slds-size--1-of-1">
+                                                <div class="slds-form-element">
+
+                                                  <div class="slds-form-element__control">
+                                                   <div class="slds-select_container">
+                                                      <apex:inputField value="{!contacts[0].Advisory__c}" styleClass="slds-select" id="theAdvisory"/>
+
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slds-col--padded slds-size--1-of-2">
+                                                  <br />
+                                                  <div class="slds-form-element">
+                                                    <button onclick="hideAdvisory('advPopover'); return false;" class="slds-button slds-button--neutral">Cancel</button>
+                                                  </div>
+                                            </div>
+                                            <div class="slds-col--padded slds-size--1-of-2">
+                                                  <br />
+                                                  <div class="slds-form-element">
+                                                   <button onclick ="updateAdv(); return false;" class="slds-button slds-button--neutral slds-button--brand">Update</button>
+                                                  </div>
+                                            </div>
+
+                                        </div>
+                                </div>
+                              </div>
+                      <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                      </div>
+                    </apex:outputPanel>
+                    <div id ="passwordResetPopover">
+                        <apex:outputPanel id="passwordResetPopover" rendered="{!NOT(ISNULL(contactId))}">
+                         <div class="slds-popover" role="dialog" style="float:right !important">
+                              <div class="slds-popover__body" style = "padding:2px 12px;">
+
+                                  <apex:outputPanel rendered="{!NOT(passwordReset)}">
+                                        <p>Send Forgot Password email to <strong>{!contacts[0].Email}</strong>?</p>
+                                           <apex:actionStatus id="statusUpdatingPassword">
+                                              <apex:facet name="start">
+                                                  <div class="slds-spinner_container">
+                                                  <div class="slds-spinner slds-spinner--small" role="alert">
+                                                    <span class="slds-assistive-text">Loading</span>
+                                                    <div class="slds-spinner__dot-a"></div>
+                                                    <div class="slds-spinner__dot-b"></div>
+                                                  </div>
+                                                </div>
+                                              </apex:facet>
+                                          </apex:actionStatus>
+                                    </apex:outputPanel>
+                                    <c:IADMessageBox theMessages="{!contactService.iadMessages}" />
+                                    <div class="slds-p-around--medium slds-grid slds-grid--align-center slds-wrap" style = "padding:0px;">    
+                                          <apex:outputPanel rendered="{!NOT(passwordReset)}">
+                                              <div class="slds-col--padded slds-size--1-of-2">
+                                                    <div class="slds-form-element">
+                                                     <button onclick ="resetPassword(); return false;" class="slds-button slds-button--neutral slds-button--brand">Confirm</button>
+                                                    </div>
+                                              </div>
+                                          </apex:outputPanel>
+                                          
+                                          <div class="slds-col--padded slds-size--1-of-2">
+                                                <div class="slds-form-element">
+                                                   <button onclick="hideModal('passwordResetPopover');resetPasswordFlag(); return false;" class="slds-button slds-button--neutral">Close</button>
+                                                </div>
+                                          </div>
+                                          
+                                     </div>
+                                </div>
+                         </div>
+                         <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                        </apex:outputPanel>
+                      </div>
+                      
+
+              
+          </apex:form>
+        <apex:form id="theMessages">
+            <div style="z-index:1000">
+                <c:IADMessageBox theMessages="{!contactService.iadMessages}" rendered="{!contactService.iadMessages.size>0}"/>
+            </div>
+        </apex:form>
+    <apex:form id="theForm" rendered="{!NOT(ISNULL(contactId))}">
+
+                  <apex:outputPanel id="theJSPanel">
+                    <script type = "text/javascript">
+                      boxId = '{!contactService.boxId}';
+                      userId = '{!contactService.userId}';
+                      oauthId = '{!contactService.oauthToken}';
+                                          
+                    </script>
+                  </apex:outputPanel>
+                  <apex:actionFunction name="populateCustomer" action="{!populateCustomer}" rerender="theForm" status="statusUpdating" />
+                 <apex:actionFunction name="refreshPage" action="{!refreshPage}" rerender="theForm" />
+                
+               
+            
+          <!-- Lightning Grid Pattern Top Row will have the Actions/Results-->
+            
+          <div class="slds-text-body--small slds-m-top--xx-small">
+              <div class = "slds-col">
+                    <apex:outputPanel rendered="{!contactService.hasSecurityQuestion}">
+                        <div class="slds-dropdown-trigger slds-text-align--left">
+                            <apex:image url="{!$Resource.SecurityQuestionActive}" style="cursor:pointer;"/>
+                             <div class="slds-dropdown slds-nubbin--top slds-dropdown--menu" style = "max-width:550px;">
+                                  <ul class="slds-dropdown__list" role="menu" style = "padding-left:265px;width:550px;">
+                                    
+                                          <li id="menu-0-0" class="slds-dropdown__item">
+                                             <strong>Question :</strong> <span style= "word-wrap: break-word;">
+                                               {!contactService.customer.securityQuestion.question}
+                                             </span>
+                                          </li>
+                                          <li id="menu-0-1" class="slds-dropdown__item">
+                                             <strong>Answer :</strong> {!contactService.customer.securityQuestion.answer}
+                                          </li>
+
+                                      
+                                   </ul>
+                             </div>
+
+                        </div>
+                    </apex:outputPanel>
+                    
+                    <apex:image url="{!$Resource.SecurityQuestionInactive}" rendered="{!NOT(contactService.hasSecurityQuestion)}"/>
+                    
+                    <apex:outputPanel id="verifySection" style="padding-left:2px;">
+                      <apex:outputPanel rendered="{!NOT(isCustomerVerified)}">
+                          <span>Not Verified</span>
+                      </apex:outputPanel>
+                      <apex:outputPanel rendered="{!isCustomerVerified}">
+                          <span  style="color:green">Verified</span>
+                      </apex:outputPanel>
+                       <script type="text/javascript">
+                      $(document).ready(function() {
+                            var index = 0;
+                            $(".tel").css("display", "none");
+                            $(".tel").each(function(index) {
+                                $(this).css("display", "none");
+                                $next = $(this).next("span");
+                                $next.css("display", "inline");
+                                var timerId = setInterval(function(){
+                                   $next.css("display", "inline");
+                                   $(this).css("display", "none");
+                                },100);
+                            });
+                        });
+                      </script>
+                  </apex:outputPanel>
+
+
+                 <div style="float:right; {!IF(customerLogin.size==0, 'display:none', '')}">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-large-size--1-of-4"></div>
+                    <div class="slds-large-size--1-of-4  slds-m-right--xx-small">
+                        <apex:outputPanel rendered="{!authorizedContacts.size=0 && customerLogin.size!=0}">
+                            <apex:outputLink value="/apex/IADContactManager?fkUser={!customerLogin[0].Customer_ID__c}&CustomerLoginId={!customerLogin[0].ID}">                           
+                                <span>Authorized Contact</span>
+                            </apex:outputLink>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!customerLogin.size=0}">Authorized Contact</apex:outputPanel>
+                        <apex:outputPanel rendered="{!authorizedContacts.size!=0 && customerLogin.size!=0}">
+                            <div class="slds-dropdown-trigger slds-text-align--right" >
+                                <div class="slds-col"> 
+                                    <apex:outputLink value="/apex/IADContactManager?fkUser={!customerLogin[0].Customer_ID__c}&CustomerLoginId={!customerLogin[0].ID}">
+                                        <span>Authorized Contact</span>
+                                    </apex:outputLink>
+                                </div>
+                                <div class="slds-dropdown slds-nubbin--top slds-dropdown--menu">
+                                    <ul class="slds-dropdown__list" role="menu">
+                                        <apex:repeat value="{!authorizedContacts}" var="theContact">
+                                            <li id="menu-0-0" class="slds-dropdown__item">
+                                                <apex:outputLink value="{!theContact.Contact__r.ID}">{!theContact.Contact__r.Name}</apex:outputLink>
+                                            </li>
+                                        </apex:repeat>
+                                     </ul>
+                                </div>
+                            </div>
+                        </apex:outputPanel>    
+                    </div>
+                   
+                    <span>|</span>
+                    <div class="slds-large-size--1-of-4  slds-m-left--xx-small">
+                        <apex:outputLink value="/apex/IADContactManager?id={!contacts[0].Id}">Edit Contact</apex:outputLink>
+                    </div>  
+                    
+                     <span>&nbsp;|</span>
+                    <apex:outputPanel styleClass="slds-large-size--1-of-4  slds-m-left--xx-small" id="advisoryPanel">
+                        <a onclick="displayModal('advPopover'); return false;"  href="#" style="{!IF(currentAdvisory != null,'color:red;','')}">Advisory</a>
+                     </apex:outputPanel>
+
+                </div>
+              </div>
+              
+              
+              </div>
+                  
+           
+          </div>
+             
+         <!-- Lightning Grid Pattern Middle Row to have the Contact Details, this wrap if needed -->
+         <div class="slds-col slds-align-middle slds-m-top--medium">
+         
+         <!-- Changes per stories: B-24345, B-24341 LifePlan -->
+         
+         	<apex:outputPanel rendered="{!contacts[0].Account.Life_Plan__c}">
+         		<p class="slds-text-body--medium slds-m-bottom--medium">
+         			<div class = "slds-dropdown-trigger slds-text-align--left" aria-expanded="true" >
+	                    <apex:image url="{!$Resource.BoxIcon}" rendered="{!contactService.hasBoxAccount}" onClick="openBoxPage();" style="cursor:pointer;"/>
+	                    <apex:image url="{!$Resource.BoxIconInactive}" rendered="{!NOT(contactService.hasBoxAccount)}"/>
+	                        
+	                    <a onclick = "openPrimaryContact();return false;" style = "cursor:pointer;text-decoration:none;background-color: #0070d2; border: 3px solid #0070d2; color: white;padding-left: 8px;padding-right: 8px;border-radius: 4px;display: inline-block;line-height: 28px;" title = "Click to load the Contact page">{!contacts[0].Name}</a>
+	   					<div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left">
+							<apex:outputText value="Employee #{!IF(ISBLANK(contacts[0].Account.Employee_Id__c), '-1', contacts[0].Account.Employee_Id__c)}"></apex:outputText>
+	       				</div> 
+	   				</div>   	
+   					
+                	&nbsp; 
+                	
+        			<div class = "slds-dropdown-trigger slds-text-align--left" aria-expanded="true" >	 
+                        <apex:outputText style="cursor:help;text-decoration:none;border: 3px solid #0070d2;padding-left: 8px;padding-right: 8px;border-radius: 4px;display: inline-block;line-height: 28px;" value="{!contacts[0].Account.Life_Plan_Company__c}"/>
+                        <div class="{!IF(thereIsCompanyAlert, 'slds-dropdown slds-dropdown--left slds-nubbin--top-left', 'display:none')}">
+                        	<apex:outputText style="white-space:nowrap;" rendered="{!thereIsCompanyAlert}" value="{!companyAlert}"/>
+                        </div> 
+                    </div>  
+                </p>
+         	</apex:outputPanel>
+         
+         <!-- END Changes per stories: B-24345, B-24341	LifePlan -->
+         
+          
+         
+         <!-- No LifePlan -->
+         <apex:outputPanel rendered="{!NOT(contacts[0].Account.Life_Plan__c)}">
+         	<p class="slds-text-body--medium slds-m-bottom--medium">
+         		<apex:image url="{!$Resource.BoxIcon}" rendered="{!contactService.hasBoxAccount}" onClick="openBoxPage();" style="cursor:pointer;"/>
+                <apex:image url="{!$Resource.BoxIconInactive}" rendered="{!NOT(contactService.hasBoxAccount)}"/>
+                <a onclick = "openPrimaryContact();return false;" style = "cursor:pointer;text-decoration:none;" title = "Click to load the Contact page">{!contacts[0].Name}</a> 
+			</p>
+         </apex:outputPanel>
+         
+         <!-- END No LifePlan -->
+         
+
+           
+                    <p class="slds-text-body--small slds-m-bottom--xx-small">
+                        <span class="slds-icon__container slds-theme--inverse slds-icon-standard-email slds-m-right--xx-small">
+                            <svg aria-hidden="true" class="slds-icon slds-icon--x-small" viewBox="0 0 24 24">
+                                <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'assets/icons/standard-sprite/svg/symbols.svg#email')}"></use>-->
+                                <path  d='{!emailIcon}'   />
+                            </svg>
+                            <span class="slds-assistive-text">Email Icon</span>
+                        </span> <a onClick ="launchPasswordRequest();return false;" style="cursor:pointer; {!IF(customerLogin.size==0, 'display:none', '')}">{!contacts[0].Email}</a>
+                        <span style="{!IF(customerLogin.size==0, '', 'display:none')}">{!contacts[0].Email}</span>
+                    </p>
+                    <p class="slds-text-body--small slds-m-bottom--xx-small">
+                        <span class="slds-icon__container slds-theme--inverse slds-icon-action-call slds-m-right--xx-small">
+                            <svg aria-hidden="true" class="slds-icon slds-icon--x-small"  viewBox="0 0 24 24">
+                                <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'assets/icons/standard-sprite/svg/symbols.svg#call')}"></use>-->
+                                <path  d='{!callIcon}'/>
+                            </svg>
+                            <span class="slds-assistive-text">Call Icon</span>
+                        </span>
+                        <support:clickToDial number="{!contacts[0].HomePhone}" entityId="{!contacts[0].Id}" params="" />
+                    </p>
+                    <p class="slds-text-body--small slds-m-bottom--xx-small" >
+                        <span class="slds-icon__container slds-theme--inverse slds-icon-action-map slds-m-right--xx-small" >
+                            <svg aria-hidden="true" class="slds-icon slds-icon--x-small"  viewBox="0 0 24 24">
+                                <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'assets/icons/standard-sprite/svg/symbols.svg#map')}"></use>-->
+                                <path d='{!mapIcon}' />
+                            </svg>
+                            <span class="slds-assistive-text">Map Icon</span>
+                        </span>
+                        <span align="right">
+                        
+                            {!contacts[0].MailingStreet}
+                            {!contacts[0].MailingCity}
+                            {!contacts[0].MailingState}
+                            {!contacts[0].MailingPostalCode}
+                        </span>
+                       
+                    </p>
+                </div>
+
+            
+      
+    </apex:form>
+     </div>
+   </body>  
+</html>
+</apex:page>

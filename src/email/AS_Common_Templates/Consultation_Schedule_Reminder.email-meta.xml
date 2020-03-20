@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>schremind</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Consultation Schedule Reminder</name>
+    <style>none</style>
+    <subject>Consultation Schedule Reminder</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+ 
+Thank you for being a LegalZoom customer, and for using our Legal Plan. Our records indicate that you have requested a consultation, but that you have not yet scheduled a time and date for that consultation. 
+ 
+Please click on the link below to schedule your consultation:
+
+https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess=
+ 
+1. After logging in click on the Business Advantage/Legal Advantage tab, 
+2. Click on schedule appointment
+3. Click on View Schedule (or Quick Call back if available)
+4. Click the time and date desired
+5. Confirm your appointment
+ 
+All unscheduled consultations will be cancelled after 2 business days, and will have to be resubmitted.
+ 
+Please feel free to contact me at 877.818.8787 (M-F, 6:00am-7:00pm PST) should you have any questions.  
+ 
+ 
+{!snippetVariable.bestregardstext}
+
+{!snippetVariable.thelegalzoomteamline}
+
+{!snippetVariable.asdphone} | {!snippetVariable.asdfax} | {!snippetVariable.lacemail}
+{!snippetVariable.lz_website} | {!snippetVariable.lz_address}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>ap2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TM joint individuals info missing</name>
+    <style>none</style>
+    <subject>Response Required: LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+At this time, we are unable to proceed with your trademark application. You have selected one class on your order; however, based on guidelines from the U.S. Patent and Trademark Office (USPTO), your products (goods) and services description appears to cover multiple classes. To list more than one class on your application, additional fees will apply.
+
+Please review the information below for a breakdown of your original description and the corresponding class numbers.
+
+[enter descriptions here]
+
+To resolve this issue, reply to this email and select ONE of the following options:
+
+1. Narrow the list of products and services protected by the trademark to ONE class, or
+2. Continue with two or more of the classes (a charge of $385 per additional class will apply -- please confirm to charge your credit card on file).
+3. Submit the application with your current description. You may have the opportunity to resolve these issues with your assigned USPTO examiner during the examination period.
+4. Put your order on hold and consult with an attorney*
+
+If you would like to narrow your products and services to one class, reply to this email and let us know which products or services you would like to include on the application. If you would like to file for additional classes, please also reply to this email authorizing your payment to your credit card on file.
+
+For more information about classes of products and services, click on the following link: {!snippetVariable.tm_gs_classes_list}
+
+***We will not move forward with your order until we receive your response and the issue has been resolved.***
+
+{!snippetVariable.ip_gs_closing}
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+Best regards,
+
+The LegalZoom Team
+* {!snippetVariable.tmoa_bap} 
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

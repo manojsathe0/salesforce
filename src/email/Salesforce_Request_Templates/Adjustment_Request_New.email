@@ -1,0 +1,26 @@
+****NEW ADJUSTMENT REQUEST FOR APPROVAL NOTIFICATION**** 
+
+Order Number: {!Salesforce_Request__c.Order_Number__c} 
+Adjustment Type: {!Salesforce_Request__c.Adjustment_Type__c} 
+Reason for Adjustment: {!Salesforce_Request__c.Reason_for_Adjustment__c}
+
+Subject: {!Salesforce_Request__c.Name} 
+
+Description: 
+
+{!Salesforce_Request__c.Description__c} 
+
+To Approve or Deny this Adjustment Request, please click the link below OR reply to this email with the first line of the email body containing one of the following words:
+
+approve
+approved
+yes
+reject
+rejected
+no
+
+------------------------------------- 
+{!ApprovalRequest.Internal_URL}
+
+External Link: 
+{!ApprovalRequest.External_URL}

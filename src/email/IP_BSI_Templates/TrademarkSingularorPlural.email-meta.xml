@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TMorTMs</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Trademark ? Singular or Plural</name>
+    <style>none</style>
+    <subject>Trademark ? Singular or Plural</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent order.
+
+Whether to register the mark as a singular word or a plural is entirely up to you.  One thing to keep in mind is that when you apply for a Trademark, you will have to show to the trademark office that you&apos;re either (1) Currently using mark in commerce (provide proof of use now) or (2) have a real intent to use the mark in commerce (provide proof of use later). 
+
+Not only you will need to show you&apos;re using the mark in commerce, but you will also have to submit the proof of how it is used in commerce.  The proof (advertisement flyer or a picture of the product with the mark on it) must match the mark on the application.  In other words, if you are applying for a trademark &quot;ABC,&quot; the proof of use you will submit to the United States Patent and Trademark Office cannot show &quot;ABCs&quot;, as it does not match the Trademark on your application. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.
+
+{!snippetVariable.ipclosingline}
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

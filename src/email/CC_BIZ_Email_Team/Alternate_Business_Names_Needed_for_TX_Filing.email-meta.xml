@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>E509</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Alternate Business Names Needed for TX Filing</name>
+    <style>none</style>
+    <subject>Alternate Business Names Needed for TX Filing</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+After conducting a search of your proposed business name with the state of Texas, we learned that your proposed business name conflicts with another business name registered in the state of Texas.
+
+ -- Proposed business name: [proposed business name]
+ -- Conflicting business name: [existing business name]
+
+To resolve this problem and continue processing your order, please reply to this email and select ONE of the following options:
+
+1.  Proceed with your proposed business name. If you choose this option, it could result in the rejection of your business name by the state and a delay in your order;
+
+2.  Proceed with the alternate business name your provided. Your alternate business name [alt business name] is currently available with the state;
+
+3.  Have us conduct a new search for a different business name. Email us up to three alternate business names in order of priority to: alternatenames@legalzoom.com. Be sure to reference your order number on the subject line. We will automatically file your formation documents with the first available business name; or
+
+4.  Obtain written consent to use the your proposed business name from the holder of the conflicting name. Complete the attached Form TX-509 as follows:
+
+4a. Item 1: Enter the name of the entity or individual who holds the existing business name
+
+4b. Item 2: Enter your proposed business name
+
+4c. The form must be signed on behalf of the person who holds the existing name. If the existing name is held by an entity, an individual who is authorized to act on behalf of the entity must sign the form.
+
+4d. The company’s listed contact information is:
+
+i. [Company name]
+ii. [RA address]
+
+4e. Once you obtain consent, return the form to LegalZoom via email, fax or mail:
+
+i. Email: bzsupport@legalzoom.com (include your order number in the subject line)
+ii. Fax: (323) 337-0743 [Attn: Order #0000000]
+iii. Mail: LegalZoom [Order #: 0000000] 101 N Brand Blvd, 11th Floor Glendale, CA 91203
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 5 a.m.–8 p.m. PT and weekends from 7 a.m.–4 p.m. PT.
+
+We appreciate your prompt attention to this matter.
+
+{!snippetVariable.ccsincerely}
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

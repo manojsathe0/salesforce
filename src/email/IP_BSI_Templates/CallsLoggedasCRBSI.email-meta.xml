@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>crbsi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Calls Logged as CR BSI</name>
+    <style>none</style>
+    <subject>Calls Logged as CR BSI</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+Copyrighting your creative work protects it from unauthorized use. With a registered Copyright, you control how your work is reproduced, distributed and presented publicly.  LegalZoom will forward your materials to the Library of Congress to complete the Copyright registration. 
+
+LegalZoom&apos;s preparation cost is $114 dollars. All Copyright applications require an additional $35 dollar government filing fee.
+
+Additional information is available online at LegalZoom&apos;s Copyright Frequently Asked Questions: http://www.legalzoom.com/copyrights-guide/copyrights-definition.html.
+
+To view or file Copyright application, please click on the link below: 
+
+http://www.legalzoom.com/legal-copyrights/copyrights-pricing.html
+
+All Copyright applications have a 7-10 business day processing time frame, after we receive a copy or copies of your work.
+
+Online payments can be made by Visa, Mastercard, American Express or Discover.
+
+Once you submit your application, please print your order confirmation page in order to view the next steps to complete your order. 
+
+Please feel free to contact our {!snippetVariable.ipbsi_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ip_phone}.  Our {!snippetVariable.ipbsi_dept_full} business hours are {!snippetVariable.ip_hours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

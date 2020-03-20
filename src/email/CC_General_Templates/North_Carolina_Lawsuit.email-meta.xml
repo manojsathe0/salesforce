@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>nclawsuit</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>North Carolina Lawsuit</name>
+    <style>none</style>
+    <subject>North Carolina Lawsuit</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry. We appreciate your feedback and the opportunity to serve you better.
+
+LegalZoom has worked very hard to bring the protections of the law to all Americans and small businesses. Please be assured that there are no issues in the lawsuit against the North Carolina State Bar that question the quality of any documents our customers create on LegalZoom and no questions as to the validity of any documents purchased.
+
+If you have general questions about a LegalZoom product or service, or if you have questions about an order you placed, please call our Customer Care team at (800) 773-0888 Monday-Friday from 6 a.m.- 7 p.m. PT.
+
+Sincerely,
+
+LegalZoom Customer Care Team
+1.800.773.0888 | 101 N. Brand Blvd., 10th Floor, Glendale, CA 91203
+www.LegalZoom.com</textOnly>
+    <type>custom</type>
+</EmailTemplate>

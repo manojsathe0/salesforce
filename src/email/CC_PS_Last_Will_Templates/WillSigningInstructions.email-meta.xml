@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LWTsigning</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Will Signing Instructions</name>
+    <style>none</style>
+    <subject>Will Signing Instructions</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+Here are the instructions on finalizing your Last Will:
+
+1. Sign all signature lines in the presence of witnesses. Please note that you DO NOT NEED to notarize your Will unless you live and reside in the State of Louisiana.  
+
+2. Your witnesses will also have to sign the document(s).
+
+3. Have you and your witnesses sign the Self-Proving Affidavit.  Please be aware that the Self-Proving Affidavit is not a part of your Will. It is a separate document. The sole purpose of having the affidavit signed is to avoid having your witnesses testify in court that you had signed your Will in front of them, should your Will be subject to probate.
+
+4. Store your signed document in a safe place and notify the necessary people of its existence and location. People that you may want to notify include your appointed executors, guardians, trusted family and friends, attorneys, and CPAs. 
+
+For California, Maryland, Ohio, Vermont, and District of Columbia customers only: The self-proving feature does not require a separate affidavit. Instead, the signature of the witnesses is sufficient to have the Will admitted into probate, unless there is a challenge made against the Will. 
+
+No further steps are necessary to make a California Will self-proving.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

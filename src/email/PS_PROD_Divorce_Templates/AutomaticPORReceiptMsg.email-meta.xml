@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>por1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Automatic POR Receipt Msg</name>
+    <style>none</style>
+    <subject>Automatic POR Receipt Msg</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+We have received your requested changes. Your order will be completed and shipped within 3-5 business days.
+
+If you have any questions, please reply to this email, or call our {!snippetVariable.cc_dept_full} toll free at {!snippetVariable.ccphone} {!snippetVariable.cchours}. We appreciate your business and look forward to serving you in the future.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

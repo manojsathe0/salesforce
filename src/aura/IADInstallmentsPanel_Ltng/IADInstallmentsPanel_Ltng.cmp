@@ -1,0 +1,41 @@
+<aura:component controller="IADInstallmentsPanelController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="installmentService" type="Object" />
+    <aura:attribute name="hasInstallment" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />                              
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <div class="slds-card">
+        <lightning:spinner aura:id="mySpinner" />
+        <div style="{!v.hasInstallment ? '' : 'display:none'}"> 
+            <aura:iteration items="{!v.installmentService.theInstallmentsWrapper.installments}" var="installment">
+                <div class="slds-m-top--small slds-text-body--small">
+                    <div>
+                        <span class="slds-text-body--small" style="float:right">
+                            <img src="{!$Resource.Payment_Expired}" style="{!installment.hasPaymentProfileExpired ? '' : 'display:none;'}" title="Payment Method Has Expired" id="imageDisplay"/>
+                        </span>
+                        <a styleClass="slds-text-body--x-small" title="Click to open installment" data-installmentdetail ="{!installment.installmentId}"  onclick="{!c.openinstallmentdetail}"> <!-- onclick="openinstallment('{!installment.installmentId}', '{!installment.installmentId}'); return false;" -->
+                            <b><u id="installmentId"> {!installment.installmentId} </u></b>
+                        </a>
+                    </div>
+                    <div id="dateInString">
+                        <!-- <apex:outputtext value="{!installment.adjDueDateInString}" /> -->
+                        {!installment.adjDueDateInString}
+                    </div>
+                    <div id="amountDue">
+                        <!-- <apex:outputtext value="${!installment.totalDueAmount}" /> -->
+                        ${!installment.totalDueAmount}
+                    </div>
+                </div>
+                <br />
+            </aura:iteration>
+        </div>
+        
+        <div style="{!v.hasInstallment ? 'display:none' : ''}">
+            <br /><br /><br />
+            <div align="center">
+                <lightning:icon iconName="standard:approval" size="small" alternativeText="approval Icon"  id="approvalIcon"/>
+                <span class="slds-assistive-text">medium approval Icon</span>
+            </div>
+            <p class="slds-text-heading slds-text-align--center"  id="noInstLabel">no installments</p>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>pap exp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Prov Patent Expired</name>
+    <style>none</style>
+    <subject>Prov Patent Expired</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Provisional Applications for Patent cannot be extended or renewed beyond their 12-month span. Once that 12 month period is reached, the provisional for that term is over. If you choose to file another provisional application for the same invention after the end of a provisional period, you would begin a new 12-month provisional period from the date of your new filing.
+
+Once your provisional period has ended, and until you file a new application—provisional or non-provisional—you may no longer label your invention “Patent Pending.”
+
+To file a new Provisional Application for Patent, you will need to submit a new order through our website here.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

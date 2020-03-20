@@ -1,0 +1,105 @@
+<apex:page standardstylesheets="false" controller="PCI_LocalhostController"  showheader="false" sidebar="false" doctype="html-5.0" applybodytag="false" >
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"></link>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css"></link>
+        <link rel="stylesheet" href="styles.css"></link>
+        <link rel="stylesheet" href="animate.css"></link>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+    
+        
+        <script>
+         
+        var SFbaseURL='{!SFbaseURL}';
+        console.log('sfbaseURL from VF'+SFbaseURL);       
+        var PCIbaseURL= '{!PCIbaseURL}';
+        console.log('PCIbaseURL from VF'+PCIbaseURL);
+        var pauseURL = PCIbaseURL+'recording/pause';
+        var resumeURL = PCIbaseURL+'recording/resume';
+        var isRunning = PCIbaseURL+'isrunning';
+       
+		//var lexOrigin = "https://legalzoom--qa.lightning.force.com";
+		//var lexOrigin =SFbaseURL;
+//listening to the event from the component when agent tries to enter the credit card number
+        window.addEventListener("message", function(event) {
+             var lexOrigin;
+            if(event.data !== null && event.data !== ''){
+                lexOrigin=event.data.payload;
+            }
+            console.log('lexOrigin-->'+lexOrigin);
+            if (event.origin !== lexOrigin ) {
+                // Not the expected origin: reject message
+                return;
+            }
+            if(event.data.name === "Pause"){
+                //alert('event.data.name: '+event.data.name);
+                $.ajax({
+                    //url : "http://localhost:5080/isrunning",
+                    url : isRunning,                    
+                    type: "GET",
+                    dataType: 'json',
+                    success:function(status){
+                        // alert("Server is Running");
+                        $.ajax({
+                            //url: "http://localhost:5080/recording/pause",
+                            url : pauseURL,
+                            type: 'GET',
+                            dataType: 'json', // added data type
+                            success: function(res) {
+                                console.log('inside server running'+JSON.stringify(res));                                                        
+                                //alert(JSON.stringify(res));                         
+                                var payload=JSON.stringify(res);
+                                var message = {
+                                    name: "Pause",
+                                    payload: payload
+                                };
+                                parent.postMessage(message, lexOrigin);
+                            }
+                        }); 
+                    },
+                    error:function(status){
+                        //alert("Server is not running");
+                         console.log('is running: '+JSON.stringify(status));
+                        //alert(JSON.stringify(status));
+                        var message = {
+                                    name: "Pause",
+                                    payload: JSON.stringify(status)
+                                };
+                        parent.postMessage(message, lexOrigin);
+                    }
+                });
+                
+             
+            }
+            if(event.data.name === "Resume"){
+                $.ajax({
+                    // url: "http://localhost:5080/recording/resume", 
+                        url : resumeURL,
+                        type: 'GET',
+                        dataType: 'json', // added data type
+                        success: function(res) {
+                            console.log(JSON.stringify(res));
+                            //alert(JSON.stringify(res));                         
+                            var payload=JSON.stringify(res);
+                            /*var message = {
+                                name: "Localhost",
+                                payload: payload
+                            };
+                            parent.postMessage(message, lexOrigin);*/
+                        }
+                    });
+            }
+            
+        }, false);
+            
+     
+        </script>
+    </body>
+    
+    </html>
+</apex:page>

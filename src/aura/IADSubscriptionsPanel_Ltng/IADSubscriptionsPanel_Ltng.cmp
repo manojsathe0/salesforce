@@ -1,0 +1,54 @@
+<aura:component controller="IADSubscriptionsPanelController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="orderId" type="String" />
+    <aura:attribute name="customerId" type="String" />
+    <aura:attribute name="subscriptionService" type="Object" />
+    <aura:attribute name="orderIdEntityNameMap" type="List" />
+    <aura:attribute name="hasSubscriptions" type="Boolean" default="false" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <div class="slds-card">
+        <lightning:spinner aura:id="mySpinner" />
+        <div style="{!v.hasSubscriptions ? '' : 'display:none'}" >
+            <aura:iteration items="{!v.subscriptionService.subscriptionItem.subscriptions}" var="sub">
+                <div class="slds-m-top--small">
+                    <span class="slds-text-body--small" style="float:right">
+                        <img src="{!$Resource.Payment_Expired}" style="{!sub.hasPaymentProfileExpired ? '' : 'display:none;'}" title="Payment Method Has Expired" />
+                    </span>
+                    <span title="Status" class="slds-text-body--small" style="float:right"> <b>{!sub.status}</b></span>
+                    
+                    <a styleClass="slds-text-body--small" title="Click to open Subscription" data-orderItemId="{!sub.orderItemId}" data-subscriptionId="{!sub.orderItemSubscriptionId}" data-orderidfromsub="{!sub.orderId }" onclick="{!c.openSupscription}">
+                        <b><u> #{!sub.orderItemSubscriptionId} </u></b> 
+                    </a>                    
+                    <br/>                    
+                    <a styleClass="slds-text-body--small" title="Click to open Order" data-orderItemId="{!sub.orderItemId}" data-subscriptionId="{!sub.orderItemSubscriptionId}" data-orderidfromsub="{!sub.orderId }" onclick="{!c.openOrderDetails}">
+                        <b><u> {!sub.orderId}</u></b> 
+                    </a><br/>
+                    <aura:iteration items="{!v.orderIdEntityNameMap}" var="orderIdEntityName">
+                    	<div title="Entity/TradeMark/Copyright Name" style="{!orderIdEntityName.key == sub.orderId ? '' : 'display:none'}">
+                        	{!orderIdEntityName.value}
+                        </div>
+                    </aura:iteration>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Product">
+                        {!sub.productName}
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Active Date">
+                      <lightning:formattedDateTime value="{!sub.subscriptionEndDate}" year="numeric" month="numeric" day="numeric" timeZone="GMT"  />  
+                    </div>
+                </div>
+                <br/>
+            </aura:iteration>
+        </div>
+        
+        <div style="{!v.hasSubscriptions ? 'display:none' : ''}">  
+            <br/><br/><br/><br/>
+            <div align="center">
+                <lightning:icon iconName="standard:approval" size="small" alternativeText="approval Icon"/>
+                <span class="slds-assistive-text">medium approval Icon</span>
+            </div>
+            <p class="slds-text-heading slds-text-align--center">no Subscriptions</p>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>REL 2.5 Overcharge - refund via check</name>
+    <style>none</style>
+    <subject>REL 2.5 Overcharge - refund via check</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+During a recent systems upgrade, we discovered that some of our customers were overcharged by $[9.95, 10.00, 19.95] when revising their Residential Real Estate Lease.  
+
+You were one of the impacted customers, and as a result, we will be making an unconditional refund to your account in the amount of $[9.95, 10.00, 19.95]. Because we are unable to apply the credit to the original form of payment, we will be providing you with a check. Please allow 5 to 7 business days for processing. The check will be mailed to the contact address on file.
+
+We appreciate the opportunity to serve you and regret the billing error. We hope you will continue to look to LegalZoom for all of your future legal document needs. 
+
+Please contact our Customer Support staff if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our Customer Support business hours are {!snippetVariable.cchours}.
+
+Best regards,
+
+LegalZoom Customer Support
+
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

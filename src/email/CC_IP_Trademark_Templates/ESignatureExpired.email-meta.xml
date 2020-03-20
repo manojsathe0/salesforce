@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>EsigExprd</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>E-Signature Expired</name>
+    <style>none</style>
+    <subject>E-Signature Expired</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting us about your trademark application. Your application for trademark registration is incomplete. To complete and file your application, the U.S. Patent &amp; Trademark Office (USPTO) requires an electronic signature from you on your application. 
+
+We have sent a new e-signature link to you, which you should receive in 2 business days. Please use this link to electronically sign your application.
+
+PLEASE NOTE: You have 14 days (calculated to the minute) to sign the form and complete your application. If you do not sign the form within that time period, we will have to start the process from the beginning.
+
+If you have any questions or would like additional information, please call us at (800) 773-0888 Monday?Friday from 6 a.m.?7p.m. PT or email us at customercare@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

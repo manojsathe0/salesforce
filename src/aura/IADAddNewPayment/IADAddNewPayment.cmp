@@ -1,0 +1,300 @@
+<aura:component controller="IADAddNewPaymentController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="expmonths" type="object[]" />
+    <aura:attribute name="selectedmonth" type="string" />
+    <aura:attribute name="years" type="object[]" />
+    <aura:attribute name="selectedyear" type="string" />
+    <aura:attribute name="cardtypes" type="object[]" />
+    <aura:attribute name="selectedcardtype" type="string" />
+    <aura:attribute name="states" type="object[]" />
+    <aura:attribute name="profilesformap" type="object[]" />
+    <aura:attribute name="dupeprofiles" type="object[]" />
+    <aura:attribute name="selectedstate" type="string" />
+    <aura:attribute name="newpayment" type="object" />
+    <aura:attribute name="customerId" type="string" />
+    <aura:attribute name="cardnum" type="string"/>
+    <aura:attribute name="hasdupeprofiles" type="boolean" />
+    <aura:attribute name="hasinstsubscriptions" type="boolean" />
+    <aura:attribute name="gridWrapperstoupdate" type="object[]" />
+    <aura:attribute name="installmentsforwrapper" type="object[]" />
+    <aura:attribute name="subscriptionsforwrapper" type="object[]" />
+    <aura:attribute name="createdProfile" type="object" />
+    <aura:attribute name="selectonly" type="boolean"/>
+    <aura:attribute name="selectall" type="boolean"/>
+    <aura:attribute name="profileid" type="string"/>
+    <aura:attribute name="orderid" type="string"/>
+    <aura:attribute name="ordernum" type="string"/>
+    <aura:attribute name="cardNumberBeforeMasking" type="string"/>
+    <aura:attribute name="disableOnBlur" type="Boolean" default="false"  /> 
+    <aura:attribute name="vfHost" type="String" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:spinner variant="brand" size="large" aura:id="mySpinner1" />
+    <aura:attribute name="ltngURL" type="String" />
+    
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <lightning:icon iconName="custom:custom93"  size="small" />
+                </div>
+                <div class="slds-media__body">
+                    <h2>
+                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+                            <span class="slds-text-heading_small" id="mainLabel">Credit Card Profile Details</span>
+                        </a>
+                    </h2>
+                </div>
+            </header>
+            
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-form slds-form_compound">
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row " id="creditCardTypeSelector">
+                            <lightning:select name="mySelect" class="slds-size_1-of-3" label="Payment Type" aura:id="field" value="{!v.newpayment.accountType}" required="true">
+                                <aura:iteration items="{!v.cardtypes}" var="item">
+                                    <option text="{!item.label}" value="{!item.value}" />
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                    </div>
+                </fieldset>                
+                <fieldset class="slds-form-element">                    
+                    <div class="slds-form-element__group"  >                        
+                        <div class="slds-form-element__row slds-size_3-of-12">
+                            <div class="slds-form-element slds-size_4-of-11" id="saveButton">
+                                <iframe aura:id="vfFrame" src="{!'https://' + v.vfHost + '/apex/PCI_Localhost'}" frameborder="0" width="100%" height="1"/>
+                                <!--<a onclick="{!c.pauseRecording}" > Click to pause recording and enter Card Number </a>-->
+                                
+                            </div>                           
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                  
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-3" >
+                                
+                                <!--<lightning:input label="Card Number"  name="code" aura:id="ccfield" pattern="^\d*$" messageWhenPatternMismatch="Please Enter Only Digits for Credit Card Number " value="{!v.cardnum}"   required="true" maxlength="16" id="cardNumber" onblur="{!c.onblur}"  disabled="{!v.disableOnBlur}" onfocus="{!c.pauseRecording}"/> -->
+                                <lightning:input label="Card Number"  name="code" aura:id="ccfield" pattern="^\d*$" messageWhenPatternMismatch="Please Enter Only Digits for Credit Card Number " value="{!v.cardnum}"   required="true" maxlength="16" id="cardNumber" onblur="{!c.onblur}"   disabled="{!v.disableOnBlur}"   onfocus="{!c.pauseRecording}"/> 
+                            </div>
+                            <div class="slds-form-element slds-size_2-of-12 slds-gutters_x-small" id="expirationMonthSelect">
+                                <lightning:select name="mySelect" label="Exp"  aura:id="field" value="{!v.newpayment.month}" required="true">
+                                    <aura:iteration items="{!v.expmonths}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}" />
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="slds-form-element slds-size_2-of-12" id="expirationYearSelect">
+                                <lightning:select name="mySelect"  label="Year" aura:id="field" value="{!v.newpayment.year}" required="true">
+                                    <aura:iteration items="{!v.years}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}" />
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </div>
+                    <!--</div> -->
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Account Holder First Name"  aura:id="field" name="code" value="{!v.newpayment.firstName}"  required="true" id="firstNameInput"  />
+                            </div>
+                            
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Last Name"  name="code" aura:id="field" value="{!v.newpayment.lastname}"  required="true" id="lastNameInput" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <br/>
+                <fieldset class="slds-form-element">
+                    <legend class="slds-form-element__label slds-text-title_caps">Billing Address</legend>
+                    <br/>
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Street Adress1"  aura:id="field" name="code" value="{!v.newpayment.addressLine1}"  required="true"  id="inputAddress1"/>
+                            </div>          
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Street Adress2"  name="code" value="{!v.newpayment.addressLine2}"  id="inputAddress2" />
+                            </div>          
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="City"  name="code" aura:id="field" value="{!v.newpayment.city}" required="true" id="inputCity" />
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-3" id="inputStateDiv">
+                                <lightning:select name="mySelect" label="State"  aura:id="field" value="{!v.newpayment.State}" required="true">
+                                    <aura:iteration items="{!v.states}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}" />
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Phone Number"  pattern="^\d*$" messageWhenPatternMismatch="Please Enter Only Digits for Phone  Number " name="code" aura:id="field" value="{!v.newpayment.phone}" required="true"  id="inputPhone"/>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Zip"  name="code"  aura:id="field" value="{!v.newpayment.zip}" required="true"  maxlength="5" minlength="5" id="inputZip"/>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-form-element__row slds-size_1-of-2">
+                            <div class="slds-form-element slds-size_1-of-6" id="cancelButton">
+                                <lightning:button variant="brand" label="Cancel" onclick="{! c.closeFocusedTab }" />
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-6" id="saveButton">
+                                <lightning:button variant="brand" label="Save" onclick="{!c.savecard}" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div></div>
+        <aura:if isTrue="{!v.hasdupeprofiles}">
+            <div class="demo-only" style="height: 640px;">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Warning </h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            There are already payment method(s) on file with this account number:
+                            <br/>
+                            <aura:iteration items="{!v.dupeprofiles}" var="theProfile" >
+                                <span>  <lightning:input type="radio"  label="" aura:id="profileidtopass" name="blue" value="{!theProfile.profileId}"  onchange="{!c.getprofileid}"/>
+                                    
+                                    
+                                    <span class="slds-form-element__label">{!theProfile.firstDigit}xxxx{!theProfile.last4Digits}</span>
+                                    <span class="slds-form-element__label">Exp: {!theProfile.month}-{!theProfile.year}</span>
+                                    <span class="slds-form-element__label">{!theProfile.adjCreationDate}</span>
+                                </span>
+                            </aura:iteration>
+                        </div>
+                        <footer class="slds-modal__footer" id="buttonSection1">
+                            <lightning:button variant="brand" label="Cancel" onclick="{!c.closedupemodal}"/> 
+                            <lightning:button variant="brand" label="Edit Selected Payment Profile" onclick="{!c.openEditpayment}"/>
+                            <lightning:button variant="brand" label="SaveAnyWay" onclick="{!c. saveanyway}"/>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.hasinstsubscriptions}">
+            <div class="demo-only" style="height: 640px;">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container" id="popupModal">
+                        <header class="slds-modal__header">
+                            
+                            <p style="text-align:center">
+                                Transaction Status : Approved
+                                <br /> Authorization Code : {!v.createdProfile.profileId}
+                                <br /> {!v.createdProfile.firstDigit}XXX-XXXX-XXXX-{!v.createdProfile.last4Digits}
+                                <br />
+                                <span style="color:red">Attention : Customer has additional installment or recurring payments set up. See option below for instructions.
+                                </span>
+                            </p>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <strong>Option 1 :</strong>
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <label class="slds-checkbox">
+                                        <lightning:input type="checkbox" label="" name="show" aura:id="selectallcheck" checked="{!v.selectall}" onchange="{!c.checkall}"  id="selectallChechbox"/>
+                                        
+                                        <span class="slds-form-element__label">Replace all previous credit cards on file with this one for future scheduled recurring or installemnt payments (see table below)<span style = "color:red;"> [read each line item to the customer from the table below for confirmation]</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <br />
+                            <strong>Option 2:</strong>
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <label class="slds-checkbox">
+                                        <lightning:input type="checkbox" label="" name="show" checked="{!v.selectonly}"  id="selectOneChebox" />
+                                        
+                                        <span class="slds-form-element__label">Replace only the credit cards selected below with this one for future scheduled recurring or installment payments (make your selection(s) below).<span style = "color:red;"> [read each line item to the customer from the table below and select the corresponding
+                                            check box upon receiving confirmation from the customer]</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <table class="slds-table slds-table--bordered slds-table--fixed-layout" style="font-size:12px;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"><strong>Action</strong></th>
+                                        <!--<th scope="col"><strong>Order ID</strong></th>-->
+                                        <th scope="col"><strong>Description</strong></th>
+                                        <th scope="col"><strong>CCInfo</strong></th>
+                                        <th scope="col"><strong>Payment Status</strong></th>
+                                        
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.gridWrapperstoupdate}" var="wrap" indexVar="index">
+                                        
+                                        <tr class="slds-hint-parent" >
+                                            
+                                            <td class="slds-cell-wrap">
+                                                <lightning:input type="checkbox"  aura:id="wrappersid" label="" name="show" checked="{!wrap.show}"  />
+                                            </td>
+                                            <!--<td class="slds-cell-wrap">{!wrap.orderNum}</td>-->
+                                            <td class="slds-cell-wrap">{!wrap.orderDesc}</td>
+                                            <td class="slds-cell-wrap">{!wrap.ccInfo}</td>
+                                            <!--<td class="slds-cell-wrap">-->
+                                            <!--<apex:outputText value="   {!wrap.lastChargeDate}" />-->
+                                            <!--</td>-->
+                                            <!--<td class="slds-cell-wrap">${!wrap.lastChargeAmnt}</td>-->
+                                            <td class="slds-cell-wrap">{!wrap.status}</td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                        <footer class="slds-modal__footer" id="buttonSection2">
+                            <lightning:button variant="brand" label="Update selected Payment Profiles" onclick="{!c.updateselectedinstsubs}" />
+                            <lightning:button variant="brand" label="Cancel" onclick="{!c.closesubinstpanel}"/>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </div>
+        </aura:if>
+    </article>
+</aura:component>

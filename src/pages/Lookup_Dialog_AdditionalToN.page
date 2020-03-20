@@ -1,0 +1,161 @@
+<apex:page controller="Lookup_Dialog_AdditionalToNController" title="Lookup Dialog" showHeader="false" sidebar="false">
+<script type="text/javascript" src="/js/functions.js"></script>
+<script src="/soap/ajax/8.0/connection.js"></script>
+<script type="text/javascript" src="option.js">
+</script>
+<script>
+var NS4 = (navigator.appName == "Netscape" && parseInt(navigator.appVersion) < 5);
+
+function addOption(theSel, theText, theValue)
+{
+  var newOpt = new Option(theText, theValue);
+  var selLength = theSel.length;
+  theSel.options[selLength] = newOpt;
+}
+
+function deleteOption(theSel, theIndex)
+{ 
+  var selLength = theSel.length;
+  if(selLength>0)
+  {
+    theSel.options[theIndex] = null;
+  }
+}
+
+function moveOptions(theSelFrom, theSelTo)
+{
+  
+  var selLength = theSelFrom.length;
+  var selectedText = new Array();
+  var selectedValues = new Array();
+  var selectedCount = 0;
+  
+  var i;
+  
+  // Find the selected Options in reverse order
+  // and delete them from the 'from' Select.
+  for(i=selLength-1; i>=0; i--)
+  {
+    if(theSelFrom.options[i].selected)
+    {
+      selectedText[selectedCount] = theSelFrom.options[i].text;
+      selectedValues[selectedCount] = theSelFrom.options[i].value;
+      if(theSelFrom.id=='sourceAdditionalTo' || theSelFrom.id=='sourceCC' || theSelFrom.id=='sourceBCC'){
+      deleteOption(theSelFrom, i);
+      }  
+      selectedCount++;
+    }
+  }
+  
+  // Add the selected text/values in reverse order.
+  // This will add the Options to the 'to' Select
+  // in the same order as they were in the 'from' Select.
+  for(i=selectedCount-1; i>=0; i--)
+  {
+    addOption(theSelTo, selectedText[i], selectedValues[i]);
+  }
+  
+  if(NS4) history.go(0);
+}
+
+function replaceWord(str,replace,with_this) 
+{ 
+    var str_poj =str; 
+    for(var i=0;i<str.length-4;i++) 
+    { 
+        if (str_poj.substring(i,i+4) == replace) 
+        { 
+            var temp = with_this;
+            str_poj = str_poj.substring(0,i)+with_this+str_poj.substring(i+4);
+        } 
+    } 
+    return str_poj; 
+} 
+
+
+function selectdata(theAT,theCC,theBCC){
+    var c1=replaceWord(theAT.innerText,'.com','.com;');
+    c1=replaceWord(c1,'.net','.net;');
+    c1=replaceWord(c1,'.biz','.biz;');
+    c1=replaceWord(c1,'.edu','.edu;');
+    c1=replaceWord(c1,'.org','.org;');
+    var c2=replaceWord(theCC.innerText,'.com','.com;');
+    c2=replaceWord(c2,'.net','.net;');
+    c2=replaceWord(c2,'.biz','.biz;');
+    c2=replaceWord(c2,'.edu','.edu;');
+    c2=replaceWord(c2,'.org','.org;');
+    var c3=replaceWord(theBCC.innerText,'.com','.com;');
+    c3=replaceWord(c3,'.net','.net;');
+    c3=replaceWord(c3,'.biz','.biz;');
+    c3=replaceWord(c3,'.edu','.edu;');
+    c3=replaceWord(c3,'.org','.org;');
+    cn1=opener.document.getElementById('additionalTo').innerHTML="<input type='text' id='additionalTo' name='additionalTo' size='125' value='"+c1+';'+"' />";
+    cn2=opener.document.getElementById('CC').innerHTML="<input type='text' id='CC' name='CC' size='125' value='"+c2+';'+"' />";
+    cn3=opener.document.getElementById('BCC').innerHTML="<input type='text' id='BCC' name='BCC' size='125' value='"+c3+';'+"' />";
+    window.close();    
+}
+
+</script>
+<form>
+<table border="0">
+    <tr><td></td><td></td><td>Additional To:</td></tr>
+    <tr>    
+        <td>
+        </td>
+        <td align="center" valign="middle">
+            <input type="button" value=">>"
+             onclick="moveOptions(this.form.sel1, this.form.sel2);" /><br />
+            <input type="button" value="<<"
+             onclick="moveOptions(this.form.sel2, this.form.sel1);" />
+        </td>
+        <td>
+            <select id="sourceAdditionalTo" name="sel2" size="10" multiple="multiple">
+            </select>
+        </td>
+    </tr>
+    <tr><td>Contacts:</td><td></td><td>CC:</td></tr>
+    <tr>
+        <td>
+        <select name="sel1" size="10" multiple="multiple">
+            <script type="text/javascript">
+            var SFObjectArray = [];
+            var idx=0; 
+            <apex:repeat value="{!searchRN}" var="R"> 
+            SFObjectArray[idx]="{!R.email}";idx++; 
+            </apex:repeat> 
+            for(var j=0;j<SFObjectArray.length;j++)
+            {
+                document.write('<option>'+SFObjectArray[j]+'</option>');
+            }
+            </script>
+            </select>        
+        </td>
+        <td align="center" valign="middle">
+            <input type="button" value=">>"
+             onclick="moveOptions(this.form.sel1, this.form.sel3);" /><br />
+            <input type="button" value="<<"
+             onclick="moveOptions(this.form.sel3, this.form.sel1);" />
+        </td>
+        <td>
+            <select id="sourceCC" name="sel3" size="10" multiple="multiple">
+            </select>
+        </td>
+    </tr>
+    <tr><td></td><td></td><td>BCC:</td></tr>
+    <tr>
+        <td></td>    
+        <td align="center" valign="middle">
+            <input type="button" value=">>"
+             onclick="moveOptions(this.form.sel1, this.form.sel4);" /><br />
+            <input type="button" value="<<"
+             onclick="moveOptions(this.form.sel4, this.form.sel1);" />
+        </td>
+        <td>
+            <select id="sourceBCC" name="sel4" size="10" multiple="multiple">
+            </select>
+        </td>
+    </tr>
+</table>
+<center><input type="button" value="Save" onclick="selectdata(this.form.sel2,this.form.sel3,this.form.sel4)"/><input type="button" value="Cancel" onclick="window.close()"/></center>
+</form>
+</apex:page>

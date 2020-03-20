@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ls5</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>L&amp;S No Specimen Received</name>
+    <style>none</style>
+    <subject>ACTION REQUIRED: Trademark Specimen Needed [Order #0000000] (mark name)</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+In your order, you indicated that you are currently using your Trademark. Because you are applying to register on a “Used-In-Commerce” basis, the U.S. Patent and Trademark Office (USPTO) requires that you provide proof of your use (called a “specimen”). The specimen you provide should be an actual, real-world example that clearly shows how the Trademark is being used in connection with the products (“goods”) and/or services you listed in your application.
+
+******************For services******************
+
+If you are providing services, acceptable specimens include a sign, brochure, advertisement, business card, stationary or website prominently displaying your Trademark in connection with the services you’ve listed in your Trademark filing. The specimen must include a reference to the service, not just the Trademark by itself. Printer’s proofs for advertisements or news articles about your services are generally NOT acceptable specimens for services.
+
+See Examples
+
+******************For products******************
+
+If you are providing products, acceptable specimens include photographs of packaging labels, clothing tags or labels on containers that prominently display your Trademark. Invoices, order forms, receipts, brochures, catalogs, press releases, business cards, and stationery are generally NOT acceptable specimens for products.
+
+See Examples
+
+----------------------------------
+
+SUBMITTING YOUR MATERIALS:
+
+Please reply to this e-mail and attach your materials, preferably in .jpg, .jpeg, .gif or .pdf format. Email attachments cannot exceed 6MB.
+
+If you are using a Mac computer or your attachments are larger than 6MB combined, please upload your image(s) directly here.
+
+Or, if you prefer, you can mail us your materials.  Our mailing address is:
+&quot;LegalZoom
+Attn: Trademarks, Order [Your Order #]
+101 N. Brand Blvd., 11th Floor
+Glendale, CA 91203&quot;
+
+Please note: LegalZoom will not share your materials with any third party unless necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you.
+
+----------------------------------
+
+Please feel free to contact our Customer Care Team if we can be of further assistance. Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri 5am to 7pm PT; Saturday 7am to 4pm PT. 
+
+Best regards, 
+
+The LegalZoom Team 
+
+tel 877.818.8787 | fax 323.389.0658 
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+* Business Advantage Pro members can receive further guidance from an attorney for no additional cost. If you are a member, take advantage of your benefits by scheduling a consultation. If you are not a Business Advantage Pro member and would like more information about this valuable service, please visit us or call customer care at (877) 657-8787. Please note that Business Advantage Pro is not available in all states.
+
+
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

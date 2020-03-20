@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>instantllc</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Instant LLC Receipt</name>
+    <style>none</style>
+    <subject>LegalZoom - Instant LLC Receipt</subject>
+    <textOnly>Thank you for choosing LegalZoom.
+
+Order Details
+
+
+Order #: [ORDERNUMBER]
+Date: [DATE]
+
+Delivered to:
+[CUSTOMER&apos;S NAME]
+[PHONE #]
+[EMAIL ADDRESS]
+[ADDRESS]
+[CITY], [STATE] [ZIP CODE]
+
+Product      Price
+Economy LLC – [LLC NAME]
+
+$149.00
+
+Filed Articles of Organization
+
+Included
+
+Operating Agreement
+
+Included
+
+Non-Customized Membership Certificates (10)
+
+Included
+
+State Filing Fee - CA
+
+$85.00
+
+Statement of Information Filing Fee
+
+$20.00
+
+Business Advantage Pro
+
+$287.88*
+
+Expedite Plus Processing (LegalZoom)
+
+$0.00
+
+Standard Shipping
+
+$9.95
+
+EIN Obtainment
+
+$79.00
+
+Standard Shipping
+
+$0.00
+
+Business License Package
+
+$74.99
+
+Statement of Information – [LLCNAME]
+
+$35.00
+
+Standard Shipping
+
+$0.00
+
+Essential Compliance + Tax Preparation Package
+
+$320.00*
+
+Compliance Calendar
+
+Included
+
+Company Minutes Manager
+
+Included
+
+Annual Reports
+
+Included
+
+Business Tax Preparation
+
+Included
+
+Access Forms Library
+
+Included
+
+Registered Agent Service
+
+$159.00*
+
+[Seller&apos;s Permit]
+
+[$35.00]
+
+Discount
+
+[-$220.82 OR -$255.82]
+
+Total Charges:
+
+$999.00
+
+Initial Payment, [DATE] (Charge To [CC TYPE] Card xxxx[LAST 4] - Approved) :     $999.00
+
+Total Payment/Credits:
+$999.00
+
+Customer Balance Due:
+
+$0.00
+
+*After the one year period, your benefits for our Business Advantage Pro membership, Compliance membership, and Registered Agent service will continue automatically for $699 annually until canceled. You can cancel at any time with no further obligation by calling (888) 310-0151. For full details on your Business Advantage Pro membership, please see our Legal Plan Contract and Advantage Terms of Service. For full terms and conditions of the Registered Agent service, please visit http://www.legalzoom.com/ra-terms-of-use.html.
+
+
+Check the status of your order anytime by logging in to your account.
+
+Manage My Account | Explore Services
+Privacy Policy
+
+Please do not reply to this message. This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: $EMAIL_ADDRESS_$
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

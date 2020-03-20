@@ -1,0 +1,280 @@
+<apex:page standardController="Order_Item__c" extensions="NextPadController" title="Ledger - {!theNextPadService.processingNumber}"  showHeader="false"   docType="xhtml-1.0-transitional">
+  <apex:includeScript value="{!URLFOR($Resource.JQueryValidation, 'jquery-validation/lib/jquery.js')}"/>
+  <apex:includeScript value="/support/console/42.0/integration.js"/>
+  <apex:slds rendered="{! !isClassic}" />
+  <script type="text/javascript">
+   var objectId;
+   var subTabTitle;
+
+    function openSalesforcePage(theId , theTitle)
+    {
+       objectId = theId;
+       subTabTitle = theTitle;
+       if(subTabTitle == null)
+          subTabTitle = 'Order Note';
+          var checkingusertheme ='{!IsClassic}';
+        if(sforce.console.isInConsole())
+       {  
+           
+          sforce.console.getEnclosingPrimaryTabId(showObjectId);
+           
+       }
+       else
+       {
+         var tsid = '{!theNextPadService.tsid}';
+         var hostURL = '{!theNextPadService.hostURL}';
+        if(checkingusertheme=='true' )
+        {
+         window.open(hostURL+'/console?tsid='+theId+'#%2F'+theId,'sameWindow');
+         }
+         
+         else
+         {
+         sforce.one.navigateToURL('/'+theId);
+         }
+       }
+       
+     
+        
+    }
+
+    function showObjectId(result)
+    {
+      sforce.console.openSubtab(result.id , '/'+objectId , true,
+           subTabTitle ,null , null , null);
+
+    }
+  </script>
+  <style type="text/css">
+    .orderBox{margin:0px auto; width:98%}
+    .boxInnerLeft{margin-top:20px;}
+    .boxInnerRight{float:right;width:72%}   
+    .theButton{width:100px;margin-left:5% !important;}
+    .descriptionBox{width:100%;height:123px}
+    .topBox{width:100%;margin-bottom:10px;float:left;}
+    .widthThird{width:33%;}
+    a{color: inherit;text-decoration: underline}
+    *{padding:0;margin:0;} 
+    body{font-family: Arial;font-size:11px;}
+    /*.mainRow:hover {background-color: #e3f3ff;}
+    .commentRow:hover {background-color: #e3f3ff;}*/
+    .bodyRow:hover {background-color: #e3f3ff;}
+    .bPageBlock{border-top:0px;}
+    .reRenderArea{margin-top:20px;}
+    .boxInnerContentLeft{width:18%;float:left;padding:10px;font-size:15px;background-color:#F0F8FF;}
+    .boldLabel{font-weight:bold;}
+    .sortfilterHolder{margin:0px auto;width:100%;margin-bottom:10px;float:left;margin-top:30px;}
+    .sortBlock{float:left;width:50%;margin-left:15px;}
+    .filterBlock{float:right;width:40%;text-align:left;}
+    .expandLink{font-size:12pt;text-decoration: none;display:none;cursor:pointer;}
+    .collapseLink{font-size:12pt;text-decoration: none;display:block;cursor:pointer;}
+    .outputTextWrap{width:630px;word-wrap:normal;padding-left:5%;}
+    .selected{color:#FF0000;}
+    .notSelected{color:#000000;}
+    td{word-wrap:break-word;vertical-align:top;}
+    pre{font-size: 11px;font-family: Arial}
+    .even{background:#C6D3E4; height:30px;}
+    .odd{background:#F5FBFB;height:30px;}
+    .theHeader{
+      border: 1px solid  #95B6B5;
+      text-align:left;
+      padding-left:6px;
+      font-weight: bold;
+      padding-top:8px;
+    }
+    .content{padding:5px;}
+    .dataCell {border: 1px solid  #95B6B5;}
+    .commentDataCell {border-right:1px solid #95B6B5;border-bottom: 1px solid #95B6B5;}
+    .theHeadMain{background:#C9E7E9;height:30px;}
+    img{vertical-align:text-bottom;}
+  </style>
+  
+
+<apex:form id="pbForm">
+ <apex:outputPanel id="ReRenderArea" styleClass="reRenderArea" layout="block">
+    <apex:pageMessages />
+  </apex:outputPanel>
+ 
+  <apex:outputPanel styleClass="orderBox" layout="block"  rendered="{!theNextPadService.processingNumber != null}">
+    <div class="topBox">
+   
+      <span class="widthThird" style="float:left;"><span class="boldLabel">Customer Order Number :</span> <a style="cursor:pointer;" onClick = "openSalesforcePage('{!theNextPadService.orderId}' , '{!theNextPadService.orderNumber}');">{!theNextPadService.orderNumber}</a></span>
+      <span class="widthThird" style="float:left;"><span class="boldLabel">Processing Number :</span>{!theNextPadService.processingNumber}</span>
+      <span class="widthThird" style="float:right;"><span class="boldLabel">Customer Name :</span><a style="cursor:pointer;"  onclick="openSalesforcePage('{!theNextPadService.contactId}' , '{!theNextPadService.escapedCustomerName}')"> {!theNextPadService.customerName}</a></span>
+
+    </div> 
+    <apex:variable var="editSection" rendered="{!showEdit}" value="{!showEdit}">
+    <apex:inputTextarea id="theDescription" value="{!description}" styleClass="descriptionBox" html-placeholder="Enter description...."/><p/>
+    <div class="boxInnerLeft">
+      <div class = "boxInnerRight">
+        <span style="margin-right:15px;">
+       
+        <apex:commandButton action="{!saveNote}" value="Submit" id="theSubmitButton" rerender="pbForm" styleClass="theButton" status="statusUpdating" /></span>
+        <span style="margin-right:30px;"><apex:commandButton action="{!clear}" value="Clear" id="theClearButton" rerender="pbForm" styleClass="theButton" status="statusUpdating"/></span>
+        <apex:selectList value="{!selectedNoteType}" size="1">
+        <apex:selectOptions value="{!theNextPadService.noteTypes}"/>
+        </apex:selectList>
+      </div>
+    </div> 
+    </apex:variable>
+  </apex:outputPanel>
+  <br />     
+  
+  <div style="clear:both"></div>
+  <apex:outputPanel rendered="{!theNextPadService.processingNumber != null}">
+    <div class="sortfilterHolder">
+      <div class="sortBlock">
+        <span class="boldLabel">Sort By : </span> 
+        <apex:commandLink status="statusUpdating" value="Recent" action="{!sortNotesByDateTime}" reRender="pbForm" styleClass="{!IF(sortOrder == 'desc','selected','notSelected')}">
+          <apex:param name="sortOrder" value="desc" assignTo="{!sortOrder}"/>
+        </apex:commandLink> || 
+        <apex:commandLink status="statusUpdating" value="Oldest" action="{!sortNotesByDateTime}" reRender="pbForm" styleClass="{!IF(sortOrder == 'asc','selected','notSelected')}">
+          <apex:param name="sortOrder" value="asc" assignTo="{!sortOrder}"/>
+        </apex:commandLink> ||
+
+        <apex:commandLink status="statusUpdating" value="Created by" action="{!sortNotesByUser}" reRender="pbForm"  rendered="{!userSortOrder == ''}">
+          <apex:param name="userSortOrder" value="asc" assignTo="{!userSortOrder}"/>
+        </apex:commandLink>
+
+        <apex:commandLink status="statusUpdating" value="Created by" action="{!sortNotesByUser}" reRender="pbForm" styleClass="{!IF(userSortOrder == 'asc','selected','notSelected')}" rendered="{!userSortOrder == 'asc'}">
+          <apex:param name="userSortOrder" value="desc" assignTo="{!userSortOrder}"/>
+        </apex:commandLink>
+        <apex:commandLink status="statusUpdating" value="Created by" action="{!sortNotesByUser}" reRender="pbForm" styleClass="{!IF(userSortOrder == 'desc','selected','notSelected')}" rendered="{!userSortOrder == 'desc'}">
+        <apex:param name="userSortOrder" value="asc" assignTo="{!userSortOrder}"/>
+        </apex:commandLink>
+      </div>
+      <apex:actionStatus id="statusUpdating">
+        <apex:facet name="start">
+        <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+        </apex:facet>
+      </apex:actionStatus>
+
+      <div class="filterBlock">
+        <span class="boldLabel">Display : </span> 
+        <apex:commandLink status="statusUpdating" value="All" action="{!filterNotes}" reRender="pbForm" styleClass="{!IF(filterNoteType == 'all','selected','notSelected')}">
+          <apex:param name="noteType" value="all" assignTo="{!filterNoteType}"/>
+        </apex:commandLink> || 
+        <apex:commandLink status="statusUpdating" value="Case" action="{!filterNotes}" reRender="pbForm" styleClass="{!IF(filterNoteType == 'Case','selected','notSelected')}">
+          <apex:param name="noteType" value="Case" assignTo="{!filterNoteType}"/>
+        </apex:commandLink> ||
+        <apex:commandLink status="statusUpdating" value="Order Notes" action="{!filterNotes}" reRender="pbForm" styleClass="{!IF(filterNoteType == 'Order Note','selected','notSelected')}">
+          <apex:param name="noteType" value="Order Note" assignTo="{!filterNoteType}"/>
+        </apex:commandLink>
+
+      </div>
+
+    <div style="clear:both"></div>
+
+  </div>
+  </apex:outputPanel>
+  <apex:PageBlock id="noteBlock">
+    <table cellpadding="0" cellspacing="0" border="0"  id="noteTable" column="4" width="100%" style="table-layout: fixed;border-collapse:collapse;" >
+      <thead>
+        <tr class="theHeadMain">
+
+        <td width="20%" class="theHeader">Type</td>
+        <td width="15%" class="theHeader">Created by</td>
+        <td width="15%" class="theHeader">Date</td>  
+
+        <td width="50%" class="theHeader">Comments</td>
+        </tr>
+      </thead>
+      <tbody>
+      <apex:variable value="{!1}" var="rowNum"/>
+      <apex:repeat value="{!allNotes}" var="note">
+
+        <tr data-theId="{!note.Id}" class="{!IF(MOD(rowNum,2) == 0 , 'even','odd')} mainRow">
+          <td width="20%" class="dataCell content">
+
+            <span style="display:inline-block;">
+
+            <apex:image url="{!URLFOR($Resource.NotepadImages, 'note.png')}" rendered="{!note.infoType == 'Order Note'}"/>
+            <apex:image url="{!URLFOR($Resource.NotepadImages, 'case.png')}" rendered="{!note.infoType == 'Case'}"/>
+            </span>
+            <a style="cursor:pointer;" onClick="openSalesforcePage('{!note.Id}' , '{!note.caseNumber}');">{!note.noteType}</a>
+            <apex:outputPanel rendered="{!note.noteType == 'Case'}">&nbsp;({!note.caseNumber};&nbsp;{!note.status})
+            </apex:outputPanel>
+            <apex:outputLabel value="*" rendered="{!note.isGeneral}" style="font-size:20px;vertical-align:text-top;"/>
+
+
+          </td>
+          <td width="15%" class="dataCell content">{!note.userName}</td>
+          <td width="15%" class="dataCell content">{!note.dateTimeCreatedInString}</td>
+
+
+          <td width="50%" class="dataCell content">
+            <apex:outputPanel rendered="{!note.noteType == 'Case'}">
+              <span class="boldLabel">Subject : </span> {!note.subject}
+              <br /><br />
+              <pre>{!note.description}</pre>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!note.noteType == 'Order Note'}">
+              <pre>{!note.description}</pre>
+            </apex:outputPanel>
+          </td>
+
+          <apex:variable var="rowNum" value="{!rowNum + 1}"/>            
+        </tr>
+        <apex:variable var="processingNumber" rendered="{!note.caseComments.size > 0}" value="{!processingNumber}">
+          <tr id="detail-{!note.Id}">
+
+          <td colspan="5" style="border-right:1px solid #95B6B5; border-left:none;">
+
+            <table cellpadding="0" cellspacing="0" border="0" column="1" width="100%" style="{!IF(note.caseComments.size > 0 , 'display:table-row','display:none')};table-layout: fixed;border-collapse:collapse;background:#F5FBFB;">
+
+              <tr>
+                <td  colspan="1" style="border:none;">
+
+                  <table cellpadding="0" cellspacing="0" border="0" column="4" width="100%" style="table-layout: fixed;border-collapse:collapse;">
+
+                    <tbody>
+                        <apex:variable value="{!1}" var="rowNum2"/>
+                        <apex:repeat value="{!note.caseComments}" var="theComment">
+                        <tr>
+                          <td width="20%" class="commentDataCell" style="border-left: 1px solid #95B6B5;padding-left:50px;"><span><apex:image url="{!URLFOR($Resource.NotepadImages, 'comment.png')}"/></span>
+                            <a style="cursor:pointer;" onClick="openSalesforcePage('{!note.Id}' ,'{!note.caseNumber}');">{!theComment.noteType}</a> 
+                          </td>
+                        
+                          <td width="15%" class="commentDataCell content">
+                            {!theComment.userName}
+                          </td>
+                          <td width="15%" class="commentDataCell content">
+                            {!theComment.dateTimeCreatedInString}
+                          </td>
+
+                          <td width="50%" class="commentDataCell content" style="border-right:none;"><pre>{!theComment.description}</pre></td>
+                          <apex:variable var="rowNum2" value="{!rowNum2 + 1}"/>  
+                        </tr>
+
+                        </apex:repeat>  
+
+                      </tbody>   
+                    </table>
+
+
+                  </td>
+
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+        </apex:variable>
+
+    </apex:repeat>
+    </tbody>
+  </table>
+    <table cellpadding="0" cellspacing="0" border="0"  id="noteTable" column="4" width="100%" style="table-layout: fixed;border-collapse:collapse;">
+      <tr class="theHeadMain">
+        <td width="100%" class="theHeader">Old Notes and Cases (if any) Can be Found at :</td>
+      </tr>
+      <tr>  
+       <td width="100%" class="dataCell content"><a href="http://zoomreports/_layouts/ReportServer/RSViewerPage.aspx?rv:RelativeReportUrl=/Reports/Operations/SalesforceCaseComments.rdl&rv:ParamMode=Hidden&rp:ProcessingNumber=" target="_blank" onclick="window.open(this.href+{!processingNumber});return false;"> Archived Data </a> </td>
+      </tr>
+    </table>
+  </apex:PageBlock> 
+  </apex:form>
+  <apex:pageBlock >
+    <iframe src="{!theNextPadService.NotePadURL}?UserOrderId={!processingNumber}" width="100%" height="500px"></iframe>
+  </apex:pageBlock>  
+</apex:page>

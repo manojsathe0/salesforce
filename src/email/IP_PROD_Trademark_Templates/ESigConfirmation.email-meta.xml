@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>sig3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>E-Sig Confirmation</name>
+    <style>none</style>
+    <subject>E-Sig Confirmation</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your completed e-signature. Here&apos;s a breakdown of what will happen from here.
+
+Upon receipt of your completed e-signature (which was received XX/XX/XXXX), Legalzoom has completed your order by paying the required filing fee (XX/XX/XXXX) with the US Patent and Trademark Office (USPTO). In addition, Legalzoom will send you a packet containing hard copies of your application materials. These materials will include your USPTO serial number, which allows you to track the status of your application online at http://tarr.uspto.gov. (Note*: After receiving your serial number, please allow 1-2 weeks before checking the status). To track the status of your application, type your serial number into the “Enter a Number” prompt on the left side of the page. Your serial number can be found within the final documents you receive from Legalzoom on the sheet entitled &quot;Success&quot;.
+
+Your application will be assigned to an examining attorney approximately six months after it was submitted. The assigned attorney will contact you via phone, email, regular mail, or fax should any changes or amendments be needed to prepare your Trademark for registration.
+
+If you have installed Anti-Spam filters or software on your email service, please ensure that legitimate emails from TEAS@uspto.gov is not falsely identified as spam or junk. If you wish to view and/or download your application information and correspondences from the USPTO, please visit http://tmportal.uspto.gov/external/portal/tow.
+
+The complete Trademark process typically takes eight to thirteen months, but in some cases can take longer. Your Trademark is not considered &quot;Registered&quot; until you have received official documentation and a notification of registration from the USPTO.
+
+You are precluded from using the “circle R” (®) symbol until the mark has officially been registered by the USPTO, however, you can use the &quot;TM&quot; or &quot;SM&quot; symbol at any time to show ownership of the mark.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

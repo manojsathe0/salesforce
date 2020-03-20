@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr4</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GENERAL INFO Copyright Notice</name>
+    <style>none</style>
+    <subject>Copyright Notice</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+The notice for visually perceptible copies should contain all the following three elements:
+
+1. The symbol © (the letter C in a circle), or the word “Copyright,” or the abbreviation “Copr.”; and
+
+2. The year of first publication of the work. In the case of compilations or derivative works incorporating previously published material, the year date of first publication of the compilation or derivative work is sufficient. The year date may be omitted where a pictorial, graphic, or sculptural work, with accompanying textual matter, if any, is reproduced in or on greeting cards, postcards, stationery, jewelry, dolls, toys, or any useful article; and
+
+3. The name of the owner of Copyright in the work, or an abbreviation by which the name can be recognized, or a generally known alternative designation of the owner.
+
+Example: © 2006 John Doe
+
+The “C in a circle” notice is used only on “visually perceptible copies.” Certain kinds of works—for example, musical, dramatic, and literary works—may be fixed not in “copies” but by means of sound in an audio recording. Since audio recordings such as audio tapes and phonograph disks are “phonorecords” and not “copies,” the “C in a circle” notice is not used to indicate protection of the underlying musical, dramatic, or literary work that is recorded.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

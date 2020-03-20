@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>shiprecpt</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Shipping Information on Receipt</name>
+    <style>none</style>
+    <subject>Shipping Information on Receipt</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+We apologize for any confusion.  As stated on the receipt:
+
+Thank you for using LegalZoom. This receipt confirms your payment. For security purposes, shipping information has been omitted (although we do have it on file). In addition, the billing information shown below may not reflect our actual records.?
+
+Below is the shipping contact information we have on file:
+
+[Customer Address]
+[City, State Zip]
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

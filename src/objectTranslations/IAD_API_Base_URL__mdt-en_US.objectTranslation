@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IAD API Base URL</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IAD API Base URLs</value>
+    </caseValues>
+    <fields>
+        <label><!-- App Id --></label>
+        <name>App_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Box Base URL --></label>
+        <name>Box_Base_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- ClientID_SecurityKey --></label>
+        <name>ClientID_SecurityKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- IAD API Base URL --></label>
+        <name>IAD_API_Base_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- link --></label>
+        <name>link__c</name>
+    </fields>
+    <layouts>
+        <layout>IAD API Base URL Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

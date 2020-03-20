@@ -1,0 +1,43 @@
+<aura:component controller="IADrefundInstallment_ltng"  implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+        <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="orderrecordid" type="String"/>
+    <aura:attribute name="amount" type="Decimal"  default="0.00" />
+     <aura:attribute name="installmentamount" type="Decimal"  default="0.00" />
+    <aura:attribute name="amounttorefund" type="Decimal"  default="0.00"/>
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+     <lightning:spinner aura:id="mySpinner" />
+   
+	
+    <article class="slds-card">
+  <div class="slds-card__header slds-grid">
+    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+       <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="custom:custom17" size="medium"/>
+            </div>
+            <div class="slds-media__body">
+                <p class="slds-text-title--caps slds-line-height--reset" id="mainLabel">Refund</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Make a Refund">Make a Refund</h1>
+            </div>
+        </div>
+     
+    </header>
+  </div>
+  <div class="slds-card__body slds-card__body_inner">
+      
+        
+      <lightning:input aura:id="refundinstallment" type="number" label=" Net Amount Due Customer" name="amount" value="{!v.amount}" disabled="true" formatter="currency" id="inputAmount"/>  
+        
+      
+      <lightning:input aura:id="refundinstallment" type="number" label="Amount of Refund / Credit" name="amountrefund" value="{!v.amounttorefund}" formatter="currency"  step="0.01" id="inputAmounttorefund"/> 
+      <br/>
+     <center id="outputAmount"> Apply this Amount to the Oustanding installment payments(${!v.installmentamount}   total due on installment) </center>
+      <br/>
+      <center><button class="slds-button slds-button--neutral" onclick="{!c.closeFocusedTab}" id="cancelButton">Cancel</button>
+                <button class="slds-button slds-button--brand" onclick="{!c.PostRefund}" id="saveButton">RefundNow</button>
+        </center>
+        </div>
+  
+</article>
+</aura:component>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMTM6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Attorney Consult Follow Up, 5 Days Reminder</name>
+    <style>none</style>
+    <subject>ATTENTION NEEDED - Follow up to your attorney consultation</subject>
+    <textOnly>We could not reach you regarding your trademark application order.
+Dear {!Contact.FirstName},
+
+Following your consultation, the attorney sent us an email regarding changes to your trademark application order, but I have not been able to reach you to get your approval. Please contact me at your earliest convenience to confirm that you would like to make changes to your trademark application order. If you do not reply within five (5) business days, your trademark application will proceed as originally placed and will not include any changes.
+
+Best Regards,
+
+{!User.FirstName} {!User.LastName} |  {!User.Phone} ext. {!User.Extension}
+Account Management Services
+M-F 9:00 am – 6 pm CT
+
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

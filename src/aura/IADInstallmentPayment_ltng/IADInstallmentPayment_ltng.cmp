@@ -1,0 +1,147 @@
+<aura:component controller="IADInstallmentPaymentController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="installmentAmount" type="Decimal" />
+    <aura:attribute name="amount" type="Decimal" />
+    <aura:attribute name="amtCheckbox" type="Boolean" default="false" />
+    <aura:attribute name="otherAmount" type="Decimal" default="0.00"/>
+    <aura:attribute name="othrAmtCheckbox" type="Boolean" default="false" />
+    <aura:attribute name="processTotal" type="Decimal" default="0.00"/>
+    <aura:attribute name="amountDue" type="Decimal" />
+    <aura:attribute name="paymentOptions" type="List" />
+    <aura:attribute name="currentPaymentOptionId" type="String" />
+    <aura:attribute name="paymentReasons" type="List" />
+    <aura:attribute name="currentPaymentReasonId" type="String" />
+    <aura:attribute name="comments" type="String" />
+    <aura:attribute name="notificationEmail" type="String" />
+    <aura:attribute name="orderId" type="String" />
+    <aura:attribute name="customerId" type="String" />
+    <aura:attribute name="invokingPage" type="String" />
+    <aura:attribute name="invokingPageId" type="String" />
+    <aura:attribute name="isPaymentProcessed" type="Boolean" default="false" />
+    <aura:attribute name="installmentId" type="String" />
+      <aura:attribute name="firstname" type="String" />
+    <aura:attribute name="lastname" type="String" />
+    <aura:attribute name="bankname" type="String" />
+    <aura:attribute name="checknumber" type="String" />
+     <aura:attribute name="manualsection" type="Boolean" default="false" />
+    <aura:handler name="init" action="{!c.doInit}" value="this" /> 
+    
+    <lightning:workspaceAPI aura:id="workspace" /> 
+    
+    <div class="slds-card" style="padding: 1% 2% 1% 1%; margin-bottom:3%"> 
+        <lightning:spinner aura:id="mySpinner" />
+        <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="custom:custom17" size="medium"/>
+            </div>
+            <div class="slds-media__body">
+                <p class="slds-text-title--caps slds-line-height--reset">Payment</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Edit Shipping Address"> <lightning:formattedText value="{!v.invokingPage == 'Installment' ? 'Installment Payment' : 'Make a Payment'}" /></h1>
+            </div>
+        </div>
+        <div class="slds-form slds-form_compound" style="padding: 1% 0 0 0"> 
+            <div class="slds-form-element__group">
+                <form>
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div style="margin-left: -25px">
+                        	<lightning:input aura:id="amountCheckbox" type="checkbox" label="" name="blue" onchange="{!c.setOrUnsetProcessTotalToAmount}" checked="{!v.amtCheckbox}"/>
+                        </div>
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="paymentForm" type="number" label="{!v.invokingPage == 'Installment' ? 'Installment' : 'Amount'}" name="amount" value="{!v.amount}" disabled="true" formatter="currency"/>
+                        </div> 
+                    </div>
+                    <a aura:id="addOtherAmount" class="show-add-othr-amt" style="margin-left: 35px" onclick="{!c.hideAddOtherAmtLinkAndShowOthrAmt}" >Add other amount</a>
+                	<div aura:id="otherAmount" class="slds-hide">
+                    	<div class="slds-form-element__row" style="margin-left: 35px">
+                            <div style="margin-left: -25px"> <!-- style="margin:26px 0 0 25px" -->
+                                <lightning:input aura:id="otherAmountCheckbox" type="checkbox" label="" onchange="{!c.setOrUnsetProcessTotalToOtherAmount}" checked="{!v.othrAmtCheckbox}"/>
+                            </div>
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="paymentForm" type="number" label="Other Amount" name="otherAmount" value="{!v.otherAmount}" min="0" formatter="currency" onchange="{!c.setOrUnsetProcessTotalToOtherAmount}" step="0.01"/>
+                            </div>
+                        </div>
+                    </div>   
+                    <hr class="slds-size_4-of-6" style="margin: 13px 0 11px 35px; width: 49%"/>
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="paymentForm" type="number" label="Process Total" name="processTotal" value="{!v.processTotal}" disabled="true" formatter="currency" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="paymentForm" type="number" label="Amount Due" name="amountDue" value="{!v.amountDue}" disabled="true" formatter="currency"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:select aura:id="paymentOption" label="Method of Payment" name="paymentMethod" value="{!v.currentPaymentOptionId}" onchange="{!c.hideOrUnhideReasonAndEmail}">
+                                <aura:iteration items="{!v.paymentOptions}" var="option" indexVar="key">
+                                    <option value="{!option.key}" text="{!option.value}" selectedvalue="{!option.key == v.currentPaymentOptionId}"/>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                        <div style="margin:28px 0 0 25px" aura:id="editbutton" class="edit-button">
+                            <a onclick="{!c.openEditPayment}">Edit</a>
+                    	</div>
+                    </div>
+                    <div aura:id="payreason" class="pay-reason">
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:select aura:id="paymentReason" label="Reason" name="reason" value="{!v.currentPaymentReasonId}">
+                                    <aura:iteration items="{!v.paymentReasons}" var="reason" indexVar="key">
+                                        <option value="{!reason.key}" text="{!reason.value}" selectedvalue="{!reason.key == v.currentPaymentReasonId}"/>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </div>
+                    </div>
+                      <aura:if isTrue="{!v.manualsection}">
+                        
+                        
+                       
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input  aura:id="paymentForm" value="{!v.bankname}" type="text" label="Bank name " name="Request Reason" required="{!v.manualsection}" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input  aura:id="paymentForm" value="{!v.firstname}" type="text" label=" First Name " name="Request Reason" required="{!v.manualsection}" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="paymentForm" value="{!v.lastname}" type="text" label="Last Name " name="Request Reason" required="{!v.manualsection}"/>
+                               
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input  aura:id="paymentForm" value="{!v.checknumber}" type="text" label="Check Number " name="Request Reason"  required="{!v.manualsection}"/>
+                            </div>
+                        </div>
+                      
+                        
+                    </aura:if>
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="paymentForm" label="Comments" name="comments" value="{!v.comments}" required="true" />
+                        </div>
+                    </div>
+                    <div aura:id="emailnotification">
+                        <div class="slds-form-element__row" style="margin-left: 35px;">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="paymentForm" type="email" label="Notification Email" name="notificationEmail" value="{!v.notificationEmail}" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="margin:25px 0 0 35px;">
+                <button class="slds-button slds-button--neutral" onclick="{!c.closeFocusedTab}">Cancel</button>
+                <button class="slds-button slds-button--brand" onclick="{!c.validateFormAndPostPayment}" disabled="{!v.amountDue != 0 ? 'false' : 'true'}">Process</button>
+            </div>
+            <br/>
+            <br/>
+        </div>
+    </div>
+</aura:component>

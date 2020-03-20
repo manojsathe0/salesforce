@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tm ext1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Extension - No NOA</name>
+    <style>none</style>
+    <subject>Extension - No NOA</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for using LegalZoom.
+
+Upon review of your trademark application, it appears that the status is still pending with the US Patent and Trademark Office (USPTO). The Notice of Allowance has not yet been issued by your examiner, therefore your Extension Request for your Statement of Use form is not currently applicable. 
+
+Please reply and let us know if you wish for a full refund on your order. Otherwise, we can keep your order on hold until you receive your Notice of Allowance from the USPTO. To check the status of your application, please visit http://tarr.uspto.gov/.
+
+Refunds must be requested within 60 days of purchase.
+
+Best Regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

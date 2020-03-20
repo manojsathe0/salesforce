@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP5</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BizStarter_Pricing</name>
+    <style>none</style>
+    <subject>Following up on our conversation</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+It was a pleasure speaking to you again about your business. Below, I have provided a breakdown of the package(s) that we discussed today:
+
+Economy LLC/Corporation Package: $99.00 (7 – 8 weeks)
+CA State Filing Fee: $85.00/$115.00
+Federal Tax Identification Number (EIN) Obtainment: $79.00
+S Corporation Election Obtainment: $80.00
+Sellers Permit Application Preparation: $35.00
+State Tax ID Application Preparation: $35.00
+Business Licenses Compliance Package: $74.99
+Statement of Information Initial Report Filing: $55.00/$66.00 (Includes $20.00/$31.00 CA State Fee)
+Standard Shipping: $9.95
+
+Total: $437.94
+
+Standard LLC/Corporation Package: $289.00 (7 – 8 weeks)
+CA State Filing Fee: $85.00/$115.00
+Federal Tax Identification Number (EIN) Obtainment: $79.00
+S Corporation Election Obtainment: $80.00
+Sellers Permit Application Preparation: $35.00
+State Tax ID Application Preparation: $35.00
+Business Licenses Compliance Package: $74.99
+Statement of Information Initial Report Filing: $55.00/$66.00 (Includes $20.00/$31.00 CA State Fee)
+Standard Shipping: $9.95
+
+Total: $627.94
+
+Express Gold LLC/Corporation Package: $359.00 (2 – 3 weeks)
+CA State Filing Fee: $85.00/$115.00
+Federal Tax Identification Number (EIN) Obtainment: $49.00
+S Corporation Election Obtainment: $35.00
+Sellers Permit Application Preparation: $35.00
+State Tax ID Application Preparation: $35.00
+Business Licenses Compliance Package: $74.99
+Statement of Information Initial Report Filing: $55.00/$66.00 (Includes $20.00/$31.00 CA State Fee) 30 Day Trial of Attorney Access: Included (normally $29.99/month)
+
+Total: $657.99
+
+The Registered Agent Service is another optional service that may be added to any package for an annual fee of $159.00. Please keep in mind that this service is charged only after the LLC is filed.
+
+Finally, payment of the package you choose may be split into 3 monthly installments, and doing so will not affect the turnaround time.
+
+As always, please don&apos;t hesitate to contact me with any questions you may have, or when you are ready to proceed. You can call me at (855) 787-1953 Monday–Friday from 8 a.m.–5 p.m. PT or email me anytime at BizHelp@legalzoom.com
+
+
+{!User.Name}
+Business Account Manager
+(855) 787-1953
+BizHelp@legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

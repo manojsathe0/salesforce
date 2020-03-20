@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tm oa7</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Office Action - Ornamental</name>
+    <style>none</style>
+    <subject>Office Action - Ornamental</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Office Actions are direct correspondences from the U.S. Patent and Trademark Office (USPTO), and are generally either requesting additional information or updating you on the status of your application (or both). If you wish to view and/or download your Office Action, please visit here.
+
+Based on your Office Action, it appears your proposed Trademark is being rejected because the Examining Attorney believes that the Trademark, as used on the specimen of record, is merely a decorative or ornamental feature of the goods; it does not function as a Trademark to identify and distinguish the applicant’s goods from those of others and to indicate the source of the applicant’s goods.
+
+In response to such an Office Action, an applicant may submit a substitute specimen that shows proper Trademark use. Examples of such specimens are tags, labels and containers that show the mark on packaging or displays associated with the goods at their point of sale. For services, appropriate specimens can be advertisements or webpages that feature the proposed Trademark prominently. If you choose to pursue this option, please reply to this email and attach an image of your new specimen, preferably in .gif, .pdf, .jpeg or .jpg format. LegalZoom will then assist you with filing your response.
+
+Based on the Office Action received, it also appears that your Examining Attorney at the USPTO has some additional questions:
+
+****INSERT OFFICE ACTION ISSUES****
+
+You may contact the USPTO Assistance Center at 800-786-9199 or call your Examining Attorney: XXXXXX at XXX-XXX-XXXX. Additional instructions can be found at the bottom of your Office Action.
+
+Please reply to this email and let us know how you would like to proceed.
+
+Feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for using LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+___________________________________
+
+{!snippetVariable.tmoa_bap}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

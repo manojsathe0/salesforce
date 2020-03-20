@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>gsconfirm</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Confirm Goods &amp; Services Change</name>
+    <style>none</style>
+    <subject>Confirm Goods &amp; Services Change</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As you requested, we?ve revised your description of goods and services on your trademark application. 
+
+The new description: [Insert Goods and Services Description]
+
+You will be able to review your description before you electronically sign your trademark application, the last step in trademark filing process. 
+
+PLEASE NOTE: Once your application is submitted to the U.S. Patent and Trademark Office (USPTO), you can clarify or limit the goods and/or services. However, you cannot expand or broaden the identification of goods and services. 
+
+If you have any questions or would like additional information, please call us at (800) 773-0888 Monday?Friday from 6 a.m.?7p.m. PT or email us at customercare@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

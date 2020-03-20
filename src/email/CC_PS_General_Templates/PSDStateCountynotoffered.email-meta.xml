@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>PSDSCNO</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PSD State\County not offered</name>
+    <style>none</style>
+    <subject>PSD State\County not offered</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.  
+
+In regards to your question, LegalZoom does not at this time offer the documents you are requesting for your state due to issues that are out of our scope.  If you would like to seek the advice of an attorney, please visit the web site https://www.legalzoom.com/attorney-locator/.  We here at LegalZoom are always open to suggestions from our customers on how to best improve &amp; expand our service and we thank you for your input.  This matter will be forwarded to the appropriate parties for further consideration.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

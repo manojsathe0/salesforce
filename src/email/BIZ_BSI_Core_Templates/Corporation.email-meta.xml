@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>corpbsi1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Corporation</name>
+    <style>none</style>
+    <subject>Corporation</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs.  In regard to your inquiry, LegalZoom can assist you in creating a Corporation in the state of your choice.  We will make the process easy for you by preparing the Articles of Incorporation and filing it with your respective Secretary of State. LegalZoom will also draft a customized, state-specific corporate bylaws and resolutions which allows the corproation to govern itself and including important information such as ownership and banking resolutions.
+
+A Corporation is a state-specific business entity that provides its owners with personal liability protection, keeping business assets and personal assets separate.  In the event of a business lawsuit or bankruptcy, the owners of a Corporation are not personally responsible for any debts or liabilities incurred by the business.  The Corporation will allow you to obtain a Federal Tax Identification Number (FEIN), open a business bank account, hire employees, and own property under the business name.  The Corporation also provides name exclusivity in the state in which it is registered. 
+
+For your reference, I have provided the fees and links to our Incorporation service below:
+
+INCORPORATION
+Economy Package | $99.00 + State fees + shipping (20 - 35 business days)
+Standard Package | $239.00 + State fees + shipping (20 - 35 business days)
+Express Gold Package | $369.00 + State fees (7 - 10 business days)
+
+OPTIONAL SERVICES
+Federal Tax Identification Number (FEIN) Application Preparation | $30.00 (Included in Express Gold Package)
+FEIN Obtainment | $79.00 ($49.00 with Express Gold Package)
+
+Registered Agent Service | $159.00 for the first year
+
+S Corporation Application Preparation | $45.00 (Included in Express Gold Package)
+S Corporation Obtainment | $80.00 ($35.00 with Express Gold Package)
+
+TO GET STARTED:
+http://www.legalzoom.com/legal-incorporation/incorporation-overview.html
+FOR MORE INFORMATION:
+http://www.legalzoom.com/incorporation-guide/definition-of-a-corporation.html
+
+Please feel free to contact LegalZoom at (888) 381-8758 if you have any further questions.  Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}&lt;br/&gt; 
+{!User.Title}&lt;br/&gt; 
+{!User.CompanyName}&lt;br/&gt; 
+{!User.Address}&lt;br/&gt; 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

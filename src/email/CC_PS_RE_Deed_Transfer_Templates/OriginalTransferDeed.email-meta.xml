@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>deedfwd</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Original Transfer Deed</name>
+    <style>none</style>
+    <subject>Original Transfer Deed</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.
+
+We have received your signed Real Estate Deed and have forwarded it to the appropriate specialist in our Deeds Department.
+
+For your reference, you may send future inquiries about your Real Estate Transfer Deed to {!snippetVariable.deeds_email} or call 855-293-4584 Mon-Fri 5:30am - 6pm PT.br/&gt;
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>consent1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Consent Letter Instructions</name>
+    <style>none</style>
+    <subject>Consent Letter Instructions</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+To proceed with your order using the entity name you selected, consent will be required from the conflicting entity that already exists.
+
+This company’s listed contact info is:
+[Company name]
+[RA address]
+
+When requesting consent to use your entity name, a few key steps are needed:
+
+The entity providing consent must write out their consent on company letterhead.
+The letter must give consent to the Customer (by name) to use their specific entity name, and provide consent to LegalZoom forming the company on the Customer’s behalf – sample attached
+The name and address of the consenting company must be included in the letter.
+The letter must be signed by an officer of the company (if a corporation), or a member or manager (if an LLC)
+
+Once the consent is obtained, the letter can be returned to us via email, via fax, or by mail:
+
+Email: bzsupport@legalzoom.com (include order number in subject line)
+Fax: (323) 337-0743, Attn: Order # xxxxxxxx
+
+Mail:
+LegalZoom.com
+Order #: xxxxxxxx
+101 N Brand Blvd, 10th Floor
+Glendale, CA, 91203
+
+If you are unable to obtain consent or decide to try an alternate name instead, simply let us know.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

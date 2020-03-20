@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Last_Record_Holder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Last Record Holder</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Object__c</fullName>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Lead</fullName>
+                    <default>false</default>
+                    <label>Lead</label>
+                </value>
+                <value>
+                    <fullName>Opportunity</fullName>
+                    <default>true</default>
+                    <label>Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Order</fullName>
+                    <default>false</default>
+                    <label>Order</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <externalId>false</externalId>
+        <label>Team</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Abandoners</fullName>
+                    <default>false</default>
+                    <label>Abandoners</label>
+                </value>
+                <value>
+                    <fullName>AS BAP Courtesy</fullName>
+                    <default>false</default>
+                    <label>AS BAP Courtesy</label>
+                </value>
+                <value>
+                    <fullName>Attorney Services</fullName>
+                    <default>false</default>
+                    <label>Attorney Services</label>
+                </value>
+                <value>
+                    <fullName>Business Services</fullName>
+                    <default>false</default>
+                    <label>Business Services</label>
+                </value>
+                <value>
+                    <fullName>Chargebacks</fullName>
+                    <default>false</default>
+                    <label>Chargebacks</label>
+                </value>
+                <value>
+                    <fullName>Declines</fullName>
+                    <default>false</default>
+                    <label>Declines</label>
+                </value>
+                <value>
+                    <fullName>IP Abandoners</fullName>
+                    <default>false</default>
+                    <label>IP Abandoners</label>
+                </value>
+                <value>
+                    <fullName>IP Services</fullName>
+                    <default>false</default>
+                    <label>IP Services</label>
+                </value>
+                <value>
+                    <fullName>LLC/INC Business Account Services</fullName>
+                    <default>false</default>
+                    <label>LLC/INC Business Account Services</label>
+                </value>
+                <value>
+                    <fullName>Order Save</fullName>
+                    <default>false</default>
+                    <label>Order Save</label>
+                </value>
+                <value>
+                    <fullName>Quick Start</fullName>
+                    <default>false</default>
+                    <label>Quick Start</label>
+                </value>
+                <value>
+                    <fullName>RA Renewal</fullName>
+                    <default>false</default>
+                    <label>RA Renewal</label>
+                </value>
+                <value>
+                    <fullName>Trademark Account Services</fullName>
+                    <default>false</default>
+                    <label>Trademark Account Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>RoundRobin_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>isActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This is allow active flag can take people in and out of the RoundRobin based on schedules of agent.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>RoundRobin Rule</label>
+    <listViews>
+        <fullName>AM_Trademark</fullName>
+        <columns>NAME</columns>
+        <columns>isActive__c</columns>
+        <columns>User__c</columns>
+        <columns>Order__c</columns>
+        <columns>Last_Record_Holder__c</columns>
+        <columns>Team__c</columns>
+        <columns>Object__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Trademark Account Services</value>
+        </filters>
+        <label>AM Trademark</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Active_Order</fullName>
+        <columns>NAME</columns>
+        <columns>Object__c</columns>
+        <columns>Team__c</columns>
+        <columns>User__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Last_Record_Holder__c</columns>
+        <columns>Order__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>isActive__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Object__c</field>
+            <operation>equals</operation>
+            <value>Order</value>
+        </filters>
+        <label>Active - Order</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>isActive__c</columns>
+        <columns>Team__c</columns>
+        <columns>User__c</columns>
+        <columns>Object__c</columns>
+        <columns>Order__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Last_Record_Holder__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Active</fullName>
+        <columns>NAME</columns>
+        <columns>isActive__c</columns>
+        <columns>Team__c</columns>
+        <columns>User__c</columns>
+        <columns>Object__c</columns>
+        <columns>Order__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Last_Record_Holder__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>isActive__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All - Active</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Business_Services</fullName>
+        <columns>NAME</columns>
+        <columns>isActive__c</columns>
+        <columns>Team__c</columns>
+        <columns>User__c</columns>
+        <columns>Object__c</columns>
+        <columns>Order__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Last_Record_Holder__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Team__c</field>
+            <operation>equals</operation>
+            <value>Business Services</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>RoundRobin_Rule__c.Sales</value>
+        </filters>
+        <label>Business Services</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>Rule-{0000}</displayFormat>
+        <label>RoundRobin Rule Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>RoundRobin Rules</pluralLabel>
+    <recordTypes>
+        <fullName>Business_Account_Services</fullName>
+        <active>true</active>
+        <description>For managing account manager team LLC/INC Business Account Services</description>
+        <label>Business Account Services</label>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Order</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Team__c</picklist>
+            <values>
+                <fullName>LLC%2FINC Business Account Services</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Order_Save</fullName>
+        <active>true</active>
+        <description>For managing Order Save Records for the Round Robin Rules</description>
+        <label>Order Save</label>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunity</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Order</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Team__c</picklist>
+            <values>
+                <fullName>Order Save</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Quick_Start</fullName>
+        <active>true</active>
+        <label>Quick Start</label>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunity</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Order</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Team__c</picklist>
+            <values>
+                <fullName>Quick Start</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sales</fullName>
+        <active>true</active>
+        <description>For managing Sales related records</description>
+        <label>Sales</label>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunity</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Team__c</picklist>
+            <values>
+                <fullName>AS BAP Courtesy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Abandoners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attorney Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chargebacks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IP Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RA Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Trademark_Account_Services</fullName>
+        <active>true</active>
+        <description>For managing account manager team Trademark Account Services</description>
+        <label>Trademark Account Services</label>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Order</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Team__c</picklist>
+            <values>
+                <fullName>Trademark Account Services</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

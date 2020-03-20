@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>ocaacall</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>OCAA Call Back</name>
+    <style>none</style>
+    <subject>OCAA Call Back</subject>
+    <textOnly>Dear LegalZoom Customer,
+
+Congratulations on receiving a two-day trial of LegalZoom Legal Advantage Plus! With this two-day trial, you will be able to speak with an attorney to get advice on your specific issue. Your free consultation is being scheduled and an attorney will be contacting you shortly. 
+
+There is absolutely no obligation with your trial of LegalZoom Legal Advantage Plus. Your benefits will expire two calendar days after your enrollment. You can review the full terms of service for Advantage memberships here: http://www.legalzoom.com/subscription-terms-of-service.html
+
+If you find the service valuable, you can continue receiving benefits through one of several ways:
+? Purchase a LegalZoom product like a Last Will or Living Trust with Legal Advantage Plus as part of the package,
+? Sign up online for full enrollment by clicking here: http://www.legalzoom.com/attorneys-lawyers/legal-advantage-plus.html
+? You can also sign up by calling (877) 818-8787
+
+As a full member, you gain access to all membership benefits including:
+? An attorney available to answer questions and give advice on your LegalZoom document
+? Attorney consultations on most new legal matters
+? A free, annual legal check-up by an attorney
+? Secure electronic storage and on-demand delivery of your legal document
+? Unlimited revisions to your LegalZoom document
+? Attorney letters on your behalf
+? Unlimited, free downloads from our library of legal forms
+? A 10% discount on all other LegalZoom products*
+? A 25% discount on your attorney?s hourly rate for any follow-on services
+
+If you have any questions or would like further information, please call our customer care team at (877) 818-8787 Monday?Friday from 6AM?7PM PT.  Your two-day trial is subject to the terms and conditions found here (http://www.legalzoom.com/subscription-terms-of-service.html) and your use of the trial constitutes acceptance of those terms.
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+
+Best regards,
+
+The LegalZoom Team
+
+*Some restrictions apply. For full details, please read our Terms of Service here: http://www.legalzoom.com/subscription-terms-of-service.html
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

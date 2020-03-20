@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>User Order Extension</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>User Order Extensions</value>
+    </caseValues>
+    <fields>
+        <label><!-- ACR Date/Time --></label>
+        <name>ACR_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entity Name --></label>
+        <name>Entity_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- LZ Order Item ID --></label>
+        <name>LZ_Order_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- LZ Reopen --></label>
+        <name>LZ_Reopen__c</name>
+    </fields>
+    <fields>
+        <label><!-- LZ User Order ID --></label>
+        <name>LZ_User_Order_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Matter --></label>
+        <name>Legal_Matter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Processing Status Date/Time --></label>
+        <name>Prior_Processing_Status_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Processing Status --></label>
+        <name>Prior_Processing_Status__c</name>
+        <relationshipLabel><!-- User Order Extensions (Prior Processing Status) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Prior Reason Code --></label>
+        <name>Prior_Reason_Code__c</name>
+        <picklistValues>
+            <masterLabel>Customer Hold</masterLabel>
+            <translation><!-- Customer Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Contact Attempt Needed</masterLabel>
+            <translation><!-- Final Contact Attempt Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G&amp;S Issue</masterLabel>
+            <translation><!-- G&amp;S Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient Materials</masterLabel>
+            <translation><!-- Insufficient Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Clarification</masterLabel>
+            <translation><!-- Internal Clarification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Materials Needed</masterLabel>
+            <translation><!-- Materials Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missed Atty Appt</masterLabel>
+            <translation><!-- Missed Atty Appt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Information</masterLabel>
+            <translation><!-- Missing Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Contact</masterLabel>
+            <translation><!-- No Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Consult Follow-Up</masterLabel>
+            <translation><!-- Post Consult Follow-Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to Conduct Search</masterLabel>
+            <translation><!-- Unable to Conduct Search --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Consult</masterLabel>
+            <translation><!-- Waiting for Consult --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Processing Status Date/Time --></label>
+        <name>Processing_Status_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Status --></label>
+        <name>Processing_Status__c</name>
+        <relationshipLabel><!-- User Order Extensions (Processing Status) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason Code --></label>
+        <name>Reason_Code__c</name>
+        <picklistValues>
+            <masterLabel>Customer Hold</masterLabel>
+            <translation><!-- Customer Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final Contact Attempt Needed</masterLabel>
+            <translation><!-- Final Contact Attempt Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>G&amp;S Issue</masterLabel>
+            <translation><!-- G&amp;S Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient Materials</masterLabel>
+            <translation><!-- Insufficient Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Clarification</masterLabel>
+            <translation><!-- Internal Clarification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Materials Needed</masterLabel>
+            <translation><!-- Materials Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missed Atty Appt</masterLabel>
+            <translation><!-- Missed Atty Appt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Information</masterLabel>
+            <translation><!-- Missing Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Contact</masterLabel>
+            <translation><!-- No Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Consult Follow-Up</masterLabel>
+            <translation><!-- Post Consult Follow-Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to Conduct Search</masterLabel>
+            <translation><!-- Unable to Conduct Search --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Consult</masterLabel>
+            <translation><!-- Waiting for Consult --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>User Order Extension Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

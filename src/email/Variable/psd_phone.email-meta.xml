@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.psd_phone</name>
+    <style>none</style>
+    <subject>psd_phone</subject>
+    <textOnly>(800) 962-7490</textOnly>
+    <type>custom</type>
+</EmailTemplate>

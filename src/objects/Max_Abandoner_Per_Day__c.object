@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This setting is used to control how many abandoner opportunity can a sales rep get in a single day.This is managed by sales manager.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Max Abandoner Per Day</label>
+    <visibility>Public</visibility>
+</CustomObject>

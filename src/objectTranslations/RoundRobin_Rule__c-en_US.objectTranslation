@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RoundRobin Rule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RoundRobin Rules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Last Record Holder --></label>
+        <name>Last_Record_Holder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Object__c</name>
+        <picklistValues>
+            <masterLabel>Lead</masterLabel>
+            <translation><!-- Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order</masterLabel>
+            <translation><!-- Order --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+        <picklistValues>
+            <masterLabel>AS BAP Courtesy</masterLabel>
+            <translation><!-- AS BAP Courtesy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Abandoners</masterLabel>
+            <translation><!-- Abandoners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attorney Services</masterLabel>
+            <translation><!-- Attorney Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Services</masterLabel>
+            <translation><!-- Business Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chargebacks</masterLabel>
+            <translation><!-- Chargebacks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declines</masterLabel>
+            <translation><!-- Declines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP Abandoners</masterLabel>
+            <translation><!-- IP Abandoners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP Services</masterLabel>
+            <translation><!-- IP Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LLC/INC Business Account Services</masterLabel>
+            <translation><!-- LLC/INC Business Account Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Save</masterLabel>
+            <translation><!-- Order Save --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quick Start</masterLabel>
+            <translation><!-- Quick Start --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA Renewal</masterLabel>
+            <translation><!-- RA Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trademark Account Services</masterLabel>
+            <translation><!-- Trademark Account Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- RoundRobin Rules --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>isActive__c</name>
+    </fields>
+    <layouts>
+        <layout>RoundRobin Rule Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Business Account Services --></label>
+        <name>Business_Account_Services</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Order Save --></label>
+        <name>Order_Save</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Quick Start --></label>
+        <name>Quick_Start</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sales --></label>
+        <name>Sales</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Trademark Account Services --></label>
+        <name>Trademark_Account_Services</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

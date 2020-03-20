@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>filedsts</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post Filing - Check Status</name>
+    <style>none</style>
+    <subject>Post Filing - Check Status</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Now that your trademark application has been submitted to the U.S. Patent and Trademark Office (USPTO), here?s what you can expect:
+
+1.  Status of your application: You can check the status of your application at http://tsdr.uspto.gov/ approximately thirty (30) days after you signed the e-signature form. You can find your serial number on the e-signature confirmation email we sent you. 
+
+2.  Review process: Your application will be assigned to a trademark examining attorney approximately 3-6 months after it was submitted. The assigned attorney will contact you via phone, email*, mail or fax should any changes or amendments be required to prepare your trademark for registration. NOTE: The USPTO doesn&apos;t update LegalZoom on the status of your registration.
+
+3.  Complete process: The complete trademark process can take anywhere from eight to 13 months, although in some cases, it can take longer. Your trademark is not considered registered until you have received official documentation and notification of registration from the USPTO. You are not allowed to use the circle R symbol until the mark has officially been registered by the USPTO. Until then, you can continue to use the circle R or SM designation.
+
+4.  Office actions: You should check the status of a pending application every 3-4 months to respond promptly to any USPTO actions. If you receive an Office Action, please forward it as an attachment to tmofficeactions@legalzoom.com and include your order number in the subject line. You can view all USPTO actions here: http://tsdr.uspto.gov/. 
+
+*To ensure you receive important emails from the USPTO, add TEAS@uspto.gov to your safe senders list. 
+
+If you have any questions or would like additional information, please call us at (800) 773-0888 Monday?Friday from 6 a.m.?7p.m. PT or email us at customercare@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

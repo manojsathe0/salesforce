@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>CONVERTED:SUM/Lead.Lead_Count__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Conversion Rate</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>CONVERTED:SUM/Lead.Lead_Count__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Converted Sum divided by Lead Sum</description>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Drip Conversion Rate</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_64534424</developerName>
+        <masterLabel>Drip Leads</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Lead.Sales_opportunity_latest_campaign__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Abandoner/Drips</sourceValue>
+            </sourceValues>
+            <value>Claimed Drip Lead</value>
+        </values>
+        <values>
+            <value>Not Claimed</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>LEAD_OWNER</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Large</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Lead.Lead_Call_Status__c</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Lead.Lead_Count__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CONVERTED</field>
+    </columns>
+    <description>Drip Conversion % Rolling 7 Days Past</description>
+    <filter>
+        <criteriaItems>
+            <column>CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LZPKB Site Guest User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LEAD_OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Aaron Mozingo,Alma Henriquez,Amanda Owens,Andrew Caltagirone,Elaine Correa,Ivor Carcamo,James Brookes,Jesus Zapata Luna,Katrina Godinez,Kenneth Picou,Kenny Browder,Latania Akui,Levi Vaupel,Lisa Bailey,Manuel Gutierrez,Mariah Ramirez,Miranda Jacobs,Roderick Allen,Tabitha Venable,Tommy Wilson,Wyatt Young</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_64534424</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Abandoner/Drip</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>LEAD_OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Team Aimen Drip Conversion Last 7 Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityLead</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Lead.Lead_Count__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Lead.Date_Time_Assigned__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

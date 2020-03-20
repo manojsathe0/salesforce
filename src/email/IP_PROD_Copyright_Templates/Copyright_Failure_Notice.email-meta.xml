@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>crfail</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>MATERIALS - Failure Notice</name>
+    <style>none</style>
+    <subject>FAILURE NOTICE: File Size Too Large – Please Resubmit {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+We received notification that the file you tried to submit to us was too large. Please resubmit it at your earliest convenience so we can continue processing your copyright registration. 
+
+File size restrictions: 
+
+- Small files (up to 6 MB maximum): Email us at mycopyright@legalzoom.com (If you are a Mac user, be sure to attach your document, rather than dragging and dropping it in the Mac Mail program. Also, be sure your document contains the correct PC file type extension.) 
+- Medium-sized files (up to 25 MB maximum): Upload your file at http://legalzoom.force.com/LZWTC (Fill out the form and attach your document at the bottom.) 
+- Large files (up to 2 GB maximum): Use a third-party site such as YouSendIt (www.yousendit.com) to compress your file and send us the link. (Send the link to: mycopyright@legalzoom.com and include your order number in the subject line.) 
+
+For complete instructions on how to submit electronic files as well as a list of acceptable file types: visit http://legalzoom.force.com/LZPKB/articles/Answer/03434 
+
+If you have any questions or would like additional information, call our customer care team at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT or email us at customercare@legalzoom.com. 
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+Best regards, 
+
+The LegalZoom Team
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order. Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_36207309</developerName>
+        <masterLabel>cc ps xfer queues</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Case.Queue__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>PSD-BSI</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS DIV Problem Orders</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS DIV Processing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS EP Problem Orders</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS EP Processing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS NC Problem Orders</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS NC Processing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS Reshipping</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS Vault</sourceValue>
+            </sourceValues>
+            <value>cc ps xfer</value>
+        </values>
+    </buckets>
+    <filter>
+        <criteriaItems>
+            <column>EMAIL.STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2,3,4</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Email to Case User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Created_By_User_Division__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_36207309</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC PS Emails Sent &amp; Xfer</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseEmail</reportType>
+    <scope>queue</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>EMAIL.MESSAGE_DATE</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

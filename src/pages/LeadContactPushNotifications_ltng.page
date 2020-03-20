@@ -1,0 +1,101 @@
+<apex:page controller="LeadContactPushNotificationController" showHeader="true" standardStylesheets="false">
+    <apex:slds rendered="{! !isClassic}" />
+    <head>
+    <!--<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" /> -->
+     <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+    <!--<apex:includeScript value="/support/console/36.0/integration.js" />-->
+       <!-- <apex:includeScript value="/support/console/40.0/integration.js" /> -->
+    <!--<apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" /> -->
+        <apex:includeScript value="/support/console/42.0/integration.js"/>
+
+    <script type="text/javascript">
+        
+        function openTab(id) {
+            //sforce.console.openPrimaryTab(null, '/'+id, true);
+            sforce.console.openPrimaryTab(null, '/one/one.app?source=aloha#/sObject/'+id+'/view', true);
+        }
+        function checkTealiumUpdated(){
+            console.log('tealium val ' + $('#tealiumUpdated').val());
+             if($('#tealiumUpdated').val() == 'true'){
+                sforce.console.setCustomConsoleComponentVisible(true);
+            }
+        }
+        foundUpdate = function(theRecordId){
+            console.log('parent was called with ' + theRecordId);
+            if(theRecordId.startsWith('00Q')){
+                console.log('going to lead');
+                getLeadChanges(theRecordId);   
+            }
+            else if(theRecordId.startsWith('003')){
+                console.log('going to contact');
+                getContactChanges(theRecordId);
+            }
+            else if(theRecordId.startsWith('006')){
+                console.log('going to Opportunity');
+                getOpportunityChanges(theRecordId);
+            }
+        }
+        if (!String.prototype.startsWith) {
+          String.prototype.startsWith = function(searchString, position) {
+            position = position || 0;
+            return this.indexOf(searchString, position) === position;
+          };
+        }
+        console.log('test');
+    </script>
+    </head>
+    
+    <div id="datastream">
+    <apex:form id="theForm"> 
+    <div class="slds">
+        <apex:iframe height="0" width="0" src="/apex/SubscribePage?topic=LeadTealiumUpdates"/>
+        <apex:iframe height="0" width="0" src="/apex/SubscribePage?topic=ContactTealiumUpdates"/>
+        <apex:iframe height="0" width="0" src="/apex/SubscribePage?topic=OpportunityTealiumUpdates"/>
+       <!-- <apex:form id="theForm"> -->
+            <apex:actionFunction name="getLeadChanges" action="{!getLeadChanges}" rerender="theForm" oncomplete="checkTealiumUpdated();">
+                <apex:param name="leadId" value="" />
+            </apex:actionFunction>
+             <apex:actionFunction name="getContactChanges" action="{!getContactChanges}" rerender="theForm" oncomplete="checkTealiumUpdated();">
+                <apex:param name="contactId" value="" />
+            </apex:actionFunction>
+            <apex:actionFunction name="getOpportunityChanges" action="{!getOppChanges}" rerender="theForm" oncomplete="checkTealiumUpdated();">
+                <apex:param name="oppId" value="" />
+            </apex:actionFunction>
+            
+            <input id="tealiumUpdated" type="hidden" value="{!tealiumUpdated}"/>
+            <table class="slds-table slds-wrap"  >
+                <thead class="slds-table--bordered">
+                    <tr class="slds-text-body--label">
+                        <th class="slds-text-body--small" scope="col">Name</th>
+                        <th class="slds-text-body--small" scope="col">Object</th>
+                        <th class="slds-text-body--small" scope="col">Activity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!updates}" var="theUpdate">
+                        <tr class="slds-text-heading--label slds-has-divider">
+                            <td class="slds-cell">
+                                    <div class="slds-dropdown-trigger slds-text-align--right" aria-expanded="true">
+                                      <a class="slds-text-body--small" onclick="openTab('{!theUpdate.id}');">{!theUpdate.name}</a>
+                                      <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left">
+                                        <ul class="dropdown__list" role="menu">
+                                          <apex:repeat value="{!theUpdate.changes}" var="theChange">
+                                            <li class="slds-dropdown__item">
+                                                <a class="slds-text-body--small" role="menu-item" onclick="openTab('{!theUpdate.id}');">{!theChange}</a>
+                                            </li>
+                                        </apex:repeat>
+                                        </ul>
+                                      </div>
+                                    </div>
+                            </td>   
+                            <td class="slds-cell-shrink">{!theUpdate.objType}</td>
+                            <td>{!theUpdate.Activity}</td>
+
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+        </div>
+        </apex:form>
+    </div>
+</apex:page>

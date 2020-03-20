@@ -1,0 +1,56 @@
+<html>
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif" width="194" height="55" alt="LegalZoom"></td></tr>
+
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+Dear {!Contact.FirstName},<br><br>
+Congratulations on taking the first steps towards starting your new business! Here are the details of your scheduled consultation with the attorney:<br>
+<br>
+Attorney Name: Chike Okpara, Esq. <br>
+Date/time: ---<br>
+Details:  I will call you at --- and connect you with Chike.<br>
+<br>
+If you have any questions or need to reschedule your consultation, please call me directly at (855) 787-1951 x{!User.Extension}, Monday–Friday from 6 am – 6pm PT or simply reply to his message. If I’m unavailable, you can also email bizhelp@legalzoom.com to reach the next available member of my team. <br>
+<br>
+As your dedicated account manager, I'll be your primary point of contact for all your business formation needs. My commitment to you is this—I will do whatever possible to help make sure you have the right information to make the best decisions for you—and hopefully, I can also help save you money in the process!<br>
+<br>
+Thank you for reaching out to the LegalZoom Business Starter Team. I look forward to speaking with you soon.<br><br>
+
+<img src="https://lairh6ws243d.legalzoom.com/sites/legalzoom.com/files/images/email/am_{!User.Id}.gif"><br>
+
+{!User.FirstName}<br>
+Business Account Manager<br>
+(855) 787-1951 x{!User.Extension}<br>
+BizHelp@legalzoom.com<br>
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+Consultation Terms: <br>
+The consultation and Roadmap are provided by an independent attorney, and this email may be deemed attorney advertising. This email is not a lawyer referral service. Any information you submit through this site may not be protected by attorney?client privilege and may be provided to attorneys for the purpose of determining your need for legal services. The consultation and Roadmap are provided by Chike Okpara, Attorney at Law, 311 W. 5th Street, Suite 100, Austin TX 78701. <br>
+<br>
+The scope of the consultation is limited to discussing general requirements for forming a business under Texas business law only. The consultation is provided for a limited duration of up to 30 minutes. You are fully and solely responsible for obtaining an adequate evaluation of your specific situation by competent counsel. Without a written agreement to engage the attorney, the consultation shall not constitute an offer by you or acceptance by the attorney of any legal representation or employment, or otherwise form the basis of any legal representation or employment.
+<br><br>
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to:  {!Contact.Email}
+  <br /><br />
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</html>

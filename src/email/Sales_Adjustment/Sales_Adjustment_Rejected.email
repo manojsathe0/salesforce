@@ -1,0 +1,13 @@
+<p>The following Sales Adjustment has been Rejected.  Please see the links below for further information.</p>
+<p>Sales Adjustment: &nbsp;
+<a href="{!Sales_Adjustment__c.Link}">{!Sales_Adjustment__c.Name}</a><br/>
+Agent: {!Sales_Adjustment__c.Agent__c}<br/>
+Type of Adjustment: {!Sales_Adjustment__c.Type_of_Adjustment__c}<br/>
+Amount of Adjustment: {!Sales_Adjustment__c.Amount_of_Adjustment__c}<br/>
+Additional Notes:<br/>
+{!Sales_Adjustment__c.Additional_Notes__c}<br/>
+
+<br/>
+Approved/Rejected<br/>
+Status: {!Sales_Adjustment__c.Status__c}<br/>
+</p>

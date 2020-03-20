@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>jboles@legalzoom.com</contactEmail>
+    <contactPhone>512-409-4058</contactPhone>
+    <label>LeadOpportunityCreateUpdate</label>
+    <oauthConfig>
+        <callbackUrl>https://www.getpostman.com/oauth2/callback</callbackUrl>
+        <consumerKey>3MVG9GiqKapCZBwEnALmp9Pw8PQV6DUsJeOigzvv0pFmM8h0xpOqtdqRU2sIKq4TZkaE26ZPqJhdTDfoUOQds</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>Full</scopes>
+        <scopes>CustomApplications</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>

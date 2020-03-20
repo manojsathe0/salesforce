@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This is the name of the Order that will be  populated for the order item that needs to be deleted.Populated by data Integration.DI populates Order Id and we use this name value to get the Order Id making it independent of the environment.</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <label>Dummy Order For OrderItem</label>
+    <visibility>Public</visibility>
+</CustomObject>

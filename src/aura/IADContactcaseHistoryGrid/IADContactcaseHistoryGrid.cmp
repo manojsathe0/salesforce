@@ -1,0 +1,92 @@
+<aura:component controller="IADContactCaseHGridController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="fieldlabels" type="map" />
+    <aura:attribute name="fieldpaths" type="String[]" />
+    <aura:attribute name="problemCasesAll" type="Object[]" />
+    <aura:attribute type="Boolean" name="sortAsc" />
+    <aura:attribute type="String" name="sortField" />
+    <aura:attribute name="numberofcases" type="Integer" default="0" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:spinner aura:id="mySpinner" />
+    		
+            <div class="slds-text-body--small slds-theme_default">
+                <div class="slds-card__header slds-grid ">
+                    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+							<span  id="header" class="svgParent">
+	                            <lightning:icon iconName="standard:case" size=" x-small" />
+							</span>
+                        </div>
+                        <div class="slds-media__body">
+                            <h3 class="slds-text-heading--small slds-truncate">Cases ({!v.numberofcases})</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered sortable">
+                        <thead>
+                            <tr class="slds-text-heading--label">
+                            <aura:iteration items="{!v.fieldlabels}" var="fieldLabel">
+                                
+                              <th  class="slds-is-sortable  "  scope="col">
+                                  <a class="slds-th__action slds-text-link_reset" onclick="{!c.sorting}"  data-value ="{!fieldLabel}" role="button" tabindex="-1">
+                                <span class="slds-truncate" title="Name">{!fieldLabel}</span>
+                              
+									<span  >
+                                          <div class="slds-icon_container">
+                                           <lightning:icon iconName="utility:sort"  size="xx-small"  class="slds-icon  slds-icon-text-default slds-is-sortable__icon"/>
+                              
+                                        </div>
+                                          
+										  
+									</span>
+                                
+                                
+                                  </a>
+                              </th>
+                                
+                            </aura:iteration>
+                                <th>Exception Status </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <aura:iteration items="{!v.problemCasesAll}" var="problemCase">
+                            <tr>
+                              
+                                <td>
+                                  <a  data-value="{!problemCase.Id}" onclick="{!c.handleClick}" title="Click to open case">{!problemCase.CaseNumber}</a>  
+                                </td>
+                                <td>
+                                    <a  data-value="{!problemCase.Id}" onclick="{!c.handleClick}" title="Click to open case">  {!problemCase.RecordType.Name}</a>
+                                </td>
+                                <td>
+                                    <a  data-value="{!problemCase.Id}" onclick="{!c.handleClick}" title="Click to open case"> {!problemCase.Status}</a>
+                                </td>
+                                <td>
+                                    <a  data-value="{!problemCase.Id}" onclick="{!c.handleClick}" title="Click to open case">  {!problemCase.Subject}</a>
+                                </td>
+                                <td>
+                                    <a  data-value="{!problemCase.Id}" onclick="{!c.handleClick}" title="Click to open case"> <lightning:formattedDateTime value="{!problemCase.created_date__c}" year="numeric" month="numeric" day="numeric"   /> </a>
+                                </td>
+                                <td>
+                                    <a  data-value="{!problemCase.Id}" onclick="{!c.handleClick}" title="Click to open case">   {!problemCase.Product_Line__c}</a>
+                                </td>
+                                <td>
+                                    <a  data-value="{!problemCase.Id}" onclick="{!c.handleClick}" title="Click to open case">  {!problemCase.Product2__c}</a>
+                                </td>
+                               <td>
+                                    <a  data-value="{!problemCase.Id}" onclick="{!c.handleClick}" title="Click to open case">  {!problemCase.Order_Exception__r.Exception_Type__c}</a>
+                                </td>
+                            </tr>
+                             </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer slds-grid slds-grid--align-center">
+                </div>
+            </div>
+	
+</aura:component>

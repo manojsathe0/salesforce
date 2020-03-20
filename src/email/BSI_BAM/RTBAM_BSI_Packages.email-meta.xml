@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>RTBAM BSI - Packages</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>RTBAM BSI - Packages</name>
+    <style>freeForm</style>
+    <subject>LegalZoom - Retail Business Account Manager</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing LegalZoom for your [RETAIL/FOOD SERVICE] business needs.  In regard to our phone conversation, I have attached the options for our [RETAIL/FOOD SERVICE] program.  These options will assist you with multiple facets of running a successful [RETAIL/FOOD SERVICE] business, from handling tax and legal matters, to licensing and compliance issues.
+ 
+You will have a dedicated Account Manager with whom you will be able to discuss these options, as well as the next steps for your business.  Your Account Manager will be your single point of contact at LegalZoom for managing your business needs.
+ 
+Please contact me upon receiving this email so that I can put you in contact with your Account Manager.  Thank you for choosing LegalZoom as your premiere business resource, and we look forward to assisting you in growing your business.
+
+
+Best regards,
+
+
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

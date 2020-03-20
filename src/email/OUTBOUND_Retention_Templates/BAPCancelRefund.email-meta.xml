@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>baprefund</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BAP Cancel/Refund</name>
+    <style>none</style>
+    <subject>BAP Cancel/Refund</subject>
+    <textOnly>legalzoom.com
+
+Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom. Per your request, we have cancelled your membership to Business Advantage Pro and have refunded your money. Please allow 5-7 business days for the refund to appear on your credit card statement.
+
+{!snippetVariable.keepmembershipline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.
+
+{!snippetVariable.bestregardstext}
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+Call Customer Care: (800) 773-0888  LegalZoom. Legal help for the modern world.
+
+Privacy Policy
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

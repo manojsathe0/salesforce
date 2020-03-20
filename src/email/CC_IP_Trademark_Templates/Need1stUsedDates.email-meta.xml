@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>needdates</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Need 1st Used Dates</name>
+    <style>none</style>
+    <subject>Need 1st Used Dates</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+You indicated on your application that you are currently using your trademark in commerce. To file your application on a ?use in commerce? basis, you must show proof that you have used the mark in the ordinary course of trade and are not simply reserving rights in the mark.
+
+In order to proceed with your trademark application, you must provide the following:
+
+1. Date of first use anywhere ? month and year
+2. Date of first use in commerce ? month and year
+
+Your use-based application will include your sworn statement, the dates you provide above, and a specimen or example of your use of the mark in commerce. NOTE: Dates in the future may not be used. The USPTO requires the trademark be used in commerce prior to the submission of your application.
+
+Please call or email us as soon as possible to provide your information at (800) 773-0888 Monday?Friday from 6 a.m.?7p.m. PT or customercare@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

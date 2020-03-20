@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SalesQA</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SalesQA</value>
+    </caseValues>
+    <fields>
+        <help><!-- Exclude this User from the Sales QA &amp; Compliance Round Robin cycle. --></help>
+        <label><!-- ExcludeFromCycle --></label>
+        <name>ExcludeFromCycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pulled --></label>
+        <name>Pulled__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

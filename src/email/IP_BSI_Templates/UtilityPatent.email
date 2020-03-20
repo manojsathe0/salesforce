@@ -1,0 +1,60 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for contacting LegalZoom.<br/><br/>LegalZoom can assist you in preparing and filing a non-provisional patent (Utility Patent) for a total cost of $3,499.00. By coupling LegalZoom&#39;s technology with our carefully selected patent firms&#8217; experience, we&#39;ve streamlined the patent application process and developed a new way for inventors to obtain a patent conveniently and affordably. As the inventor, you first flesh out the details of the invention through our online questionnaire, which allows the skilled patent professionals to use their time efficiently and contribute where it makes the greatest difference for your patent application.<br/><br/>Step 1: Obtain Initial Patent Consultation and Professional Patent Drawings - $699<br/>Service in the first step includes:<br/>* Technical patent drawings by a professional illustrator<br/>*Expert patent consultation and review by a registered patent attorney or agent<br/>* Comprehensive patent search and assessment (Optional for $399) <br/>* No-Risk Advantage: If after your consultation you decide not to pursue a patent, there is no obligation to purchase the Patent Filing Package in the second step.<br/><br/>Step 2: Purchase Patent Filing Package - $2,800<br/>Service in the second step includes:<br/>*Expert preparation and drafting of a non-provisional Utility Patent, including 10 claims (up to three independent claims) and five pages of specifications<br/>*Preparation of Information Disclosure Statement<br/>*Electronic filing of your Utility Patent and payment of initial government filing fees<br/><br/>Enhanced Patent Preparation Option - Add $1,000<br/>This package includes:<br/>*Up to 15 claims prepared by an expert patent professional<br/>*Up to eight pages of patent specifications<br/><br/>To get started on your utility patent, click <a href=http://www.legalzoom.com/utility-patents/utility-patents-pricing2.html>here</a>.<br/><br/>Please feel free to contact our {!snippetVariable.ipbsi_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ip_phone}. Our {!snippetVariable.ipbsi_dept_full} business hours are {!snippetVariable.ip_hours}.<br/><br/>Thank you for choosing LegalZoom and we look forward to hearing from you soon.<br/><br/>Best regards,<br/><br/>LegalZoom {!snippetVariable.ipbsi_dept_full}<br/>{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

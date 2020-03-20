@@ -1,0 +1,12 @@
+****NEW SHARED SERVICES REQUEST NOTIFICATION**** 
+
+Shared Services Request Submitter: {!Shared_Services_Requests__c.Project_Request_Submitter__c}
+Request Number:{!Shared_Services_Requests__c.Request__c}
+Project Request Type:{!Shared_Services_Requests__c.Project_Request_Type__c}
+
+Description: 
+{!Shared_Services_Requests__c.Project_Description__c}
+
+Please Approve or Reject the following Shared Services Request:
+------------------------------------- 
+{!Article_Project_Request__c.Link}{!Shared_Services_Requests__c.Link}

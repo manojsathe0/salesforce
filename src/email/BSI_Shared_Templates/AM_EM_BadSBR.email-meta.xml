@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>AM_EM_BadSBR</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AM_EM_BadSBR</name>
+    <style>none</style>
+    <subject>We’ve Contacted Our Partner On Your Behalf</subject>
+    <textOnly>legalzoom.com
+
+Dear {!Contact.FirstName} {!Contact.LastName},
+
+Once again, we apologize for the inconvenience and issues with your service.  Your information has been forwarded to our partner, and they will follow up with you directly to resolve this matter.
+
+Please do not hesitate to call me directly at (877) 677-8787 ext. {!User.Extension} should you have any questions or need further assistance.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+Call Customer Care: (800) 773-0888  LegalZoom. Legal help for the modern world.
+
+Privacy Policy
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

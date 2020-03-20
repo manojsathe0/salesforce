@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>cr26_draft</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PROBLEM Copyright – Customer Sent Unacceptable File Format for Computer Program_</name>
+    <style>none</style>
+    <subject>Your Copyright Registration – Incorrect File Format</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for submitting your work to accompany your Copyright application. However, your file was in executable (.exe) format, and the U.S. Copyright Office does not accept this file format for deposit materials. Acceptable file formats include PDF, MP3, ASCII text and HTML.
+
+In order to proceed with your Copyright registration, we need you to resend your work in an acceptable file format. Please reply to this as soon as possible with your work in such a format. If your file is larger than 6MB, please upload it here. For new computer programs, electronic copy requirements are:
+
+• The first 25 and the last 25 pages or equivalent units of the source code.
+
+• For a program not represented by pages, use an equivalent unit to determine the page length. As a general rule of thumb, 40 lines of code can be considered one page, so the first 1,000 and last 1,000 lines of code would be an acceptable electronic copy.
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you.
+
+For additional information on depositing copy, visit the U.S. Copyright Office .
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team ?
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

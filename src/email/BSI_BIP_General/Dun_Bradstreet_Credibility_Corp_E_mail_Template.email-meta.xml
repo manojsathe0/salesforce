@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Dun &amp; Bradstreet Credibility Corp E-mail Template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Dun &amp; Bradstreet Credit Builder or Credit Monitor Packages</name>
+    <style>freeForm</style>
+    <subject>Activate and Start Your LegalZoom Business Advantage Plus Membership</subject>
+    <textOnly>Dear {!Contact.FirstName},&lt;?xml:namespace prefix = o /&gt;
+
+As part of your Dun &amp; Bradstreet Credibility Corp. membership, you have access to two valuable business services through LegalZoom Business Advantage Plus.
+
+What&apos;s included with Business Advantage Plus
+
+· Compliance Calendar. Tracks and alerts you to federal and state filing deadlines automatically, so you can focus on your work and still hit important dates.
+
+· Legal forms. Get unlimited access to more than 160 attorney-drafted legal forms that you can download and customize anytime you need them.
+
+Here&apos;s how you get started:
+Step 1 Create a password for your LegalZoom account.
+
+Step 2 Click on the link to sign in to your account.  Use the email address you provided D&amp;B Credibility Corp, and your new password.
+
+Step 3 Under the Open Orders tab, fill out the Compliance Calendar questionnaire to start your subscription. Once complete, you can access Compliance Calendar under the Corporate Center tab. Redeem this special offer from LegalZoom and your first 90 days are completely free—up to a $119 value. No credit card is required and you can cancel at any time.
+
+Step 4 When logged in, you can download forms anytime from the legal forms page.
+
+Get Started
+
+We hope you find these LegalZoom services helpful in maintaining and growing your business!
+
+Sincerely,
+
+The LegalZoom Team
+www.legalzoom.com
+
+Privacy Policy
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

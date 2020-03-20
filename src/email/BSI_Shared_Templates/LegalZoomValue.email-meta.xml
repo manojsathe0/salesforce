@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LZvalue</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LegalZoom Value</name>
+    <style>none</style>
+    <subject>LegalZoom Value</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+LegalZoom was developed by expert attorneys with experience at the most prestigious law firms in the country. We&apos;ve helped over 100,000 satisfied customers, and our know-how allows us to prepare legal documents quickly and efficiently. Our documents contain advanced provisions that are not found in simple &quot;do-it-yourself&quot; kits or manuals. 
+
+With LegalZoom, you can rest assured, knowing that your documents are treated with the utmost care and attention. Before you submit your order, LegalZoom will review the answers you provide on the questionnaire for consistency, completeness, spelling and grammar. Furthermore, our customer service specialists are available to answer your questions by phone or e-mail. Call us toll-free at {!snippetVariable.ccphone} Monday-Friday 7am to 5pm.
+
+We strive to be the best legal documentation service on the web. If you are not satisfied with our services for any reason, please contact us immediately and we will either correct the situation or provide a refund, your choice. Please visit www.legalzoom.com for details about our guarantee.
+
+Please do not hesitate to contact us if we can be of further assistance. Simply reply to this email or call us toll free at {!snippetVariable.ccphone}.
+
+Thank you once again for contacting LegalZoom, America&apos;s #1 online legal source. 
+ 
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>35.0</apiVersion>
+    <available>false</available>
+    <description>Test for snippets in emails Sales general email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>pi_test_snippet_email</name>
+    <style>none</style>
+    <type>visualforce</type>
+</EmailTemplate>

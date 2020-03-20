@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ppsendcan</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PPA Sending Materials-DunlapWeaver</name>
+    <style>none</style>
+    <subject>Sending your Patent materials - DunlapWeaver PLLC</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for taking the time to contact LegalZoom.
+
+The next step to completing your provisional application for patent is providing a copy of your materials to LegalZoom. You may send an electronic copy to Illustrations@LegalZoom.com, or alternatively fax a copy to 323.446.7133. If you are using a Macintosh program or sending files over 7MB, please upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s Support Center at {!snippetVariable.aaq_link_only}
+
+If you prefer to send a physical copy, please mail to:
+
+LegalZoom - Attn: Patents
+{!snippetVariable.lz_address2}
+
+If you have any questions, please contact your attorney, DunlapWeaver PLLC, at 1-855-226-9661 and press &apos;1&apos; for Patents, or via email at patents@dunlapweaver.com.
+
+LegalZoom {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

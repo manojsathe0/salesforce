@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>rev12</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RE Lease Revision Request</name>
+    <style>none</style>
+    <subject>RE Lease Revision Request</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}:
+
+We have received your request to revise Real Estate Lease order #.  To get the revisions started, simply reply to this email and specify the changes you?d like to make. We must get your changes in writing before we can proceed with your request.
+
+Once your revision email is received, your documents will be prepared and emailed to you within 1 business day, along with an easy-to-follow next steps guide. Please note, all revisions are handled electronically.
+
+Unless otherwise noted, the credit card used at the time of purchase will be billed for $9.95 for the requested revisions.
+
+If you have any questions, simply reply to this email or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}. We appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

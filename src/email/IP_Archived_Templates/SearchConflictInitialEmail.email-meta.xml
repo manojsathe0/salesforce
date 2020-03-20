@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Search Conflict Initial Email_archive</name>
+    <style>none</style>
+    <subject>Search Conflict Initial Email</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We have conducted a Federal Direct-Hit Search of your proposed trademark, and have attached a report with your results to this email. This report includes information about trademarks both registered and pending with the U.S. Patent and Trademark Office (USPTO) that may conflict with the one that you want to register. 
+
+Next Steps 
+
+Please review the attached materials carefully. Once your review is complete, please reply to this email and tell us how you want to proceed. Your options include:
+
+1. Notifying LegalZoom to process and file your trademark application as is;
+2. Submitting a different name or logo—either updating your previous submission or creating a new mark altogether—to receive a FREE Federal Direct-Hit Search of that different mark (up to 3 searches are included with your trademark application order);
+3. Consulting with an attorney about your trademark and the preliminary search results* or
+4. Upgrading your order with a comprehensive trademark search for more information on possible conflicts, including uses of your proposed trademark in commerce (for example, in business and website domain names). 
+
+NOTE: If you want us to delay the processing of your trademark application, please contact us within 15 days from the date of this email. 
+
+What is a conflict? 
+
+In its review of your trademark application, the USPTO will search federal records for conflicts between your proposed mark and any other registered or pending mark. In general, the USPTO will reject an application if it finds that there would be a “likelihood of consumer confusion” between your mark and another mark. Marks, goods, and/or services do not have to be identical for the USPTO to come to this conclusion. A number of factors are considered by the USPTO to determine whether a likelihood of confusion exists, including:
+The similarity of the marks in appearance, sound, and meaning.
+
+- Whether the marks are used to sell similar kinds of goods or services.
+- The number of similar marks currently in use.
+- The similarity of established sales channels and the sophistication of the buyers.
+
+For more information about the “likelihood of confusion,” visit:
+{!snippetVariable.tm_search_conflict_link} 
+
+* {!snippetVariable.tmoa_bap} 
+
+Please contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

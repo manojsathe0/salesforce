@@ -1,0 +1,25 @@
+<!--Padma @STORY B-25752 for SET agents -->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" >
+    <aura:attribute name="recordId" type="Id" />
+   
+    <div>
+            <lightning:button label="SET Log a Call" onclick="{!c.openmodal}"/><br/>
+    </div>
+     <div role="dialog" tabindex="-1" aria-labelledby="header43" aura:id="Modalbox" class="slds-modal" >
+        <div class="slds-modal__container">
+            
+            <div class="slds-modal__content slds-p-around--medium">
+                <div  class="slds-form slds-form_compound" style="padding: 3% 0 0 0" > 
+                    		<div class="slds-modal__header">
+                				<h2 id="header43" class="slds-text-heading--medium">Log a Call</h2>
+            				</div>
+                            <iframe src="{! '/apex/LogCallContact?Id=' + v.recordId}" width="100%" height="530px;"  frameBorder="0"/>
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+                <lightning:button label="Close" onclick="{!c.closeModal}"/><br/>
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop " aura:id="Modalbackdrop"></div>
+</aura:component>

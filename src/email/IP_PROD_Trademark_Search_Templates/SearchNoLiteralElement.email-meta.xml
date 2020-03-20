@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>sc9</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Search No Literal Element</name>
+    <style>none</style>
+    <subject>LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Your application indicates there are no words or standard characters within your Trademark design. Please note that LegalZoom&apos;s basic search can only be conducted on the words and/or standard characters contained within a Trademark, also referred to as the &quot;literal element.&quot; Logo searches are optional for an additional $250.
+
+If you would like to upgrade your order with a federal logo search, please call us at the number listed below to submit your payment information. Otherwise, we will continue with your order without a preliminary search.
+
+To complete a logo search, a copy of your logo is required; please reply to this e-mail and attach a black-and-white image of your logo, preferably in .jpg, .jpeg, .gif or .pdf format. Alternately, you can send the logo to us by mail:
+
+{!snippetVariable.ip_address_tm_materials}
+
+Otherwise, you can upload your image directly by visiting the Ask A Question section of LegalZoom&apos;s Support Center .
+
+With this in mind, please reply to this email and indicate how you would like to proceed with your application.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

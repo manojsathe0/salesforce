@@ -1,0 +1,61 @@
+<html>
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif" width="194" height="55" alt="LegalZoom"></td></tr>
+
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+
+Dear {!Contact.FirstName}, 
+<br><br>
+
+Thank you again for reaching out to our business starter team.<br><br>
+
+
+To help us continually improve our service, please take a quick, <b>5-minute survey</b> to give us your feedback.<br><br>
+
+<a href="https://www.surveymonkey.com/s/MX6ZT7R">Take Survey</a><br><br>
+
+As always, should you need additional help, please don’t hesitate to contact me at (855) 787-1921 Monday–Friday from 8 a.m.–5 p.m. PT or email me anytime at BizHelp@legalzoom.com 
+<br><br>
+
+<img src="https://lairh6ws243d.legalzoom.com/sites/legalzoom.com/files/images/email/am_005G0000001qcxtIAA.gif"><br>
+
+Katherine C.<br>
+Business Account Manager<br>
+(855) 787-1921<br>
+BizHelp@legalzoom.com<br>
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: $EMAIL_ADDRESS_$ 
+  <br /><br />
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</html>

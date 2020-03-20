@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>wadisscorp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Washington Corp Dissolutions</name>
+    <style>none</style>
+    <subject>Washington Corp Dissolutions</subject>
+    <textOnly>SUBJECT LINE:  Your LegalZoom Order# XXXXXXXX - URGENT ACTION REQUIRED
+
+Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your Dissolution order.  Attached, please find the customized Certificate of Cancellation and Tax Clearance form for your entity. In order to ensure your order is processed as quickly as possible, please follow the steps listed below. 
+
+&gt; Print two (2) copies of all documents on white paper using black ink only.  
+&gt; Thoroughly answer all questions on each document. Additionally, please ensure that the President of the corporation signs the Certificate of Cancellation, where indicated.    
+&gt; Do not make any changes to the attached Certificate of Cancellation it will result in delays with your order.  If you need to make changes, please contact our Customer Support.
+&gt; Mail the documents to our address listed below.  Please note that we cannot accept faxes as the state office will only accept an original signature on all documents.
+
+Courier Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd.
+10th Flr.
+Glendale, CA 91203
+
+USPS Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd., 10th Flr.
+POB 29096
+Glendale, CA 91203
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ls19</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>L&amp;S Specimens for Creative Works</name>
+    <style>none</style>
+    <subject>L&amp;S Specimens for Creative Works</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Based on standard requirements set by the U.S. Patent and Trademark Office (USPTO), it appears that your specimen may be incomplete.
+
+Acceptable specimens for a series of creative works (i.e. DVDs, CDs, books, downloadable recordings) generally display the applied-for mark on at least two (2) different works; for example, two different CD covers or two different book covers displaying the same Trademark. Please note your specimen must also clearly reflect the specific product description on your application.
+
+According to the USPTO, the title of a single creative work is not registrable on either the Principal or Supplemental Register. For more information regarding single creative works, please visit here.
+
+Please reply to this email with appropriate specimens to be used on your application, preferably in .gif, .pdf, .jpeg or .jpg format. Alternately, you can send the specimen to us by mail. Our mailing address is:
+
+{!snippetVariable.ip_address_tm_materials}
+
+Otherwise, you can upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s Support Center at {!snippetVariable.aaq_link_only}
+
+***MAC USERS: please upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s Support Center at {!snippetVariable.aaq_link_only}
+
+Nonetheless, if you wish to continue with the filing of your Trademark with the current specimen on file, please let me know and we will continue to do so. During examination of your application, if your assigned examining attorney raises questions regarding this matter, the applicant will be responsible for responding to the request with the appropriate information.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

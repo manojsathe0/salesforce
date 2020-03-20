@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Product2$Id</field>
+    </columns>
+    <columns>
+        <field>Product2$LZ_Product_ID__c</field>
+    </columns>
+    <columns>
+        <field>Product2$LZ_Parent_Product_ID__c</field>
+    </columns>
+    <columns>
+        <field>Product2$Product_Line__c.Id</field>
+    </columns>
+    <columns>
+        <field>Product2$Component_Type__c.Id</field>
+    </columns>
+    <columns>
+        <field>Product2$Process__c.Id</field>
+    </columns>
+    <description>This report is for exporting to be used in populating sql database for DI</description>
+    <format>Tabular</format>
+    <name>Product Report for DI</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Products_w_All_Fields__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Product2$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

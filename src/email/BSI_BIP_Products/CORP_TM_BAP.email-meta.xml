@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CORP + TM (BAP)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>CORP + TM (BAP)</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in forming your Corporation and in registering a Trademark.  We simplify the process for you by preparing and filing the Articles of Incorporation with your respective Secretary of State, and by drafting customized, state-specific Bylaws &amp; Resolutions for your business, as well as conducting a Trademark Search and submitting the Trademark application to the US Patent &amp; Trademark Office (USPTO) for registration.
+
+For your reference, general information regarding establishing a Corporation and Trademark registration has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below.  By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+ 
+A Corporation is a state-specific business entity that provides several advantages as a business structure.  Corporations are separate and distinct legal entities that provide the people involved in the business with personal liability protection, separating personal assets from business assets.  This liability protection shields personal assets from any debts or liabilities that are incurred by the business.  A Corporation also provides name exclusivity in the state where it is registered, ensuring that other Corporations cannot use the same business name in the state.  Once a Corporation is established, it is able to conduct business, open a bank account, hire employees, and own property.
+
+Trademark registrations typically protect identifying marks used in commerce such as business or product names, slogans, short phrases, logos, and/or acronyms used to represent specific products and/or services.  The federal Trademark registration protects you against an inferior product or service diminishing your reputation or profitability, and allows you to enforce against any infringement upon these rights.
+
+For specific legal or tax advice, we offer our Business Advantage Pro (BAP) membership to provide you with access to licensed attorneys and tax professionals.  This service provides unlimited half-hour consultations on new legal and/or tax matters with licensed attorneys and tax professionals to help you ensure you are making the best choice from a legal and/or tax perspective.  In addition, this membership provides unlimited access to our Legal Forms database, which includes over 100 legal business forms, and one free Copyright registration per month (excluding US Copyright Office filing fees).
+ 
+For your convenience, we have listed below all relevant pricing, as well as some additional services that may be beneficial to your business.
+ 
+BUSINESS ADVANTAGE PRO
+6-Month - $161.94 ($26.99/month)
+12-Month - $287.88 ($23.99/month)
+
+GET STARTED
+http://www.legalzoom.com/attorneys-lawyers/legal-plans/business.html
+
+CORPORATION
+Express Gold - $369.00 + state fee - (7-10 business days)*
+Standard - $239.00 + state fee + shipping - (20-35 business days)
+Economy - $149.00 + state fee + shipping - (20-35 business days)
+
+To view the state fee for your state, please follow the &quot;PACKAGE DETAILS&quot; link below and select your state from the drop-down list.
+
+ADDITIONAL SERVICES
+EIN Obtainment - $79.00 ($49.00 with Express Gold package)
+S-Corporation Obtainment - $80.00 ($35.00 with Express Gold package)
+Registered Agent - $159.00/year
+Business License Compliance Package - $74.99
+
+GET STARTED
+http://www.legalzoom.com/legal-incorporation/incorporation-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/legal-incorporation/incorporation-packages.html
+
+TRADEMARK
+Complete Coverage - $189.00 + $325.00 USPTO filing fee
+Basic - $169.00 + $325.00 USPTO filing fee
+
+TRADEMARK SEARCH OPTIONS
+Basic - Included w/package
+Comprehensive Federal &amp; State - $149.00 (w/package)
+Comprehensive Federal, State, and Common Law - $249.00 (w/package)
+WorldScan Comprehensive International Search - $449.00 (w/package)
+ 
+GET STARTED
+http://www.legalzoom.com/trademarks/trademarks-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/trademarks/trademarks-pricing.html
+ 
+* Some states may have delays which affect the listed turnaround time.  To determine if your state is affected, please contact a Specialist at the phone number listed below.
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

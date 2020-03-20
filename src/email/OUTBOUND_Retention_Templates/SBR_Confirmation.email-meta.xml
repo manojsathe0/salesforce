@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>sbrconfirm</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SBR Confirmation</name>
+    <style>none</style>
+    <subject>SBR Confirmation</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing LegalZoom for your business filing needs.
+
+This email is to confirm your complementary consultation with the valued partners.  Please keep in mind that you will be called by our partners during the hours listed below.   We recommend setting aside approximately 10-15 minutes of your time.
+
+FREE BUSINESS CREDIT CONSULTATION– DUN &amp; BRADSTREET
+Once you establish your new business, you’ll want to establish your business credit profile through Dun &amp; Bradstreet Corp.  By securing your D-U-N-S® number, the industry standard for keeping track of the world’s businesses, and starting to build your credit profile, you are on the path to positively impacting the way companies evaluate whether – and on what terms to do business with you.
+Date:   !Enter Date!
+Time:   !Enter Time!
+You will be contacted by:   Dun &amp; Bradstreet
+Should you need to reschedule, please call:   877-672-9666 x 3609
+
+FREE INSURANCE CONSULTATION– BOLT INSURANCE
+Date:   !Enter Date!
+Time:  !Enter Time!
+You will be contacted by:   Bolt Insurance
+Should you need to reschedule, please call:   877-672-9666 x 3609
+
+CONSULTATION BY AN ACCOUNTANT– CORPORATE TAX NETWORK
+Date:   !Enter Date!
+Time:   !Enter Time!
+You will be contacted by:   Bolt Insurance
+Should you need to reschedule, please call:   877-672-9666 x 3609
+
+30 DAY FREE TRIAL: FREE CUSTOMIZED WEBSITE– WEB.COM
+A website is only as good as the services and support behind it. Web.com has combined professional web design, on-demand website modifications and cutting-edge online marketing services to help businesses succeed online. And with their first-class customer support and easy-to-use reporting tools, Web.com is dedicated to helping customers make the most out of their website investment every step of the way. 
+Date:   !Enter Date!
+Time:   !Enter Time!
+You will be contacted by:   Web.com
+Should you need to reschedule, please call:   877-672-9666 x 3609
+
+BUSINESS PLANS– WISE BUSINESS PLANS
+Our expert MBA writers have years of experience in writing winning business plans . Whether you are small business or start-up company looking to lease a new location, apply for a loan, receive funding from investors, or just need to create a roadmap for your company’s success…let Wise Business Plans help you get started today! 
+Date:   !Enter Date!
+Time:   !Enter Time!
+You will be contacted by:   Joe Ferriolo-Wise Business Plans
+Should you need to reschedule, please call:  800-496-1056
+
+GIVE YOUR BUSINESS THE BUSINESS IT DESERVES– PRWEB
+You’re now eligible for a FREE press release from PRWeb, a $200 value.  Tell the world about your business and get your name out to the public.  Customers online are looking for you!  Push it to major news sites like Yahoo! News and place it on search engines like Google and Bing.  This can potentially distribute your company information to more than 30,000 journalists and bloggers.  Get in front of millions of people searching online for businesses like yours.  Follow this link, http://service.prweb.com/go/pm_legalzoom/?utm_source=legalzoom&amp;utm_campaign=partner&amp;medium=partner,  to get started.
+	
+THE BUSINESS GOLD REWARDS CARD FROM AMERICAN EXPRESS OPEN-Follow this link: http://businessresources.legalzoom.com/offers/banking-finance/business-credit-cards/the-gold-card-from-american-express-open?cm_re=Business%20Credit%20Cards-_-Text%20The%20Business%20Gold%20Rewards%20Card%20from%20American%20Express%20OPEN2-_-The%20Busines,  for offer details.  Below are the offer code and the number for American Express Open Card. Simple call and provide the offer code to take advantage of this special offer only for LegalZoom.com.
+Contact #:   888-830-4935
+Offer code:   LZ09
+
+Please do not hesitate to contact me directly if you have any questions. You can simply reply to this email or call me toll-free at (877) 672-9666 x 3609.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

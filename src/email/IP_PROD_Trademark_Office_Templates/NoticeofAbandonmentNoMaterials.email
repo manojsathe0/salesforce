@@ -1,0 +1,58 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for contacting LegalZoom.<br/><br/>Based on the records of the US Patent and Trademark Office (USPTO), your Trademark application has been abandoned. Abandonment, in this case, was based on your not filing a Statement of Use within six months of your Notice of Allowance (xxxxxxxx), as required. <br/><br/>LegalZoom could not submit your Statement of Use form to the USPTO without a sufficient specimen from you, the applicant. Our records show that we have sent requests to you on repeated occasions, but that you did not provide us with an appropriate specimen reflecting the goods and/or services on your original application, namely XXXX.<br/> <br/>Your Notice of Abandonment was issued on DD/MM/YYYY. You have two (2) months from that date to file a Petition to Revive your application, should you decide to continue with the application process. If you do not file a Petition to Revive, your application will remain abandoned. If you would like to file a Petition to Revive, additional fees will apply. Please review the following:<br/><ul><li>If you did not receive your Notice of Allowance, the USPTO grants you two (2) months from the date your Notice of Abandonment was issued to file a Petition to Revive, and charges you $100 to submit it. Once the USPTO receives and approves your Petition to Revive, a new Notice of Allowance will be issued. Please note that this process may take several months. <br/><br/><li>If you did receive your Notice of Allowance, the USPTO grants you two (2) months from the date you found out about the abandonment to file your Petition to Revive and charges you $100 to submit the form. Note: you must have been diligent in checking the status of your application every six (6) months. An Extension Request will be included with your Petition to Revive form. This will allow you to submit your Statement of Use immediately after the USPTO has reviewed and approved your Petition to Revive and Extension Request. Additionally, the USPTO charges $150 per class of goods and/or services indicated on your original application when you submit your Extension Request.<br/></ul>LegalZoom provides this service at no additional charge to its customers.  You will be charged only those fees required by the USPTO. Please reply to this email and indicate how you would like to proceed.<br/><br/>If you have any questions, comments, or concerns, simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our Customer Care business hours are {!snippetVariable.cchours}.<br/> <br/>Regards,<br/><br/>The LegalZoom Team<br/> <br/>* {!snippetVariable.tmoa_bap}<br/></p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>patwaitlz</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Waiting for Illustrations LZ Provides</name>
+    <style>none</style>
+    <subject>Waiting for Illustrations LZ Provides</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for placing your Patent order with LegalZoom.
+
+We are ready to prepare your provisional patent application and your technical illustrations.  In order to help us with the drawings, we need to know if there is anything specific that you would like them to convey.  
+
+Please send an email to patents@legalzoom.com and let us know what you would like the drawing to convey, and whether there are any specific elements you would like included.
+
+Please also send a sketch of your invention by email to patents@legalzoom.com.  Photographs and images are generally not acceptable. You can also send it by fax (323-389-0539) or by mail to:
+
+{!snippetVariable.ip_address_pat_materials}
+
+Be sure to reference your order number.
+
+After we receive your information, we will prepare a draft illustration in 7 - 10 business days for your approval. If acceptable, we will then file your completed provisional patent application with the U.S. Patent and Trademark Office. 
+
+If you have any questions, please call us toll-free at 1.800.773.0888 Mon-Fri 5am to 7pm PT; Saturday 7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Patent Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

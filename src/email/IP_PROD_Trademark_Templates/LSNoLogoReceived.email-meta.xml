@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ls3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>L&amp;S No Logo Received</name>
+    <style>none</style>
+    <subject>ACTION REQUIRED: Trademark Logo Needed [Order #0] (mark name)</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+In order to continue with your trademark order, we require a sample of your logo. Please note that only one logo can be submitted per application, and should be in black-and-white. A black and white sample allows your logo to be protected without limiting the colors that can be used with or within it. A color sample, on the other hand, limits your trademark to the specific colors used, and must be accompanied by a “color claim.” 
+
+Read below for further instructions. 
+
+----------------------------------
+
+SUBMITTING YOUR LOGO: 
+
+Please reply to this e-mail and attach your logo sample, preferably in .jpg, .jpeg, .gif or .pdf format. Email attachments cannot exceed 6MB. 
+
+If you are using a Mac computer or your attachments are larger than 6MB combined, please upload your image(s) directly at http://legalzoom.force.com/LZWTC. 
+
+Or, if you prefer, you can mail us your materials. Our mailing address is: 
+
+{!snippetVariable.ip_address_tm_materials}
+
+Please note: LegalZoom will not share your materials with any third party unless necessary for the completion of your order. Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. 
+
+----------------------------------
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT. 
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+Best regards, 
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

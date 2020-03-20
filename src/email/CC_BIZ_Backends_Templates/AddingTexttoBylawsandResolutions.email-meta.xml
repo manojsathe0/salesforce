@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>braddtext</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Adding Text to Bylaws and Resolutions</name>
+    <style>none</style>
+    <subject>Adding Text to Bylaws and Resolutions</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+If you would like to add any specific text to your bylaws and resolutions, we will be happy to add it for you, or you can also make the revisions yourself. 
+
+Additions or revisions can be made in the bylaws and resolutions directly, or by adding an amendment to the document, and signing it into effect. However, LegalZoom cannot evaluate or advise you on the content of the text you add or revise.
+
+If you would like to have us add the text for you, please call our ordering department at 888.381.8758 for pricing, or you may reply to this email with interest for that service, and the ordering department will reply to you directly with more information. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

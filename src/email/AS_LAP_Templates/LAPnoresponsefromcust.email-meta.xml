@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>noresplap</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LAP no response from cust</name>
+    <style>none</style>
+    <subject>LAP no response from cust</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your request.
+
+We were advised by the attorney&apos;s office that they have been unsuccessful in scheduling your attorney consultation request. If you are still interested in having your legal questions answered by an attorney, please call our office toll free at 877.818.8787, If we do not hear from you within two business days the matter will be considered closed and we ask that you submit a new consultation request when you are ready to consult with the attorney. New requests can be submitted to our office as follows: 
+
+You can take advantage of all your plan benefits by clicking on the following Member Center link: 
+
+ https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=2
+
+You can also access your account by logging into our website as an &apos;existing member&apos; under &apos;My Account&apos; using your username and password. To change your password, please select &apos;forgot password&apos; and a new password link will be emailed to you. 
+
+The LegalZoom Legal Advantage Plus is a membership that gives you access to the following benefits: 
+
+- Attorney advice and consultations. Speak with an experienced attorney on an unlimited number of new legal matters
+- Attorney drafted letters. Your attorney can draft legal letters or on your behalf 
+- Unlimited access to LegalZoom legal forms. Download hundreds of blank legal forms for business or personal use 
+- 25% savings on additional attorney services. Get significant savings on additional attorney work if you need it 
+- 10% savings on any LegalZoom legal documents. Get any LegalZoom business or personal documents at a discount 
+
+If you are not completely satisfied with your membership, you can cancel it at any time. 
+
+{!snippetVariable.asdsigline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.
+
+{!snippetVariable.bestregardstext}
+
+{!snippetVariable.thelegalzoomteamline}
+
+{!snippetVariable.asdphone} | {!snippetVariable.asdfax} | {!snippetVariable.lacemail}
+{!snippetVariable.lz_website} | {!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

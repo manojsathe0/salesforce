@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>divnewq</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Send New Divorce Q</name>
+    <style>none</style>
+    <subject>Send New Divorce Q</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for placing your order through Legalzoom. 
+
+Attached please find the Divorce Questionnaire. If you have any problems opening this attachment, please let us know by calling {!snippetVariable.ccphone} or responding to this email. 
+
+We only produce documents for uncontested divorces. This means that both you and your spouse must agree on all the terms of the divorce. This also means that we will require the current addresses of both parties and both signatures on the forms. Additionally, please read through the questionnaire. If you do not have children, disregard any sections pertaining to children.
+
+Once you have completed the questionnaire, simply reply to this email address and attach the questionnaire. Your completed form package will be shipped within 5-7 business days of our receipt of your questionnaire.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMEXP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SECOND EMAIL (NO VM OR LEFT VM/ Order “NOT” EXPEDITED)</name>
+    <style>none</style>
+    <subject>LLC Processing Delay in [State of Formation]</subject>
+    <textOnly>We can expedite your order.
+
+Dear {!Contact.FirstName},
+
+As your LegalZoom Account Manager, I would like to provide you with the status of your order. Due to the present delay in the [State of Formation] business formation processing time, your order may be delayed beyond 10 business days. Please contact me at your earliest convenience to discuss your expedited filing options. You may call me directly at 877-808-1908.
+
+I look forward to speaking with you to help answer any questions you may have.
+
+Best Regards,
+
+[Account Manager]
+Account Management Services
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

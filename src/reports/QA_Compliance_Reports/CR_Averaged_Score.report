@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Compliance_Review__c$Greeting_Score__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Compliance_Review__c$Need_Analysis_Score__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Compliance_Review__c$Product_Presentations_Knowledge_Score__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Compliance_Review__c$Call_Handling_Score__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Compliance_Review__c$Violations_Total_Score__c</field>
+    </columns>
+    <description>Report that averages scores of all components</description>
+    <filter>
+        <criteriaItems>
+            <column>Compliance_Review__c$RecordType</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Compliance_Review__c.ScoredBased</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Compliance_Review__c$Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Draft</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Compliance_Review__c$Sales_Rep_Manager__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CR: Averaged Score</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Compliance_Review_ScoreCard__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Compliance_Review__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

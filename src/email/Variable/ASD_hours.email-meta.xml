@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.ASD_hours</name>
+    <style>none</style>
+    <subject>ASD_hours</subject>
+    <textOnly>Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT</textOnly>
+    <type>custom</type>
+</EmailTemplate>

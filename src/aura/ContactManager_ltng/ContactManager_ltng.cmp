@@ -1,0 +1,126 @@
+<aura:component controller="ContactManagerController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="newContact" type="Contact"/>
+    <aura:attribute name="fkUser" type="String" />
+    <aura:attribute name="contactType" type="String" default=""/>
+    <aura:attribute name="states" type="string[]"/>
+    <aura:attribute name="orderAuthorizedContact" type="Boolean" default="false" />
+    <aura:attribute name="displayContactForm" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="slds-card">  
+        <lightning:spinner aura:id="mySpinner" />
+        <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="custom:custom83" size="medium"/>
+            </div>
+            <div class="slds-media__body">
+                <p class="slds-text-title--caps slds-line-height--reset">Contact</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Manage Contact">Create/Edit Contact</h1>
+            </div>
+        </div><br/>
+        <div class="slds-form slds-form_compound" style="{!v.displayContactForm ? 'display:none;' : 'padding: 1% 0 0 0; margin-bottom:3%;'}">
+            <div class="slds-form-element__group">
+                <form>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-1">
+                            <lightning:select aura:id="contype" label="Contact Type" name="Contact Type" value="{!v.newContact.Contact_Type__c}">             
+                                <option value="Primary Contact">Primary Contact</option>
+                                <option value="Authorized Contact">Authorized Contact</option>             
+                            </lightning:select>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" label="First Name" name="firstName" value="{!v.newContact.FirstName}" />
+                        </div>
+                        
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" label="Last Name" name="lastName" value="{!v.newContact.LastName}" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__row">
+                        
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" label="Email" name="email" value="{!v.newContact.Email}" />
+                        </div>
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" type="tel" label="Home Phone" name="homePhone" value="{!v.newContact.HomePhone}" /> <!-- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" type="tel" label="Mobile Phone" name="mobilePhone" value="{!v.newContact.MobilePhone}" />
+                        </div>
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" type="tel" label="OtherPhone" name="otherphone" value="{!v.newContact.OtherPhone}" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-1">
+                                    <lightning:input aura:id="editcont" label="Inactive" name="inactive" type="checkbox" value="{!v.newContact.Inactive__c}" />
+                                </div>
+                            </div>
+                            
+                           <!-- <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-1">
+                                    <lightning:input aura:id="editcont" label="Do Not Call" name="donotcall" type="checkbox" value="{!v.newContact.DoNotCall}" />
+                                </div>
+                                </div> -->
+                        
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-1">
+                                    <lightning:input aura:id="editcont" label="Email Opt Out" name="emailoptout" type="checkbox" value="{!v.newContact.HasOptedOutOfEmail}" />
+                                </div>                           
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:select aura:id="pcm" label="Preferred Contact Method" name="Preferred Contact Method" value="{!v.newContact.Preferred_Contact_Method__c}">             
+                                <option value="">-- None --</option>
+                                <option value="Phone">Phone</option>
+                                <option value="Email">Email</option>
+                                <option value="Mobile">Mobile</option>
+                            </lightning:select>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" label="Mailing Street" name="mailingstreet" value="{!v.newContact.MailingStreet}" />
+                        </div>
+                        
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" label="Mailing City" name="mailingcity" value="{!v.newContact.MailingCity}" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="editcont" label="Mailing Zip/Postal Code" name="zipCode"  value="{!v.newContact.MailingPostalCode}" pattern="^\d{5}(?:[-\s]\d{4})?$"/> <!--  pattern="^\d{5}(?:[-\s]\d{4})?$" -->
+                        </div>
+                        <lightning:select aura:id="contactForm" label="State" name="state" value="{!v.newContact.MailingState}">
+                            <option value="">-- None --</option>
+                            <aura:iteration items="{!v.states}" var="state">
+                                <option value="{!state}" text="{!state}" selected="{!v.newContact.MailingState == state ? true : false}"></option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                </form>
+            </div>
+            <div style="margin-top:25px;text-align:center;">
+                <button  class="slds-button slds-button--brand" label="Save" onclick="{!c.contactUpdate}" > Update </button>
+            </div>
+        </div>
+        <div class="slds-align_absolute-center" style="{!v.newContact.Duplicate__c ? 'margin-top:25%;font-size:14px' : 'display:none;'}" flexibility="auto" padding="around-small">
+            <ui:outputText value="This is a duplicate record which cannot be utilized. It exists for reference purpose only." />
+        </div>
+        <div class="slds-align_absolute-center" style="{!v.orderAuthorizedContact ? 'margin-top:25%;font-size:14px' : 'display:none;'}" flexibility="auto" padding="around-small">
+            <ui:outputText value="Order authorized contacts cannot be edited." />
+        </div>
+    </div>
+</aura:component>

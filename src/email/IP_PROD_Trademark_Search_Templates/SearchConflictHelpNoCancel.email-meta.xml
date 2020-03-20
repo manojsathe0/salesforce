@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>sc3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Search Conflict Help No Cancel</name>
+    <style>none</style>
+    <subject>Search Conflict Help No Cancel</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+In its review of your Trademark application, the USPTO will search federal records for conflicts between your proposed mark and any other registered or pending mark. In general, the USPTO will reject an application if it finds that there would be a “likelihood of consumer confusion” between your mark and another mark. Marks, goods, and/or services do not have to be identical for the USPTO to come to this conclusion. A number of factors are considered by the USPTO to determine whether a likelihood of confusion exists, including:
+
+The similarity of the marks in appearance, sound, and meaning.
+Whether the marks are used to sell similar kinds of goods or services.
+The number of similar marks currently in use.
+The similarity of established sales channels and the sophistication of the buyers.
+
+For more information about the “likelihood of confusion,” click here:
+{!snippetVariable.tm_search_conflict_link}
+
+For more information about the goods and services classes, click here:
+{!snippetVariable.tm_gs_classes_list}
+
+LegalZoom is not a law firm and is unable to give legal advice. When we find similar Trademarks, our purpose is to provide you with information to make an informed decision on how you would like to proceed. If you cannot make a decision regarding your application, it is recommended that you consult with an attorney*.
+
+Next Steps
+
+Please let us know how to proceed, whether to continue with your current application or to complete an updated Federal Direct-Hit Search for a different mark (up to 3 searches are included with your Trademark application order).
+
+* {!snippetVariable.tmoa_bap}
+
+Feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you for choosing LegalZoom and we look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+Your Trademark search report is subject to LegalZoom’s Terms of Service. 
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

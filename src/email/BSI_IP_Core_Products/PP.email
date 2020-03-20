@@ -1,0 +1,50 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Dear {!Contact.FirstName} {!Contact.LastName},</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Thank you for contacting LegalZoom for your business needs.&nbsp; In regard to your inquiry, LegalZoom can assist you in filing your Provisional Patent Application.&nbsp; We simplify the process for you by&nbsp;assembling and submitting the Provisional Patent Application to the US Patent &amp; Trademark Office (USPTO).</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">For your reference, general information regarding filing a Provisional Patent has been outlined below.&nbsp; </p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Provisional Patent Applications&nbsp;are intended to establish an initial filing date for your invention, and allow you to legally use the term "patent pending" in conjunction with your invention.&nbsp; The Provisional Patent Application gives you 12 months to subsequently submit a Utility (Non-Provisional) Patent Application to complete the Patent filing process.&nbsp; You can also choose to abandon the Provisional Patent Application should you choose not to pursue the protection of the invention with a full Utility Patent application.</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Upon placing the order for your Provisional Patent Application, you will be given instructions describing how to submit supplemental details of your items(s) to LegalZoom, either by directly uploading the file, emailing copies, or submitting hard copies by mail.&nbsp; The Provisional Patent Application is typically submitted to the USPTO within 2-3 weeks of placing the order.</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">For your convenience, we have listed all relevant pricing below.</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;"><span style="font-weight: bold;">PROVISIONAL PATENT APPLICATION</span></p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Standard - $199.00 +&nbsp; USPTO filing fee</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">GET STARTED</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;"><a href="http://www.legalzoom.com/patents/provisional-patent-application-overview.html">http://www.legalzoom.com/patents/provisional-patent-application-overview.html</a></p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">PACKAGE DETAILS</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;"><a href="http://www.legalzoom.com/patents/provisional-patent-application-pricing.html">http://www.legalzoom.com/patents/provisional-patent-application-pricing.html</a></p>
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;"><span style="font-weight: bold;">ADDITIONAL SERVICES</span></p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Attorney-Assisted Review &amp; Preparation - $390.00</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Patent Search - $299.00</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Professional Illustrations - $399.00</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.&nbsp; If you have any additional questions, please feel free to contact us by phone at the phone number listed below.</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Best regards,</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">{!User.FirstName}</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">(800) 773-0888 x{!User.Extension}</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;"><a href="http://www.legalzoom.com">www.legalzoom.com</a></p>
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+<p style="margin: 0pt 0pt 12pt; font-family: Calibri;"><a href="http://www.legalzoom.com/privacy-policy-popup.html"><span style="font-size: 7.5pt;">Privacy Policy</span></a></p>
+<p style="margin: 0pt 0pt 12pt; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">Call Customer Care: 1.800.773.0888</p>
+<p style="margin: 0pt 0pt 12pt; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">This is a service email related to your LegalZoom account.</p>
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm.  Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. </p>
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">Please add services@emails.legalzoom.com to your address book. </p>
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">This email was sent to: {!Contact.Email}</p>
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">© LegalZoom.com, Inc. All rights reserved.</p>]]></td>
+</tr>
+</table>

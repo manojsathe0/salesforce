@@ -1,0 +1,13 @@
+A Sales Compliance Review has been completed, and although the sales rep was compliant, coaching is suggested.<br/>
+<br/>
+Compliance Review: <a href="{!Compliance_Review__c.Link}">{!Compliance_Review__c.Name}</a><br/>
+Representative: {!Compliance_Review__c.Representative__c}<br/>
+CIC Call ID#: {!Compliance_Review__c.Recorded_Call_ID__c}
+<br/>
+<br/>
+Coaching Notes:<br/>
+{!Compliance_Review__c.Coaching_Notes__c}<br/>
+<br/>
+<br/>
+Click here to view all Sales Rep where coaching is suggested:<br/>
+<a href="{!LEFT(Compliance_Review__c.Link, LEN(Compliance_Review__c.Link) - 15)}a0A?fcf=00BG0000007fW70&rolodexIndex=-1&page=1">Compliant - Coaching Recommended</a>

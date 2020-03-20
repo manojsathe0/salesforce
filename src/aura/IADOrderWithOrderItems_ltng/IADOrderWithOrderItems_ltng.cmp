@@ -1,0 +1,1297 @@
+<aura:component controller="IADOrderWithOrderItemsController_ltng"
+    implements="lightning:actionOverride,force:appHostable,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction,force:hasRecordId"
+    access="global">
+    <aura:attribute name="actionItemsWrapper" type="object[]" />
+    <aura:attribute name="availablePackagesWrapper" type="object[]" />
+    <aura:attribute name="newOrderItemsWrapper" type="object[]" />
+    <aura:attribute name="orderWrapper" type="object" />
+    <aura:attribute name="orderBalanceWrapper" type="object" />
+    <aura:attribute name="theOrderItemShipments" type="List" />
+    <aura:attribute name="theOrderTagList" type="List" />
+    <aura:attribute name="theModifiedOrderItemWrappers" type="List" />
+    <aura:attribute name="theOrderHistory" type="object[]" />
+    <aura:attribute name="orderTagArray" type="String[]" />
+    <aura:attribute name="displayCancelledItems" type="Boolean" default="false" />
+    <aura:attribute name="cancelOrder" type="Boolean" default="false" />
+    <aura:attribute name="uncancelOrder" type="Boolean" default="true" />
+    <aura:attribute name="isNewContact" type="Boolean" default="true" />
+    <aura:attribute name="orderContactId" type="String" />
+    <aura:attribute name="ctrl" type="Object" />
+    <aura:attribute name="orderNumber" type="String" />
+    <aura:attribute name="customerId" type="String" />
+    <aura:attribute name="actionType" type="String" default="" />
+    <aura:attribute name="productConfigurationIdToActionItem" type="Map" />
+    <aura:attribute name="orderItemIdToProductConfigurationId" type="Map" />
+    <aura:attribute name="orderItemIdToProductName" type="Map" />
+    <aura:attribute name="itemQuantity" type="String" default="" />
+    <aura:attribute name="itemPricePerUnit" type="String" default="" />
+    <aura:attribute name="itemDescription" type="String" default="" />
+    <aura:attribute name="poId" type="String" /> <!-- default="507704077" -->
+    <aura:attribute name="orderRecordId" type="String" />
+    <aura:attribute name="processId" type="Integer" />
+    <aura:attribute name="processName" type="String" default="" />
+    <aura:attribute name="quantityfilling" type="Integer" default="1" />
+    <aura:attribute name="currentProcessingOrderId" type="String" />
+    <aura:attribute name="documentsList" type="Object" />
+    <aura:attribute name="documentsListJSON" type="String" />
+    <aura:attribute name="docDeliveryResponse" type="String" default="" />
+    <aura:attribute name="selectedDocuments" type="List" />
+    <aura:attribute name="EinData" type="object" />
+    <aura:attribute name="parentTabId" type="String" />
+    <aura:attribute name="primaryContacts" type="Object" />
+    <aura:attribute name="authorizedContacts" type="Object" />
+    <aura:attribute name="pdtcnfid" type="String" />
+    <aura:attribute name="expediteprice" type="Integer" default="" />
+    <aura:attribute name="descriptionorderitem" type="String" />
+    <aura:attribute name="defaultquantityorderitem" type="String" default="1" />
+    <aura:attribute name="isRA" type="Boolean" default="False" />
+    <aura:attribute name="proratedSubscriptionInfo" type="Object" />
+    <aura:attribute name="subUpgradeDowngradeAndRenewalTermOptions" type="Object" />
+    <aura:attribute name="subscriptionChangeToConfiguration" type="String" default="empty" />
+    <aura:attribute name="targetPackage" type="String" />
+    <aura:attribute name="newProductComponentId" type="String" />
+    <aura:attribute name="productConfigurationExtendedPrice" type="String" default="empty" />
+    <aura:attribute name="productConfigurationId" type="String" default="empty" />
+    <aura:attribute name="extendedPrice" type="String" />
+    <aura:attribute name="renewalTermOptions" type="Object" />
+
+    <aura:attribute name="raUpgradeOrderItemId" type="String" />
+    <aura:attribute name="raUpgradeOrderId" type="String" />
+    <aura:attribute name="raPdtCmpId" type="String" />
+    <aura:attribute name="customerName" type="String" />
+    <aura:attribute name="subscriptionId" type="String" />
+    <aura:attribute name="subscriptionChangeToName" type="String" />
+    <aura:attribute name="dispNameSubChange" type="String" />
+
+    <aura:attribute name="lifeplanprocessingstatus" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!-- STORY B-39539-->
+    <aura:attribute name="openManagerCredentialModal" type="boolean" default="false" />
+    <aura:attribute name="managerApprovedBy" type="string" default=""></aura:attribute>
+    <aura:attribute name="spinnerFlag" type="boolean" default="false" />
+    <aura:if isTrue="{!v.spinnerFlag}">
+        <lightning:spinner alternativeText="Loading" size="small" variant="brand" />
+    </aura:if>
+    <!-- STORY B-39539-->
+
+    <!-- STORY B-39537 -->
+    <aura:attribute name="refundApprovedByManager" type="string" default="" />
+    <aura:attribute name="mcCheckTypeIsRefund" type="string" default="" />
+    <!-- STORY B-39537 -->
+
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:registerEvent name="RefreshEvent" type="c:RefreshRelatedOrders_ltng" />
+
+
+    <div class="slds-popover slds-nubbin--top-right orderItemPopover" role="dialog" aura:id="orderItemDiv">
+        <button
+            class="slds-button slds-button_icon slds-button_icon-small slds-float_right slds-popover__close slds-button_icon"
+            title="Close dialog" onclick="{!c.hideActionItems}">
+            <lightning:icon iconName="utility:close" size="xx-small" alternativeText="Close order items" />
+            <span class="slds-assistive-text">Close dialog</span>
+        </button>
+        <div>
+            <ul class="dropdown__list">
+                <aura:iteration items="{!v.actionItemsWrapper}" var="availProduct">
+                    <li class="slds-dropdown__item">
+                        <a class="slds-text-body--small" role="menu-item" data-description="{!availProduct.description}"
+                            data-pdtCnfgActionItem="{!availProduct.productComponentId}"
+                            data-pdtCnfgId="{!availProduct.productConfigurationId}"
+                            data-orderItemId="{!availProduct.orderItemId}" onclick="{!c.modifyCurrentOrderItem}">
+                            {!availProduct.productTypeName}:{!availProduct.description}
+                        </a>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+    </div>
+
+    <div id="orderItemsContainer" class="IADOrderItemsContainer slds-card">
+        <lightning:spinner aura:id="spinner" alternativeText="loading order details" />
+        <div class="slds-button-group" role="group" style="float:right; clear:both;">
+            <div id="topMenu">
+                <button class="slds-button slds-button--neutral" onclick="{!c.openRADashboard}"
+                    style="{!v.isRA ? '' : 'display:none'}">RA Dashboard </button>
+                <button class="slds-button slds-button--neutral" onclick="{!c.displayOrderHistory}">Order
+                    History</button>
+                <button class="slds-button slds-button--neutral" data-isdeletable="false"
+                    onclick="{!c.editShippingAddress}">Edit Shipping Address</button>
+                <button class="slds-button slds-button--neutral" onclick="{!c.displayConvert3Pay}"
+                    style="{!v.orderWrapper.isThreePay == true ? 'display:none' : ''}">
+                    Convert To Installments
+                </button>
+                <button class="slds-button slds-button--neutral" onclick="{!c.displayCancelOrder}"
+                    style="{!v.orderWrapper.theOrder.Order.isCancelled || v.orderWrapper.baseProcessingStatus == 'Sent To SOS' || v.orderWrapper.baseProcessingStatus == 'Check Requested' ? 'display:none' : ''}">
+                    Cancel Entire Order
+                </button>
+                <button class="slds-button slds-button--neutral" onclick="{!c.displayUncancelOrder}"
+                    style="{!v.orderWrapper.theOrder.Order.isCancelled ? '' : 'display:none'}">
+                    Undo Cancel Order
+                </button>
+                <button class="slds-button slds-button--neutral" onclick="{!c.reloadOrderScreen}">
+                    Reload Order Screen
+                </button>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="slds-card">
+            <!-- STORY B-42054 -->
+            <aura:if isTrue = "{! not(empty(v.orderWrapper.theOrder.Order.paymentStatus))}">
+                <div class="c-container">
+                    <lightning:layout>
+                        <lightning:layoutItem padding="horizontal-small">
+                            Payment Status: 
+                            <lightning:formattedText value="{!if(equals(v.orderWrapper.theOrder.Order.paymentStatus,'1'),'⌛ Pending',if(equals(v.orderWrapper.theOrder.Order.paymentStatus,'2'),'✅ Approved',if(equals(v.orderWrapper.theOrder.Order.paymentStatus,'3'),'⚠️ Declined',if(equals(v.orderWrapper.theOrder.Order.paymentStatus,'4'),'🛑 Cancelled',if(equals(v.orderWrapper.theOrder.Order.paymentStatus,'5'),'🚫 Uncollectible','')))))}"/>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </div>
+            </aura:if>
+            <!-- STORY B-42054 -->
+            <div class="slds-card__header slds-grid">
+                <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                    <div class="slds-media__body">
+                        <div id="upperLeftMenu">
+                            <span class="" role="group">
+                                <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true"
+                                    style="{!v.orderWrapper.isThreePay ? 'margin-right:1px;' : 'display:none'}">
+                                    <button class="slds-button slds-button--brand" id="threePayIcon"
+                                        Style="padding-left:5px;padding-right:5px;">
+                                        $$$
+                                    </button>
+                                    <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left"
+                                        style="left:-18px">
+                                        <ul class="dropdown__list" role="menu">
+                                            <li class="slds-dropdown__item"><a class="slds-text-body--small"
+                                                    style="pointer-events:none">3 Pay Order</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true"
+                                    style="{!v.ctrl.thisOrder.TOS_Accepted__c &amp;&amp; v.ctrl.thisOrder.OrderTerms__c ? '' : 'display:none;'}">
+                                    <a id="documentIcon">
+                                        <lightning:icon iconName="doctype:gdoc" size="medium" alternativeText="TOS" />
+                                    </a>
+                                    <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left"
+                                        style="left:-18px">
+                                        <ul class="dropdown__list" role="menu">
+                                            <li class="slds-dropdown__item">
+                                                <a class="slds-text-body--small" role="menu-item"
+                                                    style="pointer-events:none">Customer Accepted terms on &nbsp;
+                                                    <lightning:formattedDateTime
+                                                        value="{!v.ctrl.thisOrder.Date_Time_TOS_Accepted__c}"
+                                                        year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                        minute="2-digit" /></a>
+                                                <!-- <lightning:formattedDateTime value="{!v.ctrl.thisOrder.Date_Time_TOS_Accepted__c}" /> -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true"
+                                    style="{!v.orderWrapper.theOrder.Order.orderFlags.isPhoneOrder ? '' : 'display:none'}">
+                                    <a id="phoneHistoryIcon">
+                                        <lightning:icon iconName="custom:custom22" size="medium"
+                                            alternativeText="phone order" />
+                                    </a>
+                                    <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left"
+                                        style="left:-18px">
+                                        <ul class="dropdown__list" role="menu">
+                                            <li class="slds-dropdown__item"> <a class="slds-text-body--small"
+                                                    role="menu-item" style="pointer-events:none">Phone order placed on
+                                                    &nbsp;
+                                                    <lightning:formattedDateTime
+                                                        value="{!v.orderWrapper.theOrder.Order.dateCreatedDatetime}"
+                                                        year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                        minute="2-digit" /> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true">
+                                    <a id="orderContactsIcon">
+                                        <lightning:icon iconName="standard:contact" size="medium"
+                                            alternativeText="Order Specific Contact" />
+                                    </a>
+                                    <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left"
+                                        style="left:-18px">
+                                        <ul class="dropdown__list" role="menu">
+                                            <aura:iteration items="{!v.ctrl.authorizedContacts}" var="authContact">
+                                                <li class="slds-dropdown__item">
+                                                    <a class="slds-text-body--small" role="menu-item"
+                                                        data-isdeletable="true"
+                                                        data-authorizedcontactid="{!authContact.Id}"
+                                                        onclick="{!c.editShippingAddress}">{!authContact.Contact__r.Name
+                                                        } </a>
+                                                </li>
+                                            </aura:iteration>
+                                            <li class="slds-dropdown__item">
+                                                <a class="slds-text-body--small" role="menu-item"
+                                                    onclick="{!c.createOrderSpecificContact}">Add Order Specific
+                                                    Contact</a>
+                                                <!--   {!v.ctrl.thisOrder.TOS_Accepted__c} - {!v.ctrl.thisOrder.CreatedBy.Name} - {!v.ctrl.thisOrder.CreatedBy.Name !='Integration User'} -{!v.ctrl.thisOrder.LastModifiedBy.Name}- {!v.ctrl.thisOrder.LastModifiedBy.Name !='Integration User'} -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true">
+                                    <img src="{!$Resource.English}"
+                                        style="{!v.ctrl.thisOrder.Language_Preferance__c == 'English' ? 'cursor:pointer;text-decoration:none;height:32px;' : 'display:none;'}"
+                                        title="Language: English" />
+                                    <img src="{!$Resource.Spanish}"
+                                        style="{!v.ctrl.thisOrder.Language_Preferance__c == 'Spanish' ? 'cursor:pointer;text-decoration:none;height:32px;' : 'display:none;'}"
+                                        title="Language: Spanish" />
+                                </div>
+                            </span>
+
+                            <span class="slds-text-heading--small">
+                                <strong>
+                                    <ui:outputText value="{!v.orderWrapper.baseProductName}" /></strong>
+                            </span>
+                            <div class="slds-form-element" style="margin-top:5px;">
+                                <div id="orderTags" style="display:inline-block;">
+                                    <!--
+                                    <aura:iteration items="{!v.orderTagArray}" var="tag">
+                                        <span id="tagToDelete" aura:id="tagToDelete" class="om-tag om-tag-user">{!tag} <a class="om-tag-remove" data-ordertag="{!tag}" onclick="{!c.deleteOrderTag}">x</a></span>
+                                    </aura:iteration>
+         							-->
+                                    <aura:iteration items="{!v.theOrderTagList}" indexVar="key" var="tagList">
+                                        <span id="tagToDelete" aura:id="tagToDelete"
+                                            class="{!tagList.key == '1' ? 'om-tag om-tag-system' : 'om-tag om-tag-user'}">{!tagList.value}
+                                            <a class="om-tag-remove" style="{!tagList.key == '1' ? 'display:none' : ''}"
+                                                data-ordertag="{!tagList.value}"
+                                                onclick="{!c.deleteOrderTag}">x</a></span>
+                                    </aura:iteration>
+                                </div>
+                                <div style="display:inline-block;">
+                                    <input type="text" aura:id="txt-orderTags" class="slds-input om-new-tag"
+                                        maxlength="50" onkeyup="{!c.createOrderTag}" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-float--right slds-is-open"
+                            aria-expanded="true" id="newItemTrigger">
+                            <div id="addNewDropDownPanel">
+                                <div
+                                    style="{!v.orderWrapper.theOrder.Order.isCancelled ? 'display:none;' : 'display:block;' }">
+                                    <button style="height:35px;"
+                                        class="slds-button slds-button--neutral slds-picklist__label"
+                                        aria-haspopup="true" id="availOrderItem" type="button"
+                                        data-orderItemId="{!v.orderWrapper.mainOrderItemId}"
+                                        onclick="{!c.showNewOrderItems}">
+                                        <span class="slds-truncate">Add New Order Item</span>
+                                        <lightning:icon iconName="utility:down" size="xx-small" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div aura:id="addNewDropdown"
+                                class="slds-dropdown slds-dropdown slds-dropdown--right slds-dropdown--menu"
+                                style="{! empty(v.newOrderItemsWrapper) ?  'display:none' : 'width:500px;'}">
+                                <button
+                                    class="slds-button slds-button_icon slds-button_icon-small slds-float_right slds-popover__close slds-button_icon"
+                                    title="Close dialog" onclick="{!c.hideNewOrderItems}">
+                                    <lightning:icon iconName="utility:close" size="xx-small" alternativeText="Close" />
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <div id="addNewPanel">
+                                    <ul class="dropdown__list" role="menu">
+                                        <aura:iteration items="{!v.newOrderItemsWrapper}" var="availProduct">
+                                            <li class="slds-dropdown__item">
+                                                <a class="slds-text-body--small" role="menu-item"
+                                                    data-description="{!availProduct.description}"
+                                                    data-pdtCnfgId="{!availProduct.productConfigurationId}"
+                                                    data-pdtCnfgActionItem="{!availProduct.productComponentId}"
+                                                    data-orderItemId="{!availProduct.orderItemId}"
+                                                    onclick="{!c.modifyCurrentOrderItem}">
+                                                    <span
+                                                        style="white-space: normal;">{!availProduct.productTypeName}:{!availProduct.description}</span>
+                                                </a>
+                                            </li>
+                                        </aura:iteration>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-float--right slds-is-open"
+                            aria-expanded="true" id="packageTrigger">
+                            <div id="availPackagePanel">
+                                <div
+                                    style="{! !v.orderWrapper.theOrder.Order.isCancelled ? 'display:block;' : 'display:none;'}">
+                                    <button style="height:35px;"
+                                        class="slds-button slds-button--neutral slds-picklist__label"
+                                        aria-haspopup="true" id="availablePackages" type="button"
+                                        data-orderItemId="{!v.orderWrapper.mainOrderItemId}"
+                                        onclick="{!c.showAvailPackages}">
+                                        <span class="slds-truncate">Available Packages</span>
+                                        <lightning:icon iconName="utility:down" size="xx-small" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div aura:id="availDropdown"
+                                class="slds-dropdown slds-dropdown slds-dropdown--right slds-dropdown--menu"
+                                style="{! empty(v.availablePackagesWrapper) ?  'display:none' : 'width:500px;'}">
+                                <button
+                                    class="slds-button slds-button_icon slds-button_icon-small slds-float_right slds-popover__close slds-button_icon"
+                                    title="Close dialog" onclick="{!c.hideAvailablePackages}">
+                                    <lightning:icon iconName="utility:close" size="xx-small" alternativeText="Close" />
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <div id="availProductsPanel">
+                                    <ul class="dropdown__list" role="menu">
+                                        <aura:iteration items="{!v.availablePackagesWrapper}" var="availProduct">
+                                            <li class="slds-dropdown__item">
+                                                <a class="slds-text-body--small" role="menu-item"
+                                                    data-description="{!availProduct.description}"
+                                                    data-pdtCnfgId="{!availProduct.productConfigurationId}"
+                                                    data-pdtCnfgActionItem="{!availProduct.productComponentId}"
+                                                    data-orderItemId="{!availProduct.orderItemId}"
+                                                    onclick="{!c.modifyCurrentOrderItem}">
+                                                    <span
+                                                        style="white-space: normal;">{!availProduct.productTypeName}:{!availProduct.description}</span>
+                                                </a>
+                                            </li>
+                                        </aura:iteration>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <br />
+                        <span style="{!v.orderWrapper.showCancelledItemsCheckbox ? '' : 'display:none'}">
+                            <input type="checkbox" id="displayCancel" value="" onclick="{!c.showCancelledItems}" /> Show
+                            Cancelled Items &nbsp;&nbsp;
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="slds-box" style="{!v.ctrl.thisOrder.TOS_Accepted__c ? 'display:none;' : 'background-color: #ecb46c;'}"> -->
+            <div class="slds-box"
+                style="{!v.ctrl.thisOrder.TOS_Accepted__c ? 'display:none;' : v.ctrl.thisOrder.LastModifiedBy.Name != 'Integration User' ? 'display:none;' : 'background-color: #ecb46c;'}">
+                <p><i>Terms of Service have not been accepted for this order. Please notify the customer that the order
+                        cannot be processed until the Terms of Service have been accepted. </i></p>
+            </div>
+            <div class="slds-card__body">
+                <div>
+                    <table class="slds-table slds-table--bordered" style="font-size:12px;">
+                        <thead>
+                            <tr style="height:35px;">
+                                <th scope="col" class="slds-size--3-of-12"><strong>Product Name</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Processing Number</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Date Ordered</strong></th>
+                                <th scope="col" class="slds-size--2-of-12"><strong>Status</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Quantity</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Price</strong></th>
+                                <th scope="col" class="slds-size--2-of-12"><strong>Links</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Modify Item</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.orderWrapper.finalOrderItemWrappers}" var="theOrderItemWrapper"
+                                indexVar="key">
+                                <tr class="slds-hint-parent mainLineItem"
+                                    data-cancel="{!theOrderItemWrapper.isCancelled}"
+                                    style="{!theOrderItemWrapper.isCancelled ?  v.displayCancelledItems ? 'text-decoration:line-through;' : 'text-decoration:none;display:none;' : 'text-decoration:none;'}">
+                                    <td>
+                                            <p style = "{!theOrderItemWrapper.productTypeId == '2' || theOrderItemWrapper.productTypeId == '9' ? 'font-weight:bold;' : 'font-weight:normal;'}">
+                                                <span style="{!theOrderItemWrapper.indent == 1 ? 'padding-left: 20px;' : theOrderItemWrapper.indent == 2 ? 'padding-left: 40px;' : theOrderItemWrapper.indent == 3 ? 'padding-left: 60px;' : ''}" title ="Product Name">
+                                                    <!-- @Sai - B-41757  -->
+                                                    <!-- {!theOrderItemWrapper.displayNameOnBill} -->
+                                                    <aura:if isTrue="{!theOrderItemWrapper.productTypeId == '2'}">
+                                                        {!theOrderItemWrapper.displayNameOnBill}
+                                                        <aura:set attribute="else">
+                                                            {!theOrderItemWrapper.productName}
+                                                        </aura:set>
+                                                    </aura:if>
+                                                    <!-- B-41757 End -->
+                                                    <br/>
+                                                    <span style="{!theOrderItemWrapper.copyrightTradeMarkName != null  &amp;&amp; key == 0 ? 'font-style:oblique;font-size:9px;' : 'display:none;'}">
+                                                        {!theOrderItemWrapper.copyrightTradeMarkName}
+                                                    </span>
+                                                </span>
+                                            </p>
+                                    </td>
+                                    <td>{!theOrderItemWrapper.processingOrderId}</td>
+
+                                    <td>{!theOrderItemWrapper.dateTimeCreatedInString}</td>
+                                    <td style="white-space: normal;">
+                                        <strong>{!theOrderItemWrapper.processingStatus}</strong></td>
+                                    <td>{!theOrderItemWrapper.quantity}</td>
+                                    <td>
+                                        <span
+                                            style="{!theOrderItemWrapper.extendedPrice.length == 6 ? 'margin-left:-12px' : theOrderItemWrapper.extendedPrice.length == 5 ? 'margin-left:-6px' : ''}">{!theOrderItemWrapper.extendedPrice}
+                                            &nbsp;
+                                            <lightning:buttonIcon
+                                                class="{!theOrderItemWrapper.productTypeId == '2' || theOrderItemWrapper.productTypeId == '9' ? '' : 'slds-hide'}"
+                                                iconName="utility:info" size="x-small"
+                                                alternativeText="Additional Information"
+                                                value="{!theOrderItemWrapper.processingOrderId}"
+                                                onclick="{!c.openEIN}" />
+                                        </span>
+
+                                        <section id="{!theOrderItemWrapper.processingOrderId}" class="slds-hide">
+                                            <div aura:id="test" class="slds-popover slds-nubbin_top-left" role="dialog">
+                                                <div class="slds-popover__body">
+                                                    <p style="{!v.EinData.entity.entityName!=''?'':'display:none'}">
+                                                        Entity Name : {!v.EinData.entity.entityName} </p>
+                                                    <p style="{!v.EinData.entity.ein!=''?'':'display:none'}"> EIN :
+                                                        {!v.EinData.entity.ein} </p>
+                                                    <p
+                                                        style="{!v.EinData.entity.formationDate!=null?'':'display:none'}">
+                                                        Entity Effective Date :
+                                                        <lightning:formattedDateTime
+                                                            value="{!v.EinData.entity.formationDate}" year="numeric"
+                                                            month="numeric" day="numeric" hour="2-digit"
+                                                            minute="2-digit" timeZone="GMT" />
+                                                    </p>
+                                                    <p> <button type="button" class="slds-button slds-button--brand"
+                                                            data-processingid="{!theOrderItemWrapper.processingOrderId}"
+                                                            aura:id="btnSave" onclick="{!c.closeEin}">
+                                                            Close
+                                                        </button></p>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <span class="slds-assistive-text">Additional Information</span>
+                                    </td>
+                                    <td>
+                                        <div
+                                            style="{!theOrderItemWrapper.processingOrderId != null ? '' : 'display:none'}">
+                                            <div>
+                                                <!--  style="{!theOrderItemWrapper.isCancelled ? 'display:none' : ''}" -->
+                                                <span style="{!theOrderItemWrapper.isCancelled ? 'display:none' : ''}">
+                                                    <span class="slds-icon__container" title="FileNet">
+                                                        <div class="slds-dropdown-trigger slds-text-align--left"
+                                                            aria-expanded="true">
+                                                            <span class="slds-assistive-text">FileNet</span>
+                                                            <button class="slds-button slds-button_icon" title="FileNet"
+                                                                data-processingorderid="{!theOrderItemWrapper.processingOrderId}"
+                                                                onclick="{!c.openFileNet}">
+                                                                <lightning:icon iconName="utility:record" size="x-small"
+                                                                    alternativeText="FileNet" />
+                                                            </button>
+                                                            <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left"
+                                                                style="left:-18px">
+                                                                <ul class="dropdown__list" role="menu">
+                                                                    <li class="slds-dropdown__item">
+                                                                        <a role="menu-item"
+                                                                            data-processingorderid="{!theOrderItemWrapper.processingOrderId}"
+                                                                            onclick="{!c.displayContentInFilenet}">{!theOrderItemWrapper.productName}
+                                                                            ({!theOrderItemWrapper.processingOrderId})</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </span>
+                                                <span class="slds-icon__container " title="Questionnaire">
+                                                    <span class="slds-assistive-text">Questionnaire</span>
+                                                    <button class="slds-button slds-button_icon" title="Questionnaire"
+                                                        data-processingorderid="{!theOrderItemWrapper.processingOrderId}"
+                                                        onclick="{!c.openQuestionnaire}">
+                                                        <lightning:icon iconName="utility:inbox" size="x-small"
+                                                            alternativeText="Questionnaire" />
+                                                    </button>
+                                                </span>
+                                                <span class="slds-icon__container " title="Proofer">
+                                                    <div class="slds-dropdown-trigger slds-text-align--left"
+                                                        aria-expanded="true">
+                                                        <button class="slds-button slds-button_icon" title="Proofer"
+                                                            data-processingorderid="{!theOrderItemWrapper.processingOrderId}"
+                                                            onclick="{!c.openProofer}">
+                                                            <lightning:icon
+                                                                class="{!theOrderItemWrapper.prooferStatus == 'Passed' ? 'icn1' : theOrderItemWrapper.prooferStatus == 'Failed' ? 'icn2' : ''}"
+                                                                iconName="utility:settings" size="x-small"
+                                                                alternativeText="Proofer Icon" />
+                                                        </button>
+                                                        <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left"
+                                                            style="left:-18px">
+                                                            <ul class="dropdown__list" role="menu">
+                                                                <li class="slds-dropdown__item">
+                                                                    <a role="menu-item"
+                                                                        onclick="{!c.reloadOrderScreen}">Run Proofer
+                                                                        Rules</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <span class="slds-assistive-text">Proofer</span>
+                                                    </div>
+                                                </span>
+
+                                                <!-- Changes per B-26835 -->
+                                                <span class="slds-icon__container " title="Ledger">
+                                                    <span class="slds-assistive-text">Ledger</span>
+                                                    <button class="slds-button slds-button_icon"
+                                                        onclick="{!c.openNextPadModal}" title="Ledger"
+                                                        data-processingnumber="{!theOrderItemWrapper.processingOrderId}"
+                                                        data-customerordernumber="{!v.orderWrapper.orderNumber}"
+                                                        data-orderitemnumber="{!theOrderItemWrapper.orderItemId}">
+                                                        <lightning:icon iconName="utility:page" size="x-small"
+                                                            alternativeText="Ledger" />
+                                                    </button>
+                                                </span>
+
+                                                <span
+                                                    style="{!theOrderItemWrapper.isCancelled || theOrderItemWrapper.processingStatus == 'Documents Prepared' || theOrderItemWrapper.processingStatus == 'Documents Reviewed' || theOrderItemWrapper.processingStatus == 'Documents Printed' || theOrderItemWrapper.processingStatus == 'Sent to Customer' ? 'display:none' : ''}">
+                                                    <span class="slds-icon__container " title="Re-Automate Docs">
+                                                        <span class="slds-assistive-text">Automate Docs</span>
+                                                        <button class="slds-button slds-button_icon"
+                                                            onclick="{!c.automateDocs}" title="Re-Automate Docs"
+                                                            data-processingnumber="{!theOrderItemWrapper.processingOrderId}">
+                                                            <lightning:icon iconName="utility:share_file" size="x-small"
+                                                                alternativeText="Re-Automate Docs" />
+                                                        </button>
+                                                    </span>
+                                                </span>
+
+                                                <span style="{!theOrderItemWrapper.isCancelled ? 'display:none' : ''}">
+                                                    <span class="slds-icon__container" title="Doc Delivery">
+                                                        <a>
+                                                            <button class="slds-button slds-button_icon"
+                                                                onclick="{!c.retrieveDocuments}" title="Doc Delivery"
+                                                                data-processingnumber="{!theOrderItemWrapper.processingOrderId}"
+                                                                data-processid="{!theOrderItemWrapper.processId}"
+                                                                data-processname="{!theOrderItemWrapper.processName}">
+                                                                <lightning:icon iconName="utility:share" size="x-small"
+                                                                    alternativeText="Doc Delivery" />
+                                                            </button>
+                                                        </a>
+                                                        <span class="slds-assistive-text">Doc Delivery</span>
+                                                    </span>
+
+                                                    <span class="slds-icon__container" title="OrderStatus"
+                                                        style="{!theOrderItemWrapper.productNameContainsLLC ? '' : 'display:none'}">
+                                                        <a>
+                                                            <button class="slds-button slds-button_icon"
+                                                                onclick="{!c.openOrderstatus}" title="Order Status"
+                                                                data-processingnumber="{!theOrderItemWrapper.processingOrderId}"
+                                                                data-customerordernumber="{!v.orderWrapper.orderNumber}"
+                                                                data-orderitemnumber="{!theOrderItemWrapper.orderItemId}">
+                                                                <lightning:icon iconName="utility:check" size="x-small"
+                                                                    alternativeText="Order Status" />
+                                                            </button>
+                                                        </a>
+                                                        <span class="slds-assistive-text">Order Status</span>
+                                                    </span>
+                                                    <span class="slds-icon__container" title="Update Processing Status"
+                                                        style="{!theOrderItemWrapper.processingStatus=='LifePlan – Refer Back to Member Advisor' ? '' : 'display:none'}">
+                                                        <a>
+                                                            <button class="slds-button slds-button_icon"
+                                                                onclick="{!c.UpdateProcessingStatus}"
+                                                                data-lifeplanprocess="{!theOrderItemWrapper.processingOrderId}"
+                                                                title="update Status">
+                                                                <lightning:icon iconName="utility:down" size="x-small"
+                                                                    alternativeText="Processing status update " />
+                                                            </button>
+                                                        </a>
+                                                        <span class="slds-assistive-text">Click to update processing
+                                                            status </span>
+                                                    </span>
+                                                    <aura:iteration items="{!v.theOrderItemShipments}" indexVar="key"
+                                                        var="shipmentWrapper">
+                                                        <span class="slds-icon__container"
+                                                            style="{!theOrderItemWrapper.orderItemId == shipmentWrapper.key ? '' : 'display:none'}">
+                                                            <div class="slds-dropdown-trigger slds-text-align--left"
+                                                                aria-expanded="true">
+                                                                <img
+                                                                    src="{!$Resource.shipment_icons + shipmentWrapper.value[0].imageURL}" />
+                                                                <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-right"
+                                                                    style="left:-265px">
+                                                                    <div class="dropdown__list" role="menu">
+                                                                        <aura:iteration items="{!shipmentWrapper.value}"
+                                                                            var="shipments">
+                                                                            <div style="align:left;">
+                                                                                <img
+                                                                                    src="{!$Resource.shipment_icons + shipments.imageURL}" />
+                                                                            </div>
+                                                                            <div
+                                                                                style="margin-left:4px;text-align:center;width:300px;">
+                                                                                Shipped Date:
+                                                                                {!shipments.shippedDate}<br />
+                                                                                {!shipments.vendorName} Tracking number:
+                                                                                {!shipments.trackingCode}<br />
+                                                                                <ui:outputURL
+                                                                                    value="{!shipments.trackingURL}"
+                                                                                    label="{! 'Click here to go to ' + shipments.vendorName +'.com'}"
+                                                                                    target="_blank" />
+                                                                            </div><br />
+                                                                        </aura:iteration>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </span>
+                                                    </aura:iteration>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true"
+                                            style="{!theOrderItemWrapper.isCancelled || theOrderItemWrapper.isMainOrderItem ? 'visibility: hidden;':''}">
+                                            <button class="slds-button slds-button_icon" title="Modify Item"
+                                                data-dispName="{!theOrderItemWrapper.displayNameOnBill}"
+                                                data-orderItemId="{!theOrderItemWrapper.orderItemId}"
+                                                onclick="{!c.retrieveActionItems}">
+                                                <lightning:icon aura:id="{!theOrderItemWrapper.orderItemId}"
+                                                    iconName="custom:custom3" size="small"
+                                                    alternativeText="Modify item icon" />
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                            <tr>
+
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><strong>SubTotal</strong></td>
+                                <td>
+                                    <strong>
+                                        ${!v.orderBalanceWrapper.theOrderBalance.subTotalCharges}
+                                    </strong>
+                                </td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><a onclick="{!c.openPromoPage}"><strong>Promo Code</strong></a></td>
+                                <td>
+                                    <strong>
+                                        ${!v.orderBalanceWrapper.promoCodeAmount}
+                                    </strong>
+                                </td>
+                                <td></td>
+
+
+                            </tr>
+
+                            <tr>
+
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><a onclick="{!c.openDiscountPage}"><strong>Discount</strong></a></td>
+                                <td>
+                                    <strong>
+                                        ${!v.orderBalanceWrapper.orderDiscount}
+                                    </strong>
+                                </td>
+                                <td></td>
+
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <strong>TOTAL PRICE</strong>
+                                </td>
+                                <td>
+                                    <strong id="totalPrice">
+                                        ${!v.orderBalanceWrapper.theOrderBalance.totalOrderAmount}
+                                    </strong>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <strong>Due Amount</strong>
+                                </td>
+                                <td>
+                                    <strong id="total">
+                                        ${!v.orderBalanceWrapper.theOrderBalance.orderBalanceAmount}
+                                    </strong>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer" />
+
+            </div>
+            <br />
+
+            <div id="modifiedItems" style="border:1px solid rgb(221, 219, 218);border-radius:.25em;overflow:hidden;">
+                <div style="{!v.theModifiedOrderItemWrappers.length > 0 ? '' : 'display:none;'}">
+                    <div class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                                <div class="slds-media__figure" id="bottomOrderId">
+                                    <lightning:icon iconName="standard:orders" size="medium"
+                                        alternativeText="Order Status" />
+                                </div>
+                                <div class="slds-media__body">
+                                    <h2 class="slds-text-heading--small slds-truncate">Order Changes</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-card__body">
+                            <table class="slds-table slds-table--bordered" style="font-size:12px;">
+                                <thead>
+                                    <tr style="height:35px;">
+                                        <th scope="col" class="slds-size--2-of-12"><strong>Product Name</strong></th>
+                                        <th scope="col" class="slds-size--2-of-12"><strong>Processing Number</strong>
+                                        </th>
+                                        <th scope="col" class="slds-size--2-of-12"><strong>Order Item Number</strong>
+                                        </th>
+                                        <th scope="col" class="slds-size--1-of-12">
+                                            <strong>Order Item Created</strong>
+                                        </th>
+                                        <th scope="col" class="slds-size--2-of-12"><strong>Update Type</strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.theModifiedOrderItemWrappers}" var="theOrderItemWrapper">
+                                        <tr class="slds-hint-parent">
+
+                                            <td>{!theOrderItemWrapper.productName}</td>
+                                            <td>{!theOrderItemWrapper.processingOrderId}</td>
+                                            <td>{!theOrderItemWrapper.orderItemId}</td>
+                                            <td>{!theOrderItemWrapper.dateTimeCreatedInString}</td>
+                                            <td>{!theOrderItemWrapper.modificationType}</td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="footerBtns">
+                    <button class="slds-button slds-button--brand slds-float--right"
+                        style="{!v.orderBalanceWrapper.theOrderBalance != NULL &amp;&amp; v.orderBalanceWrapper.theOrderBalance.orderBalanceAmount &gt; 0.00 ? '' : 'display:none;'}"
+                        type="button" onclick="{!c.openPaymentsPage}">Proceed to Payments</button>
+                    <button class="slds-button slds-button--brand slds-float--right"
+                        style="{!v.orderBalanceWrapper.theOrderBalance != NULL &amp;&amp; v.orderBalanceWrapper.theOrderBalance.orderBalanceAmount &lt; 0.00 ? '' : 'display:none;'}"
+                        type="button" onclick="{!c.openRefundsPage}">Proceed to Refunds</button>
+                </div>
+            </div>
+
+            <div aura:id="threePayPanel" style="display:none">
+                <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                <lightning:icon iconName="utility:close" size="xx-small"
+                                    alternativeText="Close order items" />
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <div style="{!v.orderWrapper.theOrder.Order.isCancelled ? 'display:none' : ''}">
+                                <h2 class="slds-text-heading--medium">Convert to 3-pay?</h2>
+                            </div>
+                            <div style="{!v.orderWrapper.theOrder.Order.isCancelled ? '' : 'display:none'}">
+                                <h2 class="slds-text-heading--medium">Order is Cancelled</h2>
+                            </div>
+                        </div>
+
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button--neutral slds-button--brand"
+                                style="{!v.orderWrapper.theOrder.Order.isCancelled ? 'display:none' : ''}" type="button"
+                                onclick="{!c.show3Pay}">Convert To 3 Pay</button>
+                            <button class="slds-button slds-button--neutral" type="button"
+                                onclick="{!c.hideConvertTo3Pay}">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+            <div>
+                <c:QuestionnaireVersions_Ltng processingNumber="{!v.poId}" ordernumber="{!v.orderNumber}"
+                    aura:id="QuestionnaireVersionsModal" />
+            </div>
+            <div>
+                <c:NextPad_Ltng aura:id="NextPadModal" />
+            </div>
+
+            <div id="orderHistory" aura:id="orderHistory" class="hideOrderHistory">
+                <div class="slds-modal slds-fade-in-open slds-modal--large" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container" style="margin-top: 10%; max-height: 80%">
+                        <div class="slds-modal__header">
+                            Order History #{!v.ctrl.orderNumber}
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <div id="orderHistoryPanel">
+                                <table class="slds-table sortable">
+                                    <thead class="slds-table--bordered">
+                                        <tr class="slds-text-body--label">
+                                            <th scope="col" class="slds-text-body--small slds-cell-shrink"><strong>ORDER
+                                                    ITEM</strong></th>
+                                            <th scope="col" class="slds-text-body--small slds-cell-shrink">
+                                                <strong>DATE</strong></th>
+                                            <th scope="col" class="slds-text-body--small slds-cell-shrink">
+                                                <strong>CHANGED BY</strong></th>
+                                            <th scope="col" class="slds-text-body--small slds-cell-shrink">
+                                                <strong>DESCRIPTION</strong></th>
+                                            <th scope="col" class="slds-text-body--small slds-cell-shrink">
+                                                <strong>ADDITIONAL INFO</strong></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <aura:iteration items="{!v.theOrderHistory}" var="theOrderItemsHistory">
+                                            <aura:iteration items="{!theOrderItemsHistory.orderItemHistory}"
+                                                var="theOrderItemHistory">
+                                                <tr class="slds-text-heading--label slds-has-divider"
+                                                    style="{!theOrderItemHistory.rowNumber == theOrderItemsHistory.orderItemHistory.length &amp;&amp; theOrderItemsHistory.parentRowNumber != v.theOrderHistory.length ? 'border-bottom: 2px solid black;' : ''}">
+                                                    <!-- -->
+                                                    <td><span
+                                                            style="{!theOrderItemHistory.rowNumber == 1 ? 'display:block; white-space: normal;' : 'display:none; white-space: normal;'}">{!theOrderItemsHistory.productName}</span>
+                                                    </td>
+                                                    <td>{!theOrderItemHistory.adjCreatedDateString}</td>
+                                                    <td>{!theOrderItemHistory.updatedBy}</td>
+                                                    <td>{!theOrderItemHistory.description}</td>
+                                                    <td>{!theOrderItemHistory.additionalInfo}</td>
+                                                </tr>
+                                            </aura:iteration>
+                                        </aura:iteration>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button--neutral" type="button"
+                                onclick="{!c.closeOrderHistory}">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+            <div aura:id="cancelOrder" style="display:none">
+                <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-text-heading--medium">Cancel Order</h2>
+                        </div>
+                        <div id="cancelEntireOrder">
+
+                            <div class="slds-modal__content slds-p-around--medium">
+                                <div class="slds-form--horizontal">
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Order Number: </label>
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-form-element__label">{!v.orderWrapper.orderNumber}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Customer Login:</label>
+                                        <div class="slds-form-element__control">
+                                            <span
+                                                class="slds-form-element__label">{!v.orderWrapper.customerLogin}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Processing Number:</label>
+                                        <div class="slds-form-element__control">
+                                            <span
+                                                class="slds-form-element__label">{!v.orderWrapper.processingNumber}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Processing Status:</label>
+                                        <div class="slds-form-element__control">
+                                            <span
+                                                class="slds-form-element__label">{!v.orderWrapper.baseProcessingStatus}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Base Product:</label>
+                                        <div class="slds-form-element__control">
+                                            <span
+                                                class="slds-form-element__label">{!v.orderWrapper.baseProductName}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Gross Total:</label>
+                                        <div class="slds-form-element__control">
+                                            <span
+                                                class="slds-form-element__label">${!v.orderBalanceWrapper.theOrderBalance.totalOrderAmount}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Order Date/Time
+                                            Created:</label>
+                                        <div class="slds-form-element__control">
+                                            <span
+                                                class="slds-form-element__label">{!v.orderWrapper.orderDateTimeCreated}</span>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="slds-modal__footer">
+                                        <button class="slds-button slds-button--neutral slds-button--brand"
+                                            style="{!v.cancelOrder ? 'display:none;' : ''}" type="button"
+                                            onclick="{!c.invokeCancelOrder}"> Cancel Order </button>
+                                        <button class="slds-button slds-button--neutral"
+                                            style="{!v.cancelOrder ? '' : 'display:none'}" type="button"
+                                            onclick="{!c.openRefundsPage}"> Go to Refund Page </button>
+                                        <button class="slds-button slds-button--neutral" type="button"
+                                            onclick="{!c.hideCancelOrder}"> Close </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+            <div aura:id="uncancelOrder" style="display:none">
+                <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-text-heading--medium">Undo Cancel Order</h2>
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <p> Are you sure you want to Undo the Cancellation?</p>
+                            <!--<c:IADMessageBox theMessages="{!orderService.iadMessages}" />-->
+                            <br />
+                            <div class="slds-modal__footer">
+                                <button class="slds-button slds-button--neutral slds-button--brand" type="button"
+                                    style="{!v.uncancelOrder ? '' : 'display:none'}" onclick="{!c.invokeUncancelOrder}">
+                                    Uncancel Order </button>
+                                <button class="slds-button slds-button--neutral" type="button"
+                                    onclick="{!c.hideUncancelOrder}">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+            <div aura:id="miscItemPanel" style="display:none">
+                <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            Add Miscellaneous Item
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <form class="slds-form_stacked">
+                                <lightning:input type="number" aura:id="miscform" label="Quantity" name="quantity"
+                                    min="1" step="1" value="{!v.itemQuantity}"
+                                    messageWhenRangeUnderflow="Enter a quantity that's at least 1 or more"
+                                    required="true" />
+                                <lightning:input type="number" aura:id="miscform" label="Price Per Unit"
+                                    name="expenseamount" min="0.1" formatter="currency" step="0.01"
+                                    value="{!v.itemPricePerUnit}"
+                                    messageWhenRangeUnderflow="Enter an amount that's at least $0.10."
+                                    required="true" />
+                                <lightning:input aura:id="miscform" label="Description" name="expensename"
+                                    value="{!v.itemDescription}" />
+                            </form>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button--brand"
+                                onclick="{!c.validateAndCreateMiscItem}">Submit</button>
+                            <button class="slds-button slds-button--brand"
+                                onclick="{!c.hideMiscItemPanel}">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+            <div aura:id="updateprocessing" style="display:none">
+                <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            Processing status Update
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            Are you sure to update processing status ?
+                        </div>
+                        <div class="slds-modal__footer">
+                            <lightning:button variant="brand" label="Yes" onclick="{!c.updatelifeplanprocess}"
+                                aura:id="lifeplansave" />
+                            <button class="slds-button slds-button--brand"
+                                onclick="{!c.hideprocessmodal}">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+            <div aura:id="upgradeDowngradePanel" style="display:none">
+                <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            Change Subscription Level
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <form class="slds-form_stacked">
+                                <lightning:input type="String" name="customer" label="Customer"
+                                    value="{!v.customerName}" disabled="true" />
+                                <lightning:input type="String" name="currentSubscription"
+                                    value="{!v.dispNameSubChange + ' ' + v.orderNumber}" label="Current Subscription"
+                                    disabled="true" />
+                                <div aura:id="upgradeDowngradeSubRenewalId" class="slds-form-element__row">
+                                    <lightning:select aura:id="upgradeDowngradeSubId"
+                                        label="Upgrade / Downgrade Options" name="upgradeDowngradeOptions"
+                                        value="{!v.subscriptionChangeToConfiguration}"
+                                        onchange="{!c.setRenewalTermPicklist}">
+                                        <option value="empty" text="" />
+                                        <aura:iteration
+                                            items="{!v.subUpgradeDowngradeAndRenewalTermOptions.subscriptionChangeOptions}"
+                                            var="subscript">
+                                            <option
+                                                value="{!subscript.subscriptionChangeToConfiguration + '-' + subscript.subscriptionChangeToComponentID + '-' + subscript.subscriptionChangeToName}"
+                                                text="{!subscript.subscriptionChangeToName}" />
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                                <div aura:id="upgradeDowngradeSubRenewalId" class="slds-form-element__row">
+                                    <lightning:select aura:id="renewalTermSelection" label="Renewal Term"
+                                        name="renewalTerm" value="{!v.productConfigurationExtendedPrice}"
+                                        onchange="{!c.reRenderProrationSection}">
+                                        <option value="empty" text="" />
+                                        <aura:iteration items="{!v.renewalTermOptions}" var="rt">
+                                            <option value="{!rt.productConfigurationId + '-' + rt.extendedPrice}"
+                                                text="{!rt.renewalTerm}" />
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </form>
+
+                            <div aura:id="prorationSection" class="slds-hide"><br />
+                                <strong>
+                                    <lightning:formattedText value="{!'Change: ' + v.dispNameSubChange}" />
+                                </strong><br /><br />
+                                <lightning:input type="String" name="serviceTermRemaining"
+                                    label="Service Term Remaining"
+                                    value="{!v.proratedSubscriptionInfo.currentSubscriptionSummary.serviceTermRemainingStartDate + '   -   ' + v.proratedSubscriptionInfo.currentSubscriptionSummary.serviceTermRemainingEndDate}"
+                                    disabled="true" />
+                                <lightning:input type="String" name="storeCredit"
+                                    label="Store Credit for unused portion of Service"
+                                    value="{!v.proratedSubscriptionInfo.changeSubscriptionSummary.availableStoredCredit}"
+                                    disabled="true" />
+                                <lightning:input type="String" name="newEndDate" label="New End Date"
+                                    value="{!v.proratedSubscriptionInfo.currentSubscriptionSummary.newEndDate}"
+                                    disabled="true" />
+                                <br />
+                                <strong>
+                                    <lightning:formattedText
+                                        value="{!'To: ' + v.subscriptionChangeToName + ' (' + v.extendedPrice + ') '}" />
+                                </strong><br /><br />
+                                <lightning:input type="String" name="serviceStartDate" label="Service Start Date"
+                                    value="{!v.proratedSubscriptionInfo.changeSubscriptionSummary.serviceStartDate}"
+                                    disabled="true" />
+                                <lightning:input type="String" name="renewalDate" label="Renewal Date"
+                                    value="{!v.proratedSubscriptionInfo.changeSubscriptionSummary.renewalDate}"
+                                    disabled="true" />
+                                <lightning:input type="String" name="feeForServiceTerm"
+                                    label="Fee for this Service Term"
+                                    value="{!v.proratedSubscriptionInfo.changeSubscriptionSummary.proratedFee}"
+                                    disabled="true" />
+                                <lightning:input type="String" name="balanceDue"
+                                    label="Balance Due after Store Credit Applied"
+                                    value="{!v.proratedSubscriptionInfo.changeSubscriptionSummary.balanceDue}"
+                                    disabled="true" />
+                                <lightning:input type="String" name="remainingStoreCredit"
+                                    label="Remaining Store Credit"
+                                    value="{!v.proratedSubscriptionInfo.changeSubscriptionSummary.remainingStoredCredit}"
+                                    disabled="true" />
+                            </div><br />
+                            <div>
+                                <button class="slds-button slds-button--brand"
+                                    onclick="{!c.validateAndUpgradeSubscription}"
+                                    disabled="{!v.subscriptionChangeToConfiguration != 'empty' &amp;&amp; v.productConfigurationId != 'empty' ? false : true}">Submit</button>
+                                <button class="slds-button slds-button--brand"
+                                    onclick="{!c.hideUpgradeDowngradePanel}">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+            <div aura:id="Quanitypanel" style="display:none">
+                <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            New OrderItem Price/Qty
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <form class="slds-form_stacked">
+
+                                <lightning:input type="text" aura:id="filingandprocessing" label="OrderId"
+                                    disabled="true" value="{!v.orderNumber}" />
+                                <lightning:input type="text" label="OrderItem" disabled="true"
+                                    aura:id="filingandprocessing" value="{!v.descriptionorderitem}" />
+                                <lightning:input type="number" aura:id="filingandprocessing" label="New Qty"
+                                    name="expenseamount" value="{!v.quantityfilling}" default="1" required="true" />
+
+                            </form>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button--brand" onclick="{!c.Quantityfilling}">Save</button>
+                            <button class="slds-button slds-button--brand" onclick="{!c.closefiling}">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+            <div aura:id="processingpanel" style="display:none">
+                <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            New OrderItem Price/Qty
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <form class="slds-form_stacked">
+
+                                <lightning:input type="text" label="OrderId" disabled="true" aura:id="expediteform"
+                                    value="{!v.orderNumber}" />
+                                <lightning:input type="text" label="OrderItem" disabled="true" aura:id="expediteform"
+                                    value="{!v.descriptionorderitem}" />
+
+                                <lightning:input type="number" aura:id="expediteform" label="New price"
+                                    name="expenseamount" min="0.1" formatter="currency" step="0.01"
+                                    value="{!v.expediteprice}"
+                                    messageWhenRangeUnderflow="Enter an amount that's at least $0.10."
+                                    required="true" />
+                                <lightning:input type="text" label="Quantity" disabled="true" aura:id="expediteform"
+                                    value="{!v.defaultquantityorderitem}" />
+
+
+                            </form>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button--brand"
+                                onclick="{!c.CreateProcessing}">Submit</button>
+                            <button class="slds-button slds-button--brand"
+                                onclick="{!c.closeprocessing}">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+            <div aura:id="documentsPanel" style="display:none">
+                <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-text-heading--small" style="font-weight: bold">Select Documents</h2>
+                        </div>
+                        <table class="slds-table sortable">
+                            <thead class="slds-table--bordered">
+                                <tr class="slds-text-body--label">
+                                    <th scope="col" class="slds-text-body--small slds-cell-shrink"><strong>DOCUMENT
+                                            NAME</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <aura:iteration items="{!v.documentsList}" var="doc">
+                                    <tr>
+                                        <td>
+                                            <lightning:input aura:id="documentsCheck" type="checkbox"
+                                                label="{!doc.documentName}" name="{!doc.documentId}"
+                                                onchange="{!c.updateSelectedDocumentsList}" />
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                            </tbody>
+                        </table>
+                        <div class="slds-modal__footer" style="text-align: center;">
+                            <button class="slds-button slds-button--brand"
+                                style="{!v.documentsList.length &gt; 0 ? '' : 'display:none'}"
+                                onclick="{!c.shareDocuments}"
+                                disabled="{!v.selectedDocuments.length &gt; 0 ? false : true}">Send Documents</button>
+                            <button class="slds-button slds-button--brand"
+                                onclick="{!c.hideDocumentsPanel}">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+            <div aura:id="documentsSentPanel" style="display:none">
+                <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-text-heading--small" style="font-weight: bold">Documents Sent</h2>
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <div class="slds-align_absolute-center" style="position:relative; height:100px;">
+                                <div style="position: absolute;">
+                                    <lightning:icon aura:id="emailIcon" iconName="utility:email" size="Large" />
+                                    <br /><br />
+                                </div>
+                                <div style="position: absolute; bottom: 0; font-size:12px;">
+                                    {!v.docDeliveryResponse}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button--brand"
+                                onclick="{!c.hideDocumentsSentPanel}">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+            <!-- <div aura:id="tosModalPanel" style="{!v.ctrl.thisOrder.TOS_Accepted__c || (v.ctrl.thisOrder.CreatedBy.Name !='Integration User' &amp;&amp; v.ctrl.thisOrder.LastModifiedBy.Name !='Integration User') ? 'display:none' : ''}"> -->
+            <div aura:id="tosModalPanel"
+                style="{!v.ctrl.thisOrder.TOS_Accepted__c ? 'display:none' : v.ctrl.thisOrder.LastModifiedBy.Name != 'Integration User' ? 'display:none;' : ''}">
+                <div class="slds-modal slds-fade-in-open slds-modal" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-text-heading--medium">Terms of Service</h2>
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium slds-grid slds-grid--align-center">
+                            Terms of Service have not been accepted for this order. Please notify the customer that the
+                            order cannot be processed until the Terms of Service have been accepted.
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button onclick="{!c.closeTOSModal}" class="slds-button slds-button--neutral">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tosBackground" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+        </div>
+    </div>
+    <!-- STORY B-39539-->
+    <aura:if isTrue="{!v.openManagerCredentialModal}">
+        <c:managerCredentialsLWC onclose="{!c.handleMCCloser}" onsuccess="{!c.handleMCSuccess}">
+        </c:managerCredentialsLWC>
+    </aura:if>
+    <!-- STORY B-39539 -->
+</aura:component>

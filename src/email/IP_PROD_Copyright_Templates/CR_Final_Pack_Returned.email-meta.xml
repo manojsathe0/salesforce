@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr21</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>POST FILING - CR Final Pack Returned</name>
+    <style>none</style>
+    <subject>CR Final Package Returned</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+We attempted to mail your final Copyright order package to the address you provided, but it was returned to us. The mailing address we have on file for your account is:&lt;br/&gt;&lt;br/&gt;
+
+Name
+Address
+City, State, Zip 
+
+Please provide an updated shipping address as soon as possible so that we can resend your package. We apologize for any inconvenience that you may have experienced as a result of this delay.
+
+It is very important to us to get your legal documents delivered to you in a timely manner. As  reassurance of our commitment to providing you the best possible service, we&apos;ve also attached a copy of the completed documents to this e-mail. This attachment includes the following: 
+
+1) LegalZoom cover letter
+2) A copy of your application
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}. 
+
+Thank you again for choosing LegalZoom and we look forward to hearing from you soon. 
+
+Best Regards, 
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

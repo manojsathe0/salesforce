@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order_Item__c$Order__c.Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Order_Item__c$Order__c</field>
+    </columns>
+    <columns>
+        <field>Order_Item__c$Product__c</field>
+    </columns>
+    <columns>
+        <field>Order_Item__c$Order__c.Commission_Eligible_Agent_1_Day1__c</field>
+    </columns>
+    <columns>
+        <field>Order_Item__c$Order__c.Commission_Eligible_Agent_2_Day1__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <column>Order_Item__c$Product__c.LZ_Product_ID__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2805,2806,2807,2808,2809,2810</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Item__c$Order__c.Commission_Eligible_Agent_1_Day1__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>annie williams,bill lewis,brian helmick,chris gatus,christopher shepard,chris sterrs,daniel castro,emily smith,eric rodgers,hilario garza,jack akers,jakob christian,jeffrey greaves,jena erickson,jesse sanchez,laura garner,lily aldrich,matthew doolittle,matthew moore,michael carusillo,michael pipper,oliver garcia,omar dreidi,rick griffin,rob moreno,ryan guest,sean juarez,sean maguire,seth levy,tod mackey,zack ingraham,jereme robinson</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Item__c$Order__c.Commission_Eligible_Agent_2_Day1__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>annie williams,bill lewis,brian helmick,chris gatus,christopher shepard,chris sterrs,daniel castro,emily smith,eric rodgers,hilario garza,jack akers,jakob christian,jeffrey greaves,jena erickson,jesse sanchez,laura garner,lily aldrich,matthew doolittle,matthew moore,michael carusillo,michael pipper,oliver garcia,omar dreidi,rick griffin,rob moreno,ryan guest,sean juarez,sean maguire,seth levy,tod mackey,zack ingraham,jereme robinson</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Item__c$Order__c.Order_Payment_Status__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Declined,Cancelled</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>OB BofA Opt In (Ver 2.0)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Orders_w_Order_Items__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Order_Item__c$Order__c.Date_Time_Created__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Order_Item__c$Order_Item_Date_Time_Created__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

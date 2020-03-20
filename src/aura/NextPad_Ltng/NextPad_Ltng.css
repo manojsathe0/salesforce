@@ -1,0 +1,29 @@
+.THIS .hideSpinner {
+	display: none;
+}
+
+.THIS .showSpinner {
+	display: block;
+}
+
+.theHeadMain.THIS {
+	background:#C9E7E9;
+	height:30px;
+}
+
+.THIS .even {
+	background:#C6D3E4;
+	height:30px;
+}
+
+
+.THIS .odd {
+	background:#F5FBFB;
+	height:30px;
+}
+.THIS .selected { 
+    color:#FF0000;
+}
+.THIS .notSelected {
+    color:#000000;
+}

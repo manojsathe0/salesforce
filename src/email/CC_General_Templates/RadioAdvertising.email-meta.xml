@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>radioad</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Radio Advertising</name>
+    <style>none</style>
+    <subject>Radio Advertising</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+An advertising agency handles all of our radio advertising spending. Please contact Jessica Martin at ROI Media for more information. Her telephone number is 619.231.1475.
+
+Thank you once again for contacting LegalZoom.com, America&apos;s #1 online legal document service. Please let us know if you need any further assistance.
+ 
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

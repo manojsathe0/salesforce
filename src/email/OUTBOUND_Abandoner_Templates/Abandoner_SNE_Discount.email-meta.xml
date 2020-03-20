@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>absne</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Abandoner: SNE &amp; Discount</name>
+    <style>none</style>
+    <subject>LegalZoom [Enter Product Name] Inquiry</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.com and taking the time to speak with me in regards to your business needs.  
+
+Per our conversation, please contact me directly before placing your order to ensure that your questionnaire is accurate and complete.  I am also able to provide you with an exclusive discount that can only be applied at check out.
+
+Please feel free to call or email me to set up a time to complete your order.  I am more than happy to schedule time to assist you with getting your business started.
+
+Regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

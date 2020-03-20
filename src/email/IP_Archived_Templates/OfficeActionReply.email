@@ -1,0 +1,58 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom_banner.jpg"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for contacting LegalZoom.<br/><br/>Office Actions are direct correspondences from the US Patent and Trademark Office (USPTO), and are generally either requesting additional information or updating you on the status of your application (or both). If you wish to view and/or download your Office Action, please visit <a href=http://tmportal.uspto.gov/external/portal/tow>here</a>.  Based on the Office Action received, it appears that your Examining Attorney at the USPTO has the following questions: <br/><br/>****INSERT OFFICE ACTION ISSUES****<br/><br/>LegalZoom can assist you with preparing your Response to Office Action. Please address the following: <br/>******************For logos*****************<br/><br/>Please reply to this email and attach a clear drawing of your logo, preferably in .jpg, .jpeg, .gif or .pdf format.<br/><br/>******************For color logos*****************<br/><br/>Please reply to this email and attach a clear drawing of your color logo and provide the following information:<br/><br/>(1) A color claim naming the colors that are a feature of the mark; and (2) a separate statement describing where the color(s) appear on the mark. A color drawing will not publish without both of these statements. <br/><br/>A properly worded color claim would read as follows:<br/>The color(s) &#60;name the color(s)&#62; are claimed as a distinctive feature of the mark.<br/><br/>A properly worded description would read as follows:<br/>The color(s) &#60;name the color(s)&#62; appear in &#60;specify portion of mark on which color(s) appear&#62;.<br/><br/>If the color claim or description is unclear or ambiguous, the examining attorney must require clarification. <br/><br/>******************For specimens************<br/><br/>Please reply to this email and attach an image of your specimen, preferably in .gif, .pdf, .jpeg or .jpg format. A specimen is a real world example of how your mark is currently being used in commerce, and is more than just a picture of your Trademark or logo. Please read below for more information.<br/><br/>For services, acceptable specimens include brochures, flyers, advertisements, yellow page listings and internet websites. If submitting a business card as your specimen, that business card must state clearly the service provided, as well as including the Trademark. ***Please note that stationery is generally not acceptable as a specimen for services.***<br/><br/>For goods, acceptable specimens include labels or tags attached to the product, packaging material, instruction manuals and containers which display the Trademark. ***Please note that websites, advertisements, brochures, business cards, catalogs and stationery are generally not acceptable specimens for goods.***<br/><br/>Otherwise, you may contact the USPTO Assistance Center at 800-786-9199 or call your Examining Attorney: XXXXXX at XXX-XXX-XXXX. Additional instructions can be found at the bottom of your Office Action.<br/><br/>*************************************************<br/><br/>Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.<br/><br/>Best regards,<br/><br/>The LegalZoom Team<br/><br/>* {!snippetVariable.tmoa_bap}<br/></p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

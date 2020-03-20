@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SF Temp Outbound LAP Undecided Follow</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF Temp Outbound LAP Undecided Follow</name>
+    <style>freeForm</style>
+    <subject>Legal Advantage Plus Subscription: Order Number XXXXXXX</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for being a valued LegalZoom customer and for your responsible decision to take advantage of the Legal Advantage Plus service
+
+Based on our conversation, Legal Advantage Plus benefits include:
+
+• Attorney support: Whenever you need expert legal advice, you have access to an experienced attorney to ask questions and get information on any legal topic. Examples include reviewing and getting advice on your last will, reviewing other legal documents, and more.
+• Tax professional advice and consultations. Speak with an experienced tax professional on an unlimited number of new tax issues
+• Annual legal checkup with an attorney: Just like getting an annual checkup of your health with your doctor, it’s important to get an annual checkup of important legal documents with an attorney. You might not realize (or get busy and forget) that changes in your life such as moving, having a child, having more grandchildren, etc., can impact your last will or other legal documents.
+• Unlimited access to LegalZoom legal forms: Whenever you need legal support, you can access and download hundreds of legal forms for personal use. Examples include affidavits, bills of sale, nondisclosure agreements, promissory notes and more.
+• 25% savings on additional attorney services: You get substantial savings on professional attorney services should you need go to court.
+• 20% savings on any additional tax services
+• 10% savings on any LegalZoom legal documents: Take advantage of valuable savings on any LegalZoom legal documents, including Living Trusts, LLCs, Trademarks and more.
+
+To access your member benefits please login using the following link:
+https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess=
+
+After logging in you will find a Legal Advantage Member Center link under your Order Summary where you will find access to all of your member benefits.
+
+Please feel free to contact me at 877-818-8787 ext. {!User.Extension} (M-F 8am-5pm CST/PST).  
+
+Your order number: {!Case.Order_Number_c}
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

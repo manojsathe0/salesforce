@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteBannerPhotoAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>FreezeUserAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LinkToSetupUserDetailAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ManagePermSetsAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>PasswordUnlockAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ResetPasswordAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SmsHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UpdateBannerPhotoAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>UserActivationAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ADP_ID__c</fullName>
+        <description>User Id of payroll system ADP</description>
+        <externalId>false</externalId>
+        <label>ADP_ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Team__c</fullName>
+        <description>The team the account manager belongs to.  Use only when the user is an account manager.</description>
+        <externalId>false</externalId>
+        <label>Account Team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alpha Real Estate</fullName>
+                    <default>false</default>
+                    <label>Alpha Real Estate</label>
+                </value>
+                <value>
+                    <fullName>Alpha Retail</fullName>
+                    <default>false</default>
+                    <label>Alpha Retail</label>
+                </value>
+                <value>
+                    <fullName>Business Starter</fullName>
+                    <default>false</default>
+                    <label>Business Starter</label>
+                </value>
+                <value>
+                    <fullName>EP Starter</fullName>
+                    <default>false</default>
+                    <label>EP Starter</label>
+                </value>
+                <value>
+                    <fullName>LLC/INC Business Account Services</fullName>
+                    <default>false</default>
+                    <label>LLC/INC Business Account Services</label>
+                </value>
+                <value>
+                    <fullName>Trademark Account Services</fullName>
+                    <default>false</default>
+                    <label>Trademark Account Services</label>
+                </value>
+                <value>
+                    <fullName>Quick Start</fullName>
+                    <default>false</default>
+                    <label>Quick Start</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Assistant_Manager_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Assistant Manager</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company__c</fullName>
+        <externalId>false</externalId>
+        <formula>CompanyName</formula>
+        <label>Company</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department2__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( CONTAINS(UserRole.Name, &quot;BIZ&quot;),&quot;Business Services&quot;,if( CONTAINS(UserRole.Name, &quot;Sales&quot;),&quot;Sales&quot;,if(CONTAINS(UserRole.Name, &quot;IP&quot;),&quot;Intellectual Property&quot;,if(CONTAINS(UserRole.Name, &quot;PS&quot;),&quot;Personal Services&quot;,if(CONTAINS(UserRole.Name, &quot;AS&quot;),&quot;Attorney Services&quot;,&quot;none&quot;)))))</formula>
+        <label>Department2</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dept_Code_Department__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Dept_Code__c, 
+110,	&quot;BSI Business Services&quot;, 
+120,	&quot;BS Fulfillment Back Ends&quot;, 
+130,	&quot;BS Fulfillment Filings&quot;, 
+140,	&quot;BS Fulfillment Special Fillings&quot;, 
+150,	&quot;Business Customer Support&quot;, 
+160,	&quot;BS Fulfillment Holding Area&quot;, 
+170,	&quot;Shipping &amp; Receiving&quot;, 
+180,	&quot;BS Fulfillment 501c3&quot;, 
+185,	&quot;BS Fulfillment RA&quot;, 
+190,	&quot;BS Fulfillment Management&quot;, 
+200,	&quot;EP Fulfillment Estate Planning&quot;, 
+205,	&quot;EP Fulfillment Living Trust&quot;, 
+210,	&quot;PS Fulfillment Divorce&quot;, 
+215,	&quot;BSI Personal Services&quot;, 
+220,	&quot;PS Fulfillment Small Claims&quot;, 
+225,	&quot;PS Fulfillment RE Lease&quot;, 
+230,	&quot;PS Fulfillment Name Change&quot;, 
+235,	&quot;EP-PS Fulfillment Management&quot;, 
+305,	&quot;IP Fulfillment Trademark&quot;, 
+310,	&quot;BSI Intellectual Property&quot;, 
+315,	&quot;IP Fulfillment Management&quot;, 
+320,	&quot;IP Fulfillment Patent&quot;, 
+325,	&quot;IP Fulfillment Patent Illustration&quot;, 
+350,	&quot;IP Fulfillment Copyright&quot;, 
+370,	&quot;IP Fulfillment TM Search&quot;, 
+410,	&quot;Customer Care BS Mgmt&quot;, 
+411,	&quot;Customer Care BS&quot;, 
+420,	&quot;Customer Care PS/EP Mgmt&quot;, 
+421,	&quot;Customer Care EP&quot;, 
+422,	&quot;Customer Care PS&quot;, 
+430,	&quot;Customer Care IP Mgmt&quot;, 
+431,	&quot;Customer Care IP&quot;, 
+450,	&quot;General Customer Care&quot;, 
+480,	&quot;Customer Care AS Mgmt&quot;, 
+481,	&quot;Customer Care AS&quot;, 
+490,	&quot;Customer Care CF Mgmt&quot;, 
+491,	&quot;Customer Care CF&quot;, 
+500,	&quot;Finance&quot;, 
+550,	&quot;Human Resources/Talent Acquisition&quot;, 
+560,	&quot;Office Services&quot;, 
+600,	&quot;Channel Marketing&quot;, 
+610,	&quot;Brand Management&quot;, 
+615,	&quot;Product Marketing&quot;, 
+700,	&quot;Technology &amp; Development&quot;, 
+705,	&quot;Tech FF Allocation&quot;, 
+710,	&quot;Tech All Allocation&quot;, 
+800,	&quot;Business Development&quot;, 
+815,	&quot;Product Management AS&quot;, 
+825,	&quot;Recovery - AS&quot;, 
+830,	&quot;BSI Attorney Services&quot;, 
+900,	&quot;Legal/Product Development&quot;, 
+950,	&quot;Legal Architects&quot;, 
+1000,	&quot;Executive&quot;, 
+1015,	&quot;Fulfillment Management&quot;, 
+1020,	&quot;Special Ops&quot;, 
+1025,	&quot;Recovery - Core&quot;, 
+1030,	&quot;Outbound Sales&quot;, 
+1050,	&quot;Product Management Core&quot;, 
+1055,	&quot;Research &amp; Development&quot;, 
+1060,	&quot;General BSI&quot;, 
+1065,	&quot;IP R&amp;D&quot;, 
+1070,	&quot;Process Improvement&quot;, 
+1075,	&quot;R&amp;D Support &amp; Operations&quot;, 
+1080,	&quot;Account Manager - Leadership&quot;, 
+1085,	&quot;Account Manager - Crossfunctional&quot;, 
+1090,	&quot;Account Manager - Team BSD&quot;, 
+1095,	&quot;Account Manager - Team IPD&quot;, 
+
+Null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dept Code Department</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dept_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Dept Code #</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division2__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( CONTAINS(UserRole.Name, &quot;CC&quot;),&quot;Customer Care&quot;,if(CONTAINS(UserRole.Name, &quot;Sales&quot;),&quot;Sales&quot;,if(CONTAINS(UserRole.Name, &quot;BCS&quot;),&quot;BCS&quot;,if( CONTAINS(UserRole.Name, &quot;Production&quot;),&quot;Production&quot;,&quot;none&quot;))))</formula>
+        <label>Division2</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>terminated employees last day of employment</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_of_Day_custom__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(EndDay)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End of Day</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Batch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>First Batch</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Account_Manager__c</fullName>
+        <description>Whether the user is an account manager or not and used for data integration.</description>
+        <externalId>false</externalId>
+        <formula>IF( ( Profile.Name = &apos;Account Manager - Management&apos; || Profile.Name = &apos;Account Manager - Standard&apos;) &amp;&amp; NOT ISPICKVAL(Account_Team__c, &apos;&apos;), True, False)</formula>
+        <label>Account Manager</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Supervisor_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Supervisor</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>RightNow user id</description>
+        <externalId>true</externalId>
+        <label>Legacy Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Login_ID_del__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(Username, FIND(&apos;@&apos;, Username)-1)</formula>
+        <label>Login ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manager2__c</fullName>
+        <externalId>false</externalId>
+        <formula>Manager.FirstName +&apos; &apos;+Manager.LastName</formula>
+        <label>Manager2</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ManagerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Manager_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Manager</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Office_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Office Location</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Austin</fullName>
+                    <default>false</default>
+                    <label>Austin</label>
+                </value>
+                <value>
+                    <fullName>Glendale</fullName>
+                    <default>false</default>
+                    <label>Glendale</label>
+                </value>
+                <value>
+                    <fullName>San Francisco</fullName>
+                    <default>false</default>
+                    <label>San Francisco</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Personnel_Team__c</fullName>
+        <externalId>false</externalId>
+        <label>Personnel Team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Team Force</fullName>
+                    <default>false</default>
+                    <label>Team Force</label>
+                </value>
+                <value>
+                    <fullName>Team Closers</fullName>
+                    <default>false</default>
+                    <label>Team Closers</label>
+                </value>
+                <value>
+                    <fullName>Team Grind</fullName>
+                    <default>false</default>
+                    <label>Team Grind</label>
+                </value>
+                <value>
+                    <fullName>Team Steve</fullName>
+                    <default>false</default>
+                    <label>Team Steve</label>
+                </value>
+                <value>
+                    <fullName>Team Adrian</fullName>
+                    <default>false</default>
+                    <label>Team Adrian</label>
+                </value>
+                <value>
+                    <fullName>Team Corey</fullName>
+                    <default>false</default>
+                    <label>Team Corey</label>
+                </value>
+                <value>
+                    <fullName>Team Brian</fullName>
+                    <default>false</default>
+                    <label>Team Brian</label>
+                </value>
+                <value>
+                    <fullName>Team in Training</fullName>
+                    <default>false</default>
+                    <label>Team in Training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sales_Team__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inbound</fullName>
+                    <default>false</default>
+                    <label>Inbound</label>
+                </value>
+                <value>
+                    <fullName>Outbound</fullName>
+                    <default>false</default>
+                    <label>Outbound</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Second_Batch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Second Batch</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>employee start date</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_of_Day_custom__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( StartDay )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start of Day</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sykes__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sykes</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <description>Teams list</description>
+        <externalId>false</externalId>
+        <label>Team</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Abandoner</fullName>
+                    <default>false</default>
+                    <label>Abandoner</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+                <value>
+                    <fullName>Decline</fullName>
+                    <default>false</default>
+                    <label>Decline</label>
+                </value>
+                <value>
+                    <fullName>AS Retention</fullName>
+                    <default>false</default>
+                    <label>AS Retention</label>
+                </value>
+                <value>
+                    <fullName>RA Renewal</fullName>
+                    <default>false</default>
+                    <label>RA Renewal</label>
+                </value>
+                <value>
+                    <fullName>Inbound PS</fullName>
+                    <default>false</default>
+                    <label>Inbound PS</label>
+                </value>
+                <value>
+                    <fullName>Inbound BIZ and IP</fullName>
+                    <default>false</default>
+                    <label>Inbound BIZ and IP</label>
+                </value>
+                <value>
+                    <fullName>Biz Mobile</fullName>
+                    <default>false</default>
+                    <label>Biz Mobile</label>
+                </value>
+                <value>
+                    <fullName>Alpha Real Estate</fullName>
+                    <default>false</default>
+                    <label>Alpha Real Estate</label>
+                </value>
+                <value>
+                    <fullName>Alpha Retail</fullName>
+                    <default>false</default>
+                    <label>Alpha Retail</label>
+                </value>
+                <value>
+                    <fullName>Real Estate &amp; Retail Business Services</fullName>
+                    <default>false</default>
+                    <label>Real Estate &amp; Retail Business Services</label>
+                </value>
+                <value>
+                    <fullName>Trademark Services</fullName>
+                    <default>false</default>
+                    <label>Trademark Services</label>
+                </value>
+                <value>
+                    <fullName>Business Starter</fullName>
+                    <default>false</default>
+                    <label>Business Starter</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Title2__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( CONTAINS(UserRole.Name, &quot;Specialist&quot;),&quot;Specialist&quot;,if(CONTAINS(UserRole.Name, &quot;Lead&quot;),&quot;Lead&quot;,if(CONTAINS(UserRole.Name, &quot;Manager&quot;),&quot;Manager&quot;,if(CONTAINS(UserRole.Name, &quot;VP&quot;),&quot;Vice President&quot;,&quot;none&quot;))))</formula>
+        <label>Title2</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UAT_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>UAT User</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>User_Count__c</fullName>
+        <description>Created for reporting purpose Average Emails By Agent</description>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Id</formula>
+        <label>User ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>Acct_Mgr</fullName>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>Account_Team__c</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.PHONE</columns>
+        <columns>CORE.USERS.EXTENSION</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USER_ROLE.NAME</field>
+            <operation>equals</operation>
+            <value>Business Account Manager</value>
+        </filters>
+        <label>Acct Mgr</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Acct_Mgr_Missing_Team</fullName>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.PHONE</columns>
+        <columns>CORE.USERS.EXTENSION</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>startsWith</operation>
+            <value>Chatter</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Chatter Profile - Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Active_Salesforce</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.USERTYPE</field>
+            <operation>equals</operation>
+            <value>S</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.LAST_LOGIN</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Active Salesforce</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Active_Users_AM</fullName>
+        <columns>CORE.USERS.SAML_SUBJECT</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>MARKETING_USER</columns>
+        <columns>TIMEZONE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>equals</operation>
+            <value>Account Manager - Standard</value>
+        </filters>
+        <label>Active Users - AM</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Active_Users_OmniGlobe</fullName>
+        <columns>CORE.USERS.SAML_SUBJECT</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>MARKETING_USER</columns>
+        <columns>TIMEZONE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.USERNAME</field>
+            <operation>contains</operation>
+            <value>omniglobe</value>
+        </filters>
+        <label>Active Users - OmniGlobe</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>AdminUsers</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>startsWith</operation>
+            <value>System Admin</value>
+        </filters>
+        <label>Admin Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Active</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>TIMEZONE</columns>
+        <columns>CREATED_BY_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Active</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Users_Active</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>TIMEZONE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Users_Activetoday</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.NAME</columns>
+        <columns>MANAGER</columns>
+        <columns>MARKETING_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>greaterThan</operation>
+            <value>6/20/2015 1:00 AM</value>
+        </filters>
+        <label>Active Users - today</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Austin_Users_not_in_Central_Time_Zone</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>Office_Location__c</columns>
+        <columns>TIMEZONE</columns>
+        <columns>CORE.USERS.ADDRESS_CITY</columns>
+        <columns>CORE.USERS.ADDRESS_STATE</columns>
+        <columns>CORE.USERS.ADDRESS_ZIP</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ADDRESS_CITY</field>
+            <operation>equals</operation>
+            <value>Austin</value>
+        </filters>
+        <filters>
+            <field>TIMEZONE</field>
+            <operation>notEqual</operation>
+            <value>8</value>
+        </filters>
+        <label>Austin Users not in Central Time Zone</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>IAD_Pilot</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>contains</operation>
+            <value>IAD Pilot</value>
+        </filters>
+        <label>IAD Pilot</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Inactive_Users</fullName>
+        <columns>LAST_UPDATE</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MARKETING_USER</columns>
+        <columns>MOBILE_USER</columns>
+        <columns>AVANTGO_USER</columns>
+        <columns>SFCONTENT_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <label>Inactive Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Sales_Manager</fullName>
+        <columns>CORE.USERS.LAST_NAME</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>Account_Team__c</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.PROFILE.NAME</field>
+            <operation>contains</operation>
+            <value>CC</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Sales Manager</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>SalesforceSupport296281</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>UAT_Users</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>CORE.USERS.EMAIL</columns>
+        <columns>CORE.USERS.LAST_LOGIN</columns>
+        <columns>CORE.USER_ROLE.NAME</columns>
+        <columns>CORE.USERS.ACTIVE</columns>
+        <columns>CORE.PROFILE.NAME</columns>
+        <columns>MANAGER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>UAT_User__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>UAT Users</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Users_Hierarchy_Fields</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>CORE.USERS.USERNAME</columns>
+        <columns>MANAGER</columns>
+        <columns>Manager_Text__c</columns>
+        <columns>Assistant_Manager_Text__c</columns>
+        <columns>Lead_Supervisor_Text__c</columns>
+        <columns>DELEGATED_APPROVER</columns>
+        <filterScope>Everything</filterScope>
+        <label>Users - Hierarchy Fields</label>
+        <language>en_US</language>
+    </listViews>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USER_ROLE.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.PHONE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.EXTENSION</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.CELL</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.PHONE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.EMAIL</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USER_ROLE.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.PROFILE.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ACTIVE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <webLinks>
+        <fullName>ctu__Clone</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&apos;/apex/ctu__CloneThisUser?Id={!User.Id}&amp;Desktop=true&apos;, &apos;_self&apos;);</url>
+    </webLinks>
+</CustomObject>

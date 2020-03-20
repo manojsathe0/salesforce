@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>namerules</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Name similarity rules</name>
+    <style>none</style>
+    <subject>Name similarity rules</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your inquiry.
+
+We definitely want you to use your preferred entity name if at all possible, however we also want to make sure that the documents sent to the State for filing have the best possible chance of actually being approved. The most common reason for a State to reject documents is not due to an exact match for the same entity name, but rather a &quot;close&quot; match with another entity already filed. 
+
+Thus, we check your entity name&apos;s availability based upon each State&apos;s own rules for conflicts and similarity. Every state ignores the difference between &quot;LLC&quot; and &quot;Inc.&quot;, and most States ignore differences in spacing, punctuation, and terms like &quot;and&quot; or &quot;&amp;&quot;. In terms of availability, the focus is on the substance of the name, not the formatting. Some States go further in rejecting names where just the first two words of the proposed name conflict with the first two words of a name already filed. For this reason, if we require alternate names to proceed with your order, it is generally best to provide options that are varied, and that present a change in the substance of the name. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

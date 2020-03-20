@@ -1,0 +1,9 @@
+****APPROVED SHARED SERVICES REQUEST NOTIFICATION**** 
+
+Shared Services Request Approver: {!Shared_Services_Requests__c.Project_Request_Approver__c}
+Request Number:{!Shared_Services_Requests__c.Request__c}
+Project Request Name: {!Shared_Services_Requests__c.Name}
+
+Please click the following link to view Approved Shared Services Request:
+------------------------------------- 
+{!Shared_Services_Requests__c.Link}

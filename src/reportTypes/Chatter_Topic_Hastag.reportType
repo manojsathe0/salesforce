@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>other</category>
+    <deployed>false</deployed>
+    <description>Chatter Topic Hastag</description>
+    <label>Chatter Topic Hastag</label>
+    <sections>
+        <masterLabel>Hashtag Definitions</masterLabel>
+    </sections>
+</ReportType>

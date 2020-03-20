@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DrawingIns</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Drawings Instructions</name>
+    <style>none</style>
+    <subject>Drawings Instructions</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.
+
+To complete the filing for your provisional application for patent, we will need your drawings to file your application with the US Patent &amp; Trademark Office.
+
+You can email your drawings to MyPatents@legalzoom.com, fax a copy to (323) 446-7133, or mail them to:
+
+LegalZoom – Attn: Patents
+101 N. Brand Blvd., 11th Floor
+Glendale, CA 91203
+Re: Order Number: |#|
+
+NOTE:Whatever method you choose, be sure to reference your LegalZoom order number.
+
+If you would like us to prepare professional patent drawings based on your sketches, call us at the number below. The fee for this service is $399.
+
+If you have any questions or need additional information, please call customer care at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT or email patents@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+******** Drawing Specifications *********
+
+Make sure your drawings have dark lines. Photographs are generally not acceptable.
+
+• If your invention is a device or apparatus: Please provide any views of the invention that you feel would be necessary and beneficial in order to understand it.
+
+• If your invention is a system, method or process: Please provide flowcharts or diagrams of the invention. Also include, step-by-step, each function with its name, as well as any functions that send the user to another part of the process, and at what point the method or process should stop.
+
+• If your invention is a chemical combination: Please provide a list of ingredients, including quantities and how to combine the ingredients. You may consider including a molecular structural diagram of the end product. If you are claiming the manner of making the compound, please include a flowchart or diagram of this process as well.
+
+We will continue to process you provisional application for patent upon receipt of your drawings, or upon your approval of the Professional Patent Drawings ordered.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

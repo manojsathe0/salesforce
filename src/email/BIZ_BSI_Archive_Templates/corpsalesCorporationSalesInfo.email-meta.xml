@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>corpsales</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>corpsales - Corporation Sales Info</name>
+    <style>none</style>
+    <subject>corpsales - Corporation Sales Info</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.
+
+A corporation is a legal entity created under state laws.  Corporations can open their own bank account, purchase property, enter into contracts and operate a business. One of the most important advantages of a corporation is that generally, its owners are not personally liable for the debts of the corporation.
+
+For your convenience, I have provided additional information and links to begin your incorporation formation:
+
+Economy Incorporation Package {!snippetVariable.econcorp_pricing}
+{!snippetVariable.econcorp_turnaround}
+Standard Incorporation Package {!snippetVariable.stdcorp_pricing}
+{!snippetVariable.stdcorp_turnaround}
+Express Gold Incorporation Package {!snippetVariable.goldcorp_pricing}
+{!snippetVariable.goldcorp_turnaround}
+
+If you?d like LegalZoom to prepare the paperwork for an S-Corporation election, add  {!snippetVariable.prepscorp_pricing}. Or, if you?d prefer to have LegalZoom complete your S-Corporation election for you (includes preparation and filing), add {!snippetVariable.obtscorp_pricing}.
+
+Get Started:
+{!snippetVariable.corp_application}
+Additional Pricing Information:
+{!snippetVariable.corp_pricelink}
+Education Center:
+{!snippetVariable.corp_edcenter}
+
+I recommend the Express Gold Package because it offers significant benefits. The Gold Package includes free preparation of your Tax ID application (for easy self-filing) OR a {!snippetVariable.ein_prep} discount toward LegalZoom&apos;s complete Tax ID Obtainment Service. Most importantly, it will expedite your filing process, reducing the waiting period to {!snippetVariable.goldcorp_turnaround}. Other packages take {!snippetVariable.stdcorp_turnaround}.
+
+Also, you may want to consider using LegalZoom&apos;s Registered Agent Service. Setting up a registered agent is a state requirement for all corporations. LegalZoom&apos;s Registered Agent Service ensures professional handling of your company?s state correspondence and also helps ensure your privacy. We offer Registered Agent Services at an affordable rate of {!snippetVariable.ra_annual}.
+
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at {!snippetVariable.bizbsi_phone} {!snippetVariable.bizbsi_hours}.
+
+Best regards,
+
+[ Your Name ]
+{!snippetVariable.bizbsi_address}
+{!snippetVariable.bizbsi_phone}
+{!snippetVariable.bizbsi_fax}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

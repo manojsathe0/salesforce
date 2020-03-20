@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMDOCSREC</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DOCS RECEIVED EMAIL</name>
+    <style>none</style>
+    <subject>Your is [Entity type] is Filed and Active</subject>
+    <textOnly>Your Documents Were Accepted by the State
+
+Dear {!Contact.FirstName},
+
+Congratulations! We have received notice that your [Entity Type] documents have been accepted by the State. This means that you’ve formed your new business!  We are currently assembling your package and getting it ready to ship it to you. If you need your filed documents right away, respond to this email or call me at 877-808-1918, and I would be happy to email a copy to you.
+
+Once the [Entity Type] is officially formed, many small business owners open a bank account, obtain local  business licenses, and create a website. If you have any questions or you want more information regarding any of these services, please contact me.
+
+Best Regards,
+
+[Account Manager] [ext.XXXX]
+Account Management Services
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

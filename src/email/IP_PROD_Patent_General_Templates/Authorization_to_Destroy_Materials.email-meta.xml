@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>pat5</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Authorization to Destroy Materials</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order #</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Now that your {insert type of order) application has been filed with the U.S. Patent and Trademark Office (USPTO), we need to know what you would like us to do with your materials. Following USPTO guidelines, we scanned or photographed your materials and electronically submitted your registration. At this point, we no longer need to retain the materials you sent to us.
+
+If you would like us to return them to you, please provide your mailing address. If you do not want your materials back, please confirm that you would like us to destroy them. 
+
+Please feel free to contact our Customer Care Team if we can be of further assistance. Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team business hours are Monday through Friday, 6:00am to 7:00pm Pacific Time.
+
+We appreciate your prompt attention to this matter and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

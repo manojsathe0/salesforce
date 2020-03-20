@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Order__c.Order_Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.ACR_Date_Time__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Legal_Matter__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Account.Business_Account_Manager__c</field>
+    </columns>
+    <description>All  ACRS orders where documents need to be sent to the law firm.</description>
+    <filter>
+        <criteriaItems>
+            <column>Order__c.Base_Product__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Business Advantage Pro Attorney Consultation,Legal Advantage Plus Attorney Consultation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order__c.Legal_Matter__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Legal Document Review -- up to 10 pages,LegalZoom Trademark Search Results,Trademark Goods and Services Description and Class Selection,Flat Fee: Comprehensive Trademark Search Review</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>ACRS: Document-sent orders</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Order__c@Order__c.Account__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Order__c.Date_Time_Created__c</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

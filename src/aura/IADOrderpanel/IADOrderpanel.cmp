@@ -1,0 +1,96 @@
+<aura:component controller="IADOrderPanelController_ltng"  implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="orderWrappers" type="object[]" />
+    <aura:attribute name="hasOrders" type="boolean" default="false" />
+    <aura:attribute name="processNumberToOrderRevisions" type="object[]" />
+    <aura:attribute name="incompleteOrders" type="object[]" />
+    <aura:attribute name="customerid" type="string"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <div class="slds-scrollable" style="height: 12rem; width: 24rem;">
+        <lightning:spinner aura:id="mySpinner" />
+        
+        <aura:if isTrue="{!v.hasOrders}" >
+            <aura:iteration items="{!v.orderWrappers}" var="orderWrap">
+                <div class="slds-m-top--small">
+                    <div class="slds-m-top--xxx-small slds-text-body--small">
+                        <span class="slds-icon__container slds-icon-standard-order" title="Order">
+                            <lightning:icon iconName="custom:custom40"  size="x-small" />
+                            <a  data-value="{!orderWrap.theOrder.Id}" onclick="{!c.openorder}" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" title="Click to open order">{!orderWrap.theOrder.Name}</a>
+                            <span class="slds-assistive-text">Order Icon</span>
+                        </span>
+                        
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Processing Number" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" >
+                        <b>{!orderWrap.theOrder.User_Order_ID__c}</b>
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Base Product" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" >
+                        {!orderWrap.theOrder.Base_Product_Name__c}<span >{!orderWrap.theOrder.State_of_Formation__c}</span>
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Processing Status" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" >
+                        <b>{!orderWrap.theOrder.Processing_Status__c}</b>
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Order Date" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" >
+                        <lightning:formattedDateTime value="{!orderWrap.theOrder.Order_Date_Time_Created__c}" year="numeric" month="numeric" day="numeric"  hour="2-digit" minute="2-digit"  />
+                        
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Total Cost" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" >
+                        ${!orderWrap.theOrder.Gross_Total__c}
+                    </div>
+                    <!--
+                    <div class="slds-m-top-/-xxx-small slds-text-body-/-small" title="Entity Name" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" >
+                        {!orderWrap.entityName}
+                    </div>
+					-->
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Entity/TradeMark/Copyright Name" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" >
+                        {!orderWrap.tradeMarkCopyrightName}
+                    </div>
+                    <div class=" slds-m-left--medium slds-text-body--small">
+                        
+                        
+                        <aura:iteration items="{!v.processNumberToOrderRevisions}" var="procNumber" indexVar="key">
+                            
+                            <aura:if isTrue="{!(procNumber.key==orderWrap.theOrder.User_Order_ID__c)}">
+                                <aura:iteration items="{!procNumber.value}" var="dupeOrder">
+                                    <br/>
+                                    <a  data-value="{!dupeOrder.theOrder.Id}" onclick="{!c.openorder}" title="Click to open order" style = "{!dupeOrder.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" > <b><u> {!dupeOrder.theOrder.Name}</u></b></a> Revision
+                                </aura:iteration>
+                                
+                            </aura:if>
+                            
+                            
+                            
+                        </aura:iteration>
+                    </div>
+                </div>
+            </aura:iteration>  
+            
+        </aura:if>
+        <br/>
+        <a   onclick="{!c.openSubTab}" title="Click to Open Old Orders">     <b><u>Old Orders</u></b></a>
+        <aura:iteration items="{!v.incompleteOrders}" var="incomplete" >
+            <aura:iteration items="{!incomplete.processingOrders}" var="order" >
+                <div class="slds-m-top--small">
+                    <span class="slds-icon__container slds-icon-standard-order" title="Order">
+                        <lightning:icon iconName="custom:custom40"   size="x-small"  class="icn"  />
+                        <span class="slds-assistive-text">Order Icon</span>
+                    </span>
+                    <b> Incomplete</b>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Processing Number">
+                        <b>{!order.processingOrderId}</b>
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Base Product">
+                        {!order.productName}
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Status Date">
+                        <b>{!order.startDate}</b>
+                    </div>
+                    
+                </div>
+                <br/>
+            </aura:iteration>
+        </aura:iteration> 
+    </div>
+</aura:component>

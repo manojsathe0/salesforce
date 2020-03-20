@@ -1,0 +1,53 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,flexipage:availableForAllPageTypes" controller="CreateLoginAccountController_Ltng">
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+	<aura:attribute name="emailAddress" type="String"/>
+	<aura:attribute name="hasErrors" type="Boolean"/>
+    <aura:attribute name="success" type="Boolean"/>
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="recordId" type="String"/>
+	
+	<div class="myClass">
+        
+		<section role="dialog" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+			<div class="slds-modal__container">
+            	<header class="slds-modal__header">
+                	<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Create Login Account</h2>
+				</header>
+                    
+                    
+			<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                
+				<aura:if isTrue="{!v.hasErrors}">
+					<div>
+						<ui:message title="Error" severity="error" closable="true">
+							{!v.message}
+         				</ui:message>
+      				</div>
+   				</aura:if>
+    			<lightning:spinner aura:id="spinner" alternativeText="Loading response" class="slds-hide"/>
+    			<aura:if isTrue="{!v.success}">
+      		      <div>
+			         <ui:message title="Confirmation" severity="confirm" closable="true">
+						{!v.message}
+				     </ui:message>
+				  </div>
+				</aura:if>
+
+ 
+				<div class="input-wrap">
+	                <label>Email Address</label>
+	                <ui:inputText value="{!v.emailAddress}" aura:id="emailId"/>
+	             </div>
+
+	
+		
+				</div>	
+				<footer class="slds-modal__footer">
+		            <lightning:button class="slds-button slds-button_brand" aura:id="saveButton" label="Submit" onclick="{!c.submit}"/>
+		        	<lightning:button class="slds-button" label="Cancel" onclick="{!c.handleCancel}"/>
+		    	</footer>
+	    	</div>
+		 </section>
+	 </div>	
+	
+</aura:component>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tmoppos</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Notice of Opposition</name>
+    <style>none</style>
+    <subject>Notice of Opposition</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+We understand that your application to register your Trademark with the US Patent and Trademark Office (USPTO) has passed the examining attorney’s preliminary review, and that an opposition has been filed by a third party. The opposition is currently awaiting review by the Trademark Trial and Appeal Board and you will be contacted directly regarding the that review. If you wish to view and/or download a copy of your proceeding file, please the Trademark Trial and Appeal Board Inquiry System here.
+
+We realize that this can be a frustrating development and we sympathize. Please be assured your Trademark application was completed according to the letter of your directions and filed properly and in a timely fashion with the USPTO.
+
+Our customers use LegalZoom to save time and money, largely by alleviating the need for attorney assistance on certain matters. However, LegalZoom is neither a law firm nor are we a substitute for one. LegalZoom is precluded from giving legal advice of any kind and we perform our services at our customer’s specfic direction. At no time do we review answers for legal sufficiency, draw legal conclusions, provide legal advice or apply the law to the facts of a particular situation.
+
+Because each opposition has unique facts, you should consider contacting an attorney with experience in this area. LegalZoom can put you in touch with an experienced trademark attorney*.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Best regards,
+
+The LegalZoom Team
+___________________________________
+
+* {!snippetVariable.tmoa_bap}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

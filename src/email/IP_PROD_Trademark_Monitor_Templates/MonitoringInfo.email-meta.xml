@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TMmonitor2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Monitoring Info</name>
+    <style>none</style>
+    <subject>Monitoring Info</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+LegalZoom’s Trademark Monitoring Service provides a monthly report of Trademark applications recently submitted to the US Patent and Trademark Office (USPTO). Please review the report you received for any potential conflicts. If you are the applicant or owner of one of the Trademark applications listed in the report, you can disregard it—your own application cannot pose a conflict to you.
+
+For more information about conflicts, and the “likelihood of confusion,” click here:
+{!snippetVariable.tm_search_conflict_link}
+
+If you believe that a proposed Trademark contained in a pending application conflicts with your existing Trademark, you have the right as a Trademark owner to oppose it. It is recommended that you contact an attorney for guidance and you can do this quickly, easily and affordably through LegalZoom’s Business Advantage Pro program.
+
+{!snippetVariable.tmoa_bap}
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+ 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

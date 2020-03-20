@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr37</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GENERAL INFO - Third Party Upload Resources</name>
+    <style>none</style>
+    <subject>Your Copyright Registration – Submission Difficulties</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We’re sorry to hear that you have had difficulty submitting your work to LegalZoom. Most likely, the file is too large to be submitted via email. Here are the current options and maximum file size for submitting your work:
+
+1.	Email: mycopyright@legalzoom.com (6 MB maximum)
+
+2.	Online: Ask a Question - http://legalzoom.force.com/LZWTC 
+(25 MB maximum)
+
+3.	Third-party website: www.YouSendIt.com  (2 GB maximum)
+
+Mac users: If you use the Mac Mail email program, be sure to attach your document—do not drag and drop it into the email as the program will not properly configure the attachment. Also, be sure the document was saved in the correct file type and contains the correct PC extension (for example, DocumentName.doc or DocumentName.xls).
+
+* If you use a third-party site, send the file to mycopyright@legalzoom.com and include your order number in the subject line.
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. Best regards,
+
+The LegalZoom Team
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

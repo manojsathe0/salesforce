@@ -1,0 +1,154 @@
+<apex:page controller="IADPendingPaymentController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:includescript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <script type="text/javascript">
+            
+            function closeTab() {
+                sforce.console.getEnclosingTabId(closeSubtab);
+            }
+            var closeSubtab = function closeSubtab(result) {
+                var tabId = result.id;
+                sforce.console.closeTab(tabId);
+            };
+
+             window.onload = function() {
+                  populatePayments();
+                };
+            function checkForRefund(){
+                if($("#transactionType").val()=='Refund'){
+                    populateOriginalPayment();
+                }
+                else{
+                    populatePaymentProfile();
+                }
+            }
+        </script>
+        <style>
+            #dataTable {
+                border-spacing: 15px;
+                border-collapse: separate;
+                width: 65%;
+                table-layout: fixed;
+            }
+            
+            #openPayment,
+            #update,
+            .editMode {
+                display: none;
+            }
+            
+            td {
+                width: 250px;
+                overflow: hidden;
+            }
+            
+            .alignRight {
+                float: right;
+            }
+            
+            th {
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    
+    <div class="slds" id = "mainContainer">
+        <apex:form id="theForm" styleClass="slds-form--inline">
+            
+        <apex:actionFunction name="populatePayments" action="{!populatePayments}" rerender="theForm, hiddenInput" status="statusUpdating" onComplete="checkForRefund(); return false;"/>
+        <apex:actionFunction name="populateOriginalPayment" action="{!populateOriginalPayment}" rerender="theForm" status="statusUpdating" onComplete="populateOriginalPaymentProfile(); return false;"/>
+        <apex:actionFunction name="populateOriginalPaymentProfile" action="{!populateOriginalPaymentProfile}" rerender="theForm" status="statusUpdating" onComplete="populatePaymentProfile(); return false;"/>
+
+        <c:IADMessageBox theMessages="{!paymentService.iadMessages}" rendered="{!paymentService.iadMessages.size>0}" />
+        <div class="slds-text-heading--small detailMode">{!transactionTypeLabel} Detail</div>
+         <apex:outputPanel id="hiddenInput">
+             <input id="transactionType" type="hidden" value="{!transactionTypeLabel}"/>
+         </apex:outputPanel>
+
+         <table id="dataTable" >
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="detailMode">
+                            <!--<a id="edit" onclick="clearMessages();return false;" href="#">Edit </a>-->
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> {!transactionTypeLabel} #</td>
+                        <td>{!thePayment.paymentTransactionId} </td>
+                    </tr>
+                    <tr>
+                        <td>Method</td>
+                        <td>
+                            <c:IADPaymentProfileLabel theProfileId="{!thePayment.paymentProfileId}"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Status</td>
+                        <td style="color:{!if(thePayment.iadStatus == 'Declined','red','')}"><b>{!thePayment.iadStatus}</b></td>
+                    </tr>
+                    <tr>
+                        <td>Created Date</td>
+                        <td>
+                            <apex:outputtext value="  {!thePayment.createdDateTimeInString}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last Modified Date</td>
+                        <td>
+                            <apex:outputtext value="  {!thePayment.statusDateTimeInString}" />
+                        </td>
+                    </tr>
+                    <tr >
+                        <td>Amount</td>
+                        <td>
+                            <apex:outputText value="${!thePayment.amount}" /> 
+                                                            
+                        </td>
+                    </tr>
+                    <tr style="{!IF(transactionTypeLabel=='Refund', '', 'display:none;')}">
+                        <td>Transaction for Refund</td>
+                        <td>
+                            <apex:outputText value="{!transactionLabel}" />
+
+                        </td>
+                    </tr>
+                    
+                </tbody>
+                <tfoot  >
+                    <tr style="white-space: nowrap;"> 
+                        <td colspan="2">
+                            <button class="slds-button slds-button--neutral" onclick="closeTab();" type="button">Close</button>
+                            <button id="update" onClick="updatePayment(); return false;" class="slds-button slds-button--brand" type="button">Update</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <apex:outputPanel id="spinner">
+           <apex:actionStatus id="statusUpdating">
+                  <apex:facet name="start">
+                   <div class="slds-spinner_container">
+                      <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                      </div>
+                    </div>
+                  </apex:facet>
+           </apex:actionStatus>
+           </apex:outputPanel>
+       
+      </apex:form>  
+    </div>
+     
+    
+    </html>
+</apex:page>

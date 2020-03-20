@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.Case$LastModifiedById$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>User.Case$LastModifiedById$Order_Number__c</field>
+    </columns>
+    <columns>
+        <field>User.Case$LastModifiedById$Origin</field>
+    </columns>
+    <columns>
+        <field>User.Case$LastModifiedById$Subject</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User$Division</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Production &amp; Fulfillment</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.Case$LastModifiedById$LastModifiedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Prod-Cases Last Modified</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_Cases_Last_Modified_By__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Case$LastModifiedById$LastModifiedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

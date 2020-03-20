@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cs3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Comp Search Unclear G&amp;S</name>
+    <style>none</style>
+    <subject>Comp Search Unclear G&amp;S</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+The description of goods and services for your Trademark application may be inadequate. The US Patent and Trademark Office (USPTO) requires a specific list of goods and services for each Trademark. Such descriptions are vital to the USPTO, as they are used to group each Trademark within a specific International Classification. An example of a specific description may include &quot;Apparel, namely hats, t-shirts, sweatshirts&quot; or &quot;a retail store selling [insert goods sold here]&quot;.
+
+Please visit {!snippetVariable.tm_gs_manual} to view more of the USPTO&apos;s list of acceptable descriptions for goods and services. To use this tool, enter specific keywords (i.e. &quot;clothing&quot;) and a listing of descriptions will appear with the appropriate class numbers. You can adopt any of the descriptions displayed that are appropriate.
+
+**Please note that if you have paid for one class, each additional class will require a $385 fee.**
+
+Because LegalZoom is prohibited by law from giving legal advice, it is our customers&apos; responsibility to develop a goods and services description that is appropriate for their Trademark. Although inadequate goods and services descriptions are often able to be amended after a Trademark application has been filed, the scope of the description cannot be broadened. Such amendments may also delay the registration process. ***LegalZoom will not file Trademark amendments on behalf of customers.***
+
+For more information relating to goods and services, as well as International Classifications, visit {!snippetVariable.tm_resources_guides}
+
+Feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

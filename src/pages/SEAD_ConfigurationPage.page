@@ -1,0 +1,22 @@
+<apex:page >
+    <apex:includeLightning />
+
+    <div style="width:100%;height:100%;" id="SEADContainer" />
+
+    <script>
+      $Lightning.use("c:SEAD_ConfigurationApp", function() {
+          $Lightning.createComponent("c:SEAD_ConfigurationUpdate",
+          {
+          borderColor : "#16325c",
+          bgColor : "#16325c" ,
+          fontColor : "#FFF",
+          frontText : "What's cool about Lightning Component Development",
+          backText : "You dont need to enable Lightning experience, It will work on Classic Instance as well"
+          },
+          "SEADContainer",
+          function(cmp) {
+          console.log('Component created, do something cool here');
+          });
+       });
+ </script>
+</apex:page>

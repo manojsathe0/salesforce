@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>canpdiss</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>California NP Dissolution</name>
+    <style>none</style>
+    <subject>California NP Dissolution</subject>
+    <textOnly>SUBJECT LINE: URGENT RESPONSE REQUIRED: Your Legalzoom order # XXXXXX
+
+Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your Dissolution order.  Attached, please find the customized Certificate of Cancellation, Dissolution Waiver of Notice and Certification to the California Attorney General?s Office. In order to ensure your order is processed as quickly as possible, please follow the steps listed below. 
+
+&gt;Print three (3) copies of the document on white paper using black ink only.
+&gt;Have a director sign and date three (3) copies of the Certificate of Cancellation.
+&gt;Do not make any changes to the documents. If you need to make changes, please contact our Customer Support.
+&gt;Attached are two slightly different versions of the Dissolution Waiver of Notice form. One assumes that you have not yet commenced business, and the other assumes that you have and that all debts have been disbursed.  Please sign the appropriate form according to your circumstances. 
+&gt;Complete section one (1) of the Certificate to the CA Attorney General?s Office. Additionally, please have a director sign this document. 
+&gt;Sign your name in black ink on all copies as indicated.
+&gt;Return a copy of your Federal Tax Return (form 990, 990EZ, etc) for the past three (3) years. 
+&gt;Return a copy of your filed Articles of Incorporation for the Non-Profit.
+&gt;Mail the documents to our address listed below.  Please note that we cannot accept faxes as the state office will only accept documents with an original signature
+
+Courier Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd.
+10th Flr.
+Glendale, CA 91203
+
+USPS Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd., 10th Flr.
+POB 29096
+Glendale, CA 91203
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>racancel</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Cancel Registered Agent Services</name>
+    <style>none</style>
+    <subject>Cancel Registered Agent Services</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We have received your request to cancel your Registered Agent Services with LegalZoom.  It is required that your Business Entity maintain a Registered Agent with a corresponding in-state, physical address.  In order for us to complete your request, you will need to complete the following steps:
+
+• Elect a new Registered Agent and file the necessary paperwork with the State office.
+• Send  a copy of the recorded Change of Registered Agent filing to LegalZoom (support@legalzoom.com)
+• Contact us directly at {!snippetVariable.ccphone}
+
+Once we receive the copy of change has been made, please contact us directly and we will be happy to complete your cancellation request.
+
+Please feel free to contact our Registered Agent Team at (888) 381-8758 Monday – Friday 6am-7pm PT, or Saturday 10am-2pm PT.  You could also simply reply to this email with any further questions or concerns.
+
+Thank you again for choosing LegalZoom and we look forward to hearing from you soon.
+
+Best Regards,
+
+The LegalZoom Team
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

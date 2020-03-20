@@ -1,0 +1,5158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Compliance Review</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Compliance Reviews</value>
+    </caseValues>
+    <fields>
+        <help><!-- Did rep acquire the necessary points to understand how LZ can assist? (ex. state, type filling, prof, etc...) --></help>
+        <label><!-- Did rep understand how LZ can assist? --></label>
+        <name>ALC_Did_rep_understand_how_LZ__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Possible Points --></label>
+        <name>ALC_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Label --></label>
+        <name>ALC_Score_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>ALC_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Validate customers understanding (confirmation, recap, or based on customer&apos;s response) --></help>
+        <label><!-- Validate customers understanding? --></label>
+        <name>ALC_Validate_customers_understanding__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Was information provided accurately? (LZ or State) --></help>
+        <label><!-- Was information provided accurately? --></label>
+        <name>ALC_Was_information_provided_accurate__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Was information provided complete? (LZ or State) --></help>
+        <label><!-- Was information provided complete? --></label>
+        <name>ALC_Was_information_provided_complete__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Were all customer expressed issues, inquiries, and concerns addressed? (can be determined by response) --></help>
+        <label><!-- Were all customer concerns addressed? --></label>
+        <name>ALC_Were_all_customer_concerns_addressed__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- AS Retention Service Issue Notes --></label>
+        <name>AS_Retention_Service_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- AS Retention Issues --></label>
+        <name>AS_Retention_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Label --></label>
+        <name>AVB_Score_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accuracy of info (LZ) Score --></label>
+        <name>Accuracy_of_info_LZ_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Possible Points --></label>
+        <name>Added_value_total_Possible_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Notes --></label>
+        <name>Additional_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- AmISalesManager --></label>
+        <name>AmISalesManager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Answered Questions? --></label>
+        <name>Answered_Questions__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Applicable Questions --></label>
+        <name>Applicable_Questions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Areas needing Improvement --></label>
+        <name>Areas_needing_Improvement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Areas of Strength --></label>
+        <name>Areas_of_Strength__c</name>
+    </fields>
+    <fields>
+        <help><!-- State &amp; TAT do not count --></help>
+        <label><!-- Asked sales related questions --></label>
+        <name>Asked_sales_related_questions__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Audited --></label>
+        <name>Audited__c</name>
+    </fields>
+    <fields>
+        <label><!-- Awaiting Sales Approval Date/Time --></label>
+        <name>Awaiting_Sales_Approval_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blank Value --></label>
+        <name>Blank_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS 2nd Disclosure Issue --></label>
+        <name>CCS_2nd_Disclaimer_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS Corrective Plan 2nd Disclosure --></label>
+        <name>CCS_Corrective_Plan_2nd_Disclaimer__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Corrective Plan Disclosure --></label>
+        <name>CCS_Corrective_Plan_Disclaimer__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Corrective Plan Security --></label>
+        <name>CCS_Corrective_Plan_Security__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Corrective Plan Taxation --></label>
+        <name>CCS_Corrective_Plan_Taxation__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Corrective Plan UPL Coaching --></label>
+        <name>CCS_Corrective_Plan_UPL_Coaching__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Corrective Plan UPL --></label>
+        <name>CCS_Corrective_Plan_UPL__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Disclosure Issue --></label>
+        <name>CCS_Disclaimer_Violation_Chk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Did agent provide the Disclosure? --></label>
+        <name>CCS_Disclaimer_Violation__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No (1st Contact)</masterLabel>
+            <translation><!-- No (1st Contact) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No (2nd Contact)</masterLabel>
+            <translation><!-- No (2nd Contact) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP 2nd Disclosure Reference --></label>
+        <name>CCS_LCP_2nd_Disclaimer_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (CCS LCP 2nd Disclaimer Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP 2nd Disclosure Start Date --></label>
+        <name>CCS_LCP_2nd_Disclaimer_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP 2nd Disclosure --></label>
+        <name>CCS_LCP_2nd_Disclaimer__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Disclosure Reference --></label>
+        <name>CCS_LCP_Disclaimer_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (CCS LCP Disclaimer Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Disclosure Start Date --></label>
+        <name>CCS_LCP_Disclaimer_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Disclosure --></label>
+        <name>CCS_LCP_Disclaimer__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Security Reference --></label>
+        <name>CCS_LCP_Security_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (CCS LCP Security Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Security Start Date --></label>
+        <name>CCS_LCP_Security_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Security --></label>
+        <name>CCS_LCP_Security__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Taxation Referenece --></label>
+        <name>CCS_LCP_Taxation_Referenece__c</name>
+        <relationshipLabel><!-- Compliance Reviews (CCS LCP Taxation Referenece) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Taxation Start Date --></label>
+        <name>CCS_LCP_Taxation_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP Taxation --></label>
+        <name>CCS_LCP_Taxation__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP UPL Coaching Reference --></label>
+        <name>CCS_LCP_UPL_Coaching_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (CCS LCP UPL Coaching Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP UPL Coaching Start Date --></label>
+        <name>CCS_LCP_UPL_Coaching_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP UPL Coaching --></label>
+        <name>CCS_LCP_UPL_Coaching__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP UPL Reference --></label>
+        <name>CCS_LCP_UPL_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (CCS LCP UPL Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP UPL Start Date --></label>
+        <name>CCS_LCP_UPL_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS LCP UPL --></label>
+        <name>CCS_LCP_UPL__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Security Issue --></label>
+        <name>CCS_Security_Violation_Chk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Did agent fully verify the customer? --></label>
+        <name>CCS_Security_Violation__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Tax Issue --></label>
+        <name>CCS_Tax_Violation_Chk__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did rep provide tax advice or tax form advice? --></help>
+        <label><!-- Did agent present a tax related concern? --></label>
+        <name>CCS_Tax_Violation__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UPL Coaching --></label>
+        <name>CCS_UPL_Coaching__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS UPL Issue --></label>
+        <name>CCS_UPL_Violation_Chk__c</name>
+    </fields>
+    <fields>
+        <help><!-- UPL Concern
+(did rep recommend, advise, provide opinion, etc…) --></help>
+        <label><!-- Did agent present a UPL Concern? --></label>
+        <name>CCS_UPL_Violation__c</name>
+        <picklistValues>
+            <masterLabel>Disqualified</masterLabel>
+            <translation><!-- Disqualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCS Written Warning Number --></label>
+        <name>CCS_Written_Warning_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCS Written Warning Reference --></label>
+        <name>CCS_Written_Warning_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Label --></label>
+        <name>CH_Score_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Unethical Business Practice --></label>
+        <name>CP_Unethical_Business_Practice__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CP Written Warning Number Formula --></label>
+        <name>CP_Written_Warning_Number_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- CP Written Warning Number --></label>
+        <name>CP_Written_Warning_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rapport --></label>
+        <name>CallHandling_A1__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tone &amp; Professional Courtesy --></label>
+        <name>CallHandling_A2__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CallHandling Cal Possible A1 --></label>
+        <name>CallHandling_Cal_Possible_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallHandling Cal Possible A2 --></label>
+        <name>CallHandling_Cal_Possible_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>CallHandling_Comments_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>CallHandling_Comments_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>CallHandling_Possible_Score_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>CallHandling_Possible_Score_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallHandling Score Convert A1 --></label>
+        <name>CallHandling_Score_Convert_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallHandling Score Convert A2 --></label>
+        <name>CallHandling_Score_Convert_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Handling Score --></label>
+        <name>Call_Handling_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage of Total Possible Score --></label>
+        <name>Call_Quality_Score_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Quality (Total Score) OLD --></label>
+        <name>Call_Quality_Total_Score_OLD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Quality (Total Score) --></label>
+        <name>Call_Quality_Total_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Quality Total --></label>
+        <name>Call_Quality_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Summary Note --></label>
+        <name>Call_Summary_Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Summary --></label>
+        <name>Call_Summary__c</name>
+        <picklistValues>
+            <masterLabel>Account Updates</masterLabel>
+            <translation><!-- Account Updates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancellation / Refunds</masterLabel>
+            <translation><!-- Cancellation / Refunds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Revision</masterLabel>
+            <translation><!-- Order Revision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Status</masterLabel>
+            <translation><!-- Order Status --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problem / Order Issue</masterLabel>
+            <translation><!-- Problem / Order Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Information</masterLabel>
+            <translation><!-- Product Information --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Transfers --></label>
+        <name>Call_Transfers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Coaching Notes --></label>
+        <name>Coaching_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication A1 Possible Score --></label>
+        <name>Communication_A1_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication A1 Score --></label>
+        <name>Communication_A1_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent provide accurate information? --></help>
+        <label><!-- Did agent provide accurate information --></label>
+        <name>Communication_A1__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(A)</masterLabel>
+            <translation><!-- Y(A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(P)</masterLabel>
+            <translation><!-- Y(P) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Communication A2 Possible Score --></label>
+        <name>Communication_A2_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication A2 Score --></label>
+        <name>Communication_A2_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent provide complete information? --></help>
+        <label><!-- Did agent provide complete information --></label>
+        <name>Communication_A2__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(A)</masterLabel>
+            <translation><!-- Y(A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(P)</masterLabel>
+            <translation><!-- Y(P) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Communication A3 Possible Score --></label>
+        <name>Communication_A3_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication A3 Score --></label>
+        <name>Communication_A3_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did the agent verbalize how he/she can assist? --></help>
+        <label><!-- Did agent verbalize how they can assist --></label>
+        <name>Communication_A3__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y</masterLabel>
+            <translation><!-- Y --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Communication A4 Possible Score --></label>
+        <name>Communication_A4_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication A4 Score --></label>
+        <name>Communication_A4_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent address all customer expressed issues, inquiries, and concerns? --></help>
+        <label><!-- Did agent address customer inquiries --></label>
+        <name>Communication_A4__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y</masterLabel>
+            <translation><!-- Y --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Communication_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Possible Points --></label>
+        <name>Communication_Total_Possible_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compensation Percentage (Number) OLD --></label>
+        <name>Compensation_Percentage_Number_OLD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compensation Percentage (Number) --></label>
+        <name>Compensation_Percentage_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compensation Percentage	OLD --></label>
+        <name>Compensation_Percentage_OLD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evaluation Percentage --></label>
+        <name>Compensation_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Disclosure Text --></label>
+        <name>Corrective_Plan_Disclaimer_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Discount Text --></label>
+        <name>Corrective_Plan_Discount_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Discounts --></label>
+        <name>Corrective_Plan_Discounts__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Fee --></label>
+        <name>Corrective_Plan_Fee__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Outbound Disclosure --></label>
+        <name>Corrective_Plan_Outbound_Disclaimer__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Security Text --></label>
+        <name>Corrective_Plan_Security_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Security --></label>
+        <name>Corrective_Plan_Security__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Service Text --></label>
+        <name>Corrective_Plan_Service_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Service --></label>
+        <name>Corrective_Plan_Service__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Start Date --></label>
+        <name>Corrective_Plan_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Summary --></label>
+        <name>Corrective_Plan_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Taxation Text --></label>
+        <name>Corrective_Plan_Taxation_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Taxation --></label>
+        <name>Corrective_Plan_Taxation__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan UPL Coaching Text --></label>
+        <name>Corrective_Plan_UPL_Coaching_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan UPL Coaching --></label>
+        <name>Corrective_Plan_UPL_Coaching__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan UPL Text --></label>
+        <name>Corrective_Plan_UPL_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan UPL --></label>
+        <name>Corrective_Plan_UPL__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Corrective Plan Unethical Text --></label>
+        <name>Corrective_Plan_Unethical_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count --></label>
+        <name>Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Courteous? --></label>
+        <name>Courteous__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Courteous and professional tone --></label>
+        <name>Courteous_and_professional_tone__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cp 2nd Contact Disclosure Text --></label>
+        <name>Cp_2nd_Contact_Disclaimer_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cp 2nd Contact Disclosure --></label>
+        <name>Cp_2nd_Contact_Disclaimer__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cross Sell Opportunities --></label>
+        <name>Cross_Sell_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Verification Issue Number --></label>
+        <name>Customer_Verification_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Verification Issue --></label>
+        <name>Customer_Verification_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Defined/Didn&apos;t Omit LZ Services? --></label>
+        <name>Defined_Didnt_Omit_LZ_Services__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Function --></label>
+        <name>Department__c</name>
+        <picklistValues>
+            <masterLabel>Abandoner</masterLabel>
+            <translation><!-- Abandoner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC AS</masterLabel>
+            <translation><!-- CC AS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC Biz</masterLabel>
+            <translation><!-- CC Biz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC General</masterLabel>
+            <translation><!-- CC General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC IP</masterLabel>
+            <translation><!-- CC IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC PS</masterLabel>
+            <translation><!-- CC PS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Care</masterLabel>
+            <translation><!-- Customer Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalations</masterLabel>
+            <translation><!-- Escalations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound BIZ</masterLabel>
+            <translation><!-- Inbound BIZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound IP</masterLabel>
+            <translation><!-- Inbound IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound PSD</masterLabel>
+            <translation><!-- Inbound PSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound RT</masterLabel>
+            <translation><!-- Inbound RT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound Biz</masterLabel>
+            <translation><!-- Outbound Biz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RAcovery</masterLabel>
+            <translation><!-- RAcovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier II</masterLabel>
+            <translation><!-- Tier II --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Did Not Overstate LZ Statistics? --></label>
+        <name>Did_Not_Overstate_LZ_Statistics__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Did Not Provide Unauthorized Discount(s) --></label>
+        <name>Did_Not_Provide_Unauthorized_Discounts__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Did Not Refuse a Refund? --></label>
+        <name>Did_Not_Refuse_a_Refund__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Did Not Refuse to Cancel? --></label>
+        <name>Did_Not_Refuse_to_Cancel__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Did not offer a refund or 30 day trial? --></label>
+        <name>Did_not_offer_a_refund_or_30_day_trial__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Did not provide advice or recommendation --></label>
+        <name>Did_not_provide_advice_or_recommendation__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Disclosure Issue Number --></label>
+        <name>Disclaimer_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disclosure Issue --></label>
+        <name>Disclaimer_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disqualified --></label>
+        <name>Disqualified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Divison__c</name>
+        <picklistValues>
+            <masterLabel>CCS</masterLabel>
+            <translation><!-- CCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Evaluation % Number --></label>
+        <name>Evaluation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evalutation % --></label>
+        <name>Evalutation_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Scorecard 1.0 - Evalutation % --></label>
+        <name>Evalutation_QA_Scorecard_1_0__c</name>
+    </fields>
+    <fields>
+        <label><!-- Explain how LZ can assist --></label>
+        <name>Explain_how_LZ_can_assist__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Extended Corrective Plan Start Date --></label>
+        <name>Extended_Corrective_Plan_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Accuracy_of_info_LZ__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic Call Handling --></label>
+        <name>Fantastic_Call_Handling__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic Communication --></label>
+        <name>Fantastic_Communication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Greeting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Identify1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Identify2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Initiate1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Initiate2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic Listening --></label>
+        <name>Fantastic_Listening__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic Opening --></label>
+        <name>Fantastic_Opening__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Rapport__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_SBR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Tone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_UPL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Unauthorized_discount_provided__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_Unethical_Business_Pratice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_disclaimer_provided__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_fully_verify_the_customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fantastic --></label>
+        <name>Fantastic_tax_provided__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fee Issue --></label>
+        <name>Fee_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grand Total (Call Quality &amp; Issues) OLD --></label>
+        <name>Grand_Total_Call_Quality_Issues_OLD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grand Total (Call Quality &amp; Issues) --></label>
+        <name>Grand_Total_Call_Quality_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grand Total(Number) OLD --></label>
+        <name>Grand_Total_Number_OLD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Grand Total (Number) --></label>
+        <name>Grand_Total_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use of proper Greeting / Closing Interaction --></help>
+        <label><!-- Greeting &amp; Closing Interaction --></label>
+        <name>Greeting_A1__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Greeting Cal Possible A1 --></label>
+        <name>Greeting_Cal_Possible_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Greeting_Comments_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>Greeting_Possible_Score_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use of proper greeting Score --></label>
+        <name>Greeting_Score_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Greeting Score Convert A1 --></label>
+        <name>Greeting_Score_Convert_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Greeting Score --></label>
+        <name>Greeting_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling A1 Possible Score --></label>
+        <name>Handling_A1_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling A1 Score --></label>
+        <name>Handling_A1_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent use proper phone etiquette? --></help>
+        <label><!-- Did agent use proper phone etiquette --></label>
+        <name>Handling_A1__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(A)</masterLabel>
+            <translation><!-- Y(A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(P)</masterLabel>
+            <translation><!-- Y(P) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Handling A2 Possible Score --></label>
+        <name>Handling_A2_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling A2 Score --></label>
+        <name>Handling_A2_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent maintain his/her professionalism throughout the call? --></help>
+        <label><!-- Did agent remain professional --></label>
+        <name>Handling_A2__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(A)</masterLabel>
+            <translation><!-- Y(A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(P)</masterLabel>
+            <translation><!-- Y(P) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Handling A3 Possible Score --></label>
+        <name>Handling_A3_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling A3 Score --></label>
+        <name>Handling_A3_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent take correct internal actions to resolve the customer’s needs? --></help>
+        <label><!-- Did agent take correct internal actions --></label>
+        <name>Handling_A3__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(A)</masterLabel>
+            <translation><!-- Y(A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(P)</masterLabel>
+            <translation><!-- Y(P) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Handling A4 Possible Score --></label>
+        <name>Handling_A4_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling A4 Score --></label>
+        <name>Handling_A4_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent accurately document the call? --></help>
+        <label><!-- Did agent accurately document the call --></label>
+        <name>Handling_A4__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(A)</masterLabel>
+            <translation><!-- Y(A) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y(P)</masterLabel>
+            <translation><!-- Y(P) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Handling A5 Possible Score --></label>
+        <name>Handling_A5_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling A5 Score --></label>
+        <name>Handling_A5_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent appropriately manage the case? --></help>
+        <label><!-- Did agent appropriately manage the case --></label>
+        <name>Handling_A5__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y</masterLabel>
+            <translation><!-- Y --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Score Label --></label>
+        <name>Handling_Score_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Handling_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Possible Points --></label>
+        <name>Handling_Total_Possible_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Have Issue (Number) --></label>
+        <name>Have_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours After Coaching Completed --></label>
+        <name>Hours_After_Coaching_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Identify 1 Score --></label>
+        <name>Identify_1_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Identify 2 Score --></label>
+        <name>Identify_2_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initiate 1 Score --></label>
+        <name>Initiate_1_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initiate 2 Score --></label>
+        <name>Initiate_2_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inoffensive/Non-Abrasive? --></label>
+        <name>Inoffensive_Non_Abrasive__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rep name and mentioning of LZ --></label>
+        <name>Interaction_A1__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Invitation to assist/offer to help --></label>
+        <name>Interaction_A2__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Offer contact info (email or phone) --></label>
+        <name>Interaction_A3__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Offers additional assistance (prior to ending call) --></help>
+        <label><!-- Offers additional assistance --></label>
+        <name>Interaction_A4__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provide proper closing statement/salutation. --></help>
+        <label><!-- Proper closing / opening statement --></label>
+        <name>Interaction_A5__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Used protection language --></label>
+        <name>Interaction_A6__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Interaction_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score Label --></label>
+        <name>Interaction_Score_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Interaction_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Possible Points --></label>
+        <name>Interaction_Total_Possible_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP 2nd Contact Disclosure --></label>
+        <name>LCP_2nd_Contact_Disclaime__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- LCP Outbound 2nd Contact Disclaimer Reference --></help>
+        <label><!-- LCP 2nd Contact Disclosure Reference --></label>
+        <name>LCP_2nd_Contact_Disclaimer_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP Outbound 2nd Contact Disclaimer Refe) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP 2nd Contact Disclosure startDate --></label>
+        <name>LCP_2nd_Contact_Disclaimer_startDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Discounts Reference --></label>
+        <name>LCP_Discounts_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP Discounts Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP Discounts Start Date --></label>
+        <name>LCP_Discounts_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Discounts --></label>
+        <name>LCP_Discounts__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP Fee Reference --></label>
+        <name>LCP_Fee_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP Fee Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP Fee StartDate --></label>
+        <name>LCP_Fee_StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Fee --></label>
+        <name>LCP_Fee__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP Outbound Disclosure Reference --></label>
+        <name>LCP_Outbound_Disclaimer_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP Outbound Disclaimer Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP Outbound Disclosure Start Date --></label>
+        <name>LCP_Outbound_Disclaimer_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Outbound Disclosure --></label>
+        <name>LCP_Outbound_Disclaimer__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP Security Reference --></label>
+        <name>LCP_Security_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP Security Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP Security Start Date --></label>
+        <name>LCP_Security_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Security --></label>
+        <name>LCP_Security__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP Service Reference --></label>
+        <name>LCP_Service_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP Service Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP Service Start Date --></label>
+        <name>LCP_Service_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Service --></label>
+        <name>LCP_Service__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP Taxation Reference --></label>
+        <name>LCP_Taxation_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP Taxation Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP Taxation Start Date --></label>
+        <name>LCP_Taxation_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Taxation --></label>
+        <name>LCP_Taxation__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP UPL Coaching Date --></label>
+        <name>LCP_UPL_Coaching_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP UPL Coaching Reference --></label>
+        <name>LCP_UPL_Coaching_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP UPL Coaching Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP UPL Coaching --></label>
+        <name>LCP_UPL_Coaching__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coaching</masterLabel>
+            <translation><!-- Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP UPL Reference --></label>
+        <name>LCP_UPL_Reference__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP UPL Reference) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP UPL Start Date --></label>
+        <name>LCP_UPL_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP UPL --></label>
+        <name>LCP_UPL__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP Unethical Business Practice Ref --></label>
+        <name>LCP_Unethical_Business_Practice_Ref__c</name>
+        <relationshipLabel><!-- Compliance Reviews (LCP Unethical Business Practice Ref) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- LCP Unethical Business Practice --></label>
+        <name>LCP_Unethical_Business_Practice__c</name>
+        <picklistValues>
+            <masterLabel>1st Written</masterLabel>
+            <translation><!-- 1st Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Written</masterLabel>
+            <translation><!-- 2nd Written --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Termination</masterLabel>
+            <translation><!-- Termination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LCP Unethical Practice Start Date --></label>
+        <name>LCP_Unethical_Practice_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Written Warning Number --></label>
+        <name>LCP_Written_Warning_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- LCP Written Warning Reference --></label>
+        <name>LCP_Written_Warning_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Length of Call (Minute) --></label>
+        <name>Length_of_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Listening A1 Possible Score --></label>
+        <name>Listening_A1_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Listening A1 Score --></label>
+        <name>Listening_A1_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- How well does the rep understand the customer&apos;s wants and needs.
+Does the customer understand the intent of the call --></help>
+        <label><!-- Mutual understanding (wants and needs) --></label>
+        <name>Listening_A1__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Manager Alert --></label>
+        <name>Manager_Alert__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing/Product Opportunities --></label>
+        <name>Marketing_Product_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Issue Notes --></label>
+        <name>Marketing_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Issues --></label>
+        <name>Marketing_Violations__c</name>
+    </fields>
+    <fields>
+        <help><!-- if applicable --></help>
+        <label><!-- My Account Assistance --></label>
+        <name>My_Account_Assistance__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- NeedAnalysis Cal Possible A1 --></label>
+        <name>NeedAnalysis_Cal_Possible_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- NeedAnalysis Cal Possible A2 --></label>
+        <name>NeedAnalysis_Cal_Possible_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>NeedAnalysis_Comments_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>NeedAnalysis_Comments_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>NeedAnalysis_Possible_Score_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>NeedAnalysis_Possible_Score_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- NeedAnalysis Score Convert A1 --></label>
+        <name>NeedAnalysis_Score_Convert_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- NeedAnalysis Score Convert A2 --></label>
+        <name>NeedAnalysis_Score_Convert_A2__c</name>
+    </fields>
+    <fields>
+        <help><!-- How well does the rep and customer understand the wants and needs (display active listening skills)? --></help>
+        <label><!-- Identify 1 (active listening) --></label>
+        <name>Need_Analysis_A1__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How well do the questions asked help discover the potential sales opportunities. --></help>
+        <label><!-- Identify 2 (sales related questions) --></label>
+        <name>Need_Analysis_A2__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Need Analysis Score --></label>
+        <name>Need_Analysis_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not Aggressive? --></label>
+        <name>Not_Aggressive__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Outbound Call Disclosure Provided? --></label>
+        <name>OB_Disclaimer_Provided__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Obtain highest level of commitment --></label>
+        <name>Obtain_highest_level_of_commitment__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Offered AMEX Card service to customer --></label>
+        <name>Offered_AMEX_Card_service_to_customer__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Offered BofA service to customer --></label>
+        <name>Offered_BofA_service_to_customer__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Offered D&amp;B with BAP --></label>
+        <name>Offered_DnB_with_BAP__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Offered QuickBooks to Customer --></label>
+        <name>Offered_QuickBooks_to_Customer__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Offered other SBR Partnership products? --></label>
+        <name>Offered_other_SBR_Partnership_products__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opening A1 Possible Score --></label>
+        <name>Opening_A1_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opening A1 Score --></label>
+        <name>Opening_A1_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent use the appropriate greeting? --></help>
+        <label><!-- Agent use appropriate greeting --></label>
+        <name>Opening_A1__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opening A2 Possible Score --></label>
+        <name>Opening_A2_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opening A2 Score --></label>
+        <name>Opening_A2_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent respond using a reassuring statement? --></help>
+        <label><!-- Did agent provide reassuring statement --></label>
+        <name>Opening_A2__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opening A3 Possible Score --></label>
+        <name>Opening_A3_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opening A3 Score --></label>
+        <name>Opening_A3_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent inform customer about NPS survey? --></help>
+        <label><!-- Was customer informed about NPS survey --></label>
+        <name>Opening_A3__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opening A4 Possible Score --></label>
+        <name>Opening_A4_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opening A4 Score --></label>
+        <name>Opening_A4_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent offer additional assistance? --></help>
+        <label><!-- Offers additional assistance --></label>
+        <name>Opening_A4__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opening A5 Possible Score --></label>
+        <name>Opening_A5_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opening A5 Score --></label>
+        <name>Opening_A5_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent use the appropriate closing? --></help>
+        <label><!-- Agent use appropriate closing --></label>
+        <name>Opening_A5__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opening A6 Possible Score --></label>
+        <name>Opening_A6_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opening A6 Score --></label>
+        <name>Opening_A6_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used protection language --></label>
+        <name>Opening_A6_del_del__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Score Label --></label>
+        <name>Opening_Score_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Opening_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Possible Points --></label>
+        <name>Opening_Total_Possible_Points__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outbound Disclosure Issue Notes --></label>
+        <name>Outbound_Disclaimer_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outbound Disclosure Issues --></label>
+        <name>Outbound_Disclaimer_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overall Fantastic --></label>
+        <name>Overall_Fantastic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compensation Percentage (Percentage) --></label>
+        <name>Overall_Score_Percentage__c</name>
+    </fields>
+    <fields>
+        <help><!-- How accurately were products and services presented? Were thoughts organized and easily comprehendible? --></help>
+        <label><!-- Initiate 1 (accuracy of information) --></label>
+        <name>PPK_A1__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Did you invite the desired behavior by selling the service or adding value to the call --></help>
+        <label><!-- Initiate 2 (selling behavior) --></label>
+        <name>PPK_A2__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Were appropriate SBRs presented and how were they presented? Were there missed opportunities? --></help>
+        <label><!-- SBR --></label>
+        <name>PPK_A3__c</name>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PPK Cal Possible A1 --></label>
+        <name>PPK_Cal_Possible_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPK Cal Possible A2 --></label>
+        <name>PPK_Cal_Possible_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPK Cal Possible A3 --></label>
+        <name>PPK_Cal_Possible_A3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>PPK_Comments_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>PPK_Comments_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>PPK_Comments_A3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>PPK_Possible_Score_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>PPK_Possible_Score_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>PPK_Possible_Score_A3__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPK Score Convert A1 --></label>
+        <name>PPK_Score_Convert_A1__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPK Score Convert A2 --></label>
+        <name>PPK_Score_Convert_A2__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPK Score Convert A3 --></label>
+        <name>PPK_Score_Convert_A3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage of Total Possible Score OLD --></label>
+        <name>Percentage_of_Total_Possible_Score_OLD__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of Total Possible --></label>
+        <name>Percentage_of_Total_Possible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Performed Ethical Business Practice --></label>
+        <name>Performed_Ethical_Business_Practice__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Possible (Call Quality &amp; Issues) --></label>
+        <name>Possible_Call_Quality_Violations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Present appropriate SBRs (and accurately) --></help>
+        <label><!-- Present appropriate and accurate SBRs --></label>
+        <name>Present_appropriate_and_accurate_SBRs__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SBRs Score --></label>
+        <name>Presentation_of_SBRs_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Presented Products &amp; Services directly tied to inquiry --></help>
+        <label><!-- Presented Products &amp; Services --></label>
+        <name>Presented_Products_Services__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Process Improvement Opportunities --></label>
+        <name>Process_Improvement_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Information Issue Notes --></label>
+        <name>Product_Information_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Information Issues --></label>
+        <name>Product_Information_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Presentations &amp; Knowledge Score --></label>
+        <name>Product_Presentations_Knowledge_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Professional? --></label>
+        <name>Professional__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provide tax Score --></label>
+        <name>Provide_tax_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provided Services Best of Ability? --></label>
+        <name>Provided_Services_Best_of_Ability__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provided accurate Product Information --></label>
+        <name>Provided_accurate_Product_Information__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provided accurate core product info? --></label>
+        <name>Provided_accurate_core_product_info__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- QA Disputed --></label>
+        <name>QA_Disputed__c</name>
+    </fields>
+    <fields>
+        <label><!-- QA Scorecard 1.0 - % of Total Possible --></label>
+        <name>QA_Scorecard_1_0_of_Total_Possible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rapport Score --></label>
+        <name>Rapport_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recorded Call ID# --></label>
+        <name>Recorded_Call_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rep Alias --></label>
+        <name>Rep_Alias__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rep Initiated Sales % --></label>
+        <name>Rep_Initiated_Sales__c</name>
+        <picklistValues>
+            <masterLabel>0%</masterLabel>
+            <translation><!-- 0% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75%</masterLabel>
+            <translation><!-- 75% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The Sales Representative that is being reviewed --></help>
+        <label><!-- Rep Name --></label>
+        <name>Representative__c</name>
+        <relationshipLabel><!-- Compliance Reviews (Rep Name) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SBR Issue Notes --></label>
+        <name>SBR_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBR Issues --></label>
+        <name>SBR_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBR information was accurately provided --></label>
+        <name>SBR_information_was_accurately_provided__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Acknowledge Customer --></label>
+        <name>Sales_Acknowledge_Customer__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Sales_Call_Handling_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Possible Points --></label>
+        <name>Sales_Call_Handling_Total_Possible_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Disputed --></label>
+        <name>Sales_Disputed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engaged in conversation with customer --></label>
+        <name>Sales_Engaged_in_Conversation__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expressed empathy / concern --></label>
+        <name>Sales_Expressed_empathy_concern__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Use of LZ terminology/acronyms/any slang --></label>
+        <name>Sales_LZ_terminology_acronyms__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Proper phone etiquette --></label>
+        <name>Sales_Proper_phone_etiquette__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Reject Coaching --></label>
+        <name>Sales_Reject_Coaching__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager --></label>
+        <name>Sales_Rep_Manager__c</name>
+        <relationshipLabel><!-- Compliance Reviews (Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Score_Added_Value_Behaviors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Verified? --></label>
+        <name>Security_Verified__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Security Issue Notes --></label>
+        <name>Security_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Issues --></label>
+        <name>Security_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent Email Waiting Sales Approval 3 Days --></label>
+        <name>Sent_Email_Waiting_Sales_Approval_3_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Quality Issue Notes --></label>
+        <name>Service_Quality_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Quality Issues --></label>
+        <name>Service_Quality_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Issue Number --></label>
+        <name>Service_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Issue --></label>
+        <name>Service_Violation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of other service discussed --></help>
+        <label><!-- Services Discussed (Other) --></label>
+        <name>Services_Discussed_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Services Discussed --></label>
+        <name>Services_Discussed__c</name>
+        <picklistValues>
+            <masterLabel>Amendment</masterLabel>
+            <translation><!-- Amendment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Annual Report</masterLabel>
+            <translation><!-- Annual Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bylaws and Resolutions</masterLabel>
+            <translation><!-- Bylaws and Resolutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copyright</masterLabel>
+            <translation><!-- Copyright --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corp</masterLabel>
+            <translation><!-- Corp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Minutes</masterLabel>
+            <translation><!-- Corporate Minutes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBA</masterLabel>
+            <translation><!-- DBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined Payment</masterLabel>
+            <translation><!-- Declined Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dissolution</masterLabel>
+            <translation><!-- Dissolution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Divorce</masterLabel>
+            <translation><!-- Divorce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EIN</masterLabel>
+            <translation><!-- EIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENC</masterLabel>
+            <translation><!-- ENC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expediting</masterLabel>
+            <translation><!-- Expediting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foreign Qual</masterLabel>
+            <translation><!-- Foreign Qual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LLC</masterLabel>
+            <translation><!-- LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LLP</masterLabel>
+            <translation><!-- LLP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LP</masterLabel>
+            <translation><!-- LP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Will Testament</masterLabel>
+            <translation><!-- Last Will Testament --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Plan</masterLabel>
+            <translation><!-- Legal Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Trust</masterLabel>
+            <translation><!-- Living Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Will</masterLabel>
+            <translation><!-- Living Will --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NP</masterLabel>
+            <translation><!-- NP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name Change</masterLabel>
+            <translation><!-- Name Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oper. Agmnt</masterLabel>
+            <translation><!-- Oper. Agmnt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POA</masterLabel>
+            <translation><!-- POA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patent</masterLabel>
+            <translation><!-- Patent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Deed Transfer</masterLabel>
+            <translation><!-- Real Estate Deed Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Lease</masterLabel>
+            <translation><!-- Real Estate Lease --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reg Agent</masterLabel>
+            <translation><!-- Reg Agent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seller/Tax Permit</masterLabel>
+            <translation><!-- Seller/Tax Permit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trademark</masterLabel>
+            <translation><!-- Trademark --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Set Proper Expectations --></label>
+        <name>Set_Proper_Expectations__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Show value of LZ Services --></label>
+        <name>Show_value_of_LZ_Services__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Specific Tax Forms Were Not Recommended? --></label>
+        <name>Specific_Tax_Forms_Not_Recommended__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington DC</masterLabel>
+            <translation><!-- Washington DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Accept Coaching Rejection</masterLabel>
+            <translation><!-- Accept Coaching Rejection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting QA Mgr Approval</masterLabel>
+            <translation><!-- Awaiting QA Mgr Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Rep Coaching</masterLabel>
+            <translation><!-- Awaiting Rep Coaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Sales Approval</masterLabel>
+            <translation><!-- Awaiting Sales Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compliant</masterLabel>
+            <translation><!-- Compliant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need to Submit for Approval</masterLabel>
+            <translation><!-- Need to Submit for Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA Mgr Disputed</masterLabel>
+            <translation><!-- QA Mgr Disputed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rep Coaching Completed</masterLabel>
+            <translation><!-- Rep Coaching Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rep Coaching Rejection</masterLabel>
+            <translation><!-- Rep Coaching Rejection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Mgr Disputed</masterLabel>
+            <translation><!-- Sales Mgr Disputed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skipped</masterLabel>
+            <translation><!-- Skipped --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tax Advice Issue Number --></label>
+        <name>Tax_Advice_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Advice Issue --></label>
+        <name>Tax_Advice_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Taxation Outcomes Were Not Implied? --></label>
+        <name>Taxation_Outcomes_Not_Implied__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Taxation Issue Notes --></label>
+        <name>Taxation_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Taxation Issues --></label>
+        <name>Taxation_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Technology Opportunities --></label>
+        <name>Technology_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tone &amp; Professional Courtesy Score --></label>
+        <name>Tone_Professional_Courtesy_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tone of Voice Issue Notes --></label>
+        <name>Tone_of_Voice_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tone of Voice Issues --></label>
+        <name>Tone_of_Voice_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Number of Compliance Issues --></label>
+        <name>Total_Number_of_Compliance_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Possible for CQ --></label>
+        <name>Total_Possible_for_CQ__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Possible for CQ --></label>
+        <name>Total_Possible_for_CQ_sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Issue Number --></label>
+        <name>Total_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training --></label>
+        <name>Training__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound Or Recorded</masterLabel>
+            <translation><!-- Inbound Or Recorded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Live</masterLabel>
+            <translation><!-- Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound Or Callback</masterLabel>
+            <translation><!-- Outbound Or Callback --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UPL Coaching Comments --></label>
+        <name>UPL_Coaching_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- UPL Coaching Issue Number --></label>
+        <name>UPL_Coaching_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- UPL Coaching --></label>
+        <name>UPL_Coaching__c</name>
+    </fields>
+    <fields>
+        <label><!-- UPL Issue Notes --></label>
+        <name>UPL_Violation_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- UPL Issue Number --></label>
+        <name>UPL_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- UPL Issue --></label>
+        <name>UPL_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- UPL Issues --></label>
+        <name>UPL_Violations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unauthorized Discount Issue Number --></label>
+        <name>Unauthorized_Discount_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unauthorized Discount Issue --></label>
+        <name>Unauthorized_Discount_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unethical Business Practice Issue --></label>
+        <name>Unethical_Business_Practice_Violation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unethical Business Issue Number --></label>
+        <name>Unethical_Business_Violation_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- SBR do not count --></help>
+        <label><!-- Upsell Products &amp; Services --></label>
+        <name>Upsell_Products_Services__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Verify the Customer Score --></label>
+        <name>Verify_the_Customer_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Violation_A1_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did the rep recommend, advise, or make any statement that can be deemed UPL (Concern)? --></help>
+        <label><!-- UPL Concern --></label>
+        <name>Violation_A1__c</name>
+        <picklistValues>
+            <masterLabel>Disqualified</masterLabel>
+            <translation><!-- Disqualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Violation_A2_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Improper Sales Practice --></label>
+        <name>Violation_A2__c</name>
+        <picklistValues>
+            <masterLabel>Disqualified</masterLabel>
+            <translation><!-- Disqualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Violation_A3_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent provide the required disclosure? --></help>
+        <label><!-- Was the disclosure provided? --></label>
+        <name>Violation_A3__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No (1st Contact)</masterLabel>
+            <translation><!-- No (1st Contact) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No (2nd Contact)</masterLabel>
+            <translation><!-- No (2nd Contact) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Violation_A4_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent provide an unauthorized discount(s)? --></help>
+        <label><!-- Unauthorized discount provided? --></label>
+        <name>Violation_A4__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Violation_A5_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Did rep fully verify the customer? --></label>
+        <name>Violation_A5__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Violation_A6_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did rep misrepresent LZ products and services or provide inaccurate information? --></help>
+        <label><!-- Did rep misrepresent --></label>
+        <name>Violation_A6__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Violation_A7_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did agent provide tax advice or tax form advice? --></help>
+        <label><!-- Provide tax or tax form advice? --></label>
+        <name>Violation_A7__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Recurring Fees, Trial, 3 Pay --></help>
+        <label><!-- Did rep discuss fees? --></label>
+        <name>Violation_A8__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Issue on Cal Possible A5 --></label>
+        <name>Violation_Cal_Possible_A5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Cal Possible A6 --></label>
+        <name>Violation_Cal_Possible_A6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Cal Possible A7 --></label>
+        <name>Violation_Cal_Possible_A7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Comments Summary --></label>
+        <name>Violation_Comments_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Notes Summary --></label>
+        <name>Violation_Notes_Summary_Long__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>Violation_Possible_Score_A5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>Violation_Possible_Score_A6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Possible Score --></label>
+        <name>Violation_Possible_Score_A7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Score Convert A5 --></label>
+        <name>Violation_Score_Convert_A5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Score Convert A6 --></label>
+        <name>Violation_Score_Convert_A6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Score Convert A7 --></label>
+        <name>Violation_Score_Convert_A7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue Type --></label>
+        <name>Violation_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage of Total Possible Score --></label>
+        <name>Violations_Score_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issues (Total Score) --></label>
+        <name>Violations_Total_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was the customer verified prior to transfer, was notepad updated? --></help>
+        <label><!-- Verified prior to transfer &amp; notepaded? --></label>
+        <name>Was_the_customer_verified_prior_to_trans__c</name>
+    </fields>
+    <fields>
+        <label><!-- Was the specialist compliant? --></label>
+        <name>Was_the_specialist_compliant__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did rep transfer call when they could have assisted (was a transfer necessary)? --></help>
+        <label><!-- Was transfer necessary? --></label>
+        <name>Was_transfer_necessary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Were expectations set for the transfer --></label>
+        <name>Were_expectations_set_for_the_transfer__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2nd Contact Disclosure Voilation --></label>
+        <name>X2nd_Contact_Disclaimer_Voilation__c</name>
+    </fields>
+    <layouts>
+        <layout>Admin CCS ScoredBased Layout</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Understanding --></label>
+            <section>Active Listening &amp; Understanding</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Violations --></label>
+            <section>Call Errors &amp; Violations</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Last Corrective Plan --></label>
+            <section>Last Corrective Plan</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Admin ScoredBased Layout</layout>
+        <sections>
+            <label><!-- Call Errors - Mark all those that apply to this call --></label>
+            <section>Call Errors - Mark all those that apply to this call</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling  (20%) --></label>
+            <section>Call Handling  (20%)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total Score --></label>
+            <section>Call Quality Total Score</section>
+        </sections>
+        <sections>
+            <label><!-- Corrective Plan --></label>
+            <section>Corrective Plan</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Greeting (5%) --></label>
+            <section>Greeting (5%)</section>
+        </sections>
+        <sections>
+            <label><!-- Identify (25%) --></label>
+            <section>Identify (25%)</section>
+        </sections>
+        <sections>
+            <label><!-- Initiate (50%) --></label>
+            <section>Initiate (50%)</section>
+        </sections>
+        <sections>
+            <label><!-- Last Corrective Plan --></label>
+            <section>Last Corrective Plan</section>
+        </sections>
+        <sections>
+            <label><!-- Strategic Information --></label>
+            <section>Strategic Information</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+        <sections>
+            <label><!-- Violations --></label>
+            <section>Violations</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CCS ScoredBased Layout</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Understanding --></label>
+            <section>Active Listening &amp; Understanding</section>
+        </sections>
+        <sections>
+            <label><!-- Additonal Comments or Observations --></label>
+            <section>Additonal Comments or Observations</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues --></label>
+            <section>Call Errors &amp; Issues</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Summary --></label>
+            <section>Call Quality Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CCS Training Layout</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Understanding --></label>
+            <section>Active Listening &amp; Understanding</section>
+        </sections>
+        <sections>
+            <label><!-- Additonal Comments or ObservationsNew Section --></label>
+            <section>Additonal Comments or ObservationsNew Section</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues --></label>
+            <section>Call Errors &amp; Issues</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Summary --></label>
+            <section>Call Quality Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CCSRep Layout</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Understanding --></label>
+            <section>Active Listening &amp; Understanding</section>
+        </sections>
+        <sections>
+            <label><!-- Additonal Comments or Observations --></label>
+            <section>Additonal Comments or Observations</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues --></label>
+            <section>Call Errors &amp; Issues</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Summary --></label>
+            <section>Call Quality Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CCSRep Layout - CCS</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Understanding --></label>
+            <section>Active Listening &amp; Understanding</section>
+        </sections>
+        <sections>
+            <label><!-- Additonal Comments or Observations --></label>
+            <section>Additonal Comments or Observations</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues --></label>
+            <section>Call Errors &amp; Issues</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Summary --></label>
+            <section>Call Quality Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction --></label>
+            <section>Opening &amp; Closing Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction - Comments --></label>
+            <section>Opening &amp; Closing Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SalesRep Layout</layout>
+        <sections>
+            <label><!-- Call Errors - Mark all those that apply to this call --></label>
+            <section>Call Errors - Mark all those that apply to this call</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling  (20%) --></label>
+            <section>Call Handling  (20%)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total Score --></label>
+            <section>Call Quality Total Score</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Greeting (5%) --></label>
+            <section>Greeting (5%)</section>
+        </sections>
+        <sections>
+            <label><!-- Identify (25%) --></label>
+            <section>Identify (25%)</section>
+        </sections>
+        <sections>
+            <label><!-- Initiate (50%) --></label>
+            <section>Initiate (50%)</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>SalesRep Layout - Sales</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Communication --></label>
+            <section>Active Listening &amp; Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Active Listening &amp; Communication - 40% --></label>
+            <section>Active Listening &amp; Communication - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors --></label>
+            <section>Added Value Behaviors</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors (check all that apply) - 40% --></label>
+            <section>Added Value Behaviors (check all that apply) - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors - Comments --></label>
+            <section>Added Value Behaviors - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues (check all that apply) --></label>
+            <section>Call Errors &amp; Issues (check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling (check all that apply) - 10% --></label>
+            <section>Call Handling (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total Score --></label>
+            <section>Call Quality Total Score</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction --></label>
+            <section>Fundamental Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction (check all that apply) - 10% --></label>
+            <section>Fundamental Interaction (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction - Comments --></label>
+            <section>Fundamental Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ScoredBased Layout</layout>
+        <sections>
+            <label><!-- Call Errors - Mark all those that apply to this call --></label>
+            <section>Call Errors - Mark all those that apply to this call</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling  (20%) --></label>
+            <section>Call Handling  (20%)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total Score --></label>
+            <section>Call Quality Total Score</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Greeting (5%) --></label>
+            <section>Greeting (5%)</section>
+        </sections>
+        <sections>
+            <label><!-- Identify (25%) --></label>
+            <section>Identify (25%)</section>
+        </sections>
+        <sections>
+            <label><!-- Initiate (50%) --></label>
+            <section>Initiate (50%)</section>
+        </sections>
+        <sections>
+            <label><!-- Strategic Information --></label>
+            <section>Strategic Information</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ScoredBased Layout - Admin (CCS)</layout>
+        <sections>
+            <label><!-- Account Management &amp; Soft Skills --></label>
+            <section>Account Management &amp; Soft Skills</section>
+        </sections>
+        <sections>
+            <label><!-- Additional Comments or Observations --></label>
+            <section>Additional Comments or Observations</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues --></label>
+            <section>Call Errors &amp; Issues</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues - Admin Only --></label>
+            <section>Call Errors &amp; Issues - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Admin Only --></label>
+            <section>Call Handling - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Commnents --></label>
+            <section>Call Handling - Commnents</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Summary --></label>
+            <section>Call Quality Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Communication - Admin Only --></label>
+            <section>Communication - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Issues - Admin Only --></label>
+            <section>Issues - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Last Corrective Plan - Admin Only --></label>
+            <section>Last Corrective Plan - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction --></label>
+            <section>Opening &amp; Closing Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction - Admin Only --></label>
+            <section>Opening &amp; Closing Interaction - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction - Comments --></label>
+            <section>Opening &amp; Closing Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching - Admin Only --></label>
+            <section>UPL Coaching - Admin Only</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ScoredBased Layout - Admin (Sales)</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Communication --></label>
+            <section>Active Listening &amp; Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Active Listening &amp; Communication - 40% --></label>
+            <section>Active Listening &amp; Communication - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors --></label>
+            <section>Added Value Behaviors</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors (check all that apply) - 40% --></label>
+            <section>Added Value Behaviors (check all that apply) - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors - Comments --></label>
+            <section>Added Value Behaviors - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues (check all that apply) --></label>
+            <section>Call Errors &amp; Issues (check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling (check all that apply) - 10% --></label>
+            <section>Call Handling (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total &amp; Evaluation Summary --></label>
+            <section>Call Quality Total &amp; Evaluation Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total &amp; Evaluation Summary - Admin Only --></label>
+            <section>Call Quality Total &amp; Evaluation Summary - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Corrective Plan - Admin Only --></label>
+            <section>Corrective Plan - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction --></label>
+            <section>Fundamental Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction (check all that apply) - 10% --></label>
+            <section>Fundamental Interaction (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction - Comments --></label>
+            <section>Fundamental Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Issues - Admin Only --></label>
+            <section>Issues - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- Last Corrective Plan - Admin Only --></label>
+            <section>Last Corrective Plan - Admin Only</section>
+        </sections>
+        <sections>
+            <label><!-- OLD --></label>
+            <section>OLD</section>
+        </sections>
+        <sections>
+            <label><!-- Strategic Information --></label>
+            <section>Strategic Information</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching - Admin Only --></label>
+            <section>UPL Coaching - Admin Only</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ScoredBased Layout - CCS</layout>
+        <sections>
+            <label><!-- Account Management &amp; Soft Skills --></label>
+            <section>Account Management &amp; Soft Skills</section>
+        </sections>
+        <sections>
+            <label><!-- Additonal Comments or Observations --></label>
+            <section>Additonal Comments or Observations</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues --></label>
+            <section>Call Errors &amp; Issues</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Summary --></label>
+            <section>Call Quality Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction --></label>
+            <section>Opening &amp; Closing Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction - Comments --></label>
+            <section>Opening &amp; Closing Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ScoredBased Layout - Sales</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Communication --></label>
+            <section>Active Listening &amp; Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Active Listening &amp; Communication - 40% --></label>
+            <section>Active Listening &amp; Communication - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors --></label>
+            <section>Added Value Behaviors</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors (check all that apply) - 40% --></label>
+            <section>Added Value Behaviors (check all that apply) - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors - Comments --></label>
+            <section>Added Value Behaviors - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues (check all that apply) --></label>
+            <section>Call Errors &amp; Issues (check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling (check all that apply) - 10% --></label>
+            <section>Call Handling (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total &amp; Evaluation Summary --></label>
+            <section>Call Quality Total &amp; Evaluation Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction --></label>
+            <section>Fundamental Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction (check all that apply) - 10% --></label>
+            <section>Fundamental Interaction (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction - Comments --></label>
+            <section>Fundamental Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Strategic Information --></label>
+            <section>Strategic Information</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ScoredBased Manager Layout - CCS</layout>
+        <sections>
+            <label><!-- Account Management &amp; Soft Skills --></label>
+            <section>Account Management &amp; Soft Skills</section>
+        </sections>
+        <sections>
+            <label><!-- Active Listening &amp; Understanding --></label>
+            <section>Active Listening &amp; Understanding</section>
+        </sections>
+        <sections>
+            <label><!-- Additonal Comments or Observations --></label>
+            <section>Additonal Comments or Observations</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues --></label>
+            <section>Call Errors &amp; Issues</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Summary --></label>
+            <section>Call Quality Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction --></label>
+            <section>Opening &amp; Closing Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction - Comments --></label>
+            <section>Opening &amp; Closing Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>ScoredBased Manager Layout - Sales</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Communication --></label>
+            <section>Active Listening &amp; Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Active Listening &amp; Communication - 40% --></label>
+            <section>Active Listening &amp; Communication - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors --></label>
+            <section>Added Value Behaviors</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors (check all that apply) - 40% --></label>
+            <section>Added Value Behaviors (check all that apply) - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors - Comments --></label>
+            <section>Added Value Behaviors - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues (check all that apply) --></label>
+            <section>Call Errors &amp; Issues (check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling (check all that apply) - 10% --></label>
+            <section>Call Handling (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total &amp; Evaluation Summary --></label>
+            <section>Call Quality Total &amp; Evaluation Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction --></label>
+            <section>Fundamental Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction (check all that apply) - 10% --></label>
+            <section>Fundamental Interaction (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction - Comments --></label>
+            <section>Fundamental Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Strategic Information --></label>
+            <section>Strategic Information</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Skipped Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Standard Layout</layout>
+        <sections>
+            <label><!-- AS Retention Service --></label>
+            <section>AS Retention Service</section>
+        </sections>
+        <sections>
+            <label><!-- Coaching --></label>
+            <section>Coaching</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing Violations --></label>
+            <section>Marketing Violations</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label><!-- SBR (BIZ Inbound, Drips, Abandoners) --></label>
+            <section>SBR (BIZ Inbound, Drips, Abandoners)</section>
+        </sections>
+        <sections>
+            <label><!-- Security --></label>
+            <section>Security</section>
+        </sections>
+        <sections>
+            <label><!-- Service Quality --></label>
+            <section>Service Quality</section>
+        </sections>
+        <sections>
+            <label><!-- Summary --></label>
+            <section>Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Taxation --></label>
+            <section>Taxation</section>
+        </sections>
+        <sections>
+            <label><!-- Tone of voice --></label>
+            <section>Tone of voice</section>
+        </sections>
+        <sections>
+            <label><!-- UPL (Concerns) --></label>
+            <section>UPL (Concerns)</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Training Layout</layout>
+        <sections>
+            <label><!-- Call Errors - Mark all those that apply to this call --></label>
+            <section>Call Errors - Mark all those that apply to this call</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling  (20%) --></label>
+            <section>Call Handling  (20%)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total Score --></label>
+            <section>Call Quality Total Score</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Greeting (5%) --></label>
+            <section>Greeting (5%)</section>
+        </sections>
+        <sections>
+            <label><!-- Identify (25%) --></label>
+            <section>Identify (25%)</section>
+        </sections>
+        <sections>
+            <label><!-- Initiate (50%) --></label>
+            <section>Initiate (50%)</section>
+        </sections>
+        <sections>
+            <label><!-- Strategic Information --></label>
+            <section>Strategic Information</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Training Layout - CCS</layout>
+        <sections>
+            <label><!-- Account Management &amp; Soft Skills --></label>
+            <section>Account Management &amp; Soft Skills</section>
+        </sections>
+        <sections>
+            <label><!-- Additonal Comments or Observations --></label>
+            <section>Additonal Comments or Observations</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues --></label>
+            <section>Call Errors &amp; Issues</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Summary --></label>
+            <section>Call Quality Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Communication --></label>
+            <section>Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Grand Total --></label>
+            <section>Grand Total</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction --></label>
+            <section>Opening &amp; Closing Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction (Check all that apply) --></label>
+            <section>Opening &amp; Closing Interaction (Check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Opening &amp; Closing Interaction - Comments --></label>
+            <section>Opening &amp; Closing Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Training Layout - Sales</layout>
+        <sections>
+            <label><!-- Active Listening &amp; Communication --></label>
+            <section>Active Listening &amp; Communication</section>
+        </sections>
+        <sections>
+            <label><!-- Active Listening &amp; Communication - 40% --></label>
+            <section>Active Listening &amp; Communication - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors --></label>
+            <section>Added Value Behaviors</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors (check all that apply) - 40% --></label>
+            <section>Added Value Behaviors (check all that apply) - 40%</section>
+        </sections>
+        <sections>
+            <label><!-- Added Value Behaviors - Comments --></label>
+            <section>Added Value Behaviors - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Errors &amp; Issues (check all that apply) --></label>
+            <section>Call Errors &amp; Issues (check all that apply)</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling --></label>
+            <section>Call Handling</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling (check all that apply) - 10% --></label>
+            <section>Call Handling (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Call Handling - Comments --></label>
+            <section>Call Handling - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Call Quality Total &amp; Evaluation Summary --></label>
+            <section>Call Quality Total &amp; Evaluation Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction --></label>
+            <section>Fundamental Interaction</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction (check all that apply) - 10% --></label>
+            <section>Fundamental Interaction (check all that apply) - 10%</section>
+        </sections>
+        <sections>
+            <label><!-- Fundamental Interaction - Comments --></label>
+            <section>Fundamental Interaction - Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Strategic Information --></label>
+            <section>Strategic Information</section>
+        </sections>
+        <sections>
+            <label><!-- UPL Coaching --></label>
+            <section>UPL Coaching</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- CCS ScoredBased --></label>
+        <name>CCS_ScoredBased</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CCS Training --></label>
+        <name>CCS_Training</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- ScoredBased --></label>
+        <name>ScoredBased</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Skip --></label>
+        <name>Skip</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Training --></label>
+        <name>Training</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Notes on violations are required when there is at least one violation for this category. --></errorMessage>
+        <name>AS_Retention_Violation_Notes_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes on violations are required when there is at least one violation for this category. --></errorMessage>
+        <name>Marketing_Violation_Notes_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must indicate which &quot;Other&quot; service was discussed in the &quot;Services Discussed (Other)&quot; field. --></errorMessage>
+        <name>Other_Service_Note_Missing</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select &quot;Other&quot; from What Services Were Discussed to fill in this field. (Multiple services may be selected as well as &quot;Other&quot;) --></errorMessage>
+        <name>Other_Services_Discussed_Not_Checked</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Answers related to score cannot be changed after submitting. --></errorMessage>
+        <name>Prevent_Changing_Answers</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes on violations are required when there is at least one violation for this category. --></errorMessage>
+        <name>Product_Information_Violation_Notes_Reqd</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes on violations are required when there is at least one violation for this category. --></errorMessage>
+        <name>SBR_Violation_Notes_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter the Security Question(s) asked. --></errorMessage>
+        <name>Security_Question_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes on violations are required when there is at least one violation for this category. --></errorMessage>
+        <name>Service_Quality_Violation_Notes_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes on violations are required when there is at least one violation for this category. --></errorMessage>
+        <name>Taxation_Violates_Notes_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes on violations are required when there is at least one violation for this category. --></errorMessage>
+        <name>Tone_of_Voice_Violation_Notes_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Notes on violations are required when there is at least one violation for this category. --></errorMessage>
+        <name>UPL_Violation_Notes_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Accept_Coaching_Rejection --></label>
+        <name>Accept_Coaching_Rejection</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Change_Call_ID --></label>
+        <name>Change_Call_ID</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Compliance_Review --></label>
+        <name>New_Compliance_Review</name>
+    </webLinks>
+</CustomObjectTranslation>

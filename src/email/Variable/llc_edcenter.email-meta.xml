@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.llc_edcenter</name>
+    <style>none</style>
+    <subject>llc_edcenter</subject>
+    <textOnly>http://www.legalzoom.com/business-formations/limited-liability-company/llc-guide/limited-liability-company.html</textOnly>
+    <type>custom</type>
+</EmailTemplate>

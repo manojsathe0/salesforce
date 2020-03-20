@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tx509</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TX 509 Form</name>
+    <style>none</style>
+    <subject>Texas 509 Form</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry. In a recent phone call you indicated your desire to resolve the conflict with the proposed name of your new business by filing Texas Secretary of State Form 509 entitled “Consent to Use of Similar Name”. To do so,, you will need to obtain a consent from:
+
+[Company name]
+
+This company’s listed contact info is:
+
+[RA address]
+
+When requesting consent to use your entity name, a few key steps are needed:
+•	Complete the 509 Form as follows:
+o	Item 1: Enter the name of the entity or individual who holds the existing name.
+o	Item 2: Enter the proposed name.
+•	Execution: Form 509 must be signed in the presence of a notary public.  The form must be signed by the person who holds the rights to the existing name, or someone authorized to act on the individual’s behalf.  If the existing name is held by an entity, an individual who is authorized to act on behalf of the entity must sign the form. Please see attached sample.
+Once the consent is obtained, return the form to us via email, via fax, or by mail:
+•	Email: bzsupport@legalzoom.com and include the order number in subject line.
+•	Fax: (323) 337-0743, Attn: Order # xxxxxxxx.
+•	Mail: LegalZoom.com
+Order #: xxxxxxxx
+9900 Spectrum Dr.
+Austin, TX 78717
+If you are unable to obtain consent or decide to try an alternate name instead, simply let us know.
+
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}&lt;br/&gt;{!snippetVariable.ccphone} | {!snippetVariable.lz_address}&lt;br/&gt;{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

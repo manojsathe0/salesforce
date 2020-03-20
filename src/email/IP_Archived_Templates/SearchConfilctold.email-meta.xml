@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>search-old</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Search Confilct - old</name>
+    <style>none</style>
+    <subject>Search Confilct - old</subject>
+    <textOnly>Dear {!Contact.FirstName},
+ 
+Thank you for using LegalZoom.
+ 
+We have conducted a preliminary search of the Federal Trademark Register and have found the attached trademark(s). Please review the file for potential conflicts. Note: Some trademarks may be in &quot;pending&quot; status, and have yet to be examined or approved by the USPTO.
+ 
+Is there a conflict?  
+ 
+When we find similar marks, our purpose is to help you make an informed decision.  You must make your own decision on whether or not there is an actual conflict. In general, the Trademark Office will reject an application only if there is a &quot;likelihood of consumer confusion&quot; within the same or related class of goods or services. Some factors may include:
+ 
+? The similarity of the marks in appearance, sound and meaning.
+? The relatedness of the goods or service.
+? The number of similar marks currently in use.
+? The similarity of established sales channels and the sophistication of the buyers.
+ 
+For more information regarding likelihood of confusion:
+{!snippetVariable.tm_search_conflict_link}
+ 
+Next Steps:
+ 
+Please reply to this e-mail and let me know how you would like to proceed:
+ 
+? You have decided that there is no conflict and wish to continue with the application
+? You would like to submit a new name or logo and receive a FREE updated direct-hit search (additional charges will be incurred after 3 names)
+? You are unable to decide and want to put your application on hold until you consult with an attorney: http://attorneyconnect.legalzoom.com/ 
+? You choose to cancel and a search fee will be retained by LegalZoom. Please note that our policy allows you 60 days from the time of purchase to request a refund for an unfiled application. 
+ 
+*** If you would like us to delay the processing of your Trademark Application, please contact us within 15 days of this email.***
+ 
+Please note that the federal trademark filing fee is non-refundable once your application has been submitted.  In addition, our preliminary search does not include state trademarks, corporate names or other common law sources. Please call us if you are interested in upgrading to one of our comprehensive search packages. 
+ 
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

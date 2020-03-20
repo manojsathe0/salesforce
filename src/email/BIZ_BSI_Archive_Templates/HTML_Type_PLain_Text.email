@@ -1,0 +1,18 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><FONT face=Calibri>Dear {!Contact.FirstName},<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></FONT></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><o:p><FONT face=Calibri>&nbsp;</FONT></o:p></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><FONT face=Calibri>Thank you for your inquiry.<o:p></o:p></FONT></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><o:p><FONT face=Calibri>&nbsp;</FONT></o:p></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><FONT face=Calibri>Due to budget cuts within the State of California, the processing times for your order may be delayed anywhere from 15-20 working days.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>This is a state delay, however, we are continually following up with the Secretary of State to ensure your documents are being processed as quickly as possible.<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>We will keep you informed if there are any further updates to your order.<o:p></o:p></FONT></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><o:p><FONT face=Calibri>&nbsp;</FONT></o:p></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><FONT face=Calibri>{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>{!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<o:p></o:p></FONT></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><o:p><FONT face=Calibri>&nbsp;</FONT></o:p></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><FONT face=Calibri>{!snippetVariable.ccsincerely}&lt;br/&gt;&lt;br/&gt;<o:p></o:p></FONT></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><o:p><FONT face=Calibri>&nbsp;</FONT></o:p></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><FONT face=Calibri>{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<o:p></o:p></FONT></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><FONT face=Calibri>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<o:p></o:p></FONT></P>
+<P style="TEXT-ALIGN: left; MARGIN: 0in 0in 0pt" class=MsoNormal align=left><FONT face=Calibri>{!snippetVariable.lz_website}<o:p></o:p></FONT></P>]]></td>
+</tr>
+</table>

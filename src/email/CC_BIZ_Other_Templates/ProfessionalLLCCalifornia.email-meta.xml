@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>caprollc</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Professional LLC - California</name>
+    <style>none</style>
+    <subject>Professional LLC - California</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+ 
+In the process of preparing your documents for filing, the specialist in charge of your order found a need to clarify some of your order information.  It appears as though due to the nature of your business activity, the State of California may require your company to be filed as a &quot;Professional&quot; entity (for example, &quot;ABC Services, Professional Corporation&quot; or &quot;ABC Services, PC&quot;). This is usually the case if the profession or activity of the business is licensed or regulated by a licensing board. 
+
+In the unique case of California, there are unfortunately special regulations that do not allow the formation of LLCs for licensed professions. What this means is that if your business is providing a licensed service, it cannot be fromed as an LLC. 
+
+In order to move forward with the filing, we need to confirm if this type of filing is needed. If this business is not being formed to provide a licensed service, please let us know so we can proceed. If you are providing a licensed service, we will likely need to close out this specific LLC order, and re-start with a Professional Corporation filing (or other business entity). 
+
+We apologize for the inconvenience, however we want to make sure that your documents are not only filed quickly, but accurately as well. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

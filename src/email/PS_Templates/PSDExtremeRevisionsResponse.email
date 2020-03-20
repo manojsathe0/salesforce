@@ -1,0 +1,68 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+Dear {!Contact.FirstName},<br/><br/>Thank you for your recent inquiry.<br/><br/>Unfortunately, LegalZoom.com does not provide revisions that require alteration of our document templates. Therefore, attached please find an electronic copy of your document. You are free to make alterations at your discretion or with the assistance of an attorney. Please note, however, the impact of any such revision on the document is your sole responsibility. <br/><br/>
+LegalZoom is not a law firm and is not a substitute for an attorney or law firm.  LegalZoom provides self-help services and cannot advise customers regarding the incorporation of changes that modify the legal language to fit their specific circumstances. Should LegalZoom customers require assistance with specific provisions that are not contained in our documents, we recommend speaking to a qualified attorney. To locate an attorney, please visit <a href=http://attorneyconnect.legalzoom.com/>here</a> for assistance.<br/><br/>
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT. <br/><br/>
+Best regards, <br/><br/>
+
+The LegalZoom Team <br/><br/>
+
+tel 877.818.8787 | fax 323.389.0658 <br/>
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717<br/></p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

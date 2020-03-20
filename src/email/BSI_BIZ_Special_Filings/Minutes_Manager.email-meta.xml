@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Minutes Manager</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Minutes Manager</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+
+Thank you for contacting us for your business needs. In response to your inquiry, I&apos;d like to let you know how we can help your company document its meetings and actions, which is vital to help protect its owners from being personally responsible for the company&apos;s debts and liabilities.
+
+
+With LegalZoom Minutes Manager, we make it easy to create records for your company&apos;s meetings and actions. Use it as often as you wish throughout the year for a one-time fee. Just sign up by answering a few simple questions and you can download your minutes today.
+
+
+Sign up today at http://www.legalzoom.com/additional-business-services/corporate-minutes.html It&apos;s just $99/year.
+
+
+If you have any additional questions, give me a call at the phone number below and I&apos;ll be happy to help.
+
+
+Best regards,
+
+
+
+{!User.FirstName}
+
+(800) 773-0888 x{!User.Extension}
+
+www.legalzoom.com
+
+
+
+
+Privacy Policy
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+
+Please add services@emails.legalzoom.com to your address book.
+
+
+This email was sent to: {!Contact.Email}
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

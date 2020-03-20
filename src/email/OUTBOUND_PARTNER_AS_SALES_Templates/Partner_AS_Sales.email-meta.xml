@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>partneras</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Partner AS Sales-General</name>
+    <style>none</style>
+    <subject>Protect your business and family by getting easy and affordable access to an attorney</subject>
+    <textOnly>Hello {!Contact.FirstName}, 
+ 
+My name is {!User.FirstName} with LegalZoom and I am contacting you on behalf of our Strategic Business Partners, (PARTNER).
+
+LegalZoom is your premier online legal resource and I am reaching out to you today to make sure that you and your business are well protected – In fact, thousands of our business owners have benefited from our legal plan.  
+ 
+Here’s a quick run-down of our service:
+
+For a low annual or monthly fee (as low as $23.99/month), you can set up your attorney consultation on a range of business, intellectual property and personal matters.  Please keep in mind each legal matter must be unique with the typical attorney consultation lasting 30 minutes.  
+ 
+Benefits include:
+
+•  Attorney advice and consultations. Speak with an experienced attorney on an unlimited number of new legal matters
+• Tax professional advice and consultations. Speak with an experienced tax professional on an unlimited number of new tax issues
+•  Attorney drafted letters. Your attorney can draft legal letters on your behalf 
+•  Unlimited access to LegalZoom legal forms. Download hundreds of blank legal forms for business or personal use
+•  1 Free copyright per month, all you pay is the Federal filing fee
+•  Access to CreditAlert Plus from Dun &amp; Bradstreet Credibility Corp.  Establish &amp; monitor your Business Credit Profile.
+•  25% savings on additional attorney services. Get significant savings on additional attorney work if you need it
+• 20% savings on additional tax services. 
+• 10% savings on any LegalZoom legal documents. Get any LegalZoom business or personal documents at a discount 
+
+*Excludes Patent-related matters, violent crimes.
+
+Please call me directly and I will be happy to discuss this service in more detail.  Thank you for choosing LegalZoom and have a great day.
+
+I look forward to speaking with you,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title}
+{!User.CompanyName} 
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

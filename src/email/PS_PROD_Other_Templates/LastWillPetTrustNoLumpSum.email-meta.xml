@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LWTPetrust</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Last Will (Pet Trust) - No Lump Sum</name>
+    <style>none</style>
+    <subject>Last Will (Pet Trust) - No Lump Sum</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+We are writing to notify you that your recent order for a Last Will and Testament is on hold. As soon as you contact us to clarify the following problem, we can complete your order.
+
+In the Pet Trust Clause, any money you leave for the care of your pet(s) must be expressed as a specific lump sum.  In your current document, a specific lump sum is not provided.
+
+Examples of pet trust provisions which are beyond the scope of our document and therefore cannot be accommodated include:
+
+1. $100.00 per month or per year
+2. 10% of my Estate
+3. An amount to be decided on later by a third party
+
+To correct this problem, please contact me or log back into www.legalzoom.com with your username and password and reopen order #XXXXXXXX to name one lump sum for your Pet Trust Clause.
+
+If you have any additional questions, simply reply to this email or call us toll-free at 1-888-821-7574.  We appreciate your business and look forward to serving your future legal document needs.
+
+Best regards, 
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

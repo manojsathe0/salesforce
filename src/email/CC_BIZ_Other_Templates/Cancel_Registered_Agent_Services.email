@@ -1,0 +1,75 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>
+
+We have received your request to cancel your Registered Agent Services with LegalZoom.  It is required that your Business Entity maintain a Registered Agent with a corresponding in-state, physical address.  In order for us to complete your request, you will need to complete the following steps: <ul><li>Elect a new Registered Agent and file the necessary paperwork with the State office.<br/><li>Send  a copy of the recorded Change of Registered Agent filing to LegalZoom (support@legalzoom.com)<br/><li>Contact us directly at {!snippetVariable.ccphone}</ul>
+
+Once we receive the copy of change has been made, please contact us directly and we will be happy to complete your cancellation request.<br/><br/>
+
+Please feel free to contact our Registered Agent Team at (888) 381-8758 Monday – Friday 6am-7pm PT, or Saturday 10am-2pm PT.  You could also simply reply to this email with any further questions or concerns.<br/><br/>
+
+Thank you again for choosing LegalZoom and we look forward to hearing from you soon.<br/><br/>
+
+Best Regards,<br/><br/>
+
+The LegalZoom Team</div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter">
+<div style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#666666; margin-right:80px; margin-bottom:0px;"><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table></p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

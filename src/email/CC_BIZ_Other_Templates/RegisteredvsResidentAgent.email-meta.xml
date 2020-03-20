@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>raresident</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Registered vs. Resident Agent</name>
+    <style>none</style>
+    <subject>Registered vs. Resident Agent</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+An agent for service of process, also known as the Registered Agent, is the person or company designated to accept, on behalf of the corporation, service of process, such as when the corporation is &quot;served&quot; with a lawsuit. In a lawsuit, the defendant must be &quot;served&quot; with the court papers, which gives the defendant notice, before the lawsuit can have legal effect. Once the court papers have been delivered to the Registered Agent, the corporation is deemed to be on notice.   
+
+This is not the same service as a Resident Agent, which can provide you a business address to use in all situations and may offer all types of mail forwarding and call forwarding. LegalZoom.com does not offer Resident Agent service.  
+
+If you would like to utilize our Registered Agent service, please contact our Ordering and Information department at $biz_phone for more information. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

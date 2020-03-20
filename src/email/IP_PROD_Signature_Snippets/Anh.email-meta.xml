@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip1118</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Anh</name>
+    <style>none</style>
+    <textOnly>Anh T.
+Director, Intellectual Property Division
+www.LegalZoom.com
+323-337-0118 (direct line)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

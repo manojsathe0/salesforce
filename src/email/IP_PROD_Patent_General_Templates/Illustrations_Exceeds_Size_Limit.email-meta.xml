@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>pat2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Illustrations Exceeds Size Limit</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order #</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+We have received your drawings for your {Insert Type of Order} application. Unfortunately, the largest image size we can accept is 11 in. x 17 in., and your submission exceeds these dimensions. 
+
+Please resend your drawings in a size not exceeding the above by attaching them to your reply email (preferably in .gif, .pdf, .jpeg or .jpg format). If your document(s) file size is over 8MB, it is best that you upload your materials directly by uploading it here: http://legalzoom2.custhelp.com/cgi-bin/legalzoom2.cfg/php/enduser/ask.php. Make sure to include your LegalZoom number for reference.
+
+Otherwise, you can send it by mail it to:
+
+LegalZoom Attn: Patents
+101 N. Brand Blvd., 11th Floor
+Glendale, CA 91203
+Re: Order Number: |#|
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. Submitted physical materials are securely destroyed.  
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

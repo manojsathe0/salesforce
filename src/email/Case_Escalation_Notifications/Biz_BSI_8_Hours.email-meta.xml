@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for escalation of Biz cases unhandled for 8 hours</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Biz BSI - 8 Hours</name>
+    <style>none</style>
+    <subject>BIZ BSI Incident - at least  8hrs Old - Handle ASAP!</subject>
+    <type>text</type>
+</EmailTemplate>

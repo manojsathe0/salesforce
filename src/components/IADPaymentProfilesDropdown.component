@@ -1,0 +1,131 @@
+<apex:component controller="IADPaymentProfilesComponentController" allowDml="true">
+
+  <head>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+    <apex:includeScript value="{!URLFOR($Resource.IADJS)}"/>
+    <script type="text/javascript">
+     $ = jQuery.noConflict();
+     var selectedProfile;
+      var openAddNewPaymentPage = function openAddNewPaymentPage(result) {
+          console.log('orderid {!orderId}');
+          var url = '/apex/IADAddNewPayment?isdtp=vw&orderid={!orderId}&prevPage={!invokingPageType}&customerid={!userId}&invokingpageid={!invokingPageId}';
+          console.log('url ' +  url );
+          sforce.console.openSubtab(result.id, url, true, 'Add New Payment');
+        };
+
+      function checkForNewPayment(theId){
+        console.log('data ' + theId);
+        selectedProfile = theId;
+        if(theId.includes('sc')){
+           $("#editProfileLink").css('visibility', 'hidden');
+        }
+        else if (theId == '{!newPayment}') {
+          sforce.console.getEnclosingPrimaryTabId(openAddNewPaymentPage);
+          $("#editProfileLink").css('visibility', 'hidden');
+        }
+        else if(theId == 'none'){
+          $("#editProfileLink").css('visibility', 'hidden');
+        }
+        else if(theId == '{!refundToStoreCredit}'){
+            $("#editProfileLink").css('visibility', 'hidden');
+        }
+        else{
+           $("#editProfileLink").css('visibility', 'visible');
+        }
+        setProfileId(theId);
+      }
+      function openEditPayment(){
+          selectedProfile = $( 'input[id*="theSelectedPayment"]' ).val().replace('pp', '');
+          console.log('profileid ' + selectedProfile);
+          sforce.console.getEnclosingPrimaryTabId(openEditPaymentPage);
+      }
+      var openEditPaymentPage = function openEditPaymentPage(result) {
+          console.log('orderid {!orderId}');
+          var url = '/apex/IADEditPaymentPage?isdtp=vw&orderid={!orderId}&prevPage={!invokingPageType}&id='+selectedProfile;
+          console.log('url ' +  url );
+          sforce.console.openSubtab(result.id, url, true, 'Edit Payment Profile');
+      };
+      function initSelectedPayment(){
+          selectedProfile = $( 'input[id*="theSelectedPayment"]' ).val();
+          console.log('the val ' + selectedProfile);
+          console.log('current val ' + $( 'select[name*="profileOptions"]' ).val());
+          $( 'select[name*="profileOptions"]' ).val(selectedProfile);
+          /*console.log('selectedProfile ' + selectedProfile);
+          console.log('selected ' + $( 'select[name*="profileOptions"]' ).val());
+          console.log('selected ' + $( "select[id*='profileOptions'] option:selected" ).val());
+          */
+
+          if('{!invokingPageType}' == 'MakePayment'){
+              console.log('invoked by ' + '{!invokingPageType}');
+              populateStoreCredits();
+          }
+          else{
+              checkForNewPayment(selectedProfile);
+              darkenJS();
+          }
+      }
+      var profileListener = function(result) {
+         console.log('called the RefreshPaymentProfileDropdown');
+         populateProfiles();
+      };
+      var refreshPageListener = function(result) {
+         console.log('called refresh page');
+         location.reload();
+      };
+      function darkenJS(){
+           jsUtility.makeDarkBorder();
+      }
+      sforce.console.addEventListener('RefreshPaymentProfileDropdown', profileListener);
+      
+      sforce.console.addEventListener('RefreshPaymentProfilePage', refreshPageListener);
+    </script>
+  </head>
+
+    
+    <apex:actionFunction name="populateProfiles" action="{!populateProfiles}" rerender="profilesBlock" status="statusUpdating" onComplete="initSelectedPayment(); return false;"/>
+
+    <apex:actionFunction name="populateStoreCredits" action="{!populateStoreCredits}" rerender="profilesBlock" status="statusUpdating" oncomplete="darkenJS(); return false" />
+
+    <apex:actionFunction name="setSelectedProfileId" action="{!setSelectedProfileId}" rerender="profilesBlock" status="statusUpdating" oncomplete="darkenJS(); return false">
+        <apex:param assignTo="{!selectedPayment}" name="currentPaymentProfileId" value="" />
+    </apex:actionFunction>
+
+    <apex:attribute assignTo="{!orderId}" name="theOrderId" description="to hold the order id" type="String" />
+    <apex:attribute assignTo="{!userId}" name="theUserId" description="To hold the user Id for the parent Page" type="String" />
+    <apex:attribute assignTo="{!currentPaymentProfileId}" name="theCurrentProfileId" description="Current Profile Id" type="String" />
+    <apex:attribute assignTo="{!invokingPageType}" name="theInvokingPageType" description="page which invokes this component" type="String" />
+    <apex:attribute assignTo="{!invokingPageId}" name="theInvokingPageId" description="page which invokes this component's id" type="String" />
+
+
+    <apex:outputPanel id="profilesBlock">
+
+        <c:IADMessageBox theMessages="{!dataservice.iadMessages}" rendered="{!dataservice.iadMessages.size>0}" />
+
+        <apex:outputPanel id="hiddenInputs">
+            <input id="payment" type="hidden" value="{!currentPaymentProfileLabel}" />
+        </apex:outputPanel>
+
+        <div class="slds-grid slds-grid--vertical-align-center">
+            <div class="slds-col">
+                <div class="slds-text-align--center">
+                    <div class="slds-select_container">
+                        <input type="hidden" value="{!selectedPayment}" id="theSelectedPayment"/>
+                        <apex:selectList id="profileOptions" value="{!selectedPayment}" size="1" styleClass="slds-select" title="Method of Payment"
+                                         onblur="document.getElementById('theSelectedPayment').value = this.value;"
+                                         onchange="checkForNewPayment(this.options[this.selectedIndex].value); return false;">
+                            <apex:actionSupport event="onchange" reRender="hiddenInputs"/>
+                            <apex:selectOptions value="{!paymentOptions}" />
+                        </apex:selectList>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col">
+                <div class="slds-text-align--center">
+                    <a id="editProfileLink" href="#" onclick="openEditPayment(); return false;" >Edit</a>
+                </div>
+            </div>
+        </div>
+    </apex:outputPanel>
+ 
+
+</apex:component>

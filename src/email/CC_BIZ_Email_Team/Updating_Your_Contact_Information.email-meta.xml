@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>UPDATECONTACT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Updating Your Contact Information</name>
+    <style>none</style>
+    <subject>Updating Your Contact Information</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom. We are unable to assist with your request to update your contact information on your LegalZoom account. If you would like to make changes to your contact information, simply sign in to your account and click on the Account tab. You can edit your personal information and add authorized contacts.  You can sign in here: https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess
+
+If you prefer to call us to make changes, we can be reached at the number below.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 5 a.m.–8 p.m. PT and weekends from 7 a.m.–4 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+
+{!snippetVariable.ccsincerely}
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

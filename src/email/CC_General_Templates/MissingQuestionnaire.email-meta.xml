@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>missingq</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Missing Questionnaire</name>
+    <style>none</style>
+    <subject>Missing Questionnaire</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+Thank you for using LegalZoom.com. Your detailed questionnaire was emailed to you on [Date Sent]. To this date, we have not received it back from you nor did we receive any emails indicating that your email address was not valid.
+
+As soon as we receive your completed questionnaire, we will be able to start processing your documentation. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

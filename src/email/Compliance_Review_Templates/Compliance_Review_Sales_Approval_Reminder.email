@@ -1,0 +1,5 @@
+<h2 style="color:red;">3-day Reminder</h2><br/>
+This is a reminder that a call by one of your reps ({!Compliance_Review__c.Rep_Alias__c}) has an outstanding violation awaiting your approval.<br/>
+<br/>
+Please follow the link below to Approve or Reject the violation:<br/>
+<a href="{!Compliance_Review__c.Link}">{!Compliance_Review__c.Name}</a><br/>

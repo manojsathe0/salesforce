@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_64534424</developerName>
+        <masterLabel>Drip Leads</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Lead.Sales_opportunity_latest_campaign__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Abandoner/Drips</sourceValue>
+            </sourceValues>
+            <value>Claimed Drip Lead</value>
+        </values>
+        <values>
+            <value>Not Claimed</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Lead.Lead_Call_Status__c</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Lead.Lead_Count__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>CONVERTED</field>
+    </columns>
+    <description>Drip Conversion Rate per rep MTD for Team Aimen</description>
+    <filter>
+        <criteriaItems>
+            <column>CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LZPKB Site Guest User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LEAD_OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Aaron Mozingo,Alma Henriquez,Amanda Owens,Andrew Caltagirone,Elaine Correa,Ivor Carcamo,James Brookes,Jesus Zapata Luna,Katrina Godinez,Kenneth Picou,Kenny Browder,Latania Akui,Levi Vaupel,Lisa Bailey,Manuel Gutierrez,Mariah Ramirez,Miranda Jacobs,Roderick Allen,Tabitha Venable,Tommy Wilson,Wyatt Young</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_64534424</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Abandoner/Drip</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Team Aimen Drip Conversion Rate MTD</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityLead</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead.Date_Time_Assigned__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>RArenew12</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RA Renew &amp; Biz Summary Services</name>
+    <style>none</style>
+    <subject>RA Renew &amp; Biz Summary Services</subject>
+    <textOnly>&lt;as-html&gt;
+
+&lt;p&gt;Dear LegalZoom Customer,&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Thank you for choosing LegalZoom for your business filing needs.  &lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Per our discussion today, I have provided a summary of our service(s) below for your review.  Please feel free to reach me at anytime for further assistance or to place an order.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;&lt;font color= ?#F80000?&gt;*REGISTERED AGENT SERVICE RENEWAL:&lt;/font&gt;&lt;/b&gt;&lt;br&gt;
+As discussed, this is a friendly reminder to let you know that your Registered Agent service is currently past due for renewal.  It is important to renew your Registered Agent service to keep in good legal standing with your secretary of state, protect your privacy and receive reliable forwarding service.
+&lt;p&gt;&lt;/p&gt;
+1 year subscription | $159.00  &lt;br&gt;
+2 year subscription | $288.00 (Save $30.00)&lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;TO RENEW ONLINE:&lt;/b&gt;&lt;br&gt;
+&lt;a href=&quot;http://www.legalzoom.com/rarenewals/&quot;&gt;http://www.legalzoom.com/rarenewals/&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+ 
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;&lt;font color= ?#F80000?&gt;*ANNUAL REPORTS: &lt;/font&gt;&lt;/b&gt;&lt;br&gt;
+After forming a Corporation/LLC, it is important to protect its good standing by filing any mandatory reports with the state.  Not all states require a report when you first set up your company, but most require either an annual or biannual report for as long as your company exists. &lt;br&gt;
+ &lt;p&gt;&lt;/p&gt;
+
+Standard Package | $35.00 + state filing fees | 20-35 Business Days&lt;br&gt;
+Rush Package | $55.00 + state filing fees + expedite fees | 7-10 Business Days&lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;&lt;font color= ?#F80000?&gt;*ARTICLES OF AMENDMENT: &lt;/font&gt;&lt;/b&gt;&lt;br&gt;
+Any time you want to update the &quot;articles&quot; of your Corporation/LLC-such as changing your company name, changing your contact information, or adding new shareholders or members-you will have to file what&apos;s known as &quot;Articles of Amendment&quot; with the appropriate state agency. &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+Standard Incorporation Package | $129.00 + state filing fees + shipping | 20-35 business days&lt;br&gt;
+Rush Incorporation Package | $239.00 + state filing fees + Expedite Fees| 10-13 business days &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;TO GET STARTED: &lt;/b&gt;&lt;br&gt;
+&lt;a href=&quot;https://www.legalzoom.com/questionnaire/pre_process1.asp?iPID=25
+&quot;&gt;https://www.legalzoom.com/questionnaire/pre_process1.asp?iPID=25&lt;/a&gt;&lt;br&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;&lt;font color= ?#F80000?&gt;*DISSOLUTION: &lt;/font&gt;&lt;/b&gt;&lt;br&gt;
+To dissolve your Corporation/LLC, you will have to file what&apos;s known as the &quot;Articles of Dissolution.&quot; LegalZoom will prepare and file the necessary documents the appropriate state agency.  This will relieve you from having to renew your Registered Agent Service with LegalZoom and also any ongoing taxes and fees required at state and federal level. &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+Standard Package | $129.00 + state filing fees + shipping | 20-35 Business Days&lt;br&gt;
+Rush Package | $239.00 + state filing fees + Expedite Fees| 7-10 Business Days   &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;TO GET STARTED: &lt;/b&gt;&lt;BR&gt;
+&lt;a href=&quot;http://www.legalzoom.com/questionnaire/pre_process1.asp?iPID=26
+&quot;&gt;http://www.legalzoom.com/questionnaire/pre_process1.asp?iPID=26 &lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;&lt;font color= ?#F80000?&gt;*CORPORATION REINSTATEMENT: &lt;/font&gt;&lt;/b&gt;&lt;br&gt;
+LegalZoom can assist in reinstating your Corporation/LLC that is currently cancelled or revoked by the state.  However, please keep in mind that you may first need to take care of any unpaid annual fees or taxes that your Corporation/LLC may have been responsible for from the date of formation to now.  For your reference, I have provided the fees to our Reinstatement service below: &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+Standard Package: $229.00 + state fee (20 - 35 business days) &lt;br&gt;
+Rush Package: $339.00 + state fee (7 - 10 business days) &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;&lt;font color= ?#F80000?&gt;*MINUTES MANAGER: &lt;/font&gt;&lt;/b&gt;&lt;br&gt;
+Keeping timely company records is necessary to safeguard your corporate standing. In fact, failing to stay on top of this vital requirement could cost your company its liability protection, tax advantages and other corporate advantages.  Minutes Manager makes it easy to create up-to-date corporate records for key company activities including: &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+* Annual director and shareholder meetings &lt;br&gt;
+* New company bank accounts &lt;br&gt;
+* Employee compensation increases&lt;br&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+Standard Package | $99.00 | Unlimited Usage &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;Our 3 Step Process: &lt;/b&gt;&lt;br&gt;
+1. Purchase your one-year subscription to produce unlimited Corporate Minutes. &lt;br&gt;
+2. Create your Corporate Minutes by completing a simple online questionnaire. &lt;br&gt;
+3. Receive your custom Corporate Minutes by email in 24 hours. &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;b&gt;TO GET STARTED: &lt;/b&gt;&lt;br&gt;
+&lt;a href=&quot;http://www.legalzoom.com/Questionnaire/pre_process1.asp?iPID=42
+&quot;&gt;http://www.legalzoom.com/Questionnaire/pre_process1.asp?iPID=42&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+For further assistance, please feel free to contact me. &lt;br&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Best regards, &lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

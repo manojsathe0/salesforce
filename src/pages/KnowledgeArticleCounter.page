@@ -1,0 +1,36 @@
+<apex:page controller="KnowledgeArticleCounterController">
+    <apex:includeScript value="/support/console/32.0/integration.js"/>
+    <script type="text/javascript">
+        var secondEventArticleId = '';
+        var firstEventArticleId = '';
+        var listener = function (result) {
+            
+           
+            if(result.objectId != null && result.objectId != '' && result.objectId.lastIndexOf('kA', 0 ) === 0)
+            {
+                firstEventArticleId = result.objectId;
+                           
+                if(firstEventArticleId == secondEventArticleId)
+                {
+                    firstEventArticleId = '';
+                    secondEventArticleId = '';
+                    return;
+                }
+                else
+                {
+                    secondEventArticleId = result.objectId;
+                    updateKnowledgeAticleViews(secondEventArticleId);
+                }
+            }
+          };
+        //Add a listener for the 'SampleEvent' event type
+        sforce.console.addEventListener(sforce.console.ConsoleEvent.OPEN_TAB , listener);
+    </script>
+    <apex:form >
+        <apex:outputPanel id="dummyPanel"></apex:outputPanel>
+        <apex:actionFunction name="updateKnowledgeAticleViews" action="{!updateKnowledgeAticleViews}" rerender="dummyPanel">
+            <apex:param name="KnowledgeArticleId" assignTo="{!KnowledgeArticleId}" value="" />
+        </apex:actionFunction>
+     </apex:form>
+
+</apex:page>

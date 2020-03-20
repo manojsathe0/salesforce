@@ -1,0 +1,74 @@
+<!--  
+
+Lead IAD Display application.
+Created by Artyom M.
+Per Story: B-25001
+
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="leadRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+
+    <force:recordData aura:id="recordLoader"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      targetRecord="{!v.record}"
+      targetFields="{!v.leadRecord}"
+      targetError="{!v.recordError}"
+      />
+
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="slds-card" style="width:30%">        
+        <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-align-middle slds-m-top--medium" style="margin-left:2px;">
+        
+            <p class="slds-text-body_small slds-m-bottom--medium">
+	            <span>
+	                <lightning:icon iconName="standard:lead" size="x-small" alternativeText="Lead"/>
+	                
+	 			</span>
+	 			<a onclick = "openPrimaryContact();return false;" style ="cursor:pointer;text-decoration:none;" title = "Click to load the Lead page">&nbsp;{!v.leadRecord.Name}</a> &nbsp;&nbsp; 
+            </p>            
+            <p class="slds-text-body--small slds-m-bottom--xx-small">
+                <span>
+                    <lightning:icon iconName="standard:call" size="x-small" alternativeText="Call"/>
+                    <span class="slds-assistive-text">Call Icon</span>
+                </span>
+                &nbsp;{!v.leadRecord.Phone}
+                <!-- <support:clickToDial number="{!contacts[0].HomePhone}" entityId="{!contacts[0].Id}" params="" /> -->
+            </p>
+            
+            <p class="slds-text-body--small slds-m-bottom--xx-small">
+                <span>
+                    <lightning:icon iconName="standard:email" size="x-small" alternativeText="Email"/>
+                    <span class="slds-assistive-text">Email Icon</span>
+                </span> 
+                <span>&nbsp;{!v.leadRecord.Email} </span>
+            </p>
+            
+
+        </div>
+        <div class="slds-col slds-align-middle slds-m-top--medium" style="margin-left:2px;">
+        
+            <p class="slds-text-body_small slds-m-bottom--medium">
+            &nbsp;
+                 
+            </p>            
+            <p class="slds-text-body--small slds-m-bottom--xx-small">
+                <span>
+                    Product: {!v.leadRecord.Product2__c}
+                </span>
+            </p>
+            <p class="slds-text-body--small slds-m-bottom--xx-small">
+                <span>
+                    State of Formation: {!v.leadRecord.State_of_Formation__c}
+                </span> 
+            </p>           
+        </div>
+ </div>
+    </div>		
+</aura:component>

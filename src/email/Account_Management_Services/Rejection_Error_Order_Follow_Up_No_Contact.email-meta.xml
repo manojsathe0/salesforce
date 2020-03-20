@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMLLC9</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Rejection/ Error Order Follow Up – No Contact</name>
+    <style>none</style>
+    <subject>ATTENTION NEEDED – Regarding your LLC formation order</subject>
+    <textOnly>There is an error with your order, we are working to correct the issue.
+
+Dear {!Contact.FirstName},
+
+We have identified an error with your order, or the order has been rejected by the Secretary of State (or equivalent government office) in the state where you want to form your business. We are working to correct the issue right now and I will be contacting you to explain the problem and how we will correct the issue.
+
+Please contact me at any time using the number below or reply to this email to learn more.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} |  {!User.Phone} ext. {!User.Extension}
+Account Management Services
+M-F 9:00 am – 6 pm CT
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

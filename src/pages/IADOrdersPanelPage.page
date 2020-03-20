@@ -1,0 +1,163 @@
+<apex:page controller="IADOrderPanelController"  standardstylesheets="false" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false"
+showHeader="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:includeScript value="{!$Resource.svg4everybody}" />
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <script type="text/javascript">
+            svg4everybody();
+            
+            var orderNumber  = '';
+            var orderId = '';
+            function openOrderDetail(id, oNum){
+                orderNumber = oNum;
+                orderId = id;
+                 sforce.console.openPrimaryTab(null, '/'+id, true);
+              // sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+              
+            }
+            var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+                var url = '/apex/IADOrderWithOrderItems?id='+orderId;
+                sforce.console.openSubtab(result.id , url, true, orderNumber);
+            };
+           window.onload = function() {
+              //populateIncompleteOrders();
+             
+            };
+            
+            var setCurrentPrimaryTab = function setCurrentPrimaryTab(result) {
+                currentPrimaryTab = result.id;
+                console.log('current primary tab' + currentPrimaryTab);
+                var contactId = '{!theId}';
+                var theURL = '/apex/IADOrdersGrid?id={!theCustId}';
+                console.log('the url ' + theURL);
+                sforce.console.openSubtab(currentPrimaryTab , theURL, true, 'Old Orders');
+            };
+
+            function openAllOrders() {
+                sforce.console.getEnclosingPrimaryTabId(setCurrentPrimaryTab);
+            }
+        </script>
+        <style type = "text/css">
+        body{background-color : white}
+        </style>
+    </head>
+    <body>
+    <apex:form id="theForm">
+    
+        <!--
+        Uncomment when QA API ready
+        <apex:actionFunction name="populateIncompleteOrders" action="{!populateIncompleteOrders}" rerender="incompleteOrders" status="statusUpdating" />-->
+        <apex:actionStatus id="statusUpdating">
+                      <apex:facet name="start">
+                       <div class="slds-spinner_container">
+                          <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                          </div>
+                        </div>
+                      </apex:facet>
+                </apex:actionStatus>
+        <div class="slds">
+        <apex:outputPanel rendered="{!hasOrders}" id="orders">
+            <apex:repeat value="{!orderWrappers}" var="orderWrap">
+                <div class="slds-m-top--small">
+                 <div class="slds-m-top--xxx-small slds-text-body--small">
+                    <span class="slds-icon__container slds-icon-standard-order" title="Order">
+                <svg aria-hidden="true" class="slds-icon slds-icon-standard-quotes slds-icon--x-small" >
+                  <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/custom-sprite/svg/symbols.svg#custom40')}"></use>
+                </svg>
+                <span class="slds-assistive-text">Order Icon</span>
+                    </span>
+                    <!--<apex:outputLink value="/{!orderWrap.theOrder.Id}" styleClass="slds-text-body--x-small" title="Click to open Order"><b><u> {!orderWrap.theOrder.Name}</u></b></apex:outputLink>-->
+                    <apex:outputLink value="#" styleClass="slds-text-body--x-small" title="Click to open Order" onClick="openOrderDetail('{!orderWrap.theOrder.id}', '{!orderWrap.theOrder.name}');return false;"><b><u> {!orderWrap.theOrder.Name}</u></b></apex:outputLink>
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Processing Number">
+                        <b>{!orderWrap.theOrder.User_Order_ID__c}</b>
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Base Product">
+                        {!orderWrap.theOrder.Base_Product_Name__c}<span style="{!IF((orderWrap.theOrder.State_of_Formation__c!= ''),'','display: none;')} "> - {!orderWrap.theOrder.State_of_Formation__c}</span>
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Processing Status">
+                        <b>{!orderWrap.theOrder.Processing_Status__c}</b>
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Order Date">
+                        <apex:outputField value="{!orderWrap.theOrder.Order_Date_Time_Created__c}" />
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Total Cost">
+                        ${!orderWrap.theOrder.Gross_Total__c}
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Entity Name">
+                        {!orderWrap.entityName}
+                    </div>
+                   <div class=" slds-m-left--medium slds-text-body--small">
+                           
+                             
+                         <apex:repeat value="{!processNumberToOrderRevisions}" var="procNumber">
+                             
+                            <apex:outputPanel rendered="{!IF(procNumber==orderWrap.theOrder.User_Order_ID__c, true, false)}">
+                                    <apex:repeat value="{!processNumberToOrderRevisions[procNumber]}" var="dupeOrder">
+                                        <br/>
+                                        <apex:outputLink value="#" styleClass="slds-text-body--x-small" title="Click to open Order" onClick="openOrderDetail('{!dupeOrder.theOrder.id}', '{!dupeOrder.theOrder.name}');return false;"><b><u> {!dupeOrder.theOrder.Name}</u></b></apex:outputLink> Revision
+                                    </apex:repeat>
+                            </apex:outputPanel>
+                        </apex:repeat>
+                    </div>
+                </div>
+                <br/>
+            </apex:repeat>
+            </apex:outputPanel>
+            <a style="{!IF(theCustId=='', 'display:none', '')}" onClick ="openAllOrders(); return false;" styleClass="slds-text-body--x-small" title="See Old Orders"><b><u>Old Orders</u></b></a>
+            <!--<apex:outputPanel rendered="{!IF(hasOrders,false,true)}" id="noOrders">-->
+                <!--<div class="slds">-->
+                    <!--<br/><br/><br/><br/><br/><br/><br/>-->
+                    <!--<div align="center">-->
+                        <!--<span class="slds-icon__container slds-icon-standard-approval ">-->
+                      <!--<svg aria-hidden="false" class="slds-icon slds-icon&#45;&#45;large">-->
+                        <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/action-sprite/svg/symbols.svg#approval')}"></use>-->
+                      <!--</svg>-->
+                      <!--<span class="slds-assistive-text">medium approval Icon</span>-->
+                        <!--</span>-->
+                    <!--</div>-->
+                    <!--<p class="slds-text-heading slds-text-align&#45;&#45;center">no orders</p>-->
+                <!--</div>-->
+            <!--</apex:outputPanel>-->
+            <!--
+            Uncomment when QA API ready
+            <c:IADMessageBox theMessages="{!incompleteOrderService.iadMessages}" />
+            <apex:outputPanel id="incompleteOrders">
+            <hr/>                        
+            <apex:repeat value="{!incompleteOrders.IncompleteOrders}" var="order" id="incompleteOrderRepeat">
+                <div class="slds-m-top--small">
+                    <span class="slds-icon__container slds-icon-standard-order" title="Order">
+                <svg aria-hidden="true" class="slds-icon slds-icon-standard-quotes slds-icon--x-small slds-icon-text-error" viewBox="0 0 24 24">
+                  <path d='{!orderIcon}' />
+                </svg>
+                <span class="slds-assistive-text">Order Icon</span>
+                        </span>
+                        <b> Incomplete</b>
+                        <div class="slds-m-top--xxx-small slds-text-body--small" title="Processing Number">
+                            <b>{!order.cartId}</b>
+                        </div>
+                        <div class="slds-m-top--xxx-small slds-text-body--small" title="Base Product">
+                            {!order.product.productComponent.name}
+                        </div>
+                        <div class="slds-m-top--xxx-small slds-text-body--small" title="Status Date">
+                            <b>{!order.dateCreated}</b>
+                        </div>
+                        <div class="slds-m-top--xxx-small slds-text-body--small" title="Base Product">
+                            {!order.product.productComponent.description}
+                        </div>
+                </div>
+                <br/>
+            </apex:repeat> 
+        </apex:outputPanel>
+        -->
+        </div>
+
+    </apex:form>
+    </body>
+    </html>
+</apex:page>

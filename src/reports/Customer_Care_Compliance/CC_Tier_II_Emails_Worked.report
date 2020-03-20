@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_58442602</developerName>
+        <masterLabel>CC Tier II Agents</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED_ALIAS</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>sbattle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>sknudson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>tlewis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>twinn</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>wquartz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>vzamora</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>wmelgar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>ddavis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>mxjacobs</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>kwarren</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>hchavez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>ycarver</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>acoppin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>cshackel</sourceValue>
+            </sourceValues>
+            <value>CC Tier II Agents</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>aperales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>cgraham</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jguerra</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jphung</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jwester</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>pbryant</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>rmorgan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jxjohnso</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jasadi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>caamodt</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>aspears</sourceValue>
+            </sourceValues>
+            <value>CC Tier II Agents 2</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_63834508</developerName>
+        <masterLabel>CC Tier II Queues</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Case.Queue__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Biz Escalation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC Biz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC Biz Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC BIZ Outgoing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC General Support</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC IP</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC PS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS DIV Problem Orders</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS EP Problem Orders</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PS NC Problem Orders</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC IP Outgoing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC PS Outgoing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC Deeds Billing Requests</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC Biz Email</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC IP Email</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC PS Email</sourceValue>
+            </sourceValues>
+            <value>CC Tier II Queues</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CREATED</field>
+    </columns>
+    <columns>
+        <field>CREATED_ALIAS</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>field_key</field>
+    </columns>
+    <columns>
+        <field>OLDVAL</field>
+    </columns>
+    <columns>
+        <field>NEWVAL</field>
+    </columns>
+    <columns>
+        <field>CASE_OWNER</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>BucketField_63834508</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>CC Tier II Queues</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_58442602</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>CC Tier II Agents,CC Tier II Agents 2</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>CC Tier II Emails Worked</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CREATED_DATE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2016-11-10</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-11-07</startDate>
+    </timeFrameFilter>
+</Report>

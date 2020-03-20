@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP RR Missed Final</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BSP RR Missed Final Attempt</name>
+    <style>none</style>
+    <subject>Enter Subject</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I have attempted multiple times to contact you to review your Roadmap together.  Since I believe you will benefit greatly from the information, I have attached your copy for you to review.
+
+If you have any questions about the Roadmap, I would still be happy to assist you and schedule a time to review the Roadmap together. I do want to remind you that if you contact me directly to move forward with your business formation, you will receive a discount since you had an attorney consultation.
+
+Thank you again for reaching out to the LegalZoom Business Starter Team, I hope you are doing well.
+
+
+{!User.FirstName}
+Business Account Manager
+(855) 787-1951 x{!User.Extension}
+BizHelp@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,49 @@
+<!--
+ @author Harsha Reddy<sxreddy@legalzoom.com>
+ @file To Show Address Details on Payment/Refund Details Page - STORY B-39061
+ @desc Created on 2019-04-24 12:11:27 pm
+ -->
+<template>
+    <template if:true={mAddress}>
+        <lightning-accordion active-section-name="A">
+            <lightning-accordion-section name="A" label="Address">
+                <div class="c-container">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size='12'>
+                            <lightning-input name="input1" label="Address Line 1" onchange={handleAddressLineOne}
+                                type="text" value={mAddress.addressLine1} disabled={isFinanceUser}
+                                class="slds-size_1-of-2">
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size='12'>
+                            <lightning-input name="input2" label="Address Line 2" onchange={handleAddressLineTwo}
+                                type="text" value={mAddress.addressLine2} disabled={isFinanceUser}
+                                class="slds-size_1-of-2">
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size='12'>
+                            <lightning-input name="input3" label="City" onchange={handleCity} type="text"
+                                value={mAddress.city} disabled={isFinanceUser} class="slds-size_1-of-2">
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size='12'>
+                            <lightning-combobox name="input5" options={options} label="State" value={picValue}
+                                onchange={handleState} class="slds-size_1-of-2" disabled={isFinanceUser}>
+                            </lightning-combobox>
+                        </lightning-layout-item>
+                        <lightning-layout-item size='12'>
+                            <lightning-input value={country} label='Country' name="input6" onchange={handleCountry}
+                                disabled={isFinanceUser} class="slds-size_1-of-2">
+                            </lightning-input>
+                        </lightning-layout-item>
+                        <lightning-layout-item size='12'>
+                            <lightning-input value={mAddress.zipCode} label='Zip Code' onchange={hanldeZipCode}
+                                name="input7" disabled={isFinanceUser} class="slds-size_1-of-2">
+                            </lightning-input>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </template>
+</template>

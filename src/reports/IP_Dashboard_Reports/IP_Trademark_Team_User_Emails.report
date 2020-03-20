@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_88795444</developerName>
+        <masterLabel>IP Fulfillment Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Case.Activities$Owner</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Ennio Ochoa</sourceValue>
+            </sourceValues>
+            <value>Trademark Management</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>William Shahin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Earvin Guanzon</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Isabel Valencia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Tashjian</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sevan Pogosyan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Angela Poghosyan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sheila Dang</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cesar Ortiz</sourceValue>
+            </sourceValues>
+            <value>Goods &amp; Services Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Marlon Andino</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Abigail Barrientez</sourceValue>
+            </sourceValues>
+            <value>Logo &amp; Specimen Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Joshua Hart</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vance Parker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Liliana Cansiani</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maria Clark</sourceValue>
+            </sourceValues>
+            <value>Trademark Application Processing Team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Case.Activities$Owner</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Case.Activities$Account</field>
+    </columns>
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$CreatedDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>BucketField_88795444</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Trademark Management,Goods &amp; Services Team,Logo &amp; Specimen Team,Trademark Application Processing Team,Trademark Ancillary,Trademark Monitoring,Comprehensive Search Team,Direct Hit Search Team,Patents Team,Copyrights Team,Patent Illustrations Team</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_88795444</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case.Activities$Owner</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IP Trademark Team User Emails</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <sortColumn>Case$CaseNumber</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Case.Activities$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

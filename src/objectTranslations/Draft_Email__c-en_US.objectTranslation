@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Draft Email</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Draft Emails</value>
+    </caseValues>
+    <fields>
+        <label><!-- AdditionToAddresses --></label>
+        <name>AdditionToAddresses__c</name>
+    </fields>
+    <fields>
+        <label><!-- BCCAddresses --></label>
+        <name>BCCAddresses__c</name>
+    </fields>
+    <fields>
+        <label><!-- BodyText --></label>
+        <name>BodyText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Body --></label>
+        <name>Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCAddresses --></label>
+        <name>CCAddresses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Draft Emails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Draft Emails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Email Template Description --></label>
+        <name>Email_Template_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Template Developer Name --></label>
+        <name>Email_Template_Developer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Template Folder ID --></label>
+        <name>Email_Template_Folder_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Template Folder Name --></label>
+        <name>Email_Template_Folder_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Template ID --></label>
+        <name>Email_Template_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Template --></label>
+        <name>Email_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- FromAddress --></label>
+        <name>FromAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- ToAddressesName --></label>
+        <name>ToAddressesName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ToAddresses --></label>
+        <name>ToAddresses__c</name>
+    </fields>
+    <layouts>
+        <layout>Draft Email Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Email Headers --></label>
+            <section>Email Headers</section>
+        </sections>
+        <sections>
+            <label><!-- Email Info --></label>
+            <section>Email Info</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

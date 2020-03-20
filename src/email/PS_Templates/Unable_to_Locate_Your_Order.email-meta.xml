@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>NOORDER</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Unable to Locate Your Order</name>
+    <style>none</style>
+    <subject>We&apos;re unable to locate your order.</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry. However, we are unable to locate your order and respond to your question. Please reply to this email and provide the following information so that we may be able to assist you:
+
+1. First and last name of the primary account holder or authorized contact
+2. Email address
+3. Order number
+4. Product name
+
+Please feel free to contact our Customer Care Team if we can be of further assistance. Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri 5am to 7pm PT; Saturday 7am to 4pm PT. 
+
+Best regards, 
+
+The LegalZoom Team 
+
+tel 877.818.8787 | fax 323.389.0658 
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>bapipcons</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BAP IP how to sub consultation</name>
+    <style>none</style>
+    <subject>BAP IP how to sub consultation</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+You can start taking advantage of all your plan benefits by clicking on the following Member Center link:
+
+https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=1
+
+You can submit a request to speak with an attorney by:
+Logging in as &apos;existing member&apos; using your username and password 
+Click on the icon that says &quot;Click Here to Visit the Member Center&quot;  
+Then click on the &quot;Request a Consultation&quot; button
+Complete all the empty fields and click on submit 
+You will receive a consultation number 
+The Law Firm will contact you within two business days to schedule your consultation 
+
+The LegalZoom Business Advantage Pro is a membership that gives you access to the following benefits: 
+
+- Attorney advice and consultations. Speak with an experienced attorney on an unlimited number of new legal matters
+- Attorney drafted letters. Your attorney can draft legal letters or on your behalf 
+- Unlimited access to LegalZoom legal forms. Download hundreds of blank legal forms for business or personal use 
+- 25% savings on additional attorney services. Get significant savings on additional attorney work if you need it 
+- File a copyright each month for just the cost of the federal filing fee.
+- 10% savings on any LegalZoom legal documents. Get any LegalZoom business or personal documents at a discount 
+
+{!snippetVariable.asdsigline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.
+
+{!snippetVariable.bestregardstext}
+
+{!snippetVariable.thelegalzoomteamline}
+
+{!snippetVariable.asdphone} | {!snippetVariable.asdfax} | {!snippetVariable.lacemail}
+{!snippetVariable.lz_website} | {!snippetVariable.lz_address}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

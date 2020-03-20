@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tmnofile</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TM App - NO FILE</name>
+    <style>none</style>
+    <subject>TM App - NO FILE</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Your Trademark order has been completed. As requested, LegalZoom will not file your application with the US Patent and Trademark Office (USPTO).
+
+A copy of your Trademark order is attached for your convenience. You can keep this information for your records, or use it to apply online with the USPTO (www.uspto.gov). If you would like LegalZoom to file an application for this Trademark or a new Trademark with the USPTO, please visit here to submit a new order.
+
+Feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+
+Best Regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

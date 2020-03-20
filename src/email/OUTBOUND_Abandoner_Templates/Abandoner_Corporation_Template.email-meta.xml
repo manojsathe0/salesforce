@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>abandcorp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Abandoner: Corporation Template</name>
+    <style>none</style>
+    <subject>LegalZoom.com – (Entity Type) Information</subject>
+    <textOnly>Dear LegalZoom Customer,
+
+Thank you for considering LegalZoom to form your business.  
+
+As you know, you’re only few steps away from forming your Corporation.   However, I understand you may have questions about our pricing, packages, and overall process.
+
+While LegalZoom has helped form over a million customers, we have not forgotten the importance of helping our customers, one at a time.  
+
+In order to keep our commitment to you, I am making myself available for you to call me directly to answer your questions or even complete your Corporation order over the phone.  Our customers are often one or two question away from taking the next steps.  This is where I can guide you through the process.  
+
+As mentioned in the subject line, I would be happy to provide a discount promotional code towards your order.  This is a special offer which will be only offered by reaching me directly by calling (877) 677 - 8787 ext. {!User.Extension}.
+
+Lastly, please also keep in mind that LegalZoom is heavily invested in your success once you have formed your business.  For this reason, we have forged various partnerships through our Small Business Resource Center that will help you run and manage your Corporation.  http://businessresources.legalzoom.com/ 
+Please let me know how I can help.
+
+I look forward to hearing from you,
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

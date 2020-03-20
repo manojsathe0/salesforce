@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip7680</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Itzel P.</name>
+    <style>none</style>
+    <textOnly>Itzel P.
+Intellectual Property Division
+www.LegalZoom.com
+{!snippetVariable.ccphone} ext. 7680</textOnly>
+    <type>custom</type>
+</EmailTemplate>

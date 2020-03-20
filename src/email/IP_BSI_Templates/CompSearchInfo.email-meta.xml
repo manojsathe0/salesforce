@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>comp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Comp Search Info</name>
+    <style>none</style>
+    <subject>Comp Search Info</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.  
+
+As per your request, this e-mail provides you with more information regarding our Comprehensive Trademark Search Reports.
+
+Why a Comprehensive Search?
+
+A comprehensive search allows you to make the most informed decision possible before risking time and money on your trademark.  LegalZoom will develop a search strategy designed to uncover similar Trademarks ? even those with different spellings. Reasons to obtain a comprehensive search include:
+
+?Conducting ?due diligence? before making a big investment on your name.
+?Avoiding a Trademark infringement suit and possibly losing the right to use the name in the future.
+
+LegalZoom Offers Three (3) Comprehensive Search Options:
+
+1. U.S. Federal and State Only -- $199.
+
+Coverage includes:
+
+?United States Federal Trademark Database.
+?State Trademark Databases from all 50 states.
+?Design logo searches are also available for an additional $250. 
+
+2. Comprehensive U.S. Search -- $ 299.  
+
+Coverage includes: 
+ 
+?Federal and State Trademark Databases.
+?Corporate names from all 50 states.
+?Fictitious Business Name filings for all 50 states and over 2,000 counties.
+?Business Finder Database and Yellow Page Listings of 14 million businesses in the U.S. 
+?Cyber Common Law? search of over 3 billion web pages and 4,500 news sources.
+?Internet domain names.
+
+3. International Comprehensive Search -- $ 499.
+
+?In addition to the services listed above, the International Search includes registered trademarks from Canada, The United Kingdom, The European Community, The International Register, Germany, France and 11 other European countries.   
+
+To Order Your Comprehensive Search Report, simply reply to this e-mail within 24 hours, and indicate the type of search you would like.  We will charge the same credit card that was used for your trademark registration order.   You may also visit www.legalzoom.com to complete a Comprehensive Trademark Search Report Application immediately! 
+ 
+Our Comprehensive Search Reports take about 3-5 business days to process once the request is received. If you receive the report and decide not to continue with your Trademark Application filing, we will provide you with a full refund of your trademark registration fees.
+ 
+{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.
+
+{!snippetVariable.ipclosingline}
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>QS Missed Followup</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QS Missed Followup</name>
+    <style>none</style>
+    <subject>Subject</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+I’m sorry that I was unable to reach you. I was just calling to check in with you and get an update on your business. As your Account Manager, if there is anything I can help you with, please don’t hesitate to give me a call, and I will be happy to assist you. It has been a pleasure working with you.
+
+Please call me directly at (855) 787-1958 x{!User.Extension} Monday–Friday from 6 am – 6 pm PT or simply reply to this message.  If I’m unavailable, you can also email QuickStart@legalzoom.com to reach the next available member of my team.
+
+Thank you for choosing LegalZoom. I look forward to speaking with you soon.
+
+{!User.FirstName}
+Business Account Manager
+(855)-787-1958 x{!User.Extension}
+QuickStart@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

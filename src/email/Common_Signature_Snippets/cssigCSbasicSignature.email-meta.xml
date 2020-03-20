@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cssig</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>cssig - CS basic Signature</name>
+    <style>none</style>
+    <subject>cssigCSbasicSignature</subject>
+    <textOnly>{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} is available {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.  {!snippetVariable.ccsincerely}  {!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccphone} | {!snippetVariable.lz_address} {!snippetVariable.lz_website}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

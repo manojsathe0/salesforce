@@ -1,0 +1,2 @@
+<apex:page controller="NextPadOMController" action="{!forwardRequest}">
+ </apex:page>

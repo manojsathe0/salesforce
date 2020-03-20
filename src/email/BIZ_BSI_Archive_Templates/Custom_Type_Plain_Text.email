@@ -1,0 +1,13 @@
+Dear {!Contact.FirstName},<br/><br/>
+
+Thank you for your inquiry.<br/><br/>
+
+Due to budget cuts within the State of California, the processing times for your order may be delayed anywhere from 15-20 working days.  This is a state delay, however, we are continually following up with the Secretary of State to ensure your documents are being processed as quickly as possible.   We will keep you informed if there are any further updates to your order.<br/><br/>
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<br/><br/>
+
+{!snippetVariable.ccsincerely}<br/><br/>
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<br/>
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>
+{!snippetVariable.lz_website}

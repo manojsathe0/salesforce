@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>crupload_draft</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>MATERIALS - Materials Needed_draft</name>
+    <style>none</style>
+    <subject>Materials Required: LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+To date, we have not yet received a copy of your work. In order to complete your application, we will need one (1) complete copy of the original work if unpublished or two (2) copies if your work has been published.
+
+Information about published works can be found here.
+
+Standard Mail Submissions
+If your work has been published, please send your material to us by mail or courier. The Copyright Office does not allow published works to be submitted electronically.
+
+All physical materials should be sent to our address:
+
+{!snippetVariable.ip_address_cr_materials}
+
+Electronic Submissions
+You can electronically upload a copy of your work if it meets one of the following criteria:
+
+1) Unpublished, meaning it has not been made available to the public, OR
+2) A website OR
+3) A computer program
+
+File size restrictions:
+- Small files (up to 6 MB maximum): Email us at mycopyright@legalzoom.com  (If you are a Mac user, be sure to attach your document, rather than dragging and dropping it in the Mac Mail program. Also, be sure your document contains the correct PC file type extension.)
+
+- Medium-sized files (up to 80 MB maximum): Upload your file on the LegalZoom Ask a Question page.  (Fill out the form and attach your document at the bottom.)
+
+- Large files (up to 100 MB maximum): Use a third-party site such as YouSendIt to compress your file and send us the link.  (Send the link to: mycopyright@legalzoom.com and include your order number in the subject line.)
+
+Please Note:  Your filename may be changed when your application is submitted to conform to U.S. Copyright Office submission guidelines. For complete instructions on how to submit electronic files as well as a list of acceptable file types, click here.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order. Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you.
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

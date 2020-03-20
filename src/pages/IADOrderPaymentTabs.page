@@ -1,0 +1,87 @@
+<apex:page standardstylesheets="false">
+  <head>
+    <apex:includescript value="/support/console/36.0/integration.js" />
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}" />
+    <script type="text/javascript">
+      $(document).ready(function() {
+          //handle toggling between tabs
+          $( ".slds-tabs--scoped__link" ).click(function() {
+            console.log('clicked');
+            $('.slds-tabs--scoped__item').each(function(i, obj) {
+                if($(obj ).hasClass( "slds-active" )){
+                  $(obj ).toggleClass( "slds-active" );
+                }
+            });
+             $(this).parent().toggleClass( "slds-active" );
+             var thisId = $(this).attr('id');
+             thisId = thisId.replace('__item', '');
+             $('.slds-tabs--scoped__content').each(function(i, obj) {
+                if($(obj ).hasClass( "slds-show" )){
+                  $(obj ).toggleClass( "slds-show" );
+                  $(obj ).toggleClass( "slds-hide" );
+                }
+            });
+             $('#' + thisId).toggleClass("slds-show");
+             $('#' + thisId).toggleClass("slds-hide");
+          });
+      });
+      $(window).load(function() {
+            $.when(populateInstallments()).then(populatePayments());
+      });
+
+       var refreshPayments = function(result) {
+         console.log('called RefreshPayments');
+         populatePayments();
+         $('#paymentsTab__item').click();
+      };
+
+      var refreshInstallments = function(result) {
+         console.log('called RefreshInstallments');
+         populateInstallments();
+         $('#installmentsTab__item').click();
+      };
+
+      sforce.console.addEventListener('RefreshPayments', refreshPayments);
+      sforce.console.addEventListener('RefreshInstallmentEvent', refreshInstallments);
+    </script>
+  <style>
+    .hasMotif {
+      margin: 0px;
+    }
+    .slds .slds-tabs--scoped__link {
+      padding: 0 12px;
+      overflow:visible;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="slds">
+      <div class="slds-tabs--scoped">
+        <ul class="slds-tabs--scoped__nav" role="tablist">
+          <li class="slds-tabs--scoped__item slds-text-body--small slds-active" title="Installments" role="presentation">
+            <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="installmentsTab" id="installmentsTab__item" >Installments</a>
+          </li>
+          <li class="slds-tabs--scoped__item slds-text-body--small" title="Payments" role="presentation" >
+            <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="paymentsTab" id="paymentsTab__item" >Payments/Refunds</a>
+          </li>
+          <!--<li class="slds-tabs--scoped__item slds-text-body--small" title="Refunds" role="presentation">
+            <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-3" id="tab-scoped-3__item" >Refunds</a>
+          </li>
+          -->
+        </ul>
+        <div id="installmentsTab" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="installmentsTab__item">
+          <apex:include pageName="IADInstallmentsPanelPage"  />
+        </div>
+        <div id="paymentsTab" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="paymentsTab__item">
+          <apex:include pageName="IADPendingPaymentsPanelPage" />
+        </div>
+        <!--
+        <div id="tab-scoped-3" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="tab-scoped-3__item">
+          <apex:include pageName="IADRefundsPanelPage" />
+        </div>
+        -->
+      </div>
+    </div>
+  </body>
+</apex:page>

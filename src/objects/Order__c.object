@@ -1,0 +1,3190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>g_Table_Fields</fullName>
+        <description>new Genesis Search</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>User_Order_ID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Base_Product_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Customer_Login__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Processing_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Order_Date_Time_Created__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>g Table Fields</label>
+    </fieldSets>
+    <fields>
+        <fullName>ACR_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>User_Order_Extension__r.ACR_Date_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ACR Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>AM_Account__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AM Account</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AM_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Order_Date_Time_Created__c &gt; Account__r.Date_Time_Opt_In__c, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AM Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_Assigned__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Account__r.Biz_Starter_BAM__c), &apos;&apos;, Account__r.Business_Account_Manager__r.FirstName + &apos; &apos; + Account__r.Business_Account_Manager__r.LastName)</formula>
+        <label>Account Manager Assigned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Service_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Service_Status2__c</formula>
+        <label>Account Service Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Add_1_Hour_to_Order_Created_Datetiem__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order_Date_Time_Created__c + 0.04167</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Add 1 Hour to Order Created Datetiem</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Adjusted_Order__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Adjusted Order</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Agent_1_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>14 Day Sales Cycle - Date/Time - Agent 1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Agent_2_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>14 Day Sales Cycle - Date/Time - Agent 2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Agent_Date_Diff__c</fullName>
+        <description>Date Diff-Test By Basu for Debugging</description>
+        <externalId>false</externalId>
+        <formula>Agent_1_Activity__c  -  Agent_2_Activity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Date Diff</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <description>Data integration populates the order amount</description>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Attorney_Advice__c</fullName>
+        <externalId>false</externalId>
+        <label>Attorney Advice</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Auto_Assignment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is marked to true if this Order was used to Assign the Account Manager on the Account.</description>
+        <externalId>false</externalId>
+        <label>Auto Assignment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BAP_Standalone_Product_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Base_Product__r.Process__r.Name = &quot;Business Advantage Pro Standalone&quot;, 1, null)</formula>
+        <label>BAP (Standalone) Product Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Base_Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Base_Product__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Base Product Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Base_Product_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>Base_Product__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Base Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Base_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The base product of the order.  Data integration will populate this field.</description>
+        <externalId>false</externalId>
+        <label>Base Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Bazonko__c</fullName>
+        <externalId>false</externalId>
+        <label>Bazonko</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Biz_AutoAssign_Exclude_Count__c</fullName>
+        <description>Count of Full Service Compliance Package</description>
+        <externalId>false</externalId>
+        <label>Biz Auto-Assign Exclude Count</label>
+        <summaryFilterItems>
+            <field>Order_Item__c.Product_Name__c</field>
+            <operation>equals</operation>
+            <value>Full Service Compliance Package</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Biz_Charge_AMEX__c</fullName>
+        <externalId>false</externalId>
+        <label>Biz Charge-AMEX</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Biz_Checking_BofA__c</fullName>
+        <externalId>false</externalId>
+        <label>Biz Checking-BofA</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Biz_Credit_DNB__c</fullName>
+        <externalId>false</externalId>
+        <label>Biz Credit-DNB</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Biz_Ins_Bolt__c</fullName>
+        <externalId>false</externalId>
+        <label>Biz Ins-Bolt</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Biz_Plans_Palo_Alto__c</fullName>
+        <externalId>false</externalId>
+        <label>Biz Plans-Palo Alto</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Biz_Printing_PrintRunner__c</fullName>
+        <externalId>false</externalId>
+        <label>Biz Printing-PrintRunner</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Biz_Quickbooks_Online__c</fullName>
+        <externalId>false</externalId>
+        <label>Biz Quickbooks Online</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Biz_Toll_Free_DaVinci__c</fullName>
+        <externalId>false</externalId>
+        <label>Biz Toll Free #-DaVinci</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Commission_Eligible_Agent_1_Day1__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(ISBLANK( Declined_To_Approved_Time__c ), 
+
+(If(Is_First_RA_Renewal__c = True || Agent_1_Activity__c+1 &gt;= Order_Date_Time_Created__c ||Agent_1_Activity__c+5 &gt;= Order_Date_Time_Created__c &amp;&amp; Order_Created_By__c &lt;&gt; &quot;RB.ConsoleApp&quot; &amp;&amp; CONTAINS(Base_Product__r.Name, &apos;RA Renewal&apos;) , Commission_Eligible_Agent_1__r.FirstName+&quot; &quot;+ Commission_Eligible_Agent_1__r.LastName , null)), 
+
+(If(Is_First_RA_Renewal__c = True || Agent_1_Activity__c+1 &gt;= Declined_To_Approved_Time__c ||Agent_1_Activity__c+5 &gt;= Order_Date_Time_Created__c &amp;&amp; Order_Created_By__c &lt;&gt; &quot;RB.ConsoleApp&quot; &amp;&amp; CONTAINS(Base_Product__r.Name, &apos;RA Renewal&apos;) , Commission_Eligible_Agent_1__r.FirstName+&quot; &quot;+ Commission_Eligible_Agent_1__r.LastName, null)))</formula>
+        <label>Commission Eligible Agent 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commission_Eligible_Agent_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>14 Day Sales Cycle - Agent 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Commission_Eligible_Agent_2_Day1__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(ISBLANK( Declined_To_Approved_Time__c ), 
+
+(If(Is_First_RA_Renewal__c = True  || Agent_2_Activity__c+1  &gt;= Order_Date_Time_Created__c ||Agent_2_Activity__c+5  &gt;=  Order_Date_Time_Created__c  &amp;&amp;  Order_Created_By__c &lt;&gt; &quot;RB.ConsoleApp&quot; &amp;&amp;  CONTAINS(Base_Product__r.Name, &apos;RA Renewal&apos;)  , Commission_Eligible_Agent_2__r.FirstName+&quot; &quot;+ Commission_Eligible_Agent_2__r.LastName, null )), 
+
+(If(Is_First_RA_Renewal__c = True  || Agent_2_Activity__c+1  &gt;=  Declined_To_Approved_Time__c ||Agent_2_Activity__c+5  &gt;= Order_Date_Time_Created__c &amp;&amp;  Order_Created_By__c &lt;&gt; &quot;RB.ConsoleApp&quot; &amp;&amp;  CONTAINS(Base_Product__r.Name, &apos;RA Renewal&apos;) , Commission_Eligible_Agent_2__r.FirstName+&quot; &quot;+ Commission_Eligible_Agent_2__r.LastName , null)))</formula>
+        <label>Commission Eligible Agent 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commission_Eligible_Agent_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>14 Day Sales Cycle - Agent 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Orders1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Commission_Eligible_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>Net_Total__c -  Filling_Fee_Total__c -  Omitted_Calculation_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Commission Eligible Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Email</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Notes_All__c</fullName>
+        <description>All contact notes</description>
+        <externalId>false</externalId>
+        <label>Contact Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact_Notes_Last__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Contact Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Contact_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact State</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Login__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Customer Login</label>
+        <referenceTo>Customer_Login__c</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Declined__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Declined</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Account_Last_Modified__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Date_Time_Modified__c</formula>
+        <label>Date/Time Account Last Modified</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Created__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date/Time Created</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Modified__c</fullName>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date/Time Modified</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Questionaire_Started__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Time Questionaire Started</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_TOS_Accepted__c</fullName>
+        <description>The datetime when Terms of Services (TOS) is accepted by the customer</description>
+        <externalId>false</externalId>
+        <label>Date/Time TOS Accepted</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Days_TOS_Not_Accepted__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TOS_Accepted__c = True, 
+null, ROUND((NOW() - Order_Date_Time_Created__c ),0))</formula>
+        <label>Days TOS Not Accepted</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Declined_To_Approved_Time__c</fullName>
+        <description>Datetime when the order status changed from Declined to Approved</description>
+        <externalId>false</externalId>
+        <label>Declined To Approved Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Delivery Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Discount__c</fullName>
+        <description>Discount amount on the whole order</description>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Entity_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Entity Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expedite_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Expedite Services</label>
+        <summaryFilterItems>
+            <field>Order_Item__c.Product_Name__c</field>
+            <operation>equals</operation>
+            <value>Expedited Processing</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Filing_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Filing Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Filling_Fee_Total__c</fullName>
+        <description>Filling Fee Total</description>
+        <externalId>false</externalId>
+        <label>Filling Fee Total</label>
+        <summarizedField>Order_Item__c.Extended_Price__c</summarizedField>
+        <summaryFilterItems>
+            <field>Order_Item__c.Filling_Fee__c</field>
+            <operation>equals</operation>
+            <value>true</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Fulfillment Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pre-Sale</fullName>
+                    <default>false</default>
+                    <label>Pre-Sale</label>
+                </value>
+                <value>
+                    <fullName>Not Yet Started</fullName>
+                    <default>false</default>
+                    <label>Not Yet Started</label>
+                </value>
+                <value>
+                    <fullName>Entity Name Avail</fullName>
+                    <default>false</default>
+                    <label>Entity Name Avail</label>
+                </value>
+                <value>
+                    <fullName>Pre-Filing Prob</fullName>
+                    <default>false</default>
+                    <label>Pre-Filing Prob</label>
+                </value>
+                <value>
+                    <fullName>Sent for Sig</fullName>
+                    <default>false</default>
+                    <label>Sent for Sig</label>
+                </value>
+                <value>
+                    <fullName>Sent to SOS</fullName>
+                    <default>false</default>
+                    <label>Sent to SOS</label>
+                </value>
+                <value>
+                    <fullName>Docs Rec’d</fullName>
+                    <default>false</default>
+                    <label>Docs Rec’d</label>
+                </value>
+                <value>
+                    <fullName>Docs Backends</fullName>
+                    <default>false</default>
+                    <label>Docs Backends</label>
+                </value>
+                <value>
+                    <fullName>Sent to Cust</fullName>
+                    <default>false</default>
+                    <label>Sent to Cust</label>
+                </value>
+                <value>
+                    <fullName>TM Search</fullName>
+                    <default>false</default>
+                    <label>TM Search</label>
+                </value>
+                <value>
+                    <fullName>TM G&amp;S</fullName>
+                    <default>false</default>
+                    <label>TM G&amp;S</label>
+                </value>
+                <value>
+                    <fullName>TM L&amp;S</fullName>
+                    <default>false</default>
+                    <label>TM L&amp;S</label>
+                </value>
+                <value>
+                    <fullName>TM App Prep</fullName>
+                    <default>false</default>
+                    <label>TM App Prep</label>
+                </value>
+                <value>
+                    <fullName>TM App Filed</fullName>
+                    <default>false</default>
+                    <label>TM App Filed</label>
+                </value>
+                <value>
+                    <fullName>Office Action</fullName>
+                    <default>false</default>
+                    <label>Office Action</label>
+                </value>
+                <value>
+                    <fullName>TM SOU</fullName>
+                    <default>false</default>
+                    <label>TM SOU</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Gross_Total__c</fullName>
+        <description>Sum of order line item by the price field in Order Item</description>
+        <externalId>false</externalId>
+        <label>Gross Total</label>
+        <summarizedField>Order_Item__c.Extended_Price__c</summarizedField>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Have_SBR_Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(SBR_Product_Count__c &gt; 0, &apos;Yes&apos;, &apos;No&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Have SBR Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initial_Installment_Decline_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Initial Installment Decline Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Installment_Paid_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Initial Installment Paid Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Is_First_RA_Renewal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is First RA Renewal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Sales_Order__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Sales Order</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Sales_Order_old__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Commission_Eligible_Agent_1__c != null ,True  ,False )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Sales Order(old)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LAP_Standalone_Product_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Base_Product__r.Process__r.Name = &quot;Legal Advantage Plus Standalone&quot;, 1, null)</formula>
+        <label>LAP (Standalone) Product Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LZ_Parent_Order__c</fullName>
+        <externalId>true</externalId>
+        <label>LZ Parent Order</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LZ_Product_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Order_Item__r.Product__r.LZ_Product_ID__c)</formula>
+        <label>LZ Product ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Touch_Point__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Touch Point</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Post Consult -Legal</fullName>
+                    <default>false</default>
+                    <label>Post Consult -Legal</label>
+                </value>
+                <value>
+                    <fullName>Post Consult - Tax</fullName>
+                    <default>false</default>
+                    <label>Post Consult - Tax</label>
+                </value>
+                <value>
+                    <fullName>Pre-Filing Problem</fullName>
+                    <default>false</default>
+                    <label>Pre-Filing Problem</label>
+                </value>
+                <value>
+                    <fullName>Post-Filing Problem</fullName>
+                    <default>false</default>
+                    <label>Post-Filing Problem</label>
+                </value>
+                <value>
+                    <fullName>Customer Called Back</fullName>
+                    <default>false</default>
+                    <label>Customer Called Back</label>
+                </value>
+                <value>
+                    <fullName>Initial Contact</fullName>
+                    <default>false</default>
+                    <label>Initial Contact</label>
+                </value>
+                <value>
+                    <fullName>Awaiting Signature</fullName>
+                    <default>false</default>
+                    <label>Awaiting Signature</label>
+                </value>
+                <value>
+                    <fullName>Docs Rec’d</fullName>
+                    <default>false</default>
+                    <label>Docs Rec’d</label>
+                </value>
+                <value>
+                    <fullName>Packet Review</fullName>
+                    <default>false</default>
+                    <label>Packet Review</label>
+                </value>
+                <value>
+                    <fullName>Annual Filings</fullName>
+                    <default>false</default>
+                    <label>Annual Filings</label>
+                </value>
+                <value>
+                    <fullName>G&amp;S Consult</fullName>
+                    <default>false</default>
+                    <label>G&amp;S Consult</label>
+                </value>
+                <value>
+                    <fullName>TM Search Results</fullName>
+                    <default>false</default>
+                    <label>TM Search Results</label>
+                </value>
+                <value>
+                    <fullName>TM App Prep</fullName>
+                    <default>false</default>
+                    <label>TM App Prep</label>
+                </value>
+                <value>
+                    <fullName>TM App Filed</fullName>
+                    <default>false</default>
+                    <label>TM App Filed</label>
+                </value>
+                <value>
+                    <fullName>TM App Published</fullName>
+                    <default>false</default>
+                    <label>TM App Published</label>
+                </value>
+                <value>
+                    <fullName>TM Intent to Use 8 Month</fullName>
+                    <default>false</default>
+                    <label>TM Intent to Use 8 Month</label>
+                </value>
+                <value>
+                    <fullName>TM Use Commerce 8 Month</fullName>
+                    <default>false</default>
+                    <label>TM Use Commerce 8 Month</label>
+                </value>
+                <value>
+                    <fullName>TM Notice of Allowance Issued</fullName>
+                    <default>false</default>
+                    <label>TM Notice of Allowance Issued</label>
+                </value>
+                <value>
+                    <fullName>TM Office Action</fullName>
+                    <default>false</default>
+                    <label>TM Office Action</label>
+                </value>
+                <value>
+                    <fullName>TM 1 Month</fullName>
+                    <default>false</default>
+                    <label>TM 1 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 2 Month</fullName>
+                    <default>false</default>
+                    <label>TM 2 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 3 Month</fullName>
+                    <default>false</default>
+                    <label>TM 3 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 4 Month</fullName>
+                    <default>false</default>
+                    <label>TM 4 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 5 Month</fullName>
+                    <default>false</default>
+                    <label>TM 5 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 6 Month</fullName>
+                    <default>false</default>
+                    <label>TM 6 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 7 Month</fullName>
+                    <default>false</default>
+                    <label>TM 7 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 8 Month</fullName>
+                    <default>false</default>
+                    <label>TM 8 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 9 Month</fullName>
+                    <default>false</default>
+                    <label>TM 9 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 10 Month</fullName>
+                    <default>false</default>
+                    <label>TM 10 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 11 Month</fullName>
+                    <default>false</default>
+                    <label>TM 11 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 12 Month</fullName>
+                    <default>false</default>
+                    <label>TM 12 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 13 Month</fullName>
+                    <default>false</default>
+                    <label>TM 13 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 14 Month</fullName>
+                    <default>false</default>
+                    <label>TM 14 Month</label>
+                </value>
+                <value>
+                    <fullName>TM 15 Month</fullName>
+                    <default>false</default>
+                    <label>TM 15 Month</label>
+                </value>
+                <value>
+                    <fullName>6 Month BAP</fullName>
+                    <default>false</default>
+                    <label>6 Month BAP</label>
+                </value>
+                <value>
+                    <fullName>12 Month BAP</fullName>
+                    <default>false</default>
+                    <label>12 Month BAP</label>
+                </value>
+                <value>
+                    <fullName>SBR</fullName>
+                    <default>false</default>
+                    <label>SBR</label>
+                </value>
+                <value>
+                    <fullName>Add&apos;l BIZ Product</fullName>
+                    <default>false</default>
+                    <label>Add&apos;l BIZ Product</label>
+                </value>
+                <value>
+                    <fullName>Add&apos;l PS Product</fullName>
+                    <default>false</default>
+                    <label>Add&apos;l PS Product</label>
+                </value>
+                <value>
+                    <fullName>Add&apos;l IP Product</fullName>
+                    <default>false</default>
+                    <label>Add&apos;l IP Product</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Legal_Matter__c</fullName>
+        <externalId>false</externalId>
+        <formula>User_Order_Extension__r.Legal_Matter__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Legal Matter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Life_Ins_Accuquote__c</fullName>
+        <externalId>false</externalId>
+        <label>Life Ins-Accuquote</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MyPRGenie__c</fullName>
+        <externalId>false</externalId>
+        <label>MyPRGenie</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>My_AM_Order__c</fullName>
+        <description>Check if the current user is the account manager on the account the order is associated with.</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT ISBLANK( Account__r.Biz_Starter_BAM__c ) &amp;&amp;  Account__r.Business_Account_Manager__r.Id = $User.Id, True, False)</formula>
+        <label>My AM Order</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Net_Total_After_AM__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( AM_Order__c &gt; 0,  Net_Total__c , null)</formula>
+        <label>Net (Gross - Discount) After AM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Total_Before_AM__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( AM_Order__c &lt; 1,  Net_Total__c , null)</formula>
+        <label>Net (Gross - Discount) Before AM</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>Gross_Total__c -  Discount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net (Gross - Discount)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_minus_Filing_Fee__c</fullName>
+        <externalId>false</externalId>
+        <formula>Net_Total__c -  Filling_Fee_Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net minus Filing Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Omitted_Calculation_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Omitted Calculation Amount</label>
+        <summarizedField>Order_Item__c.Extended_Price__c</summarizedField>
+        <summaryFilterItems>
+            <field>Order_Item__c.LZ_Product_ID_Commission__c</field>
+            <operation>equals</operation>
+            <value>3210, 3211</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OrderID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>OrderID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Cohort__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Cohort</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cohort 1</fullName>
+                    <default>false</default>
+                    <label>Cohort 1</label>
+                </value>
+                <value>
+                    <fullName>Cohort 2</fullName>
+                    <default>false</default>
+                    <label>Cohort 2</label>
+                </value>
+                <value>
+                    <fullName>Cohort 3</fullName>
+                    <default>false</default>
+                    <label>Cohort 3</label>
+                </value>
+                <value>
+                    <fullName>Cohort 4</fullName>
+                    <default>false</default>
+                    <label>Cohort 4</label>
+                </value>
+                <value>
+                    <fullName>Cohort 5</fullName>
+                    <default>false</default>
+                    <label>Cohort 5</label>
+                </value>
+                <value>
+                    <fullName>Cohort 6</fullName>
+                    <default>false</default>
+                    <label>Cohort 6</label>
+                </value>
+                <value>
+                    <fullName>Cohort 7</fullName>
+                    <default>false</default>
+                    <label>Cohort 7</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Created_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Created By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Date_Time_Created__c</fullName>
+        <description>Store the created date time of the order created in LZ Data</description>
+        <externalId>false</externalId>
+        <label>Order Date/Time Created</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Order_Date_Time_Modified__c</fullName>
+        <description>DateTime when the Order gets modified.</description>
+        <externalId>false</externalId>
+        <label>Order Date/Time Modified</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Order_Item_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Item Count</label>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Order_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Order Item</label>
+        <referenceTo>Order_Item__c</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Payment_Status_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order_Payment_Status__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Payment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Payment_Status__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Order Payment Status</label>
+        <referenceTo>Order_Payment_Status__c</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Orders_Hour_Central_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( DATEVALUE(  Order_Date_Time_Created__c ) &gt;= 
+DATE ( YEAR (DATEVALUE(Order_Date_Time_Created__c  )),3,1) 
++ 
+( 
+14- 
+CASE( MOD(DATE ( YEAR (DATEVALUE( Order_Date_Time_Created__c )),3,1) - DATE (1900,1,7),7) , 
+0,7,MOD(DATE ( YEAR (DATEVALUE( Order_Date_Time_Created__c  )),3,1) - DATE (1900,1,7),7)) 
+) 
+&amp;&amp; 
+DATEVALUE( Order_Date_Time_Created__c  ) &lt; 
+DATE ( YEAR (DATEVALUE( Order_Date_Time_Created__c  )),11,1) 
++ 
+( 
+7- 
+CASE( MOD(DATE ( YEAR (DATEVALUE( Order_Date_Time_Created__c  )),11,1) - DATE (1900,1,7),7) , 
+0,7,MOD(DATE ( YEAR (DATEVALUE( Order_Date_Time_Created__c )),11,1) - DATE (1900,1,7),7)) 
+),
+(CASE( VALUE(MID(TEXT( Order_Date_Time_Created__c  ),12,2)) , 
+00, &apos;19:00&apos;, 
+01, &apos;20:00&apos;, 
+02, &apos;21:00&apos;, 
+03, &apos;22:00&apos;, 
+04, &apos;23:00&apos;, 
+05, &apos;00:00&apos;, 
+06, &apos;01:00&apos;, 
+07, &apos;02:00&apos;, 
+08, &apos;03:00&apos;, 
+09, &apos;04:00&apos;, 
+10, &apos;05:00&apos;, 
+11, &apos;06:00&apos;, 
+12, &apos;07:00&apos;, 
+13, &apos;08:00&apos;, 
+14, &apos;09:00&apos;, 
+15, &apos;10:00&apos;, 
+16, &apos;11:00&apos;, 
+17, &apos;12:00&apos;, 
+18, &apos;13:00&apos;, 
+19, &apos;14:00&apos;, 
+20, &apos;15:00&apos;, 
+21, &apos;16:00&apos;, 
+22, &apos;17:00&apos;, 
+23, &apos;18:00&apos;, 
+NULL))
+,
+(CASE( VALUE(MID(TEXT(Order_Date_Time_Created__c ),12,2)) , 
+00, &apos;18:00&apos;, 
+01, &apos;19:00&apos;, 
+02, &apos;20:00&apos;, 
+03, &apos;21:00&apos;, 
+04, &apos;22:00&apos;, 
+05, &apos;23:00&apos;, 
+06, &apos;00:00&apos;, 
+07, &apos;01:00&apos;, 
+08, &apos;02:00&apos;, 
+09, &apos;03:00&apos;, 
+10, &apos;04:00&apos;, 
+11, &apos;05:00&apos;, 
+12, &apos;06:00&apos;, 
+13, &apos;07:00&apos;, 
+14, &apos;08:00&apos;, 
+15, &apos;09:00&apos;, 
+16, &apos;10:00&apos;, 
+17, &apos;11:00&apos;, 
+18, &apos;12:00&apos;, 
+19, &apos;13:00&apos;, 
+20, &apos;14:00&apos;, 
+21, &apos;15:00&apos;, 
+22, &apos;16:00&apos;, 
+23, &apos;17:00&apos;, 
+NULL)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hour (Central Time)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PRT_Contact_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>PRT Contact Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Data Reviewed</fullName>
+                    <default>false</default>
+                    <label>Data Reviewed</label>
+                </value>
+                <value>
+                    <fullName>Email Attempt 1</fullName>
+                    <default>false</default>
+                    <label>Email Attempt 1</label>
+                </value>
+                <value>
+                    <fullName>Email Attempt 2</fullName>
+                    <default>false</default>
+                    <label>Email Attempt 2</label>
+                </value>
+                <value>
+                    <fullName>Email Receipt 1</fullName>
+                    <default>false</default>
+                    <label>Email Receipt 1</label>
+                </value>
+                <value>
+                    <fullName>Phone Conversation 1</fullName>
+                    <default>false</default>
+                    <label>Phone Conversation 1</label>
+                </value>
+                <value>
+                    <fullName>Phone Conversation 2</fullName>
+                    <default>false</default>
+                    <label>Phone Conversation 2</label>
+                </value>
+                <value>
+                    <fullName>Ran Card</fullName>
+                    <default>false</default>
+                    <label>Ran Card</label>
+                </value>
+                <value>
+                    <fullName>Ran Card 2</fullName>
+                    <default>false</default>
+                    <label>Ran Card 2</label>
+                </value>
+                <value>
+                    <fullName>VM Attempt 1</fullName>
+                    <default>false</default>
+                    <label>VM Attempt 1</label>
+                </value>
+                <value>
+                    <fullName>VM Attempt 2</fullName>
+                    <default>false</default>
+                    <label>VM Attempt 2</label>
+                </value>
+                <value>
+                    <fullName>VM Attempt 3</fullName>
+                    <default>false</default>
+                    <label>VM Attempt 3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PRT_Lead_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>PRT Lead Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active (Contacted)</fullName>
+                    <default>false</default>
+                    <label>Active (Contacted)</label>
+                </value>
+                <value>
+                    <fullName>Attempted (No Contact)</fullName>
+                    <default>false</default>
+                    <label>Attempted (No Contact)</label>
+                </value>
+                <value>
+                    <fullName>Closed (Lost)</fullName>
+                    <default>false</default>
+                    <label>Closed (Lost)</label>
+                </value>
+                <value>
+                    <fullName>Closed-Vindicia</fullName>
+                    <default>false</default>
+                    <label>Closed-Vindicia</label>
+                </value>
+                <value>
+                    <fullName>Pending-Vindicia</fullName>
+                    <default>false</default>
+                    <label>Pending-Vindicia</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Package__c</fullName>
+        <description>Show what package the base product belongs to</description>
+        <externalId>false</externalId>
+        <formula>if (CONTAINS(Base_Product__r.Name , &apos;Express Gold&apos;), &apos;Express Gold&apos;, 
+if (CONTAINS(Base_Product__r.Name , &apos;Standard&apos;), &apos;Standard&apos;, 
+if (CONTAINS(Base_Product__r.Name , &apos;Economy&apos;), &apos;Economy&apos;, 
+if (CONTAINS(Base_Product__r.Name , &apos;Complete Coverage&apos;), &apos;Complete Coverage&apos;, 
+if (CONTAINS(Base_Product__r.Name , &apos;Basic&apos;), &apos;Basic&apos;, null)
+))))</formula>
+        <label>Package</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent Order</label>
+        <referenceTo>Order__c</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_User_Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent User Order</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partner_Product_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Product Count</label>
+        <summaryFilterItems>
+            <field>Order_Item__c.Product_Name__c</field>
+            <operation>equals</operation>
+            <value>Tax ID Obtainmen,Gold Card from American Express OPEN (SM),Registered Agent Service,Business License Package,  Small Business Banking Consultation, Website Design Consultation, Business Credit Consultation</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Processing_Status_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>User_Order_Extension__r.Prior_Processing_Status_Date_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prior Processing Status Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Processing_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>User_Order_Extension__r.Prior_Processing_Status__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prior Processing Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prior_Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(User_Order_Extension__r.Prior_Reason_Code__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prior Reason Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proc_Status_Flag_Lvl_1__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(Base_Product__r.Process__r.Process_ID__c = 7 &amp;&amp; 
+(Processing_Status__c = &apos;AM Search Review&apos; || 
+Processing_Status__c = &apos;Materials Needed&apos; || 
+Processing_Status__c = &apos;L + S No Match&apos; ||
+Processing_Status__c = &apos;Problem&apos; || 
+Processing_Status__c = &apos;Application Completed&apos; || 
+Processing_Status__c = &apos;Unable to Process&apos; || 
+Processing_Status__c = &apos;Comp Search Mailed&apos; ||
+Processing_Status__c = &apos;Comp Search G&amp;S Problem&apos; || 
+Processing_Status__c = &apos;Comp Search Unable to Process&apos; || 
+Processing_Status__c = &apos;Comp Search Problem&apos; || 
+Processing_Status__c = &apos;Search Conflict&apos; || 
+Processing_Status__c = &apos;Search Completed&apos; || 
+Processing_Status__c = &apos;Search Mailed&apos; || 
+Processing_Status__c = &apos;Waiting for Logo&apos;)) || 
+((Base_Product__r.Process__r.Process_ID__c = 1 || Base_Product__r.Process__r.Process_ID__c = 2) &amp;&amp; 
+(Processing_Status__c = &apos;Entity Name Prelim. Available&apos; || 
+Processing_Status__c = &apos;Pre-Filing Problem (Information Required)&apos; || 
+Processing_Status__c = &apos;Awaiting Signature From Customer&apos; || 
+Processing_Status__c = &apos;Entity Names Rejected&apos; || 
+Processing_Status__c = &apos;State Rejected Filing&apos; || 
+Processing_Status__c = &apos;Documents Received From SOS&apos; || 
+Processing_Status__c = &apos;Post-Filing Problem (Information Required)&apos; || 
+Processing_Status__c = &apos;Problem&apos; || 
+Processing_Status__c = &apos;Sent to Customer&apos; || 
+Processing_Status__c = &apos;Unable to Process&apos;))
+,True, False)</formula>
+        <label>Proc Status Flag Lvl 1</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Proc_Status_Flag_Lvl_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(Base_Product__r.Process__r.Process_ID__c = 7 &amp;&amp;
+(
+(Processing_Status__c = &apos;AM Attention&apos;) || 
+(Processing_Status__c = &apos;Search Conflict&apos; &amp;&amp; Processing_Status_Days_Passed__c &gt;= 2) || 
+((Processing_Status__c = &apos;AM Search Review&apos; || Processing_Status__c = &apos;Comp Search Mailed&apos;) &amp;&amp; (Processing_Status_Days_Passed__c &gt;= 3)) || 
+(Processing_Status__c = &apos;Application Completed&apos; &amp;&amp; Processing_Status_Days_Passed__c &gt;= 5) ||
+(Processing_Status__c = &apos;AM Hold&apos; &amp;&amp; Processing_Status_Days_Passed__c &gt;= 10)
+)) ||
+(
+(Base_Product__r.Process__r.Process_ID__c = 1 || Base_Product__r.Process__r.Process_ID__c = 2) &amp;&amp; 
+(
+((Processing_Status__c = &apos;Pre-Filing Problem (Information Required)&apos; || Processing_Status__c = &apos;State Rejected Filing&apos; || Processing_Status__c = &apos;Post-Filing Problem (Information Required)&apos; || Processing_Status__c = &apos;Problem&apos;) &amp;&amp; Processing_Status_Days_Passed__c &gt;= 2) || 
+((Processing_Status__c = &apos;Entity Names Rejected&apos; || Processing_Status__c = &apos;Awaiting Signature From Customer&apos;) &amp;&amp; (Processing_Status_Days_Passed__c &gt;= 3))
+)
+)
+, True, False)</formula>
+        <label>Proc Status Flag Lvl 2</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Proc_Status_Flag_Lvl_3__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+(Base_Product__r.Process__r.Process_ID__c = 7 &amp;&amp; 
+(
+Processing_Status__c = &apos;Search 15 Day Proceed&apos; || 
+((Processing_Status__c = &apos;AM Search Review&apos; || Processing_Status__c = &apos;Comp Search Mailed&apos; || Processing_Status__c = &apos;Search Conflict&apos;) &amp;&amp; (Processing_Status_Days_Passed__c &gt;= 5)) || 
+(Processing_Status__c = &apos;Application Completed&apos; &amp;&amp; Processing_Status_Days_Passed__c &gt;= 12)
+)
+) || 
+((Base_Product__r.Process__r.Process_ID__c = 1 || Base_Product__r.Process__r.Process_ID__c = 2) &amp;&amp; 
+((Processing_Status__c = &apos;Pre-Filing Problem (Information Required)&apos; || Processing_Status__c = &apos;Post-Filing Problem (Information Required)&apos; || Processing_Status__c = &apos;Problem&apos;) &amp;&amp; (Processing_Status_Days_Passed__c &gt;= 5))
+)
+, True, False)</formula>
+        <label>Proc Status Flag Lvl 3</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Proc_Status_Flag__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Proc_Status_Flag_Lvl_3__c, IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;Red&quot;), 
+IF(Proc_Status_Flag_Lvl_2__c, IMAGE(&quot;/img/samples/flag_yellow.gif&quot;, &quot;Yellow&quot;), 
+IF(Proc_Status_Flag_Lvl_1__c, IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;Green&quot;), 
+Null)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Proc Status Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Process__c</fullName>
+        <externalId>false</externalId>
+        <formula>Base_Product__r.Process__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Process</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Processing_Status_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>User_Order_Extension__r.Processing_Status_Date_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Processing Status Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Processing_Status_Days_Passed__c</fullName>
+        <description>Calculate how many days have passed since the processing status datetime value, excluding weekend.  If processing status datetime is blank, this formula field is blank.</description>
+        <externalId>false</externalId>
+        <formula>TODAY() - DATEVALUE(Processing_Status_Date_Time__c)</formula>
+        <label>Processing Status Days Passed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Processing_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>User_Order_Extension__r.Processing_Status__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Processing Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <externalId>false</externalId>
+        <formula>Base_Product__r.Product_Line__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Line</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Base_Product__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>Show process name of the base product on the order</description>
+        <externalId>false</externalId>
+        <formula>Base_Product__r.Process__r.Name</formula>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RA_Order_Renewal_Test__c</fullName>
+        <externalId>false</externalId>
+        <label>RA Order Renewal Test</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(User_Order_Extension__r.Reason_Code__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reason Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registered_Agent_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Registered Agent Count</label>
+        <summaryFilterItems>
+            <field>Order_Item__c.Product_Name__c</field>
+            <operation>contains</operation>
+            <value>Registered Agent</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SBR_Product_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>SBR Product Count</label>
+        <summaryFilterItems>
+            <field>Order_Item__c.SBR_Product__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>SOP_Test__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>SOP Test</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Second_Installment_Amount__c</fullName>
+        <description>Second Installment Amount</description>
+        <externalId>false</externalId>
+        <label>2nd Installment Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Second_Installment_Status__c</fullName>
+        <description>2nd Installment Status</description>
+        <externalId>false</externalId>
+        <label>2nd Installment Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Yet Due</fullName>
+                    <default>false</default>
+                    <label>Not Yet Due</label>
+                </value>
+                <value>
+                    <fullName>Payment Due</fullName>
+                    <default>false</default>
+                    <label>Payment Due</label>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                    <label>Paid</label>
+                </value>
+                <value>
+                    <fullName>Past Due - Will Reharvest</fullName>
+                    <default>false</default>
+                    <label>Past Due - Will Reharvest</label>
+                </value>
+                <value>
+                    <fullName>Past Due - Will Not Reharvest</fullName>
+                    <default>false</default>
+                    <label>Past Due - Will Not Reharvest</label>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                    <label>Error</label>
+                </value>
+                <value>
+                    <fullName>Manual 1 (TBD)</fullName>
+                    <default>false</default>
+                    <label>Manual 1 (TBD)</label>
+                </value>
+                <value>
+                    <fullName>Manual 2 (TBD)</fullName>
+                    <default>false</default>
+                    <label>Manual 2 (TBD)</label>
+                </value>
+                <value>
+                    <fullName>Uncollectible</fullName>
+                    <default>false</default>
+                    <label>Uncollectible</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Seller_s_Permit_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Seller&apos;s Permit Count</label>
+        <summaryFilterItems>
+            <field>Order_Item__c.Product_Name__c</field>
+            <operation>contains</operation>
+            <value>Seller&apos;s Permit</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Order_Item__c.Order__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>State_of_Formation__c</fullName>
+        <externalId>false</externalId>
+        <label>State of Formation</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TOS_Accepted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if Terms of Services (TOS) is accepted by the customer</description>
+        <externalId>false</externalId>
+        <label>TOS Accepted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Consultation_CTN__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax Consultation-CTN</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <externalId>false</externalId>
+        <label>Team</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Teas_Or_Teas_Plus__c</fullName>
+        <externalId>false</externalId>
+        <label>Teas/Teas(+)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Teas</fullName>
+                    <default>false</default>
+                    <label>Teas</label>
+                </value>
+                <value>
+                    <fullName>Teas(+)</fullName>
+                    <default>false</default>
+                    <label>Teas(+)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Third_Installment_Amount__c</fullName>
+        <description>Third Installment Amount</description>
+        <externalId>false</externalId>
+        <label>3rd Installment Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Third_Installment_Status__c</fullName>
+        <description>3rd Installment Status</description>
+        <externalId>false</externalId>
+        <label>3rd Installment Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Yet Due</fullName>
+                    <default>false</default>
+                    <label>Not Yet Due</label>
+                </value>
+                <value>
+                    <fullName>Payment Due</fullName>
+                    <default>false</default>
+                    <label>Payment Due</label>
+                </value>
+                <value>
+                    <fullName>Paid</fullName>
+                    <default>false</default>
+                    <label>Paid</label>
+                </value>
+                <value>
+                    <fullName>Past Due - Will Reharvest</fullName>
+                    <default>false</default>
+                    <label>Past Due - Will Reharvest</label>
+                </value>
+                <value>
+                    <fullName>Past Due - Will Not Reharvest</fullName>
+                    <default>false</default>
+                    <label>Past Due - Will Not Reharvest</label>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                    <label>Error</label>
+                </value>
+                <value>
+                    <fullName>Manual 1 (TBD)</fullName>
+                    <default>false</default>
+                    <label>Manual 1 (TBD)</label>
+                </value>
+                <value>
+                    <fullName>Manual 2 (TBD)</fullName>
+                    <default>false</default>
+                    <label>Manual 2 (TBD)</label>
+                </value>
+                <value>
+                    <fullName>Uncollectible</fullName>
+                    <default>false</default>
+                    <label>Uncollectible</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Three_Pay__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>3 Pay</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Trademark_Status__c</fullName>
+        <description>Link to the trademark status page of US PTO office website</description>
+        <externalId>false</externalId>
+        <label>USPTO Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>USPTO_Serial_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>USPTO Serial #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Order_Extension__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User Order Extension</label>
+        <referenceTo>User_Order_Extension__c</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Order_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Processing Number</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value_of_Decline__c</fullName>
+        <externalId>false</externalId>
+        <label>Value of Decline</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vertical__c</fullName>
+        <description>For use in business orders auto assignment. Data populated by data integration.</description>
+        <externalId>false</externalId>
+        <label>Vertical</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Web_Design_Web_com__c</fullName>
+        <externalId>false</externalId>
+        <label>Web Design-Web.com</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>X2nd_Installment_Decline_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Installment Decline Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Installment_Paid_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Installment Paid Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Installment_Decline_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>3rd Installment Decline Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Installment_Paid_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>3rd Installment Paid Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Zazma__c</fullName>
+        <externalId>false</externalId>
+        <label>Zazma</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Already Purchased</fullName>
+                    <default>false</default>
+                    <label>Already Purchased</label>
+                </value>
+                <value>
+                    <fullName>Later</fullName>
+                    <default>false</default>
+                    <label>Later</label>
+                </value>
+                <value>
+                    <fullName>No Interest</fullName>
+                    <default>false</default>
+                    <label>No Interest</label>
+                </value>
+                <value>
+                    <fullName>Now</fullName>
+                    <default>false</default>
+                    <label>Now</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead</fullName>
+                    <default>false</default>
+                    <label>Partner Lead</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Order</label>
+    <listViews>
+        <fullName>All_This_Week</fullName>
+        <columns>Order_Date_Time_Modified__c</columns>
+        <columns>NAME</columns>
+        <columns>Base_Product__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Order_Payment_Status__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Base_Product_Name__c</columns>
+        <columns>Parent_Order__c</columns>
+        <columns>Product_Line__c</columns>
+        <columns>Product_Name__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Order_Date_Time_Created__c</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <filters>
+            <field>Contact__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>*All - This Week</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Decline_Orders_100_199_Order</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Decline Orders 100-199</label>
+        <queue>Decline_Orders_100_199</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Decline_Orders_200_299_Order</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Decline Orders 200-299</label>
+        <queue>Decline_Orders_200_299</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Decline_Orders_300_399_Order</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Decline Orders 300-399</label>
+        <queue>Decline_Orders_300_399</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Decline_Orders_400_Order</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Decline Orders 400+</label>
+        <queue>Decline_Orders_400</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Decline_Orders_99_or_less_Order</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Decline Orders 99 or less</label>
+        <queue>Decline_Orders_99_or_less</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Decline_Orders_Queue</fullName>
+        <columns>NAME</columns>
+        <columns>Base_Product__c</columns>
+        <columns>Net_minus_Filing_Fee__c</columns>
+        <columns>Contact_Name__c</columns>
+        <columns>Date_Time_Modified__c</columns>
+        <columns>Date_Time_Created__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>Decline Orders Queue</label>
+        <language>en_US</language>
+        <queue>Decline_Orders</queue>
+        <sharedTo>
+            <role>Outbound_Lead</role>
+            <role>Outbound_Management</role>
+            <role>Sales_Director</role>
+            <role>Sales_Reporting_Analyst</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Completed_Orders</fullName>
+        <booleanFilter>(4 AND 2 AND 3) OR (1 AND 5 AND 3) OR (1 AND 2 AND 6) or (4 AND 5 AND 6)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Base_Product__c</columns>
+        <columns>Net_minus_Filing_Fee__c</columns>
+        <columns>Contact_Name__c</columns>
+        <columns>Date_Time_Modified__c</columns>
+        <columns>Date_Time_Created__c</columns>
+        <columns>PRT_Contact_Status__c</columns>
+        <columns>PRT_Lead_Status__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Order_Payment_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Declined</value>
+        </filters>
+        <filters>
+            <field>Second_Installment_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Past Due - Will Reharvest,Past Due - Will Not Reharvest</value>
+        </filters>
+        <filters>
+            <field>Third_Installment_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Past Due - Will Reharvest,Past Due - Will Not Reharvest</value>
+        </filters>
+        <filters>
+            <field>Order_Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <filters>
+            <field>Second_Installment_Status__c</field>
+            <operation>equals</operation>
+            <value>Paid</value>
+        </filters>
+        <filters>
+            <field>Third_Installment_Status__c</field>
+            <operation>equals</operation>
+            <value>Paid</value>
+        </filters>
+        <label>My Completed Orders</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Decline_Orders</fullName>
+        <booleanFilter>(1 OR 2 OR 3) AND 4</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Base_Product__c</columns>
+        <columns>Net_minus_Filing_Fee__c</columns>
+        <columns>Contact_Name__c</columns>
+        <columns>Date_Time_Modified__c</columns>
+        <columns>Date_Time_Created__c</columns>
+        <columns>PRT_Contact_Status__c</columns>
+        <columns>PRT_Lead_Status__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Order_Payment_Status__c</field>
+            <operation>equals</operation>
+            <value>Declined</value>
+        </filters>
+        <filters>
+            <field>Second_Installment_Status__c</field>
+            <operation>equals</operation>
+            <value>Past Due - Will Reharvest,Past Due - Will Not Reharvest</value>
+        </filters>
+        <filters>
+            <field>Third_Installment_Status__c</field>
+            <operation>equals</operation>
+            <value>Past Due - Will Reharvest,Past Due - Will Not Reharvest</value>
+        </filters>
+        <filters>
+            <field>PRT_Lead_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed (Lost),Closed-Vindicia,Pending-Vindicia</value>
+        </filters>
+        <label>My Decline Orders</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Order Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Orders</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Base_Product_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Order_Payment_Status_Text__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_Login__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>User_Order_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Order_Date_Time_Created__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Base_Product__c</searchFilterFields>
+        <searchFilterFields>Order_Payment_Status__c</searchFilterFields>
+        <searchFilterFields>Customer_Login__c</searchFilterFields>
+        <searchFilterFields>User_Order_ID__c</searchFilterFields>
+        <searchFilterFields>Date_Time_Created__c</searchFilterFields>
+        <searchResultsAdditionalFields>Base_Product_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Order_Payment_Status_Text__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer_Login__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>User_Order_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Processing_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Order_Date_Time_Created__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Order_Prevent_Name_Field_Update</fullName>
+        <active>true</active>
+        <description>Prevent user from updating the Name field other than system admin profiles</description>
+        <errorConditionFormula>IF(!($Profile.Name = &apos;System Admin- Password Does Not Expire&apos; || $Profile.Name = &apos;System Administrator&apos;) , true, false) &amp;&amp; ISCHANGED( Name )</errorConditionFormula>
+        <errorMessage>Order ID cannot be changed.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Case_Wizard</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Case Wizard</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/22.0/integration.js&quot;)} 
+//var currentURL = document.URL; 
+var currentURL = &apos;/{!Order__c.Id}&apos;; 
+if (typeof(srcUp) == &apos;function&apos;) { 
+srcUp(&quot;/apex/Case_Wizard_Page?isdtp=vw&amp;vContact={!Order__c.ContactId__c}&amp;vAssignedUser={!User.Id}&amp;vName={!Order__c.Contact_Name__c}&amp;vContactType={!Order__c.ContactId__c}&amp;vCase={!Case.Id}&amp;vLogin={!Order__c.Account__c}&amp;vUser={!User.Name}&amp;vDepartment={!User.Department2__c}&amp;vDivision={!User.Division2__c}&amp;vOrder={!Order__c.Name}&amp;rurl=&quot;+currentURL); 
+} else { 
+window.open(&quot;/apex/Case_Wizard_Page?vContact={!Order__c.ContactId__c}&amp;vAssignedUser={!User.Id}&amp;vName={!Order__c.Contact_Name__c}&amp;vContactType={!Order__c.ContactId__c}&amp;vCase={!Case.Id}&amp;vLogin={!Order__c.Account__c}&amp;vUser={!User.Name}&amp;vDepartment={!User.Department2__c}&amp;vDivision={!User.Division2__c}&amp;vOrder={!Order__c.Name}&amp;rurl=&quot;+currentURL, &quot;&quot;, &quot;status=0,scrollbars=yes&quot;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Claim_Orders</fullName>
+        <availability>online</availability>
+        <description>Update all Orders to this user</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Claim Orders</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://legalzoom--qa.cs12.my.salesforce.com/flow/Order_Assignment?OrderID={!Order__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Doc_Delivery</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Doc Delivery</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://lzsuite/ordermanager/SF/SalesForceDocDelivery.aspx?OrderId={!Order__c.Name}&amp;UserOrderId={!Order__c.User_Order_ID__c}&apos;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Ledger</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Ledger</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/NextPadOM?processingNumber={!Order__c.User_Order_ID__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Log_Call</fullName>
+        <availability>online</availability>
+        <description>Log communication with customer on fulfillment process by account manager</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Log Call</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/26.0/integration.js&quot;)} 
+if (typeof(srcUp) == &apos;function&apos;) {
+  srcUp(&apos;/apex/AMFulfillment?isdtp=vw&amp;vOrderId={!Order__c.Id}&amp;vAssignedUser={!$User.Id}&apos;);
+} else {
+  window.open(&apos;/apex/AMFulfillment?vOrderId={!Order__c.Id}&amp;vAssignedUser={!$User.Id}&apos;, &quot;&quot;, &quot;status=0,width=900,height=600,resizable=1,scrollbars=1&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>OM_Notepad</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>OM Notepad</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>function PopupCenter(url, title, w, h) { 
+// Fixes dual-screen position Most browsers Firefox 
+var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left; 
+var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top; 
+
+width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width; 
+height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height; 
+
+var left = ((width / 2) - (w / 2)) + dualScreenLeft; 
+var top = ((height / 2) - (h / 2)) + dualScreenTop;
+
+var newWindow = window.open(url, title, &apos;scrollbars=yes, resizable=yes , width=&apos; + w + &apos;, height=&apos; + h + &apos;, top=&apos; + top + &apos;, left=&apos; + left);
+
+ 
+// Puts focus on the newWindow1 
+if (window.focus) { 
+newWindow.focus(); 
+} 
+
+}
+PopupCenter(&quot;http://lzsuite/OrderManager/Dialog/DialogNotepadControl.aspx?UserOrderId={!Order__c.User_Order_ID__c}&quot;,&quot;Notepad&quot;,&quot;800&quot;,&quot;600&quot;); 
+
+/*
+window.open(&quot;http://dev-lzsuite/OrderManager/Dialog/DialogNotepadControl.aspx?UserOrderId={!Order__c.User_Order_ID__c}&quot;, &quot;_blank&quot;, &quot;scrollbars=yes, resizable=yes, height=600&quot;);
+window.open(&quot;http://qa-lzsuite/OrderManager/Dialog/DialogNotepadControl.aspx?UserOrderId={!Order__c.User_Order_ID__c}&quot;, &quot;_blank&quot;, &quot;scrollbars=yes, resizable=yes, height=600&quot;);
+window.open(&quot;http://stg-lzsuite/OrderManager/Dialog/DialogNotepadControl.aspx?UserOrderId={!Order__c.User_Order_ID__c}&quot;, &quot;_blank&quot;, &quot;scrollbars=yes, resizable=yes, height=600&quot;);
+window.open(&quot;http://lzsuite/OrderManager/Dialog/DialogNotepadControl.aspx?UserOrderId={!Order__c.User_Order_ID__c}&quot;, &quot;_blank&quot;, &quot;scrollbars=yes, resizable=yes, height=600&quot;);
+*/</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Proofer</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Proofer</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>function PopupCenter(url, title, w, h) { 
+// Fixes dual-screen position Most browsers Firefox 
+var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left; 
+var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top; 
+
+width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width; 
+height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height; 
+
+var left = ((width / 2) - (w / 2)) + dualScreenLeft; 
+var top = ((height / 2) - (h / 2)) + dualScreenTop; 
+var newWindow = window.open(url, title, &apos;scrollbars=yes,resizable=yes, width=&apos; + w + &apos;, height=&apos; + h + &apos;, top=&apos; + top + &apos;, left=&apos; + left); 
+
+// Puts focus on the newWindow 
+if (window.focus) { 
+newWindow.focus(); 
+} 
+}
+PopupCenter(&quot;http://lzapps/Proofer/{!Order__c.User_Order_ID__c}&quot;,&quot;Proofer&quot;,&quot;800&quot;,&quot;650&quot;);  
+/*
+window.open(&quot;&quot;http://dev-lzapps/Proofer/{!Order__c.User_Order_ID__c}&quot;, &quot;_blank&quot;, &quot;scrollbars=yes, resizable=yes, height=600&quot;);
+window.open(&quot;http://qa-lzapps/Proofer/{!Order__c.User_Order_ID__c}&quot;, &quot;_blank&quot;, &quot;scrollbars=yes, resizable=yes, height=600&quot;);
+window.open(&quot;http://stg-lzapps/Proofer/{!Order__c.User_Order_ID__c}&quot;, &quot;_blank&quot;, &quot;scrollbars=yes, resizable=yes, height=600&quot;);
+window.open(&quot;http://lzapps/Proofer/{!Order__c.User_Order_ID__c}&quot;, &quot;_blank&quot;, &quot;scrollbars=yes, resizable=yes, height=600&quot;);
+*/</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_in_Order_Manager</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View in Order Manager</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&quot;http://lzsuite/ordermanager/search.aspx?OrderId={!Order__c.Name}&quot;, &quot;&quot;, &quot;height=400,width=900,resizable=1,scrollbars=1&quot;);</url>
+    </webLinks>
+</CustomObject>

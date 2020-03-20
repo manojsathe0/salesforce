@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>pap docs review 042115</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email Final Documents</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order #</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As requested, I have included a copy of your Provisional Application for Patent, which was filed on MM / DD / YYYY. Attached is a copy of your Final Package documents, including:
+
+1) LegalZoom cover letter
+2) The E-filing receipt from the USPTO
+3) A copy of your application
+4) ADS (Application Data Sheet)
+5) A Non-Disclosure Agreement form
+
+Please note that your Provisional Application for Patent is valid for exactly ONE YEAR. You must apply for a corresponding (Non-Provisional) Utility Patent before its expiration, or your early filing date will be forfeited.  To learn more about Utility Patents, please here.
+
+Feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you for choosing LegalZoom.
+
+Best Regards,
+
+LegalZoom Patent Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

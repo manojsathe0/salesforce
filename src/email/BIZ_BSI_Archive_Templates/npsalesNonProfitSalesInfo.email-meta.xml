@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>npsales - Non Profit Sales Info</name>
+    <style>none</style>
+    <subject>npsales - Non Profit Sales Info</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.
+
+A non-profit corporation is a special type of corporation that has been organized for specific tax-exempt purposes. To qualify for non-profit status, your corporation must be formed to benefit (1.) the public, (2.) a specific group of individuals or (3.) the membership of the non-profit. Examples of non-profits include religious organizations, charitable organizations, political organizations, credit unions and membership clubs (such as the Elk&apos;s Club or a country club).
+
+There are two important steps in forming a non-profit corporation:
+
+1. Form a non-profit corporation in your home state.
+2. Adopt bylaws for the corporation and obtain an employer identification number.
+
+Once these steps are completed, the non-profit corporation must submit an application to the IRS requesting tax exempt status under Internal Revenue Code Section 501(c)(3).
+
+A 501(c)(3) public charity is an organization that (1.) has been organized under state law, (2.) is operated for a 501(c)(3) purpose, (3.) benefits an unidentified charitable class of people (e.g. patients suffering from a specific disease), (4.) engages in activities that are non-political in nature and (5.) derives at least one-third of its support from the general public. A 501(c)(3) purpose includes?but is not limited to?educational, religious, scientific, medical and charitable endeavors.
+
+The 501(c)(3) submission process typically takes 3-6 months, provided the application is properly prepared and all the procedural requirements have been met.
+
+For your convenience, I have provided additional information and links to begin your non-profit formation:
+
+Economy Non-Profit Package   {!snippetVariable.econnpcorp_pricing}
+(20-35 Business Days)
+Standard Non-Profit Package   {!snippetVariable.stdnpcorp_pricing}
+(20-35 Business Days)
+Express Gold Non-Profit Package   {!snippetVariable.goldnpcorp_pricing}
+(7-10 Business Days)
+
+Prepare 501(c)(3) application {!snippetVariable.taxexempt_pricing}
+*IRS fees can range from $300.00 to $750.00 and are not included in the above prices.
+
+Get Started:
+http://www.legalzoom.com/legalzip/non-profit/nonprofit_procedure.html
+Additional Pricing Information:
+http://www.legalzoom.com/pricing/nonprofit_pricing.html
+Additional Non-Profit Corporation Information:
+http://www.legalzoom.com/law_library/non-profit/introduction.html
+
+I recommend the Express Gold Package because it offers significant benefits. The Gold Package includes free preparation of your Tax ID application (for easy self-filing) OR a {!snippetVariable.ein_prep} discount toward LegalZoom&apos;s complete Tax ID Obtainment Service. Most importantly, it will expedite your filing process, reducing the waiting period to 7-10 business days. Other packages take 20-35 business days.
+
+Also, you may want to consider using LegalZoom&apos;s Registered Agent Service. Setting up a registered agent is a state requirement for all corporations. LegalZoom&apos;s Registered Agent Service ensures professional handling of your company?s state correspondence and also helps ensure your privacy. We offer Registered Agent Services at an affordable rate of {!snippetVariable.ra_annual} per year.
+
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at $biz_phone $biz_hours.
+
+Best regards,
+
+[ Your Name ]
+{!snippetVariable.bizbsi_address}
+{!snippetVariable.bizbsi_phone}
+{!snippetVariable.bizbsi_fax}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,87 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>
+
+Thank you for your inquiry. In a recent phone call you indicated your desire to resolve the conflict with the proposed name of your new business by filing Texas Secretary of State Form 509 entitled “Consent to Use of Similar Name”. To do so, you will need to obtain a consent from:<br/><br/> 
+
+[Company name]<br/><br/>
+
+This company’s listed contact info is:<br/><br/>
+
+[RA address]<br/><br/>
+
+When requesting consent to use your entity name, a few key steps are needed.<ul> 
+<li>Complete the 509 Form as follows:<ul>
+<li>Item 1: Enter the name of the entity or individual who holds the existing name.<li>
+Item 2: Enter the proposed name</ul>
+<li>Execution: Form 509 must be signed in the presence of a notary public.  The form must be signed by the person who holds the rights to the existing name, or someone authorized to act on the individual’s behalf. If the existing name is held by an entity, an individual who is authorized to act on behalf of the entity must sign the form. Please see attached sample.</ul></ul>
+
+Once the consent is obtained, return the form to us via email, via fax, or by mail:<br/><ul> 
+<li>Email: bzsupport@legalzoom.com (include order number in subject line)
+<li>Fax: (323) 337-0743, Attn: Order # xxxxxxxx
+<li>Mail:
+LegalZoom.com<br/>
+Order #: xxxxxxxx<br/>
+9900 Spectrum Dr.<br/>
+Austin, TX 78717</ul>
+
+If you are unable to obtain consent or decide to try an alternate name instead, simply let us know.<br/><br/> 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full}{!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<br/><br/>
+
+{!snippetVariable.ccsincerely}<br/><br/>{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

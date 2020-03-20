@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount/Activity.CreatedBy.User_Count__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Average Emails</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Average Emails</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Total Emails</description>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Emails</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Case$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Case$Queue__c</field>
+    </columns>
+    <description>Average Emails by Agent</description>
+    <filter>
+        <criteriaItems>
+            <column>Case.Activities$Email_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Outgoing</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>ASD-LegalPlan_Retention,Biz BSI,Biz BSI Registered Agents,Biz Special Filings,IP BSI,PSD-BSI</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case.Activities$CreatedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Average Emails By Agent</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Case.Activities$CreatedDate</dateColumn>
+        <endDate>2016-02-29</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-02-01</startDate>
+    </timeFrameFilter>
+</Report>

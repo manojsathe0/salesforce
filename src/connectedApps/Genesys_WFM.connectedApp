@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>jkellum@legalzoom.com</contactEmail>
+    <description>Genesys Workforce Managment</description>
+    <label>Genesys WFM</label>
+    <logoUrl>https://legalzoom--c.na11.content.force.com/servlet/servlet.ImageServer?id=015G000000wGBJR&amp;oid=00DG0000000BmQx</logoUrl>
+    <startUrl>http://10.9.205.73:8080/wfm/</startUrl>
+</ConnectedApp>

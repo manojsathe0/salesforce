@@ -1,0 +1,50 @@
+<html><div class="emailHeader"><body bgcolor="#FFFFFF" style="margin-top:0px;"><img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br><table width="614" border="0" cellspacing="0" cellpadding="0" align="center"><tr><td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;"></td></tr></table><table cellpadding="4" cellspacing="0" border="0" width="614" align="center"><tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr><tr><td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+
+<p>Dear {!Contact.FirstName},</p>
+
+<p>We still have not received a specimen of your trademark to submit with your trademark application. Your order is currently on hold. If you would like us to continue processing your trademark application, we will need to receive a specimen of your trademark.</p>
+
+<p>Because you are applying to register a trademark on a “use in commerce” basis, the U.S. Patent and Trademark Office (USPTO) requires that you provide proof of your use (called a “specimen”). The specimen you provide should be an actual, real-world example that clearly shows how the trademark is being used in connection with the products (“goods”) and/or services you listed in your application.</p>
+
+<p>What are acceptable specimens:</p>
+<ul>
+<li><b>For goods (products)</b>: Photos of labels or tags attached to the product, packaging material, instruction manuals and containers that display the mark. If you provide a website as your specimen for products, it must prominently feature your trademark near a picture or description of the products AND allow your customers to purchase through the site. A page that only advertises your products will generally not be accepted. <em>NOTE: Invoices, order forms, receipts, brochures, catalogs, press releases, business cards, and stationery are generally NOT acceptable specimens for products</em>.</li>
+
+<li><b>For services</b>: A sign, brochure, advertisement, business card or a website (not under construction) prominently displaying your mark in connection with the services you’ve listed in your application. The specimen must include a reference to the service, not just the mark by itself. <em>NOTE: Printer’s proofs for advertisements or news articles about your services are generally NOT acceptable specimens for services.</em></li>
+</ul>
+
+<p>To learn more about trademark specimens and what is considered acceptable, <a href="http://www.legalzoom.com/trademarks-faq/what-is-a-trademark-specimen.html" target="_blank">click here</a>.</p>
+
+<p>Submit your materials using <b>ONE</b> of the methods below. Be sure to include your LegalZoom order number.</p>
+
+<ul>
+<li>By email: <a href="mailto:mytrademarks@legalzoom.com">mytrademarks@legalzoom.com</a>. Acceptable file formats include .gif, .pdf, .jpeg or .jpg. Files may not exceed 6 MB in size. <em>NOTE: For files larger than 6 MB or if you are using a Mac, please upload <a href="http://legalzoom.force.com/LZWTC" target="_blank">here</a>.</em></li>
+<li>By fax: (323) 446-8308</li>
+<li>By mail:<br>
+<blockquote>
+LegalZoom – Attn: Trademarks (Order # [fill in your number])<br>
+101 N. Brand Blvd., 11th Floor<br>
+Glendale, CA 91203<br>
+</blockquote>
+</li>
+</ul>
+<p>
+<em><b>Please note</b>: Submitted materials are securely protected by LegalZoom’s privacy policy. Furthermore, please note that LegalZoom does not retain physical copies of your submissions, and is not responsible for returning those materials to you. Submitted physical materials are securely destroyed.</em>
+</p>
+<p>
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT. <br/><br/>
+Best regards, <br/><br/>
+
+The LegalZoom Team <br/><br/>
+
+tel 877.818.8787 | fax 323.389.0658 <br/>
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717<br /><br />
+
+* Business Advantage Pro members can receive further guidance from an attorney for no additional cost.  If you are a member, take advantage of your benefits by <a href=https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=1>scheduling a consultation</a>.  If you are not a Business Advantage Pro member and would like more information about this valuable service, please <a href=http://www.legalzoom.com/attorneys-lawyers/legal-plans/business.html>visit us</a> or call customer care at (877) 657-8787. Please note that Business Advantage Pro is not available in all states.
+
+
+
+</p></div><div class="emailBody"><p class="templateBody"></p></div><div class="emailFooter"><p><br></td></tr></table><table width="614" border="0" cellspacing="0" cellpadding="5" align="center">  <tr>    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>.<br><br>
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.<br /><br />Please add services@emails.legalzoom.com to your address book.<br /><br />
+This email was sent to: {!Contact.Email}  <br /><br /> <br><br>  &copy; LegalZoom.com, Inc. All rights reserved. </span></td></tr></table></body></p></div></html>

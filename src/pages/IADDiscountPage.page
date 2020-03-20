@@ -1,0 +1,292 @@
+<apex:page controller="IADDiscountController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:stylesheet value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" />
+        <apex:includeScript value="{!URLFOR($Resource.IADJS)}"/>
+
+        <script type="text/javascript">
+           
+            function closeTab() {
+                sforce.console.getEnclosingTabId(closeSubtab);
+            }
+            var closeSubtab = function closeSubtab(result) {
+
+                var tabId = result.id;
+                sforce.console.closeTab(tabId);
+            };
+
+            function doSubmitDiscount() {
+              
+                 submitDiscount();
+
+            }
+            var callback = function(result) { 
+            if (result.success) { 
+                   closeTab();
+             } else { 
+                   alert('The custom event could not be fired!');
+             } 
+            };
+
+            function notifyCaller()
+            {
+              var jsonData = '{!orderId}';
+              sforce.console.fireEvent('RefreshOrderTabEvent', jsonData , callback);
+             
+            }
+             window.onload = function() {
+                    populateDiscount();
+            }; 
+                $( document ).ready(function() {
+                      attachEvent();
+                });
+                
+                function attachEvent()
+                {
+                     $(".accordion").click(function () {
+
+                           
+                            $header = $(this);
+                            //getting the next element
+                            $content = $header.next();
+                            //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+
+                                $header.children().toggleClass('ui-icon-triangle-1-s');
+                                $header.children().toggleClass('ui-icon-triangle-1-e');
+                                $content.slideToggle(500, function () {
+                                //execute this after slideToggle is done
+                                //change text of header based on visibility of content div
+                            });
+
+                        });
+                }
+                
+            function displayConfirmation(orderDiscountId) {
+                
+                $("#modalDiv").show();
+                
+            }
+            function hideConfirmation() {
+                $("#modalDiv").hide();
+            }      
+            
+                     
+        </script>
+        <style type="text/css">
+            .slds td{padding-bottom:25px;}
+            .accordion{
+            cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <div class="slds">
+
+        <apex:form id="theForm">
+            <br />
+            <apex:actionfunction name="populateDiscount" action="{!populateDiscountDetails}" rerender="theForm" status="statusUpdating" onComplete="attachEvent();jsUtility.makeDarkBorder();">
+            </apex:actionfunction>
+            <br />
+            <apex:outputPanel id="output">
+
+                <script type="text/javascript">
+                    if('{!discountService.isDiscountSuccess}' == 'true')
+                    {
+                        setTimeout(notifyCaller,3000);
+
+                    }
+                </script>
+
+                <c:IADMessageBox id="theMessages" theMessages="{!discountService.iadMessages}" />
+                <apex:actionStatus id="statusUpdating">
+                    <apex:facet name="start">
+                        <div class="slds-spinner_container">
+                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                <div class="slds-spinner__dot-a"></div>c
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </apex:facet>
+                </apex:actionStatus>
+                <apex:actionFunction name="submitDiscount" action="{!applyOrderDiscount}" oncomplete="jsUtility.makeDarkBorder();postRender(); return false;"
+                                     status="statusUpdating" reRender="output">
+                </apex:actionFunction>
+                <apex:actionFunction name="cancelDiscount" action="{!cancelDiscount}" oncomplete="jsUtility.makeDarkBorder();hideConfirmation();postRender(); return false;" status="statusUpdating" reRender="output">
+                </apex:actionFunction>
+                <apex:actionFunction name="setOrderDiscountId" action="{!setOrderDiscountId}" oncomplete="displayConfirmation();postRender();jsUtility.makeDarkBorder(); return false;"  reRender="output,confirmationPanel">
+                    <apex:param name="orderDiscountId" value=""/>
+                </apex:actionFunction>
+
+                <div>
+                    <table>
+                        <tr>
+
+                            <td>
+                                Discount Reason
+                            </td>
+                            <td>
+                                <apex:selectList id="dropdown" value="{!selectedDiscountReason}" size="1" styleClass="slds-select" style="height:36px;" >
+                                    <apex:selectOptions value="{!ReasonsForDiscount}" />
+                                </apex:selectList>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td>
+                                Amount
+                            </td>
+
+                            <td>
+                                <div id="inputDivAmount" class="slds-form-element">
+                                    <div class="slds-form-element__control">
+
+                                        <apex:inputText id="discountAmount" value="{!discountAmount}"  styleClass="slds-input"
+                                                />
+
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+
+
+                            <td>
+                                Comments
+                            </td>
+                            <td>
+
+
+                                <div id="inputDiv" class="slds-form-element">
+                                    <div class="slds-form-element__control">
+
+                                        <apex:inputTextarea id="theComment" value="{!comments}" styleClass="slds-textarea"/>
+                                    </div>
+
+                                </div>
+                            </td>
+
+
+                        </tr>
+
+
+
+
+                    </table>
+                </div>
+
+                <button onClick="closeTab(); return false;" class="slds-button slds-button--neutral" type="button">Cancel</button>&nbsp;&nbsp;
+                <apex:commandButton styleClass="slds-button slds-button--brand" onclick="doSubmitDiscount(); return false;" onComplete="postRender(); return false;" value="Apply" reRender="none" />
+
+
+            </apex:outputPanel>
+            <br /><br />
+            <apex:outputpanel id="discountDetails" rendered="{!discountService.discountDetails.size > 0}">
+                <div class="slds-card">
+
+                    <div class="slds-card__header slds-grid accordion">
+                        <span class="slds-text-heading--small ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+                        <strong>Existing Discounts</strong>
+                    </div>
+
+                    <div class="slds-card__body" style="display:none;">
+
+
+                        <table class="slds-table slds-table--bordered" style="font-size:12px;">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Discount Type</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Discount Amount</strong></th>
+                                <th scope="col" class="slds-size--2-of-12"><strong>Discount Reason</strong></th>
+                                <th scope="col" class="slds-size--2-of-12"><strong>Date</strong></th>
+                                <th scope="col" class="slds-size--2-of-12"><strong>Entered By</strong></th>
+                                <th scope="col" class="slds-size--3-of-12"><strong>Comments</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Action</strong></th>
+
+
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            <apex:repeat value="{!discountService.discountDetails}" var="theDiscount">
+
+                                <tr class="slds-hint-parent mainLineItem" data-cancel="{!theDiscount.isCancelled}" style="{!IF(theDiscount.isCancelled, 'text-decoration:line-through;','text-decoration:none;')}">
+
+                                    <td>
+                                            {!theDiscount.discountType.Name}
+                                    </td>
+                                    <td>
+                                        <apex:outputText value="{0, number, currency}">
+                                            <apex:param value="{!theDiscount.amount}" />
+                                        </apex:outputText>
+
+                                    </td>
+                                    <td>{!theDiscount.reason}</td>
+                                    <td>{!theDiscount.adjDateEntered}</td>
+
+
+                                    <td>{!theDiscount.createdBy}</td>
+                                    <td style="white-space: normal">{!theDiscount.comment}</td>
+                                    <td>
+                                        <apex:outputLink value="#" onClick="setOrderDiscountId('{!theDiscount.orderDiscountId}');"
+                                                         style="{!IF(theDiscount.isCancelled, 'display:none;','display:block;')}">Cancel</apex:outputLink>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div class="slds-card__footer">
+                    </div>
+
+
+                </div>
+
+
+            </apex:outputpanel>
+            <div id="modalDiv" style="display:none">
+                <apex:outputPanel id="confirmationPanel">
+
+                    <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                                        <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#close"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <apex:outputPanel rendered="{!NOT(orderService.theOrder.Order.isCancelled)}">
+                                    <h2 class="slds-text-heading--medium">Cancel this Discount?</h2>
+                                </apex:outputPanel>
+
+                            </div>
+                            <div class="slds-modal__footer">
+
+                                <button class="slds-button slds-button--neutral slds-button--brand" type="button" onclick="cancelDiscount('{!orderDiscountId}')">Confirm</button>
+                                <button class="slds-button slds-button--neutral" type="button" onclick="hideConfirmation();">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+
+                </apex:outputPanel>
+            </div>
+        </apex:form>
+    </div>
+    <br />
+
+    </html>
+</apex:page>

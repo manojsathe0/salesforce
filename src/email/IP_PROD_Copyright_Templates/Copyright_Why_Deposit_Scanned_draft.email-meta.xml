@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>cr35_draft</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GENERAL INFO  Why Deposit Scanned_draft</name>
+    <style>none</style>
+    <subject>Your Copyright Registration – Scanning Materials for E-Filing</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting us about scanning your physical materials to submit with your Copyright registration application.
+
+In some instances, the U.S. Copyright Office allows electronic deposit copies to be submitted with applications. In doing so, your Copyright registration may benefit from shorter processing times. We scanned your physical material deposit and converted it to an electronic version to take advantage of this.
+
+Please Note: LegalZoom does not share your materials with any third party unless necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. Any materials not submitted to the U.S. Copyright Office will be securely destroyed.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to serving you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

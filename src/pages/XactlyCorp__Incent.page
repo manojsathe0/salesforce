@@ -1,0 +1,11 @@
+<apex:page sidebar="false" showheader="true" controller="XactlyCorp.XactlyIncentController" action="{!initialize}" tabStyle="Incent__tab">
+    <apex:includeScript value="{!URLFOR($Resource.XactlyCorp__XactlyIncentResources, 'resources/js/xactly.js')}"/>
+    <script>
+        setTabUrl("{!initURL}"+"?"+new Date().getTime(), "{!redirectURL}");
+    </script>
+    <div id="error" style="display:none;">
+        <c:xactly_error />
+    </div>
+    <apex:iframe src="" scrolling="true" id="theIframe" height="900px"/>
+    <apex:stylesheet value="{!URLFOR($Resource.XactlyCorp__XactlyIncentResources, 'resources/css/xactly_incent.css')}"/>
+</apex:page>

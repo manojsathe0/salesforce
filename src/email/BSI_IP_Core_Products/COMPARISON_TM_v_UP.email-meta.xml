@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>COMPARISON - TM v UP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>COMPARISON - TM v UP</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, we can assist you in registering Trademarks and/or Patents.  While there may be some similarities among these types of intellectual property protection, they are different and serve different purposes.
+
+
+To help you make an informed decision, provided below is a comparison of Trademarks and Patents.
+
+
+Trademark registrations typically protect identifying marks used in commerce such as business or product names, slogans, short phrases, logos, and/or acronyms used to represent specific products and/or services.  A trademark helps protect against an inferior product or service diminishing your reputation or profitability, and allows you to enforce against any infringement upon these rights.  Although a trademark may be used to prevent others from using a confusingly similar mark;  it would not prevent others from making the same goods or from selling the same goods or services under a clearly different mark.
+
+
+Utility Patents typically protect original inventions, unique improvements on existing items, or some methods or processes. Utility Patents grant property rights to the inventor, and prevents other parties from using, making, selling, or importing  the patented item(s) without your permission, and allow you to enforce against any infringement upon these rights.  The term of a Patent is typically 20 years from the date the Patent Application is filed with the USPTO.
+
+
+For your convenience, we have listed all relevant pricing below.
+
+
+TRADEMARK
+
+Complete Coverage - $189.00 + $325.00 USPTO filing fee
+
+Basic - $169.00 + $325.00 USPTO filing fee
+
+
+TRADEMARK SEARCH OPTIONS
+
+Basic - Included w/package
+
+Comprehensive Federal &amp; State - $149.00 (w/package)
+
+Comprehensive Federal, State, and Common Law - $249.00 (w/package)
+
+WorldScan Comprehensive International Search - $449.00 (w/package)
+
+
+GET STARTED
+
+http://www.legalzoom.com/trademarks/trademarks-overview.html
+
+PACKAGE DETAILS
+
+http://www.legalzoom.com/trademarks/trademarks-pricing.html
+
+
+UTILITY PATENT
+
+Step I - $699.00
+
+Step II - $2,400.00 + USPTO filing fee
+
+
+ADDITIONAL SERVICES
+
+Patent Search - $399.00
+
+
+GET STARTED
+
+http://www.legalzoom.com/patents/provisional-patent-application-overview.html
+
+PACKAGE DETAILS
+
+http://www.legalzoom.com/patents/provisional-patent-application-pricing.html
+
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+
+
+
+Best regards,
+
+
+{!User.FirstName}
+
+(800) 773-0888 x{!User.Extension}
+
+www.legalzoom.com
+
+
+
+Privacy Policy
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm.  Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+
+Please add services@emails.legalzoom.com to your address book.
+
+
+This email was sent to: {!Contact.Email}
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,10 @@
+<aura:component  controller="IADLoginAsUserController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<lightning:button  label="Login As User " onclick="{!c.loginasuser}" />
+    <br/>
+   
+    <lightning:button variant="brand" label="Reset Password" onclick="{!c.passwordreset}"></lightning:button>
+      
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <lightning:spinner aura:id="mySpinner"  class="slds-hide"/>
+</aura:component>

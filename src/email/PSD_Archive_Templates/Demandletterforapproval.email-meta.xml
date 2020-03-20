@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Demand letter for approval</name>
+    <style>none</style>
+    <subject>Demand letter for approval</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent Small Claims order.
+
+Per your request, we have drafted a demand letter to your defendant using the information you provided in your questionnaire.  Please review the attached letter and reply to this email with any revisions, or with your approval for LegalZoom to send this letter to the defendant for you.
+
+If your defendant contacts you in an attempt to settle your dispute, or if you have any questions, please contact us by replying to this email, or feel free to call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

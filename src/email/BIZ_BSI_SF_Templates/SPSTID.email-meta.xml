@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>spbsi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SP/STID</name>
+    <style>none</style>
+    <subject>SP/STID</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs. In regard to your inquiry, LegalZoom can assist you to complete the seller&apos;s permit/state tax ID application.  This service may be purchased as an optional service to our business formation packages in certain states or as part of the Business License Package. 
+
+If you have not registered your business, there are a few filing options you have in order to start your business -- most of our customers opening a small business choose to register their business name by filing a DBA, a Corporation, or an LLC. If you would like to research more information regarding these different structures, you may visit http://www.legalzoom.com/business-formations/summary-compare-business-formations.html for more information on the differences between each type of filing.
+
+If you have already registered your business, LegalZoom provides a Business License Package that will do the research and obtain the applications for any required licenses and permits. You may visit http://www.businesslicenses.com/lz_blcp_73008 for more information on the Business License package.
+
+Please feel free to contact us at (888) 381-8758 if you have any further questions.  Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}&lt;br/&gt; 
+{!User.Title}&lt;br/&gt; 
+{!User.CompanyName}&lt;br/&gt; 
+{!User.Address}&lt;br/&gt; 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

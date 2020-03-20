@@ -1,0 +1,78 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>
+
+The LegalZoom Guarantee ensures you will receive your money back if you are not satisfied with your order for any reason. However, it also specifies that your refund must be requested within 60 days of purchase. You can view our Guarantee policy online by visiting <a href=https://www.legalzoom.com/satisfaction-guarantee.html>here</a>.<br/><br/>Unfortunately, at this time, you are only eligible for a refund of your $35.00 filing fee for the cancellation of your order. Alternatively, you may choose to cancel this order and apply your entire amount paid ($149) towards LegalZoom store credit. This will allow you to store the funds in the system (60 days) for future purchase of any LegalZoom product.<br/><br/>
+
+Otherwise, we can keep your order on hold until your work is complete and continue with the processing of the order. Please note we still have not yet received a copy of your completed work in order to complete your application. We will need one (1) complete copy of your work if unpublished or two (2) copies if your work has been published.<br/><br/>
+
+You can send us your materials by replying to this email with your file attachment (up to 6MB), or mail it to: <br/><br/>
+{!snippetVariable.ip_address_cr_materials}<br/><br/>
+ 
+<i>Please Note:  Your filename may be changed when your application is submitted to conform to U.S. Copyright Office submission guidelines.
+</i> For complete instructions on how to submit electronic files as well as a list of acceptable file types, <a href= http://legalzoom.force.com/LZPKB/articles/Answer/03434>click here</a>. 
+
+<br/><br/>
+
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<br/><br/>
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. <br/><br/>
+
+
+{!snippetVariable.ccsincerely}<br/><br/>{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/> </p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

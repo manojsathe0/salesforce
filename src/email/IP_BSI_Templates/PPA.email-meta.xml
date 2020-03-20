@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>ppa12</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>P. P. A.</name>
+    <style>none</style>
+    <subject>P. P. A.</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+LegalZoom can assist you in preparing and filing a provisional application for patent. The total cost including government fees is $309.00.
+
+A provisional application for patent establishes your priority with a &quot;date of invention.&quot; The reason it&apos;s so important to file a provisional application is because Patent Law does not recognize the person who came up with the idea first, but the person who files the patent application first.
+
+The advantage of a provisional application for patent is that it&apos;s much faster and easier to file than a standard patent application. A standard patent application can take months to prepare and can cost $5,000 or more. With a provisional application for patent, you will have 12 months to file a corresponding non-provisional utility patent application and you can legally announce to the world, &quot;Patent pending.&quot; 
+
+Additional information is available online at LegalZoom&apos;s Education Center. Visit www.legalzoom.com and click on the ?Education Center? tab located in the middle of the homepage. 
+
+To view pricing information, please visit 
+
+https://www.legalzoom.com/provisional-patents/provisional-patents-pricing.html
+
+Optional Services:
+
+*Attorney Review and Preparation  $329.00  
+*Professional Illustration   $299.00  
+*Patent Search   $299.00
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

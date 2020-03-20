@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>sigreqefil</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Signature Request_EFILE</name>
+    <style>none</style>
+    <subject>Signature Request_EFILE</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for placing your Small Claims order with LegalZoom.
+
+Attached to this e-mail is your prepared claim form.  Please review the form and contact us if you would like to make any changes. When you are ready to proceed, please reply to this email or contact us at the number below. Otherwise, if we do not hear from you within 7 days, we will file your claim with the appropriate court and obtain a hearing date.  
+
+If you have any further questions, call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}. We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+To view the PDF attachment:Open the attached PDF file, you must have Acrobat? Reader? (http://www.adobe.com/products/acrobat/read) installed to view the attachment.
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Order_Number__c</field>
+    </columns>
+    <columns>
+        <field>Case$Product_Line__c</field>
+    </columns>
+    <columns>
+        <field>Case$Reason1__c</field>
+    </columns>
+    <columns>
+        <field>Case$Reason1_Sub__c</field>
+    </columns>
+    <columns>
+        <field>Case$Resolution1__c</field>
+    </columns>
+    <columns>
+        <field>Case$Resolution1_Sub__c</field>
+    </columns>
+    <columns>
+        <field>Case$Subject</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case$Product_Line__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Business Formations</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case$Product2__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>360 Product Detail (Business Services)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Reason_for_Contact__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Case$CreatedDate</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

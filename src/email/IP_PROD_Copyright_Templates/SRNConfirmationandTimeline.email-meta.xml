@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr10</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>POST FILING - SRN Confirmation and Timeline</name>
+    <style>none</style>
+    <subject>SRN Confirmation and Timeline</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom. Our records show that the application for your work, &quot;XXXXXXXXXXXX,&quot; was entered into the Copyright Office&apos;s system for processing on XXXXXXXXXX. Please note that the delay between the date the Copyright Office receives your application and the date it is entered into their system for processing is normal. Your application&apos;s corresponding Service Request Number is XXXXXXXXXX.
+
+Please note that the Copyright Office has recently revised its projected timeline for registration to up to 3 months, from the date an application is received by their offices.
+
+Unfortunately, once your application is entered by the Copyright Office, LegalZoom has no way of tracking its status. If you would like to contact the Copyright Office directly, you can either call 202-707-5959, or visit their website here and complete the online inquiry form. In general, the latter method is the most efficient, and a representative from the Copyright Office should respond to you within 1-2 business days.
+
+If you decide to contact the Copyright Office, please reference the name of the author of the work, as well as the title and Service Request Number. Please do NOT reference your LegalZoom order number, for it will not appear in the Copyright Office&apos;s records.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

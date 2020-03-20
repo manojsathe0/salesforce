@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.ip_bsi_phone_and_hrs</name>
+    <style>none</style>
+    <subject>ip_bsi_phone_and_hrs</subject>
+    <textOnly>(888)791-0227 Mon-Fri 5am to 7pm PT; Weekends 7am to 4pm PT</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>namefirst</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>E-mail plus first class delivery</name>
+    <style>none</style>
+    <subject>E-mail plus first class delivery</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom, America&apos;s #1 online legal document service.
+
+Your Name Change order has been completed and is attached to this e-mail, along with a final wrap-up letter. We have also sent you a copy by first class mail at no additional charge.
+
+Again, we truly appreciate your business and look forward to serving all of your future legal document needs.
+
+Please feel free to contact our Customer Support staff if we can be of further assistance. Simply reply to this email or call us toll-free at {!snippetVariable.ccphone}. Our Customer Support business hours are {!snippetVariable.cchours}.
+
+Thank you once again for contacting LegalZoom, America&apos;s #1 online legal source.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>fqllc</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>For Qual LLC</name>
+    <style>none</style>
+    <subject>For Qual LLC</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs.  In regard to your inquiry, a Limited Liability Company (LLC) is a state-specific business entity; as such, it is only recognized in the state in which it is registered.  If you would like your LLC to be authorized to do business as an LLC in multiple states you may do so through a process called Foreign Qualification.  
+
+Foreign Qualification is the process of obtaining authority to do business outside of the state in which an LLC is registered.  Doing business includes, but is not limited to, applying for licenses or permits, opening a business bank account, owning property, and hiring employees.  
+
+LegalZoom can assist in the process of Foreign Qualification by obtaining a Certificate of Good Standing from the state of formation, as well as filing LLC formation documents in the foreign state.  
+
+For your reference, I have provided the fees and link to our Foreign Qualification service below:
+
+FOREIGN QUALIFICATION
+Standard Package | $229.00 + combined state fees + shipping (20 - 35 business days)
+Rush Package | $339.00 + combined state fees (7 - 10 business days)
+
+TO GET STARTED:
+http://www.legalzoom.com/additional-business-services/foreign-qualifications-for-business.html
+
+Please feel free to contact LegalZoom at (888) 381-8758 if you have any further questions. Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title}
+{!User.CompanyName}
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

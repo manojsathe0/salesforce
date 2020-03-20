@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>oldorders</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Old Order New Order Number</name>
+    <style>none</style>
+    <subject>Old Order New Order Number</subject>
+    <textOnly>LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

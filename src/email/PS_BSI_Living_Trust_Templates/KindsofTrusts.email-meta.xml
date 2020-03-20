@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>kindsofLT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Kinds of Trusts</name>
+    <style>none</style>
+    <subject>Kinds of Trusts</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+
+Thank you for your recent inquiry.  In regards to your question, LegalZoom offers three types of Revocable Living Trusts: 
+
+? Individual Living Trust: $219. Created and used by one person.
+? Joint Living Trust: $249. Created by two people who may be married or unmarried. This trust gives the two people the option of either leaving everything to one another or designating their own separate list of beneficiaries for their assets.
+? AB Living Trust: $249. Created by a married couple to reduce federal estate taxes. In this trust, spouses have only the option of designating separate beneficiaries in order to maximize tax benefits. According to LegalZoom&apos;s Living Trust questionnaire, &quot;With an AB Living Trust, upon the death of one spouse, the surviving spouse generally does not receive all of the deceased spouse&apos;s property outright. Instead, the surviving spouse receives a &apos;life estate,&apos; which means that he or she can use it for life, but cannot sell it or give it away. This can effectively double a couple&apos;s estate tax exemption.&quot; To read more on how an AB Living Trust can maximize tax benefits, you may refer to http://www.legalzoom.com/living-trusts-guide/a-b-living-trusts.html.
+
+In a Joint or AB Living Trust, each creator, while both creators are still alive, may independently make decisions over all property placed into the Trust, including the separate property of the other creator. 
+
+With the Living Trust package, LegalZoom also offers an optional service to transfer real estate properties you wish to protect from probate into your trust for you.  This transfer service is an additional $204-330 per real estate property depending on the state in which the property is located.  This fee covers the preparation of the deed, a property title search, attorney review of the deed, filing and recording of the deed with the county, as well as state filing fees.  If you do not wish to use LegalZoom for this transfer process, you may go through other means to do so, such as a real estate escrow company, a title or deed company, county recorder?s office, or an attorney.
+
+I have included a complimentary ?Living Trust Guide? to help you become more familiar with LegalZoom&apos;s Living Trusts.
+
+Please call us toll-free at 1-800-962-7490 if we can be of further assistance. We look forward to hearing from you soon.
+ 
+Best regards,
+ 
+The LegalZoom Team
+{!snippetVariable.lz_address}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

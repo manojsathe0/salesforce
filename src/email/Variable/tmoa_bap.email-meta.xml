@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.tmoa_bap</name>
+    <style>none</style>
+    <subject>tmoa_bap</subject>
+    <textOnly>Business Advantage Pro members can receive further guidance from an attorney for no additional cost.  If you are a member, take advantage of your benefits by scheduling a consultation: https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=1
+
+If you are not a Business Advantage Pro member and would like more information about this valuable service, please visit  http://www.legalzoom.com/attorneys-lawyers/legal-plans/business.html or call customer care at (877) 657-8787. Please note that Business Advantage Pro is not available in all states.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,421 @@
+<aura:component controller="IADSubscriptionController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="orderId" type="String" />
+    <aura:attribute name="customerId" type="String" />
+    <aura:attribute name="orderItemId" type="String" />
+    <aura:attribute name="subscriptionId" type="String" />
+    <aura:attribute name="subscriptionService" type="Object" />
+    <aura:attribute name="lastestSubInfoDetail" type="String" />
+    <aura:attribute name="subscriptionInfoDetails" type="String" />
+    <aura:attribute name="subInfoDetailsSize" type="Integer" default="0" />
+    <aura:attribute name="currentSubscription" type="Object" />
+    <aura:attribute name="subscriptionTerms" type="Object" />
+    <aura:attribute name="currentPaymentOptionId" type="String" />
+    <aura:attribute name="paymentOptions" type="List" />
+    <aura:attribute name="profileId" type="String" />
+   	<aura:attribute name="isAutoRenewable" type="String" default="0"/>    
+    <aura:attribute name="isNotUpdatable" type="Boolean" default="true" />
+    <aura:attribute name="isPartialCancel" type="Boolean" default="true" />
+    <aura:attribute name="isCancellationSectionHidden" type="Boolean" default="true" />
+    <aura:attribute name="currentOrderItemIndex" type="Integer" default="0" />
+    <aura:attribute name="subStartDate" type="String" />
+    <aura:attribute name="subEndDate" type="String" />
+    <aura:attribute name="minDate" type="String" />
+    <aura:attribute name="maxDate" type="String" />
+    <aura:attribute name="currentOrderItemId" type="String" />
+    <aura:attribute name="currentSubOrderItemId" type="String" />
+    <aura:attribute name="proratedDateAmountMap" type="Object" />
+    <aura:attribute name="refundAmount" type="Decimal" default="0.0"/>
+    <aura:attribute name="comments" type="String" />
+    <aura:attribute name="isCancelSuccess" type="Boolean" default="false" />
+    <aura:attribute name="renewalOrderId" type="String" />
+    <aura:attribute name="orderRecordId" type="String" />
+    <aura:attribute name="subscriptionRenewalTerms" type="Object" />
+    <aura:attribute name="nxtSubModification" type="String" />
+    <aura:attribute name="renewalTerm" type="String" default="None" />
+    <aura:attribute name="productComponentId" type="Integer" default="null" />
+    <aura:attribute name="productConfigId" type="Integer" default="null" />
+    <aura:attribute name="isCancellable" type="Boolean" default="false" />
+    <aura:attribute name="scheduleId" type="String" />
+    <aura:attribute name="extendedPrice" type="Decimal" />
+    <aura:attribute name="renewalcall" type="Boolean" default="true" />
+    <aura:attribute name="nextsubmod" type="Boolean" default="true" />
+    
+    <aura:registerEvent name="IADPaymentProfileLabel" type="c:IADPaymentProfileLabel" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInitSubscription}" />
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <div class="slds-card" style="padding: 1% 2% 5% 1%">
+        <lightning:spinner aura:id="mySpinner" alternativeText="loading default subscription values" />
+        <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="standard:product_consumed" size="medium"/>
+            </div>
+            <div class="slds-media__body">
+                <p class="slds-text-title--caps slds-line-height--reset">Subscription</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Subscription Info">Subscription Info</h1>
+            </div>
+        </div>
+        <div class="slds-form slds-form_compound" style="padding: 1% 0 0 0; margin-bottom:1%;"> 
+            <div class="slds-form-element__group">
+                <form>
+                    <div aura:id="editSubscription" style="{!v.isNotUpdatable ? 'margin-bottom:1%' : 'display:none'}" >
+                        <a class="edit-subscription" onclick="{!c.enableSupscriptionUpdate}">Edit</a>
+                        <span style="{!v.subscriptionService.subscriptionSingleItem.subscription.status == 'ActiveNotRenew' || v.subscriptionService.subscriptionSingleItem.subscription.status == 'Cancelled' ? 'display:none;' : ''}">&nbsp; | &nbsp;</span>
+                        <a class="edit-subscription" style="{!v.subscriptionService.subscriptionSingleItem.subscription.status == 'ActiveNotRenew' || v.subscriptionService.subscriptionSingleItem.subscription.status == 'Cancelled' ? 'display:none;' : ''}" onclick="{!c.openCancelSubscriptionPanel}">Cancel subscription without refund</a>
+                    </div>
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input label="Order #" name="orderNo" value="{!v.subscriptionService.subscriptionSingleItem.subscription.orderId}" disabled="true" />
+                        </div> 
+                    </div>
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input label="Processing #" name="processingNo" value="{!v.subscriptionService.subscriptionSingleItem.subscription.processing}" disabled="true" />
+                        </div> 
+                    </div>  
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input label="Date Created" name="dateCreated" value="{!v.subscriptionService.subscriptionSingleItem.subscription.adjCreatedDate}" disabled="true" />
+                        </div> 
+                    </div>
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input label="Status" name="status" value="{!v.subscriptionService.subscriptionSingleItem.subscription.status}" disabled="true" />
+                        </div> 
+                    </div>
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input label="Term" name="term" value="{!v.subscriptionService.subscriptionSingleItem.subscription.adjSubscriptionStartDate + ' - ' + v.subscriptionService.subscriptionSingleItem.subscription.adjSubscriptionEndDate}" disabled="true" />
+                        </div> 
+                    </div>
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:select aura:id="subscriptionForm" label="Auto Renew" name="auto_Renew"  value="{!v.isAutoRenewable}" disabled="{!v.isNotUpdatable}">
+                                <option value="1" text="Yes" selected="{!v.subscriptionService.subscriptionSingleItem.subscription.autoRenew == 'Yes'}"/>
+                                <option value="0" text="No" selected="{!v.subscriptionService.subscriptionSingleItem.subscription.autoRenew == 'No'}"/>
+                            </lightning:select>
+                        </div> 
+                    </div> 
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6" onmouseover="{!c.renewalterms}">
+                            <lightning:select aura:id="subscriptionForm" label="Renewal Term" name="renewal_term"  value="{!v.renewalTerm}" disabled="{!v.isNotUpdatable}" onchange="{!c.setPdtComponentIdAndPdtConfigId}">
+                                <!--<option value="None" text=""/>-->
+                                <aura:iteration items="{!v.subscriptionRenewalTerms.availableRenewalTerms}" var="subRenewalTerm">
+                                	<option value="{!subRenewalTerm.productComponentId +'-'+ subRenewalTerm.productConfigurationId +'-'+ subRenewalTerm.extendedPrice}" text="{!subRenewalTerm.renewalTerm}" selected="{!v.subscriptionService.subscriptionSingleItem.subscription.productComponent == subRenewalTerm.productComponentId}"/>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div> 
+                    </div>
+                    
+                    <div class="slds-form-element__row" style="{!v.isNotUpdatable ? '' : 'display:none'}">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <c:IADPaymentProfileLabel_ltng />
+                        </div> 
+                    </div>
+                    
+                    <div class="slds-form-element__row" style="{!v.isNotUpdatable ? 'display:none' : ''}">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:select aura:id="subscriptionForm" label="Payment Method" name="paymentMethod" value="{!v.currentPaymentOptionId}" disabled="{!v.isAutoRenewable == '0' ? true : false}" onchange="{!c.hideEditButtonOrOpenNewPaymentPage}"> <!-- disabled="{!v.isNotUpdatable}" -->
+                                <option value="None" text=""/>
+                                <aura:iteration items="{!v.paymentOptions}" var="option" indexVar="key">
+                                    <option value="{!option.key}" text="{!option.value}" selectedvalue="{!option.key == v.currentPaymentOptionId}"/>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                        <div style="margin:28px 0 0 25px" aura:id="editbutton" class="edit-button"> 
+                            <a onclick="{!c.openEditPayment}" >Edit</a> <!-- style="{!v.isNotUpdatable ? 'display:none' : ''}" -->
+                        </div>
+                    </div> 
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="subscriptionForm" type="number" label="Renewal Amount" name="renewalAmount" value="{!v.subscriptionService.subscriptionSingleItem.subscription.renewalPrice}" disabled="true" formatter="currency"/>
+                        </div> 
+                    </div>
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="subscriptionForm" type="text" label="Next Subscription Modification"  onmouseover="{!c.nextsubmodification}" name="nextSubModification" value="{!v.nxtSubModification}" disabled="true" />
+                        </div> 
+                        <div style="margin:28px 0 0 25px" aura:id="cancelupgrade" class="cancel-upgrade-button"> 
+                            <a onclick="{!c.cancelUpgrade}" style="{!v.isCancellable ? '' : 'pointer-events: none; cursor: default;'}"><span style="{!v.isCancellable ? '' : 'display:none'}">Cancel</span><span style="{!v.isCancellable || v.nxtSubModification != null || v.nxtSubModification != 'No changes scheduled' ? 'display:none' : ''}">Cancel not available</span></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="{!v.isNotUpdatable ? 'display:none' : 'margin-top:1%;'}" >
+                <span style="{!v.isNotUpdatable ? 'display:none' : 'margin-top:1%;'}" >
+                    <button class="slds-button slds-button--neutral" onclick="{!c.cancelSupscriptionUpdate}">Cancel</button>
+                    <button class="slds-button slds-button--brand" onclick="{!c.validateFormAndUpdateSubscription}" >Update Subscription</button>
+                </span>            	
+            </div>            
+        </div>
+        
+        <div aura:id="cancelSubscriptionPanel" class="slds-hide">
+            <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 class="slds-text-heading--small" style="font-weight: bold">Subscription Cancellation without Refund</h2>
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <div class="slds-align_absolute-center" style="position:relative; height:60px;">
+                            <div style="position: absolute; bottom: 0; font-size:12px;">
+                                <strong>Are you sure?</strong> This will cancel the subscription, preventing any future renewals. If the subscription is currently active, the subscription will be set to "Active - Won't Renew" and customer will be able to utilize the services until the end of their current term.
+                            </div>
+                        </div>
+                    </div>                        
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button--brand" onclick="{!c.cancelSupscriptionWORefund}">Yes, proceed with cancellation</button>
+                        <button class="slds-button slds-button--brand" onclick="{!c.hideCancelSubscriptionPanel}">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+        </div>
+        
+        <div class="slds-card" style="border: 1px solid rgb(221, 219, 218);">
+            <div class="slds-card__header slds-grid accordion" onclick="{!c.toggleIconsAndTable}">
+                <lightning:icon aura:id="downIcon" iconName="utility:down" size="xx-small" />
+                <lightning:icon aura:id="rightIcon" iconName="utility:right" size="xx-small" class="slds-hide"/>
+                <strong>Current Term</strong>
+            </div>
+            <div aura:id="currentTermTable">
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Term</strong></th>
+                            <!--<th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Status</strong></th>-->
+                            <th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Start Date</strong></th>
+                            <th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>End Date</strong></th>
+                            <!--<th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Amount</strong></th>-->
+                            <th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Action</strong></th>
+                            <!-- <th scope="col" class="tcolumn slds-truncate"><strong>Transaction</strong></th> -->
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td data-label="Order no" class = "tcolumn">
+                                <div class="slds-truncate">
+                                    <div > <!-- style="{!v.lastestSubInfoDetail.isActive == 'true' ? '' : 'display:none'}" -->
+                                        <a styleClass="slds-text-body--x-small" title="Click to open Order" data-orderrecordid="{!v.lastestSubInfoDetail.associatedSFDCRecordId}" onclick="{!c.openOrderDetail}" > <!-- onclick="openOrderDetail('{!subscriptionService.subscriptionSingleItemWrapped.associatedSFDCRecordId}','{!subscriptionService.subscriptionSingleItemWrapped.orderItemNumber}');"-->
+                                            <b><u>{!v.lastestSubInfoDetail.orderId}</u></b>
+                                        </a>
+                                    </div>
+                                    <!--
+                                    <div style="{!v.lastestSubInfoDetail.isActive == 'true' ? 'display:none' : ''}"> 
+                                        {!v.lastestSubInfoDetail.orderItemNumber}
+                                    </div>
+									-->
+                                </div>
+                            </td>
+                            <!--
+                            <td data-label="Status" class = "tcolumn">
+                                <div class="slds-truncate">
+                                    <div style="{!v.currentSubscription.isActive == 'true' ? '' : 'display:none'}"> 
+                                        Active
+                                    </div>
+                                    <div style="{!v.currentSubscription.isActive == 'true' ? 'display:none' : ''}"> 
+                                        Inactive
+                                    </div>
+                                </div>
+                            </td>
+                            -->
+                            <td data-label="Start Date" class = "tcolumn">
+                                <div class="slds-truncate">
+                                    {!v.lastestSubInfoDetail.adjSubscriptionStartDate}
+                                </div>
+                            </td>
+                            <td data-label="End Date" class = "tcolumn">
+                                <div class="slds-truncate">
+                                    {!v.lastestSubInfoDetail.adjSubscriptionEndDate}
+                                </div>
+                            </td>
+                            <!--
+                            <td data-label="Amount" class = "tcolumn">
+                                <div sytle="{!v.lastestSubInfoDetail.adjSubscriptionStartDate != null ? '' : 'display:none'}">
+                                    <div class="slds-truncate">
+                                        <lightning:formattedNumber value="{!v.subscriptionService.subscriptionSingleItem.subscription.renewalPrice}" style="currency" currencyCode="USD" />
+                                    </div>
+                                </div>
+                            </td>
+                            -->
+                            <td data-label="Action" class = "tcolumn">
+                                <div style="{!v.lastestSubInfoDetail.isActive == 'true' ? '' : 'display:none'}"> 
+                                    <div style="{!v.lastestSubInfoDetail.adjSubscriptionStartDate != null ? '' : 'display:none'}">
+                                        <span class="slds-truncate" title="Partial Cancel">
+                                            <a data-orderitemsubid="{!v.lastestSubInfoDetail.orderItemSubscriptionId}" data-orderitemid="{!v.lastestSubInfoDetail.orderItemId}" data-ispartialcancel="true" data-substartdate="{!v.lastestSubInfoDetail.adjSubscriptionStartDate}" data-subenddate="{!v.lastestSubInfoDetail.adjSubscriptionEndDate}" onclick="{!c.partialCancellation}" >Partial Refund</a> 
+                                        </span> 
+                                        OR
+                                        <span class="slds-truncate" title="Full Cancel">
+                                            <a data-orderitemsubid="{!v.lastestSubInfoDetail.orderItemSubscriptionId}" data-orderitemid="{!v.lastestSubInfoDetail.orderItemId}" data-ispartialcancel="false" data-substartdate="{!v.lastestSubInfoDetail.adjSubscriptionStartDate}" data-subenddate="{!v.lastestSubInfoDetail.adjSubscriptionEndDate}" onclick="{!c.fullCancellation}" >Full Refund</a> 
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <!--
+                            <td data-label="Order no" class = "tcolumn">
+                                <div class="slds-truncate">
+                                    <a onclick="" styleClass="slds-text-body-/-x-small" title="Click to open Payment">
+                                        <b><u>{!v.currentSubscription.orderItemTransaction}</u></b>
+                                    </a>
+                                </div>
+                            </td>
+							-->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>        
+        
+        <div class="slds-card" style="border: 1px solid rgb(221, 219, 218); margin-bottom:2%;">
+            <div class="slds-card__header slds-grid accordion" onclick="{!c.toggleIconsAndTermsTable}">
+                <lightning:icon aura:id="downIcon_Terms" iconName="utility:down" size="xx-small" />
+                <lightning:icon aura:id="rightIcon_Terms" iconName="utility:right" size="xx-small" class="slds-hide"/>
+                <strong>Terms</strong>
+            </div>
+            <div aura:id="termsTable">
+                <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Term</strong></th>
+                            <!--<th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Status</strong></th>-->
+                            <th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Start Date</strong></th>
+                            <th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>End Date</strong></th>
+                            <!--<th scope="col" class="tcolumn slds-truncate" style="width:10%"><strong>Amount</strong></th>-->
+                            <th scope="col" class="tcolumn slds-truncate" style="width:10%" ><strong>Action</strong></th>
+                            <!-- <th scope="col" class="tcolumn slds-truncate"><strong>Transaction</strong></th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.subscriptionInfoDetails}" var="theDetail" >
+                            <tr>
+                                <td data-label="Order no" class = "tcolumn">
+                                    <div class="slds-truncate">
+                                        <div > <!-- style="{!theDetail.isActive  == 'true' ? '' : 'display:none'}" -->
+                                            <a styleClass="slds-text-body--x-small" title="Click to open Order" data-orderrecordid="{!theDetail.associatedSFDCRecordId}" onclick="{!c.openOrderDetail}" > <!-- onclick="openOrderDetail('{!theDetail.associatedSFDCRecordId}','{!theDetail.orderItemNumber}');" -->
+                                                <b><u>{!theDetail.orderId}</u></b>
+                                            </a>
+                                        </div>
+                                        <!--
+                                        <div style="{!theDetail.isActive == 'true' ? 'display:none' : ''}">
+                                            {!theDetail.orderItemNumber}
+                                        </div>
+										-->
+                                    </div>
+                                </td>
+                                <!--
+                                <td data-label="Status" class = "tcolumn">
+                                    <div class="slds-truncate">
+                                        <div style="{!theDetail.isActive == 'true' ? '' : 'display:none'}">
+                                            Active
+                                        </div>
+                                        <div style="{!theDetail.isActive == 'true' ? 'display:none' : ''}">
+                                            Inactive
+                                        </div>
+                                    </div>
+                                </td>
+                                -->
+                                <td data-label="Start Date" class="tcolumn">
+                                    <div class="slds-truncate">
+                                        {!theDetail.adjSubscriptionStartDate}
+                                    </div>
+                                </td>
+                                
+                                <td data-label="End Date" class = "tcolumn">
+                                    <div class="slds-truncate">
+                                        {!theDetail.adjSubscriptionEndDate}
+                                    </div>
+                                </td>                                
+                                <!--
+                                <td data-label="Amount" class="tcolumn">
+                                    <div class="slds-truncate">
+                                        <lightning:formattedNumber value="{!v.subscriptionService.subscriptionSingleItem.subscription.renewalPrice}" style="currency" currencyCode="USD" />
+                                    </div>
+                                </td>
+                                -->
+                                <td data-label="Action" class="tcolumn">
+                                    <div style="{!theDetail.isActive == 'true' ? '' : 'display:none'}">
+                                        <div class="slds-truncate" title="Full Cancel">
+                                            <a data-orderitemsubid="{!theDetail.orderItemSubscriptionId}" data-orderitemid="{!theDetail.orderItemId}" data-ispartialcancel="false" data-substartdate="{!theDetail.adjSubscriptionStartDate}" data-subenddate="{!theDetail.adjSubscriptionEndDate}" onclick="{!c.fullCancellation}">Full Refund</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--
+                                <td data-label="Order no" class="tcolumn">
+                                    <div class="slds-truncate">
+                                        <a styleClass="slds-text-body-/-x-small" title="Click to open Payment">
+                                            <b><u>{!theDetail.orderItemTransaction}</u></b>
+                                        </a>
+                                    </div>
+                                </td>
+         						-->
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="subscriptionCancellationForm" style="{!v.isCancellationSectionHidden ? 'display:none' : ''}">
+            <div class="slds-media slds-no-space slds-grow">
+                <div class="slds-media__body">
+                    <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate">Term # <strong>{!v.currentOrderItemId}</strong> </h1>
+                    <div style="{!v.isPartialCancel ? 'margin-top:1%;' : 'display:none'}">
+                        <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Partial Refund">Partial Refund Cancellation</h1>
+                    </div>
+                    <div style="{!v.isPartialCancel ? 'display:none' : 'margin-top:1%'}"> 
+                        <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Full Refund">Full Refund Cancellation</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-form slds-form_compound" style="margin-top:1%" > 
+                <div class="slds-form-element__group">
+                    <!--
+                    <div class="slds-form-element__row" style="{!v.isPartialCancel ? '' : 'display:none'}">
+                        <div class="slds-form-element slds-size_3-of-12">
+                            <lightning:input aura:id="subRefundForm" label="Term Start Date" name="termStartDate" value="{!v.subStartDate}" disabled="true" />
+                        </div>
+                        <div class="slds-form-element slds-size_3-of-12" style="width:24.5%">
+                            <lightning:input aura:id="subRefundForm" type="date" label="Term End Date" name="termEndDate" value="{!v.subEndDate}" required="true" />
+                        </div>
+                    </div>
+                    -->
+                    <div class="slds-form-element__row" style="{!v.isPartialCancel ? '' : 'display:none'}">
+                        <div class="slds-form-element slds-size_3-of-12">
+                            <label class="slds-form-element__label" for="input-unique-id">Term Start Date</label>
+                            <input type="date" name="sStartDate" class="slds-input" value="{!v.subStartDate}" disabled="true"/>
+                        </div>
+                        <div class="slds-form-element slds-size_3-of-12" style="width:24.5%">
+                            <label class="slds-form-element__label" for="input-unique-id">Term End Date </label>
+                            <input type="date" name="sEndDate" aura:id="sub_end_date" class="slds-input" min="{!v.minDate}" max="{!v.maxDate}" value="{!v.subEndDate}" onchange="{!c.calculateProratedRefundAmount}"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row" style="{!v.isPartialCancel ? '' : 'display:none'}">
+                        <div class="slds-form-element slds-size_6-of-12">
+                            <lightning:input aura:id="subRefundForm" type="number" label="Refund Amount" name="refundAmount" value="{!v.refundAmount}" disabled="true" formatter="currency" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_6-of-12">
+                            <lightning:input aura:id="subRefundForm" label="Comments" name="comments" value="{!v.comments}" required="true" />
+                        </div>
+                    </div>                 
+                </div>
+                <div >
+                    <button class="slds-button slds-button--brand" style="{!v.isCancelSuccess ? 'display:none' : ''}" onclick="{!c.validateFormAndCancelTerm}">Cancel Term</button>
+                    <button class="slds-button slds-button--brand" style="{!v.isCancelSuccess ? '' : 'display:none'}" onclick="{!c.openRefundsPage}" >Proceed to Refunds</button>
+                    <button class="slds-button slds-button--neutral" onclick="{!c.closeTermsSection}">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

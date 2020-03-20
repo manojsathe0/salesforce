@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Payment by Check/Money Order</name>
+    <style>none</style>
+    <subject>Payment by Check/Money Order</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+
+Thank you for your recent inquiry.  In regards to your question, if you wish to submit payment through a Personal Check/Money Order, you may make the check/Money Order payable to LegalZoom with the order number on the front of the check/Money Order and mail it to:
+
+LegalZoom.com
+Attn: Billing
+7083 Hollywood Blvd, Suite 180
+Los Angeles, CA 90028
+ 
+To receive an order number, which will be your confirmation number, please call us toll-free at (800) 962-7490 when you reach the Payment Page to receive further instructions on how to proceed and bypass the Payment Page.
+
+Please note that we will begin processing your document once the payment has been received and approved.
+
+We look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+{!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

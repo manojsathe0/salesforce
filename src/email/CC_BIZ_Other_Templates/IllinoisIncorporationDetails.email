@@ -1,0 +1,58 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for your inquiry.<br/><br/>The listing of the incorporator as the President is standard for all State of Illinois filings (if in fact the name of your Incorporator is different from the President of your corporation). The incorporator&#8217;s name is listed temporarily as President until you file your annual report, which requires you to list in detail information about the appointment of your corporation&#8217;s officers, etc. <br/><br/>Please note however, that the State of Illinois does use &#8220;I&#8221; to acknowledge and distinguish the fact the LegalZoom incorporator&#8217;s name is clearly not the President of your corporation but your &#8220;[I]ncorporator&#8221;. If you need further clarification on this, you can contact the Secretary of State of Illinois (in Chicago) at 312.793.3380.<br/><br/>Here&#8217;s how the President Name is listed currently for [Corporation Name] (up until you file your annual report with the state):<br/><br/>[President Name]<br/><br/>Please also be advised that once your annual report of your corporation has been filed with the Secretary of State of Illinois, the State of Illinois then automatically revises the information related to the listing of the President of your incorporation from the &#8220;Incorporator&#8221; to the actual President of your company.<br/><br/>{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<br/><br/>{!snippetVariable.ccsincerely}<br/><br/>{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/></p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

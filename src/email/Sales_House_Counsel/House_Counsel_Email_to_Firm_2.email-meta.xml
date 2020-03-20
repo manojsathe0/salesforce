@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>House Counsel - Email to Firm 2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>House Counsel - Email to Firm 2</name>
+    <style>freeForm</style>
+    <subject>LegalZoom - House Counsel</subject>
+    <textOnly>Consultation Order # (if applicable)
+
+123456789
+
+Customer Name
+
+John Smith
+
+Phone Number
+
+333-333-3333
+
+Email
+
+johnsmith@gmail.com
+
+State
+
+CA
+
+Product
+
+House Counsel / $79 Consultation / $199 [contract] drafting
+
+Payment Made?
+
+Yes
+
+Total Amount
+
+$2,400
+
+# of Payments
+
+12
+
+
+
+Attorney
+
+
+Consultation Date/Time
+
+
+Notes on Customer
+
+
+Additional Party #1
+
+Jane Doe
+
+Relationship
+
+Business Partner
+
+Additional Party #2
+
+
+Relationship
+
+
+Opposing Party Name: Company
+
+
+Opposing Party Name: Individuals
+
+
+
+Sincerely,
+
+
+
+{!User.FirstName}
+
+(800) 773-0888 x{!User.Extension}
+
+www.legalzoom.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

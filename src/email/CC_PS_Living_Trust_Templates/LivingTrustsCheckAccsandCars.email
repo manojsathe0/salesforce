@@ -1,0 +1,59 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+Dear {!Contact.FirstName},<br/><br/>Thank you for your recent inquiry.<br/><br/>LegalZoom is solely a legal document preparation service. LegalZoom is not an attorney and can only provide self help services at your specific direction. As such, we are not able to give legal advice on your specific situation.<br/>However, the following are some basic reasons why certain accounts or items are not generally funded to a Living Trust.<br/>Checking account balances generally (and regularly) fluctuate. Having a Pour-Over Will as a supporting document to a Living Trust allows a person to leave the remainder of the estate that is not transferred into the trust (for example, checking accounts) to heirs.<br/><br/>Property that is of little value need not be placed in a living trust, because it may be exempt from probate or subject to a streamlined probate process. Most cars are not of high value and most insurance companies may be reluctant to insure a car owned by a trust. If, however, the car is of high value, it may make sense to check with the insurance company to see if it will insure cars owned by trusts. In any case, a Pour-Over Will generally covers the distribution of a car to heirs.<br/><br/>If you wish to find an attorney to answer your legal questions, we can provide you with links that will help you find an attorney. For California and Georgia customers, please visit <a href=www.handleonthelaw.com>handleonthelaw.com</a>. For all other states, you can get help at <a href=www.legal.respond.com>legal.respond.com</a> and <a href=www.lawinfo.com>lawinfo.com</a>. Please note that LegalZoom does not endorse any of the aforementioned sites or attorneys.<br/><br>{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<br/><br/>{!snippetVariable.ccsincerely}<br/><br/>{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/></p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

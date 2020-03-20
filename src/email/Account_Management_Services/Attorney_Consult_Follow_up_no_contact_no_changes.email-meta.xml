@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMTM4</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Attorney Consult Follow up, no contact, no changes</name>
+    <style>none</style>
+    <subject>NEXT STEPS - Follow up to your attorney consultation</subject>
+    <textOnly>Your trademark application is ready to move to the next step.
+Dear {!Contact.FirstName},
+
+Congratulations on completing your attorney consultation. We received email notification from the attorney that you decided not to make any changes to your trademark application order. We will now proceed with the type of trademark search you selected.
+
+I will reach out to you again before your trademark application is submitted to the U.S. Patent and Trademark Office.
+
+Best Regards,
+
+{!User.FirstName} {!User.LastName} |  {!User.Phone} ext. {!User.Extension}
+Account Management Services
+M-F 9:00 am – 6 pm PT
+
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

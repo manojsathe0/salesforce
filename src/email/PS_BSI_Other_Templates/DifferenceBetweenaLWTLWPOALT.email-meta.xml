@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>epdocsdiff</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Difference Between a LW&amp;T, LW, POA, LT</name>
+    <style>none</style>
+    <subject>Difference Between a LW&amp;T, LW, POA, LT</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+A Last Will and Testament goes into effect once you pass on and ensures that your wishes are carried out and that your estate does not wind up trapped in probate court. {!snippetVariable.wills_library}.
+
+A Living Trust can provide you with more privacy than a will because you don?t have to register it with the courts in probate. A Living Trust can also help you save in estate taxes. LegalZoom Living Trust Packages include what is called a Pour-Over Will. For more information, click here: http://www.legalzoom.com/living-trusts-guide/living-trusts.html
+
+For a comparison between Last Wills and Living Trusts, click here: http://www.legalzoom.com/wills-estate-planning/summary-compare-wills.html
+
+A Living Will goes into effect if you are rendered unconscious and unable to communicate your wishes regarding life support and care. For more information, click here:
+
+http://www.legalzoom.com/wills-guide/importance-of-wills.html
+
+A Power of Attorney is a document that lets you nominate someone to make financial and other decisions on your behalf. This appointment can take effect immediately, or it can take effect only if you are unable to make those decisions on your own. For example, if you become mentally incapacitated, or if you are leaving the country for a while, you would be unable to make these important choices for yourself. For more information, click here: http://www.legalzoom.com/power-of-attorney-guide/power-of-attorney.html
+
+Please do not hesitate to contact us if we can be of further assistance. Simply reply to this email or call us toll free at {!snippetVariable.ccphone}.
+ 
+Best regards,
+ 
+[Your Name]
+{!snippetVariable.ccs_full}
+{!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

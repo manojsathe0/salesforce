@@ -1,0 +1,364 @@
+<apex:page controller="Email_Forward_Controller">
+<apex:includeScript value="/support/console/22.0/integration.js"/>
+<apex:includeScript value="{!URLFOR($Resource.JQueryValidation, 'jquery-validation/lib/jquery.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.JQueryValidation, 'jquery-validation/jquery.validate.min.js')}"/>
+<style type="text/css">
+    .remover{cursor: pointer;padding-left:5px;}
+    .removerto{cursor: pointer;padding-left:5px;}
+</style>
+<script type="text/javascript">
+var curPopupWindow=null;  
+function openLookupPopup(area){ 
+if(area=="toAddress"){   
+var arg = document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value;
+var url="/apex/Lookup_To_Dialog"+"?lksrch="+arg+"&id={!$CurrentPage.parameters.Id}"; 
+}
+if(area=="additionalTo" || area=="CC" || area=="BCC" ){    
+var url ="/apex/Email_CCBCC_Page"+"?id={!$CurrentPage.parameters.Id}";
+}  
+curPopupWindow=window.open(url, 'Lookup','height=700,width=600,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,status=no');   
+if (window.focus){    
+curPopupWindow.focus();
+}           
+return false;     
+}
+                
+function validationEmail(){
+  var valid = true;
+  clrErrInf();
+  var to = $('[id$=to]');var tohid = $('[id$=tohid]');var addto = $('[id$=additionalTo]');var cc = $('[id$=emailcc]');
+  var bcc = $('[id$=bcc]');   var errto = $('#errmesgaddto');  var errcc = $('#errmesgcc');var errbcc = $('#errmesgbcc');
+  if(to.val() == '' && addto.val() == ''){
+       errto.html('<span style="color:#C00">Please specify either a To: or Additional To:</span>');
+       addto.addClass("errMessage");
+       errto.css('border','none');
+       valid = false;
+  } 
+  if(!checkEmail(addto)){
+       errto.html('<span style="color:#C00">Found invalid email address</span>');
+       addto.addClass("errMessage"); 
+       errto.css('border','none');
+       valid = false;
+  }  
+  if(!checkEmail(cc)){
+      errcc.html('<span style="color:#C00">Found invalid email address</span>');
+      cc.addClass("errMessage");
+      errcc.css('border','none');
+      valid = false;
+  }
+  if(!checkEmail(bcc)){
+      errbcc.html('<span style="color:#C00">Found invalid email address</span>');
+      bcc.addClass("errMessage");
+      errbcc.css('border','none');
+      valid = false;
+  }  
+  return valid;
+}
+function SendEmail(){  
+
+   if(validationEmail()){
+             doSendEmail();            
+       }
+   }
+   
+function checkEmail(o) {    
+    if (o.val().length > 0){
+        var newVal = o.val().replace(/\,/g,';');
+        var emails = newVal.split(new RegExp( "\\s*;\\s*", "gi" ) );
+          valid = true;
+          for(i=0;i<emails.length;i++) {
+               valid=valid && checkRegexp(Trim(emails[i]),
+                /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i
+               );
+          }
+          return valid; 
+        }
+    return true;
+}
+function checkRegexp(value, regexp) {   
+    if (!(regexp.test(value))) {
+        return false;
+    }else{
+        return true;
+    }
+}
+function LTrim(str){
+if (str==null){return null;}
+for(var i=0;str.charAt(i)==" ";i++);
+return str.substring(i,str.length);
+}
+function RTrim(str){
+if (str==null){return null;}
+for(var i=str.length-1;str.charAt(i)==" ";i--);
+return str.substring(0,i+1);
+}
+function Trim(str){return LTrim(RTrim(str));}
+
+function clrErrInf() {
+    $("#errmesgaddto").html('');$("#errmesgcc").html('');$("#errmesgbcc").html('');$('[id$=additionalTo]').removeClass("errMessage");
+    $('[id$=emailcc]').removeClass("errMessage");$('[id$=bcc]').removeClass("errMessage");
+}        
+function Cancels(){
+    if (sforce.console.isInConsole()) {            
+         closeTab(); 
+       }else{      
+         doCancel();            
+       }
+}
+function sendAndClose(){
+    if(validationEmail()){
+     if (sforce.console.isInConsole()) 
+     {
+         doSendAndClose();
+         testCloseTab();
+      }
+      else
+      {      
+         doSendAndClose();           
+       }
+   }
+}
+
+function testCloseTab() {
+            //First find the ID of the current primary tab to close it
+            sforce.console.getEnclosingPrimaryTabId(closeSubtab);
+}
+var closeSubtab = function closeSubtab(result) {
+            //Now that we've got the primary tab ID, we can close it
+            var tabId = result.id;
+            sforce.console.closeTab(tabId);
+};
+function refreshSubTab() {
+      sforce.console.getEnclosingTabId(refreshActiveSubtab);
+      return true;
+}
+var refreshActiveSubtab = function refreshActiveSubtab(result) {
+        // get tab Id
+        var tabId = result.id;
+        // refreshSubtabById(id:String, active:Boolean, (optional)callback:function)
+        sforce.console.refreshSubtabById(tabId, true);
+  };
+function bodyOnFocus() {
+    closePopup();
+}
+function closePopup(){
+         if (curPopupWindow != null) {
+        try {
+            curPopupWindow.close();
+        } catch(ex) {
+            // This Exception code is to deal with IE issues checking
+            // The window's closed property
+        }
+        curPopupWindow = null;
+     }
+}
+function bodyOnUnload() {
+}
+var delim = ";";
+function pickupValue(additionalToValue, ccValue, bccValue) {  
+    if(additionalToValue != '') {
+        if (document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem3.additionalTo}').value != '') { 
+            document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem3.additionalTo}').value += delim;
+        }
+        document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem3.additionalTo}').value += additionalToValue;
+    }
+    if(ccValue != '') {
+        if (document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem4.emailcc}').value != '') {
+            document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem4.emailcc}').value += delim;
+        }
+        document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem4.emailcc}').value += ccValue;
+    }
+    if(bccValue != '') {
+        if (document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem5.bcc}').value != '') {
+            document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem5.bcc}').value += delim;
+        }
+        document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem5.bcc}').value += bccValue;
+    }
+    
+} 
+function pickupValue2(name,email){
+ if(name != '') {
+        document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value = name;
+        document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.tohid}').value=email;
+    }
+}
+
+ $(document).ready(function(){ 
+        $('img.removerto').click(function(event){ 
+            $("[id$='to']").val($(this).html());
+            $("[id$='tohid']").val($(this).html());  
+        });   
+    }); 
+</script> 
+<apex:includeScript value="/support/console/22.0/integration.js"/>
+<script type="text/javascript">
+        var url = null;
+        var titlename = null;
+        function openPrimaryTab() {
+            sforce.console.openPrimaryTab(undefined, 
+               'http://www.salesforce.com', true, 'salesforce');
+        }
+        
+        //The callback function that openSubtab will call once it's got the ID for its primary tab
+        var callOpenSubtab=function callOpenSubtab(result) {
+            sforce.console.openSubtab(result.id, url , true,titlename );
+        };
+        
+        function openSubtab(urllink,title) {
+     
+            url = urllink;
+            titlename = title;
+            if (sforce.console.isInConsole()) {            
+                sforce.console.getEnclosingPrimaryTabId(callOpenSubtab);
+            }
+            else{
+                window.open(url, '_blank');            
+            }           
+        }
+
+        //Sets the title of the current tab to "SFDC"
+        function setTitle() {
+            sforce.console.setTabTitle('SFDC');
+        }
+        
+        //The callback function that closeTab will call once it's got the ID for its tab
+        var callCloseTab= function callCloseTab(result) {
+            sforce.console.closeTab(result.id);
+        };
+        
+        function closeTab() {
+            sforce.console.getEnclosingTabId(callCloseTab);
+        }
+</script>
+<style type="text/css">
+.errMessage{
+border:2px solid #C00;
+}
+.pbSubheader{
+color: black !important;
+background-color: lightblue !important;
+border-color: none !important;
+}
+</style>
+ <body onLoad="if (this.bodyOnLoad) bodyOnLoad();" onFocus="if (this.bodyOnFocus) bodyOnFocus();">
+    <apex:sectionHeader title="Task" subtitle="Forward An Email" />
+    <apex:form id="theform" >
+        <apex:actionFunction name="doCancel" action="{!Cancel}" id="func1" />
+        <apex:actionFunction name="doSendEmail" action="{!sendemail}"  id="func2"  >
+        <apex:param name="value" value="{!$CurrentPage.parameters.value}" assignTo="{!value}" id="param1" />
+        </apex:actionFunction>
+         <apex:actionFunction name="doSendAndClose" action="{!sendAndClose}"  id="func3" />  
+        <apex:pageBlock id="pbForm">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton value="Send" onclick="SendEmail();return false;" >
+                </apex:commandButton>
+                <!-- <apex:commandButton value="Send & Close Case" onclick="sendAndClose();return false;" /> -->
+                <apex:commandButton value="Cancel"  onclick="Cancels();return false;"  /> 
+            </apex:pageBlockButtons>
+            <apex:pageMessages />
+            <apex:outputPanel >
+                <apex:pageMessage rendered="{!NOT(ISBLANK($CurrentPage.parameters.message))}"
+                    summary="{!$CurrentPage.parameters.message}" severity="CONFIRM"
+                    strength="3" title="Success" />
+            </apex:outputPanel>
+            <apex:outputPanel >
+                <apex:pageMessage rendered="{!NOT(ISBLANK($CurrentPage.parameters.messagefail))}"
+                    summary="{!$CurrentPage.parameters.messagefail}" severity="ERROR"
+                    strength="3" title="Fail" />
+            </apex:outputPanel>
+            <apex:pageBlockSection title="Edit Email" columns="1" id="theSection"   collapsible="false">
+                <apex:pageBlockSectionItem id="theSectionItem1">
+                    <apex:outputLabel value="From" for="emails__from" />
+                    <apex:selectList value="{!emails}" size="1">
+                        <apex:selectOptions value="{!emailsOptions}" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem2">
+                    <apex:outputLabel value="To:" />
+                     <apex:outputPanel id="topanel">  
+                         <apex:inputText value="{!to}" id="to" onfocus="this.blur();"></apex:inputText>&nbsp;
+                        <apex:inputHidden value="{!tohid}" id="tohid"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItemCase">
+                    <apex:outputLabel value="Case"  />
+                    <apex:outputLabel value="{!caseNumber}"  />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem3">
+                    <apex:commandLink value="Addition To:"
+                        onclick="openLookupPopup('additionalTo'); return false;"
+                        immediate="true" />
+                    <apex:outputPanel id="addtopanel">
+                        <apex:inputTextarea value="{!additionTo}" cols="70"
+                            id="additionalTo"></apex:inputTextarea>&nbsp;&nbsp;&nbsp;
+                      <apex:commandLink immediate="true"
+                            onclick="openLookupPopup('additionalTo'); return false;"
+                            reRender="pbForm">
+                            <apex:image url="{!URLFOR($Resource.lsw2resource, 'lsw2resource/lookup.gif')}"
+                                width="15" height="15" style="vertical-align:top;" />
+                        </apex:commandLink><div id="errmesgaddto"></div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem4">
+                    <apex:commandLink value="Cc:"
+                        onclick="openLookupPopup('CC'); return false;" immediate="true" />
+                    <apex:outputPanel id="ccpanel" >
+                        <apex:inputTextarea value="{!cc}" cols="70" id="emailcc"></apex:inputTextarea>&nbsp;&nbsp;&nbsp;
+                      <apex:commandLink immediate="true"
+                            onclick="openLookupPopup('CC'); return false;" reRender="pbForm">
+                            <apex:image url="{!URLFOR($Resource.lsw2resource, 'lsw2resource/lookup.gif')}"
+                                width="15" height="15" style="vertical-align:top;"  />
+                        </apex:commandLink><div id="errmesgcc"></div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem5">
+                    <apex:commandLink value="Bcc:"
+                        onclick="openLookupPopup('BCC'); return false;" immediate="true" />
+                    <apex:outputPanel id="bccpanel" >
+                        <apex:inputTextarea value="{!bcc}" cols="70" id="bcc"></apex:inputTextarea>&nbsp;&nbsp;&nbsp;
+                      <apex:commandLink immediate="true"
+                            onclick="openLookupPopup('BCC'); return false;" reRender="pbForm">
+                            <apex:image url="{!URLFOR($Resource.lsw2resource, 'lsw2resource/lookup.gif')}"
+                                width="15" height="15" style="vertical-align:top;"  />
+                        </apex:commandLink><apex:outputPanel ><div id="errmesgbcc"></div></apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem6">
+                    <apex:outputLabel value="Subject" for="emails__subject" />
+                    <apex:outputPanel id="subjectpanel" >
+                     <div class="requiredInput" lang="en" spellcheck="true"><div class="requiredBlock"></div>
+                     <apex:inputText id="subject" value="{!subject}" size="80" />
+                     </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem7">
+                    <apex:outputLabel value="Body" for="emails__body" />
+                    <apex:outputPanel >
+                           <apex:inputTextarea value="{!htmlBody}" id="htmlbody" cols="120"
+                            richText="true"  />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Attachment">
+            <apex:PageBlockTable value="{!attfile}" var="att" columns="2" style="text-decoration:none;" width="10%" cellspacing="0" rendered="{!attfile.size != 0}">
+                <apex:column headerClass="headerStyle" width="60%"  style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+                    <apex:facet name="header">Name</apex:facet>
+                    <apex:outputPanel > 
+                        <apex:outputLabel value="{!att.name}"></apex:outputLabel>
+                    </apex:outputPanel>
+                </apex:column>
+                <apex:column headerClass="headerStyle" width="40%"  style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+                    <apex:facet name="header">Size</apex:facet>
+                    <apex:outputPanel >
+                        <apex:outputLabel value="{!att.size}"></apex:outputLabel>
+                    </apex:outputPanel>
+                </apex:column>
+            </apex:PageBlockTable>
+            <apex:outputPanel rendered="{!attfile.size == 0}" >
+                    <apex:outputText value="No records to display" />
+         </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</body>
+</apex:page>

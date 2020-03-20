@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.adobe_download_line</name>
+    <style>none</style>
+    <subject>adobe_download_line</subject>
+    <textOnly>To view the PDF attachment: Open the attached PDF file. You must have Acrobat¨ Reader¨ (http://www.adobe.com/products/acrobat/readstep2.html) installed to view the attachment. If you have trouble opening this attachment, cannot download Acrobat Reader or have other questions, simply reply to this email or call us toll-free at</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Workforce Management</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Workforce Management</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agent Name --></label>
+        <name>Agent_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approving Manager --></label>
+        <name>Approving_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Are there specific Agents --></label>
+        <name>Are_there_specific_Agents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed by Date --></label>
+        <name>Completed_by_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Person --></label>
+        <name>Contact_Person__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Issue --></label>
+        <name>Date_of_Issue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Current End --></label>
+        <name>Friday_Current_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Current Start --></label>
+        <name>Friday_Current_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Desired End --></label>
+        <name>Friday_Desired_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friday Desired Start --></label>
+        <name>Friday_Desired_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue --></label>
+        <name>Issue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Length of Training/ Meeting --></label>
+        <name>Length_of_Training_Meeting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Current Start --></label>
+        <name>MondayCurrentStart__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Current End --></label>
+        <name>Monday_Current_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Desired End --></label>
+        <name>Monday_Desired_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monday Desired Start --></label>
+        <name>Monday_Desired_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perm or Temp --></label>
+        <name>Perm_or_Temp__c</name>
+        <picklistValues>
+            <masterLabel>Perm</masterLabel>
+            <translation><!-- Perm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temp</masterLabel>
+            <translation><!-- Temp --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Please list name(s) --></label>
+        <name>Please_list_name_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resource Restrictions --></label>
+        <name>Resource_Restrictions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Current End --></label>
+        <name>Saturday_Current_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Current Start --></label>
+        <name>Saturday_Current_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Desired End --></label>
+        <name>Saturday_Desired_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saturday Desired Start --></label>
+        <name>Saturday_Desired_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shared Services Request --></label>
+        <name>Shared_Services_Reqeust__c</name>
+        <relationshipLabel><!-- Workforce Management --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sunday Current End --></label>
+        <name>Sunday_Current_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunday Current Start --></label>
+        <name>Sunday_Current_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunday Desired End --></label>
+        <name>Sunday_Desired_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sunday Desired Start --></label>
+        <name>Sunday_Desired_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Audience --></label>
+        <name>Target_Audience__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Current End --></label>
+        <name>Thursday_Current_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Current Start --></label>
+        <name>Thursday_Current_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Desired End --></label>
+        <name>Thursday_Desired_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Thursday Desired Start --></label>
+        <name>Thursday_Desired_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Current Start --></label>
+        <name>TuesdayCurrentStart__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Current End --></label>
+        <name>Tuesday_Current_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Desired End --></label>
+        <name>Tuesday_Desired_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tuesday Desired Start --></label>
+        <name>Tuesday_Desired_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type of Request --></label>
+        <name>Type_of_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Current Start --></label>
+        <name>WednesdayCurrentStart__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Current End --></label>
+        <name>Wednesday_Current_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Desired End --></label>
+        <name>Wednesday_Desired_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wednesday Desired Start --></label>
+        <name>Wednesday_Desired_Start__c</name>
+    </fields>
+    <layouts>
+        <layout>ADHERENCE AND ATTENDANCE (feed)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Overtime Request</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Schedule Changes (feed)</layout>
+        <sections>
+            <label><!-- Current Schedule --></label>
+            <section>Current Schedule</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Desired Schedule --></label>
+            <section>Desired Schedule</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Training or Meeting Request (feed)</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Resource Avialability --></label>
+            <section>Resource Avialability</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- ADHERENCE AND ATTENDANCE --></label>
+        <name>ADHERENCE_AND_ATTENDANCE</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Overtime Request --></label>
+        <name>Overtime_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Schedule Change Request --></label>
+        <name>Schedule_Change_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Training or Meeting Request --></label>
+        <name>Training_or_Meeting_Request</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

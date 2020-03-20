@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>samples</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>View Sample Documents at LegalZoom.com</name>
+    <style>none</style>
+    <subject>View Sample Documents at LegalZoom.com</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+We prepare customized documents based on the information you provide when you place your order.  However, generic samples are available for viewing on www.legalzoom.com for the following products:
+
+- Divorce
+- Living Wills
+- Living Trust
+- LLC
+- Power of Attorney
+- Wills
+
+Access sample documents by following these steps:
+
+- Please visit this link: www.legalzoom.com
+- Click on the document you are looking for (Will, Power of Attorney, Living Will, etc.)
+- On the lower left hand side, click on the &quot;GO&quot; button under &quot;View a Sample&quot; 
+
+Please make sure that you do not have &quot;pop-up blocking&quot; software enabled, as it will prevent the sample from being displayed.
+
+Please do not hesitate to contact us if we can be of further assistance. Simply reply to this email or call us toll free at {!snippetVariable.ccphone}.
+
+Thank you once again for contacting LegalZoom, America&apos;s #1 online legal source. 
+ 
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

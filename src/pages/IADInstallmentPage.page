@@ -1,0 +1,334 @@
+<apex:page controller="IADInstallmentController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:includeScript value="{!$Resource.svg4everybody}" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:include pageName="MomentJS" />
+        <apex:stylesheet value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" />
+        <script type="text/javascript">
+            $.noConflict();
+            var svgHash = {};
+            var currentDate = moment().format("MM/DD/YYYY");
+            jQuery(document).ready(function($) {
+                window.initDates = function(){
+                    $(".normalizeDate").each(function(index) {
+                        //for the "Edit mode"
+                        if ($(this).is("input")) {
+                            //instantiate datepicker
+                            $(this).datepicker({
+                                //on Selecting a date event
+                                onSelect: function(dateText, inst) {
+                                    var theDate = $(this).val();
+                                    theDate = normalizeJSDate(theDate, 'MM/DD/YYYY hh:mm A');
+                                    var dueDate = normalizeJSDate( $(this).val(), 'MM/DD/YYYY');
+                                    // /toggleDetailEditMode();
+                                    console.log('dueDate ' + dueDate);
+                                    console.log('currentDate ' + currentDate);
+                                    if (dueDate == currentDate && $('#theStatus').val()!='Paid') {
+                                        $('#makePayment').show();
+                                        $('#update').hide();
+                                    }
+                                    else if (dueDate > currentDate) {
+                                        
+                                        $('#update').show();
+                                        $('#makePayment').hide();
+                                    }
+                    
+                                }
+                            });
+                            var theDate = $(this).val();
+                            if (theDate !== null) {
+                                theDate = normalizeJSDate(theDate, 'MM/DD/YYYY hh:mm A');
+                                $(this).val(theDate);
+                            }
+                        }
+                    });
+                    if($('#theStatus').val()=='Past Due - Will Not Reharvest'){
+                        $('#inputDate').attr('disabled', 'disabled');
+                        $('#makePayment').show();
+                    }
+                }
+                window.populateSVGHash = function() {
+                    svgHash = {};
+                    $('.svgParent').each(function(index) {
+                        var idKey = $(this).attr('id');
+                        svgHash[idKey] = $(this).html();
+                    });
+                    console.log(svgHash);
+                }
+                window.afterActionFunction = function() {
+                    $('.svgParent').each(function(index) {
+                        var idKey = $(this).attr('id');
+                        $(this).html(svgHash[idKey]);
+                    });
+                }
+                populateSVGHash();
+                //clicking the calendar also shows the datepicker
+                $('#mainContainer').on("click", ".slds-icon_container", function() {
+                    if($('#theStatus').val()!='Past Due - Will Not Reharvest'){
+                        $(this).parent().children('input').datepicker('show');
+                    }
+                });
+                $('#mainContainer').on("click", "#edit", function() {
+                    toggleDetailEditMode();
+                    if($('#theStatus').val()=='Past Due - Will Not Reharvest'){
+                         $('#makePayment').show();
+                         $('#update').hide();
+                      }
+                      else{
+                        $('#makePayment').hide();
+                      }
+                });
+                //toggles between detail and edit mode
+                window.toggleDetailEditMode = function() {
+                    console.log('toggling');
+                    $(".detailMode").toggle();
+                    $(".editMode").toggle();
+                    $("#update").toggle();
+
+                }
+                $('#mainContainer').on("click", ".cancelClose", function() {
+                    if($('#edit').is(':visible')){
+                        closeTab();
+                    }
+                    else{
+                     toggleDetailEditMode();
+                    }
+                });
+                
+                window.afterUpdateInstallment = function(){
+                    $('#update').hide();
+                    toggleDetailEditMode();
+                    sforce.console.fireEvent('RefreshInstallmentEvent',  null);
+                }
+            });
+            
+            function closeTab() {
+                sforce.console.getEnclosingTabId(closeSubtab);
+            }
+            var closeSubtab = function closeSubtab(result) {
+                var tabId = result.id;
+                sforce.console.closeTab(tabId);
+            };
+
+            function openMakePayment() {
+                    sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+            }
+            function updateInstallment() {
+                var dateId = document.querySelector("[id*='inputDate']").id;
+                var dateVal = document.getElementById(dateId).value;
+                callUpdateInstallment(dateVal);
+                return false;
+            }
+            var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+                var amt = $('#hiddenAmount').val();
+                var url = '/apex/IADInstallmentPayments?orderId={!orderId}&customerId={!customerId}&installment=1&amount=' + amt + '&invokingPage=Installment&invokingPageId={!theId}';
+                console.log('url ' + url);
+                sforce.console.openSubtab(result.id, url, true, 'Make a Payment');
+            };
+             window.onload = function() {
+                  populateInstallment();
+                };
+            function populatePreSelectedProfileLabel(selectedProfileLabel){
+                 $('#paymentProfileLabel').html(selectedProfileLabel);
+            }
+             function callProfilesData(){
+                    $.when(populateProfiles()).then(populatePaymentProfile());
+               }
+            window.editInstallment = function(){
+                       // oldDate = $('#dateInput').val();
+                        //$('#dateInput').val();
+                        toggleDetailEditMode();
+            }
+
+            var focusSuccess = function focusSuccess(result) {
+                //Report whether going to the open primary tab was successful
+                if (result.success == true) {
+                    console.log('Going to the sub tab was successful');
+                    location.reload(true);
+                } else {
+                    console.log('Going to the sub tab was not successful');
+                }
+            };
+            var installmentFocus = function (result) {
+                console.log('message + ' + result.message + ' id {!theId}');
+               if(result.message == '{!theId}'){
+                    sforce.console.getEnclosingTabId(getInstallmentTabIdAndRefresh);
+               }
+            };
+
+            var installmentUpdate = function (result) {
+                console.log('message + ' + result.message + ' id {!theId}');
+               if(result.message == '{!theId}'){
+                    updateInstallment();
+               }
+            };
+
+            var getInstallmentTabIdAndRefresh = function getInstallmentTabIdAndRefresh(result) {
+                console.log('result id ' + result.id);
+                sforce.console.focusSubtabById(result.id, focusSuccess);
+            };
+            sforce.console.addEventListener('FocusInstallmentTabEvent', installmentFocus);
+
+            sforce.console.addEventListener('UpdateInstallmentTabEvent', installmentUpdate);
+
+
+            var installmentRefresh = function (result) {
+                console.log('message + ' + result.message + ' id {!theId}');
+               if(result.message == '{!theId}'){
+                  refresh();
+               }
+            };
+
+            sforce.console.addEventListener('RefreshTheInstallmentEvent', installmentRefresh);
+
+
+        </script>
+        <style>
+            #dataTable {
+                border-spacing: 15px;
+                border-collapse: separate;
+                width: 70%;
+            }
+
+            #makePayment,
+            #update,
+            .editMode {
+                display: none;
+            }
+            
+            td {
+                overflow: hidden;
+            }
+            
+            .alignRight {
+                float: right;
+            }
+            
+            th {
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    
+    <div class="slds" id = "mainContainer">
+        <apex:form id="theForm" styleClass="slds-form--inline">
+
+
+            
+        <apex:actionFunction name="populateInstallment" action="{!populateInstallment}" rerender="theForm" status="statusUpdating" onComplete="callProfilesData(); afterActionFunction();initDates(); return false;"/>
+         <apex:actionFunction name="callUpdateInstallment" action="{!updateInstallment}" rerender="theForm, theMessages" status="statusUpdating" onComplete="initDates(); afterUpdateInstallment(); afterActionFunction(); populateInstallment(); return false;">
+            <apex:param assignTo="{!dueDate}" name="dateVal" value="" />
+         </apex:actionFunction>
+            
+        <apex:actionFunction name="clearMessages" action="{!installmentService.clearMessages}" rerender="theMessages" status="statusUpdating" onComplete="initDates(); afterActionFunction();return false;" />
+        <apex:actionFunction name="setProfileId" action="{!setProfileIdManual}" rerender="none" >
+            <apex:param assignTo="{!profileId}" name="profileId" value="" />
+        </apex:actionFunction>
+
+        <apex:actionFunction name="refresh" action="{!populateInstallment}" rerender="theForm" status="statusUpdating" onComplete="callProfilesData(); afterActionFunction();initDates(); return false;"/>
+
+    
+        <div class="slds-text-heading--small detailMode">Installment Detail</div>
+        <div class="slds-text-heading--small editMode">Installment Detail Edit</div>
+        <input id="theStatus" type="hidden" value="{!installmentService.theInstallmentWrapper.installment.status}"/>
+        <input id="errorCount" type="hidden" value="{!installmentService.errorCount}"/>
+         <table id="dataTable" >
+                <thead>
+                    <tr>
+                        <th class="detailMode">
+                            <a id="edit" onclick="clearMessages();return false;" href="#" >Edit </a>
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Installment #</td>
+                        <td>{!installmentService.theInstallmentWrapper.installment.installmentId} </td>
+                    </tr>
+                    <tr>
+                        <td>Payment Method</td>
+                        <td >
+                            <div class="detailMode" id = "paymentProfileLabel">
+                                  <c:IADPaymentProfileLabel theProfileId="{!installmentService.theInstallmentWrapper.installment.paymentProfileId}"/>                              
+                            </div>
+                            <div class="editMode">
+                                <c:IADPaymentProfilesDropdown theOrderId="{!orderId}" theUserId="{!customerId}"  theInvokingPageType="installment" theInvokingPageId="{!theId}" theCurrentProfileId="{!installmentService.theInstallmentWrapper.installment.paymentProfileId}" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Due Date</td>
+                        <td >
+                            <div class="editMode">
+                                <div class="slds-input-has-icon slds-input-has-icon--right">
+                                    <span class="slds-icon_container svgParent" title="Choose a Date">
+                                           <svg style="width:24px; height:24px;" class="slds-input__icon slds-icon-text-default" viewBox="0 0 32 32">
+                                            <path d="{!dayview}"/> 
+                                            </svg>
+                                     </span>
+                                    <input id="inputDate" title="Choose a Date" class="slds-input normalizeDate" type="text" value="{!installmentService.theInstallmentWrapper.installment.adjDueDateInString}" />
+                                </div>
+                            </div>
+                            <div class="detailMode" ><apex:outputtext value="{!installmentService.theInstallmentWrapper.installment.adjDueDateInString}" /></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Creation Date</td>
+                        <td >
+                            <apex:outputtext value="{!installmentService.theInstallmentWrapper.installment.adjCreationDateInString}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td ><b>{!installmentService.theInstallmentWrapper.installment.status}</b></td>
+                    </tr>
+                    <tr >
+                        <td>Amount</td>
+                        <td >${!installmentService.theInstallmentWrapper.installment.totalDueAmount}</td>
+                    </tr>
+                    
+                </tbody>
+                <tfoot  >
+                    <tr style="white-space: nowrap;"> 
+                        <td colspan="2">
+                            <button class="slds-button slds-button--neutral cancelClose" type="button">Cancel</button>
+                            <button id="update" onClick="updateInstallment(); return false;" class="slds-button slds-button--brand" type="button">Update</button>
+                            <button id="makePayment" onClick="openMakePayment(); return false;" class="slds-button slds-button--brand" type="button">Proceed to Payments</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <apex:outputPanel id="spinner">
+           <apex:actionStatus id="statusUpdating">
+                  <apex:facet name="start">
+                   <div class="slds-spinner_container">
+                      <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                      </div>
+                    </div>
+                  </apex:facet>
+           </apex:actionStatus>
+           </apex:outputPanel>
+
+
+            <apex:outputPanel id="theMessages" >
+
+                <input id="hiddenAmount" type="hidden" value="{!installmentService.theInstallmentWrapper.installment.totalDueAmount}"/>
+                <c:IADMessageBox theMessages="{!installmentService.iadMessages}" rendered="{!installmentService.iadMessages.size>0}"  />
+
+            </apex:outputPanel>
+      </apex:form>  
+    </div>
+     
+    
+    </html>
+</apex:page>

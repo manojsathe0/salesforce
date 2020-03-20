@@ -1,0 +1,84 @@
+<apex:page standardcontroller="Contact" extensions="VerifyCallController" showHeader="false">
+   <script type="text/javascript" src="/canvas/sdk/js/publisher.js"></script>
+   <apex:includeScript value="/support/console/42.0/integration.js"/>
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <script type="text/javascript">
+            function notifyVerification()
+            {
+               var d = new Date,
+               dformat = [d.getMonth()+1,
+                       d.getDate(),
+                       d.getFullYear()].join('-')+' '+
+                      [d.getHours(),
+                       d.getMinutes(),
+                       d.getSeconds()].join(':');
+              var verifiedJson = '{"action":"AttachData","actionData":{"verified":"true","verifiedTimestamp":"'+dformat+'",id="{!callId}"}}';
+              sforce.console.fireEvent('CTIEvent', verifiedJson , verifyCallBack);
+  
+            }
+            var verifyCallBack= function(result) { 
+            if (result.success) { 
+                   verifyCall();
+            } else { 
+                   alert('Customer couldn\'t be verified');
+            } 
+         };
+          
+
+        function fireVerifyEvent() { 
+            sforce.console.fireEvent('VerifiedEvent', 'EventMessage', null);
+         }
+         function PopupCenter(url, title, w, h) {
+                try{
+                    console.log('url is ' + url);
+                  // Fixes dual-screen position Most browsers Firefox 
+                  var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+                  var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+                  width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+                  height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+                  var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+                  var top = ((height / 2) - (h / 2)) + dualScreenTop;
+                  var newWindow = window.open(url, title, 'scrollbars=yes,resizable=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+                  // Puts focus on the newWindow 
+                  /*
+                  if (window.focus) {
+                      newWindow.focus();
+                  }
+                  */
+                  //newWindow.focus();
+                }
+                catch(err){
+                  //do nothing, just catch it bc of ie11
+                }
+            }
+            
+        </script>
+        <div class = "slds">
+      <apex:form id="theForm">
+              
+      
+      
+      <apex:actionFunction name="verifyCall" action="{!verifyCustomer}" rerender="theForm"/>
+      <apex:outputPanel layout="block" rendered="{!NOT(isCallVerified)}" style="display:inline;">
+       <button class="slds-button slds-button--brand" type="button" onclick="notifyVerification();">Verify Call</button>  
+       </apex:outputPanel>
+       
+       <!--<button class="slds-button slds-button--brand" type="button" onclick="PopupCenter('/apex/IADSecurityQuestion?customerId={!customerId}','Security Question','450','350'); return false;" style="{!IF(CONTAINS($Profile.Name,'Pilot'), '', 'display:none')}">Security Question</button>-->  
+       
+       <apex:outputPanel layout="block" rendered="{!isCallVerified}">
+          <Script type = "text/javascript">
+              if('{!isCallVerified}' == 'true')
+              {
+                 fireVerifyEvent(); 
+              }
+          </script>   
+        <h2 style="color:green">Verified!!</h2>
+       </apex:outputPanel>
+       <br />
+       <c:IADMessageBox theMessages="{!iadMessages}" />
+       </apex:form>
+       </div>
+</apex:page>

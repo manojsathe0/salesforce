@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>CRnorefund</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Refund ? Copyright (Over 60 Days)</name>
+    <style>none</style>
+    <subject>Refund ? Copyright (Over 60 Days)</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+The LegalZoom Guarantee ensures you will receive your money back if you are not satisfied with your order for any reason. However, it also specifies that your refund must be requested within 60 days of purchase. You can view our Guarantee policy online by visiting 
+https://www.legalzoom.com/satisfaction-guarantee.html
+
+Unfortunately, at this time, you are only eligible for a refund of your $35.00 filing fee for the cancellation of your order. Alternatively, you may choose to cancel this order and apply your entire amount paid ($149) towards LegalZoom store credit. This will allow you to store the funds in the system (60 days) for future purchase of any LegalZoom product.
+
+Otherwise, we can keep your order on hold until your work is complete and continue with the processing of the order. Please note we still have not yet received a copy of your completed work in order to complete your application. We will need one (1) complete copy of your work if unpublished or two (2) copies if your work has been published.
+
+You can send us your materials by replying to this email with your file attachment (up to 6MB), or mail it to: 
+
+{!snippetVariable.ip_address_cr_materials}
+
+Please Note: Your filename may be changed when your application is submitted to conform to U.S. Copyright Office submission guidelines. For complete instructions on how to submit electronic files as well as a list of acceptable file types, visit http://legalzoom.force.com/LZPKB/articles/Answer/03434 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

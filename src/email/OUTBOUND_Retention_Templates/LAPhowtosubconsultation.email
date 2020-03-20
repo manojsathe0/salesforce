@@ -1,0 +1,82 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;"> Dear {!Contact.FirstName} {!Contact.LastName},<br/><br/> 
+
+You can start taking advantage of all your plan benefits by visiting your Member <a href= https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=1>here</a>.<br/><br/> 
+
+<b>Instructions:</b><br/><ul>
+<li>Log in  as 'existing member' using your username and password 
+<li>Click on the link  “Legal Advantage Member Center”
+<li>Click on  "Request a Consultation"
+<li>Complete all the empty fields
+<li>Click on submit
+<li>Click on Schedule Consultation
+<li>Select time and date from attorneys schedule, or quick call back option (if available)
+<li>On the Appointment Details page, click on Make Appointment (bottom right)
+<li>You will receive an Attorney Consultation Appointment Confirmed email.</ul>
+Legal Advantage Plus is a membership that gives you access to the following benefits:
+ 
+<ul><li>Attorney support: Whenever you need expert legal advice, you have access to an experienced attorney to ask questions and get information on any legal topic. Examples include reviewing and getting advice on your last will, reviewing other legal documents, and more.<br/><li>Tax Professional advice and consultations.  Speak with an experienced Tax Professional on an unlimited number of new tax issues<br/><li>Annual legal checkup with an attorney: Just like getting an annual checkup of your health with your doctor, it&#8217;s important to get an annual checkup of important legal documents with an attorney. You might not realize (or get busy and forget) that changes in your life such as moving, having a child, having more grandchildren, etc., can impact your last will or other legal documents.<br/><li>Unlimited access to LegalZoom legal forms: Whenever you need legal support, you can access and download hundreds of legal forms for personal use. Examples include affidavits, bills of sale, nondisclosure agreements, promissory notes and more.<br/><li>25% savings on additional attorney services: You get substantial savings on professional attorney services should you need go to court.<br/><li>20% savings on any additional tax services<br/><li>10% savings on any LegalZoom legal documents: Take advantage of valuable savings on any LegalZoom legal documents, including Living Trusts, LLCs, Trademarks and more.</ul>
+{!snippetVariable.asdsigline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.<br/><br/>
+
+{!snippetVariable.bestregardstext}<br/><br/>{!snippetVariable.thelegalzoomteamline}<br/><br/>
+
+{!snippetVariable.asdphone} | {!snippetVariable.asdfax} | {!snippetVariable.lacemail}<br/>
+{!snippetVariable.lz_website} | {!snippetVariable.lz_address}<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

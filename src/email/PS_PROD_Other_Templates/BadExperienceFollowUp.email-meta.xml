@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Irate</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Bad Experience - Follow Up</name>
+    <style>none</style>
+    <subject>Bad Experience - Follow Up</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}:
+
+I would like to take this opportunity to extend my sincerest apologies regarding your unsatisfactory experience with Legalzoom. It is very important to us to try and correct the situation when there has been a misunderstanding or an error in the service and /or product.
+
+We are dedicated to building long-term relationships with our customers. We would be open to any suggestions that you may have in ways to improve our service, so that Legalzoom will be beneficial to you in the future.
+
+Please do not hesitate to contact me if you have any questions, concerns, or comments. My direct line is (800) 773-0888 ext. XXXX. I am available from 9 AM to 6 PM Pacific Standard Time, Monday through Friday.
+
+We appreciate your business We appreciate your business and look forward to serving you in the future.
+
+Best regards,
+
+The LegalZoom Team 
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

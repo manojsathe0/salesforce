@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>AgentWork$HandleTime</field>
+    </columns>
+    <description>Agent work by Queue</description>
+    <filter>
+        <criteriaItems>
+            <column>AgentWork$OriginalQueue</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Decline Orders</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>AgentWork$LastModifiedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AgentWork$CreatedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>AgentWork$OriginalQueue</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Email Round Robin - Agent</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Agent_Work__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>AgentWork$AcceptDateTime</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

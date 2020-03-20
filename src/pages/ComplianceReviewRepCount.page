@@ -1,0 +1,50 @@
+<apex:page standardController="Compliance_Review_Limit_Chosen_Rep__c" extensions="ComplianceReviewRepCountController"> 
+<apex:form >
+<style type="text/css">
+td
+{
+    padding:0 15px 0 15px;
+}
+th
+{
+    padding:0 15px 0 15px;
+}
+</style>
+<apex:pageBlock > 
+<table>
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Current Value</th>
+        <th>New Value</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td>
+{!counts[0].Name}
+</td>
+<td>
+<apex:outputField value="{!counts[0].Limit_Chosen_Rep__c} "/>
+</td>
+<td>
+<apex:inputtext value="{!ccsCount}"   />
+</td>
+</tr>
+<tr>
+<td>
+{!counts[1].Name}
+</td>
+<td>
+<apex:outputField value="{!counts[1].Limit_Chosen_Rep__c} "/>
+</td>
+<td>
+<apex:inputtext value="{!salesCount}"   />
+</td>
+</tr>
+</tbody>
+</table>
+</apex:pageBlock>
+<apex:commandButton action="{!saveRecords}" value="Save" id="theButton"/>
+</apex:form>
+</apex:page>

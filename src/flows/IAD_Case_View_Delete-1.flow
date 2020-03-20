@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used with a process builder to delete IAD case view object items after 6 months.</description>
+    <interviewLabel>IAD Case View Delete {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>IAD Case View Delete</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Record_Delete</name>
+        <label>Record Delete</label>
+        <locationX>325</locationX>
+        <locationY>196</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ID</elementReference>
+            </value>
+        </filters>
+        <object>IAD_Case_View_Later_Counter__c</object>
+    </recordDeletes>
+    <startElementReference>Record_Delete</startElementReference>
+    <variables>
+        <name>ID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

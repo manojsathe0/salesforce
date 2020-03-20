@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>AORESIGN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>E-sig TM Law Firm AOR esignature</name>
+    <style>none</style>
+    <subject>Trademark Order# {!Case.Order_Number__c} Application Sent to Attorney</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+We have listed Richard C. Hoffman as your attorney of record on your Trademark application as you have instructed. Your application has been sent directly to him, as your attorney of record, for his review and electronic signature. If any questions arise, he should contact you directly.
+
+Once the application has been signed and filed with the USPTO, LegalZoom will email you a confirmation receipt containing your assigned USPTO serial number. This eight digit serial number is your unique tracking number for the USPTO and should be used to track your status online.
+
+We apologize for any confusion. For any additional questions regarding your Trademark application, please contact Mr. Hoffman at (888) 380-1353.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

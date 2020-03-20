@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>three1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>3_Pay_Reconciliation</name>
+    <style>none</style>
+    <subject>3_Pay_Reconciliation</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your LegalZoom order. 
+
+At checkout, you opted in for our Installment Plan, which automatically bills payments on a monthly schedule. Your two remaining payments did not automatically process when due. We apologize for any confusion this may have caused, and wanted to notify you that we have processed both payments to bring your account current. 
+
+These charges were processed to the original card on file, and you should see these charges within 1-2 business days. At any time, you can sign in at LegalZoom.com to view your invoice, which includes payment history and current amount due.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

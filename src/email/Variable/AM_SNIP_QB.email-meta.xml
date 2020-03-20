@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>AM_SNIP_QB</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AM_SNIP_QB</name>
+    <style>none</style>
+    <subject>AM_SNIP_QB</subject>
+    <textOnly>Per our conversation, as a LegalZoom customer, you get a free 90-day trial to QuickBooks Online, the leader in cloud-based accounting for small businesses. With QuickBooks Online, it has never been easier to organize all your business finances in one place. Please call 1-800-843-0928 or click here to sign up today.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,80 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},
+<br/>
+<br/>
+Thank you for choosing LegalZoom for your DBA order. 
+<br/>
+<br/>
+Note: As of January 1, 2015, California law authorizes counties to require a Notarized Affidavit of Identity form to accompany all Fictitious Business Name Statements. Your Ventura County DBA documents include this new form. Please disregard any Fictitious Business Name Statement and/or Affidavit you may have previously received in connection with this order. Please follow the instructions below to sign and return the DBA form(s).
+<br/>
+<br/>
+<ol>
+	<li>
+	Do not make any changes to the attached documents as they will result in delays with your order. If you need to make changes, please contact our Customer Support team at <a href="mailto:customercare@legalzoom.com">customercare@legalzoom.com</a>. 
+	</li>
+	<li>
+	Find the DBA form (Fictitious Business Name Statement), which is used to officially register your business name, and the Affidavit of Identity, which is used to prove your identity, in your packet. You will treat these documents differently in later steps, so make sure you can identify them. If you have any questions, contact our Customer Support team.
+	</li>
+	<li>
+	Print four (4) copies of the Fictitious Business Name Statement and (2) copies of the Affidavit of Identity. Print these copies on white paper using black ink. 
+	</li>
+	<li>
+	Please have the designated registrant sign the Fictitious Business Name Statement in black ink where indicated (see Sample Pages). 
+	</li>
+	<li>
+	In front of a notary public, please have the designated registrant sign and date the Affidavit of Identity in black ink where indicated on Page 1 and 2 (see Sample Pages). The Affidavit of Identity must then be notarized properly. 
+	<li>
+	Mail the notarized and signed documents to our address listed below. In addition to both forms, if the registrant is a Corporation, Limited Liability Company or Limited Liability Partnership an <u><b>original</b></u> “Certificate of Status” issued by the Secretary of State must be submitted. This document may be ordered on the CA Secretary of State website <a href="http://www.sos.ca.gov/business/pdf/be_ircform.pdf" target="_blank">(http://www.sos.ca.gov/business/pdf/be_ircform.pdf).</a>   
+	<b>Please note that we cannot accept faxes as the state office will only accept original signed documents.</b></li>
+<br/>
+<br/>
+<b>Courier and USPS Deliveries</b>
+<br/>
+LegalZoom.com, Inc.
+<br/>ATTN: Business Filings
+<br/>9900 Spectrum Drive
+<br/>Austin, TX 78717
+<br/>
+<br/>
+LegalZoom cannot accept walk-in customers to our offices. Please follow the instructions above to return signed documents to us. We apologize for any inconvenience. To find out more about notarization, see the <a href="http://www.legalzoom.com/notary.html" target="_blank">LegalZoom Notary Center</a>.
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

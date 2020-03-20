@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.ip_address_pat_materials</name>
+    <style>none</style>
+    <subject>ip_address_pat_materials</subject>
+    <textOnly>LegalZoom
+Attn: Patents, Order [Your Order #]
+101 N. Brand Blvd., 11th Floor
+Glendale, CA 91203</textOnly>
+    <type>custom</type>
+</EmailTemplate>

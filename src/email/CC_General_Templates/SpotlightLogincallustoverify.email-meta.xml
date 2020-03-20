@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>spotcall</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Spotlight Login (call us to verify)</name>
+    <style>none</style>
+    <subject>Spotlight Login (call us to verify)</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry regarding signing in to Spotlight.
+
+If you are unable to recall your email address or password, simply visit {!snippetVariable.sign_in_link} to retrieve your password. Once you&apos;ve obtained your email address and password, sign in under the ?Existing Member? section on the sign in page located at {!snippetVariable.sign_in_link}.
+
+If you cannot retrieve your password or continue to experience difficulties signing in, please call {!snippetVariable.cc_full} toll free at {!snippetVariable.ccphone} to obtain your login and password. Our business hours are {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

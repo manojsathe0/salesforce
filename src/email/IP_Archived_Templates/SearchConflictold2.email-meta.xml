@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Search Conflict - old2</name>
+    <style>none</style>
+    <subject>Search Conflict - old2</subject>
+    <textOnly>Dear {!Contact.FirstName},
+ 
+Thank you for using LegalZoom.
+ 
+We have conducted a preliminary search of the Federal Trademark Register. Please review the attached trademark(s) for potential conflicts and let us know if you wish to continue filing your application. 
+
+What is a conflict?  
+
+As part of the application process, the examining attorney will search records with the US Patent and Trademark Office (USPTO) to see if a conflict exists between the mark in your application and another registered or pending mark. In general, the Trademark Office will reject an application if there is a &quot;likelihood of consumer confusion&quot;. To find a conflict, the marks do not have to be identical, and the goods and/or services do not have to be the exactly the same. Some factors include:
+ 
+? The similarity of the marks in appearance, sound and meaning.
+? The relatedness of the goods or service.
+? The number of similar marks currently in use.
+? The similarity of established sales channels and the sophistication of the buyers.
+ 
+For more information regarding likelihood of confusion:
+{!snippetVariable.tm_search_conflict_link}
+ 
+Next Steps
+After reviewing these marks, please reply to this e-mail and let me know how you would like to proceed:
+ 
+1. Process your original Trademark application as is
+
+2. Submit a new name or logo to receive a FREE updated direct-hit search (up to 3 searches are included with your Trademark application order)
+
+3. Consult with an attorney regarding your Trademark (http://attorneyconnect.legalzoom.com)  
+
+*** If you would like us to delay the processing of your Trademark Application, please contact us within 15 days of this email.***
+
+Feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

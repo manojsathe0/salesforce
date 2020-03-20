@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>laws1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lawsuits</name>
+    <style>none</style>
+    <subject>Lawsuits</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry. We are unable to comment on any pending litigation.  If you have general questions about a LegalZoom product or service, or if you have questions about an order you placed, please call our Customer Care Team at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

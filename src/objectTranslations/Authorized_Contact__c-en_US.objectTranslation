@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Authorized Contact</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Authorized Contacts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Authorized Customer Login --></label>
+        <name>Authorized_Customer_Login__c</name>
+        <relationshipLabel><!-- Authorized Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Authorized Order --></label>
+        <name>Authorized_Order__c</name>
+        <relationshipLabel><!-- Authorized Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Authorized Order&apos;s Customer Login --></label>
+        <name>Authorized_Order_s_Customer_Login__c</name>
+        <relationshipLabel><!-- Authorized Contacts (Authorized Order&apos;s Customer Login) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Authorized Orders / Customer Login --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive --></label>
+        <name>Inactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <layouts>
+        <layout>Authorized Contact Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Create New Lead --></label>
+        <name>Create_New_Lead</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,3081 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This custom object has been created to capture new Article/Project requests and track approval of the request.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Action_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Action Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Create New</fullName>
+                    <default>false</default>
+                    <label>Create New</label>
+                </value>
+                <value>
+                    <fullName>Update Current</fullName>
+                    <default>false</default>
+                    <label>Update Current</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Article_Project_Request__c</fullName>
+        <externalId>false</externalId>
+        <label>Article/Project Request Type</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Article Update</fullName>
+                    <default>false</default>
+                    <label>Article Update</label>
+                </value>
+                <value>
+                    <fullName>Email Update</fullName>
+                    <default>false</default>
+                    <label>Email Update</label>
+                </value>
+                <value>
+                    <fullName>Multi Article Change</fullName>
+                    <default>false</default>
+                    <label>Multi Article Change</label>
+                </value>
+                <value>
+                    <fullName>New Article</fullName>
+                    <default>false</default>
+                    <label>New Article</label>
+                </value>
+                <value>
+                    <fullName>New Email</fullName>
+                    <default>false</default>
+                    <label>New Email</label>
+                </value>
+                <value>
+                    <fullName>New Source Doc</fullName>
+                    <default>false</default>
+                    <label>New Source Doc</label>
+                </value>
+                <value>
+                    <fullName>New Training</fullName>
+                    <default>false</default>
+                    <label>New Training</label>
+                </value>
+                <value>
+                    <fullName>Project Release</fullName>
+                    <default>false</default>
+                    <label>Project Release</label>
+                </value>
+                <value>
+                    <fullName>Project Test</fullName>
+                    <default>false</default>
+                    <label>Project Test</label>
+                </value>
+                <value>
+                    <fullName>Source Doc Update</fullName>
+                    <default>false</default>
+                    <label>Source Doc Update</label>
+                </value>
+                <value>
+                    <fullName>Training Update</fullName>
+                    <default>false</default>
+                    <label>Training Update</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Service_Notes__c</fullName>
+        <description>Notes from Client Services</description>
+        <externalId>false</externalId>
+        <label>Client Service Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contact_SME_PM__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact/SME/PM</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Article_Project_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <externalId>false</externalId>
+        <label>County</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Needed_By_If_Applicable__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Needed By (If Applicable)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Document_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Customer Article</fullName>
+                    <default>false</default>
+                    <label>Customer Article</label>
+                </value>
+                <value>
+                    <fullName>Email Temp</fullName>
+                    <default>false</default>
+                    <label>Email Temp</label>
+                </value>
+                <value>
+                    <fullName>LZ Article</fullName>
+                    <default>false</default>
+                    <label>LZ Article</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Partner Article</fullName>
+                    <default>false</default>
+                    <label>Partner Article</label>
+                </value>
+                <value>
+                    <fullName>Public Article</fullName>
+                    <default>false</default>
+                    <label>Public Article</label>
+                </value>
+                <value>
+                    <fullName>Source Doc</fullName>
+                    <default>false</default>
+                    <label>Source Doc</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Functional_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Functional Area</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Customer Care</fullName>
+                    <default>false</default>
+                    <label>Customer Care</label>
+                </value>
+                <value>
+                    <fullName>Fulfillment</fullName>
+                    <default>false</default>
+                    <label>Fulfillment</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Goals_Objective__c</fullName>
+        <externalId>false</externalId>
+        <label>Goals/Objective</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Hours_Worked__c</fullName>
+        <description>Cumulative number of hours worked: i.	Example: I work 2 hrs on project Monday, On Monday I enter 2.  I then work 2 more hours on Tuesday, on Tuesday replace 2 w/ 4.</description>
+        <externalId>false</externalId>
+        <label>Hours Worked</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ImplementerID__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Project_Implementer__r.Id  = $User.Id , 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ImplementerID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <description>Line of Business</description>
+        <externalId>false</externalId>
+        <label>Line of Business</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>Attorney Services</fullName>
+                    <default>false</default>
+                    <label>Attorney Services</label>
+                </value>
+                <value>
+                    <fullName>Business Services</fullName>
+                    <default>false</default>
+                    <label>Business Services</label>
+                </value>
+                <value>
+                    <fullName>Customer Care</fullName>
+                    <default>false</default>
+                    <label>Customer Care</label>
+                </value>
+                <value>
+                    <fullName>Finance</fullName>
+                    <default>false</default>
+                    <label>Finance</label>
+                </value>
+                <value>
+                    <fullName>HR</fullName>
+                    <default>false</default>
+                    <label>HR</label>
+                </value>
+                <value>
+                    <fullName>Intellectual Property Services</fullName>
+                    <default>false</default>
+                    <label>Intellectual Property Services</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>Personal Services</fullName>
+                    <default>false</default>
+                    <label>Personal Services</label>
+                </value>
+                <value>
+                    <fullName>Process Improvement</fullName>
+                    <default>false</default>
+                    <label>Process Improvement</label>
+                </value>
+                <value>
+                    <fullName>Tech</fullName>
+                    <default>false</default>
+                    <label>Tech</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>My_Open_Requests_Approver__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( Project_Request_Approver__c =$User.Id,1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>My Open Requests - Approver</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>My_Open_Requests_Implementor__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( Project_Implementer__c =$User.Id,1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>My Open Requests - Implementor</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>My_Submitted_Requests__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( Project_Request_Submitter__c =$User.Id,1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>My Submitted Requests</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Order #</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Critical</fullName>
+                    <default>false</default>
+                    <label>Critical</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Line_of_Business__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>(LLC) Limited Liability Company</fullName>
+                    <default>false</default>
+                    <label>(LLC) Limited Liability Company</label>
+                </value>
+                <value>
+                    <fullName>(LLP) Limited Liability Partnership</fullName>
+                    <default>false</default>
+                    <label>(LLP) Limited Liability Partnership</label>
+                </value>
+                <value>
+                    <fullName>(LP) Limited Partnership</fullName>
+                    <default>false</default>
+                    <label>(LP) Limited Partnership</label>
+                </value>
+                <value>
+                    <fullName>501(c)3 Preparation</fullName>
+                    <default>false</default>
+                    <label>501(c)3 Preparation</label>
+                </value>
+                <value>
+                    <fullName>All Products</fullName>
+                    <default>false</default>
+                    <label>All Products</label>
+                </value>
+                <value>
+                    <fullName>Amendment Annual Reports</fullName>
+                    <default>false</default>
+                    <label>Amendment Annual Reports</label>
+                </value>
+                <value>
+                    <fullName>Attorney-Prepared Provisional Application for Patent</fullName>
+                    <default>false</default>
+                    <label>Attorney-Prepared Provisional Application for Patent</label>
+                </value>
+                <value>
+                    <fullName>Bankruptcy</fullName>
+                    <default>false</default>
+                    <label>Bankruptcy</label>
+                </value>
+                <value>
+                    <fullName>Business Advantage Pro Plan</fullName>
+                    <default>false</default>
+                    <label>Business Advantage Pro Plan</label>
+                </value>
+                <value>
+                    <fullName>Certificate of Good Standing</fullName>
+                    <default>false</default>
+                    <label>Certificate of Good Standing</label>
+                </value>
+                <value>
+                    <fullName>Certified Copies</fullName>
+                    <default>false</default>
+                    <label>Certified Copies</label>
+                </value>
+                <value>
+                    <fullName>Compliance</fullName>
+                    <default>false</default>
+                    <label>Compliance</label>
+                </value>
+                <value>
+                    <fullName>Compliance Calendar</fullName>
+                    <default>false</default>
+                    <label>Compliance Calendar</label>
+                </value>
+                <value>
+                    <fullName>Conversion</fullName>
+                    <default>false</default>
+                    <label>Conversion</label>
+                </value>
+                <value>
+                    <fullName>Copyright</fullName>
+                    <default>false</default>
+                    <label>Copyright</label>
+                </value>
+                <value>
+                    <fullName>Corporate Minutes</fullName>
+                    <default>false</default>
+                    <label>Corporate Minutes</label>
+                </value>
+                <value>
+                    <fullName>DBA (Doing Business As)</fullName>
+                    <default>false</default>
+                    <label>DBA (Doing Business As)</label>
+                </value>
+                <value>
+                    <fullName>Design Patent</fullName>
+                    <default>false</default>
+                    <label>Design Patent</label>
+                </value>
+                <value>
+                    <fullName>Dissolution</fullName>
+                    <default>false</default>
+                    <label>Dissolution</label>
+                </value>
+                <value>
+                    <fullName>Divorce</fullName>
+                    <default>false</default>
+                    <label>Divorce</label>
+                </value>
+                <value>
+                    <fullName>EIN Obtainment/Federal Tax ID</fullName>
+                    <default>false</default>
+                    <label>EIN Obtainment/Federal Tax ID</label>
+                </value>
+                <value>
+                    <fullName>Entity Name Availability Check</fullName>
+                    <default>false</default>
+                    <label>Entity Name Availability Check</label>
+                </value>
+                <value>
+                    <fullName>Foreign Qualification</fullName>
+                    <default>false</default>
+                    <label>Foreign Qualification</label>
+                </value>
+                <value>
+                    <fullName>General Partnership Agreement</fullName>
+                    <default>false</default>
+                    <label>General Partnership Agreement</label>
+                </value>
+                <value>
+                    <fullName>Incorporation</fullName>
+                    <default>false</default>
+                    <label>Incorporation</label>
+                </value>
+                <value>
+                    <fullName>Initial Reports</fullName>
+                    <default>false</default>
+                    <label>Initial Reports</label>
+                </value>
+                <value>
+                    <fullName>Joint Venture Agreement</fullName>
+                    <default>false</default>
+                    <label>Joint Venture Agreement</label>
+                </value>
+                <value>
+                    <fullName>Last Will &amp; Testament</fullName>
+                    <default>false</default>
+                    <label>Last Will &amp; Testament</label>
+                </value>
+                <value>
+                    <fullName>Legal Advantage Plus Plan</fullName>
+                    <default>false</default>
+                    <label>Legal Advantage Plus Plan</label>
+                </value>
+                <value>
+                    <fullName>Living Trust</fullName>
+                    <default>false</default>
+                    <label>Living Trust</label>
+                </value>
+                <value>
+                    <fullName>Living Will</fullName>
+                    <default>false</default>
+                    <label>Living Will</label>
+                </value>
+                <value>
+                    <fullName>Name Change</fullName>
+                    <default>false</default>
+                    <label>Name Change</label>
+                </value>
+                <value>
+                    <fullName>Non-Profit Corporation</fullName>
+                    <default>false</default>
+                    <label>Non-Profit Corporation</label>
+                </value>
+                <value>
+                    <fullName>On Call Attorney Advantage Plan</fullName>
+                    <default>false</default>
+                    <label>On Call Attorney Advantage Plan</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Other Legal Forms</fullName>
+                    <default>false</default>
+                    <label>Other Legal Forms</label>
+                </value>
+                <value>
+                    <fullName>Other Patent Products</fullName>
+                    <default>false</default>
+                    <label>Other Patent Products</label>
+                </value>
+                <value>
+                    <fullName>Other Trademark Products</fullName>
+                    <default>false</default>
+                    <label>Other Trademark Products</label>
+                </value>
+                <value>
+                    <fullName>Pet Protection Agreement</fullName>
+                    <default>false</default>
+                    <label>Pet Protection Agreement</label>
+                </value>
+                <value>
+                    <fullName>Power of Attorney</fullName>
+                    <default>false</default>
+                    <label>Power of Attorney</label>
+                </value>
+                <value>
+                    <fullName>Prenuptial Agreements</fullName>
+                    <default>false</default>
+                    <label>Prenuptial Agreements</label>
+                </value>
+                <value>
+                    <fullName>Provisional Application for Patent</fullName>
+                    <default>false</default>
+                    <label>Provisional Application for Patent</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Deed Transfer</fullName>
+                    <default>false</default>
+                    <label>Real Estate Deed Transfer</label>
+                </value>
+                <value>
+                    <fullName>Real Estate Lease</fullName>
+                    <default>false</default>
+                    <label>Real Estate Lease</label>
+                </value>
+                <value>
+                    <fullName>Registered Agent</fullName>
+                    <default>false</default>
+                    <label>Registered Agent</label>
+                </value>
+                <value>
+                    <fullName>S-Corp Preparation</fullName>
+                    <default>false</default>
+                    <label>S-Corp Preparation</label>
+                </value>
+                <value>
+                    <fullName>Seller’s Permit</fullName>
+                    <default>false</default>
+                    <label>Seller’s Permit</label>
+                </value>
+                <value>
+                    <fullName>State Tax ID</fullName>
+                    <default>false</default>
+                    <label>State Tax ID</label>
+                </value>
+                <value>
+                    <fullName>Trademark</fullName>
+                    <default>false</default>
+                    <label>Trademark</label>
+                </value>
+                <value>
+                    <fullName>Trademark Search</fullName>
+                    <default>false</default>
+                    <label>Trademark Search</label>
+                </value>
+                <value>
+                    <fullName>Utility Patent</fullName>
+                    <default>false</default>
+                    <label>Utility Patent</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>(LLC) Limited Liability Company</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>(LLP) Limited Liability Partnership</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>(LP) Limited Partnership</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>501(c)3 Preparation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Amendment Annual Reports</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Certificate of Good Standing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Certified Copies</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Compliance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Compliance Calendar</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Conversion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Corporate Minutes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>DBA (Doing Business As)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Dissolution</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>EIN Obtainment/Federal Tax ID</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Entity Name Availability Check</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Foreign Qualification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>General Partnership Agreement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Incorporation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Initial Reports</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Joint Venture Agreement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Non-Profit Corporation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <controllingFieldValue>Attorney Services</controllingFieldValue>
+                <controllingFieldValue>All</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Registered Agent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>S-Corp Preparation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>Seller’s Permit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Business Services</controllingFieldValue>
+                <valueName>State Tax ID</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Bankruptcy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Divorce</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Last Will &amp; Testament</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Living Trust</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Living Will</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Name Change</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Other Legal Forms</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Pet Protection Agreement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Power of Attorney</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Prenuptial Agreements</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Real Estate Deed Transfer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Personal Services</controllingFieldValue>
+                <valueName>Real Estate Lease</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Attorney-Prepared Provisional Application for Patent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Copyright</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Design Patent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Other Patent Products</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Other Trademark Products</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Provisional Application for Patent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Trademark</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Trademark Search</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Intellectual Property Services</controllingFieldValue>
+                <valueName>Utility Patent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Attorney Services</controllingFieldValue>
+                <valueName>Business Advantage Pro Plan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Attorney Services</controllingFieldValue>
+                <valueName>Legal Advantage Plus Plan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Attorney Services</controllingFieldValue>
+                <valueName>On Call Attorney Advantage Plan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>All</controllingFieldValue>
+                <valueName>All Products</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Project_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Implementer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>User who will be responsible for implementing the project/article request</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who is responsible for implementing this approved project/article request?</inlineHelpText>
+        <label>Project Implementer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Article_Project_Requests3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Request_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Request Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Project_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Request_Submitter__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Request Submitter</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Request__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Request Type</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Article (Customer-Facing)</fullName>
+                    <default>false</default>
+                    <label>Article (Customer-Facing)</label>
+                </value>
+                <value>
+                    <fullName>Article (Internal)</fullName>
+                    <default>false</default>
+                    <label>Article (Internal)</label>
+                </value>
+                <value>
+                    <fullName>Article Update</fullName>
+                    <default>false</default>
+                    <label>Article Update</label>
+                </value>
+                <value>
+                    <fullName>Communication</fullName>
+                    <default>false</default>
+                    <label>Communication</label>
+                </value>
+                <value>
+                    <fullName>Customer Request (Document Revision)</fullName>
+                    <default>false</default>
+                    <label>Customer Request (Document Revision)</label>
+                </value>
+                <value>
+                    <fullName>Customer Request (Legal Research)</fullName>
+                    <default>false</default>
+                    <label>Customer Request (Legal Research)</label>
+                </value>
+                <value>
+                    <fullName>Customer Request (LZ Signature as RA)</fullName>
+                    <default>false</default>
+                    <label>Customer Request (LZ Signature as RA)</label>
+                </value>
+                <value>
+                    <fullName>Customer Request (Release Documents for Deceased)</fullName>
+                    <default>false</default>
+                    <label>Customer Request (Release Documents for Deceased)</label>
+                </value>
+                <value>
+                    <fullName>Customer Request (Urgent Legal Action)</fullName>
+                    <default>false</default>
+                    <label>Customer Request (Urgent Legal Action)</label>
+                </value>
+                <value>
+                    <fullName>Document (Final Packet Instructions)</fullName>
+                    <default>false</default>
+                    <label>Document (Final Packet Instructions)</label>
+                </value>
+                <value>
+                    <fullName>Document (Legal Form or Template)</fullName>
+                    <default>false</default>
+                    <label>Document (Legal Form or Template)</label>
+                </value>
+                <value>
+                    <fullName>Document (Rejected Document or Form)</fullName>
+                    <default>false</default>
+                    <label>Document (Rejected Document or Form)</label>
+                </value>
+                <value>
+                    <fullName>Email Template</fullName>
+                    <default>false</default>
+                    <label>Email Template</label>
+                </value>
+                <value>
+                    <fullName>Email Update</fullName>
+                    <default>false</default>
+                    <label>Email Update</label>
+                </value>
+                <value>
+                    <fullName>Multi Article Change</fullName>
+                    <default>false</default>
+                    <label>Multi Article Change</label>
+                </value>
+                <value>
+                    <fullName>New Article</fullName>
+                    <default>false</default>
+                    <label>New Article</label>
+                </value>
+                <value>
+                    <fullName>New Email</fullName>
+                    <default>false</default>
+                    <label>New Email</label>
+                </value>
+                <value>
+                    <fullName>New Source Doc</fullName>
+                    <default>false</default>
+                    <label>New Source Doc</label>
+                </value>
+                <value>
+                    <fullName>New Training</fullName>
+                    <default>false</default>
+                    <label>New Training</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Project Release</fullName>
+                    <default>false</default>
+                    <label>Project Release</label>
+                </value>
+                <value>
+                    <fullName>Project Test</fullName>
+                    <default>false</default>
+                    <label>Project Test</label>
+                </value>
+                <value>
+                    <fullName>Source Doc Update</fullName>
+                    <default>false</default>
+                    <label>Source Doc Update</label>
+                </value>
+                <value>
+                    <fullName>Training Materials</fullName>
+                    <default>false</default>
+                    <label>Training Materials</label>
+                </value>
+                <value>
+                    <fullName>Training Update</fullName>
+                    <default>false</default>
+                    <label>Training Update</label>
+                </value>
+                <value>
+                    <fullName>Website or Questionnaire Content</fullName>
+                    <default>false</default>
+                    <label>Website or Questionnaire Content</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Working</fullName>
+                    <default>false</default>
+                    <label>Working</label>
+                </value>
+                <value>
+                    <fullName>Researching</fullName>
+                    <default>false</default>
+                    <label>Researching</label>
+                </value>
+                <value>
+                    <fullName>In Review</fullName>
+                    <default>false</default>
+                    <label>In Review</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Waiting</fullName>
+                    <default>false</default>
+                    <label>Waiting</label>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Approval</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request__c</fullName>
+        <displayFormat>{0}</displayFormat>
+        <externalId>false</externalId>
+        <label>Request #</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Requesting_Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Requesting Department</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Account Management</fullName>
+                    <default>false</default>
+                    <label>Account Management</label>
+                </value>
+                <value>
+                    <fullName>Customer Care</fullName>
+                    <default>false</default>
+                    <label>Customer Care</label>
+                </value>
+                <value>
+                    <fullName>Fulfillment</fullName>
+                    <default>false</default>
+                    <label>Fulfillment</label>
+                </value>
+                <value>
+                    <fullName>Knowledge Management</fullName>
+                    <default>false</default>
+                    <label>Knowledge Management</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Process Improvement</fullName>
+                    <default>false</default>
+                    <label>Process Improvement</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Requestor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Requestor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Article_Project_Requests1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sponsor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sponsor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Article_Project_Requests2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>Alabama</fullName>
+                    <default>false</default>
+                    <label>Alabama</label>
+                </value>
+                <value>
+                    <fullName>Alaska</fullName>
+                    <default>false</default>
+                    <label>Alaska</label>
+                </value>
+                <value>
+                    <fullName>Arizona</fullName>
+                    <default>false</default>
+                    <label>Arizona</label>
+                </value>
+                <value>
+                    <fullName>Arkansas</fullName>
+                    <default>false</default>
+                    <label>Arkansas</label>
+                </value>
+                <value>
+                    <fullName>California</fullName>
+                    <default>false</default>
+                    <label>California</label>
+                </value>
+                <value>
+                    <fullName>Colorado</fullName>
+                    <default>false</default>
+                    <label>Colorado</label>
+                </value>
+                <value>
+                    <fullName>Connecticut</fullName>
+                    <default>false</default>
+                    <label>Connecticut</label>
+                </value>
+                <value>
+                    <fullName>Delaware</fullName>
+                    <default>false</default>
+                    <label>Delaware</label>
+                </value>
+                <value>
+                    <fullName>Florida</fullName>
+                    <default>false</default>
+                    <label>Florida</label>
+                </value>
+                <value>
+                    <fullName>Georgia</fullName>
+                    <default>false</default>
+                    <label>Georgia</label>
+                </value>
+                <value>
+                    <fullName>Hawaii</fullName>
+                    <default>false</default>
+                    <label>Hawaii</label>
+                </value>
+                <value>
+                    <fullName>Idaho</fullName>
+                    <default>false</default>
+                    <label>Idaho</label>
+                </value>
+                <value>
+                    <fullName>Illinois</fullName>
+                    <default>false</default>
+                    <label>Illinois</label>
+                </value>
+                <value>
+                    <fullName>Indiana</fullName>
+                    <default>false</default>
+                    <label>Indiana</label>
+                </value>
+                <value>
+                    <fullName>Iowa</fullName>
+                    <default>false</default>
+                    <label>Iowa</label>
+                </value>
+                <value>
+                    <fullName>Kansas</fullName>
+                    <default>false</default>
+                    <label>Kansas</label>
+                </value>
+                <value>
+                    <fullName>Kentucky</fullName>
+                    <default>false</default>
+                    <label>Kentucky</label>
+                </value>
+                <value>
+                    <fullName>Louisiana</fullName>
+                    <default>false</default>
+                    <label>Louisiana</label>
+                </value>
+                <value>
+                    <fullName>Maine</fullName>
+                    <default>false</default>
+                    <label>Maine</label>
+                </value>
+                <value>
+                    <fullName>Maryland</fullName>
+                    <default>false</default>
+                    <label>Maryland</label>
+                </value>
+                <value>
+                    <fullName>Massachusetts</fullName>
+                    <default>false</default>
+                    <label>Massachusetts</label>
+                </value>
+                <value>
+                    <fullName>Michigan</fullName>
+                    <default>false</default>
+                    <label>Michigan</label>
+                </value>
+                <value>
+                    <fullName>Minnesota</fullName>
+                    <default>false</default>
+                    <label>Minnesota</label>
+                </value>
+                <value>
+                    <fullName>Mississippi</fullName>
+                    <default>false</default>
+                    <label>Mississippi</label>
+                </value>
+                <value>
+                    <fullName>Missouri</fullName>
+                    <default>false</default>
+                    <label>Missouri</label>
+                </value>
+                <value>
+                    <fullName>Montana</fullName>
+                    <default>false</default>
+                    <label>Montana</label>
+                </value>
+                <value>
+                    <fullName>Nebraska</fullName>
+                    <default>false</default>
+                    <label>Nebraska</label>
+                </value>
+                <value>
+                    <fullName>Nevada</fullName>
+                    <default>false</default>
+                    <label>Nevada</label>
+                </value>
+                <value>
+                    <fullName>New Hampshire</fullName>
+                    <default>false</default>
+                    <label>New Hampshire</label>
+                </value>
+                <value>
+                    <fullName>New Jersey</fullName>
+                    <default>false</default>
+                    <label>New Jersey</label>
+                </value>
+                <value>
+                    <fullName>New Mexico</fullName>
+                    <default>false</default>
+                    <label>New Mexico</label>
+                </value>
+                <value>
+                    <fullName>New York</fullName>
+                    <default>false</default>
+                    <label>New York</label>
+                </value>
+                <value>
+                    <fullName>North Carolina</fullName>
+                    <default>false</default>
+                    <label>North Carolina</label>
+                </value>
+                <value>
+                    <fullName>North Dakota</fullName>
+                    <default>false</default>
+                    <label>North Dakota</label>
+                </value>
+                <value>
+                    <fullName>Ohio</fullName>
+                    <default>false</default>
+                    <label>Ohio</label>
+                </value>
+                <value>
+                    <fullName>Oklahoma</fullName>
+                    <default>false</default>
+                    <label>Oklahoma</label>
+                </value>
+                <value>
+                    <fullName>Oregon</fullName>
+                    <default>false</default>
+                    <label>Oregon</label>
+                </value>
+                <value>
+                    <fullName>Pennsylvania</fullName>
+                    <default>false</default>
+                    <label>Pennsylvania</label>
+                </value>
+                <value>
+                    <fullName>Rhode Island</fullName>
+                    <default>false</default>
+                    <label>Rhode Island</label>
+                </value>
+                <value>
+                    <fullName>South Carolina</fullName>
+                    <default>false</default>
+                    <label>South Carolina</label>
+                </value>
+                <value>
+                    <fullName>South Dakota</fullName>
+                    <default>false</default>
+                    <label>South Dakota</label>
+                </value>
+                <value>
+                    <fullName>Tennessee</fullName>
+                    <default>false</default>
+                    <label>Tennessee</label>
+                </value>
+                <value>
+                    <fullName>Texas</fullName>
+                    <default>false</default>
+                    <label>Texas</label>
+                </value>
+                <value>
+                    <fullName>Utah</fullName>
+                    <default>false</default>
+                    <label>Utah</label>
+                </value>
+                <value>
+                    <fullName>Vermont</fullName>
+                    <default>false</default>
+                    <label>Vermont</label>
+                </value>
+                <value>
+                    <fullName>Virginia</fullName>
+                    <default>false</default>
+                    <label>Virginia</label>
+                </value>
+                <value>
+                    <fullName>Washington</fullName>
+                    <default>false</default>
+                    <label>Washington</label>
+                </value>
+                <value>
+                    <fullName>West Virginia</fullName>
+                    <default>false</default>
+                    <label>West Virginia</label>
+                </value>
+                <value>
+                    <fullName>Wisconsin</fullName>
+                    <default>false</default>
+                    <label>Wisconsin</label>
+                </value>
+                <value>
+                    <fullName>Wyoming</fullName>
+                    <default>false</default>
+                    <label>Wyoming</label>
+                </value>
+                <value>
+                    <fullName>Washington, D.C.</fullName>
+                    <default>false</default>
+                    <label>Washington, D.C.</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Project Request</label>
+    <listViews>
+        <fullName>All_My_Project_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Line_of_Business__c</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>Priority__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>All - My Created Project Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Ops</fullName>
+        <columns>Requesting_Department__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Project_Request_Approver__c</columns>
+        <columns>Project_Request_Submitter__c</columns>
+        <columns>Product__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>Line_of_Business__c</columns>
+        <columns>Request__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All - Ops</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>ID_Team_View</fullName>
+        <booleanFilter>(1 OR (2 AND 4)) AND 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Request_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Implementer__c</field>
+            <operation>contains</operation>
+            <value>Kay,Rachel Roppolo</value>
+        </filters>
+        <filters>
+            <field>OWNER.FIRST_NAME</field>
+            <operation>equals</operation>
+            <value>Kay,Rachel</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Rejected</value>
+        </filters>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>notEqual</operation>
+            <value>Waters</value>
+        </filters>
+        <label>ID Team View</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Open_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Project_Request_Submitter__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Completed</value>
+        </filters>
+        <label>*My Open Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Pending_Approvals</fullName>
+        <columns>Request_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Project_Request_Submitter__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Approval</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Article_Project_Request__c.Operations_Request</value>
+        </filters>
+        <label>*My Pending Approvals</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Submitted_Requests</fullName>
+        <columns>Request_Status__c</columns>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Project_Request_Submitter__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>*My Submitted Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_Approved</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ImplementerID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>2. Ops - Project Requests - Approved</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_Completed</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ImplementerID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <label>5. Ops - Project Requests - Completed</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_Dewi_Smith</fullName>
+        <booleanFilter>(1 AND 2) OR 3 OR 4</booleanFilter>
+        <columns>Project_Request_Approver__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>NAME</columns>
+        <columns>Article_Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>Sponsor__c</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>All</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Article (Customer-Facing)</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Article (Internal)</value>
+        </filters>
+        <filters>
+            <field>Project_Request_Approver__c</field>
+            <operation>equals</operation>
+            <value>Dewi Smith</value>
+        </filters>
+        <label>Ops - Project Requests - Dewi Smith</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>ProjectRequestTeam</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_New</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ImplementerID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>8. Ops - Project Requests - New</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_No_Implement</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Implementer__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>New,Completed,Rejected</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <label>9. Ops - Project Requests - No Implement</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_Pending_Appr</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ImplementerID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Approval</value>
+        </filters>
+        <label>1. Ops - Project Requests - Pending Apr</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_Researching</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ImplementerID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Researching</value>
+        </filters>
+        <label>4. Ops - Project Requests - Researching</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_Waiting</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ImplementerID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Waiting</value>
+        </filters>
+        <label>6. Ops - Project Requests - Waiting</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Ops_Project_Requests_Working</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ImplementerID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Working</value>
+        </filters>
+        <label>3. Ops - Project Requests - Working</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Project_Implementer_Dewi_Smith</fullName>
+        <booleanFilter>1 and 2</booleanFilter>
+        <columns>Project_Request_Submitter__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>Project_Request_Approver__c</columns>
+        <columns>NAME</columns>
+        <columns>Article_Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>Sponsor__c</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Implementer__c</field>
+            <operation>equals</operation>
+            <value>Dewi Smith</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Completed</value>
+        </filters>
+        <label>Project Implementer - Dewi Smith</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Project_Implementer_Kasey_Cromer</fullName>
+        <columns>Project_Implementer__c</columns>
+        <columns>NAME</columns>
+        <columns>Article_Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>Sponsor__c</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Implementer__c</field>
+            <operation>equals</operation>
+            <value>Kasey Cromer</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Completed</value>
+        </filters>
+        <label>Project Implementer - Kasey Cromer</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Project_Implementer_Kevin_Mooney</fullName>
+        <booleanFilter>(1 OR  2)</booleanFilter>
+        <columns>Project_Request_Approver__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>NAME</columns>
+        <columns>Article_Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>Sponsor__c</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Implementer__c</field>
+            <operation>equals</operation>
+            <value>Kevin Mooney</value>
+        </filters>
+        <filters>
+            <field>Project_Request_Approver__c</field>
+            <operation>equals</operation>
+            <value>Kevin Mooney</value>
+        </filters>
+        <label>Project Implementer - Kevin Mooney</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Project_Implementer_Tony</fullName>
+        <booleanFilter>(1 OR  2)</booleanFilter>
+        <columns>Project_Request_Approver__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>NAME</columns>
+        <columns>Article_Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>Sponsor__c</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Implementer__c</field>
+            <operation>equals</operation>
+            <value>Tony Burroughs</value>
+        </filters>
+        <filters>
+            <field>Project_Request_Approver__c</field>
+            <operation>equals</operation>
+            <value>Tony Burroughs</value>
+        </filters>
+        <label>Project Implementer - Tony Burroughs</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Project_Requests_Clare_Gmur</fullName>
+        <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Article (Internal),Fulfillment (Process Change)</value>
+        </filters>
+        <filters>
+            <field>Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Intellectual Property Services</value>
+        </filters>
+        <filters>
+            <field>Project_Request_Approver__c</field>
+            <operation>equals</operation>
+            <value>Clare Gmur</value>
+        </filters>
+        <label>Ops - Project Requests - Clare Gmur</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>AnswerRequestTeam</group>
+            <group>ProjectRequestTeam</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Project_Requests_Nars_Samuy</fullName>
+        <booleanFilter>(1 AND 2 AND 3) OR 4</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Personal Services</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Completed</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Fulfillment (Process Change)</value>
+        </filters>
+        <filters>
+            <field>Project_Request_Approver__c</field>
+            <operation>equals</operation>
+            <value>Nars Samuy</value>
+        </filters>
+        <label>Ops - Project Requests - Nars Samuy</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>AnswerRequestTeam</group>
+            <group>ProjectRequestTeam</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Project_Requests_Paul_Kassabian</fullName>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5 OR 6)</booleanFilter>
+        <columns>Project_Request_Approver__c</columns>
+        <columns>Project_Implementer__c</columns>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Personal Services</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Customer Request (Document Revision),Customer Request (Legal Research)</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Customer Request (LZ Signature as RA),Customer Request (Urgent Legal Action)</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Customer Request (Release Documents for Deceased)</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Document (Rejected Document or Form)</value>
+        </filters>
+        <filters>
+            <field>Project_Request_Approver__c</field>
+            <operation>equals</operation>
+            <value>paul kassabian</value>
+        </filters>
+        <label>Ops - Project Requests - Paul Kassabian</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Project_Requests_Tien_Nguyen</fullName>
+        <booleanFilter>(1 AND 2) AND (3 OR 4 OR 5 OR 6)</booleanFilter>
+        <columns>Request__c</columns>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Personal Services</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Completed</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Article (Customer-Facing),Document (Final Packet Instructions)</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Document (Legal Form or Template),Email Template</value>
+        </filters>
+        <filters>
+            <field>Project_Request__c</field>
+            <operation>equals</operation>
+            <value>Other,Website or Questionnaire Content</value>
+        </filters>
+        <filters>
+            <field>Project_Request_Approver__c</field>
+            <operation>equals</operation>
+            <value>Tien Nguyen</value>
+        </filters>
+        <label>Ops - Project Requests - Tien Nguyen</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Project_Requests_Young_Song</fullName>
+        <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Attorney Services</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Rejected</value>
+        </filters>
+        <filters>
+            <field>Project_Request_Approver__c</field>
+            <operation>equals</operation>
+            <value>Young Song</value>
+        </filters>
+        <label>Ops - Project Requests - Young Song</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>X7_Ops_Project_Requests_Rejected</fullName>
+        <columns>NAME</columns>
+        <columns>Project_Request__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Requested_Start_Date__c</columns>
+        <columns>Requested_Completion_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ImplementerID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </filters>
+        <label>7. Ops - Project Requests - Rejected</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>KM_Team</role>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Project Request Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Project Requests</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Operations_Request</fullName>
+        <active>true</active>
+        <description>Project Requests for Product Management, Legal, Sales and Fulfillment</description>
+        <label>Operations Project Request</label>
+        <picklistValues>
+            <picklist>Action_Type__c</picklist>
+            <values>
+                <fullName>Create New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Current</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Article_Project_Request__c</picklist>
+            <values>
+                <fullName>Article Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multi Article Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Source Doc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Release</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Doc Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>Customer Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Temp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LZ Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Source Doc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Functional_Area__c</picklist>
+            <values>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Line_of_Business__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attorney Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intellectual Property Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>Critical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>%28LLC%29 Limited Liability Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28LLP%29 Limited Liability Partnership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%28LP%29 Limited Partnership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>501%28c%293 Preparation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amendment Annual Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attorney-Prepared Provisional Application for Patent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bankruptcy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Advantage Pro Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certificate of Good Standing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certified Copies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conversion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copyright</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate Minutes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DBA %28Doing Business As%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Patent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dissolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Divorce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EIN Obtainment%2FFederal Tax ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entity Name Availability Check</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foreign Qualification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Partnership Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Reports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joint Venture Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Last Will %26 Testament</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Advantage Plus Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Trust</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Living Will</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Name Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Profit Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Call Attorney Advantage Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Legal Forms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Patent Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Trademark Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pet Protection Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power of Attorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prenuptial Agreements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provisional Application for Patent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Deed Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Real Estate Lease</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Registered Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S-Corp Preparation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seller%E2%80%99s Permit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Tax ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trademark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trademark Search</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utility Patent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Request__c</picklist>
+            <values>
+                <fullName>Article %28Customer-Facing%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Article %28Internal%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Request %28LZ Signature as RA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Request %28Legal Research%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Request %28Release Documents for Deceased%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Request %28Urgent Legal Action%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document %28Final Packet Instructions%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document %28Legal Form or Template%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document %28Rejected Document or Form%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website or Questionnaire Content</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Researching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Requesting_Department__c</picklist>
+            <values>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Knowledge Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>Alabama</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alaska</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arizona</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arkansas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>California</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colorado</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connecticut</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delaware</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Florida</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hawaii</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idaho</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illinois</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iowa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kansas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kentucky</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Louisiana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maryland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Massachusetts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Michigan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minnesota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mississippi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missouri</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Montana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nebraska</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nevada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Hampshire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Jersey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Mexico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New York</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North Carolina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>North Dakota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ohio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oklahoma</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oregon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pennsylvania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rhode Island</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Carolina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>South Dakota</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tennessee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Texas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Utah</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vermont</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virginia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Washington%2C D%2EC%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>West Virginia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wisconsin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wyoming</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Project_Request__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Line_of_Business__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Project_Request__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Line_of_Business__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Knowledge_Management_Comm_Project</fullName>
+        <active>true</active>
+        <description>If Request Type =/= &quot;Communication&quot; and Requesting Department = &quot;Knowledge Management&quot;, trigger error message, direct requester to contact Clare Gmur.</description>
+        <errorConditionFormula>NOT(ISPICKVAL(Project_Request__c,&quot;Communication&quot;)) &amp;&amp; ISPICKVAL(Requesting_Department__c,&quot;Knowledge Management&quot;)</errorConditionFormula>
+        <errorMessage>Knowledge Management should only choose Communication as a Request Type. If you have any questions please see the Change Management Team.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Helpdesk</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Helpdesk Ticket</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>http://helpdesk/AeXHD/winuser/</url>
+    </webLinks>
+</CustomObject>

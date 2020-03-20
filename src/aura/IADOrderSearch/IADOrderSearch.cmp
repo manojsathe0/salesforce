@@ -1,0 +1,38 @@
+<aura:component controller="IADOrderSearchController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+    <aura:attribute name="orderNumber" type="String" />
+    <aura:attribute name="customerId" type="String" />
+    <aura:attribute name="orderWrapper" type="List" />
+    <aura:attribute name="orderFound" type="Boolean" default="false"/>
+    
+    <lightning:workspaceAPI aura:id="workspace" /> 
+    
+    <div class="slds-card" style="height:100%" >
+        <div class="slds-form-element slds-lookup" data-select="single">
+            <div class="slds-form-element__control">
+                <div class="slds-input-has-icon slds-input-has-icon--right">
+                    <lightning:buttonIcon iconName="utility:search" variant="bare" onclick="{! c.searchOrder }" alternativeText="Enter a valid Order number" class="slds-input__icon" />
+                    <ui:inputText value="{!v.orderNumber}" class="slds-lookup__search-input slds-input" placeholder="Search any Order here..." />
+                </div>
+            </div>
+        </div>
+        <div class="slds-scrollable" >
+            <lightning:spinner aura:id="spinner" class="slds-hide" />
+            
+            <div style="{!v.orderFound ? 'margin:3% 0 2% 3%;' : 'display:none'}"> 
+                <aura:iteration items="{!v.orderWrapper}" var="ordr">
+                    <div class="slds-m-top--xxx-small slds-text-body--small">
+                        <lightning:icon iconName="standard:orders" size="medium" />
+                        <a data-orderrecordid="{!ordr.Id}" onclick="{!c.openOrderDetails}" title="Click to open order" style="margin: 0 0 0 3%;font-size: 14px;">{!ordr.OrderID__c}</a>
+                    </div>                                        
+                </aura:iteration> 
+            </div>
+            <div style="{!v.orderFound ? 'display:none' : ''}">  
+                <br/><br/><br/>
+                <div align="center">
+                    <lightning:icon iconName="standard:orders" size="small" />
+                </div>
+                <p class="slds-text-heading slds-text-align--center">No order found. Please try again!</p>
+            </div>
+        </div>
+    </div>
+</aura:component>

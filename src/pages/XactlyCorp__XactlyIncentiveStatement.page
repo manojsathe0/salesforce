@@ -1,0 +1,818 @@
+<apex:page id="thePage" controller="XactlyCorp.XactlyTabController" action="{!showincentivestatement}" showHeader="false" sidebar="false" docType="html-5.0" wizard="true">
+  <apex:outputPanel rendered="{!(!isError)}">
+  	<c:XactlyTabHeader />
+  </apex:outputPanel>
+  <apex:outputPanel rendered="{!message!=''}" styleClass="msg-panel">
+        <div id="msg-div" class="alert" style="width:90%;margin-left:auto;margin-right:auto;margin-top: 5px;">
+           <apex:outputText value="{!message}"/>
+        </div>
+        <apex:outputPanel rendered="{!isError}" styleClass="error-component">
+            <c:xactly_error />
+        </apex:outputPanel>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!loggedIn && !isError}">
+   <!--toggle links for incentive statement and ranking page-->
+     <div class="content">
+                   <apex:outputPanel rendered="{!loggedIn}" id="link-tabs" styleClass="link-tabs">
+                     <div class="links-div">
+                        <a href="/apex/XactlyCorp__XactlyIncentiveStatement" style="text-decoration: none;cursor:pointer;" id="show-statement"> 
+                            <img src="{!URLFOR($Resource.XactlyTabResource, 'images/blank.gif')}" class="link-show-statement-inactive link-show-statement"/>
+                        </a>
+                        <a href="/apex/XactlyCorp__XactlyIncentRanking" style="text-decoration: none;cursor:pointer" id="show-ranking">
+                            <img src="{!URLFOR($Resource.XactlyTabResource, 'images/blank.gif')}" class="link-show-ranking-inactive"/>
+                        </a>
+                    </div>               
+                    </apex:outputPanel>      
+  <apex:outputPanel id="hiddenFieldsDiv">
+      <!-- <apex:outputPanel > -->
+        <input type="hidden" id="isLoggedIn" value="{!loggedIn}"/>
+        <input type="hidden" id="isShowData" value="{!showStatement}"/>     
+    <!--</apex:outputPanel>  -->         
+  </apex:outputPanel>
+  <!-- <apex:form id="theForm"> -->
+   <div id="pageLoader" style="display:none;" class="pageLoader">
+            <img src="{!URLFOR($Resource.XactlyTabResource, 'images/progressBar.gif')}"/>
+        </div>
+ <apex:outputPanel rendered="{!showStatement}">
+  <div id="incentive-div">
+    <apex:variable var="paymentSummary" value="{!incentiveStatement.paymentSummary}"/>
+    <apex:variable var="attainmentList" value="{!incentiveStatement.incentiveSummary.attainmentSummaryList}"/>
+    <div class="incentive-summary-div">
+                <label id="summary"><span>{!$Label.xactly_label_payment}&nbsp;</span>{!$Label.xactly_label_summary}</label>
+                <div id="current-payment">
+                    <label>{!$Label.xactly_label_current_payment}<span class="summary-period">{!paymentSummary.currentPeriod}</span></label>
+                    <span class="currency-symbol-amount">{!paymentSummary.currencyUnit}{!paymentSummary.currentPeriodAmount}</span>
+                </div>
+                <div id="previous-payment">
+                    <label>{!$Label.xactly_label_prev_payment}<span class="summary-period">{!paymentSummary.prevPeriod}</span></label>
+                    <span class="currency-symbol-amount">{!paymentSummary.currencyUnit}{!paymentSummary.prevPeriodAmount}</span>
+                </div>
+                <div id="ytd-payment">
+                    <label>{!$Label.xactly_label_ytd_payment}<span class="summary-period">{!paymentSummary.YTDPeriod}</span></label>
+                    <span class="currency-symbol-amount">{!paymentSummary.currencyUnit}{!paymentSummary.YTDPaymentAmount}</span>
+                </div>
+            </div>
+            <div class="horizontal-separator-thin">
+                
+            </div>
+            <!-- gauges slider menu with attainment summary -->
+        <apex:outputPanel styleClass="incentive-statement">
+             <div class="xtab-mobile-gauge-header">
+                    Quota Attainment
+                </div> 
+        	<div id="contentSlider">
+            <ul>
+            <apex:repeat var="attainment" value="{!attainmentList}">
+            <li>
+                    <div style="height: 100%;width: 225px;border-left: none;border-top: none;border-bottom: none;border-right: thin solid #eee;">
+                        <span title="{!attainment.name}">{!attainment.name}</span>
+                        <label>{!attainment.amountPercent}%</label>
+                        <canvas class="gauges-canvas" title="{!attainment.amountPercent}">
+
+                        </canvas>
+                    </div>
+                </li>            
+            </apex:repeat>
+            </ul>
+        </div>
+        </apex:outputPanel>
+        <!-- payments section -->
+        <apex:variable var="paymentComission" value="{!incentiveStatement.paysAndComms}"/>
+        <div class="xtab-report-section">
+            <!--payments-->
+            <div id="xtab-payment-details">
+                <div class="xtab-details-header">
+                    <label>{!$Label.xactly_label_payments}</label>
+                    <div class="xtab-detail-periods">
+                        <span class="xtab-selected-quarter" id="payment-q1">{!$Label.xactly_label_q1}</span>
+                        <span id="payment-q2">{!$Label.xactly_label_q2}</span>
+                        <span id="payment-q3">{!$Label.xactly_label_q3}</span>
+                        <span id="payment-q4">{!$Label.xactly_label_q4}</span>
+                    </div>
+                </div>            
+                <div class="xtab-detail-subheader">
+                        <div class="subheader-info">
+                            {!$Label.xactly_label_commission}
+                        </div>
+                        <div class="q1">
+                        <div>
+                            {!$Label.xactly_label_jan} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_feb} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_Mar} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_q1} {!incentiveStatement.year}
+                        </div>                          
+                        </div>
+                        <div class="q2" style="display:none">
+                        <div>
+                            {!$Label.xactly_label_Apr} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_May} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_jun} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_q2} {!incentiveStatement.year}
+                        </div>                          
+                        </div>
+                        <div class="q3" style="display:none">
+                        <div>
+                            {!$Label.xactly_label_jul} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_aug} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_sep} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_q3} {!incentiveStatement.year}
+                        </div>                          
+                        </div>
+                        <div class="q4" style="display:none">
+                        <div>
+                            {!$Label.xactly_label_oct} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_nov} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_dec} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_q4} {!incentiveStatement.year}
+                        </div>                          
+                        </div>
+                    <div class="year">
+                        {!incentiveStatement.year}
+                    </div>                                              
+                </div>
+                <div>
+                </div>
+                <apex:repeat var="payment" value="{!paymentComission}">
+                <apex:variable var="release" value="{!payment.releases}"/>
+                <apex:variable var="held" value="{!payment.holds}"/>
+                <apex:variable var="commission" value="{!payment.commissions}"/>
+                 <apex:outputPanel >
+                 <apex:outputPanel rendered="{!release!=''}">
+                  <div class="xtab-detail-row">
+                    <div class="row-label">
+                        {!$Label.xactly_label_released}
+                    </div>
+                    <div class="q1">
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q1Values.janValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q1Values.febValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q1Values.marValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q1Values.total}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q2" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q2Values.aprValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                           <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/> {!release.q2Values.mayValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q2Values.junValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q2Values.total}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q3" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q3Values.julValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q3Values.augValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q3Values.sepValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q3Values.total}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q4" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q4Values.octValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q4Values.novValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q4Values.decValue}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.q4Values.total}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="year" style="border:0">
+                        <apex:outputLabel rendered="{!release.unitTypeSymbol!='%'}" value="{!release.unitTypeSymbol}"/>{!release.totalReleased}<apex:outputLabel rendered="{!release.unitTypeSymbol=='%'}" value="{!release.unitTypeSymbol}"/>
+                    </div>
+                </div>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!held!=''}">
+                <div class="xtab-detail-row">
+                    <div class="row-label">
+                        {!$Label.xactly_label_held}
+                    </div>
+                    <div class="q1">
+                        <div>
+                           <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q1Values.janValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q1Values.febValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q1Values.marValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q1Values.total}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q2" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q2Values.aprValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q2Values.mayValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q2Values.junValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q2Values.total}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q3" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q3Values.julValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q3Values.augValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q3Values.sepValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q3Values.total}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q4" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q4Values.octValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q4Values.novValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q4Values.decValue}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.q4Values.total}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="year" style="border: 0">
+                        <apex:outputLabel rendered="{!held.unitTypeSymbol!='%'}" value="{!held.unitTypeSymbol}"/>{!held.totalHeld}<apex:outputLabel rendered="{!held.unitTypeSymbol=='%'}" value="{!held.unitTypeSymbol}"/>
+                    </div>
+                </div>
+                </apex:outputPanel>
+                <div class="xtab-detail-row">
+                    <div class="row-label" style="font-weight: bold;">
+                        {!$Label.xactly_label_total_earn}
+                    </div>
+                    <div class="q1">
+                        <div>
+                           <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q1Values.janValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>   
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q1Values.febValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q1Values.marValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q1Values.total}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q2" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q2Values.aprValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q2Values.mayValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q2Values.junValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q2Values.total}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q3" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q3Values.julValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q3Values.augValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q3Values.sepValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q3Values.total}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q4" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q4Values.octValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q4Values.novValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q4Values.decValue}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.q4Values.total}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                        </div>
+                    </div>                 
+                    <div class="year" style="border: 0;font-weight: bold;">
+                        <apex:outputLabel rendered="{!commission.unitTypeSymbol!='%'}" value="{!commission.unitTypeSymbol}"/>{!commission.totalCommission}<apex:outputLabel rendered="{!commission.unitTypeSymbol=='%'}" value="{!commission.unitTypeSymbol}"/>
+                    </div>
+                </div>
+                </apex:outputPanel> 
+                </apex:repeat>
+                <apex:variable var="bonusList" value="{!incentiveStatement.bonuses}"/>
+               <apex:repeat var="bonusLabel" value="{!bonusList}" rows="1">                          
+                <div class="xtab-detail-subheader">
+                        <div class="subheader-info">
+                            {!$Label.xactly_label_bonus}
+                        </div>
+                </div>
+                </apex:repeat>
+                <!--<apex:variable var="bonusList" value="{!incentiveStatement.bonuses}"/>-->
+                <apex:repeat var="bonus" value="{!bonusList}">
+                <div class="xtab-detail-row">
+                    <div class="row-label">
+                        {!bonus.bonusName}
+                    </div>
+                    <div class="q1">
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q1Values.janValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q1Values.febValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q1Values.marValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q1Values.total}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q2" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q2Values.aprValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q2Values.mayValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q2Values.junValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q2Values.total}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q3" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q3Values.julValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q3Values.augValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q3Values.sepValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q3Values.total}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q4" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q4Values.octValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q4Values.novValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q4Values.decValue}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.q4Values.total}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                        </div>
+                    </div>                 
+                    <div class="year" style="border: 0;font-weight: bold;">
+                        <apex:outputLabel rendered="{!bonus.unitTypeSymbol!='%'}" value="{!bonus.unitTypeSymbol}"/>{!bonus.totalBonus}<apex:outputLabel rendered="{!bonus.unitTypeSymbol=='%'}" value="{!bonus.unitTypeSymbol}"/>
+                    </div>
+                </div>                
+                </apex:repeat>
+                <apex:variable var="paymentList" value="{!incentiveStatement.payments}"/>
+                <apex:repeat var="paymentLabel" value="{!paymentList}" rows="1">
+                <div class="xtab-detail-subheader">
+                        <div class="subheader-info">
+                            {!$Label.xactly_label_your_payment}
+                        </div>
+                </div>
+                </apex:repeat>
+                <apex:repeat var="payment" value="{!paymentList}">
+                <div class="xtab-detail-row">
+                        <div class="row-label">
+                            {!payment.paymentType}
+                        </div>
+                        <div class="q1">
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q1Values.janValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q1Values.febValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q1Values.marValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q1Values.total}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q2" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q2Values.aprValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q2Values.mayValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q2Values.junValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q2Values.total}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q3" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q3Values.julValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q3Values.augValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q3Values.sepValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q3Values.total}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q4" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q4Values.octValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q4Values.novValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q4Values.decValue}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.q4Values.total}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                        </div>
+                    </div>                 
+                    <div class="year" style="border: 0;font-weight: bold;">
+                        <apex:outputLabel rendered="{!payment.unitTypeSymbol!='%'}" value="{!payment.unitTypeSymbol}"/>{!payment.totalPayment}<apex:outputLabel rendered="{!payment.unitTypeSymbol=='%'}" value="{!payment.unitTypeSymbol}"/>
+                    </div>
+                </div>                
+                </apex:repeat>
+                <div class="xtab-details-header">
+                    <label>{!$Label.xactly_label_credits_quota}</label>
+                    <div class="xtab-detail-periods">
+                        <span class="xtab-selected-quarter" id="quota-q1">{!$Label.xactly_label_q1}</span>
+                        <span id="quota-q2">{!$Label.xactly_label_q2}</span>
+                        <span id="quota-q3">{!$Label.xactly_label_q3}</span>
+                        <span id="quota-q4">{!$Label.xactly_label_q4}</span>
+                    </div>
+                </div>
+                <apex:variable var="quotaList" value="{!incentiveStatement.quotas}"/>
+                <apex:repeat var="quota" value="{!quotaList}">
+                <apex:variable var="creditList" value="{!quota.creditList}"/>
+                <apex:variable var="goal" value="{!quota.quota}"/>
+                <apex:variable var="attainment" value="{!quota.annualAttainment}"/>
+                    <div class="xtab-detail-subheader">
+                        <div class="subheader-info">
+                        {!quota.name}                                                      
+                        </div> 
+                        <apex:outputPanel rendered="{!quota.firstQuota}">                       
+                        <div class="q1">
+                        <div>
+                            {!$Label.xactly_label_jan} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_feb} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_mar} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_q1} {!incentiveStatement.year}
+                        </div>                          
+                        </div>
+                        <div class="q2" style="display:none">
+                        <div>
+                            {!$Label.xactly_label_apr} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_may} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_jun} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_q2} {!incentiveStatement.year}
+                        </div>                          
+                        </div>
+                        <div class="q3" style="display:none">
+                        <div>
+                            {!$Label.xactly_label_jul} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_aug} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_sep} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_q3} {!incentiveStatement.year}
+                        </div>                          
+                        </div>
+                        <div class="q4" style="display:none">
+                        <div>
+                            {!$Label.xactly_label_oct} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_nov} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_dec} {!incentiveStatement.year}
+                        </div>
+                        <div>
+                            {!$Label.xactly_label_q4} {!incentiveStatement.year}
+                        </div>                          
+                        </div>
+                        <div class="year">
+                            {!incentiveStatement.year}
+                        </div> 
+                        </apex:outputPanel>                       
+                </div>
+                <apex:outputPanel rendered="{!creditList!=''}">
+                    <apex:repeat value="{!creditList}" var="credit">
+                        <div class="xtab-detail-row">
+                            
+                            <div class="row-label">
+                                {!credit.name}
+                            </div>
+                            <div class="q1">
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q1Values.janValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q1Values.febValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q1Values.marValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q1Values.total}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                            </div>
+                            <div class="q2" style="display:none">
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q2Values.aprValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q2Values.mayValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q2Values.junValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q2Values.total}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                            </div>
+                            <div class="q3" style="display:none">
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q3Values.julValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q3Values.augValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q3Values.sepValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q3Values.total}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                            </div>
+                            <div class="q4" style="display:none">
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q4Values.octValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q4Values.novValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q4Values.decValue}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                                <div>
+                                    <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.q4Values.total}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                                </div>
+                            </div>                 
+                            <div class="year" style="border: 0;font-weight: bold;">
+                                <apex:outputLabel rendered="{!credit.unitTypeSymbol!='%'}" value="{!credit.unitTypeSymbol}"/>{!credit.totalCredit}<apex:outputLabel rendered="{!credit.unitTypeSymbol=='%'}" value="{!credit.unitTypeSymbol}"/>
+                            </div>
+                        </div>
+                    </apex:repeat>    
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!goal!=''}">
+                <div class="xtab-detail-row">
+                    <div class="row-label">
+                        {!$Label.xactly_label_quota}
+                    </div>
+                   <div class="q1">
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q1Values.janValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q1Values.febValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q1Values.marValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q1Values.total}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q2" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q2Values.aprValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q2Values.mayValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q2Values.junValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q2Values.total}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q3" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q3Values.julValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q3Values.augValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q3Values.sepValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q3Values.total}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q4" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q4Values.octValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q4Values.novValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q4Values.decValue}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.q4Values.total}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                        </div>
+                    </div>                 
+                    <div class="year" style="border: 0;font-weight: bold;">
+                        <apex:outputLabel rendered="{!goal.unitTypeSymbol!='%'}" value="{!goal.unitTypeSymbol}"/>{!goal.totalQuota}<apex:outputLabel rendered="{!goal.unitTypeSymbol=='%'}" value="{!goal.unitTypeSymbol}"/>
+                    </div>
+                </div>
+                </apex:outputPanel>
+                 <apex:outputPanel rendered="{!attainment!=''}">
+                <div class="xtab-detail-row">
+                    <div class="row-label" style="font-weight: bold;">
+                        {!$Label.xactly_label_attainment}
+                    </div>
+                    <div class="q1">
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q1Values.janValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q1Values.febValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q1Values.marValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q1Values.total}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q2" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q2Values.aprValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q2Values.mayValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q2Values.junValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q2Values.total}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q3" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q3Values.julValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q3Values.augValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q3Values.sepValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q3Values.total}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                    </div>
+                    <div class="q4" style="display:none">
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q4Values.octValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q4Values.novValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q4Values.decValue}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                        <div>
+                            <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.q4Values.total}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                        </div>
+                    </div>                 
+                    <div class="year" style="border: 0;font-weight: bold;">
+                        <apex:outputLabel rendered="{!attainment.unitTypeSymbol!='%'}" value="{!attainment.unitTypeSymbol}"/>{!attainment.totalAnnualAttainment}<apex:outputLabel rendered="{!attainment.unitTypeSymbol=='%'}" value="{!attainment.unitTypeSymbol}"/>
+                    </div>
+                </div>
+                </apex:outputPanel>
+                </apex:repeat>                                                                
+            </div>          
+        </div>
+        <div class="xtab-detail-subheader" style="border-bottom: 1px solid #ccc">                    
+                </div>
+                <!-- ranking page link for smaller devices -->
+                <div class="mobile-links-div mobile-links-position">
+                    <a href="/apex/XactlyCorp__XactlyIncentRanking" style="text-decoration: none;cursor:pointer" id="show-ranking">
+                            <span class="ranking_butn" id="">{!$Label.xactly_mobile_rankings}</span><!-- ranking_butn -->
+                        </a>
+                </div>
+ </div>
+ </apex:outputPanel>
+ </div>
+ </apex:outputPanel>
+ <link href="{!URLFOR($Resource.XactlyTabResource,'jquery-coverflow-slider/jquery.coverflow.slider.css')}" type="text/css" rel="stylesheet" media="screen and (min-width:481px)"/>
+    <link href="{!URLFOR($Resource.XactlyTabResource,'jquery-coverflow-slider/jquery.coverflow.slider-mini.css')}" type="text/css" rel="stylesheet" media="only screen and (min-width:320px) and (max-width:480px), only screen and (min-device-width:320px) and (max-device-width:568px)"/>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.XactlyTabResource, 'jquery-ui-1.9.2/js/jquery-1.8.3.min.js')}"></script>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.XactlyTabResource, 'jquery-coverflow-slider/jquery.coverflow.slider.js')}"></script>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.XactlyTabResource, 'jquery-ui-1.9.2/js/jquery-ui-1.9.2.custom.min.js')}"></script>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.XactlyTabResource, 'jquery-blockUI/jquery.blockUI.min.js')}"></script>
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.XactlyTabResource, 'js/xtab.js')}"></script>    
+    <apex:stylesheet value="{!URLFOR($Resource.XactlyCorp__XactlyTabResource,'jquery-ui-1.9.2/css/ui-lightness/jquery-ui-1.9.2.custom.min.css')}"/>
+    <link media="only screen and (min-width:481px)" href="{!URLFOR($Resource.XactlyTabResource,'css/xtab.css')}" rel="stylesheet"/>
+    <link rel="stylesheet" media="only screen and (min-width:20px) and (max-width:480px), only screen and (min-device-width:320px) and (max-device-width:568px)" href="{!URLFOR($Resource.XactlyTabResource,'css/xtab-mobile.css')}" />
+    <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.XactlyTabResource, 'gauge-plugin/gauge.js')}"></script>  
+ </apex:page>

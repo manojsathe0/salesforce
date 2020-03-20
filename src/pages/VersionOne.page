@@ -1,0 +1,13 @@
+<apex:page standardController="Salesforce_Request__c" extensions="VersionOneAPI" sidebar="false"  showHeader="false">
+    <script type = "text/javascript">
+        window.onload = function() {
+         callVersionOne();
+        
+        };
+    </script>
+    <apex:form id="theForm">
+         <apex:actionFunction name="callVersionOne" action="{!callVersionOneAsync}" rerender="theForm" status="myStatus"/>
+          <apex:outputText value="{!theMessage}" />
+
+    </apex:form>
+</apex:page>

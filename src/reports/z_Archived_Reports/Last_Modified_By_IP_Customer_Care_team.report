@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE_BY</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>OPEN</field>
+    </columns>
+    <columns>
+        <field>CLOSED</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <description>Status is closed or waiting for customer.  Case owner is not equal to the Case Last Modified by or CS IP Outgoing. Case was last modified by a member of the IP Customer Care team.</description>
+    <filter>
+        <booleanFilter>((1 OR 2) OR (3 OR 4) AND 5) AND 6</booleanFilter>
+        <criteriaItems>
+            <column>LAST_UPDATE_BY</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Holland Moore-LaCour,Brian Hoffman,Donna Hill,William Buck,Arteisha Dickens,Fabio Gutierrez</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_UPDATE_BY</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>,Aaron Woodul,Tamarra Washington,Taylor Masters,Abel Trinidad,David Walker,Jessica Vallejo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Holland Moore-LaCour,Brian Hoffman,Donna Hill,William Buck,Arteisha Dickens,Fabio Gutierrez</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,Aaron Woodul,Tamarra Washington,Taylor Masters,Abel Trinidad,David Walker,Jessica Vallejo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Waiting on Customer,Closed – First Response,Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>CS IP Outgoing</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Last Modified By - IP Customer Care team</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

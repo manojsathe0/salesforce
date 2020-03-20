@@ -1,0 +1,16 @@
+<aura:component controller="IADOrderWithOrderItemsController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="orderNumber" type="String" /> 
+    <aura:attribute name="ctrl" type="Object" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <div class="slds-card">
+        <div class="slds-section__title">
+            <a class="slds-text-body--small" title = "Click to open Order Details" onclick="{!c.openOrderDetails}" > Order Detail </a>
+        </div>
+        <div class="slds-section__title">
+            <a class="slds-text-body--small" title = "Link to LZSuite Promocodes" onclick="{!c.openPromoCodes}"> Promotion Codes </a>
+            <!-- http://dev-lzsuite/portal/PromotionCode.aspx  -->
+        </div>
+    </div>
+</aura:component>

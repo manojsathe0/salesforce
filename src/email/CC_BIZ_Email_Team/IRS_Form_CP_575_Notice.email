@@ -1,0 +1,59 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center"><tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+</td></tr></table><table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+Dear {!Contact.FirstName},<br/><br/>
+Thank you for your inquiry regarding your IRS CP 575 Notice. The Internal Revenue Service (IRS) has specific rules around what numbers, words and characters are acceptable in a business name when assigning your federal Employer Identification Number (EIN). The only characters the IRS systems can accept in a business name are:
+<ol>
+<li>Alpha (A-Z)
+<li>Numeric (0-9)
+<li>Hyphen (-)
+<li>Ampersand (&)
+</ol>
+The word “The” will be omitted when it is followed by more than one word.
+<br/><br/>
+The name the IRS assigns for your business does not affect the legal business name you filed with your state agency.
+<br/><br/>
+If you have questions about your EIN, you can call the IRS business help line at (800) 829-4933 Monday–Friday from 7 a.m.–7 p.m. your local time.
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 5 a.m.–8 p.m. PT and weekends from 7 a.m.–4 p.m. PT.
+<br/><br/>
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+<br><br>
+{!snippetVariable.ccsincerely}
+<br><br>
+The LegalZoom Team
+</p>
+<table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="15"></td>
+  </tr>
+  <tr>
+    <td bgcolor="#DDDDDD"><a href="https://www.legalzoom.com/attorneys-lawyers/legal-plans/business" style="text-decoration:none"><img src="https://static.cdn.responsys.net/i5/responsysimages/content/legalz/BAP_Banner_SFTemplate_cropped.jpg" alt="Have questions?" width="640" height="137" style="display:block; border:0;" /></a></td>
+  </tr>
+  <tr>
+  <td align="center" style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:10px; line-height:12px;">If you're already a member, <a href="https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&iProcess=">sign in</a> to schedule a consultation. *Available in most states.
+  </td>
+  </tr>
+  <tr>
+      <td height="15"></td>
+  </tr>
+</table>
+</div>
+<div class="emailBody"><p class="templateBody"></p>
+</div><div class="emailFooter"><p><br></td></tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center"><tr>
+<td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+<br>  <br>
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+<br /><br />Please add services@emails.legalzoom.com to your address book. <br />
+<br />This email was sent to: {!Contact.Email}
+<br><br>&copy; LegalZoom.com, Inc. All rights reserved.
+</span></td></tr></table></body></p></div></html>

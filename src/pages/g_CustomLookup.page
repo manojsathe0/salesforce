@@ -1,0 +1,492 @@
+<apex:page controller="g_CustomLookupController" title="Search"
+    showHeader="true" sideBar="true" id="pg">
+
+    <apex:includeScript value="/support/console/33.0/integration.js" />
+
+    <script type="text/javascript" src="/soap/ajax/26.0/connection.js"></script>
+    
+    <script type="text/javascript" src="{!URLFOR($Resource.g_jquery, 'jquery-1.10.2.min.js')}"></script>
+
+    <script type="text/javascript">
+
+var openCustomSearch_url = "";
+$(document).ready(function() {
+    var sPageURL = window.location.search.substring(1); 
+    var sURLVariables = sPageURL.split('&'); 
+    for (var i = 0; i < sURLVariables.length; i++) { 
+        var sParameterName = sURLVariables[i].split('='); 
+        if (sParameterName[0] == "openCustomSearch"){
+            //rebuild string with | separating the params instead of &
+            openCustomSearch_url = decodeURIComponent(sParameterName[1]);
+            //console.log("openCustomSearch_url = " + openCustomSearch_url);
+            //sample url :
+            //apex/g_CustomLookup?lksrch=5115&lkorder=36789012000&lkprofile=Sales_BusinessServices&ixnId=010A02783313000C&inServiceCloudConsole=true
+           	openCustomSearch_url = openCustomSearch_url.replace('apex/','');            
+            openCustomSearch_url = openCustomSearch_url.replace('?','|'); 
+            openCustomSearch_url = openCustomSearch_url.replace(/&/g,'|');              
+            //console.log("updated openCustomSearch_url = " + openCustomSearch_url);
+            return;
+        }
+    }   
+});
+      
+    function ctiMessage() {
+            this.action = 'ObjectSelected',
+            this.id = '',
+            this.interactionId = '',
+            this.url = ''
+    }
+    
+	function loadSelectedObject(selectedObjId)
+	{	                   
+	}
+
+    function refreshPage(objId)
+    {    
+        var inConsole = '{!inServiceCloudConsole}';
+        var iD = '{!ixnId}';
+        var selectedObjId = objId;
+        //console.log("refreshPage for objId="+selectedObjId+" and ixnId="+iD);
+
+		var full_url = '/' + selectedObjId;
+		//console.log("openCustomSearch_url "+openCustomSearch_url);
+		if(openCustomSearch_url != "")
+			full_url = full_url + "?openCustomSearch=" + openCustomSearch_url + '&isdtp=vw&isWsVw=true';
+		else
+			full_url+='?isdtp=vw&isWsVw=true';
+		//console.log("full_url = " + full_url);   
+//		sforce.console.openPrimaryTab(null,full_url,true);											
+		openCustomSearch_url = "";
+		
+		var message = new ctiMessage();
+		
+		message.action = 'ObjectSelected';
+		message.id = selectedObjId;
+		message.interactionId = '{!ixnId}';
+		message.url = full_url;
+		
+		var ctiMessageAsJSON = JSON.stringify(message);
+
+		sforce.console.fireEvent('CTIEvent', ctiMessageAsJSON, function (result) {
+			//console.log("CTIEvent fired result: " + result);
+		});
+
+        sforce.console.getFocusedPrimaryTabId(
+            function closeTab1(result) {                       
+                   sforce.console.closeTab(result.id, function(){
+                   		//console.log("search tab closed");
+				});                   
+			}
+		);
+    }
+   </script>
+    <apex:pageBlock title="Search" id="block">
+        <apex:form >
+			<apex:actionFunction name="executeStartSearching" 
+             	action="{!startSearching}"
+               	reRender="pnlSearching"
+             	oncomplete="executeSearching()"
+             	/>                            
+			<apex:actionFunction name="executeStartSearchingMore" 
+             	action="{!startSearching}"
+               	reRender="pnlSearching"
+             	oncomplete="executeSearchingMore()"
+             	/>                            
+			<apex:actionFunction name="executeSearching" 
+             	action="{!search}"
+               	reRender="pnlSearching"
+             	oncomplete="executeDraw()"
+             	/>                            
+			<apex:actionFunction name="executeSearchingMore" 
+             	action="{!searchMore}"
+               	reRender="pnlSearching"
+             	oncomplete="executeDraw()"
+             	/>                            
+			<apex:actionFunction name="executeDraw"                        	   
+               	action="{!resultDraw}"
+               	reRender="pnlSearchResults,pnlMessage"
+             	oncomplete="executeUpdateIcon()"
+               	/>
+			<apex:actionFunction name="executeUpdateIcon"                        	   
+               	action="{!finalRefresh}"
+               	reRender="pnlSearching"
+               	/>        
+            <apex:outputPanel id="page" layout="block"
+                style="margin:5px;padding:10px;padding-top:2px;">
+                <apex:actionRegion >
+                    <apex:outputPanel id="top" layout="block"
+                        style="margin:5px;padding:10px;padding-top:2px;">
+                        <apex:outputPanel id="nameFields" layout="block"
+                            style="margin:2px;padding:10px;padding-top:2px;">
+                            <apex:outputLabel value="First Name"
+                                style="font-weight:Bold;padding-right:10px;" for="txtFirstName" />
+                            <apex:inputText id="txtFirstName" value="{!firstName}" />
+                            <apex:outputLabel value="Last Name"
+                                style="font-weight:Bold;padding-right:10px;padding-left:20px;" for="txtLastName" />
+                            <apex:inputText id="txtLastName" value="{!lastName}" />
+                        </apex:outputPanel>
+                        <apex:outputPanel id="phoneEmailFields" layout="block"
+                            style="margin:2px;padding:10px;padding-top:2px;">
+                            <apex:outputLabel value="Phone Number"
+                                style="font-weight:Bold;padding-right:10px;" for="txtSearch" />
+                            <apex:inputText id="txtSearch" value="{!searchString}" />
+                            <apex:outputLabel value="Email"
+                                style="font-weight:Bold;padding-right:10px;padding-left:20px;" for="txtEmail" />
+                            <apex:inputText id="txtEmail" value="{!email}" />
+                        </apex:outputPanel>
+                        <apex:outputPanel id="orderFieldsPart1" layout="block"
+                            style="margin:2px;padding:10px;padding-top:2px;">
+                            <apex:outputLabel value="Order Number"
+                                style="font-weight:Bold;padding-right:10px;"
+                                for="txtOrderNumber" />
+                            <apex:inputText id="txtOrderNumber" 
+                                value="{!orderNumber}" />
+                            <apex:outputLabel value="Processing Number"
+                                style="font-weight:Bold;padding-right:10px;padding-left:20px;"
+                                for="txtProcessingNumber" />
+                            <apex:inputText id="txtProcessingNumber" 
+                                value="{!processingNumber}" />
+                        </apex:outputPanel>
+                        <apex:outputPanel id="orderFieldsPart2" layout="block"
+                            style="margin:2px;padding:10px;padding-top:2px;">
+                            <apex:outputLabel value="State of Formation"
+                                style="font-weight:Bold;padding-right:10px;"
+                                for="txtStateOfFormation" />
+                            <apex:inputText id="txtStateOfFormation"
+                                value="{!stateOfFormation}" />
+                            <apex:outputLabel value="Entity Name"
+                                style="font-weight:Bold;padding-right:10px;padding-left:20px;" 
+                                for="txtEntityName" />
+                            <apex:inputText id="txtEntityName" value="{!entityName}" />                         
+                        </apex:outputPanel>
+                        <apex:outputPanel id="caseFields" layout="block"
+                            style="margin:2px;padding:10px;padding-top:2px;">
+                            <apex:outputLabel value="Case Number"
+                                style="font-weight:Bold;padding-right:10px;" for="txtCaseNumber" />
+                            <apex:inputText id="txtCaseNumber" 
+                                value="{!caseNumber}" />    
+                            <span style="padding-left: 25px">
+                            	<apex:commandButton id="btnGo" 
+	                                value="Search"
+	                                onClick="executeStartSearching()"
+ 	                                reRender="pnlSearching">
+                                </apex:commandButton>
+							</span>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel id="pnlSearching" style="padding-bottom:20px" layout="block">                    						
+        	            <span>
+	        	            <apex:outputPanel style="font-size:12px;padding-right:20px"
+	                            rendered="{!(searchIsActive==true)}">Please Wait, Searching <apex:image id="imgLoading" value="/img/loading.gif" rendered="{!(searchIsActive==true)}"/>
+	                            </apex:outputPanel>	   		                	
+	       	            </span>
+					</apex:outputPanel>                    						
+                    <apex:outputPanel id="pnlMessage" style="padding-bottom:20px" layout="block">                    						
+        	            <span>
+	        	            <apex:outputPanel style="font-size:12px;padding-right:20px"
+	                            rendered="{!(searchMessage!='')}">{!(searchMessage)}
+	                            </apex:outputPanel>	   		                	
+	       	            </span>
+					</apex:outputPanel>                    						
+                    <apex:outputPanel id="pnlSearchResults"
+                        style="margin:10px;height:350px;overflow-Y:auto;" layout="block">
+                        <span style="font-size:18px;">
+	                        <apex:commandLink id="linkGoMore" 
+	                            value="Show More"
+	                            onClick="executeStartSearchingMore()"
+	                            rendered="{!(exceededInitialMaxResults)}"
+	                            reRender="pnlSearching">
+                            </apex:commandLink></span>                        
+                        <apex:pageBlock id="searchResultsContact" rendered="{!(contact_count==0 && lead_count==0) || (contact_count>0)}">                                                    
+                            <apex:outputPanel style="font-weight:Bold;font-size:12px;"
+                                rendered="{!(contact_count==0 && lead_count==0)}">No Results</apex:outputPanel>
+                            <apex:outputPanel style="font-weight:Bold;font-size:12px;"
+                                rendered="{!(contact_count>0)}">Contacts</apex:outputPanel>
+                            <apex:pageBlockTable value="{!contactGroupings}" var="cg"
+                                id="c_tblResults" rendered="{!contact_count>0}">
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Name</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                        rendered="{!NOT(ISNULL(cg.contact.Id))}">{!cg.contact.Name}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Contact Type</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                        rendered="{!NOT(ISNULL(cg.contact.Id))}">{!cg.contact.Contact_Type__c}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Customer Login Email</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                        rendered="{!NOT(ISNULL(cg.contact.Id))}">{!cg.contact.Customer_Login_Email__c}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Home Phone</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                        rendered="{!NOT(ISNULL(cg.contact.Id))}">{!cg.contact.HomePhone}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Email</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                        rendered="{!NOT(ISNULL(cg.contact.Id))}">{!cg.contact.Email}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Last Activity</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                        rendered="{!NOT(ISNULL(cg.contact.Id))}">{!cg.contact.LastActivityDate}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Contact Owner Alias</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                        rendered="{!NOT(ISNULL(cg.contact.Id))}">{!cg.contact.Owner.Alias}</apex:commandLink>
+                                </apex:column>
+                                <apex:column breakBefore="{!(cg!=null && cg.case_count!=null && cg.case_count>0)}"
+                                    colspan="7" style="padding-left:50px;"
+                                    rendered="{!(cg!=null && cg.case_count!=null && cg.case_count>0)}">
+                                    <apex:pageBlockTable value="{!cg.case_results}" var="c"
+                                        id="c_tblResults" rendered="{!cg.case_count>0}">
+                                        <apex:facet name="header">Cases</apex:facet>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Case Number</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(c.Id))}">{!c.CaseNumber}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Subject</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(c.Id))}">{!c.Subject}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Status</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(c.Id))}">{!c.Status}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Date/Time Opened</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(c.Id))}">{!c.CreatedDate}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Case Owner Alias</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(c.Id))}">{!c.Owner.Alias}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Queue</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(c.Id))}">{!c.Queue__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Assigned User</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(c.Id))}">{!c.Assigned_User__c}</apex:commandLink>
+                                        </apex:column>
+                                    </apex:pageBlockTable>
+                                </apex:column>
+                                <apex:column breakBefore="{!(cg!=null && cg.order_item_count!=null && cg.order_item_count>0)}"
+                                    colspan="7" style="padding-left:50px;"
+                                    rendered="{!(cg!=null && cg.order_item_count!=null && cg.order_item_count>0)}">
+                                    <apex:pageBlockTable value="{!cg.order_item_results}" var="oi"
+                                        id="oi_tblResults" rendered="{!cg.order_item_count>0}">
+                                        <apex:facet name="header">Order Items</apex:facet>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Order Item Number</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(oi.Id))}">{!oi.Name}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Order</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(oi.Id))}">{!oi.Order__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Processing Number</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(oi.Id))}">{!oi.User_Order_ID__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Product Name</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(oi.Id))}">{!oi.Product_Name__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Relationship Type</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(oi.Id))}">{!oi.Relationship_Type__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Order Item Date/Time Created</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(oi.Id))}">{!oi.Order_Item_Date_Time_Created__c}</apex:commandLink>
+                                        </apex:column>
+                                    </apex:pageBlockTable>
+                                </apex:column>
+                                <apex:column breakBefore="{!(cg!=null && cg.order_count!=null && cg.order_count>0)}"
+                                    colspan="7" style="padding-left:50px;"
+                                    rendered="{!(cg!=null && cg.order_count!=null && cg.order_count>0)}">
+                                    <apex:pageBlockTable value="{!cg.order_results}" var="o"
+                                        id="o_tblResults" rendered="{!cg.order_count>0}">
+                                        <apex:facet name="header">Orders</apex:facet>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Order Number</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(o.Id))}">{!o.Name}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Base Product Name</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(o.Id))}">{!o.Base_Product_Name__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Order Payment Status</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(o.Id))}">{!o.Order_Payment_Status__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Customer Login</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(o.Id))}">{!o.Customer_Login__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Contact</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(o.Id))}">{!o.Contact__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Processing Number</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(o.Id))}">{!o.User_Order_ID__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Processing Status</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(o.Id))}">{!o.Processing_Status__c}</apex:commandLink>
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:facet name="header">
+                                                <apex:outputPanel >Order Date/Time Created</apex:outputPanel>
+                                            </apex:facet>
+                                            <apex:commandLink onclick="refreshPage('{!cg.contact.Id}');"
+                                                rendered="{!NOT(ISNULL(o.Id))}">{!o.Order_Date_Time_Created__c}</apex:commandLink>
+                                        </apex:column>
+                                    </apex:pageBlockTable>
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlock>
+
+                        <apex:pageBlock id="searchResultsLeads" rendered="{!lead_count>0}">
+                            <apex:outputPanel style="font-weight:Bold;font-size:12px;"
+                                rendered="{!(lead_count>0)}">Leads</apex:outputPanel>
+                            <apex:pageBlockTable value="{!lead_results}" var="l"
+                                id="l_tblResults">
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Name</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!l.Id}');"
+                                        rendered="{!NOT(ISNULL(l.Id))}">{!l.Name}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Last Activity</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!l.Id}');"
+                                        rendered="{!NOT(ISNULL(l.Id))}">{!l.LastActivityDate}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Lead Status</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!l.Id}');"
+                                        rendered="{!NOT(ISNULL(l.Id))}">{!l.Status}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Contact Status</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!l.Id}');"
+                                        rendered="{!NOT(ISNULL(l.Id))}">{!l.Contact_Status_TEXT__c}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Phone</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!l.Id}');"
+                                        rendered="{!NOT(ISNULL(l.Id))}">{!l.Phone}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Email</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!l.Id}');"
+                                        rendered="{!NOT(ISNULL(l.Id))}">{!l.Email}</apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:outputPanel >Owner Alia</apex:outputPanel>
+                                    </apex:facet>
+                                    <apex:commandLink onclick="refreshPage('{!l.Id}');"
+                                        rendered="{!NOT(ISNULL(l.Id))}">{!l.Owner.Alias}</apex:commandLink>
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlock>
+                    </apex:outputPanel>
+                </apex:actionRegion>
+            </apex:outputPanel>
+        </apex:form>
+        </apex:pageblock>
+</apex:page>

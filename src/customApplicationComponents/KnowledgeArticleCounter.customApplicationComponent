@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplicationComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buttonText>My Button</buttonText>
+    <height>1</height>
+    <isHeightFixed>false</isHeightFixed>
+    <isHidden>true</isHidden>
+    <isWidthFixed>false</isWidthFixed>
+    <visualforcePage>KnowledgeArticleCounter</visualforcePage>
+    <width>1</width>
+</CustomApplicationComponent>

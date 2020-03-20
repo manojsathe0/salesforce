@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>Flow_Lookup__c.Dedupe__c</field>
+    </columns>
+    <columns>
+        <field>Flow_Lookup__c.Friendly__c</field>
+    </columns>
+    <columns>
+        <field>Flow_Lookup__c.Master__c</field>
+    </columns>
+    <columns>
+        <field>Flow_Lookup__c.Sub__c</field>
+    </columns>
+    <columns>
+        <field>Flow_Lookup__c.Type__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Sandbox: Flow Look-Up</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Flow_Lookup__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

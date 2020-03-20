@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SF Temp Outbound Renew Bad #</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF Temp Outbound Renew Bad #</name>
+    <style>freeForm</style>
+    <subject>LegalZoom.com Order XXXXXXXX: Registered Agent Service is up for Renewal</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing LegalZoom.com for your business filing needs.  
+
+I tried reaching you earlier today regarding the registered agent service renewal however I was unable to reach you.     
+  
+As you may know, LegalZoom.com has been acting as your Registered Agent this past year for your company however our service is currently up for renewal.  Please keep in mind that it is important to have an active Registered Agent to keep in good legal standing with your Secretary of State; which protects your privacy and allows your company to receive reliable forwarding service.
+
+Please keep in mind as a LegalZoom.com Registered Agent customer; you now have access to many benefits such as: 
+• Dedicated Registered Agent Service Department - Business Advisors that are available to answer general questions about state requirements, legal documents and any other questions regarding your corporate information.
+• Corporate Center - Exclusive to our Registered Agent customers, easy online access to view your corporate information.
+• Compliance Calendar and Email Alerts – Included in the Corporate Center, to help keep your business in good standing in meeting various state and federal requirements.
+
+For your convenience, I have provided a summary of our service(s) below for your review.  Please feel free to reach me at anytime for further assistance or to process your renewal.
+                                                                               
+REGISTERED AGENT SERVICE RENEWAL:
+
+1 year subscription | $159.00  
+2 year subscription | $288.00 (Save $30.00)
+
+TO RENEW ONLINE:
+http://www.legalzoom.com/rarenewals
+
+For further assistance, please contact me at 877-672-9666 ext. {!User.Extension}
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

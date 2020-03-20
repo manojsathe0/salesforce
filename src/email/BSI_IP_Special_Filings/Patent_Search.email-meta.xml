@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Patent Search</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Patent Search</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in conducting a Patent Search.  We simplify the process for you by researching existing patents and patent applications with the US Patent &amp; Trademark Office (USPTO).
+
+For your reference, general information regarding Patent Searches has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact an Intellectual Property Specialist at the phone number listed below.  By speaking with a Specialist, we will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+ 
+The Patent Search will provide information on existing Patents and published Patent applications that contain information relevant to your invention.  
+
+are drafted by a technical illustrator familiar with drafting illustrations for Patent applications.  Up to (4) sheets of drawings are included with the service.  The results are compiled and bound in a booklet for easy reference, and a guide is included to understand the search results.
+
+For your convenience, we have listed all relevant pricing below.
+ 
+PATENT SEARCH - $299.00
+
+GET STARTED
+http://www.legalzoom.com/patent-search/patent-search-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/patent-search/patent-search-pricing.html
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

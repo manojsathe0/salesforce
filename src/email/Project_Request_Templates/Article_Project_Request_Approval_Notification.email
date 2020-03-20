@@ -1,0 +1,13 @@
+****NEW PROJECT REQUEST NOTIFICATION**** 
+
+Project Request Submitter: {!Article_Project_Request__c.Project_Request_Submitter__c}
+Request Number:{!Article_Project_Request__c.Request__c}
+Project Request Type: {!Article_Project_Request__c.Project_Request__c}
+
+Description: 
+
+{!Article_Project_Request__c.Project_Description__c}
+
+Please Approve or Reject the following Project Request:
+------------------------------------- 
+{!Article_Project_Request__c.Link}

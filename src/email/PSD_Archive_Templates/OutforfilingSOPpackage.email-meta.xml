@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SOP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Out for filing_SOP package</name>
+    <style>none</style>
+    <subject>Out for filing_SOP package</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We have received your signed documents and expedited your claim to the court for filing. The court generally provides hearing dates within 10-14 days of filing. We will keep you informed if there are any delays.
+
+While your claim is being filed with the court, please take some time to familiarize yourself with Service of Process. A small claims filing requires you to serve your claim documents on your defendant before your claim can be heard in court. 
+
+For your convenience, we have attached a guide with complete, detailed instructions on proper service of process to this email. This informative guide includes different options for you to consider when preparing to serve your defendant.
+
+If you would like assistance with serving your defendant we have included a list of local certified process servers in your area or you may visit www.napps.org (National Association of Professional Process Servers) to research and select a process server.
+
+Process Server Name 1
+Phone Number
+Website (if available)
+
+Process Server Name 2
+Phone Number
+Website (if available)
+
+Process Server Name 3
+Phone Number
+Website (if available)
+
+Please review the information and don&apos;t hesitate to contact us if you have any questions, {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

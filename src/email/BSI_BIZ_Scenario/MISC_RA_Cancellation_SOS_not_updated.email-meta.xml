@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>MISC - RA Cancellation (SOS not updated)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>MISC - RA Cancellation (SOS not updated)</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, the Secretary of State currently shows that the Registered Agent has not been changed and/or that the entity has not been dissolved.  If you need assistance in changing the Registered Agent or dissolving the entity, we offer services to assist you with these.  In order to cancel the Registered Agent service, a new Registered Agent must be appointed or the entity must be dissolved.  
+
+For your reference, general information regarding the Registered Agent and the options available to you has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below.  By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+
+If the entity will continue operating, we can assist you changing the Registered Agent for your business.  In order to begin this process, you will need to provide the name and address of the party you wish to designate as the new Registered Agent.  Please keep in mind that this party must be an adult with a physical address in the state of formation; PO Boxes are not permitted.  The agent must be available at that address during standard business hours to accept any documentation.  The name and address of this Agent become public record which typically results in reduced privacy and increased junk mail.
+
+If the entity will no longer be in operation, we can assist you in dissolving the entity, thus eliminating the necessity of maintaining a Registered Agent.  Articles of Dissolution are typically required to notify the state that the entity is being dissolved and will no longer operate in that state.  The entity will typically need to be in good standing before the state will allow the entity to be dissolved, and must typically not owe the state any outstanding fees or taxes.
+
+Whichever route you choose, once the Registered Agent service is cancelled, we can issue a prorated refund of the unused portion of your current Registered Agent subscription.
+ 
+For your convenience, we have listed the relevant pricing below.
+ 
+REGISTERED AGENT CHANGE 
+Rush - $55.00 + state fee - (7-10 business days)*
+Standard - $35.00 + state fee + shipping - (20-35 business days)
+ 
+To determine the state fee for your state, please contact a Business Formation Specialist at the phone number listed below.
+
+GET STARTED
+- This service must be purchased by speaking with a Business Formation Specialist directly, and cannot be purchased online.  Please contact a Specialist at the phone number listed below to proceed with this service.
+
+DISSOLUTION
+Rush - $239.00 + state fee - (10-15 business days)*
+Standard - $129.00 + state fee + shipping - (20-30 business days)
+ 
+To view the state fee for your state, please follow the &quot;GET STARTED&quot; link below and select your state from the drop-down list.
+
+GET STARTED
+http://www.legalzoom.com/additional-business-services/articles-of-dissolution-corporation-llc.html
+
+* Some states may have delays which affect the listed turnaround time.  To determine if your state is affected, please contact a Specialist at the phone number listed below.
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

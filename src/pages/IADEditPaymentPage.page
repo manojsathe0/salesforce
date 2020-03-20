@@ -1,0 +1,335 @@
+<apex:page controller="IADEditPaymentController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:includeScript value="{!URLFOR($Resource.IADJS)}"/>
+        <script type="text/javascript">
+            function inputLimiter(e, allow) {
+                $ = jQuery.noConflict();
+                $( document ).ready(function() {
+                    jsUtility.makeDarkBorder();
+                  });
+                var AllowableCharacters = '';
+
+                if (allow == 'Letters') {
+                    AllowableCharacters = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                }
+                if (allow == 'Numbers') {
+                    AllowableCharacters = '1234567890';
+                }
+                if (allow == 'NameCharacters') {    
+                    AllowableCharacters = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-.\'';
+                }
+                if (allow == 'NameCharactersAndNumbers') {
+                    AllowableCharacters = '1234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-\'';
+                }
+                if (allow == 'Currency') {
+                    AllowableCharacters = '1234567890.';
+                }
+                var k = document.all ? parseInt(e.keyCode) : parseInt(e.which);
+                if (k != 13 && k != 8 && k != 0) {
+                    if ((e.ctrlKey == false) && (e.altKey == false)) {
+                        return (AllowableCharacters.indexOf(String.fromCharCode(k)) != -1);
+                    }
+                    else {
+                        return true;
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+            window.onload = function() {
+                console.log('calling profiles');
+                populatePaymentProfile();
+                return false;
+            };
+            function fixBindings(){
+                console.log('fixing bindings');
+                $( "input" ).each(function() {
+                    $(this).focus();
+                    $(this).blur();
+                });
+                console.log('themonth ' + $('#theMonth').val());
+
+                $( 'select[id*="expMonths"]' ).val($( 'input[id*="theMonth"]' ).val());
+                $( 'select[id*="expYears"]' ).val($( 'input[id*="theYear"]' ).val());
+                $( 'select[id*="accTypes"]' ).val($( 'input[id*="theAccType"]' ).val());
+                $( 'select[id*="stateList"]' ).val($( 'input[id*="theState"]' ).val());
+
+                $( "select" ).each(function() {
+                    $(this).focus();
+                    $(this).blur();
+                });
+
+
+            }
+            function callRefresh(){
+                 sforce.console.fireEvent('RefreshPaymentProfilePage', 'EventMessage', null);
+            }
+        </script>
+        <style>
+            #dataTable {
+            border-spacing: 15px;
+            border-collapse: separate;
+            width: 90%;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="slds">
+
+            <div class="slds-text-heading--small">Credit Card Profile Details:</div>
+            <apex:form id="theForm">
+
+                <apex:actionFunction name="populatePaymentProfile" action="{!populatePaymentProfile}" rerender="editPaymentForm" status="statusUpdating" oncomplete="fixBindings();jsUtility.makeDarkBorder(); return false;"  />
+                <apex:actionFunction name="updatePaymentProfile" action="{!updatePaymentProfile}" rerender="editPaymentForm" status="statusUpdating" oncomplete="callRefresh();jsUtility.makeDarkBorder(); populatePaymentProfile(); return false;"/>
+                <apex:actionFunction name="clearMessagesUpdate" action="{!dataService.clearMessages}" rerender="editPaymentForm"  oncomplete="updatePaymentProfile(); return false;" />
+                <apex:actionFunction name="DeletePaymentProfile" action="{!deletePaymentProfile}" rerender="editPaymentForm" status="statusUpdating" oncomplete="callRefresh();jsUtility.makeDarkBorder(); populatePaymentProfile(); return false;"/>
+                <apex:actionFunction name="clearMessagesdelete" action="{!dataService.clearMessages}" rerender="editPaymentForm"  oncomplete="DeletePaymentProfile(); return false;" />
+                <apex:outputPanel id="editPaymentForm">
+
+                    <c:IADMessageBox theMessages="{!dataService.iadMessages}" rendered="{!dataService.iadMessages.size>0}" />
+                    <div class="slds-form">
+                        <div class="slds-cell-shrink">
+                            <table id="dataTable" class="">
+                                <tr>
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                    <span class="">Payment Type :</span>
+                                  </label>
+                                        </div>
+                                    </td>
+
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <input type="hidden" value="{!dataService.theProfile.accountType}" id="theAccType"/>
+                                            <div class="slds-select_container">
+                                                <apex:selectList id="accTypes" disabled="true" value="{!dataService.theProfile.accountType}" multiselect="false" size="1" styleClass="slds-select" required="true" onblur="document.getElementById('theAccType').value = this.value;">
+                                                    <apex:selectOptions value="{!paymentTypes}" />
+                                                </apex:selectList>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div><label class=""></label></div>
+                                    </td>
+                                    <td class="">
+                                        <div><label class=""></label></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="" align="right">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                    <span class="">Card Number :</span>
+                                  </label>
+                                        </div>
+                                    </td>
+                                    <td class="" id="CardNumber">
+                                        <div class="slds-form-element " id="CardNumber">
+                                            <apex:inputHidden value="{!dataService.theProfile.month}" id="last4" />
+                                            <input disabled="disabled" class="slds-input" type="text" value="{!dataService.theProfile.last4Digits}"  size="20" onblur ="document.getElementById('{!$Component.last4}').value = this.value;" />
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                                <span class="">Exp :</span>
+                                              </label>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <table>
+                                            <tr>
+                                                <td class="slds-size--1-of-2">
+                                                    <div class="slds-form-element ">
+                                                        <input type="hidden" value="{!dataService.theProfile.month}" id="theMonth"/>
+                                                        <div class="slds-select_container">
+                                                            <apex:selectList id="expMonths" value="{!dataService.theProfile.month}" multiselect="false" size="1" styleClass="slds-select" onblur="document.getElementById('theMonth').value = this.value;">
+                                                                <apex:selectOptions value="{!expMonths}" />
+                                                            </apex:selectList>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="slds-size--1-of-2">
+                                                    <div class="slds-form-element ">
+                                                        <input type="hidden" value="{!dataService.theProfile.year}" id="theYear"/>
+                                                        <div class="slds-select_container">
+                                                            <apex:selectList id="expYears" value="{!dataService.theProfile.year}" multiselect="false" size="1" styleClass="slds-select" onblur="document.getElementById('theYear').value = this.value;" >
+                                                                <apex:selectOptions value="{!expYears}" />
+                                                            </apex:selectList>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="" align="right">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                    <span class="">Account Holder First Name :</span>
+                                  </label>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <apex:inputHidden value="{!dataService.theProfile.firstName}" id="firstName" />
+                                            <input class="slds-input" type="text" value="{!dataService.theProfile.firstName}"  size="20" onblur ="document.getElementById('{!$Component.firstName}').value = this.value;" />
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                                <span class="">Last Name :</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <apex:inputHidden value="{!dataService.theProfile.lastName}" id="lastName" />
+                                            <input class="slds-input" type="text" value="{!dataService.theProfile.lastName}"  size="20" onblur ="document.getElementById('{!$Component.lastName}').value = this.value;" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="">
+                                        <div class="slds-text-heading--small">Billing Address :</div>
+                                    </td>
+                                    <td class="">
+                                        <div><label class=""></label></div>
+                                    </td>
+                                    <td class="">
+                                        <div><label class=""></label></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="" align="right">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                    <span class="">Street Address1 :</span>
+                                  </label>
+                                        </div>
+                                    </td>
+
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <apex:inputHidden value="{!dataService.theProfile.addressLine1}" id="addressLine1" />
+                                            <input class="slds-input" type="text" value="{!dataService.theProfile.addressLine1}"  size="20" onblur ="document.getElementById('{!$Component.addressLine1}').value = this.value;" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="" align="right">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                    <span class="">Street Address2 :</span>
+                                  </label>
+                                        </div>
+                                    </td>
+
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <apex:inputHidden value="{!dataService.theProfile.addressLine2}" id="addressLine2" />
+                                            <input class="slds-input" type="text" value="{!dataService.theProfile.addressLine2}"  size="20" onblur ="document.getElementById('{!$Component.addressLine2}').value = this.value;" />
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="" align="right">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                                <span class="">City :</span>
+                                              </label>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <apex:inputHidden value="{!dataService.theProfile.city}" id="city" />
+                                            <input class="slds-input" type="text" value="{!dataService.theProfile.city}"  size="20" onblur ="document.getElementById('{!$Component.city}').value = this.value;" />
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                                <span class="">State :</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="" align="left">
+                                        <div class="slds-form-element ">
+                                            <div class="slds-select_container">
+                                                <div class="slds-select_container">
+                                                    <input type="hidden" value="{!dataService.theProfile.state}" id="theState"/>
+                                                    <apex:selectList id="stateList" value="{!dataService.theProfile.state}" multiselect="false" size="1" styleClass="slds-select" required="true"  onblur="document.getElementById('theState').value = this.value;">
+                                                        <apex:selectOptions value="{!statePicklist}" />
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="" align="right">
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                    <span class="">Phone Number :</span>
+                                  </label>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <div class="slds-form-element ">
+                                            <apex:inputHidden value="{!dataService.theProfile.phone}" id="phone" />
+                                            <input value="{!dataService.theProfile.phone}" class="slds-input" maxlength="10" required="true" label="Phone Number" onkeypress="return inputLimiter(event, 'Numbers');" onblur ="document.getElementById('{!$Component.phone}').value = this.value;"/>
+                                        </div>
+                                    </td>
+                                    <td class="" >
+                                        <div class="slds-form-element ">
+                                            <label class="" for="payment type">
+                                                <span class="">Zip :</span>
+                                            </label>
+                                        </div>
+                                    </td>
+
+                                    <td class="" align="right">
+                                        <div class="slds-form-element ">
+                                            <apex:inputHidden value="{!dataService.theProfile.zip}" id="zip" />
+                                            <input class="slds-input" type="text" value="{!dataService.theProfile.zip}" maxlength="5"  size="20" onblur ="document.getElementById('{!$Component.zip}').value = this.value;" onkeypress="return inputLimiter(event, 'Numbers');" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="slds-m-top--xx-large slds-m-bottom--xx-large">
+                                    <apex:actionStatus id="statusUpdating">
+                                        <apex:facet name="start">
+                                            <div class="slds-spinner_container">
+                                                <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                                    <div class="slds-spinner__dot-a"></div>
+                                                    <div class="slds-spinner__dot-b"></div>
+                                                </div>
+                                            </div>
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                <button class="slds-button slds-button--neutral" onClick="closeCurrentTab();" type="button">Cancel</button>
+                                <button class="slds-button slds-button--brand" onClick="clearMessagesUpdate();" type="button">Update</button>
+                                <button class="slds-button slds-button--brand" onClick="clearMessagesdelete();" type="button">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputPanel>
+            </apex:form>
+
+
+        </div>
+    </body>
+
+    </html>
+</apex:page>

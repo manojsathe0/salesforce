@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tm oa5</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Office Action - Geo Descriptive</name>
+    <style>none</style>
+    <subject>Office Action - Geo Descriptive</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Office Actions are direct correspondences from the U.S. Patent and Trademark Office (USPTO), and are generally either requesting additional information or updating you on the status of your application (or both). If you wish to view and/or download your Office Action, please visit here.
+
+Based on your Office Action, it appears your proposed Trademark is being rejected because the Examining Attorney believes that it is primarily geographically descriptive of the origin of your goods and/or services. As your Office Action states:
+
+A mark is primarily geographically descriptive when the following is demonstrated:
+
+(1) The primary significance of the mark is a generally known geographic place or location;
+(2) The goods and/or services for which applicant seeks registration originate in the geographic place identified in the mark; and
+(3) Purchasers would be likely to make a goods-place or services-place association; that is, purchasers would be likely to believe that the goods and/or services originate in the geographic place identified in the mark.
+
+Based on the Office Action received, it also appears that your Examining Attorney at the USPTO has some additional questions:
+
+****INSERT OFFICE ACTION ISSUES****
+
+Although the Examining Attorney has refused registration, you may respond to the refusal to register by submitting evidence and arguments in support of the registration. You may also choose to appeal a final refusal. Given the particular grounds for your Office Action, you may have other solutions available to you as well.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for using LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+___________________________________
+
+{!snippetVariable.tmoa_bap}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>chgi2u</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Change to Intent to Use</name>
+    <style>none</style>
+    <subject>Change to Intent to Use</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting us.
+
+Per your request, your application will be revised to file as &quot;intent to use&quot;.  Trademark applications are filed under one of the following bases:
+
+1. The mark is currently used in commerce, or
+2. There is a real intent to use the mark in commerce.
+
+A mark is considered to be &quot;used in commerce&quot; when the mark is on the goods (either on the goods or their packaging) and the goods are being sold. A mark for services will be considered &quot;used in commerce&quot; when it is used or displayed in the sale or advertising of services and the services are rendered.
+
+Although ?Intent-to-Use? applications are a viable way to reserve the rights to your mark before using it in commerce, the following information will need to be provided to the USPTO within six months of receiving your Notice of Allowance, which is generally received 6-7 months after the original date of filing:
+
+1.  A Statement of Use: a sworn statement attesting to the use of the mark in commerce.
+2.  $100 filing fee per class of goods or services.
+3.  A specimen that demonstrates how the mark is being used in commerce for every classification of goods and services included on your application.  A specimen is not just a picture of your trademark or logo.  Instead, a specimen is a real world example of how your mark is currently being used in commerce.
+
+For services, acceptable specimens include brochures, flyers, advertisements, yellow page listings and internet websites.  Business cards or stationery are usually not acceptable.  For goods (products), acceptable specimens include labels or tags attached to the product, packaging material, instruction manuals and containers which display the trademark.
+
+You must file a Statement of Use within six (6) months of the mailing date stamped on the Notice of Allowance UNLESS, within that same period, you submit a request for a six-month extension of time to file the Statement of Use. You may request up to five (5) extensions of time. For more information on how to file a Statement of Use or extension request, please visit:  http://www.uspto.gov/teas/eTEASpageB2.htm.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

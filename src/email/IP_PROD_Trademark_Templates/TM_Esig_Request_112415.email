@@ -1,0 +1,89 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+
+Dear {!Contact.FirstName},<br><br>
+
+Thank you for using LegalZoom.<br><br>
+
+Below you will find a link to your electronic trademark application form with the U.S. Patent and Trademark Office (USPTO). Click on the link to review your application for accuracy and complete the electronic signature on the bottom of the application (instructions for signing are provided after you click on the link and below). Please review your application as soon as possible – <b>the link will expire in 14 days.</b><br><br>
+
+<b>How to sign?</b>: An electronic application is not signed in the traditional sense. The person authorized to sign the application verifies its content using a combination of alpha or numeric characters preceded and followed by the forward slash (/) symbol. Here’s an example of an electronic signature: <b> /John Doe/</b>. You can find more information on electronic signatures in the yellow box within the application..<br><br>
+
+<b>DO NOT SIGN THE APPLICATION IF YOU HAVE REVISIONS</b>. If you would like to make a change to the trademark application or to put your order on hold, please reply to this email as soon as possible.<br><br>
+
+To sign the Trademark/Service Mark Application, Principal Register electronically, please click the link below:
+
+<br><br>
+ {!SignatureURL}
+<br><br>
+
+NOTE: If your mail system does not allow such access directly, highlight the characters appearing in the URL address above and copy through your Edit function, then paste into your browser and click enter. If the link above appears on 2 separate lines, you must ensure that the entire address appears in the URL line of your browser (i.e., that both lines are copied and pasted to create one overall URL address) before clicking on enter.<br><br>
+ 
+If you have any questions or would like to request a change by phone, please feel free to call our Customer Care Team toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.<br><br>
+
+Otherwise, feel free to reply to this email.<br><br>
+
+Best regards,<br>
+LegalZoom {!snippetVariable.ipdtm_dept_full}<br>
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br>
+{!snippetVariable.lz_website}<br><br>
+
+
+
+</div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>.  
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

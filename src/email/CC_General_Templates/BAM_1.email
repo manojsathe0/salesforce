@@ -1,0 +1,103 @@
+</tr>
+
+</table>
+    <!--end header 01 -->
+ <!-- start secondary 3 -->
+  <table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+   <td align="left" valign="middle"><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer --><div style="font-family:Arial, Helvetica, sans-serif; font-size:26px; color:#000066; line-height:18px;"><br>Congratulations!</div><br><div style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#666666; margin-right:40px; margin-bottom:0px;">
+<br>
+Dear {!Contact.FirstName},
+<br /><br />
+Congratulations on taking the first steps to start your new business and open the door to opportunity. <br /><br />
+
+At LegalZoom, we strive to provide the best possible service to business planners like you and ask that you take a minute to complete the following short survey so that we can continue to improve our offerings: 
+
+<a href="https://www.surveymonkey.com/s/BizStarter" target="_blank">Click here </a> to begin the survey.
+<br><br>
+ </div>
+</td>
+  </tr>
+</table>
+
+  <table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+   <td align="left" valign="middle"><!--spacer --><!--spacer -->
+      <div style="margin-bottom:10px;">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    </div>
+</td>
+  </tr>
+</table>
+
+  <table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+   <td align="left" valign="middle"><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="0"></td></tr></table><!--spacer --><div style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#666666; margin-right:40px; margin-bottom:0px;">
+Best regards,
+<br /><br />
+{!User.Name}, 
+Business Account Manager<br><br>
+ </div>
+</td>
+  </tr>
+</table>
+  <!--dotted div -->
+  <table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/div.gif" width="640" height="1" style="display:block; border:0;" /></td>
+  </tr>
+  <tr>
+     <td height="10"></td>
+  </tr>
+</table>
+<!--dotted div -->
+
+
+
+  	<!--end secondary 3 -->  
+  
+   <!--end body body --> 
+
+
+
+  
+  <!--start footer text -->
+  
+<table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer -->
+    
+    <table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666;"><a href="http://www.legalzoom.com/privacy-policy-popup.html?" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666; text-decoration:underline;"><span style="color:#666666;">Privacy Policy</span></a></td>
+    <td align="right" style="font-family:Arial, Helvetica, sans-serif; color:#000066; font-size:11px;">Call Customer Care: <span style="font-size:12px; font-weight:bold;">(888) 409-8589</span> </td>
+  </tr>
+</table>
+
+    </td>
+  </tr>
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666;"><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer -->
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm.  Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+<br /><br />
+Please add services@emails.legalzoom.com to your address book. 
+<br /><br />
+LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+<br /><br />
+&copy; LegalZoom.com, Inc. All rights reserved.
+<!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer -->
+</td>
+  </tr>
+</table>
+
+
+  
+  <!--end footer text -->
+</div>
+</body>
+</html>

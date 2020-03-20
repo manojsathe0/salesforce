@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip2260</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Ricky R.</name>
+    <style>none</style>
+    <textOnly>Ricky R.
+Intellectual Property Division
+www.LegalZoom.com
+800-773-0888 ext. 2260</textOnly>
+    <type>custom</type>
+</EmailTemplate>

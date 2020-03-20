@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Business Advantage Pro Plan</label>
+                <name>Business_Advantage_Pro_Plan</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Legal Advantage Plus Plan</label>
+                <name>Legal_Advantage_Plus_Plan</name>
+            </dataCategory>
+            <dataCategory>
+                <label>On-Call Attorney Advantage Plan</label>
+                <name>On_Call_Attorney_Advantage_Plan</name>
+            </dataCategory>
+            <label>Attorney Services</label>
+            <name>Attorney_Services</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>501(c)3 Preparation</label>
+                <name>X501_c_3_Preparation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Amendment</label>
+                <name>Amendment</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Annual Reports</label>
+                <name>Annual_Reports</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Certificate of Good Standing</label>
+                <name>Certificate_of_Good_Standing</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Certified Copies</label>
+                <name>Certified_Copies</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Compliance Calendar Renewal</label>
+                    <name>Compliance_Calendar_Renewal</name>
+                </dataCategory>
+                <label>Compliance Calendar</label>
+                <name>Compliance_Calendar</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Conversion</label>
+                <name>Conversion</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Corporate Minutes</label>
+                <name>Corporate_Minutes</name>
+            </dataCategory>
+            <dataCategory>
+                <label>DBA (Doing Business As)</label>
+                <name>DBA_Doing_Business_As</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Dissolution</label>
+                <name>Dissolution</name>
+            </dataCategory>
+            <dataCategory>
+                <label>EIN Obtainment</label>
+                <name>EIN_Obtainment</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Entity Name Availability Check</label>
+                <name>Entity_Name_Availability_Check</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Foreign Qualification</label>
+                <name>Foreign_Qualification</name>
+            </dataCategory>
+            <dataCategory>
+                <label>General Partnership Agreement</label>
+                <name>General_Partnership_Agreement</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Bylaws &amp; Resolutions</label>
+                    <name>Bylaws_Resolutions</name>
+                </dataCategory>
+                <label>Incorporation</label>
+                <name>Incorporation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Initial Reports</label>
+                <name>Initial_Reports</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Joint Venture Agreement</label>
+                <name>Joint_Venture_Agreement</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Operating Agreements</label>
+                    <name>Operating_Agreements</name>
+                </dataCategory>
+                <label>LLC (Limited Liability Company)</label>
+                <name>Limited_Liability_Company</name>
+            </dataCategory>
+            <dataCategory>
+                <label>LLP (Limited Liability Partnership)</label>
+                <name>Limited_Liability_Partnership</name>
+            </dataCategory>
+            <dataCategory>
+                <label>LP (Limited Partnership)</label>
+                <name>Limited_Partnership</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Non-Profit Corporation</label>
+                <name>Non_Profit_Corporation</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Registered Agent Renewal</label>
+                    <name>Registered_Agent_Renewal</name>
+                </dataCategory>
+                <label>Registered Agent Subscription</label>
+                <name>Registered_Agent_Subscription</name>
+            </dataCategory>
+            <dataCategory>
+                <label>S-Corp Preparation</label>
+                <name>S_Corp_Preparation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Seller’s Permit</label>
+                <name>Seller_s_Permit</name>
+            </dataCategory>
+            <dataCategory>
+                <label>State Tax ID</label>
+                <name>State_Tax_ID</name>
+            </dataCategory>
+            <label>Business Services</label>
+            <name>Business_Services</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Copyright</label>
+                <name>Copyright</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Attorney-Prepared Application for Patent</label>
+                    <name>Attorney_Prepared_Application_for_Patent</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Provisional Application for Patent</label>
+                    <name>Provisional_Application_for_Patent</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Design Patent</label>
+                    <name>Design_Patent</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Patent Search</label>
+                    <name>Patent_Search</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Patent Drawing</label>
+                    <name>Patent_Drawing</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Utility Patent</label>
+                    <name>Utility_Patent</name>
+                </dataCategory>
+                <label>Patent</label>
+                <name>Patent</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Trademark Assignment</label>
+                    <name>Trademark_Assignment</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Trademark Monitoring</label>
+                    <name>Trademark_Monitoring</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Trademark Search</label>
+                    <name>Trademark_Search</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Trademark Section 8 Declaration</label>
+                    <name>Trademark_Section_8_Declaration</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Trademark Section 9 Renewal</label>
+                    <name>Trademark_Section_9_Renewal</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Trademark Statement of Use</label>
+                    <name>Trademark_Statement_of_Use</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Trademark Statement of Use Extension</label>
+                    <name>Trademark_Statement_of_Use_Extension</name>
+                </dataCategory>
+                <label>Trademark</label>
+                <name>Trademark</name>
+            </dataCategory>
+            <label>Intellectual Property Services</label>
+            <name>Intellectual_Property_Services</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Last Will &amp; Testament</label>
+                    <name>Last_Will_Testament</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Living Trust</label>
+                    <name>Living_Trust</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Living Will</label>
+                    <name>Living_Will</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Power of Attorney</label>
+                    <name>Power_of_Attorney</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Pet Protection Agreement</label>
+                    <name>Pet_Protection_Agreement</name>
+                </dataCategory>
+                <label>Estate Planning Services</label>
+                <name>Estate_Planning_Services</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Bankruptcy</label>
+                <name>Bankruptcy</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Divorce</label>
+                <name>Divorce</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Other Legal Forms</label>
+                <name>Other_Legal_Forms</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Prenuptial Agreement</label>
+                <name>Prenuptial_Agreement</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Name Change</label>
+                <name>Name_Change</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Real Estate Lease</label>
+                <name>Real_Estate_Lease</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Real Estate Deed Transfer</label>
+                <name>Real_Estate_Deed_Transfer</name>
+            </dataCategory>
+            <label>Personal Services</label>
+            <name>Personal_Services</name>
+        </dataCategory>
+        <label>All Products</label>
+        <name>All_Products</name>
+    </dataCategory>
+    <description>Articles relevant to each LZ product line</description>
+    <label>Products</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

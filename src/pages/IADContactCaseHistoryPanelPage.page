@@ -1,0 +1,115 @@
+<apex:page controller="IADContactCaseHistoryPanelController" standardstylesheets="false" >
+   <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+       <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+      <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" /> 
+      <script type="text/javascript">
+        var currentPrimaryTab = '';
+       
+        var setCurrentPrimaryTab = function setCurrentPrimaryTab(result) {
+            currentPrimaryTab = result.id;
+            console.log('current primary tab' + currentPrimaryTab);
+            var contactId = '{!theId}';
+            var theURL = '/apex/IADContactCaseHistoryGridPage?id=' + contactId;
+            console.log('the url ' + theURL);
+            sforce.console.openSubtab(currentPrimaryTab , theURL, true, 'All Cases');
+        };
+        var listener = function(result) {
+            refreshPage();
+        };
+        sforce.console.addEventListener('RefreshCasePanel', listener);
+
+        function openAllCases() {
+            sforce.console.getEnclosingPrimaryTabId(setCurrentPrimaryTab);
+        }
+        
+        function rePopulateSVGIcons()
+        {
+            
+            $('.svgParent').each(function(index) {
+                 console.log($(this));
+                 var svgElement = $('<svg>').attr('aria-hidden','true')
+                                            .attr('class','slds-icon slds-icon--x-small')
+                                            .attr('viewBox','0 0 24 24');
+                                            
+                 $('<path>').attr('d','{!caseIcon}')
+                            .appendTo(svgElement);      
+                 svgElement.appendTo($(this));
+                 var para = $('<p>').html('');
+                 para.appendTo($(this));
+            });
+             $("#mainDiv").html($("#mainDiv").html());
+         }
+
+      </script>
+      
+    </head>
+    <body>
+    <div class="slds" id = "mainDiv">
+     
+   <apex:form id="theForm">
+     <apex:actionFunction name="refreshPage" action="{!refreshPage}" rerender="theForm,anotherForm" onComplete="rePopulateSVGIcons(); return false;" />
+
+       <apex:outputPanel id="thePanel" rendered="{!hasOpenCases}">
+           <apex:variable value="0" var="num"/>
+        <apex:repeat value="{!allCases}" var="theProblemCase" >
+            <div class="slds-m-top--small">
+            <div class="slds-m-top--xxx-small slds-text-body--small">
+            <span class="slds-icon__container slds-icon-standard-case svgParent" title="Case" id="caseIconParent{!num}">
+                <svg aria-hidden="true" class="slds-icon slds-icon--x-small" viewBox="0 0 24 24">
+                  <path  d="{!caseIcon}"/>
+                </svg>
+               
+              </span>
+                <apex:outputLink value="/{!theProblemCase.theCase.Id}" styleClass="slds-text-body--x-small" title="Click to open case"><b><u>{!theProblemCase.theCase.caseNumber}</u></b></apex:outputLink>
+               </div>
+                 <div class="slds-m-top--xxx-small slds-text-body--small" title="Subject">
+                    {!theProblemCase.theCase.subject}
+                </div>
+                <div class="slds-m-top--xxx-small slds-text-body--small" title="Case Status">
+                    <b>{!theProblemCase.theCase.Status}</b>
+                </div>
+
+                <div class="slds-m-top--xxx-small slds-text-body--small" title="Status Reason">
+                    {!theProblemCase.theCase.Status_Reasons__c}
+                </div>
+
+                  <div class="slds-m-top--xxx-small slds-text-body--small"  style="{!IF(theProblemCase.theCase.Order_Exception__r.Exception_Type__c=='Problem','','display:none;')}" >
+                    Problem Order
+                </div>
+                <div class="slds-m-top--xxx-small slds-text-body--small" title="Case Status">
+                    <apex:outputText value="{!theProblemCase.theOrderItemLabel}" />
+                </div>
+
+                <div class="slds-m-top--xxx-small slds-text-body--small">
+
+                    <apex:outputField value="{!theProblemCase.theCase.CreatedDate}" />
+
+                </div>
+             </div>
+             <br/>
+
+            <apex:variable var="num" value="{!VALUE(num) + 1}"/>
+          </apex:repeat>
+          <a onClick ="openAllCases(); return false;" styleClass="slds-text-body--x-small" title="See All Cases"><b><u>See All</u></b></a>
+       </apex:outputPanel>
+    </apex:form>
+     <apex:form id="anotherForm">
+         <apex:outputPanel id="thePanel" rendered="{!NOT(hasOpenCases)}" >
+             <br/><br/><br/><br/><br/><br/><br/>
+             <div align="center">
+                <span class="slds-icon__container slds-icon-standard-approval svgParent" id ="checkParent">
+                  <svg aria-hidden="false" class="slds-icon slds-icon--small">
+                    <path  d="{!checkIcon}"/>
+                  </svg>
+                  <span class="slds-assistive-text">medium approval Icon</span>
+                </span>
+              </div>
+              <p class="slds-text-heading slds-text-align--center">no cases</p>
+         </apex:outputPanel>
+     </apex:form>
+      </div>
+     </body>
+  </html>
+</apex:page>

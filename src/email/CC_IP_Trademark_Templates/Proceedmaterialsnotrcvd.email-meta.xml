@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TMxmat</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Proceed (materials not rcvd)</name>
+    <style>none</style>
+    <subject>LegalZoom Order#</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Per your request, I have informed a product specialist to continue with the process of your trademark order. 
+
+Please note we require that you submit two (2) items: 
+
+1. A sample of your logo. Please note that only one logo can be submitted per application. A black and white sample allows your logo to be protected without limiting the colors that can be used with or within it. A color sample, on the other hand, limits your trademark to the specific colors used, and must be accompanied by a “color claim,” listing the colors you want to limit yourself to, and stating where on your logo you use each color. 
+
+2. Proof of use (called a “specimen”). The specimen you provide should be an actual, real-world example that clearly shows how the trademark is being used in connection with the products (“goods”) and/or services you listed in your application. Unlike your logo sample, your specimen can be in color without limiting the colors you can use with or within your trademark later. 
+
+******************For services****************** 
+
+If you are providing services, acceptable specimens include a sign, brochure, advertisement, business card, stationary or website prominently displaying your trademark in connection with the services you’ve listed in your trademark filing. The specimen must include a reference to the service, not just the trademark by itself. Printer’s proofs for advertisements or news articles about your services are generally NOT acceptable specimens for services. 
+
+See Examples: http://www.legalzoom.com/trademarks-faq/what-is-a-trademark-specimen.html
+
+******************For products****************** 
+
+If you are providing products, acceptable specimens include photographs of packaging labels, clothing tags or labels on containers that prominently display your trademark. Invoices, order forms, receipts, brochures, catalogs, press releases, business cards, and stationery are generally NOT acceptable specimens for products. 
+
+See Examples: http://www.legalzoom.com/trademarks-faq/what-is-a-trademark-specimen.html
+
+----------------------------------
+
+SUBMITTING YOUR MATERIALS: 
+
+Please reply to this e-mail and attach your materials, preferably in .jpg, .jpeg, .gif or .pdf format. Email attachments cannot exceed 6MB. 
+
+If you are using a Mac computer or your attachments are larger than 6MB combined, please upload your image(s) directly here: http://legalzoom.force.com/LZWTC  
+
+Or, if you prefer, you can mail us your materials. Our mailing address is: 
+
+$ip_address_tm_materials
+
+Please note: LegalZoom will not share your materials with any third party unless necessary for the completion of your order. Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. 
+
+----------------------------------
+
+Once your materials are received and properly formatted, we will submit your federal trademark application to the U.S. Patent and Trademark Office (USPTO). Within two business days, you will receive a time-sensitive email from LegalZoom requesting your e-signature for the application form. Once your application has been signed, LegalZoom will complete your order by paying the required filing fee. 
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT. 
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+Best regards, 
+
+The LegalZoom Team 
+
+* {!snippetVariable.tmoa_bap}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

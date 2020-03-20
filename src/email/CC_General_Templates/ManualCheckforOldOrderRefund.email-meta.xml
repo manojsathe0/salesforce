@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>mailcheck</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Manual Check for Old Order Refund</name>
+    <style>none</style>
+    <subject>Manual Check for Old Order Refund</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I sincerely apologize but I am unable to process your refund back to your credit card due to the age of the charge.
+ 
+Unfortunately, LegalZoom can only refund charges back to the credit card on file when the refund is requested within 6 months of purchase. Once this time has elapsed, your credit card information is no longer in our accounting system.  
+
+As a result, we will need to issue your refund in the form of a manual check. Your check will be sent in the name of the account holder within 10-15 business days. Please confirm your address as:
+
+[INSERT ADDRESS]
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

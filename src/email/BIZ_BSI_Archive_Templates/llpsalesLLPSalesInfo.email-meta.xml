@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>llpsales - LLP Sales Info</name>
+    <style>none</style>
+    <subject>llpsales - LLP Sales Info</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.
+
+A Limited Liability Partnership, or LLP, allows partners to take an active role in the business and enjoy limited personal liability. Professional service firms, such as accounting and law offices, often form as LLPs to utilize these advantages. LLPs offer both the flexibility of corporations and the tax benefits of partnerships, such as no double taxation on profits.
+
+For your convenience, I have provided additional information and links to begin your LLP formation:
+
+Economy LLP Package   {!snippetVariable.econllp_pricing}
+{!snippetVariable.econllp_turnaround}
+Standard LLP Package   {!snippetVariable.stdllp_pricing}
+{!snippetVariable.stdllp_turnaround}
+Express Gold LLP Package  {!snippetVariable.goldllp_pricing}
+{!snippetVariable.goldllp_turnaround}
+
+Get Started:
+{!snippetVariable.llp_application}
+Additional Pricing Information:
+{!snippetVariable.llp_pricelink}
+Additional LLP Information:
+{!snippetVariable.llp_edcenter}
+
+I recommend the Express Gold Package because it offers significant benefits. The Gold Package includes free preparation of your Tax ID application (for easy self-filing) OR a {!snippetVariable.ein_prep} discount toward LegalZoom&apos;s complete Tax ID Obtainment Service. Most importantly, it will expedite your filing process, reducing the waiting period to {!snippetVariable.goldllp_turnaround}. Other packages take econllp_turnaround.
+
+Also, you may want to consider using LegalZoom&apos;s Registered Agent Service. Setting up a registered agent is a state requirement for all LLPs. LegalZoom&apos;s Registered Agent Service ensures professional handling of your company?s state correspondence and also helps ensure your privacy. We offer Registered Agent Services at an affordable rate of {!snippetVariable.ra_firstyrpackage} per year.
+
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at $biz_phone $biz_hours.
+
+Best regards, 
+
+
+[ Your Name ]
+{!snippetVariable.bizbsi_address}
+{!snippetVariable.bizbsi_phone}
+{!snippetVariable.bizbsi_fax}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

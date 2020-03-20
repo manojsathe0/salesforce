@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tmdates</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TM Revised Dates of Use</name>
+    <style>none</style>
+    <subject>TM Revised Dates of Use</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Per your request, the following dates will be listed on your Trademark application, along with your &quot;used in commerce&quot; filing basis:
+
+1. Date of first use anywhere (MM/DD/YYYY)
+2. Date of first use in commerce (MM/DD/YYYY)
+
+You will also be able to review this information before electronically signing your Trademark application, which is your last step with the LegalZoom process.
+
+Thank you for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>echoi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Eddie Choi Signature</name>
+    <style>none</style>
+    <textOnly>Edward Choi
+Manager - Business Formations and Sales
+LegalZoom.com 
+{!snippetVariable.lz_address}
+(888)-381-8758 Ext: 3680</textOnly>
+    <type>custom</type>
+</EmailTemplate>

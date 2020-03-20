@@ -1,0 +1,58 @@
+<apex:page controller="TemplateIframeController" sidebar="false" showHeader="false">
+	  <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+	  <script type="text/javascript">
+	     	    
+		var $j = jQuery.noConflict();     
+        function callTest()
+        {
+        	var templateCode = $j("[id$='templateCode']").val();
+            if(templateCode.length != 0) 
+            {
+                popTempDetail();
+            }
+        
+        }
+	
+    $j(document).ready(function()
+    {
+        $j("[id$='templateCode']").focus();
+        $j("[id$='templateCode']").keypress(function(event)
+            {
+		        
+		        if (event.keyCode == 13)
+		        {
+		            event.preventDefault();
+		            callTest();
+		        }
+		    });
+		    
+    });
+	  </Script>
+	  <apex:form >
+		  
+		  <apex:inputText value="{!templateCode}" id="templateCode" onchange="callTest();" />
+		   <apex:outputPanel id="statusHolder" layout="inline">
+			   <apex:actionStatus id="detailStatus">
+			   <apex:facet name="start">
+			     <img src="{!$Resource.AjaxLoader}" border="0" />
+			   </apex:facet>
+			   <apex:facet name="stop">
+			   	Done
+			   </apex:facet>
+			  </apex:actionStatus>
+	      </apex:outputPanel>
+		  <apex:actionFunction name="popTempDetail" action="{!populateTemplateDetails}" rerender="returnedData,scriptblock" status="detailStatus" />
+	  </apex:form>
+	  <br />
+	  <br />
+	  <apex:outputpanel id="returnedData" >
+	  	{!templateDetails}
+	  </apex:outputpanel>
+	 
+	  <apex:outputPanel id="scriptblock">
+	  	<Script type="text/javascript">
+	  		var theResult = $j("[id$='returnedData']").text();
+	  		parent.parentFunction(theResult);
+	  	</Script>
+	  </apex:outputPanel>
+</apex:page>

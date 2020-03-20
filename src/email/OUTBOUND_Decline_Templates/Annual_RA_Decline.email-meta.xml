@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>annradec</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Annual RA Decline</name>
+    <style>none</style>
+    <subject>LegalZoom Order XXXXXXX:  Processing your Registered Agent Annual Payment</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing LegalZoom.com for your business service needs.
+
+When you registered your {ENTER-BIZ-TYPE} you elected LegalZoom.com to serve as the registered agent for your business.  This came with 30 days of free service making the scheduled renewal date XX/XX/XXXX.  We have attempted to process the payment to your credit card; however it did not go through.
+
+Please call me at (866) 698-0053 ext. {!User.Extension} {!snippetVariable.outbsihours} so that I can help you resolve this matter. 
+
+Please refer to your order number {!Case.Order_Number_c}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>UPL clarification - property DO NOT USE</name>
+    <style>none</style>
+    <subject>UPL clarification - property DO NOT USE</subject>
+    <textOnly>Dear XXXXXXX,
+
+Thank you for choosing LegalZoom.com, America?s #1 online legal source.   
+
+A preliminary review of your information indicates a potential inconsistency in your responses.  While LegalZoom is prohibited by law to advise you how to complete your documents, we would like to offer you the opportunity to review your information and carefully list your property, assets, and debts in the appropriate categories.  Careful completion of the questionnaire will help save time and reduce confusion when you submit your forms. 
+
+There may be particular items which have not been listed in the property sections.
+
+Specifically, please review and confirm the following information:
+
+Section: [NAME OF SECTION]
+
+Your Response: &quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
+
+Please let us know if you would like the above statement listed in the property section or would you like it listed in the other agreement section of your documents.
+
+If you would like to list the items in the property section can you let us know the estimated value of the accounts, who will keep the accounts, and the account names.
+
+LegalZoom is unable to advise you how to complete the questionnaire but we are willing to prepare the documents in any way you decide.  
+
+You may also contact LegalZoom&apos;s helpful staff to either confirm the above stated information or to instruct our staff how you would like to complete the questionnaire.  
+
+Please contact us at 1-800-773-0888 ext [YOU EXTENSION] between the hours of 9:00 AM and 6:00 PM to speak to a customer service representative. 
+
+Thanks again for choosing LegalZoom.com, your online legal source.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

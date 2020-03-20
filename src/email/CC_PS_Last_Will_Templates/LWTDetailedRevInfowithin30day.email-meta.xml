@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LWTrevinfo</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LW&amp;T Detailed Rev. Info. - within 30 day</name>
+    <style>none</style>
+    <subject>LW&amp;T Detailed Rev. Info. - within 30 day</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+When you are ready to make revisions, visit your account on LegalZoom.com.
+
+•	Revisions are always free within the first 30 days of your purchase.
+•	After 30 days, revisions are free for members of our personal legal plan.
+•	For non-members, revisions are $29.95.
+•	Each revision includes a free digital download from your online account.  Professional printing is available for $9.95.
+
+Please note: In order for your revisions to be received, you must click &quot;save and continue&quot; when updating your online questionnaire and submit your order again for processing.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

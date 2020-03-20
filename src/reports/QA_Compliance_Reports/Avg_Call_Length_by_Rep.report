@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Compliance_Review__c$Length_of_Call__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Compliance_Review__c$RecordType</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Compliance_Review__c.ScoredBased,Compliance_Review__c.Training</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Compliance_Review__c$Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Draft</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Compliance_Review__c$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>abel ojeda,anna oyama,arteisha dickens,erwin guanzon,sennett lee,heidy ochoa,Justin Alvis</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Compliance_Review__c$CreatedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Avg Call Length (by Rep)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Compliance_Review_ScoreCard__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Compliance_Review__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

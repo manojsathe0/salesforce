@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>cacorpbsi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Canadian Corporation</name>
+    <style>none</style>
+    <subject>Canadian Corporation</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs. In regard to your inquiry, LegalZoom can assist you to register a Corporation in Canada and make the process easy for you. Please visit www.legalzoom.ca for more information on the services and the process.
+
+Please feel free to contact us at (888) 381-8758 if you have any further questions.  Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title}
+{!User.CompanyName}
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

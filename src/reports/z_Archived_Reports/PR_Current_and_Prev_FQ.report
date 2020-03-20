@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Article_Project_Request__c.Project_Implementer__c</field>
+    </columns>
+    <columns>
+        <field>Article_Project_Request__c.Requesting_Department__c</field>
+    </columns>
+    <columns>
+        <field>Article_Project_Request__c.Request_Status__c</field>
+    </columns>
+    <columns>
+        <field>Article_Project_Request__c.Completed_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <description>report: Project Implementer/ Requesting Dept/Completed Date/PR Owner Name</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>Article_Project_Request__c.Action_Type__c</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Asc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <name>last 90 days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityAuditHistory$Article_Project_Request__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LAST90</interval>
+    </timeFrameFilter>
+</Report>

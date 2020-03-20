@@ -1,0 +1,60 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for submitting a specimen for your trademark application. However, the U.S. Patent and Trademark Office (USPTO) requires the logo on the specimen match the graphic element (logo) from your application exactly.<br/><br/>To correct the inconsistency and continue with your application, we need to know how you would like to proceed. Choose ONE of the options below and reply to this email:<br/><br/>1. Submit a different logo that matches the one that appears on your specimen<br/>2. Submit a different specimen that displays the exact logo you provided in your application<br/>3. Confirm you want us to submit the specimen and logo as is. During the examination process by the USPTO, you will be responsible to respond to questions from your assigned examining attorney<br/>4. Request to place your order on hold while you consult with an attorney*<br/><br/>If you have any questions or would like additional information, please call us at (800) 773-0888 Monday&#8211;Friday from 6 a.m.&#8211;7p.m. PT or email us at customercare@legalzoom.com.<br/><br/>We appreciate you choosing LegalZoom and look forward to hearing from you soon.<br/><br/>Best regards,<br/><br/>The LegalZoom Team<br/><br/>* Members of Business Advantage Pro can receive further guidance from an attorney as part of their subscription. If you purchased the Complete Coverage package, you have a 30-day trial. Simply sign in and request a consultation through the Member Center link in your account. To sign in, click <a href=https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=1>here</a>.<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tm3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post Filing USPTO Contact Info</name>
+    <style>none</style>
+    <subject>Post Filing USPTO Contact Info</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for filing your using LegalZoom.
+
+Because LegalZoom is not a law firm, we are unable to provide legal advice. Although we assisted in the filing of your Trademark application, we are not your attorney. Below are some contact phone numbers and links from the US Patent and Trademark Office (USPTO) that may help you with any issues, inquiries, or concerns.
+
+Trademark Assistance Center:
+If you have any questions and would like to speak to a person directly, please contact the Trademark Assistance Center at (800) 786-9199 or (703) 308-9000 if you live in Northern Virginia.
+
+You may also send an e-mail to: TEAS@uspto.gov
+
+Statement of Use/Amendment to Allege Use for Intent-to-Use Application
+If you filed your Trademark application on an “intent-to-use” basis and are now using the mark in commerce, you may file your “Statement of Use” form online via the USPTO’s Trademark Electronic Application System(here).
+
+Status Inquiries:
+If you would like to know the status of your application, please visit here. To track your application&apos;s status, simply type your serial number into the “Enter a Number” prompt on the left side of the page.
+
+Changes &amp; Correction of information:
+For information on the forms and procedures necessary for changing or revising your application, please visit here
+
+Petitions:
+If you would like petition to revive an “abandoned” application, please contact the Office of Petitions at (703) 305-9285 or visit here. Please note petitions are only applicable within 2 months of the abandonment date.
+
+Informational Brochures and Products
+If you would like free informational publications, please fill print and fill out the form from the link below and submit your requests to:
+
+U.S. Patent and Trademark Office
+USPTO Contact Center (UCC)
+Crystal Plaza 3, Room 2C02
+P.O. Box 1450 or 703-308-4357
+Alexandria, VA 22313-1450
+
+Request Form: here
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Routing rules with approval notifications for Project Requests.</description>
+    <label>Project Request Routing V1.2</label>
+    <processType>Workflow</processType>
+</Flow>

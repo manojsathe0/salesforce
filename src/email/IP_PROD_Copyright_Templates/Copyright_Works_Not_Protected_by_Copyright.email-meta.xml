@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr33</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PROBLEM Works Not Protected by Copyright</name>
+    <style>none</style>
+    <subject>Copyright Information – Works that Can Be Registered</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Regarding your inquiry, the Copyright Office explicitly states that [INSERT NON COPYRIGHTABLE WORK DESCRIPTION] cannot be protected by Copyright. For more information, see here.
+
+Copyright protects “original works of authorship” that are fixed in a tangible form of expression such as a literary, musical, dramatic or artistic work.
+
+According to the U.S. Copyright Office, there are several categories of material that are generally not eligible for federal Copyright protection. These include:
+
+•	Works that have not been fixed in a tangible form of expression (such as an idea, or a speech that was neither written down nor recorded)
+•	Titles, names, short phrases and slogans (see below), familiar symbols or designs, etc.
+•	Ideas, procedures, methods, systems, processes, concepts, principles, etc.
+•	Works consisting entirely of information that is common property and contains no authorship
+
+For more information, check out the following sources:
+
+• Difference between a trademark and Copyright
+• Works protected by Copyright
+• Works not protected by Copyright
+• U.S. Copyright Office circular on works not protected by Copyright
+
+If you have any questions or would like additional information, please call our Customer Care Team at (800) 773-0888 Monday-Friday from 6 a.m.-7 p.m. PT or email us here.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

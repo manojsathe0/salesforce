@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Across_Orders__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Across Orders</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Base_Process__c</fullName>
+        <description>Comma Separated Process Name</description>
+        <externalId>false</externalId>
+        <label>Base Process</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Base_Product_Line__c</fullName>
+        <externalId>false</externalId>
+        <label>Base Product Line</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Intellectual Property</fullName>
+                    <default>false</default>
+                    <label>Intellectual Property</label>
+                </value>
+                <value>
+                    <fullName>Personal Services</fullName>
+                    <default>false</default>
+                    <label>Personal Services</label>
+                </value>
+                <value>
+                    <fullName>Attorney Services</fullName>
+                    <default>false</default>
+                    <label>Attorney Services</label>
+                </value>
+                <value>
+                    <fullName>Business Formations</fullName>
+                    <default>false</default>
+                    <label>Business Formations</label>
+                </value>
+                <value>
+                    <fullName>Legal Forms</fullName>
+                    <default>false</default>
+                    <label>Legal Forms</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Base_Product_Name__c</fullName>
+        <description>Comma separated Base Product Name</description>
+        <externalId>false</externalId>
+        <label>Base Product Name</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Campaign Rules</relationshipLabel>
+        <relationshipName>Campaign_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child_Product_Name__c</fullName>
+        <description>Comma separated Child Product Name</description>
+        <externalId>false</externalId>
+        <label>Child Product Name</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Days_To_Look__c</fullName>
+        <externalId>false</externalId>
+        <label>Days To Look</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Member Since</fullName>
+                    <default>false</default>
+                    <label>Member Since</label>
+                </value>
+                <value>
+                    <fullName>Lead/Contact Modified</fullName>
+                    <default>false</default>
+                    <label>Lead/Contact Modified</label>
+                </value>
+                <value>
+                    <fullName>Last Sales Activity</fullName>
+                    <default>false</default>
+                    <label>Last Sales Activity</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Entry_Exit__c</fullName>
+        <externalId>false</externalId>
+        <label>Entry/Exit</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Entry</fullName>
+                    <default>false</default>
+                    <label>Entry</label>
+                </value>
+                <value>
+                    <fullName>Exit</fullName>
+                    <default>false</default>
+                    <label>Exit</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Field_To_Evaluate__c</fullName>
+        <externalId>false</externalId>
+        <label>Field To Evaluate</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Field Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Has_Purchased__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Has Purchased</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object__c</fullName>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Lead</fullName>
+                    <default>false</default>
+                    <label>Lead</label>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                    <label>Contact</label>
+                </value>
+                <value>
+                    <fullName>Order__c</fullName>
+                    <default>false</default>
+                    <label>Order__c</label>
+                </value>
+                <value>
+                    <fullName>Task</fullName>
+                    <default>false</default>
+                    <label>Task</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rule_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Rule Id</label>
+        <length>2</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Campaign Rule</label>
+    <nameField>
+        <displayFormat>Rule-{0000}</displayFormat>
+        <label>Campaign Rule Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Campaign Rules</pluralLabel>
+    <recordTypes>
+        <fullName>Days_Rule</fullName>
+        <active>true</active>
+        <label>Days Rule</label>
+        <picklistValues>
+            <picklist>Base_Product_Line__c</picklist>
+            <values>
+                <fullName>Attorney Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Formations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intellectual Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Forms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Days_To_Look__c</picklist>
+            <values>
+                <fullName>Last Sales Activity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead%2FContact Modified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Since</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entry_Exit__c</picklist>
+            <values>
+                <fullName>Exit</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>General_Rule</fullName>
+        <active>true</active>
+        <label>General Rule</label>
+        <picklistValues>
+            <picklist>Base_Product_Line__c</picklist>
+            <values>
+                <fullName>Attorney Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Formations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intellectual Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Forms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entry_Exit__c</picklist>
+            <values>
+                <fullName>Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Task</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Product_Rule</fullName>
+        <active>true</active>
+        <label>Product Rule</label>
+        <picklistValues>
+            <picklist>Base_Product_Line__c</picklist>
+            <values>
+                <fullName>Attorney Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Formations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intellectual Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Forms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entry_Exit__c</picklist>
+            <values>
+                <fullName>Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Status_Rule</fullName>
+        <active>true</active>
+        <label>Status Rule</label>
+        <picklistValues>
+            <picklist>Base_Product_Line__c</picklist>
+            <values>
+                <fullName>Attorney Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Formations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intellectual Property</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Forms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Days_To_Look__c</picklist>
+            <values>
+                <fullName>Lead%2FContact Modified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Since</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entry_Exit__c</picklist>
+            <values>
+                <fullName>Entry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order%5F%5Fc</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

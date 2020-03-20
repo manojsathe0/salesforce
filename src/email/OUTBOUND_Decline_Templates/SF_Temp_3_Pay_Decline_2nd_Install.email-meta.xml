@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SF Temp 3-Pay Decline – 2nd Install</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF Temp 3-Pay Decline – 2nd Install</name>
+    <style>freeForm</style>
+    <subject>LegalZoom Order XXXXXXX:  Processing your 2nd Installment Payment</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing LegalZoom.com for your business service needs.
+
+You recently  placed an {!Case.Products_c} order using our 3 pay payment option.  We have attempted to process the 2nd installment payment to your credit card, however it did not go through.
+
+Please call me at (866) 698-0053 ext. {!User.Extension} (M-F 8am-5pm CST/PST) so that I can help you resolve this matter.
+ 
+Please refer to your order number: {!Case.Order_Number_c}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

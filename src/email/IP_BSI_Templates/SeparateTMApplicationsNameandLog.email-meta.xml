@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TMnamelogo</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Separate TM Applications ? Name and Log</name>
+    <style>none</style>
+    <subject>Separate TM Applications ? Name and Log</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+You can file two applications for the name and for the logo separately, if you will be using them separately.  
+
+Alternatively, you can file one application and put both the name and the logo on that application, however you must be aware that you would have to use them both together at all times to be protected. 
+
+Unfortunately, we can not advise you on your best option because Legalzoom.com Inc., is a legal documentation assistant. We can offer no legal advice, recommendations, mediation or counseling under any circumstance. You will need to make your filing decisions on your own or contact an attorney for specific guidance or advice. 
+ 
+{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.
+
+{!snippetVariable.ipclosingline}
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

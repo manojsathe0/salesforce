@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>gs9</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>G&amp;S No Description</name>
+    <style>none</style>
+    <subject>Missing Information for Your Trademark Application</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+When reviewing your order, we noticed that you did not enter a description of the products (“goods”) and services for your Trademark application.  This description is required for the U.S. Patent and Trademark Office (USPTO) to identify and assign an international classification number to your application.  Examples include &quot;Apparel, namely hats, t-shirts, sweatshirts&quot; or &quot;a retail store selling [insert products sold here]&quot;. See More Examples
+
+Because LegalZoom cannot provide legal advice, it is your responsibility to develop a description that is appropriate for your application.*  Although inadequate descriptions can sometimes be amended after a Trademark application has been filed, the scope of the description cannot be expanded.  Such amendments may also delay the registration process.
+
+Please reply to this email with your description of products and services.
+
+{!snippetVariable.ip_gs_closing}
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+* {!snippetVariable.tmoa_bap}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

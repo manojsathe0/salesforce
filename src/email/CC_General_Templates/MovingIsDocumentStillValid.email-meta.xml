@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>docvalmove</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Moving ? Is Document Still Valid?</name>
+    <style>none</style>
+    <subject>Moving ? Is Document Still Valid?</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+LegalZoom prepares documents in accordance with the laws and regulations of each customer&apos;s respective state.  The document will still be valid outside of the state for which it was prepared, but it is recommended that you make a change or a revision to the document if you move to another state.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

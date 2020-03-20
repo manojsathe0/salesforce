@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Answer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Answers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Answer --></label>
+        <name>Answer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Content Password --></label>
+        <name>Content_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keywords --></label>
+        <name>Keywords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Number --></label>
+        <name>Legacy_Article_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purpose --></label>
+        <name>Purpose__c</name>
+    </fields>
+    <layouts>
+        <layout>Answer Layout</layout>
+        <sections>
+            <label><!-- Answer --></label>
+            <section>Answer</section>
+        </sections>
+        <sections>
+            <label><!-- Due Date --></label>
+            <section>Due Date</section>
+        </sections>
+        <sections>
+            <label><!-- Keywords --></label>
+            <section>Keywords</section>
+        </sections>
+        <sections>
+            <label><!-- Purpose --></label>
+            <section>Purpose</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

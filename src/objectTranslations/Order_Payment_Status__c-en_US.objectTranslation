@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Payment Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Payment Status</value>
+    </caseValues>
+    <fields>
+        <label><!-- Order Payment Status ID --></label>
+        <name>Order_Payment_Status_ID__c</name>
+    </fields>
+    <layouts>
+        <layout>Order Payment Status Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

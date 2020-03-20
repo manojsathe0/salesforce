@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_61316227</developerName>
+        <masterLabel>PSD Teams</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>April Williams</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chyna Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristen Andas-Meranda</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>LaVern Browne</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Luis Villegas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sarah Somogyi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shennell Davis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susan Maruca</sourceValue>
+            </sourceValues>
+            <value>Glendale</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Alex Perales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carrie Frizzell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Caryn Neal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Darnisha Yates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Furstenberg</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeanelle Clum</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jennifer Phung</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keith Robinson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Rodriguez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robyn Hays</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robyn Robertson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sandra Balderas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Summer Rosales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susie Battle</sourceValue>
+            </sourceValues>
+            <value>Austin</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>OPEN</field>
+    </columns>
+    <columns>
+        <field>CLOSED</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Case.Reason1_Sub__c</field>
+    </columns>
+    <columns>
+        <field>CASE_COMMENT</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case.Created_By_Case_Wizard__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Reason1_Sub__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Other (explain in case comments)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CASE_COMMENT</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_61316227</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Case Wiz-Other-No Comment</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

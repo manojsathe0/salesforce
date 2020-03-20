@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CR (BAP)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>CR (BAP)</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in registering a Copyright.  We simplify the process for you by preparing and submitting the Copyright application to the U.S. Copyright Office.
+
+For your reference, general information regarding Copyright registration has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact an Intellectual Property Specialist at the phone number listed below.  By speaking with a Specialist, we will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+
+Copyright registrations typically protect works of original authorship, and may include items such as literary works, musical works and sound recordings, still and motion pictures, artistic and creative works, architectural works, and websites.  A registered Copyright allows you to control how the work is reproduced, distributed, and presented publicly, and to enforce against any infringements upon these rights.  Multiple works can be included in a single Copyright submission, as long as they are all in the same state of publication, either published or unpublished.
+
+Upon placing the order for your Copyright, you will be given instructions describing how to submit copes of your work(s) to LegalZoom, either by directly uploading the file, emailing copies, or submitting hard copies by mail.  Copyright registrations are typically submitted to the US Copyright Office within 7-10 business days of receiving copies of your work(s).  The US Copyright Office may take 6-9 months to complete the registration process.
+
+For specific legal or tax advice, we offer our Business Advantage Pro (BAP) membership to provide you with access to licensed attorneys and tax professionals.  This service provides unlimited half-hour consultations on new legal and/or tax matters with licensed attorneys and tax professionals to help you ensure you are making the best choice from a legal and/or tax perspective.  In addition, this membership provides unlimited access to our Legal Forms database, which includes over 100 legal business forms, and one free Copyright registration per month (excluding US Copyright Office filing fees).
+ 
+For your convenience, we have listed all relevant pricing below.
+ 
+BUSINESS ADVANTAGE PRO
+6-Month - $161.94 ($26.99/month)
+12-Month - $287.88 ($23.99/month)
+
+GET STARTED
+http://www.legalzoom.com/attorneys-lawyers/legal-plans/business.html
+
+COPYRIGHT
+Standard - $114.00 + $35.00 U.S. Copyright Office filing fee
+ 
+GET STARTED
+http://www.legalzoom.com/legal-copyrights/copyrights-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/legal-copyrights/copyrights-pricing.html
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

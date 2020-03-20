@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Non-CA status check - no quest. recvd.</name>
+    <style>none</style>
+    <subject>Non-CA status check - no quest. recvd.</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+ 
+Unfortunately, we are unable to prepare your claim documents until we receive your completed questionnaire. We are re-sending the questionnaire for your convenience. Please complete it and return it via e-mail, fax at (323) 446-8479, or mail to: 
+
+LegalZoom.com, Inc.
+Attn: Small Claims
+101 N. Brand Blvd., 10th Floor 
+Glendale, CA 91203
+
+Once we receive the completed questionnaire, we will prepare all of your court forms and send them to you with detailed instructions on how to file your claim.
+ 
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+We truly appreciate your business and look forward to serving your future legal document needs.
+ 
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

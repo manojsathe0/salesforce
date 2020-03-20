@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>sou4</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Filing Confirmation</name>
+    <style>none</style>
+    <subject>Filing Confirmation</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Your XXXX form has been processed today.  You will receive a time sensitive email from the US Patent and Trademark Office (teas@uspto.gov) and a forward of the exact same email from XXXXXXX@legalzoom.com requesting your electronic signature (e-signature) of the application form.  Note you only have 14 days from the day your application is processed to e-sign.    
+
+Please review the application for accuracy before signing. 
+
+Please note that LegalZoom&apos;s policy allows you 60 days from the time of purchase to request a refund for an unfiled application. If you would like to refer to this policy, please visit the link below: https://www.legalzoom.com/satisfaction-guarantee.html.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Regards,
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

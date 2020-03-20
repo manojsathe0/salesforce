@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_94084656</developerName>
+        <masterLabel>Intellectual Properties</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Joshua Hart</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ennio Ochoa</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Isabel Valencia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Marlon Andino</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>William Shahin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maria Clark</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Abigail Barrientez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vance Parker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Liliana Cansiani</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Tashjian</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sevan Pogosyan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lawrence Schuman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Rasmussen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cesar Ortiz</sourceValue>
+            </sourceValues>
+            <value>Intellectual Property</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Natalie Karamian</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jillian Fonacier</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Joyce Santos</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bill Jennings</sourceValue>
+            </sourceValues>
+            <value>Intellectual Property2</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>Case.Order_Number__c</field>
+    </columns>
+    <columns>
+        <field>ORIGIN</field>
+    </columns>
+    <columns>
+        <field>field_key</field>
+    </columns>
+    <columns>
+        <field>OLDVAL</field>
+    </columns>
+    <columns>
+        <field>NEWVAL</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Case.Units__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_94084656</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>BucketField_94084656</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Intellectual Property,Intellectual Property2</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IP TM Team Cases Worked (Yesterday)</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

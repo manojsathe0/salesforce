@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>nshani@legalzoom.com</contactEmail>
+    <label>IdentityConnect</label>
+    <oauthConfig>
+        <callbackUrl>https://sso.legalzoom.com:8443/admin/index.html#salesforceCallback</callbackUrl>
+        <consumerKey>3MVG98XJQQAccJQeWwhe.mHbVSGUs2iVgNGk1LQ6WmqWxjGcoG4em9TXZmID72Dgn3N6XS5LF4.wp37sbQOjC</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>

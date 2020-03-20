@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.aaq</name>
+    <style>none</style>
+    <subject>aaq</subject>
+    <textOnly>Can&apos;t find the answer you&apos;re looking for to a question, visit this site, www.legalzoom.com/questions.html, to ask a LegalZoom specialist.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

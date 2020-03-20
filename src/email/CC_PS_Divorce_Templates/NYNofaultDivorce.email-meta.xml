@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>nynof</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NY No-fault Divorce</name>
+    <style>none</style>
+    <subject>NY No-fault Divorce</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry. 
+
+On August 13, the Governor of New York signed legislation that will reform the state?s divorce laws significantly.  The week of October 11, 2010, New York joined the other 49 states in allowing couples to choose a ?no fault? divorces, a form of divorce in which neither spouse needs to have misbehaved for the marriage to dissolve.  LegalZoom is currently updating its New York Divorce forms and instructions to include these historic changes.
+
+We appreciate your patience while LegalZoom incorporates the newly released changes into the documents. These changes should be completed on November 12, at which point LegalZoom will contact you to provide an estimate of when your package will be complete. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

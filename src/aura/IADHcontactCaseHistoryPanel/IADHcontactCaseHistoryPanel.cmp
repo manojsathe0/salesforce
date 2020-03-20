@@ -1,0 +1,58 @@
+<aura:component controller="IADContactCaseHPanelController_ltng" implements="flexipage:availableForAllPageTypes,force:hasRecordId" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="allcases" type="object[]" />
+    <aura:attribute name="hascases" type="boolean" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:if isTrue="{!v.hascases}">
+        <aura:iteration items="{!v.allcases}" var="theProblemCase" >
+            <div class="slds-m-top--small">
+                <div class="slds-m-top--xxx-small slds-text-body--small">
+                    <span >
+                        
+                        <lightning:icon iconName="standard:case"   size="x-small" />
+                        <a  data-value="{!theProblemCase.theCase.Id}" onclick="{!c.handleClick}" title="Click to open case">{!theProblemCase.theCase.CaseNumber}</a>
+                    </span>
+                    
+                </div>
+                <div class="slds-m-top--xxx-small slds-text-body--small" title="Subject">
+                    {!theProblemCase.theCase.Subject}
+                </div>
+                <div class="slds-m-top--xxx-small slds-text-body--small" title="Case Status">
+                    <b>{!theProblemCase.theCase.Status}</b>
+                </div>
+                
+                <div class="slds-m-top--xxx-small slds-text-body--small" title="Status Reason">
+                    {!theProblemCase.theCase.Status_Reasons__c}
+                </div>
+                
+                <div class="slds-m-top--xxx-small slds-text-body--small" style="{!theProblemCase.theCase.Order_Exception__r.Exception_Type__c=='Problem'?'':'display:none;'}">
+                    <b> Problem Order </b>
+                </div>
+                
+                <div class="slds-m-top--xxx-small slds-text-body--small" title="Case Status">
+                    <ui:outputText value="{!theProblemCase.theOrderItemLabel}" />
+                </div>
+                
+                <div class="slds-m-top--xxx-small slds-text-body--small">
+                    <lightning:formattedDateTime value="{!theProblemCase.theCase.CreatedDate}" year="numeric" month="numeric" day="numeric"  hour="2-digit" minute="2-digit"  />
+                    
+                    
+                </div>
+            </div>
+            <br/>
+            
+        </aura:iteration>
+        <a onclick="{!c.openTabWithSubtab}" styleClass="slds-text-body--x-small" title="See All Cases"><b><u>See All</u></b></a>
+        <aura:set attribute="else">
+            <div align="center" class="slds-theme_default" >
+                <span class="slds-icon__container slds-icon-standard-approval ">
+                    <lightning:icon iconName="action:approval"  />
+                </span>
+                <p class="slds-text-heading slds-text-align--center">no open cases or problem orders</p>
+            </div>
+            
+            
+        </aura:set>
+    </aura:if>
+</aura:component>

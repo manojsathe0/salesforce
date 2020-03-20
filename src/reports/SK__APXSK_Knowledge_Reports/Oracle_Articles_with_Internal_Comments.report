@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>IP_Navigator__ka.IP_Navigator__kav$ArticleType</field>
+    </columns>
+    <columns>
+        <field>IP_Navigator__ka.IP_Navigator__kav$IsLatestVersion</field>
+    </columns>
+    <columns>
+        <field>IP_Navigator__ka.IP_Navigator__kav$Id</field>
+    </columns>
+    <columns>
+        <field>IP_Navigator__ka.IP_Navigator__kav$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>IP_Navigator__ka.IP_Navigator__kav$Oracle_ID__c</field>
+    </columns>
+    <columns>
+        <field>IP_Navigator__ka.IP_Navigator__kav$Title</field>
+    </columns>
+    <columns>
+        <field>IP_Navigator__ka.IP_Navigator__kav$Internal_Comments__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Oracle Articles with Internal Comments</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Article_Type_Oracle__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>IP_Navigator__ka$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Customer Care</label>
+            <name>Customer_Care</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Special Handling</label>
+            <name>Special_Handling</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Sales</label>
+            <name>Sales</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Fulfillment</label>
+            <name>Fulfillment</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Shipping</label>
+            <name>Shipping</name>
+        </dataCategory>
+        <label>All Functions</label>
+        <name>All_Functions</name>
+    </dataCategory>
+    <description>Articles grouped by LZ function</description>
+    <label>Function</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

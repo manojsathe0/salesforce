@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User$Division</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>joseph greene</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>CC Email Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_and_Email_Created_by__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

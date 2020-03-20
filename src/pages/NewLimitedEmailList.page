@@ -1,0 +1,152 @@
+<apex:page standardController="Case" extensions="NewLimitedEmailController" title="Integrated Email List - {!Case.Subject}"  >
+<apex:includeScript value="/support/console/20.0/integration.js"/>
+<script type="text/javascript" language="javascript">
+ 
+  function gotolist(){         
+                var pageName = "NewEmailList";
+                var url = "/apex/" + pageName+"?id={!Case.Id}";                
+                if (sforce.console.isInConsole()) {            
+                   openSubtab(url, 'List All');
+                }else{
+                   window.open(url, '_parent');            
+                }           
+   }
+
+  function gotolist2(index , id , objectName){         
+                var pageName = "NewEmailList";
+                var url = "/apex/" + pageName+"?id={!Case.Id}&objectId="+id+"&indexRowNum="+index+"&sObjectName="+objectName;
+                if (sforce.console.isInConsole()) {            
+                    openSubtab(url, 'List All');
+                }else{
+                    window.open(url, '_parent');            
+                }           
+  }     
+  
+  var url = null;
+  var titlename = null;
+  
+  function openPrimaryTab() {
+      sforce.console.openPrimaryTab(undefined,'http://www.salesforce.com', true, 'salesforce');
+  }
+        
+      //The callback function that openSubtab will call once it's got the ID for its primary tab
+        var callOpenSubtab=function callOpenSubtab(result) {
+            sforce.console.openSubtab(result.id, url , true,titlename );
+        };
+        
+        function openSubtab(urllink,title) {     
+            url = urllink;
+            titlename = title;
+            if (sforce.console.isInConsole()) {            
+                sforce.console.getEnclosingPrimaryTabId(callOpenSubtab);
+            }
+            else{
+                window.open(url, '_blank');            
+            }           
+        }
+
+        //Sets the title of the current tab to "SFDC"
+        function setTitle() {
+            sforce.console.setTabTitle('SFDC');
+        }
+        
+        //The callback function that closeTab will call once it's got the ID for its tab
+        var callCloseTab= function callCloseTab(result) {
+            sforce.console.closeTab(result.id);
+        };
+        
+        function closeTab() {
+            sforce.console.getEnclosingTabId(callCloseTab);
+        }
+ 
+    function toggle2(showHideDiv, switchTextDiv) {
+        var ele = document.getElementById(showHideDiv);
+        var text = document.getElementById(switchTextDiv);
+        if(ele.style.display == "block") {
+                ele.style.display = "none";
+            text.innerHTML = "+";
+        }
+        else {
+            ele.style.display = "block";
+            text.innerHTML = "-";
+        }
+     } 
+function Refresh(){
+    if (sforce.console.isInConsole()) {
+        top.location='/ui/support/servicedesk/ServiceDeskPage?tsid={!Case.Id}';
+    }else{
+        top.location='/{!Case.Id}';
+    }        
+}        
+</script>
+<apex:stylesheet value="{!URLFOR($Resource.SFDCStyles, 'SFDCStyles/all.css')}"/>
+<style>
+    .headerStyle{background-color:PowderBlue;color:#000000;text-align:left}
+    A:link {text-decoration: none}
+    A:visited {text-decoration: none;color: RoyalBlue  }
+    A:active {text-decoration: none}
+    A:hover {text-decoration: underline; color: RoyalBlue }        
+</style>
+<apex:includeScript value="/support/console/22.0/integration.js"/>
+  
+<apex:form >
+<apex:outputPanel id="ReRenderArea">
+    <apex:pageMessages escape="false" />
+          
+</apex:outputPanel>
+<apex:outputPanel >    
+<apex:pageMessage rendered="{!NOT(ISBLANK($CurrentPage.parameters.message))}" summary="{!$CurrentPage.parameters.message}" severity="CONFIRM" strength="3" title="Success"/>    
+</apex:outputPanel>
+<apex:outputPanel >    
+<apex:pageMessage rendered="{!NOT(ISBLANK($CurrentPage.parameters.messagefail))}" summary="{!$CurrentPage.parameters.messagefail}" severity="ERROR" strength="3" title="Fail"/>    
+</apex:outputPanel>
+    <apex:PageBlock >
+        <apex:pageBlockButtons location="top">
+            <apex:actionStatus id="statusUpdating">
+                                <apex:facet name="start">
+                                    <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+                                </apex:facet>
+            </apex:actionStatus>
+        </apex:pageBlockButtons>
+        <apex:variable value="{!1}" var="rowNum"/>     
+    <apex:PageBlockTable value="{!ListOfEmail}" var="a" columns="7" rows="5" style="text-decoration:none;" width="100%" cellspacing="0">
+    <apex:column headerValue="Detail" width="5%" headerClass="headerStyle" style="text-align:center;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+        <a id="myHeader{!rowNum + 1}" href="#" onClick="gotolist2('{!rowNum + 1}', '{!a.Id}' ,'{!a.sObjectName}')" style="font-size:12pt;color:rgb(50,120,180)">[ + ]</a>
+    </apex:column>
+    
+    <apex:column headerValue="Action" width="5%" headerClass="headerStyle" style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+          <apex:outputPanel >
+          <apex:commandLink action="{!SendEmail}" value="Resend" status="statusUpdating" rendered="{! a.legacyid == '' && a.status != 'Draft' && a.statustip=='Outbound'}"  style="color:rgb(50,120,180)" onclick="if(confirm('Confirm to send this email: {!a.subject}?')){}else{return false;}" oncomplete="Refresh();" immediate="true">
+          <apex:param name="objectName" value="{!a.sObjectName}" />
+          <apex:param name="objectId" value="{!a.Id}" />
+          </apex:commandLink>&nbsp;
+       </apex:outputPanel>
+    </apex:column>
+    
+    <apex:column headerValue="Status" value="{!a.status}" width="10%" headerClass="headerStyle"  style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey"/>
+    <apex:column headerValue="Remark"  width="10%" headerClass="headerStyle" style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+        <apex:variable var="imageVar" value="{!a.inboundPicture}"/> 
+        <apex:image url="{!URLFOR($Resource.EmailPicture, imageVar)}"  rendered="{!imageVar != ''}" title="{!a.statusTip}" />    
+        &nbsp;
+        <apex:variable var="imageVar2" value="{!a.attachmentPicture}"/> 
+        <apex:image url="{!URLFOR($Resource.EmailPicture, imageVar2)}" rendered="{!imageVar2 != ''}" title="Has Attachment" />    
+    </apex:column>
+    
+    <apex:column headerValue="Subject" width="30%" headerClass="headerStyle" style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey">        
+            <u><a href="#" onClick="gotolist2('{!rowNum + 1}' , '{!a.Id}' , '{!a.sObjectName}')" style="color:black">{!a.subject}</a></u>&nbsp; 
+            <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+    </apex:column>
+        
+    <apex:column headerValue="Email Address" value="{!a.email} " width="25%" headerClass="headerStyle"  style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey"/>
+    <apex:column headerValue="Message Date" value="{!a.CreatedDate}" width="15%" headerClass="headerStyle"  style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey"  />
+       
+    </apex:pageBlockTable>         
+         <apex:outputPanel rendered="{!ListOfEmail.size == 0}" >
+                    <apex:outputText value="No records to display" />
+         </apex:outputPanel>
+    </apex:PageBlock>
+     <apex:outputPanel rendered="{!ListOfEmail.size != 0}">
+                <u><a href="#" onClick="gotolist()" style="color:rgb(50,120,180)">Go To List</a></u>
+     </apex:outputPanel>        
+</apex:form>
+</apex:page>

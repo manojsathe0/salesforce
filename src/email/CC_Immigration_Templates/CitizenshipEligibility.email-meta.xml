@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>CitiznElig</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Citizenship Eligibility</name>
+    <style>none</style>
+    <subject>Citizenship Eligibility</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+Please visit our website and take our free eligibility quiz to see if you are eligible for the type of service that we provide. 
+
+You can find our eligibility quiz by visting http://www.insexperts.com/en/nat/lz/EQ/n400qage.jsp
+
+If you do not pass our free eligibility quiz, it does not necessarily mean that you are not eligible for citizenship. Rather, it simply means that you are not eligible for the type of service that we provide.
+
+You may also want to contact the Bureau of U.S. Citizenship and Immigration Services (USCIS) to explore your options. Please visit the following link:
+
+http://uscis.gov/graphics/index.htm
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

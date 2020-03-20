@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Compliance_Supervisors</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Compliance Supervisors</label>
+        <sharedTo>
+            <role>Compliance_Management</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Team Management,Compliance Team Management,Service Team Management</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sales_Team_Mgmt</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Team Management Object Sharing Rule</description>
+        <label>Sales - Team Mgmt</label>
+        <sharedTo>
+            <group>Team_Management_Sales</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales Team Management</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Services_Team_Mgmt</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Services - Team Mgmt</label>
+        <sharedTo>
+            <role>CC_AS_Manager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Service Team Management</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

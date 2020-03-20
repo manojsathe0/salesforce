@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>gold1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RE Lease Gold package Completion</name>
+    <style>none</style>
+    <subject>RE Lease Gold package Completion</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for ordering your Gold Residential Lease Agreement from LegalZoom.com.   Your customized order has been completed and is attached to this email that includes the following documents: 
+? Your Customized Residential Real Estate Lease Agreement
+? State Required Disclosure Forms: Lead Disclosure Pamphlet, Lead Warning and Disclosure Statement
+? Move-in/Move-out and Exception Checklists
+? Important Tenant Forms: Consent to Background and Credit Investigation, Salary Verification Form, and Welcome Letter 
+? Helpful Landlord Documents: What do I do Next Guide, Landlord Consent Form, Notice of Default in Rent Payment Warning, 3-Day Notice to Pay Rent or Quit, Move-out Letter
+? 3 free LegalZoom guides to help you manage your property: Maintaining a Successful Relationship With Your Tenant Pamphlet, Rental Property Operations Pamphlet, and Understanding Your Security Deposit
+
+To view the PDF attachment: Open the attached PDF file. You must have Acrobat? Reader?. You may download Acrobat? Reader?. for free at: (http://www.adobe.com/read).
+
+To finalize the lease agreement, please follow the steps below:
+1. Review the documents.
+2. Arrange for all parties to sign on the signature page.
+3. Date the lease.
+4. Make a copy of the lease for each tenant?s files.  Be sure to keep the original in a safe place.  You may also want to keep a ?reference? copy somewhere convenient for quick access.
+
+Revisions
+? $9.95 per revision after 30 days from purchase (revisions are sent electronically via email) 
+? Your order is limited to ?one? rental property address (You may not transfer this order to a different property)
+
+To submit a revision, please follow the steps listed below:
+1. Visit www.legalzoom.com and click on the &quot;MY ACCOUNT&quot; link
+2. Enter your email address and password in the &quot;Existing Members&quot; section of the Sign-In page. Please be sure to enter the email address and password you used when you originally placed the order.
+3. Click the &quot;Check Status&quot; link next to the document you want to revise.
+4. Click the &quot;Revise Order&quot; link. This will allow you to access your previously completed questionnaire.
+5. Update your information in the questionnaire. Please click through to the final page of the questionnaire. Your revision will be emailed to the email address used in the original order.
+
+Thank you again for choosing LegalZoom.com.  We look forward to serving your future legal document needs.    If you have any questions regarding your order please feel free to contact us at {!snippetVariable.ccphone}, or simply reply to this email.  Our Customer Support business hours are {!snippetVariable.cchours}.
+ 
+Best regards,
+
+The LegalZoom Team
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

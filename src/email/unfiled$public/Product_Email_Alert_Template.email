@@ -1,0 +1,6 @@
+<messaging:emailTemplate subject="Email Alert Product Update" >
+    <messaging:htmlEmailBody >
+        <c:Product_Email_Template_Components >
+        </c:Product_Email_Template_Components>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>chgwillnlz</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Changing a Will LegalZoom did not Create</name>
+    <style>none</style>
+    <subject>Changing a Will LegalZoom did not Create</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+
+Thank you for your recent inquiry.  In regards to your question, LegalZoom at this time is not able to revise, change or amend a document that was not initially prepared by LegalZoom.  However, creating a new Will with LegalZoom is simple, efficient and fast.  LegalZoom will process your document accordingly so that once the document is properly executed (LegalZoom will provide instructions for this step), the document should be legal and valid and automatically supersede any pre-existing Wills.
+ 
+To get started, simply log onto www.legalzoom.com with an email address and complete an online questionnaire.  You are not obligated to submit payment until you have completed the questionnaire and are ready to do so.
+
+I have included a complimentary ?Estate Planning Guide? to help you become more familiar with LegalZoom&apos;s documents.
+
+Please call us toll-free at (800) 962-7490 if we can be of further assistance.  We look forward to hearing from you soon.
+ 
+Best regards,
+ 
+The LegalZoom Team
+{!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

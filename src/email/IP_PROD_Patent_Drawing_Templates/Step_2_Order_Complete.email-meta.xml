@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>draw3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Step 2 Order Complete</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order #</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Your Utility Patent Step 1 order is complete. To move forward with your Utility Patent Step 2, which includes the preparation and filing of your application with the U.S. Patent and Trademark Office, please submit your order through this link:
+
+http://www.legalzoom.com/utility-patents/utility-patents-pricing2.html
+
+Note: The standard turnaround to prepare and file your Utility Patent is 4 weeks. If you require an expedited process, the law firm preparing your application may require an additional fee for faster-than-normal turnaround. Once the order has been submitted, the law firm will contact you directly with your options for payment.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>namewrong</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Wrong state</name>
+    <style>none</style>
+    <subject>Wrong state</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for placing your Name Change order with LegalZoom, America&apos;s #1 online legal source.
+
+We have received your order for the state of [state]. Based on the state of residency you have listed on your questionnaire, your name change will need to be filed in [state]. Your current order #[XXXXX] will be cancelled and a refund will be issued to your account. Please return to LegalZoom&apos;s website at www.legalzoom.com to complete a new order for the state of [state]. We apologize for any inconvenience that this may cause.
+
+If you have any questions, please call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

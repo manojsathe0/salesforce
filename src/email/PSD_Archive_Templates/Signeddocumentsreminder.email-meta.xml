@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>sigremind</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Signed documents reminder</name>
+    <style>none</style>
+    <subject>Signed documents reminder</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We recently sent you your prepared small claims form for your signature.  We cannot proceed with your filing until we receive the signed original documents. For your convenience, we have re-attached the form to this email. Please print out three copies, collect all the plaintiffs&apos; signatures as indicated at the bottom of page 3, and mail them to:
+
+LegalZoom.com, Inc.
+Attn: Small Claims
+101 N. Brand Blvd.
+10th Floor
+Glendale, CA 91203
+
+PLEASE REFERENCE YOUR ORDER NUMBER WHEN RETURNING YOUR DOCUMENTS.
+
+Once we receive your signed documents, we will file them with the appropriate court and obtain a hearing date. 
+If you have any further questions, simply reply to this email, or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

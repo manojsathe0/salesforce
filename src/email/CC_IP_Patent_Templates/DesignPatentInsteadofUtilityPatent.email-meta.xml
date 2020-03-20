@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>DPvsPPA</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Design Patent Instead of Utility Patent</name>
+    <style>none</style>
+    <subject>Design Patent Instead of Utility Patent</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+
+Upon closer review of your application, the core innovation of your invention appears to be heavily infused with design.  That is, the new or improved use of the product stems directly from the way that it looks, such that the design cannot be separated from its innovative function.  If you determine this is the case, then your invention may be best suited for a design patent rather than a utility patent.  If you decide to file a design patent, you will not be able to use the provisional patent product, which is only available for utility patent applications.
+
+Though utility patents are the most common form of patent, design patents are in a specialized class and the requirement standards and protection for each therefore differ.  Design patents protect the design of an invention, while utility patents protect the way an invention is made and used.  Some inventions qualify for only one type of patent protection, but you should also note that a small number of inventions may qualify for both design and utility patenting. Design patent applications may be filed by either the inventor, or by a registered patent attorney or agent (a current list is available at the United State Patent and Trademark Office (USPTO) website).  
+
+If you&apos;re not sure what type of patent protection is appropriate for your situation, please contact the USPTO at 1.800.786.9199 (ask for the Inventor&apos;s Assistance Center) or visit http://www.uspto.gov/web/offices/com/iip/index.htm for more information. 
+
+LegalZoom is not a law firm and cannot provide you with legal advice.  However, we want to make sure you are aware of the various options that are available to inventors and artists so that you can make a fully informed decision.
+
+When considering this issue, please let us know whether: 
+
+(1) You believe, after reviewing these materials, that your invention qualifies for utility patent protection and would like us to move forward with this filing, OR
+
+(2) You would rather cancel the order and/or file for a design patent. 
+
+At this time, we can offer you a full refund if you decide to cancel. Alternatively, we can place your order on temporary hold, pending your decision.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

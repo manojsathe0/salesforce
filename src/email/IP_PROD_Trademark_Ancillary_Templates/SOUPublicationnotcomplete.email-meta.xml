@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tm sou1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SOU - Publication not complete</name>
+    <style>none</style>
+    <subject>Response Required: LegalZoom Order#</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Upon review of your Trademark application, it appears that the U.S. Patent and Trademark Office (USPTO) has approved it for publication in the Official Gazette. During examination, if the examining attorney raises no objections to registration, or if the applicant overcomes all objections, the examining attorney will approve the mark for publication in the Official Gazette.
+
+The USPTO will send a Notice of Publication to the applicant stating the date of publication. Any party who believes it may be damaged by registration of the mark has thirty (30) days from the publication date to file either an opposition to registration or a request to extend the time to oppose.
+
+If no opposition is filed or if the opposition is unsuccessful, the application enters the next stage of the registration process. A Notice of Allowance wil bel issued to the applicant for intent-to-use applications. Because the Notice of Allowance has not yet been issued by your examiner, the Statement of Use form is not currently applicable.
+
+Please reply and let us know if you wish for a full refund on your order. Otherwise, we can keep your order on hold until you receive your Notice of Allowance from the USPTO. To check the status of your application, please visit the USPTO website.
+
+Refunds must be requested within 60 days of purchase. If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

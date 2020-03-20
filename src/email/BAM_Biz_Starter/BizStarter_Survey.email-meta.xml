@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP7</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BizStarter_Survey</name>
+    <style>none</style>
+    <subject>Following up on our conversation</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you again for reaching out to our business starter team.
+
+To help us continually improve our service, please take a quick, 5-minute survey to give us your feedback.
+
+Take Survey
+
+As always, should you need additional help, please don’t hesitate to contact me at (855) 787-1953 Monday–Friday from 8 a.m.–5 p.m. PT or email me anytime at BizHelp@legalzoom.com
+
+
+{!User.Name}
+Business Account Manager
+(855) 787-1953
+BizHelp@legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

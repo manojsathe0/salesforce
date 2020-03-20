@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LWTExec</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Last Will - No Executor</name>
+    <style>none</style>
+    <subject>Last Will - No Executor</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+We are writing to notify you that your recent order for a Last Will and Testament is on hold. As soon as you contact us to clarify the following problem, we can complete your order.
+
+Currently, you have not named an Executor for your Will, and you need to select at least one.  The Executor will serve as your personal representative and will be responsible for carrying out the intentions in your Will. 
+
+To correct this problem, please contact me or log back into www.legalzoom.com with your username and password and reopen order #XXXXXXXX to provide the name and relation of your chosen Executor.  You can also name up to 2 alternates.
+
+If you have any additional questions, simply reply to this email or call us toll-free at 1-888-821-7574.  We appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

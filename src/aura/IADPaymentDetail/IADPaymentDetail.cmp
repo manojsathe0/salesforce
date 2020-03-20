@@ -1,0 +1,173 @@
+<aura:component controller="IADPendingPaymentController_ltng"
+   implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId">
+   <lightning:workspaceAPI aura:id="workspace" />
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+   <aura:attribute name="paymentdetails" type="object" />
+   <aura:attribute name="transactiontype" type="string" />
+   <aura:attribute name="transactionid" type="string" />
+   <aura:attribute name="transactionlabel" type="string" />
+   <aura:attribute name="profilelabel" type="string" />
+   <aura:attribute name="refundtrasactionlabel" type="string" />
+   <aura:attribute name="isNotAFinanceUser" type="Boolean" default="true" />
+   <aura:attribute name="clearedDeclinedDate" type="String" />
+   <aura:attribute name="spinner" type="boolean" default="false"></aura:attribute>
+   <!-- Added Newly By Harsha Reddy - 03/26/2019 - Starts Here -STORY B-38496-->
+   <aura:attribute name="statusOptions" type="List"
+      default="[{'label': 'Approved', 'value': 'Approved'},{'label': 'Declined', 'value': 'Declined'},{'label': 'Pending', 'value': 'Pending'},{'label': 'Unset', 'value': 'Unset'},{'label': 'Posted', 'value': 'Posted'},{'label': 'Error', 'value': 'Error'},{'label': 'Chargeback', 'value': 'Chargeback'}]" />
+   <!--
+      <aura:attribute name="statusOptions1" type="List" default="[
+      {'label': 'Approved', 'value': 'Approved'},
+      {'label': 'Declined', 'value': 'Declined'},
+      ]"/>
+      -->
+   <aura:attribute name="showClearOrDeclineDate" type="boolean" default="false"></aura:attribute>
+   <aura:attribute name="showSubmit" type="boolean" default="false"></aura:attribute>
+   <aura:attribute name="changeType" type="string" default=""></aura:attribute>
+   <aura:attribute name="paymentStatus" type="string"
+      default="{! if(not(empty(v.paymentdetails.iadStatus)), v.paymentdetails.iadStatus,'')}"></aura:attribute>
+   <!-- Added Newly By Harsha Reddy - 03/26/2019 - Ends Here -STORY B-38496-->
+   <aura:attribute name="showCheckFields" type="boolean" default="false"></aura:attribute>
+   <aura:attribute name="showReasonFields" type="boolean" default="false"></aura:attribute>
+   <aura:attribute name="reasonCode" type="string" default="0000"></aura:attribute>
+   <aura:attribute name="reasonText" type="string" default=""></aura:attribute>
+
+   <!-- STORY B-39061 -->
+   <aura:attribute name="errorMessage" type="string" default=""></aura:attribute>
+   <!-- STORY B-39061 -->
+
+   <aura:registerEvent name="appEvent" type="c:IADPaymentProfileLabel" />
+   <lightning:card>
+      <aura:set attribute="title">
+         <lightning:icon iconName="custom:custom17" size="small" name="icon" />
+         <b>{!v.transactionlabel} Details</b>
+      </aura:set>
+      <aura:set attribute="body">
+         <!-- STORY B-39061 -->
+         <aura:if isTrue="{!not(empty(v.errorMessage))}">
+            <div class="slds-notify slds-notify_alert  slds-theme_error">
+               <span class="slds-m-right_x-small">
+                  <lightning:icon iconName="utility:error" variant="inverse" size="xx-small"
+                     class="slds-icon-text-error">
+                  </lightning:icon>
+               </span>
+               <p>
+                  <lightning:formattedText value="{!v.errorMessage}"></lightning:formattedText>
+               </p>
+            </div>
+         </aura:if>
+         <!-- STORY B-39061 -->
+         <aura:if isTrue="{! v.spinner}">
+            <lightning:spinner variant="brand" size="large" aura:id="mySpinner1" />
+         </aura:if>
+         <aura:if isTrue="{! if(not(empty(v.paymentdetails)), true, false)}">
+            <div class="c-container">
+               <lightning:layout multipleRows="true">
+                  <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                     <lightning:input label="{!v.transactionlabel}" class="slds-size_1-of-2" name="transactionid"
+                        value="{!v.paymentdetails.paymentTransactionId}" disabled="true" />
+                  </lightning:layoutItem>
+                  <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                     <c:IADPaymentProfileLabel_ltng></c:IADPaymentProfileLabel_ltng>
+                  </lightning:layoutItem>
+                  <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                     <lightning:input label="Payment Type" class="slds-size_1-of-2" name="paymentType"
+                        value="{!v.paymentdetails.paymentType == '0' ? 'Unset' : v.paymentdetails.paymentType == '1' ? 'CreditCard' : v.paymentdetails.paymentType == '2' ? 'eCheck' : v.paymentdetails.paymentType == '3' ? 'ManualCheck' : v.paymentdetails.paymentType == '4' ? 'StoreCredit' : v.paymentdetails.paymentType == '5' ? 'Cash' : v.paymentdetails.paymentType == '6' ? 'ThirdPartyPayment' : ''}"
+                        disabled="true" />
+                  </lightning:layoutItem>
+                  <aura:if isTrue="{!v.isNotAFinanceUser}">
+                     <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                        <lightning:input label="Status"
+                           class="{!v.paymentdetails.iadStatus=='Declined'?'status slds-size_1-of-2':'slds-size_1-of-2'}"
+                           name="status" value="{!v.paymentdetails.iadStatus}" disabled="true" />
+                     </lightning:layoutItem>
+                     <aura:set attribute="else">
+                        <aura:if
+                           isTrue="{! if( not(empty(v.paymentStatus)) ,(or(and(or(equals(v.paymentdetails.paymentType,'1'),equals(v.paymentdetails.paymentType,'3')),equals(v.transactionlabel,'Payment')), and(equals(v.paymentdetails.paymentType,'3'),equals(v.transactionlabel,'Refund')))),false) }">
+                           <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                              <lightning:combobox name="creditStatus" label="Status" value="{!v.paymentStatus}"
+                                 options="{!v.statusOptions}" onchange="{! c.handleStatusChange }"
+                                 class="slds-size_1-of-2" aura:id="creditCardStatusId" />
+                           </lightning:layoutItem>
+                           <aura:set attribute="else">
+                              <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                                 <lightning:input label="Status"
+                                    class="{!v.paymentdetails.iadStatus=='Declined'?'status slds-size_1-of-2':'slds-size_1-of-2'}"
+                                    name="status" value="{!v.paymentdetails.iadStatus}" disabled="true" />
+                              </lightning:layoutItem>
+                           </aura:set>
+                        </aura:if>
+                     </aura:set>
+                  </aura:if>
+                  <aura:if isTrue="{!v.showClearOrDeclineDate}">
+                     <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                        <lightning:input aura:id="manualCheckForm" type="date" name="clearedDeclinedDate"
+                           label="Cleared/Declined Date" value="{!v.clearedDeclinedDate}" class="slds-size_1-of-2" />
+                     </lightning:layoutItem>
+                  </aura:if>
+                  <aura:if isTrue="{!v.showReasonFields}">
+                     <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                        <lightning:input aura:id="reasonTextId" type="text" name="" label="Reason Text"
+                           value="{!v.reasonText}" class="slds-size_1-of-2" />
+                     </lightning:layoutItem>
+                  </aura:if>
+                  <aura:if isTrue="{!v.showCheckFields}">
+                     <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                        <lightning:input type="datetime" name="input2" class="slds-size_1-of-2 " label="Check Date"
+                           required="true" aura:id="checkDateId"></lightning:input>
+                     </lightning:layoutItem>
+                     <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                        <lightning:input name="input6" required="true" class="slds-size_1-of-2 " label="Check No"
+                           maxlength="30" aura:id="checkNumberId"></lightning:input>
+                     </lightning:layoutItem>
+                  </aura:if>
+                  <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                     <lightning:input class="slds-size_1-of-2" label="Created Date" name="Created Date"
+                        value="{!v.paymentdetails.createdDateTimeInString}" disabled="true" />
+                  </lightning:layoutItem>
+                  <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                     <lightning:input class="slds-size_1-of-2" label="Entered By" name="Entered By"
+                        value="{!v.paymentdetails.createdBy}" disabled="true" />
+                  </lightning:layoutItem>
+                  <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                     <lightning:input class="slds-size_1-of-2" label="Last Modified Date" name="Last Modified Date"
+                        value="{!v.paymentdetails.statusDateTimeInString}" disabled="true" />
+                  </lightning:layoutItem>
+                  <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                     <lightning:input class="slds-size_1-of-2" label="Amount" name="Amount"
+                        value="{!'$'+v.paymentdetails.amount}" disabled="true" />
+                  </lightning:layoutItem>
+                  <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                     <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-1">Comments</label>
+                        <div class="slds-form-element__control slds-size_1-of-2 slds-cell-wrap ">
+                           <lightning:formattedText value="{!v.paymentdetails.comments}" class="  slds-input border"
+                              disabled="true" />
+                        </div>
+                     </div>
+                  </lightning:layoutItem>
+                  <aura:if isTrue="{!v.transactionlabel=='Refund'}">
+                     <lightning:layoutItem size="12" class="slds-p-bottom_x-small slds-p-left_x-small">
+                        <lightning:input class="slds-size_1-of-2 " label="Transaction for Refund"
+                           name="Transaction for refund" value="{!v.refundtrasactionlabel}" disabled="true" />
+                     </lightning:layoutItem>
+                  </aura:if>
+               </lightning:layout>
+               <!-- STORY B-39061 -->
+               <aura:if
+                  isTrue="{! if(not(empty(v.paymentdetails.mailingAddress)), and(equals(v.transactionlabel,'Refund'), equals(v.paymentdetails.paymentType,'3')),false) }">
+                  <c:paymentDetailsAddress mailingAddress="{!v.paymentdetails.mailingAddress}"
+                     isFinanceUser="{!v.isNotAFinanceUser}" onaddresschange="{!c.handleAddressChanges}">
+                  </c:paymentDetailsAddress>
+               </aura:if>
+               <!-- STORY B-39061 -->
+            </div>
+         </aura:if>
+      </aura:set>
+      <aura:set attribute="footer">
+         <lightning:button variant="neutral" label="Close" onclick="{! c.closeFocusedTab }" />
+         <aura:if isTrue="{! v.showSubmit}">
+            <lightning:button variant="brand" label="Update" onclick="{!c.validateFormAndupdateTransactionStatus}" />
+         </aura:if>
+      </aura:set>
+   </lightning:card>
+</aura:component>

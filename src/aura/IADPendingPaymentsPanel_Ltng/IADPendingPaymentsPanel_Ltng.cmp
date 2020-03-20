@@ -1,0 +1,54 @@
+<aura:component controller="IADPendingPaymentsPanelController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="pendingPaymentService" type="Object" />
+    <aura:attribute name="hasPayments" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <div class="slds-card" id="mainPanel">
+        <lightning:spinner aura:id="mySpinner" />
+        <div style="{!v.hasPayments ? 'height:150px; overflow:auto;' : 'display:none'}">
+            <aura:iteration items="{!v.pendingPaymentService.payment.payments}" var="payment">
+                <div class="slds-m-top--small slds-text-body--small">
+                    <div>
+                        <a styleClass="slds-text-body--x-small" title="Click to open Payment" data-paymenttransactionid="{!payment.paymentTransactionId}" data-transactiontype="{!payment.transactionType}"  onclick="{!c.openPayment}" id="openPaymentLink"> <!-- onclick="openPayment('{!payment.paymentTransactionId}','{!payment.transactionType}'); " -->
+                            <b><u id="paymentTransId"> {!payment.paymentTransactionId} </u></b>
+                        </a>
+                    </div>
+                    <div id="paymentTypeSection">
+                        <span style="{!payment.paymentType == '0' ? '' : 'display:none'}"><strong>Unset</strong></span>
+                        <span style="{!payment.paymentType == '1' ? '' : 'display:none'}"><strong>CreditCard</strong></span>
+                        <span style="{!payment.paymentType == '2' ? '' : 'display:none'}"><strong>eCheck</strong></span>
+                        <span style="{!payment.paymentType == '3' ? '' : 'display:none'}"><strong>ManualCheck</strong></span>
+                        <span style="{!payment.paymentType == '4' ? '' : 'display:none'}"><strong>StoreCredit</strong></span>
+                        <span style="{!payment.paymentType == '5' ? '' : 'display:none'}"><strong>Cash</strong></span>
+                        <span style="{!payment.paymentType == '6' ? '' : 'display:none'}"><strong>ThirdPartyPayment</strong></span>
+<<<<<<< HEAD
+                        <strong id="paymentReason"> - {!payment.reason}</strong>
+=======
+                        <strong> - {!payment.reason}</strong>
+>>>>>>> d9460a34e86ea6f8d0069fd1b2c8d4bf5a6d8962
+                    </div>
+                    <div style="{!payment.iadStatus == 'Declined' ? 'color:red' : ''}">
+                        <strong id="">{!payment.iadStatus}</strong>
+                    </div>
+                    <div id="paymentAmount">                        
+                        ${!payment.amount}
+                    </div>
+                    <div id="createdDateTime">
+                        {!payment.createdDateTimeInString}
+                    </div>
+                </div>
+                <br />                
+            </aura:iteration>
+        </div>
+        
+        <div style="{!v.hasPayments ? 'display:none' : ''}">
+            <br /><br /><br /><br />
+            <div align="center">
+                <lightning:icon iconName="standard:approval" size="small" alternativeText="approval Icon" id="approvalIcon"/>
+                <span class="slds-assistive-text">medium approval Icon</span>
+            </div>
+            <p class="slds-text-heading slds-text-align--center">no payments</p>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>slong</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Scott Long Signature</name>
+    <style>none</style>
+    <textOnly>Scott Long
+Assistant Manager Outbound Sales
+{!snippetVariable.lz_address}
+(866) 773-0888 x223
+slong@legalzoom.com</textOnly>
+    <type>custom</type>
+</EmailTemplate>

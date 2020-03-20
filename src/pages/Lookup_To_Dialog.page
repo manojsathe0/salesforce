@@ -1,0 +1,127 @@
+<apex:page controller="Lookup_To_Controller" title="Lookup Dialog" showHeader="false" sidebar="false">
+<script type="text/javascript">
+function bodyOnLoad() {
+  if({!NOT(ISBLANK($CurrentPage.parameters.lksrch))}){
+   document.getElementById('{!$Component.theform.lksrch}').value = '{!$CurrentPage.parameters.lksrch}';
+   var sch=document.getElementById('{!$Component.theform.lksrch}');
+   var btn=document.getElementById('{!$Component.theform.goButton}');
+   btn.click();
+  }
+}
+var contactName,contactId,contactEmail;
+function selectdata(a,b,c){
+    if(c == '')
+    {
+        alert('{!$Label.No_Email_On_Contact}');
+        return false;    
+    }
+    contactName = a;
+    contactId = b;
+    contactEmail = c;
+    updateCaseWithContact(contactId);
+                                   
+}
+
+function closeWindow()
+{
+    window.opener.pickupValue2(contactName,contactId,contactEmail);
+    window.close(); 
+}
+</script>
+<body onLoad="bodyOnLoad()" class="hasMotif lookupTab  LookupSearchFrame">
+  
+  <apex:form id="theform" >
+   <apex:outputPanel id="emptyPanel">
+   </apex:outputPanel>
+   <apex:pageMessages />
+   <apex:actionFunction action="{!updateCaseWithContact}" name="updateCaseWithContact" onComplete="closeWindow();">
+        <apex:param name="firstParam" assignTo="{!selectedContactId}" value="" />
+    </apex:actionFunction>
+   <apex:pageBlock title="New Contact" mode="edit" rendered="{!showNewContactForm}">
+            <apex:pageBlockButtons >
+                 <apex:commandButton action="{!saveNewContact}" value="Save"/>
+                  <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="New Contact" columns="1">
+               <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="First Name" for="first__name"/>
+                    <apex:inputField value="{!newContact.firstName}" id="contact_first__name"/> 
+                </apex:pageBlockSectionItem>
+            
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Last Name" for="last__name"/>
+                    <apex:inputText value="{!newContact.lastName}" id="contact_last__name" required="true"/> 
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email" for="email"/>
+                    <apex:inputText value="{!newContact.Email}" id="contact_email" required="true" /> 
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Phone" for="phone"/>
+                    <apex:inputField value="{!newContact.phone}" id="contact_phone"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Contact Type" for="contact_type"/>
+                    <apex:inputField value="{!newContact.Contact_Type__c}" id="contact_type"/>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    <apex:commandButton action="{!createNewContact}" value="New Contact" rendered="{!showNewContactFormButton}"/>
+    <apex:outputPanel id="result">
+    
+    <div class="pbHeader">
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="pbTitle">
+            <img src="/s.gif" alt="" width="1"  height="1" class="minWidth" title="" /> 
+            <img src="/s.gif" alt="" class="relatedListIcon" title="" />
+            <h3><span class="searchFirstCell">Contacts [{!searchR.size}] </span></h3>
+            </td>
+            <td class="pbButton">&nbsp;</td>
+            <td class="pbHelp"></td>
+        </tr>
+    </table>
+    </div>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!searchR}" var="r" columns="5" rendered="{!searchR.size != 0}">
+            <apex:column headerClass="headerStyle">
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputPanel >
+                    <apex:commandLink value="{!r.Name}" onclick="selectdata('{!r.Name}','{!r.Id}','{!r.Email}');return false;" style="text-align:left;color:black" />
+                </apex:outputPanel>
+            </apex:column>
+            <apex:column headerClass="headerStyle">
+                <apex:facet name="header">Account Name/Login Id</apex:facet>
+                <apex:outputPanel >
+                    <apex:outputLabel value="{!r.Account.Name}" style="text-align:left;color:black"></apex:outputLabel>
+                </apex:outputPanel>
+            </apex:column>
+            
+             <apex:column headerClass="headerStyle">
+                <apex:facet name="header">Contact Type</apex:facet>
+                <apex:outputPanel >
+                    <apex:outputLabel value="{!r.Contact_Type__c}" style="text-align:left;color:black"></apex:outputLabel>
+                </apex:outputPanel>
+            </apex:column>
+            
+            <apex:column headerClass="headerStyle">
+                <apex:facet name="header">Email</apex:facet>
+                <apex:outputPanel >
+                    <apex:outputLabel value="{!r.Email}" style="text-align:left;color:black"></apex:outputLabel>
+                </apex:outputPanel>
+            </apex:column>
+           
+        </apex:pageBlockTable>
+        <apex:outputPanel rendered="{!searchR.size == 0}" >
+                    <apex:outputText value="No record to display" />
+         </apex:outputPanel>
+    </apex:pageBlock>
+    </apex:outputPanel>
+   
+     </apex:form>
+    </body>
+</apex:page>

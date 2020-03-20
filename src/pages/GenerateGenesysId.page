@@ -1,0 +1,2 @@
+<apex:page controller="GenerateGenesysIdController" action="{!generateId}" sidebar="false" showHeader="false" >
+ </apex:page>

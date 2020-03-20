@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for escalation of IP cases unhandled for 48 hours</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>IP - 2 Days Old</name>
+    <style>none</style>
+    <subject>IP Incident - 2 Days Old - Escalation Notice</subject>
+    <type>text</type>
+</EmailTemplate>

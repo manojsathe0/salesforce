@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LTRevise</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Living Trust Revision Fee</name>
+    <style>none</style>
+    <subject>Living Trust Revision Fee</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+
+Thank you for your recent inquiry.  In regards to your question, people normally update their document when life changes arise to accurately reflect their current situation.  In the event you decide to make a revision to your document, each revision through LegalZoom under the Standard Package will be $39.95 after the first 30 days from payment.  The Gold and Vault Packages will include five free revisions for up to five years and will only incur the Shipping and Handling fee of $9.95.  You may make as many changes as you need to on the document within each visit for one revision cost.
+
+Please note that if in the future any real estate properties are purchased, or any financial accounts or businesses are opened that are to be held by the Living Trust, they may be purchased or opened under the Living Trust?s name with the permission of all parties involved.
+
+I have included a complimentary ?Living Trust Guide? to help you become more familiar with LegalZoom&apos;s Living Trusts.
+
+Please call us toll-free at (800) 962-7490 if we can be of further assistance. We look forward to hearing from you soon. 
+
+Best regards,
+
+The LegalZoom Team
+{!snippetVariable.lz_address}
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

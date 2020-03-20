@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>eyip</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Edmund Yip Signature</name>
+    <style>none</style>
+    <textOnly>Edmund Yip
+LegalZoom.com 
+Business Services
+{!snippetVariable.lz_address}
+(888)-381-8758 Ext: 1050</textOnly>
+    <type>custom</type>
+</EmailTemplate>

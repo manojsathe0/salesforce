@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Rvw Invite #2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Thank you - Kind Email</name>
+    <style>none</style>
+    <subject>Thank You for Your Kind Words</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+From everyone here at LegalZoom, we want to say &quot;Thank You&quot; for your kind words about our service. We work very hard to provide every customer with the personal, affordable, protection they deserve and we&apos;re so pleased that you had such a positive experience with our service.
+
+You were so generous in your praise that we&apos;d like you to share your experience with others who may benefit from our services.  Just click on the link below and you&apos;ll be taken to a site where you can post a review of LegalZoom.
+
+Post a Review here: http://content.legalzoom.com/sempub/reviews
+
+Sincerely,
+
+{!User.Name}
+Customer Experience Representative
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom is not a law firm and is not a substitute for an attorney or law firm. LegalZoom cannot provide legal advice and can only provide self-help services at your specific direction. LegalZoom, Inc. is a registered and bonded legal document assistant, #0104, Los Angeles County (exp. 12/13). Prices, features, terms and conditions are subject to change without notice.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: $EMAIL_ADDRESS_$
+
+LegalZoom is located at 101 N. Brand Blvd., 11th Floor, Glendale, CA 91203
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

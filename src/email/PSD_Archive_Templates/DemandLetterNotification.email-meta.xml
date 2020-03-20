@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>DLnotify</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Demand Letter Notification</name>
+    <style>none</style>
+    <subject>Demand Letter Notification</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent Small Claims order.
+
+We have sent the demand letter to your defendant on your behalf.  In 10 days from now, we will prepare your claim for filing with the court. If you settle with the defendant or would like to proceed with your claim before the 10 days have passed, please contact us by replying to this email, or feel free to call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

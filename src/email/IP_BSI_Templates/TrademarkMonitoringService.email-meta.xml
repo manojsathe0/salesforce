@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tmMonitor12</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Trademark Monitoring Service</name>
+    <style>none</style>
+    <subject>Trademark Monitoring Service</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your order.
+
+I wanted to take this opportunity to let you know that filing your trademark application is only half the battle in the quest to secure and protect your Trademark.  One of the most critical steps after filing your trademark is the ongoing monitoring of your Trademark. 
+
+If you unknowingly let another person and/or company infringe upon your trademark and their similar trademark is finalized for approval with the USPTO, you may not be able to stop a second person and/or company from doing the same.  All your hard earned money and time spent securing your unique mark may be lost. 
+
+With LegalZoom&apos;s Trademark Monitoring Service, we will monitor your trademark on a monthly basis on both the Federal USPTO database, and the State Trademark databases for $175.00 per year.  We will then send you a monthly e-mail with detailed information about possible infringements.  
+
+Our service will give you the time and opportunity to stop the potentially infringing mark before it gets too far into the trademark process.
+
+To place the order for Trademark Monitoring, please visit this link:
+https://www.legalzoom.com/trademark-monitoring/trademark-monitoring-overview.html
+
+We have also taken the extra step to provide you with access to pre-screened, experienced attorneys in your area should you have questions about the search information that Legalzoom e-mails you.   Simply type in your area code and select a legal practice area to find a local attorney. https://www.legalzoom.com/attorney-locator/index.html
+
+If you are not satisfied with our Trademark Monitoring service, after the first month of detailed information, you may e-mail us to cancel your order and we will refund everything except a $50.00 set-up fee.   
+
+{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.
+
+{!snippetVariable.ipclosingline}
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

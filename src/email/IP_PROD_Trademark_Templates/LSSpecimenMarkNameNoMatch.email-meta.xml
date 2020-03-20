@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ls11</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>L&amp;S Specimen Mark Name No Match</name>
+    <style>none</style>
+    <subject>L&amp;S Specimen Mark Name No Match</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+We have received your specimen; however, the US Patent and Trademark Office (USPTO) requires the literal element contained within the specimen to be identical to the mark name specified on the application.  In the online questionnaire, you stated that your mark name is &quot;XXXXXXXX&quot;.  However, the specimen you sent us displays &quot;XXXXXXXXX&quot;.
+ 
+To resolve this issue, please reply to this email and select ONE of the following options: 
+
+1.  Submit a different specimen that matches the mark name as specified on the application
+2.  Amend the application to match the mark name displayed on the current specimen
+3.  Submit the specimen and mark name as is. During examination of your application, if your assigned examining attorney raises questions regarding this matter, the applicant will be responsible for responding to the request with the appropriate information.
+  
+With this in mind, please reply to this email and let me know how you would like us to proceed with your application.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

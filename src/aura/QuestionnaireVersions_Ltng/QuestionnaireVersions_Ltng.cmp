@@ -1,0 +1,79 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes" controller="QuestionnaireVersionsController_Ltng">
+    <aura:attribute name="processingNumber" type="String"/>
+    <aura:attribute name="questVersions" type="List"/>
+    <aura:attribute name="questFields" type="List"/>
+    <aura:attribute name="selectedQuest" type="Integer"/>
+    <aura:attribute name="ordernumber" type="String"/>
+    <aura:attribute name="isQuestionnaireApp" type="Boolean" default="false" />
+    
+    <aura:method name="openQuestionnaireVersions" action="{!c.openQuestVersions}">
+        <aura:attribute name="processingNumberParam" type="String"/>
+    </aura:method>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div id="questionnairePanel" aura:id="questionnairePanel" class="hideOrderHistory"> 
+        <div class="slds-modal slds-fade-in-open slds-modal_medium" aria-hidden="false" role="dialog">
+            <div class="slds-modal__container" style="margin-top: 10%; max-height: 80%; width:70% !important;">
+                <div class="slds-modal__header" id="questionnaireModalHeader">
+                    Questionnaire: {!v.processingNumber}&nbsp;&nbsp; <button class="slds-button slds-button_brand slds-p-left_medium " onclick="{!c.printquestionnaire}" style="{!v.questVersions.length > 0? '' : 'display:none;'}" >Export</button>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div id="questionnaireVersionSelect">
+                        <aura:renderIf isTrue="{!v.questVersions.length > 0}">
+                            <!--
+                            <ui:inputSelect aura:id="questVersion" label="Questionnaire Version" change="{!c.getVersion}">
+                                <aura:iteration items="{!v.questVersions}" var="version" indexVar="key" aura:id="questVersion1">
+                                    <ui:inputSelectOption name="Test" text="{!version.indexStr}" label="{!version.revisionName}"/>
+                                </aura:iteration>
+                            </ui:inputSelect>
+                            -->
+                            <!-- updated on 04/01/2019 -->
+                            <lightning:select name="select" label="Questionnaire Version" aura:id="questVersion" onchange="{!c.getVersion}">
+                                <aura:iteration items="{!v.questVersions}" var="version" indexVar="key">
+                                        <option text="{!key}" label="{!version.revisionName}"></option>
+                                    </aura:iteration>
+                            </lightning:select>
+                        </aura:renderIf>
+                    </div>
+                    
+                    <div id="questionnaireTablePanel">
+                        <lightning:spinner aura:id="spinner" alternativeText="loading version details" />
+                        <table class="slds-table sortable" >
+                            <thead class="slds-table--bordered">
+                                <tr class="slds-text-body--label">
+                                    <th scope="col" class="slds-text-body--small slds-cell-shrink" id="QuestionIDColumn"><strong>Question ID</strong></th>
+                                    <th scope="col" class="slds-text-body--small slds-cell-shrink" id="QuestionTextColumn"><strong>Question Text</strong></th>
+                                    <th scope="col" class="slds-text-body--small slds-cell-shrink" id="QuestionResponseolumn"><strong>Response</strong></th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <aura:renderIf isTrue="{!v.questFields.length > 0}">
+                                    <aura:iteration items="{!v.questFields}" var="qa">
+                                        <tr class="slds-has-divider"> <!-- -->
+                                            <td class="wrappable slds-cell-wrap" >{!qa.fieldName}</td>
+                                            <td class="wrappable slds-cell-wrap">{!qa.questionText}</td>
+                                            <td class="wrappable slds-cell-wrap">{!qa.fieldValue}</td>
+                                        </tr>
+                                    </aura:iteration>
+                                    <aura:set attribute="else">
+                                        <tr class="slds-text-heading--label slds-has-divider">
+                                            <td colspan="3">
+                                                No records to display.
+                                            </td>
+                                        </tr>
+                                    </aura:set>
+                                </aura:renderIf>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="slds-modal__footer" style="{!v.isQuestionnaireApp ? 'display:none;' : ''}">
+                    <button class="slds-button slds-button--neutral" type="button" onclick="{!c.closeQuestVersions}">Close</button>
+                </div>
+            </div>
+        </div>
+        <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+    </div>
+</aura:component>

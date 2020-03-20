@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>UP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>UP</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in filing your Utility Patent.  We simplify the process for you by preparing and submitting the Utility Patent application to the US Patent &amp; Trademark Office (USPTO) for registration.
+
+
+For your reference, general information regarding filing a Utility Patent has been outlined below.
+
+
+Utility Patents typically protect original inventions, unique improvements on existing items, or some methods or processes. Utility Patents grant property rights to the inventor, and prevent other parties from using, making, selling, or importing  the patented item(s) without your permission, and allow you to enforce against any infringement upon these rights.  The term of a Patent is typically 20 years from the date the Patent Application is filed with the USPTO.
+
+
+The Utility Patent process is a two-step process.  Step One consists of a Patent consultation and review with a registered patent attorney or patent agent, technical Patent illustration creation and/or review, and an optional comprehensive Patent Search.  Step Two consists of the preparation and drafting of the Utility Patent application and accompanying documents, and electronic filing of the application.
+
+
+Upon placing the order for your Utility Patent, you will be given instructions describing how to submit supplemental details of your items(s) to LegalZoom, either by directly uploading the file, emailing copies, or submitting hard copies by mail.  The Utility Patent application is typically submitted to the USPTO within 8-10 weeks of placing the order.  The USPTO may take 12-24 months to complete the filing process.
+
+
+For your convenience, we have listed all relevant pricing below.
+
+
+UTILITY PATENT
+
+Step I - $699.00
+
+Step II - $2,400.00 + USPTO filing fee
+
+
+GET STARTED
+
+http://www.legalzoom.com/patents/provisional-patent-application-overview.html
+
+PACKAGE DETAILS
+
+http://www.legalzoom.com/patents/provisional-patent-application-pricing.html
+
+
+ADDITIONAL SERVICES
+
+Patent Search - $399.00
+
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+
+
+
+Best regards,
+
+
+{!User.FirstName}
+
+(800) 773-0888 x{!User.Extension}
+
+www.legalzoom.com
+
+
+
+Privacy Policy
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm.  Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+
+Please add services@emails.legalzoom.com to your address book.
+
+
+This email was sent to: {!Contact.Email}
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

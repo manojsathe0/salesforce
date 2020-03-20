@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Obt Req EIN draft</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Obt Req EIN draft</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order</subject>
+    <textOnly>Hello Mr./Ms. {!Contact.LastName},
+
+Thank you for choosing LegalZoom for your business needs.
+
+We will be requesting your Employer Identification Number (EIN) from the IRS but need addtional information from you to complete the application.
+
+[Please fill the _______________ on line _________.]
+
+Please also have the listed officer sign where indicated at the end of the form, and return the signed document to LegalZoom, either:
+
+By email to bzsupport@legalzoom.com, or
+By fax at (323) 962-0227
+
+
+We will email the EIN to you as soon as we receive it from the IRS, typically within 3-5 business days of receiving your signed form.
+
+If you have questions about your order, you may contact our Customer Care representatives by replying to this email or calling us at (800) 773-0888 Mon-Fri, 7am to 9pm, Central Time.
+
+Thank you again for choosing LegalZoom.
+
+The LegalZoom Team
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

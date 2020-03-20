@@ -1,0 +1,58 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for contacting LegalZoom.<br/><br/>As part of the application process, the US Patent and Trademark Office (USPTO) may assign pseudo marks and/or design codes to your application. If so, you will receive a notice of this status for review. <br/><br/>Pseudo Marks:<br/><br/>For some marks, the USPTO has added a pseudo mark to the search data to assist TESS users in identifying relevant marks related to their search term. Pseudo mark entries are not displayed or printed in the search results and are not part of the official application or registration. Pseudo marks provide an additional search tool for locating documents whose word mark may contain an alternative or intentionally corrupted spelling for a normal English word. The pseudo mark field often contains spellings that are very similar or phonetically equivalent to the word mark. For example, a document with the word mark 4U might contain a pseudo mark of FOR YOU. <br/><br/>Design Codes:<br/><br/>Design codes identify design elements that comprise a mark that contain a design (drawing). A mark may have more than one design code associated with it. Design search codes are defined in the Design Search Code Manual (<a href=http://tess2.uspto.gov/tmdb/dscm/dsc_gl.htm>here</a>).<br/><br/>If you would like to add or contest any of the codes listed, please contact the USPTO directly at 800-786-9199. Otherwise, there is no need to respond to their email. <br/><br/>Best regards,<br/><br/>The LegalZoom Team<br/></p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

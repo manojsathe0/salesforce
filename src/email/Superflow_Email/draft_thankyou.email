@@ -1,0 +1,9 @@
+Dear {!Contact.FirstName}, 
+
+Thank you for Choosing LegalZoom!  I enjoyed speaking with you about our services.  If you need anything else in relation to your order or future legal needs, please do not hesitate to reach out.  
+
+Sincerely, 
+{!User.Name}
+{!User.Title}
+{!User.Department}
+{!Organization.Phone}  Ext. {!User.Extension}

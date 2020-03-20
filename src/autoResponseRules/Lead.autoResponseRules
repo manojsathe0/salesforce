@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>LegalZoom Lead Auto-Response Rule</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.LeadSource</field>
+                <operation>equals</operation>
+                <value>Mobile</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Source_Detail__c</field>
+                <operation>equals</operation>
+                <value>Business Services</value>
+            </criteriaItems>
+            <senderEmail>no-reply@legalzoom.com</senderEmail>
+            <senderName>LegalZoom No-Reply</senderName>
+            <template>Auto_Reply_Templates/Lead_Quick_LLC_Auto_Response</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

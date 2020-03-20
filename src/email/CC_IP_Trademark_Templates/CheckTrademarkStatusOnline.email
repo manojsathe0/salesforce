@@ -1,0 +1,62 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for considering LegalZoom for your Intellectual Property needs.<br/><br/>Upon receipt of your completed e-signature, LegalZoom pays the required filing fee and files your document. In addition, LegalZoom sends you a packet containing hard copies of your application materials. These materials include your United States Patent and Trademark Office (USPTO) serial number, which allows you to track the status of your application <a href=http://tsdr.uspto.gov/>online</a>. (<b>NOTE:</b> After receiving your serial number, please allow 3-4 weeks before checking the status).<br/><br/>To track the status of your application, type your serial number into the &#8220;Enter a Number&#8221; prompt on the left side of the page. Your serial number can be found within the final documents you receive from LegalZoom on the sheet entitled &#34;Success.&#34;<br/><br/>Your application will be assigned to a Trademark Examining Attorney approximately six months after it was submitted. The assigned attorney will contact you via phone, email, regular mail, or fax should any changes or amendments be needed to prepare your trademark for registration.<br/><br/>The complete process typically takes eight to thirteen months, but in some cases can take longer. Your trademark is not considered Registered until you have received official documentation and a notification of registration from the USPTO.<br/><br/>You are precluded from using the &#8220;circle R&#8221; (&#174;) symbol until the mark has officially been registered by the USPTO, however, you can use the &#34;TM&#34; or &#34;SM&#34; symbol at any time to show ownership of the mark. <br/><br/>{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<br/><br/>{!snippetVariable.ccsincerely}<br/><br/>
+
+The LegalZoom Team
+<br/>
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

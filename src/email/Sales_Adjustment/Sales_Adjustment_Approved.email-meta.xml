@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Approved email in the Sales Adjustment Approval process.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Sales Adjustment Approved</name>
+    <style>none</style>
+    <subject>Sales Adjustment: Approved</subject>
+    <textOnly>The following Sales Adjustment has been Approved.  Please see the links below for further information.
+
+Sales Adjustment: {!Sales_Adjustment__c.Name}
+Agent: {!Sales_Adjustment__c.Agent__c}
+Type of Adjustment: {!Sales_Adjustment__c.Type_of_Adjustment__c}
+Amount of Adjustment: {!Sales_Adjustment__c.Amount_of_Adjustment__c}
+Additional Notes:
+{!Sales_Adjustment__c.Additional_Notes__c}
+
+Approved/Rejected
+Status: {!Sales_Adjustment__c.Status__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

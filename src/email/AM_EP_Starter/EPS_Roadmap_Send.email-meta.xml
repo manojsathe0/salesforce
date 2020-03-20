@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>EPS Roadmap Send</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>EPS Roadmap Send</name>
+    <style>none</style>
+    <subject>Your Estate Planning Roadmap</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I look forward to speaking with you to discuss your Estate Planning Roadmap for your business. I have attached your Roadmap that we will go over during the call.
+
+If you have any questions or need to reschedule your consultation, please call me directly at (888) 269-8232 Monday–Friday from 8 a.m.–5 p.m. PT or simply reply to this message. If I’m unavailable, you can also email MakeAPlan@legalzoom.com to reach the next available member of my team.
+
+Thank you for reaching out to the LegalZoom Personal Services Team. I look forward to speaking with you soon.
+
+
+{!User.FirstName}
+Personal Account Manager
+(888) 269-8232 x{!User.Extension}
+MakeAPlan@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

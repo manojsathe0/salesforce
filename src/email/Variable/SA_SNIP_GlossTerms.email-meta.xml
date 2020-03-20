@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SA_SNIP_GlossTerms</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SA_SNIP_GlossTerms</name>
+    <style>none</style>
+    <subject>SA_SNIP_GlossTerms</subject>
+    <textOnly>As requested, here is a link that can be used as reference with regard to some of the terminology or wording you may find associated with your {ProductType}.
+
+Education Center/FAQ Link: {EducationCenterFAQLink}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

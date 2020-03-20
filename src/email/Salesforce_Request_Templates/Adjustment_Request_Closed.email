@@ -1,0 +1,15 @@
+****CLOSED SALESFORCE REQUEST NOTIFICATION**** 
+
+The following request has been resolved. 
+
+Submitted By: {!Salesforce_Request__c.CreatedBy} 
+Request Number: {!Salesforce_Request__c.Number__c} 
+
+Subject: {!Salesforce_Request__c.Name} 
+
+Final Response from Salesforce Support: 
+--------------------------------------------------------------- 
+{!Salesforce_Request__c.Comments__c} 
+
+Please click the following link to view the details of this request:
+{!Salesforce_Request__c.Link}

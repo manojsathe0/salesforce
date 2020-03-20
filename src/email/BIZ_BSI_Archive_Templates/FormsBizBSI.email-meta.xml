@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>formsbzbsi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Forms_Biz BSI</name>
+    <style>none</style>
+    <subject>Forms_Biz BSI</subject>
+    <textOnly>LegalZoom&apos;s Forms:  Answers to your most common questions
+
+Dear {!Contact.FirstName},
+
+Thank you for your interest in LegalZoom&apos;s Forms. I have attached a link to three documents that you may find useful.  Please click on the link below.
+http://legalzoom2.custhelp.com/cgi-bin/legalzoom2.cfg/php/enduser/std_adp.php?p_faqid=2869
+
+The LegalZoom Form Glossary gives a brief description of all of our Forms.  The Forms FAQ has a question-and-answer format for common questions.  The Promissory Note Comparison Guide describes the many variations of Promissory Notes that we offer.  These three documents, answer most common questions.
+
+To order a LegalZoom Form, simply log on to www.legalzoom.com, select Forms from the ?More Legal Documents? tab, and then select the Form that?s right for you.
+
+Please call us toll-free at {!snippetVariable.bizbsi_phone} {!snippetVariable.bizbsi_hours} if we can be of further assistance.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

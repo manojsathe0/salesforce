@@ -1,0 +1,242 @@
+<apex:page standardController="Contact" extensions="IADCreateCaseController" standardstylesheets="false" sidebar="false" showHeader="false" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <script type="text/javascript" src="/canvas/sdk/js/publisher.js"></script>
+        <apex:includeScript value="/support/console/31.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.lziad, 'main.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}" />
+        <script type="text/javascript">
+            var recordID;
+            var caseNumber;
+
+            function fireRefreshCasePanelEvent() {
+                if($('#success').val()=='true'){
+                    sforce.console.fireEvent('RefreshCasePanel', 'EventMessage', null);
+                    OpenSubtab1();
+                }
+            }
+            function OpenSubtab1() {
+                sforce.console.getEnclosingPrimaryTabId(openSubtab);
+            }
+
+            var openSubtab = function openSubtab(result) {
+
+                var primaryTabId = result.id;
+                if (recordID != '') {
+                    sforce.console.openSubtab(primaryTabId, '/' + recordID, false, caseNumber, null, null, recordID);
+                }
+            };
+
+            
+        </script>
+
+        <style type="text/css">
+            #theReason2 select{
+                background-color: white;
+                color: #16325c;
+                border: 1px solid #808080;
+                border-radius: 5px;
+                width: 100%;
+                -webkit-transition: border 0.2s linear, background-color 0.1s linear;
+                transition: border 0.2s linear, background-color 0.1s linear;
+                display: inline-block;
+                padding: 0 16px 0 12px;
+                line-height: 34px;
+                min-height: calc(34px+ 2px);
+            }
+            #theProduct select, #theType select, #theReason select, #theSubject input, #theStatus select,  #theQueue select, #theProcNumber input, #theDescription textarea{
+                border: 1px solid #808080;
+            }
+            
+            .msgIcon {
+                display: none!important
+            }
+            
+            .customMessage * {
+                color: #fff!important
+            }
+            
+            .customMessage {
+                margin: 5px 0!important;
+                max-width: 1280px;
+                opacity: 1!important;
+                width: 100%;
+                font-size: 12px;
+                border: 0px;
+                padding-left: 10px;
+            }
+            
+            .message {
+                opacity: .1
+            }
+            
+            #theModalForm {
+                z-index: 999;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="slds">
+
+            <apex:form id="theModalForm">
+
+                <apex:actionFunction action="{!dismiss}" name="dismiss" rerender="theModalForm" />
+
+                <c:IADOpenCasesModal rendered="{!showModal}" showModal="{!showModal}" />
+            </apex:form>
+            <apex:form id="theForm">
+
+                <input id="success" type="hidden" value="{!isSuccess}"/>
+                <script type="text/javascript">
+                    recordID = '{!newCaseId}';
+                    caseNumber = '{!caseNumber}';
+                </script>
+                <apex:actionFunction action="{!createCase}" name="createcase" rerender="theForm, theModalForm" status="statusUpdating"  oncomplete="fireRefreshCasePanelEvent(); return false;" />
+                <div class="slds-grid slds-wrap">
+
+                    <div class="slds-col slds-large-size--1-of-1 slds-text-body--small slds-form-element">
+                        <label class="slds-form-element__label"><strong>Subject</strong></label>
+                        <div class="slds-form-element__control" id="theSubject">
+                            <apex:inputField value="{!theCase.Subject}" styleclass="slds-input" >
+                            </apex:inputField>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size--1-of-2 slds-text-body--small slds-m-right--small">
+                        <label class="slds-form-element__label"><strong>Product</strong></label>
+                        <div class="slds-form-element__control" id="theProduct">
+                            <apex:actionRegion >
+                                <div class="slds-select_container">
+                                    <apex:selectList value="{!selectedProduct}" size="1" styleClass="slds-select" rendered="true" label="Product" id="theProduct" >
+                                        <apex:selectOptions value="{!products}" />
+                                        <apex:actionSupport event="onchange" rerender="theStatus,theReason,xtrmReason" />
+                                    </apex:selectList>
+                                </div>
+                            </apex:actionRegion>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size--1-of-2 slds-text-body--small">
+                        <label class="slds-form-element__label"><strong>Type</strong></label>
+                        <div class="slds-form-element__control" id="theType">
+                            <apex:actionRegion >
+                                <div class="slds-select_container">
+                                    <apex:selectList value="{!selectedtype}" size="1" styleClass="slds-select" rendered="true" label="Type" id="theType">
+                                        <apex:selectOptions value="{!types}"/>
+                                        <apex:actionSupport event="onchange" rerender="theStatus,theReason,xtrmReason" />
+                                    </apex:selectList>
+                                </div>
+                            </apex:actionRegion>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size--1-of-2 slds-text-body--small slds-m-right--small">
+                        <label class="slds-form-element__label"><strong>Status</strong></label>
+                        <div class="slds-form-element__control" id="theStatus">
+                            <apex:actionRegion >
+                                <div class="slds-select_container">
+                                    <apex:selectList value="{!selectedStatus}" size="1" styleClass="slds-select" rendered="true" label="Status" id="theStatus"  disabled="{!OR(selectedtype='--None--', selectedProduct='--None--')}">
+                                        <apex:selectOptions value="{!status}"/>
+                                        <apex:actionSupport event="onchange" rerender="theReason,xtrmReason" />
+                                    </apex:selectList>
+                                </div>
+                            </apex:actionRegion>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size--1-of-2 slds-text-body--small">
+                        <label class="slds-form-element__label"><strong>Reason</strong></label>
+                        <div class="slds-form-element__control" id="theReason">
+                        	<apex:actionRegion >
+	                            <div class="slds-select_container">
+	                                <apex:selectList value="{!selectedStatusReason}" size="1" styleClass="slds-select" rendered="true" label="Status" id="theReason" disabled="{!OR(selectedtype='--None--', selectedProduct='--None--', selectedStatus='--None--')}">
+	                                    <apex:selectOptions value="{!statusReasons}"/>
+	                                    <apex:actionSupport event="onchange" rerender="theReason,theExtreamReason,xtrmReason" />
+	                                </apex:selectList>
+	                            </div>
+                            </apex:actionRegion>
+                        </div>
+                    </div>
+                </div>
+                <apex:outputpanel Id="xtrmReason">
+
+	                <div style="{!IF(AND(selectedProduct == 'Personal Services', selectedtype == 'Service Inquiry', selectedStatus == 'Closed', selectedStatusReason == 'Proceeding As Is/No Update Required'),"slds-grid slds-wrap","display:none")}">
+	
+	                    <div class="slds-col slds-large-size--1-of-1 slds-text-body--small slds-form-element">
+	                        <label class="slds-form-element__label"><strong>Reason for Extreme Revision</strong></label>
+	                        
+	                            <div class="slds-select_container">
+	                            	
+	                                <apex:inputField value="{!theCase.Reason_for_Extreme_Revision__c}" styleclass="slds-select" id="theExtreamReason" >
+	                                    <apex:actionSupport event="onchange" rerender="theProcNumber" />
+	                                </apex:inputField>
+	                            </div>
+	                        
+	                    </div>
+	                </div>
+
+                </apex:outputpanel>
+                
+                <div class="slds-grid slds-wrap">
+
+                    <div class="slds-col slds-large-size--1-of-1 slds-text-body--small slds-form-element">
+                        <label class="slds-form-element__label"><strong>Queue</strong></label>
+                        <div class="slds-form-element__control" id="theQueue">
+                            <div class="slds-select_container">
+                                <apex:inputField value="{!theCase.Queue__c}" styleclass="slds-select" id="theQueue" >
+                                    <apex:actionSupport event="onchange" rerender="theProcNumber" />
+                                </apex:inputField>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+
+                    <div class="slds-col slds-large-size--1-of-1 slds-text-body--small slds-form-element">
+                        <label class="slds-form-element__label"><strong>Processing Number</strong></label>
+                        <div class="slds-form-element__control" id="theProcNumber">
+                            <apex:inputField value="{!theCase.Processing_Number__c}" styleclass="slds-input" id="theProcNumber" required="true" >
+                                <apex:actionSupport event="onchange" rerender="theDescription" />
+                            </apex:inputField>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size--1-of-1 slds-text-body--small slds-form-element">
+                        <label class="slds-form-element__label"><strong>Description</strong></label>
+                        <div class="slds-form-element__control" id="theDescription">
+                            <apex:inputTextarea value="{!theCase.Description}" styleClass="slds-textarea" rows="4" id="theDescription" />
+                        </div>
+                    </div>
+
+                </div>
+                <br />
+                <div class="">
+                    <div class="slds-col slds-large-size--6-of-12">
+                        <button class="slds-button slds-button--brand" type="button" onclick="createcase();return false;">Create Case</button>
+                    </div>
+                    <br/>
+                    <div class="slds-m-left--medium slds-col " style="z-index:100">
+                        <apex:actionStatus id="statusUpdating">
+                            <apex:facet name="start">
+                                <apex:image value="/img/loading.gif" />
+                            </apex:facet>
+                            <apex:facet name="stop">
+                                <c:IADMessageBox theMessages="{!iadMessages}" />
+                            </apex:facet>
+                        </apex:actionStatus>
+                    </div>
+                </div>
+
+
+            </apex:form>
+        </div>
+
+    </body>
+
+    </html>
+</apex:page>

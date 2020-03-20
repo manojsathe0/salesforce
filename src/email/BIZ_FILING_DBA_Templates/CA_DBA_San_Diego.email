@@ -1,0 +1,81 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},
+<br/>
+<br/>
+Thank you for choosing LegalZoom for your DBA order. 
+<br/>
+<br/>
+Note: As of January 1, 2015, California law authorizes counties to require written proof of identity to accompany all Fictitious Business Name Statements. Your San Diego County DBA document includes the information required to comply with this requirement. You may provide proof of identity by either having the designated registrant provide a copy of his or her government issued identification or sign the Fictitious Business Name Statement in front of a notary public.  Please disregard any Fictitious Business Name Statement and other documentation you may have previously received in connection with this order. Please follow the instructions below to sign and return the DBA form(s).
+<br/>
+<br/>
+<ol>
+	<li>
+	Do not make any changes to the attached documents as they will result in delays with your order. If you need to make changes, please contact our Customer Support team at <a href="mailto:customercare@legalzoom.com">customercare@legalzoom.com</a>. 
+	</li>
+	<li>
+	Find the DBA form (Fictitious Business Name Statement), which is used to officially register your business name, and the Certificate of Acknowledgment, which can be used to prove your identity, in your packet. You will treat these documents differently in later steps, so make sure you can identify them. If you have any questions, contact our Customer Support team. 
+	</li>
+	<li>
+	Print four (4) copies of the Fictitious Business Name Statement.  Also, if you are unable to provide a copy of the designated registrant’s government issued identification, print two (2) copies of the Certificate of Acknowledgment. Print these copies on white paper using only black ink.  
+	</li>
+	<li>
+	If you are able to provide a copy of the registrant’s government issued identification, please have the designated registrant sign the Fictitious Business Name Statement.  If you are unable to provide a copy of the designated registrant’s government issued identification, please have the designated registrant sign the Fictitious Business Name Statement in front of a notary public, in only black ink where indicated (see Sample Pages). The notary will complete the Certificate of Acknowledgement. 
+	</li>
+	<li>
+	In front of a notary public, please have the designated registrant sign and date the Authorized Agent document in the space indicated as “To be completed by the Registrant” (2nd page) and have the Affidavit of Identity - Fictitious Business Name Statement completed by the notary. 
+	<li>
+	Mail either (1) the signed Fictitious Business Name Statement with a copy of the designated registrant government issued identification or (2) the Fictitious Business Name Statement signed by the designated registrant in front of a notary public, with a Certificate of Acknowledgement attached, to our address listed below. 
+	<b>Please note that we cannot accept faxes as the state office will only accept original signed documents.
+</li>
+<br/>
+<br/>
+<b>Courier and USPS Deliveries</b>
+<br/>
+LegalZoom.com, Inc.
+<br/>ATTN: Business Filings
+<br/>9900 Spectrum Drive
+<br/>Austin, TX 78717
+<br/>
+<br/>
+LegalZoom cannot accept walk-in customers to our offices. Please follow the instructions above to return signed documents to us. We apologize for any inconvenience. To find out more about notarization, see the <a href="http://www.legalzoom.com/notary.html" target="_blank">LegalZoom Notary Center</a>.
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

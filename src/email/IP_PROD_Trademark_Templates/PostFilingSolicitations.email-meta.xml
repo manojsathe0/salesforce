@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tm8</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post Filing Solicitations</name>
+    <style>none</style>
+    <subject>Post Filing Solicitations</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+LegalZoom.com takes pride in giving our customers reliable and efficient service, and as such would like to warn you about the possibility of deceptive solicitations. As part of our privacy policy, LegalZoom does not sell or forward your personal information to anyone.
+
+When your Trademark application was submitted to the US Patent Trademark Office (USPTO), it was automatically published in the Federal Trademark Database. As part of this process, all information provided on your application became public.
+
+You may receive unsolicited communications from companies requesting fees for Trademark related services, such as monitoring and document filing. Although solicitations from these companies frequently display customer-specific information, including USPTO serial number or registration number and owner name, companies who offer these services are not affiliated or associated with the USPTO or any other federal agency. The USPTO does not provide Trademark monitoring or any similar services.
+
+Such companies typically charge a service fee in addition to applicable USPTO fees. In many instances, applicants and registrants have mistakenly believed that the USPTO has issued these communications or that these companies are affiliated with the USPTO. Complaints about such companies or communications may be made to the Federal Trade Commission by visiting here.
+
+If you have installed Anti-Spam filters or software on your email service, please ensure that legitimate emails from TEAS@uspto.gov is not falsely identified as spam or junk. If you wish to view and/or download your application information and correspondences from the USPTO, please visit here.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

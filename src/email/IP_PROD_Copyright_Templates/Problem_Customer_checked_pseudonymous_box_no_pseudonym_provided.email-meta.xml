@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr42</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Problem - Customer checked pseudonymous box, no pseudonym provided</name>
+    <style>none</style>
+    <subject>Order on Hold: Copyright Application Pseudonym Missing</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+There appears to be a problem with your order. Your application will not be filed with the U.S. Copyright Office until this problem is resolved, so please respond to this email as soon as possible.
+
+Specifically, in the questionnaire, you indicated that the work was created under a pseudonym (fictitious name). However, you did not provide the pseudonym.
+
+If the work was created under a pseudonym, please confirm the pseudonym that you would like listed in the application. If the work was NOT created under a pseudonym, please let us know if your application should be revised to indicate that the work is not pseudonymous. To read more about pseudonymous work, click here.
+
+If you have any questions or would like additional information, you can reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate your prompt attention to this matter.
+
+Best regards,
+
+The LegalZoom Team
+
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

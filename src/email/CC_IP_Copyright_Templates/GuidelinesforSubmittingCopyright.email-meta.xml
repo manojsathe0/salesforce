@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CRguidelin</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Guidelines for Submitting Copyright</name>
+    <style>none</style>
+    <subject>Guidelines for Submitting Copyright</subject>
+    <textOnly>Special Instructions for Architectural Works
+
+To be eligible for copyright protection, an architectural work must have been created on or after December 1, 1990, or embodied only in unpublished drawings as of that date.  Please submit one (1) complete copy of an architectural drawing or blueprint showing the overall form of the building and any interior arrangement of spaces and/or design elements in which copyright is claimed.
+
+Special Instructions for Fabrics and Textiles
+
+Please submit one (1) complete copy (or swatch) showing the design repeat and copyright notice, if any.
+
+Special Instructions for Games
+
+Please submit one (1) copy if container is no larger than 12&quot; x 24&quot; x 6&quot;; otherwise, submit identifying material.
+
+Special Instructions for Computer Programs
+
+For computer programs, the U.S. Copyright Office requires a print out of the first 25 pages and last 25 pages of the source code. If the source code is less than 50 pages long, send the entire code. One copy will suffice. Also include the user&apos;s manual if there is one.
+
+In addition, if your computer program is embodied on a CD-ROM, the entire CD-ROM package must be deposited, including a complete copy of any accompanying operating software and instructional manual.
+
+Send all materials to our address below:
+
+{!snippetVariable.ip_address_cr_materials}
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

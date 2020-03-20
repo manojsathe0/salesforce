@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SF Temp Outbound LAP Decline</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF Temp Outbound LAP Decline</name>
+    <style>freeForm</style>
+    <subject>LegalZoom Order XXXXXXX: Legal Advantage Plus Subscription</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.com your online business resource.
+
+Unfortunately, the most recent payment for your Legal Advantage Plus subscription has failed to charge to the credit card provided on your account. If you could give me a quick call I would be happy to assist you in this matter.
+
+Below is additional information regarding the benefits of your Legal Advantage Plus subscription:
+
+Legal Advantage Plus:
+$71.94/6-month Subscription
+$119.88/Annual Subscription
+
+Legal Advantage Plus benefits include:
+
+• Attorney support: Whenever you need expert legal advice, you have access to an experienced attorney to ask questions and get information on any legal topic. Examples include reviewing and getting advice on your last will, reviewing other legal documents, and more.
+• Tax professional advice and consultations. Speak with an experienced tax professional on an unlimited number of new tax issues
+• Annual legal checkup with an attorney: Just like getting an annual checkup of your health with your doctor, it’s important to get an annual checkup of important legal documents with an attorney. You might not realize (or get busy and forget) that changes in your life such as moving, having a child, having more grandchildren, etc., can impact your last will or other legal documents.
+• Unlimited access to LegalZoom legal forms: Whenever you need legal support, you can access and download hundreds of legal forms for personal use. Examples include affidavits, bills of sale, nondisclosure agreements, promissory notes and more.
+• 25% savings on additional attorney services: You get substantial savings on professional attorney services should you need go to court.
+• 20% savings on any additional tax services
+• 10% savings on any LegalZoom legal documents: Take advantage of valuable savings on any LegalZoom legal documents, including Living Trusts, LLCs, Trademarks and more.
+
+Here is the link for the Legal Advantage Plus service: http://www.legalzoom.com/attorneys-lawyers/legal-plans/personal.html
+
+Please call me at (866) 698-0053 ext. {!User.Extension} (M-F 8am-5pm CST/PST) so that I can help you resolve this matter. 
+
+Please refer to your order number: {!Case.Order_Number_c}.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

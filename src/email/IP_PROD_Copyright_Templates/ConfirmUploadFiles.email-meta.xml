@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr38</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>POST FILING - Confirm Upload Files</name>
+    <style>none</style>
+    <subject>Copyright Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+I’ve attached a copy of your confirmation page from the U.S. Copyright Office. This document shows the complete information entered with your copyright application. Please Note: Your filename(s) may have been changed when your application was submitted to conform to U.S. Copyright Office submission guidelines. 
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT. 
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon. 
+
+Best regards, 
+
+The LegalZoom Team 
+
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order. Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. 
+
+
+
+Your trademark search report is subject to LegalZoom’s  Terms of Service. 
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

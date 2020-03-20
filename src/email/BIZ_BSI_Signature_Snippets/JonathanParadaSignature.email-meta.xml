@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>jparada</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Jonathan Parada Signature</name>
+    <style>none</style>
+    <textOnly>Jonathan Parada
+LegalZoom.com 
+Business Services
+{!snippetVariable.lz_address}
+(888)-381-8758 Ext: 3150</textOnly>
+    <type>custom</type>
+</EmailTemplate>

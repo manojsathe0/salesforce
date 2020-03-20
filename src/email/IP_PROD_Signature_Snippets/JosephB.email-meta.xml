@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip1270</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Joseph B.</name>
+    <style>none</style>
+    <textOnly>Joseph B.
+Manager, Patent Illustrations
+www.LegalZoom.com
+{!snippetVariable.ccphone} ext. 1270</textOnly>
+    <type>custom</type>
+</EmailTemplate>

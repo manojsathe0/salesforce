@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>lapbenef1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LAP Benefits Comprehensive</name>
+    <style>none</style>
+    <subject>LAP Benefits Comprehensive</subject>
+    <textOnly>legalzoom.com
+
+Dear {!Contact.FirstName},
+
+The LegalZoom Legal Advantage Plus plan gives you access to the following benefits:
+
+Attorney support: Whenever you need expert legal advice, you have access to an experienced attorney to ask questions and get information on any legal topic. Examples include reviewing and getting advice on your last will, reviewing other legal documents, and more.
+Tax Professional advice and consultations.  Speak with an experienced Tax Professional on an unlimited number of new tax issues
+Annual legal checkup with an attorney: Just like getting an annual checkup of your health with your doctor, it’s important to get an annual checkup of important legal documents with an attorney. You might not realize (or get busy and forget) that changes in your life such as moving, having a child, having more grandchildren, etc., can impact your last will or other legal documents.
+Unlimited access to LegalZoom legal forms: Whenever you need legal support, you can access and download hundreds of legal forms for personal use. Examples include affidavits, bills of sale, nondisclosure agreements, promissory notes and more.
+Unlimited revisions &amp; storage of your Estate Planning documents:  Benefit from the ability to revise &amp; store any of your Estate Planning documents at your convenience.
+25% savings on additional attorney services: You get substantial savings on professional attorney services should you need go to court.
+20% savings on any additional tax services
+10% savings on any LegalZoom legal documents: Take advantage of valuable savings on any LegalZoom legal documents, including Living Trusts, LLCs, Trademarks and more.
+
+After your 30-day trial, your Legal Advantage Plus membership renews automatically at $_ _._ _ per month.
+
+You can always choose to enroll with a 6 or 12 month membership. A 6 month renewal is $71.94 (equal to $11.99 a month), and a 12 month renewal is $119.88 (equal to $9.99 a month.)
+
+{!snippetVariable.asdsigline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.
+
+{!snippetVariable.bestregardstext}
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+Call Customer Care: (800) 773-0888  LegalZoom. Legal help for the modern world.
+
+Privacy Policy
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

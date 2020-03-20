@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>llctaxecon</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CA LLC TAX? Economy &amp; Standard</name>
+    <style>none</style>
+    <subject>CA LLC TAX? Economy &amp; Standard</subject>
+    <textOnly>Dear Customer Name,
+
+Thank you for using LegalZoom to create your LLC.   
+
+Our Business Formation Specialists are preparing to file your LLC documents with the Secretary of State.  Before we proceed, we would like you to be aware of your filing options.  The option you choose could significantly affect your state tax obligation for 2009 and 2010.
+
+In California, a minimum annual tax of $800 is assessed on all LLCs.  If we send your filing to the state prior to December 17th of this year, you will be taxed for 2009 and the $800 fee for 2010. 
+
+However, if we send your filing after December 17th, the $800 fee will not be assessed until 2010.
+
+As a service to you, we will wait 5 business days before we proceed with your order, to allow you to opt for a delayed filing.  In that time, if you want us to delay your filing until after December 17th, please notify us by replying to this email or calling us at 888.381.8758, Monday-Friday, 6:30am - 6:00pm PST and Sat 10:00am ? 2:00pm PST. Otherwise, to avoid delays, if we do not hear from you within 5 business days, we will proceed with your LLC order for 2009 as currently scheduled.  
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

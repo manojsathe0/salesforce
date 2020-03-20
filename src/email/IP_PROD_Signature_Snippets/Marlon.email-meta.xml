@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip2110</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Marlon</name>
+    <style>none</style>
+    <textOnly>Marlon A.
+Intellectual Property Division
+www.LegalZoom.com
+
+{!snippetVariable.ccphone} ext 2110</textOnly>
+    <type>custom</type>
+</EmailTemplate>

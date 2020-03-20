@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AM-CorpMN-Alert-First</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Corp MN Business Tax Registration – First Reminder</name>
+    <style>none</style>
+    <subject>Corp MN Business Tax Registration – First Reminder</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As part of your compliance package, we help ensure your required state filings are completed and filed on time.
+
+The state of Minnesota requires you to file a business tax registration for your corporation shortly after your business has been formed. Failure to file your documents on time may put your company at risk of penalties.
+
+Before we can begin, we need additional information.  Please sign in to your LegalZoom account here and click the Completed Orders tab: https://www.legalzoom.com/LZWeb/MyAccount/ProductDetails.aspx?DeepLink=1. There you can access your compliance package and fill out the State Tax I.D. questionnaire.
+
+Once you provide the necessary information and fees, we will file your forms with the state.  If you have already provided us with these items, please disregard this email.  This is your first email reminder of this state filing.  LegalZoom processing fees for this filing are included as long as you remain an active compliance member.
+
+You can reach me at {!User.Phone}, {!User.Extension}, [***Input Business Hours HERE***].
+
+We appreciate your prompt attention to this matter.
+
+{!snippetVariable.ccsincerely}
+
+{!User.Name} {!User.Extension} 
+Account Management Services 
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

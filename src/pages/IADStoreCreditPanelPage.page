@@ -1,0 +1,118 @@
+<apex:page controller="IADStoreCreditPanelController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+
+        <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <script type="text/javascript">
+            var scId = '';
+            var scNum = '';
+            function openStoreCredit(storeCreditId, storeCreditNum){
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+                scId = storeCreditId;
+                scNum = storeCreditNum;
+                console.log('scId ' + storeCreditId);
+            }
+            var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+                var url = '/apex/IADStoreCreditPage?customerId={!customerId}&storeCreditId=' + scId + '&isdtp=vw';
+
+                console.log('url' + url);
+                sforce.console.openSubtab(result.id , url, true, scNum);
+            };
+            window.onload = function()
+            {
+                populateStoreCredits();
+            };
+             window.populateSVGHash = function() {
+                svgHash = {};
+                $('.svgParent').each(function(index) {
+                    var idKey = $(this).attr('id');
+                    svgHash[idKey] = $(this).html();
+                });
+                console.log('svg hash ' + svgHash);
+            }
+            window.afterActionFunction = function() {
+                console.log('calling afterActionFunction');
+                $('.svgParent').each(function(index) {
+                     console.log('calling index ' + index);
+                    var idKey = $(this).attr('id');
+                    console.log('calling idKey ' + idKey);
+                    $(this).html(svgHash[idKey]);
+                });
+            }
+            jQuery(document).ready(function($) {
+               populateSVGHash();
+            });
+
+            var listener = function(result) {
+                populateStoreCredits();
+            };
+
+            sforce.console.addEventListener('RefreshStoreCreditsPanel', listener);
+
+        </script>
+        <style type="text/css">
+         a:hover {
+          cursor:pointer;
+         }
+      </style>
+    </head>
+     <div class="slds">
+        <apex:form id="theForm">
+            <c:IADMessageBox theMessages="{!storeCreditPanelService.iadMessages}" />
+            <apex:actionFunction name="populateStoreCredits" action="{!populateStoreCredits}" rerender="theForm" status="statusUpdating" oncomplete="afterActionFunction();" />
+            <apex:actionStatus id="statusUpdating">
+              <apex:facet name="start">
+               <div class="slds-spinner_container">
+                  <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+                </div>
+              </apex:facet>
+            </apex:actionStatus>
+            <apex:outputpanel rendered="{!storeCreditPanelService.hasStoreCredit}">    
+               
+                    <apex:repeat value="{!storeCreditPanelService.storeCredit.storeCredits}" var="theStoreCredit">
+                        <div class="slds-m-top--small">
+                            <div class="slds-grid slds-grid--align-spread slds-text-body--small">
+                                  <div class="slds-col slds-size--2-of-3">
+                                    <a onclick="openStoreCredit('{!theStoreCredit.storeCreditId}', '{!theStoreCredit.code}'); return false;" styleClass="slds-text-body--x-small" title="Click to open Store Credit">
+                                    <b><u> {!theStoreCredit.code} </u></b>
+                                    </a> 
+                                 </div>
+                                <div class="slds-col slds-size--1-of-3">
+
+                                    <apex:outputText value="{0, number, currency}">
+                                        <apex:param value="{!theStoreCredit.amount}" />
+                                    </apex:outputText>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                    </apex:repeat>
+                
+            </apex:outputpanel>
+        
+             <apex:outputpanel rendered="{!IF(storeCreditPanelService.hasStoreCredit,false,true)}">  
+               
+                    <br/><br/><br/><br/><br/><br/><br/>
+                     <div align="center">
+                        <span class="slds-icon__container slds-icon-standard-approval svgParent">
+
+                            <svg aria-hidden="false" class="slds-icon slds-icon--small" id="approval">
+                                <path d="{!approvalIcon}"/>
+                            </svg>
+                      <span class="slds-assistive-text">medium approval Icon</span>
+                    </span>
+                     </div>
+                    <p class="slds-text-heading slds-text-align--center">no store credits</p>
+                
+            </apex:outputpanel>
+        </apex:form>
+    </div>
+
+    </html>
+</apex:page>

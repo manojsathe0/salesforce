@@ -1,0 +1,58 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for filing your using LegalZoom.<br/><br/>Because LegalZoom is not a law firm, we are unable to provide legal advice. Although we assisted in the filing of your Trademark application, we are not your attorney. Below are some contact phone numbers and links from the US Patent and Trademark Office (USPTO) that may help you with any issues, inquiries, or concerns.<br/><br/>Trademark Assistance Center:<br/>If you have any questions and would like to speak to a person directly, please contact the Trademark Assistance Center at (800) 786-9199 or (703) 308-9000 if you live in Northern Virginia.<br/><br/>You may also send an e-mail to: TEAS@uspto.gov <br/><br/>Statement of Use/Amendment to Allege Use for Intent-to-Use Application<br/>If you filed your Trademark application on an &#8220;intent-to-use&#8221; basis and are now using the mark in commerce, you may file your &#8220;Statement of Use&#8221; form online via the USPTO&#8217;s Trademark Electronic Application System(<a href=http://www.uspto.gov/teas/eTEASpageB2.htm>here</a>). <br/><br/>Status Inquiries:<br/>If you would like to know the status of your application, please visit <a href=http://tarr.uspto.gov/>here</a>. To track your application&#39;s status, simply type your serial number into the &#8220;Enter a Number&#8221; prompt on the left side of the page. <br/><br/>Changes &#38; Correction of information:<br/>For information on the forms and procedures necessary for changing or revising your application, please visit <a href=http://www.uspto.gov/web/menu/tm2changes.htm>here</a><br/><br/>Petitions:<br/>If you would like petition to revive an &#8220;abandoned&#8221; application, please contact the Office of Petitions at (703) 305-9285 or visit <a href=http://www.uspto.gov/teas/eTEASpageG.htm>here</a>. Please note petitions are only applicable within 2 months of the abandonment date.<br/><br/>Informational Brochures and Products<br/>If you would like free informational publications, please fill print and fill out the form from the link below and submit your requests to:<br/><br/>U.S. Patent and Trademark Office <br/>USPTO Contact Center (UCC) <br/>Crystal Plaza 3, Room 2C02 <br/>P.O. Box 1450 or 703-308-4357 <br/>Alexandria, VA 22313-1450<br/><br/>Request Form: <a href=http://www.uspto.gov/web/offices/ac/ido/oeip/catalog/prices/gisorder.htm>here</a><br/><br/>Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.<br/><br/>Thank you again for choosing LegalZoom.<br/><br/>Best regards,<br/><br/>LegalZoom {!snippetVariable.ipdtm_dept_full}<br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/></p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

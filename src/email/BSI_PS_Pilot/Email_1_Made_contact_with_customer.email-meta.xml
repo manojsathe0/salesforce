@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>pspemail1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Email 1: Made contact with customer</name>
+    <style>freeForm</style>
+    <subject>Nice chatting with you.</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+It was great speaking with you earlier today.
+
+
+I wanted to share some links you may find useful to help ensure your family stays protected:
+
+
+Living Will: Specify medical instructions
+
+Power of Attorney: Appoint someone to make financial decisions on your behalf
+
+Legal Advice from an Attorney: Have an attorney review your estate plan
+
+Living Trust: Avoid probate-related expenses and delay
+
+
+Real Estate Deed Transfer: Add or remove a person’s name from your property title or place your property in a living trust.
+
+
+
+Again, thank you for your time today, and don’t hesitate to reach out if you have any questions.
+
+
+
+Best regards,
+
+{!User.FirstName}
+
+(800) 773-0888 x{!User.Extension}
+
+9900 Spectrum Drive, Austin, TX 78717
+www.legalzoom.com
+
+
+
+Privacy Policy
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+
+Please add services@emails.legalzoom.com to your address book.
+
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

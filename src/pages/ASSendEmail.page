@@ -1,0 +1,96 @@
+<apex:page standardController="Account" extensions="ASSendEmailController" standardStylesheets="true"  id="pg">
+	<apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+	
+<script type= "text/javascript">
+	
+	var $j = jQuery.noConflict();
+	$j(document).ready(function()
+	{
+		$j('img.remover').click(function(){
+			jSibling = $j(this).prev();
+			jSibling.html(jSibling.html()); //reset 
+		});
+	});
+	
+	function validateAttorney()
+	{
+		var selectedValue = $j("[id$='attorneys']").find(":selected").val();
+		if('SELECT' == selectedValue )
+		{
+			alert("Please Select Attorney");
+		}
+		else
+		{
+			sendEmail();
+		}
+	}
+	
+</script>
+<style type="text/css">
+	.remover{cursor: pointer;padding-left:5px;}
+</style>
+
+    <apex:form id="theForm">
+    <apex:pageMessage rendered="{!NOT(ISBLANK($CurrentPage.parameters.message))}" summary="{!$CurrentPage.parameters.message}" severity="ERROR" strength="3" title="Fail"/>
+	<apex:pageBlock tabStyle="Task" id="pb">
+		<apex:actionFunction name="sendEmail" action="{!sendEmails}" />
+		<apex:pageBlockButtons >
+                <input type="button" value="Send Email" onclick="validateAttorney();" class="btn"/>                
+                <apex:commandButton value="Cancel" action="{!cancel}"/>                
+        </apex:pageBlockButtons>
+		<apex:pageBlockSection title="Edit Mail" collapsible="false" columns="1" id="pbs">
+            
+                <apex:pageBlockSectionItem >
+                    <apex:outputText ><b>From</b></apex:outputText>
+                    <apex:outputText value="{!fromEmail}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputText ><b>To</b></apex:outputText>
+                    <apex:selectList value="{!selectedContact}" multiselect="false" size="1" id="attorneys" >
+                        <apex:selectOptions value="{!AvailableContacts}"/>                        
+                    </apex:selectList>                        
+                </apex:pageBlockSectionItem>
+                    
+                <apex:pageBlockSectionItem >
+                    <apex:outputText ><b>Related To:</b></apex:outputText>
+                    <apex:outputText value="{!acc.Name}"/>                    
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputText ><b>Selected Email Template:</b></apex:outputText>
+                    <apex:outputText value="{!selectedEmailTemplate}"></apex:outputText>                    
+                </apex:pageBlockSectionItem>                    
+                         
+                <apex:pageBlockSectionItem >                                 
+                    <apex:outputText ><b>Subject</b></apex:outputText>            
+                    <apex:outputPanel id="subject">
+                        <div class="requiredInput"><div class="requiredBlock"></div>
+                            <apex:inputText value="{!emailSubject}" maxlength="255" size="80">                               
+                            </apex:inputText>
+                        </div>                    
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem> 
+                
+                <apex:pageBlockSectionItem id="PBSI_Attachment">
+                    <apex:outputText ><b>Attachments</b></apex:outputText> 
+                   	<apex:repeat value="{!allAttachments}" var="attachment" id="attachments">
+	        			<apex:inputFile value="{!attachment.body}" filename="{!attachment.name}"/>
+	        		    <apex:image url="{!URLFOR($Resource.Icons, 'delete-icon.png')}"  styleClass="remover"/>
+	        		    <br />
+	    			</apex:repeat>
+                </apex:pageBlockSectionItem>       
+                                   
+                <apex:pageBlockSectionItem >
+                    <apex:outputText ><b>Body</b></apex:outputText>                    
+                    <apex:outputPanel id="body">
+                        <div class="requiredInput" lang="en" spellcheck="true"><div class="requiredBlock"></div>
+                            <apex:inputTextarea value="{!emailBody}" cols="100" rows="10" lang="en">
+                            </apex:inputTextarea>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>                
+            </apex:pageBlockSection>   
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

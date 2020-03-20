@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.tm_search_conflict_link</name>
+    <style>none</style>
+    <subject>tm_search_conflict_link</subject>
+    <textOnly>http://www.legalzoom.com/trademarks-faq/attorney-search-conflicting-trademarks.html</textOnly>
+    <type>custom</type>
+</EmailTemplate>

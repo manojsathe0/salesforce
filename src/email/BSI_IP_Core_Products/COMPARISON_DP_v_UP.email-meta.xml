@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>COMPARISON - DP v UP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>COMPARISON - DP v UP</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in filing your Design Patent and/or Utility Patent application.  While there may be some similarities among these types of intellectual property protection, they are different and serve different purposes.
+
+
+For your reference, general information regarding Design Patents and Utility Patents has been outlined below.
+
+
+Design Patents typically protect the appearance or aesthetic qualities of a manufactured item.  Design Patents protect against other parties manufacturing items that are confusingly similar to your protected design, and also allow you to enforce against infringement upon these rights.
+
+
+Utility Patents are typically intended to protect the functionality of original inventions, unique improvements on existing items, or some methods or processes. Utility Patents protect you against other parties using, making, selling, or importing  the patented item(s) without your permission.
+
+
+The Utility Patent process is a two-step process.  Step One consists of a Patent consultation and review with a registered patent attorney or patent agent, technical Patent illustrations creation and/or review, and an optional comprehensive Patent Search.  Step Two consists of the preparation and drafting of the Utility Patent application and accompanying documents, and electronic filing of the application.
+
+
+For your convenience, we have listed all relevant pricing below.
+
+
+DESIGN PATENT
+
+Gold - $1,099.00 + USPTO filing fee
+
+Standard - $899.00 + USPTO filing fee
+
+
+GET STARTED
+
+http://www.legalzoom.com/design-patents/design-patents-overview.html
+
+PACKAGE DETAILS
+
+http://www.legalzoom.com/design-patents/design-patents-packages.html
+
+
+UTILITY PATENT
+
+Step I - $699.00
+
+Step II - $2,400.00 + USPTO filing fee
+
+
+ADDITIONAL SERVICES
+
+Patent Search - $399.00
+
+
+GET STARTED
+
+http://www.legalzoom.com/patents/provisional-patent-application-overview.html
+
+PACKAGE DETAILS
+
+http://www.legalzoom.com/patents/provisional-patent-application-pricing.html
+
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+
+
+
+Best regards,
+
+
+{!User.FirstName}
+
+(800) 773-0888 x{!User.Extension}
+
+www.legalzoom.com
+
+
+
+Privacy Policy
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm.  Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+
+Please add services@emails.legalzoom.com to your address book.
+
+
+This email was sent to: {!Contact.Email}
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Site Translation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Site translations</value>
+    </caseValues>
+    <fields>
+        <help><!-- The description of the first category that appears on the Home page of the public knowledge base. --></help>
+        <label><!-- Category 1 Description --></label>
+        <name>Category1Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The description of the second category that appears on the Home page of the public knowledge base. --></help>
+        <label><!-- Category 2 Description --></label>
+        <name>Category2Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The description of the third category that appears on the Home page of the public knowledge base. --></help>
+        <label><!-- Category 3 Description --></label>
+        <name>Category3Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The description of the fourth category that appears on the Home page of the public knowledge base. --></help>
+        <label><!-- Category 4 Description --></label>
+        <name>Category4Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The description of the fifth category that appears on the Home page of the public knowledge base. --></help>
+        <label><!-- Category 5 Description --></label>
+        <name>Category5Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The description of the sixth category that appears on the Home page of the public knowledge base. --></help>
+        <label><!-- Category 6 Description --></label>
+        <name>Category6Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The text that appears under the advertising title on the home page of the public knowledge base. This field is limited to 32,000 characters. --></help>
+        <label><!-- Home Advertising Text --></label>
+        <name>HomeAdText__c</name>
+    </fields>
+    <fields>
+        <help><!-- The advertising title that appears on the home page of the public knowledge base. This field is limited to 255 characters. --></help>
+        <label><!-- Home Advertising Title --></label>
+        <name>HomeAdTitle__c</name>
+    </fields>
+    <fields>
+        <help><!-- The target language as identified by its IETF code. For example, if you&apos;re translating from French to American English, enter en_US here. --></help>
+        <label><!-- Language Code --></label>
+        <name>Language__c</name>
+        <picklistValues>
+            <masterLabel>da</masterLabel>
+            <translation><!-- da --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>de</masterLabel>
+            <translation><!-- de --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>en_US</masterLabel>
+            <translation><!-- en_US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>es</masterLabel>
+            <translation><!-- es --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fi</masterLabel>
+            <translation><!-- fi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fr</masterLabel>
+            <translation><!-- fr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>it</masterLabel>
+            <translation><!-- it --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ja</masterLabel>
+            <translation><!-- ja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ko</masterLabel>
+            <translation><!-- ko --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>nl_NL</masterLabel>
+            <translation><!-- nl_NL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pt_BR</masterLabel>
+            <translation><!-- pt_BR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ru</masterLabel>
+            <translation><!-- ru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>sv</masterLabel>
+            <translation><!-- sv --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>th</masterLabel>
+            <translation><!-- th --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>zh_CN</masterLabel>
+            <translation><!-- zh_CN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>zh_TW</masterLabel>
+            <translation><!-- zh_TW --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PKB Site Setup --></label>
+        <name>PKB_Site_Setup__c</name>
+        <relationshipLabel><!-- Site Translations --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>PKB Translation Layout</layout>
+        <sections>
+            <label><!-- Categories --></label>
+            <section>Categories</section>
+        </sections>
+        <sections>
+            <label><!-- Home advertising --></label>
+            <section>Home advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

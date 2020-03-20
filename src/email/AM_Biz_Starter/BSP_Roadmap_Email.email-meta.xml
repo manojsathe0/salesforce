@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP RR Email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BSP Roadmap Email</name>
+    <style>none</style>
+    <subject>Enter Subject</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I look forward to speaking to you regarding your Business Starter Roadmap. I have attached your Roadmap that we will go over during the call.
+
+Thank you again for reaching out to the LegalZoom Business Starter Team.
+
+
+{!User.FirstName}
+Business Account Manager
+(855) 787-1951 x{!User.Extension}
+BizHelp@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

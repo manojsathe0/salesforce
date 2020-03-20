@@ -1,0 +1,75 @@
+<style>p{margin-top:0px; margin-bottom:0px;}</style><body class="setupTab"  onload="init()"  style=" background-color:#CCCCCC; bLabel:body; bEditID:b1st1;"><center ><table id="topTable" height="450" width="500" cellpadding="0" cellspacing="0" ><tr valign="top" ><td  style=" vertical-align:top; height:55; text-align:left; background-color:#FFFFFF; bLabel:header; bEditID:r1st1;"><img id="r1sp1" bLabel="headerImage" border="0" bEditID="r1sp1" src="https://c.na11.content.force.com/servlet/servlet.ImageServer?id=015G0000001KEKj&oid=00DG0000000BmQx" ></img></td></tr><tr valign="top" ><td  style=" height:5; background-color:#3333FF; bLabel:accent1; bEditID:r2st1;"></td></tr><tr valign="top" ><td styleInsert="1" height="300"  style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;"><table height="400" width="550" cellpadding="5" border="0" cellspacing="5" ><tr height="400" valign="top" ><td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" ><p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p><p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Dear
+{!Contact.FirstName} {!Contact.LastName},</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Thank you for
+contacting&nbsp;us for your business needs.&nbsp;
+In response to your inquiry, I'd like to let you know how we can help your company document its meetings and actions, which is vital to help protect its owners from being personally responsible for the company's debts and liabilities.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">With LegalZoom Minutes Manager, we make it easy to create records for your company's meetings and actions. Use it as often as you wish throughout the year for a one-time fee. Just sign up by answering a few simple questions and you can download your minutes today.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;"><table border="0" cellspacing="0" cellpadding="0"> 
+	<tr> 
+	<td bgcolor="#F58A22"><img src="http://static.cdn.responsys.net/i5/responsysimages/content/legalz/btn_lft.jpg" width="1" height="29" alt="" style="display:block; border:0;" /></td> 
+
+	<td height="29" background="http://static.cdn.responsys.net/i5/responsysimages/content/legalz/btn_bg.jpg" bgcolor="#F58A22"><div style="font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#FFFFFF; font-weight:bold; margin-left:9px; margin-right:9px;"><a href="http://www.legalzoom.com/additional-business-services/corporate-minutes.html" style="font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#FFFFFF; font-weight:bold; text-decoration:none;"><span style="color:#FFFFFF;">Sign Up Today</span> <img src="http://static.cdn.responsys.net/i5/responsysimages/content/legalz/white_arw.jpg" width="6" height="10" alt="" style="display:inline; border:0;" /></a></div></td> 
+	<td bgcolor="#F58A22"><img src="http://static.cdn.responsys.net/i5/responsysimages/content/legalz/btn_right.jpg" width="1" height="29" style="display:block; border:0;" /></td> 
+
+	</tr> 
+	</table>
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">It's just $99/year</p>
+
+</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">If you have any
+additional questions,&nbsp;give me a call&nbsp;at the phone
+number below and I'll be happy to help.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Best regards,</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;"><p style="margin: 0in; font-size: 10pt;">{!User.FirstName}</p>
+
+<p style="margin: 0in; font-size: 10pt;">(800) 773-0888
+x{!User.Extension}</p>
+
+<p style="margin: 0in; font-size: 10pt;"><a href="http://www.legalzoom.com">www.legalzoom.com</a></p><p></p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0pt 0pt 12pt; font-family: Calibri;"><a href="http://www.legalzoom.com/privacy-policy-popup.html"><span style="font-size: 7.5pt;">Privacy Policy</span></a></p>
+
+<p style="margin: 0pt 0pt 12pt; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">Call Customer Care:
+1.800.773.0888</p>
+
+<p style="margin: 0pt 0pt 12pt; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">This is a service email
+related to your LegalZoom account.</p>
+
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">Please
+add services@emails.legalzoom.com to your address book. </p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">This
+email was sent to: {!Contact.Email}</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">©
+LegalZoom.com, Inc. All rights reserved.</p></td></tr></table></td></tr><tr valign="top" ><td  style=" height:0; background-color:#FFFFFF; bLabel:accent2; bEditID:r4st1;"></td></tr><tr valign="top" ><td  style=" vertical-align:; height:0; text-align:; background-color:#FFFFFF; bLabel:footer; bEditID:r5st1;"></td></tr><tr valign="top" ><td  style=" height:5; background-color:#3333FF; bLabel:accent3; bEditID:r6st1;"></td></tr></table></center>

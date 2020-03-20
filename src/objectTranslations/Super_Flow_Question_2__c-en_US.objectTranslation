@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>$uperFlow Question</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>$uperFlow Questions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Order --></label>
+        <name>Display_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Featured --></label>
+        <name>Featured__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>501c3</masterLabel>
+            <translation><!-- 501c3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR</masterLabel>
+            <translation><!-- AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amend</masterLabel>
+            <translation><!-- Amend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B&amp;R</masterLabel>
+            <translation><!-- B&amp;R --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAP</masterLabel>
+            <translation><!-- BAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAS</masterLabel>
+            <translation><!-- BAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BLP</masterLabel>
+            <translation><!-- BLP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bankruptcy</masterLabel>
+            <translation><!-- Bankruptcy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC</masterLabel>
+            <translation><!-- CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COGS</masterLabel>
+            <translation><!-- COGS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR</masterLabel>
+            <translation><!-- CR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cert Copy</masterLabel>
+            <translation><!-- Cert Copy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conv</masterLabel>
+            <translation><!-- Conv --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corp Kit</masterLabel>
+            <translation><!-- Corp Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBA</masterLabel>
+            <translation><!-- DBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DIV</masterLabel>
+            <translation><!-- DIV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DUI</masterLabel>
+            <translation><!-- DUI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Des Pat</masterLabel>
+            <translation><!-- Des Pat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diss</masterLabel>
+            <translation><!-- Diss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EIN</masterLabel>
+            <translation><!-- EIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENC</masterLabel>
+            <translation><!-- ENC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ENR</masterLabel>
+            <translation><!-- ENR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FQ</masterLabel>
+            <translation><!-- FQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forms</masterLabel>
+            <translation><!-- Forms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INC</masterLabel>
+            <translation><!-- INC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR</masterLabel>
+            <translation><!-- IR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAP</masterLabel>
+            <translation><!-- LAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LLC</masterLabel>
+            <translation><!-- LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LLP</masterLabel>
+            <translation><!-- LLP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LP</masterLabel>
+            <translation><!-- LP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LT</masterLabel>
+            <translation><!-- LT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LW</masterLabel>
+            <translation><!-- LW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LWT</masterLabel>
+            <translation><!-- LWT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MMM</masterLabel>
+            <translation><!-- MMM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC</masterLabel>
+            <translation><!-- NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NP</masterLabel>
+            <translation><!-- NP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OA</masterLabel>
+            <translation><!-- OA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POA</masterLabel>
+            <translation><!-- POA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pat</masterLabel>
+            <translation><!-- Pat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pat Draw</masterLabel>
+            <translation><!-- Pat Draw --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pat Search</masterLabel>
+            <translation><!-- Pat Search --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pet Protect</masterLabel>
+            <translation><!-- Pet Protect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prenuptial</masterLabel>
+            <translation><!-- Prenuptial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prov Pat</masterLabel>
+            <translation><!-- Prov Pat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA</masterLabel>
+            <translation><!-- RA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REDT</masterLabel>
+            <translation><!-- REDT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REL</masterLabel>
+            <translation><!-- REL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-Corp Elec</masterLabel>
+            <translation><!-- S-Corp Elec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SP</masterLabel>
+            <translation><!-- SP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STID</masterLabel>
+            <translation><!-- STID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM</masterLabel>
+            <translation><!-- TM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM Assign</masterLabel>
+            <translation><!-- TM Assign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM Dec (8)</masterLabel>
+            <translation><!-- TM Dec (8) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM Monitor</masterLabel>
+            <translation><!-- TM Monitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM Renew (9)</masterLabel>
+            <translation><!-- TM Renew (9) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM SOU</masterLabel>
+            <translation><!-- TM SOU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM SOU Ext</masterLabel>
+            <translation><!-- TM SOU Ext --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM Search</masterLabel>
+            <translation><!-- TM Search --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Question --></label>
+        <name>Question__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+        <picklistValues>
+            <masterLabel>Abandoner</masterLabel>
+            <translation><!-- Abandoner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biz Starter</masterLabel>
+            <translation><!-- Biz Starter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Decline</masterLabel>
+            <translation><!-- Decline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound PS</masterLabel>
+            <translation><!-- Inbound PS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quick Start</masterLabel>
+            <translation><!-- Quick Start --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA Renewal</masterLabel>
+            <translation><!-- RA Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retention</masterLabel>
+            <translation><!-- Retention --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>$uperFlow Question Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Cannot change question once created.  To edit, please set the record to inactive and then clone it. --></errorMessage>
+        <name>No_Edit_To_Question</name>
+    </validationRules>
+</CustomObjectTranslation>

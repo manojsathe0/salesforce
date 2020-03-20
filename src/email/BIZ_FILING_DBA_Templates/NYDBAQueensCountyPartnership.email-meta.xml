@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>nydbaqpart</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NY DBA Queens County Partnership</name>
+    <style>none</style>
+    <subject>NY DBA Queens County Partnership</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your DBA order.  Please follow the steps listed below to complete your order.
+
+Next steps:
+•  Do not make any changes to the attached document as it will result in delays with your order.  If you need to make changes, please contact our Customer Support.
+•  Print two (2) copies of the document on white paper using black ink.  Please do not use color ink.
+•  In the presence of a Notary Public, please have all listed partners sign their names in black ink on all copies where indicated.  The documents must then be properly notarized.
+•  There are 2 different sections for Notary Acknowledgement.  Only 1 is to be completed.  If the documents are being Notarized in the state of New York, please only have the Section identified as &quot;Acknowledgement in New York State&quot; completed, located on 1st page of the application.  If the documents are being notarized outside the state of New York, please only have the Section identified as &quot;Acknowledgement Outside New York State&quot; completed, located on 2nd page of the application.
+•  Secondarily, it is important that the Notary Public apply their stamp/seal below their signature line.  
+•  Mail the documents to our address listed below.  Please include a form of identification for all listed registrant(s).  This identification need not be a photo ID, but it must clearly represent the name of any listed registrant and their corresponding residence address.  Examples of acceptable identification would be a copy of a utility bill or a driver?s license.   Please note that we cannot accept faxes of the DBA application as the County office will only accept original signed documents.
+
+LegalZoom.com, Inc.
+101 N. Brand Blvd., 10th Floor
+POB 29096
+Glendale, CA 91209-9096
+Attn: Business Filings (Order #XXXXXXX)
+
+If you have any questions regarding your order, please contact our {!snippetVariable.cc_dept_full} at {!snippetVariable.ccphone} or customercare@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

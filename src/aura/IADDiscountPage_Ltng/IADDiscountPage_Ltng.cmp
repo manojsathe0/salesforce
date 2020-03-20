@@ -1,0 +1,151 @@
+<aura:component controller="IADDiscountController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+    <aura:attribute name="orderId" type="String" />
+    <aura:attribute name="reasonsForDiscount" type="List" />
+    <aura:attribute name="selectedDiscountReason" type="Integer" />
+    <aura:attribute name="discountAmount" type="String"/>
+    <aura:attribute name="comments" type="String" />    
+    <aura:attribute name="discountToCancelId" type="String" />
+    <aura:attribute name="existingDiscounts" type="Object" />
+    <aura:attribute name="orderSubTotal" type="Decimal" />
+    <aura:attribute name="usrn" type="String" />
+    <aura:attribute name="pwd" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+	
+    <div class="slds-card" style="padding: 1% 2% 4% 1%" Id="mainDiv">
+        <lightning:spinner aura:id="spinner" alternativeText="loading discounts" />
+        <div class="slds-media slds-no-space slds-grow" Id="topLevelSection">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="custom:custom17" size="medium"/>
+            </div>
+            <div class="slds-media__body" Id="topLabelDiv">
+                <p class="slds-text-title--caps slds-line-height--reset" Id="topLabel">Discount</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Make a Refund">Add Discount</h1>
+            </div>
+        </div>
+        <div class="slds-form slds-form_compound" style="padding: 1% 0 0 0; margin-bottom:2%;"> 
+            <div class="slds-form-element__group" Id="formDiv">
+                <form>                    
+                    <div class="discount-reason">
+                        <div class="slds-form-element__row" >
+                            <div class="slds-form-element slds-size_6-of-6" Id="discountReasonDiv">
+                                <lightning:select aura:id="discountform" label="Discount Reason" name="discountReason" value="{!v.selectedDiscountReason}">
+                                    <aura:iteration items="{!v.reasonsForDiscount}" var="reason" indexVar="key">
+                                        <option value="{!reason.key}" text="{!reason.value}" />
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </div>
+                    </div>  
+                    
+                    <div class="slds-form-element__row" Id="amountDiv">
+                        <div class="slds-form-element slds-size_6-of-6" Id="amountDiv">
+                            <lightning:input aura:id="discountform"  type="number" label="Amount" name="discountAmount" value="{!v.discountAmount}" required="true" formatter="currency" min="0.01" step="0.01" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__row" >
+                        <div class="slds-form-element slds-size_6-of-6" Id="commentDiv">
+                            <lightning:input aura:id="discountform" label="Comments" name="comments" value="{!v.comments}" required="true" />
+                        </div>
+                    </div>
+                </form> 
+            </div>
+            <div style="margin:25px 0 0 0px;" Id="cancelAndApplyButtonSection">
+                <button class="slds-button slds-button--neutral" onclick="{!c.closeFocusedTab}" Id="cancelButton"> Cancel </button>
+                <button class="slds-button slds-button--brand" onclick="{!c.validateFormAndApplyDiscount}" Id="applyButton"> Apply </button>
+            </div>
+        </div>
+        
+        <aura:renderIf isTrue="{!v.existingDiscounts.length > 0}">
+            <div class="slds-card" style="border: 1px solid rgb(221, 219, 218);" Id="existingDiscountSection">
+                <div class="slds-card__header slds-grid accordion" onclick="{!c.toggleIconsAndTable}">
+                    <lightning:icon aura:id="downIcon" iconName="utility:down" size="xx-small" />
+                    <lightning:icon aura:id="rightIcon" iconName="utility:right" size="xx-small" class="slds-hide"/>
+					<strong>Existing Discounts</strong>
+                </div>
+                <div aura:id="discountsTable">
+                    <table class="slds-table slds-table--bordered" style="font-size:12px; " Id="existingDiscountTable">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Discount Type</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Discount Amount</strong></th>
+                                <th scope="col" class="slds-size--2-of-12"><strong>Discount Reason</strong></th>
+                                <th scope="col" class="slds-size--2-of-12"><strong>Date</strong></th>
+                                <th scope="col" class="slds-size--2-of-12"><strong>Entered By</strong></th>
+                                <th scope="col" class="slds-size--3-of-12"><strong>Comments</strong></th>
+                                <th scope="col" class="slds-size--1-of-12"><strong>Action</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.existingDiscounts}" var="theDiscount">
+                                <tr class="slds-hint-parent mainLineItem" data-cancel="{!theDiscount.isCancelled}" style="{!theDiscount.isCancelled == true ? 'text-decoration:line-through;' : 'text-decoration:none;'}"> 
+                                    <td>
+                                        {!theDiscount.discountType.name}
+                                    </td> 
+                                    <td>
+                                        <ui:outputCurrency value="{!theDiscount.amount}"/>
+                                    </td>
+                                    <td>
+                                        {!theDiscount.reason}
+                                    </td>
+                                    <td>{!theDiscount.adjDateEntered}</td>
+                                    <td>{!theDiscount.createdBy}</td>
+                                    <td style="white-space: normal">{!theDiscount.comment}</td>
+                                    <td>
+                                        <a onclick="{!c.showConfirmation}" id="{!theDiscount.orderDiscountId}" style="{!theDiscount.isCancelled == true ? 'display:none;' : 'display:block;'}">Cancel</a>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                            <tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </aura:renderIf>
+        
+        <div aura:id="cancelDiscount" class="slds-hide">
+            <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog" Id="popupDialogDiv">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 class="slds-text-heading--medium" Id="CancelH2Label">Cancel this Discount?</h2>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button--neutral slds-button--brand" type="button" onclick="{!c.cancelExistingDiscount}" Id="ConfirmButtn">Confirm</button>
+                        <button class="slds-button slds-button--neutral" type="button" onclick="{!c.closeConfirmation}" Id="CloseButton">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+        </div>
+        
+        <!-- Manager credentials B-38985 -->        
+        <div aura:id="managerCredPanel" style="display:none">
+            <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        Check discount Permission
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <p>Management approval is required to complete this transaction. Please have an authorized approver enter their username and password below</p>
+                        <form  >
+                            <lightning:input aura:id="approvalForm" label="Username"
+                                             name="username"
+                                             value="{!v.usrn}" /> 
+                            <lightning:input aura:id="approvalForm" type="Password" label="Password"
+                                             name="username"
+                                             value="{!v.pwd}" />
+                        </form>
+                    </div>                        
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button--brand" onclick="{!c.validateManagerCredentialAndApproveDiscount}">Approve</button>
+                        <button class="slds-button slds-button--brand"  onclick="{!c.hideManagerCredPanel}">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+        </div>
+    </div>
+</aura:component>

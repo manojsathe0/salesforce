@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Overtime Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Overtime Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manger --></label>
+        <name>Manger__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rep Name --></label>
+        <name>Rep_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start --></label>
+        <name>Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stop --></label>
+        <name>Stop__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workforce Management --></label>
+        <name>Workforce_Management__c</name>
+        <relationshipLabel><!-- Overtime Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 30 Min Lunch --></label>
+        <name>X30_Min_Lunch__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

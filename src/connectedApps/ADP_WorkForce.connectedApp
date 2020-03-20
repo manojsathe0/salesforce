@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>nshani@legalzoom.com</contactEmail>
+    <iconUrl>https://login.salesforce.com/logos/Apps/ADP/icon.png</iconUrl>
+    <label>ADP WorkForce</label>
+    <logoUrl>https://login.salesforce.com/logos/Apps/ADP/logo.png</logoUrl>
+    <startUrl>https://portal.adp.com/public/index.htm</startUrl>
+</ConnectedApp>

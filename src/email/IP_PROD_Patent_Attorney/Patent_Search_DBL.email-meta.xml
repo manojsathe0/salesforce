@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>patatty3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Patent Search (DBL)</name>
+    <style>none</style>
+    <subject>Patent Search (Canyon)</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you choosing LegalZoom.
+
+Our records show that your Patent Search Report was completed and shipped to you.
+
+The report provides you with information about both issued and published Patents that relate in some way to your invention. The report is broken down into 2 sections, Primary and Secondary. The Primary section includes relevant patents and applications in their entirety. The Secondary section lists additional patents and applications which you can view in further detail at the USPTO website. The accompanying guide includes additional instructions.
+
+As part of your package, you can have a registered Patent Agent or attorney review and advise you on up to three of the issued Patents or published applications in your search results. Once you look through the report, email lzpatents@canyonlawgroup.com the three Patent or application numbers you want reviewed. When your review is complete and you are ready to move forward, a Professional Patent Illustrator will begin preparing your Technical Patent Drawings.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

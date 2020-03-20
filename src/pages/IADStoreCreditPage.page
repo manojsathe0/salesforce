@@ -1,0 +1,107 @@
+<apex:page controller="IADStoreCreditController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:includescript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <style>
+            #dataTable{
+                 table-layout: fixed;
+                 border-spacing: 15px;
+                  border-collapse: separate;
+                 width:75%;
+            }
+            td { width: 20%; 
+                 padding: 15px;}
+
+             a:hover {
+              cursor:pointer;
+             }
+        </style>
+        <script type = "text/javascript">
+            window.onload = function()
+            {
+                populateStoreCredit();
+            };
+            function openRefundPage() {
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabForRefund);
+
+            }
+            var enclosingPrimaryTabForRefund = function enclosingPrimaryTabForRefund(result) {
+                var theAmount = $('#theAmount').val();
+                var url = '/apex/IADRefundPage?customerId={!customerId}&storeCreditToCard=1&amount=' + theAmount + '&invokingPageId={!storeCreditId}';
+                console.log('url ' + url);
+                sforce.console.openSubtab(result.id, url, true, 'Make a Refund');
+            };
+
+           var storeCreditRefresh = function (result) {
+                console.log('message + ' + result.message + ' id {!storeCreditId}');
+               if(result.message == '{!storeCreditId}'){
+                  populateStoreCredit();
+               }
+            };
+
+            sforce.console.addEventListener('RefreshStoreCreditEvent', storeCreditRefresh);
+        </script>
+        </head>
+        <apex:form id="theForm">
+            <c:IADMessageBox theMessages="{!storeCreditService.iadMessages}" />
+            <apex:actionFunction name="populateStoreCredit" action="{!populateStoreCredit}" rerender="theForm, hiddenInput" status="statusUpdating" />
+
+
+         <div class="slds">
+             <apex:actionStatus id="statusUpdating">
+                 <apex:facet name="start">
+                     <div class="slds-spinner_container">
+                         <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                             <div class="slds-spinner__dot-a"></div>
+                             <div class="slds-spinner__dot-b"></div>
+                         </div>
+                     </div>
+                 </apex:facet>
+             </apex:actionStatus>
+             <apex:outputPanel id="hiddenInput">
+                 <input id="theAmount" type="hidden" value="{!storeCreditService.storeCredit.storeCredit.amount}"/>
+             </apex:outputPanel>
+             <div class="slds-text-heading--small">Store Credit Detail</div>
+ 
+             <table id="dataTable">
+                 <tr>
+                     <td> Credit #</td>
+                     <td>{!storeCreditService.storeCredit.storeCredit.code}</td>
+                 </tr>
+                 <tr>
+                     <td>Issued</td>
+                     <td>
+                         <apex:outputText value="{!storeCreditService.storeCredit.storeCredit.adjDateCreated}" title="Date Issued"/>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>Expires</td>
+                     <td>
+                     <apex:outputText value="{!storeCreditService.storeCredit.storeCredit.adjExpirationDate}" title="Date Expires"/>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>Status</td>
+                     <td><b>{!storeCreditService.storeCredit.storeCredit.status}</b></td>
+                 </tr>
+                 <tr>
+                     <td>Remaining</td>
+                     <td><b>
+                         <apex:outputText value="{0, number, currency}">
+                             <apex:param value="{!storeCreditService.storeCredit.storeCredit.amount}" />
+                         </apex:outputText></b></td>
+                 </tr>
+
+                 <tr style="{!IF(storeCreditService.storeCredit.storeCredit.status=='Available', '', 'display:none')}}">
+                     <td></td>
+                     <td class="slds-text-body--large"><a id="refund" onclick="openRefundPage();return false;" href="#">Refund back to card</a></td>
+                 </tr>
+
+              </table>
+            </div>
+
+        </apex:form> 
+        </html>
+</apex:page>

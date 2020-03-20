@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>APIGEE_ACCESS_TOKEN</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>APIGEE_ACCESS_TOKENS</value>
+    </caseValues>
+    <fields>
+        <label><!-- Access Token --></label>
+        <name>Access_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Token Time --></label>
+        <name>Last_Token_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Session ID --></label>
+        <name>Session_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Id --></label>
+        <name>User_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

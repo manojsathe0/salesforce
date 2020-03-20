@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Agent_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order_Matching_Activity__r.CreatedBy.FirstName +  Order_Matching_Activity__r.CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent__c</fullName>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Agent 1</fullName>
+                    <default>false</default>
+                    <label>Agent 1</label>
+                </value>
+                <value>
+                    <fullName>Agent 2</fullName>
+                    <default>false</default>
+                    <label>Agent 2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Days_from_Creation__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOW() - CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days from Creation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LZ_Order_Item_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>LZ Order Item Id</label>
+        <length>20</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Campign__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(  Order_Matching_Activity__r.Matched_Campaign__c = &apos;Mobile&apos; , True , False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mobile Campign</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH( DATEVALUE(CreatedDate) ),
+1, &quot;(1)January&quot;,
+2, &quot;(2)February&quot;,
+3, &quot;(3)March&quot;, 
+4, &quot;(4)April&quot;, 
+5, &quot;(5)May&quot;, 
+6, &quot;(6)June&quot;,
+7, &quot;(7)July&quot;,
+8, &quot;(8)August&quot;,
+9, &quot;(9)September&quot;,
+10, &quot;(10)October&quot;,
+11, &quot;(11)November&quot;,
+12, &quot;(12)December&quot;,
+&quot;None&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Net_minus_Filing_Fee__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Net_minus_Filing_Fee__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net minus Filing Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Logic__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>New Logic</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Order_Date_Time_Created__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Date_Time_Created__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Date/Time Created</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Order_Item_Product_Line__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order_Item__r.Product__r.Product_Line__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Item Product Line</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Item_Product_Process__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order_Item__r.Product__r.Process__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Item Product Process</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Order Item</label>
+        <referenceTo>Order_Item__c</referenceTo>
+        <relationshipName>Order360</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Matching_Activity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Order Matching Activity</label>
+        <referenceTo>Order_Matching_Activity__c</referenceTo>
+        <relationshipName>Order360</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Payment_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Order_Payment_Status__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Payment Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Saved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Order Saved</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <referenceTo>Order__c</referenceTo>
+        <relationshipName>Order360</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Child__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Order__r.Parent_Order__c == null , &apos;Parent&apos; , &apos;Child&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent/Child</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Net_Fee__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Parent_Order__r.Net_minus_Filing_Fee__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Net Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Order_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(Order__r.Parent_Order__r.Date_Time_Created__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Order Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Order_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Parent Order Item</label>
+        <referenceTo>Order_Item__c</referenceTo>
+        <relationshipLabel>Active Revenue (Parent Order Item)</relationshipLabel>
+        <relationshipName>Active_Revenue</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order_Item__r.Order__r.Parent_Order__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Order</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Process__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Parent_Order__r.Process__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Process</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Parent_Order__r.Product_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Product Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_cancellation__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for cancellation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unaware of service</fullName>
+                    <default>false</default>
+                    <label>Unaware of service</label>
+                </value>
+                <value>
+                    <fullName>(Free Trial) Used service during Free Trial and is no longer needed</fullName>
+                    <default>false</default>
+                    <label>(Free Trial) Used service during Free Trial and is no longer needed</label>
+                </value>
+                <value>
+                    <fullName>Did not understand service value</fullName>
+                    <default>false</default>
+                    <label>Did not understand service value</label>
+                </value>
+                <value>
+                    <fullName>(Paid) No longer needed</fullName>
+                    <default>false</default>
+                    <label>(Paid) No longer needed</label>
+                </value>
+                <value>
+                    <fullName>Price too expensive</fullName>
+                    <default>false</default>
+                    <label>Price too expensive</label>
+                </value>
+                <value>
+                    <fullName>Previously retained but still wants to cancel</fullName>
+                    <default>false</default>
+                    <label>Previously retained but still wants to cancel</label>
+                </value>
+                <value>
+                    <fullName>Already has an Attorney</fullName>
+                    <default>false</default>
+                    <label>Already has an Attorney</label>
+                </value>
+                <value>
+                    <fullName>Poor Consultation with an Attorney</fullName>
+                    <default>false</default>
+                    <label>Poor Consultation with an Attorney</label>
+                </value>
+                <value>
+                    <fullName>Attorney referred customer elsewhere</fullName>
+                    <default>false</default>
+                    <label>Attorney referred customer elsewhere</label>
+                </value>
+                <value>
+                    <fullName>Has not started business</fullName>
+                    <default>false</default>
+                    <label>Has not started business</label>
+                </value>
+                <value>
+                    <fullName>Business has closed</fullName>
+                    <default>false</default>
+                    <label>Business has closed</label>
+                </value>
+                <value>
+                    <fullName>Upset and unwilling to listen</fullName>
+                    <default>false</default>
+                    <label>Upset and unwilling to listen</label>
+                </value>
+                <value>
+                    <fullName>Competitor</fullName>
+                    <default>false</default>
+                    <label>Competitor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Order Saved</fullName>
+                    <default>false</default>
+                    <label>Order Saved</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sales_Cycle__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(Order_Item__r.Order_Item_Date_Time_Created__c) -  DATEVALUE(Order_Matching_Activity__r.Activity_Created_DateTime__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Cycle</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_Saved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Subscription Saved</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Active Revenue</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>LZ_Order_Item_Id__c</columns>
+        <columns>Order__c</columns>
+        <columns>Order_Item__c</columns>
+        <columns>Order_Matching_Activity__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Today</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Order__c</columns>
+        <columns>Order_Item__c</columns>
+        <columns>Order_Matching_Activity__c</columns>
+        <columns>Agent__c</columns>
+        <columns>Agent_Name__c</columns>
+        <columns>New_Logic__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_QA_Team</group>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Today_Basu</fullName>
+        <booleanFilter>(1 AND 2) AND 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Order__c</columns>
+        <columns>Order_Item__c</columns>
+        <columns>Order_Matching_Activity__c</columns>
+        <columns>Agent__c</columns>
+        <columns>Agent_Name__c</columns>
+        <columns>New_Logic__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Order_Date_Time_Created__c</field>
+            <operation>greaterThan</operation>
+            <value>9/1/2016 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Order_Date_Time_Created__c</field>
+            <operation>lessThan</operation>
+            <value>9/2/2016 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Agent__c</field>
+            <operation>equals</operation>
+            <value>Agent 1</value>
+        </filters>
+        <label>Today_Basu</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_QA_Team</group>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>Ord360-{0000}</displayFormat>
+        <label>Order360 Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Active Revenue</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

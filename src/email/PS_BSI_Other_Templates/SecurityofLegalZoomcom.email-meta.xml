@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>security</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Security of LegalZoom.com</name>
+    <style>none</style>
+    <subject>Security of LegalZoom.com</subject>
+    <textOnly>Dear Valued LegalZoom Customer, 
+
+Thank you for your recent inquiry.  In regards to your question, LegalZoom.com is a highly secure website that is tested and certified daily to pass the HACKER SAFE Security Scan.  Furthermore, when entering your information on the online questionnaire, LegalZoom.com uses a VeriSign SSL Certificate to encrypt your data transmission, and thus securing your private information.  LegalZoom.com is also recognized as meeting all Better Business Bureau Online Reliability standards and is confirmed as a Better Business Bureau member.  Moreover, when completing the online questionnaire, you are not required to provide any social security numbers or account numbers.
+
+Please call us toll-free at (800) 962-7490 if we can be of further assistance. 
+
+Best regards, 
+
+The LegalZoom Team
+{!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

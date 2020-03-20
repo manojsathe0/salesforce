@@ -1,0 +1,52 @@
+<apex:page standardstylesheets="false">
+<head>
+        <apex:includeScript value="{!$Resource.moment}" />
+        <apex:includeScript value="{!$Resource.moment_timezone_data}" />
+        <apex:includeScript value="{!URLFOR($Resource.jstz, 'jstz/dist/jstz.min.js')}" />
+         <script type="text/javascript">
+            //ex strformat var = 'MM/DD/YYYY h:mm a'
+
+
+            //normalizeJSONDate normalizes a jsonified date from apex controller
+            //example dateVal format: 2016-03-11T02:12:18.000+0000
+            function normalizeJSONDate( dateVal, strFormat) {
+                try {
+                        var tempstr =  dateVal.substring(0, dateVal.lastIndexOf('.')) + 'Z';
+                        var convertedDate = moment(tempstr);
+                        convertedDate = convertedDate.tz(findTimezone()).format(strFormat);
+                        return convertedDate;
+                } catch (err) {
+                    console.log('error ' + err);
+                    return dateVal;
+                }
+                return dateVal;
+            }
+
+
+            //normalizeJSDate normalizes a JS date
+            //example dateVal format: 'Mon Mar 21 20:06:13 GMT 2016'
+            function normalizeJSDate(dateVal, strFormat){
+                try {
+                        var tempDate = moment(dateVal);
+                        console.log('dateVal ' + dateVal);
+                        //var tempDate = moment('Mon Mar 21 20:06:13 GMT 2016');
+                        //tempDate = moment(someDate).format('MM/DD/YYYY');
+                        //var convertedDate = moment(tempDate);
+                        var convertedDate = tempDate.tz(findTimezone()).format(strFormat);
+                        return convertedDate;
+                } catch (err) {
+                    console.log('error ' + err);
+                    return dateVal;
+                }
+                return dateVal;
+            }
+
+            //finds a users timezone
+            function findTimezone(){
+              var tz = jstz.determine();
+              console.log('tz detected '+ tz.name());
+              return String(tz.name());
+            }
+        </script>
+</head>
+</apex:page>

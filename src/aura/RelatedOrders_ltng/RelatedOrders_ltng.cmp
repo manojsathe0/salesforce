@@ -1,0 +1,49 @@
+<aura:component controller="RelatedOrdersController_ltng"  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	  <aura:attribute name="orderRecordId" type="String" />
+    <aura:attribute name="ordergroupId" type="String" />
+    <aura:attribute name="ordergroups" type="object[]"/>
+    <aura:attribute name="customerId" type="String" />
+   
+    <aura:attribute name="hasrelatedorders" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <aura:handler event="c:RefreshRelatedOrders_ltng" action="{!c.doInit}"/>
+        <div class="slds-card">
+            <div class="slds-scrollable" style="height: 12rem; width: 24rem;">
+       <lightning:spinner aura:id="mySpinner" />
+        <div style="{!v.hasrelatedorders? '' : 'display:none'}"> 
+            <aura:iteration items="{!v.ordergroups}" var="orderWrap">
+                <div class="slds-m-top--small" style="{!v.hasrelatedorders ? '' : 'display:none'}">
+                    <div class="slds-m-top--xxx-small slds-text-body--small">
+                        <span class="slds-icon__container slds-icon-standard-order" title="Order">
+                            <lightning:icon iconName="custom:custom40"  size="x-small" />
+                            <a  data-orderrecordid="{!orderWrap.orderrecordid}" data-orderidfromsub="{!orderWrap.orderId}" onclick="{!c.openOrderDetails}" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" title="Click to open order">{!orderWrap.orderId}</a>
+                            <span class="slds-assistive-text">Order Icon</span>
+                        </span>
+                        
+                    </div>
+                    <div class="slds-m-top--xxx-small slds-text-body--small" title="Product Name" style = "{!orderWrap.theOrder.Order_Payment_Status_Text__c=='Cancelled' ? 'text-decoration: line-through;' : ''}" >
+                        <b>{!orderWrap.productName}</b>
+                    </div>
+                   
+                  
+                   
+
+                </div>
+                
+            </aura:iteration> 
+            </div>
+             <div style="{!v.hasrelatedorders ? 'display:none' : ''}">  
+            <br/><br/><br/><br/>
+            <div align="center">
+                <lightning:icon iconName="standard:approval" size="small" alternativeText="approval Icon"/>
+                <span class="slds-assistive-text">medium approval Icon</span>
+            </div>
+            <p class="slds-text-heading slds-text-align--center">no Related  Orders</p>
+        </div>
+            
+        </div>
+    </div>
+    
+</aura:component>

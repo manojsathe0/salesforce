@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SA_SNIP_BAP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SA_SNIP_BAP</name>
+    <style>none</style>
+    <subject>SA_SNIP_BAP</subject>
+    <textOnly>With LegalZoom’s Business Advantage Pro membership, you will have unlimited consultations with business attorneys and tax professionals for any new legal matter.  This service includes unlimited downloads from our extensive Legal Form Library, as well as a 10% discount on future LegalZoom purchases.  To view additional benefits of Business Advantage Pro, click here.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

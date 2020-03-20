@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>ls18</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>L&amp;S Clothing spec needed</name>
+    <style>none</style>
+    <subject>L&amp;S Clothing spec needed</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Based on the clothing items received, it appears that your specimen may be unacceptable, based on the general standards set by the US Patent and Trademark Office (USPTO). The current placement and size of your mark appears as an ornamental design and not necessarily part of a clothing line or brand name. Although there is no prescribed method or place for affixation of a mark to goods, the location of a mark on the goods is part of the environment in which the mark is perceived by the public and may influence how the mark is perceived.
+
+Examples of some acceptable specimens for clothing Trademarks include hang tags, attached labels or presentation as a small design to the left or right of the chest area of the shirt. Please reply to this email with an appropriate specimen to be used on your application.
+
+For more information regarding ornamental marks, please visit the USPTO site here.
+
+Nonetheless, if you wish to continue with the filing of your Trademark with the current specimen on file, please let me know and we will continue to do so. During examination of your application, if your assigned examining attorney raises questions regarding this matter, the applicant will be responsible for responding to the request with the appropriate information.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

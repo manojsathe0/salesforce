@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Rematching Lookback days</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rematching Lookback days</value>
+    </caseValues>
+    <fields>
+        <label><!-- Number of Days --></label>
+        <name>Number_of_Days__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

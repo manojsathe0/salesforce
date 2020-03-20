@@ -1,0 +1,35 @@
+<apex:page showHeader="false" sidebar="false" standardController="Contact" extensions="DisplayPrimaryContactController" action="{!openPrimaryContact}">
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:includeScript value="/support/console/35.0/integration.js"/>
+    <script type= "text/javascript">
+        function closeTab() {
+            sforce.console.getEnclosingPrimaryTabId(closeSubtab);
+        }
+        
+        var closeSubtab = function closeSubtab(result) {
+            var tabId = result.id;
+            sforce.console.closeTab(tabId);
+        };
+        var primaryContactId = "{!primaryContactId}";
+        var interactionId = "{!interactionId}";
+        
+        if(primaryContactId != '' && primaryContactId != null && interactionId  != null && interactionId != '')
+        {
+          openPrimary();
+        }
+        
+        function openPrimary()
+        {
+           sforce.console.openPrimaryTab(null , '/'+primaryContactId, true);       
+           setTimeout(closeTab , 0);
+        }
+    </script>
+    <div class = "slds">
+        <c:IADMessageBox theMessages="{!iadMessages}" rendered="{!iadMessages.size>0}"  />
+        <br />
+        <apex:outputPanel rendered = "{!primaryCOntactId != null}">
+             &nbsp;&nbsp; Still Want to Proceed ? <a href ="#" onClick="openPrimary();return false" style = "cursor:pointer;">
+             Click here</a> 
+         </apex:outputPanel>
+    </div>
+</apex:page>

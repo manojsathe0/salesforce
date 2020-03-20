@@ -1,0 +1,58 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom_banner.jpg"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Names, titles, and short phrases or expressions are not subject to Copyright protection. Even if a name, title, or short phrase is novel or distinctive or if it lends itself to a play on words, it cannot be protected by Copyright. <br/><br/>The Copyright Office cannot register claims to exclusive rights in brief combinations of words such as:<br/><br/><ul><li>Names of products or services <br/><li>Names of businesses, organizations, or groups (including the name of a group of performers) <br/><li>Names of pseudonyms of individuals (including pen name or stage name) <br/><li>Titles of works <br/><li>Catchwords, catchphrases, mottoes, slogans, or short advertising expressions <br/><li>Mere listings of ingredients, as in recipes, labels, or formulas. When a recipe or formula is accompanied by explanation or directions, the text directions may be Copyrightable, but the recipe or formula itself remains unCopyrightable.</ul>Copyright protection under the copyright code (title 17, section 102, U.S. Code) extends only to &#8220;original works of authorship.&#8221; The statute states clearly that ideas and concepts cannot be protected by Copyright. To be protected by Copyright, a work must contain at least a certain minimum amount of authorship in the form of original literary, musical, pictorial, or graphic expression. Names, titles, and other short phrases do not meet these requirements.<br/><br/>Best regards,<br/><br/>The LegalZoom Team<br/> </p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

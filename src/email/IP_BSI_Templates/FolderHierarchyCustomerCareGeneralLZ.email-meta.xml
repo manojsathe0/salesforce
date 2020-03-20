@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Folder Hierarchy: Customer Care - General LZ</name>
+    <style>none</style>
+    <subject>Folder Hierarchy: Customer Care - General LZ</subject>
+    <type>custom</type>
+</EmailTemplate>

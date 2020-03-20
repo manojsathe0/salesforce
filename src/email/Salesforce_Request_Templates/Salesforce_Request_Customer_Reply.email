@@ -1,0 +1,16 @@
+****SALESFORCE REQUEST UPDATE**** 
+
+This Salesforce Request has been received and given the following Estimated Date of Completion:  {!Salesforce_Request__c.Estimated_Completion_Date__c}
+
+Request Number: {!Salesforce_Request__c.Number__c} 
+Priority: {!Salesforce_Request__c.Priority__c} 
+Type: {!Salesforce_Request__c.Type__c} 
+
+Subject: {!Salesforce_Request__c.Name} 
+
+Description:
+{!Salesforce_Request__c.Description__c} 
+
+Please add a chatter post by clicking the Salesforce Request Link below if you have any questions or additional comments.
+------------------------------------------------------------------------------------ 
+ {!Salesforce_Request__c.Link}

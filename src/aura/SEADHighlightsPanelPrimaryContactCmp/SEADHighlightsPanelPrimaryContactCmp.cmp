@@ -1,0 +1,51 @@
+<aura:component controller="IADHighlightsPanelContactController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"  access="global" >
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="customerId" type="String" />
+    <aura:attribute name="iadContactWrapper" type="object" /> 
+    <aura:attribute name="customerTagArray" type="String[]"/>
+    <aura:attribute name="iadContactManagerURL" type="String" default="http://www.legalzoom.com"/>
+    <aura:attribute name="iadContactManagerEditURL" type="String" default="http://www.legalzoom.com"/>
+    <aura:attribute name="custLogin" type="Customer_Login__c[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="boxId" type="String" />
+    <aura:attribute name="oauthToken" type="String" />
+    <aura:attribute name="userId" type="String" />
+    <aura:attribute name="appURL" type="String" />
+    <aura:attribute name="appId" type="String" />
+    <aura:attribute name="boxURL" type="String" />
+    <aura:attribute name="hasBoxAccount" type="Boolean" />
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <div class="slds-card" style="width:100%; padding: 1rem;" >        
+
+               
+        <!-- Lightning Grid Pattern Top Row will have the Actions/Results-->
+        
+        <div>
+           
+                &nbsp;&nbsp;
+                <img src="{!$Resource.SecurityQuestionInactive}" style="{! !v.iadContactWrapper.contactService.hasSecurityQuestion ? '' : 'display:none;'}"/>
+                <span id="verifySection" style="padding-left:2px;">
+                    <span style="{! !v.iadContactWrapper.isCustomerVerified ? '' : 'display:none;'}">Not Verified</span>
+                    <span style="{!v.iadContactWrapper.isCustomerVerified ? '' : 'display:none;'}" >
+                    	<span  style="color:green">Verified</span>
+                    </span>
+                </span>    
+           
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            
+        
+        
+        <!-- Lightning Grid Pattern Middle Row to have the Contact Details, this wrap if needed -->
+        
+        
+               <!-- <lightning:button type="button" onclick="{!c.openBoxPage}"> -->
+                    <img src="{!$Resource.BoxIcon}" style="{!v.hasBoxAccount ? 'cursor:pointer;' : 'display:none;'}" onclick="{!c.openBoxPage}"/>
+                    <img src="{!$Resource.BoxIconInactive}" style="{! !v.hasBoxAccount ? '' : 'display:none;'}"/>
+               <!-- </lightning:button> -->
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <c:DifferentContactButton_Ltng ></c:DifferentContactButton_Ltng>
+      </div>
+    </div>		
+</aura:component>

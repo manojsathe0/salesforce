@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>finish1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Finish Order- Separate order placed</name>
+    <style>none</style>
+    <subject>Finish Order- Separate order placed</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry. 
+
+LegalZoom is currently processing the order you did complete and submit. The email you received regarding finishing an order is an automated email that refers to a separate order you may have looked into, but did not complete or submit. Any time a LegalZoom questionnaire is begun and not finished, an email is generated inviting the applicant to finish the process (in case their order was interrupted for whatever reason). You can disregard the automated email as the incomplete order will not process or be charged for unless you were to go through and complete that specific order. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

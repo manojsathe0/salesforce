@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>fq1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Foreign Qualification</name>
+    <style>none</style>
+    <subject>Your LegalZoom Foreign Qualification Order</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your Foreign Qualification order.  We have attached the personalized foreign qualification form for your company. In order to ensure your order is processed as quickly as possible, please follow the steps listed below. 
+
+&gt;Ensure that your company is in good standing with all applicable governmental agencies in your company&apos;s state of formation (Secretary of State, Tax Board, etc). We will not be able to proceed with the filing unless your company is in good standing.
+&gt;Print two (2) copies of the form on white paper using black ink only.  
+&gt;Sign your name in black ink on all copies as indicated. 
+&gt;Do not make any changes to the attached foreign qualification form as it could delay your order.  If you need to make changes, please contact our Customer Care Team.
+&gt;Mail the signed forms to our address listed below. (Please ensure to mail the forms to LegalZoom for processing and not the Secretary of State or other government office as doing so may delay your order.) 
+
+Courier Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd.
+10th Flr.
+Glendale, CA 91203
+
+USPS Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd., 10th Flr.
+P.O. Box 29096
+Glendale, CA 91203
+
+If you have any questions regarding your order, please contact our {!snippetVariable.cc_dept_full} at {!snippetVariable.ccphone} or customercare@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+Your urgent action will enable us to complete your order in a timely manner
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,115 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+
+
+Dear {!Contact.FirstName},<br/><br/>
+
+While reviewing your Copyright application, we noticed a potential issue that may delay your registration application with the US Copyright Office.
+<p>
+You submitted a website address (URL) rather than screenshots of your website. The US Copyright Office does not accept a URL to register a Copyright.
+<p>
+If you want to register the contents of your website, send us a copy of each page. If you want to register the design or functionality of your website, send us a readable copy of the website’s source code.
+<p>
+You have three (3) options for submitting your website materials to complete your Copyright order: 
+<br><br> 
+<b>Option 1:</b> <br/>
+Upload a copy of the entire work.<br/><br/>
+<b><u>File size restrictions</b></u>
+<br>
+- <b>Small files</b> (up to 6 MB maximum): Email us at mycopyright@legalzoom.com (If you are a Mac user, be sure to attach your document, rather than dragging and dropping it in the Mac Mail program. Also, be sure your document contains the correct PC file type extension.)
+<br>
+- <b>Medium-sized files</b> (up to 80 MB maximum): <a href=http://legalzoom.force.com/LZWTC>Upload your file</a> on the LegalZoom Ask a Question page. (Fill out the form and attach your document at the bottom.)
+<br>
+- <b>Large files</b> (up to 100 MB maximum per file or compressed file): Upload your large or compressed file to a 3rd party file sharing site and send us the link to the file(s) at mycopyright@legalzoom.com. (Please include your order number in the subject line.)
+<br>
+- <b>Multiple large files</b> (more than five 100 MB files): Send a CD or flash drive with the files by mail to the address below. (Please note that we do not accept external hard drives.)
+<br><br>
+<b>Please note:</b> Your filename may be changed when your application is sumbitted to conform to U.S. Copyright Office submission guidelines. For complete instructions on how to submit electronic files as well as a list of acceptable file types, <a href= http://legalzoom.force.com/LZPKB/articles/Answer/03434>click here</a>.
+<br><br>
+
+<b>Option 2:</b> <br/>
+Send us (1) a computer disk (clearly labeled with the work’s title(s) and author(s)) containing the entire work and (2) separate, representative portions of the work being submitted in a format that can be physically examined by the US Copyright Office, such as a printout, audiocassette, or videotape. (This option is often useful for software and other written works of computer code.) 
+<p>
+If the work is short—5 pages of text or artwork, or 3 minutes of music, sounds, or audiovisual material—send us the entire work. If the work is longer, send us 5 representative pages or 3 representative minutes. Your materials should include its title(s) and author(s), and the copyright notice, if any. 
+<p>
+You can mail your complete materials to: 
+<br><br>
+{!snippetVariable.ip_address_cr_materials}
+<br><br>
+
+
+<b>Option 3:</b><br/>
+Send us a non-digital copy of the entire work, regardless of length, in the appropriate format for the work being submitted, such as a printout, audiocassette or videotape. No computer disk or CD-ROM is required with option 3. 
+<p>
+You can mail your complete materials to: 
+<p>
+{!snippetVariable.ip_address_cr_materials}
+<p>
+For more information regarding registering websites for copyright, please view: <a href=http://www.copyright.gov/circs/circ66.pdf>Copyright Circular 66</a><br/><br/>
+If you have any questions or would like additional information, simply reply to this email or please call us at (800) 773-0888 {!NullValue(snippetVariable.cchours, "Mon-Fri 5am to 7pm PT; Saturday 7am to 4pm PT")} . You can check the status of your order by <a href=http://www.legalzoom.com/LZWeb/MyAccount/OrderStatus.aspx>logging into your account</a>.
+<p>
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+<p>
+Best regards,
+<br>
+The LegalZoom Team
+<br><br>
+<i><b>Please note:</b> In no case does LegalZoom share your materials with any third party not necessary for the completion of your order. Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. </i>
+<br>
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>.  
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

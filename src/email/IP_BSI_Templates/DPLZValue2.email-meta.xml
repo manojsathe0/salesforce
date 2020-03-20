@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>DPVALBSI</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DP LZ Value</name>
+    <style>none</style>
+    <subject>DP LZ Value</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for taking the time to contact LegalZoom. 
+
+LegalZoom is a document preparation service and is prohibited from giving legal advice of any kind. In order to provide our customers with services that meet their needs while avoiding the high cost of an attorney, we have carefully selected Kevin Prince as our legal provider for Design Patent Services.
+
+The marketing relationship that LegalZoom has with Kevin Prince helps us make the Design Patent application process efficient and affordable. With the technology and tools that LegalZoom provides, Kevin Prince is able to offer our customers legal advice and counsel at a greatly discounted rate. 
+
+LegalZoom continues to explore innovative solutions to help our customers make educated decisions and handle their simple legal matters.
+
+{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.
+
+{!snippetVariable.ipclosingline}
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

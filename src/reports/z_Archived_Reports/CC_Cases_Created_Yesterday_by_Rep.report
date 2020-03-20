@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.Case$CreatedById$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Order_Number__c</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Origin</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Subject</field>
+    </columns>
+    <columns>
+        <field>User$UserRole</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Case$CreatedById$Origin</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Phone-Inbound ACD,Phone-Inbound Direct,Phone-Outbound Courtesy,Phone-Outbound Sales</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>email to Case User,LZWTC Site Guest User,System</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC-Cases Created Yesterday by Rep</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_Cases_Created_By__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Case$CreatedById$CreatedDate</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

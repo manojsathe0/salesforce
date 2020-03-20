@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SiteJabber</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SiteJabber</name>
+    <style>none</style>
+    <subject>We Appreciate Your Review</subject>
+    <textOnly>LegalZoom.com
+
+
+
+Thank you for choosing LegalZoom. View online
+
+
+Hello {!Contact.FirstName},
+
+We greatly value our customers&apos; opinions and would appreciate you taking a moment to  rate your recent experience  with LegalZoom. Your comments will help other customers and provide useful feedback to LegalZoom.
+
+Thank you again for being a LegalZoom customer.
+
+Best regards,
+
+The LegalZoom Team
+
+Manage My Account | Explore Services
+Privacy Policy | Unsubscribe
+
+Please do not reply to this message. This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_15852987</developerName>
+        <masterLabel>CC IP</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>User$Name</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Adam	Borrego</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Donna	Hill</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Erin	Lewis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tamarra	Washington</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Arteisha	Dickens</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christopher	Boike</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Fabio	Gutierrez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Holland	Rancier</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Aaron	Woodul</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Emma	Richardson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Abel	Trinidad</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Abraham	Bitar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Anthony	Lyons</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kenneth	Picou</sourceValue>
+            </sourceValues>
+            <value>CC IP</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>BucketField_15852987</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$UserRole</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>CC IP</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC IP Emails Sent (Yesterday)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_and_Email_Created_by__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TMmonitor3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TM Status Info</name>
+    <style>none</style>
+    <subject>TM Status Info</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Your trademark application was submitted to the US Patent and Trademark Office (USPTO), and has been assigned an eight (8) digit serial number. You should have received this number via email as well as in your final packet. To track the status of your application with the USPTO, visit http://tarr.uspto.gov/, select the radio button for ?Serial Number? and type your serial number in the field provided on the left side of the page.  
+ 
+Your application will be assigned to a USPTO Examining Attorney approximately six months after it was submitted. The assigned attorney will contact you directly via phone, email or regular mail should any changes or amendments be needed to complete your trademark registration.
+
+If you have installed Anti-Spam filters or software on your email service, please ensure that legitimate emails from TEAS@uspto.gov is not falsely identified as spam or junk. You can also view and/or download your application information and correspondences from the USPTO through http://tmportal.uspto.gov/external/portal/tow. 
+ 
+The trademark registration process typically takes about one year, but in some cases can take longer.  Your trademark is not considered registered until you have received official documentation from the USPTO stating so.  You are forbidden from using the ?circle R? (?) symbol until your proposed trademark has officially been registered by the USPTO. You can, however, use the TM or SM symbols at any time.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for using LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

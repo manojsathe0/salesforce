@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>colep4</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain</letterhead>
+    <name>#4 - EP Product Sheet Comparison</name>
+    <style>formalLetter</style>
+    <subject>Your Requested Information About Our Last Will and Living Trust Estate Plans</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+It was great speaking with you today. As discussed, please click on the link(s) below for more information about our Last Will and Living Trust Estate Plans. You can compare the specifics of what’s included, the price options, how it helps, and what extras you’ll receive.
+
+Last Will and Testament Estate Plan
+
+Living Trust Estate Plan
+
+If you have any questions, feel free to call me directly at {!User.Phone}{!User.Extension}.
+
+Thank you for considering LegalZoom, and I look forward to speaking to you soon!
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Street} {!User.City} {!User.State}, {!User.PostalCode}
+{!User.Phone} {!User.Extension}
+Manage My Account | Explore Services
+Privacy Policy | Unsubscribe
+
+Please do not reply to this message. This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

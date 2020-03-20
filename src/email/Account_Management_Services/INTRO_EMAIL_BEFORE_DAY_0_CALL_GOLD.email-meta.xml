@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMGOLD</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>INTRO EMAIL (BEFORE DAY 0 CALL) - GOLD</name>
+    <style>none</style>
+    <subject>Your LegalZoom Account Manager</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Meet [AM Name]
+Your LegalZoom Account Manager
+
+Thank you for choosing LegalZoom. My name is [AM Name], and I will be serving as your dedicated LegalZoom Account Manager.  As your primary point of contact, I will personally assist you with the filing and completion of your [Product Type] and help answer any questions you may have along the way.
+
+Starting your own business is an exciting and busy endeavor.  Staying on top of important requirements with financial or legal implications will give you peace of mind throughout your business development and growth.
+
+With the purchase of your [Product Type] you have access to unlimited 30-minute legal plan attorney and tax consultations on new matters.  The legal plan attorneys and tax consultants have helped business owners just like you get started on the right track.  I can assist you with scheduling a consultation at your convenience.
+
+I look forward to working with you and will call you soon to review the status of your order.
+
+Best Regards,
+
+[Account Manager] [ext.XXXX]
+Account Management Services
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

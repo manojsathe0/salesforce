@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>markcnfrm</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Confirm Mark Change</name>
+    <style>none</style>
+    <subject>Confirm Mark Change</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting us about your trademark application. As you requested, we?ve revised the name of your trademark. 
+
+New trademark name: Xxxxxxxxxx.
+
+The filing format and filing basis you provided on your application are shown below. Reply to this email if you have any changes. Otherwise, we will use the information below on your application. 
+
+Filing format: Xxxxxxxxxx
+Filing basis: Xxxxxxxxxxx
+
+PLEASE NOTE: Once your application is filed with the U.S. Patent and Trademark Office (USPTO), you cannot change the name of your trademark. 
+
+At this point, we will conduct a new basic search. We will email you any potential conflicts within 3 business days.
+
+If you have any questions or would like additional information, please call us at (800) 773-0888 Monday?Friday from 6 a.m.?7p.m. PT or email us at customercare@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

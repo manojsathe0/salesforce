@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ta spec2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Specimen Insufficient</name>
+    <style>none</style>
+    <subject>Response Required: LegalZoom Order#</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We have received the specimen and information you submitted for your Trademark filing and have noticed some inconsistent information between the two.  Specifically, the goods (products) and/or services reflected in the specimen we received do not appear to reflect the products and/or services as listed on your Trademark filing.
+
+The U.S. Patent and Trademark Office (USPTO) requires that registrants show sufficient proof (called a “specimen”) that the Trademark is currently being used to sell or offer for sale the products and/or services listed in the filing.  Without this proof, the USPTO will deem the mark to have been abandoned.
+
+******************For products******************
+
+For example, if a company has filed an application to register “Bob’s Shoes” and listed “shoes” for its product description, the company could submit a picture of a shoe box or pair of shoes that clearly demonstrated that its mark, “Bob’s Shoes,” is being used in connection with the sale of the products listed in the application.
+
+If you are providing products, acceptable specimens include photographs of packaging labels, clothing tags or labels on containers that prominently display your Trademark. Invoices, order forms, receipts, brochures, catalogs, press releases, business cards, and stationery are generally NOT acceptable specimens for products.
+
+See More Examples
+
+******************For services******************
+
+For example, if a company has filed an application to register “Premier Investments” and listed “investment consultations” for its service description, the company could submit a website screenshot or brochure that clearly demonstrated that its mark, “Premier Investments,” is being used to offer the service described in the application.
+
+If you are providing services, acceptable specimens include a sign, brochure, advertisement, business card, stationary or website prominently displaying your Trademark in connection with the services you’ve listed in your application. The specimen must include a reference to the service, not just the Trademark by itself. Printer’s proofs for advertisements or news articles about your services are generally NOT acceptable specimens for services.
+
+See More Examples
+
+********************
+
+To resolve this issue, reply to this email and select ONE of the following options:
+
+1. Submit a new specimen consistent with your trademark filing by replying to this e-mail and attaching your file(s) in a .gif, .pdf, .jpeg or .jpg format.  Attachments exceeding 6MB should be uploaded at http://legalzoom.force.com/LZWTC.
+
+2. Instruct us to file your documents with the specimen you have sent us.  During examination of your documents, if your USPTO examining attorney raises questions regarding this matter, you will be responsible for responding to the request with the appropriate information.
+
+3. Put your order on hold and consult with an attorney.*
+
+Please note: LegalZoom will not share your materials with any third party unless necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+* Members of Business Advantage Pro can receive further guidance from an attorney for no additional cost—take advantage of your membership by scheduling a consultation through our Member Center here. If you are not a Business Advantage Pro member and would like more information on this valuable service, please visit us here or call customer care at (877) 657-8787. Please note that Business Advantage Pro is not available in all states.
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

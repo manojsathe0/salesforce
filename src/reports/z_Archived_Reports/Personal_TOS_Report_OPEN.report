@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX=3300, (Order_Matching_Activity__c.Order__c.Order_Count__c:SUM * 400) * Order_Matching_Activity__c.Commission_Eligible__c:AVG, IF(Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX=2300, (Order_Matching_Activity__c.Order__c.Order_Count__c:SUM * 400) * Order_Matching_Activity__c.Commission_Eligible__c:AVG, IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1482, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1352, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1287, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1183, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1053, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=988, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1083, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=953, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=888, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF(Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX=524, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.Order__c.Order_Count__c:SUM * 325) * Order_Matching_Activity__c.Commission_Eligible__c:AVG), Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM))))))))))))</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Adjusted Commission Eligible Revenue</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Calculated Units</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX=3300, (Order_Matching_Activity__c.Order__c.Order_Count__c:SUM * 400) * Order_Matching_Activity__c.Commission_Eligible__c:AVG, IF(Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX=2300, (Order_Matching_Activity__c.Order__c.Order_Count__c:SUM * 400) * Order_Matching_Activity__c.Commission_Eligible__c:AVG, IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1482, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1352, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1287, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1183, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1053, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=988, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=1083, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=953, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF((Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX + Order_Matching_Activity__c.Order__c.Filling_Fee_Total__c:MAX)=888, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG) * 325), IF(Order_Matching_Activity__c.Order_Commission_Eligible_Total__c:MAX=524, Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM - ((Order_Matching_Activity__c.Order__c.Order_Count__c:SUM * 325) * Order_Matching_Activity__c.Commission_Eligible__c:AVG), Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c:SUM)))))))))))) / (Order_Matching_Activity__c.OMA_Count__c:SUM * Order_Matching_Activity__c.Commission_Eligible__c:AVG)</calculatedFormula>
+        <datatype>currency</datatype>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>AOV</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_88274514</developerName>
+        <masterLabel>Patent Revenue Filter</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c.Name</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Utility Patent Step II</sourceValue>
+            </sourceValues>
+            <value>Utility Patent Step II</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Provisional Patent (Atty-Assisted)</sourceValue>
+            </sourceValues>
+            <value>Provisional Patent (Atty-Assisted)</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartType>HorizontalBarGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Order_Matching_Activity__c$Order__c.Base_Product__c.Product_Line__c.Name</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>BucketField_88274514</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Large</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Order_Matching_Activity__c$Activity_Created_Date__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Agent__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Base_Product__c.Name</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Order_Payment_Status__c.Name</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Opportunity__c.State__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Opportunity__c.Account.Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order_Matching_Activity__c$Order__c.Order_Count__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order_Commission_Eligible_Total__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order_Matching_Activity__c$Commission_Eligible_Revenue_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Commission_Eligible__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5) AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Order_Payment_Status__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Incorporation,LLC,DBA,Non-Profit,Limited Partnership,Limited Liability Partnership,Amendment,Corporate Dissolution,Foreign Qualification,Seller&apos;s Permit,State Tax ID,3rd Party Sales - Business Advantage Pro,Conversion,Certificate of Good Standing,Business Licenses,501(c)3 Preparation,Dissolution,Non-profit,EIN Obtainment,Seal,Stock Certificate,S-Corp Preparation,Stand alone operating agreement,Registered Agent Service,Legal Form,General Partnership Agreement,Joint Venture Agreement,Contract Review,Company Certificates,Company Seal,Corporate Kit,Initial Reports,Annual Reports,Certified Copies,Registered Agent Services,LegalZoom Minutes Manager Subscription,Bylaws &amp; Resolutions,Operating Agreements,Separation Agreement,Demand Letter,Contract Drafting,Subscription Products,Corporate Minutes,Canadian Last Will,Website ToS,Entity Name Reservation,Compliance Calendar,Phone Order LLC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Certified Copies of Articles,Limited Partnership,Limited Liability Partnership,Attorney Access Small Biz 51 to 99 Plan,Franchise Agreement Review,Business Advantage Pro Standalone,Business Advantage Pro Attorney Consultation,Pre-Sale Consultation Trial – BAP,Spanish Business Advantage Pro Standalone,Legal Settlement Plans – BAP,Legal Settlement Plans - BAP (IP),Partner Sales - Business Advantage Pro,CEP Subscriptions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Trademark,Copyright,Trademark Search,Trademark Monitoring,Provisional Patent (Self-help),Trademark Assignment,Trademark Section 9 Renewal,Trademark Statement of Use,Trademark Statement of Use Extension,Patent Search,Provisional Patent (Atty-Assisted),Utility Patent,Design Patent,Professional Patent Drawings,Trademark Dispute Letter,Business Advantage Pro (IP) Attorney Consultation,Trademark Section 8 Declaration,Utility Patent Step II</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Living Trust,Divorce,Last Will and Testament,Living Will,Power of Attorney,Name Change,Small Claims,3rd Party Sales - Legal Advantage Plus,Partner Sales - Legal Advantage Plus,Real Estate Deed Transfer,Bankruptcy,Attorney-Prepared Prenuptial Agreements,Real Estate Lease,Child Support Modification,Child Custody Modification,Spousal Support Modification,Attorney Consultation,Pet Protection Agreement,EP Vault,Prenuptials Review,Legal Separation,Postnuptial Agreement,LCP Last Will,LCP Living Will,LCP Subscription,(LCP) Automotive Bill of Sale,Stepparent Adoption,Home Sale Agreement,Guardianship,Legal Advantage Plus Standalone,Legal Advantage Plus Attorney Consultation,Spanish Last Will,Spanish Power of Attorney,Spanish Living Will,Pre-Sale Consultation Trial – LAP,Legal Advantage Plus Standalone – Spanish,Prenuptial Agreement,Legal Settlement Plans – LAP,Divorce – ASD,LCP Downloadable Forms,LegalZoom Employee Advantage Plan</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Commission_Eligible_Revenue_Amount__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.TOS_Accepted__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Order_Matching_Activity__c$Activity_Created_By__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Order_Matching_Activity__c$Order__c.Base_Product__c.Product_Line__c.Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_88274514</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Personal TOS (OPEN)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OMA_w_Orders__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Order_Matching_Activity__c$Activity_Created_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

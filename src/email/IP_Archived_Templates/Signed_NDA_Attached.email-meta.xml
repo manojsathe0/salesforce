@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>lz nda</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Signed NDA Attached</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order #</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+We greatly appreciate your concern of maintaining the confidentiality of your invention. Please be assured that upon placing your order, LegalZoom agreed to maintain the confidentiality of the information shared for the purpose of your patent order. You can be assured that all LegalZoom employees are strictly bound to our Privacy Policy (http://www.legalzoom.com/privacy-policy-popup.html) to ensure your personal and invention information is secure. 
+
+In order to provide additional peace of mind, attached is a copy of a signed Non-Disclosure and Confidentiality Agreement to support that LegalZoom will not share your information. Please print and/or save the attachment for your records.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

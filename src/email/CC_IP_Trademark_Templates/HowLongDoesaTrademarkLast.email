@@ -1,0 +1,60 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>For a trademark registration to remain valid, you must take action to ensure the proper documents are filed with the U.S. Patent and Trademark Office (USPTO). There are a few different types of documents required, depending on the length of time following the original registration date. See below:<br/><br/><b>Between years 5-6*:</b> Section 8 Declaration of Continued Use or Excusable Nonuse<br/><b>Between years 9-10*:</b> Combined Section 8 Declaration/Section 9 Trademark Renewal<br/><b>Every 10 years thereafter:</b> Combined Section 8 Declaration/Section 9 Trademark Renewal<br/><br/>Filing the Section 8 Declaration tells the USPTO that your trademark is still being used in commerce in the way in which you claimed on your registration (of you have an acceptable reason for its nonuse). Renewal of your trademark is required for your registration to remain valid for the next term (see below for term duration).<br/><br/><b>Term duration:</b> Trademark registrations granted PRIOR to November 16, 1989 have a 20-year term, and ON or AFTER that date, a 10-year term. The same goes for renewal periods. Renewals granted PRIOR to November 16, 1989 have a 20-year term, and renewals granted ON or AFTER that date, a 10-year term.<br/><br/>Click on the following links for more information or to get started:<br/><a href=http://www.legalzoom.com/trademarks-section8-declaration/trademarks-section8-declaration-overview.html>Section 8</a><br/><a href=http://www.legalzoom.com/trademarks-section9-renewal/trademarks-section9-renewal-overview.html>Section 9</a><br/><a href=http://www.legalzoom.com/trademarks-section9-renewal/trademarks-section9-renewal-overview.html>Combined Section 8 & 9</a><br/><br/>If you have any questions or would like additional information, please call us at (800) 773-0888 Monday&#8211;Friday from 6 a.m.&#8211;7p.m. PT or email us at customercare@legalzoom.com.<br/><br/>We appreciate you choosing LegalZoom and look forward to serving you again soon.<br/><br/>Best regards,<br/><br/>The LegalZoom Team<br/><br/>*Unless you request a 6-month grace period for an additional fee of $100 per class.<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

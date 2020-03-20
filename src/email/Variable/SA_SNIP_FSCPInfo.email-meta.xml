@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SA_SNIP_FSCPInfo</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SA_SNIP_FSCPInfo</name>
+    <style>none</style>
+    <subject>SA_SNIP_FSCPInfo</subject>
+    <textOnly>With LegalZoom’s Full Service Compliance Package, you will have access to many tools to help keep your business compliant:
+
+12 full months of coverage (plus a 30-day free trial)
+Unlimited consultations on new matters with independent, experienced attorneys
+Access to our extensive library of legal forms
+Email alerts to notify you of state-required filings
+LegalZoom Minutes Manager creates critical corporate records from your meeting notes using information you provide
+Tax help and planning tips from independent tax professionals (1-800Accountant)
+We will complete and file your state-required initial and annual reports (state fees still apply)
+Credit Alert + D&amp;B D-U-N-S® number</textOnly>
+    <type>custom</type>
+</EmailTemplate>

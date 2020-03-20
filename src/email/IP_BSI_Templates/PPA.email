@@ -1,0 +1,59 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for your recent inquiry.<br/><br/>LegalZoom can assist you in preparing and filing a provisional application for patent. The total cost including government fees is $309.00.<br/><br/>A provisional application for patent establishes your priority with a &#34;date of invention.&#34; The reason it&#39;s so important to file a provisional application is because Patent Law does not recognize the person who came up with the idea first, but the person who files the patent application first.<br/><br/>The advantage of a provisional application for patent is that it&#39;s much faster and easier to file than a standard patent application. A standard patent application can take months to prepare and can cost $5,000 or more. With a provisional application for patent, you will have 12 months to file a corresponding non-provisional utility patent application and you can legally announce to the world, &#34;Patent pending.&#34; <br/><br/>Additional information is available online at LegalZoom&#8217;s Education Center. Visit www.legalzoom.com and click on the &#8220;Education Center&#8221; tab located in the middle of the homepage. <br/><br/>To view pricing information, please visit <a href=https://www.legalzoom.com/provisional-patents/provisional-patents-pricing.html>here</a><br/><br/>Optional Services:<br/>*Attorney Review and Preparation $329.00 <br/>*Professional Illustration $299.00 <br/>*Patent Search $299.00 <br/><br/>
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

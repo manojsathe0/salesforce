@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>MISC - TOS</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>MISC - TOS</name>
+    <style>freeForm</style>
+    <subject>LegalZoom - Please Accept Terms and Conditions</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for choosing LegalZoom for your business needs and for your recent order.  In regard to your order, you must accept the LegalZoom Terms of Service before we can proceed with your order.  To view and agree to the Terms of Service, please follow the link below to log into the “My Account” section of the website with your email address and password.  If you do not know your account password, you can request a password reset email on the sign-in page.
+ 
+MY ACCOUNT
+https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx
+ 
+Please make sure to accept these Terms of Service as soon as possible as we cannot proceed with your order until you have accepted them.
+ 
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at (888) 381-8758.
+ 
+ 
+Best regards,
+ 
+The LegalZoom Team
+(800) 773-0888
+www.legalzoom.com
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

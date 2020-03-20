@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>AZ RA voided e-sig request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AZRA Void</name>
+    <style>none</style>
+    <subject>Change of Statutory Agent</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for getting back to us.
+
+We have voided the e-signature request that was pending. You will receive a separate email confirming the request was voided - this step ensures you do not receive future reminders to sign.
+
+Feel free to contact us with any other questions.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

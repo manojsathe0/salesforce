@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Ohio form to resolve conflict with proposed business name</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>OH 590 Form</name>
+    <style>none</style>
+    <subject>Ohio 590 Form</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry. In our phone call earlier, you indicated that you would like to resolve the conflict with the proposed name of your new business by filing a consent form with the state. In order to proceed with this option, you will need to obtain a consent from:  [Company name]
+
+This company’s listed Charter/Registration/License Number of Entity is:
+
+[Charter/Registration/License Number of Entity]
+
+When requesting consent to use your entity name, a few key steps are needed.
+
+Complete the 590 Form as follows:
+
+Item 1: Enter the name of the entity or individual who holds the existing name.
+Item 2: Enter the Charter/Registration/License Number of Entity.
+Item 3: Enter the proposed name.
+
+Execution: The form must be signed on behalf of the person who holds the existing name. If the existing name is held by an entity, an individual who is authorized to act on behalf of the entity must sign the form. (Please see attached sample.)
+
+
+Once the consent is obtained, return the form to us via email, via fax, or by mail:
+
+Email: bzsupport@legalzoom.com (include order number in subject line)
+Fax: (323) 337-0743, Attn: Order # xxxxxxxx
+Mail: LegalZoom.com
+Order #: xxxxxxxx
+9900 Spectrum Dr.
+Austin, TX 78717
+
+If you are unable to obtain consent or decide to try an alternate name instead, simply let us know.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+If you&apos;re already a member, sign in to schedule a consultation. *Available in most states.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

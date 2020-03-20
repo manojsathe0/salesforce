@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_94084656</developerName>
+        <masterLabel>AS Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Kyle Benkie</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Troy Flowers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ana Maria Frayre</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ashwin Nagre</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Heidy Ochoa</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robert Seaton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Janet Yoo</sourceValue>
+            </sourceValues>
+            <value>AS Team</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>field_key</field>
+    </columns>
+    <columns>
+        <field>OLDVAL</field>
+    </columns>
+    <columns>
+        <field>NEWVAL</field>
+    </columns>
+    <columns>
+        <field>CASE_OWNER</field>
+    </columns>
+    <columns>
+        <field>Case.Product_Line__c</field>
+    </columns>
+    <columns>
+        <field>Case.Product2__c</field>
+    </columns>
+    <columns>
+        <field>ORIGIN</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Case.Units__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 2 AND 4) OR ( 1 AND 3 AND 4 )</booleanFilter>
+        <criteriaItems>
+            <column>BucketField_94084656</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>AS Team</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CASE_CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Email to Case User,LZWTC Site Guest User,System</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Updated by Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ORIGIN</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Phone-Inbound ACD,Phone-Inbound Direct,Phone-Outbound Courtesy,Phone-Outbound Sales</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CASE_NUMBER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AS - Emails (Last Month)</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

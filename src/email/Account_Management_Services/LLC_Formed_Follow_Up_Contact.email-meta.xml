@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMLLC6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LLC Formed Follow Up - Contact</name>
+    <style>none</style>
+    <subject>UPDATE: Your limited liability company has been created</subject>
+    <textOnly>Your LLC has been created. 
+
+Dear {!Contact.FirstName},
+
+Congratulations! Your limited liability company has been formed, but this is only the beginning. To help you stay up to date with your company’s legal requirements, we have sent you a final packet containing important information about your company formation. Please contact me to schedule a review of your final package, where I will help you understand everything included and get you started with your next steps as a new business owner.
+
+Please contact me at any time to learn more about the state filing process.
+
+Best Regards,
+
+{!User.FirstName} {!User.LastName} |  {!User.Phone} ext. {!User.Extension}
+Account Management Services
+M-F 9:00 am – 6 pm CT
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

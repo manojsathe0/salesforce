@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IP Navigator</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IP Navigators</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action/Status --></label>
+        <name>Action_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Comments --></label>
+        <name>Internal_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oracle ID --></label>
+        <name>Oracle_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Procedure/Process --></label>
+        <name>Procedure_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Links --></label>
+        <name>Reference_Links__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salesforce Case Entries --></label>
+        <name>Salesforce_Case_Entries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Table --></label>
+        <name>Table__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

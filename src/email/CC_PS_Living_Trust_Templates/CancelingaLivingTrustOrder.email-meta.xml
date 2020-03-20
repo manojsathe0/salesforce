@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LTcancel</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Canceling a Living Trust Order</name>
+    <style>none</style>
+    <subject>Canceling a Living Trust Order</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+To cancel your Living Trust order, simply return all documents and the deluxe estate planning organizer to the following address:
+
+LegalZoom.com
+Attention: Esperidion Vaildo
+101 N. Brand Blvd. 10th Floor 
+Glendale, CA 91203
+
+As soon as we receive your materials, we will cancel the order and issue a refund. 
+
+The LegalZoom Guarantee ensures you will receive your money back if you are not satisfied and request a refund within 60 days of purchase. However, it also specifies that we can?t refund other third-party out-of-pocket costs incurred while preparing and filing your documents. 
+
+Because the engraved nameplate on the deluxe estate planning organizer is custom-ordered from a third party vendor, there is a $25.00 non-refundable fee. This fee will be deducted from your refund amount. Please note that you may remove the nameplate and keep it, but the organizer must be returned with all of your documents to receive a refund.
+
+You can view our Guarantee policy online at www.LegalZoom.com, or by clicking on the link below:
+
+https://www.legalzoom.com/satisfaction-guarantee.html
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

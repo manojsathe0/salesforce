@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.Case$CreatedById$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Assigned_User__c</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Account</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Status</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Subject</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$LastModifiedBy</field>
+    </columns>
+    <description>this report details all IP Trademark Search queue cases - This Month</description>
+    <filter>
+        <criteriaItems>
+            <column>User.Case$CreatedById$Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>IP Trademark Search,IP Trademark Search Approvals</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.Case$CreatedById$Queue__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IP Trademark Search Cases - This Month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_Cases_Created_By__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>User.Case$CreatedById$Status</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>User.Case$CreatedById$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

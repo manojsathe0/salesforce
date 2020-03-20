@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TMsearches</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Trademark Searches</name>
+    <style>none</style>
+    <subject>Trademark Searches</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+A Trademark Search will identify existing:  Names, Slogans, Short Phrases, Logos and Acronyms.  By applying for a Trademark Search, you can prevent yourself from applying for a Trademark that has been already registered with the United States Patent and Trademark Office, which can lead to a refusal. If you have already applied for a Trademark, you will be able to view other applications that may be infringing on your mark.
+ 
+You can learn more about pricing and get started with your Trademark Search by clicking here: http://www.legalzoom.com/trademark-search/trademark-search-pricing. 
+
+LegalZoom offers 4 types of searches. The cost to conduct a Trademark Search is: 
+ 
+1. Federal and State Search: $199
+2. Comprehensive U.S. Search: $299
+3. Worldscan U.S. and International Search: $499
+4. A Trademark Logo Search is an additional: $250 (keep in mind Legalzoom does not offer a stand-alone Logo Search. The Logo Search must be bundled with one of the above searches or selected as an add-on within a Trademark application). 
+
+If you decide to bundle the Trademark Search package with a Trademark application you will save $50 dollars off your Trademark Search package price.
+
+After payment is received, Legalzoom will prepare the Search results and forward them to you. All Trademark Search packages have a 7-10 business day processing time frame.
+
+Online payments can be made by Visa, Mastercard, American Express or Discover.
+
+{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.
+
+{!snippetVariable.ipclosingline}
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

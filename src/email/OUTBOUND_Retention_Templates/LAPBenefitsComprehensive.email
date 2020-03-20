@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>legalzoom.com</title>
+<style type="text/css">
+ html { -webkit-text-size-adjust:none; } </style>
+
+</head>
+
+<body><div align="center">
+ <table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="top" bgcolor="#ffffff"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="left" valign="top"><img src="https://static.cdn.responsys.net/i5/responsysimages/legalz/[EventHandlerPostPurchase]/Service_TM_Comp_Search_Updated_NoCD/2014spacer.gif" width="1" height="3"  alt=" " style="display:block;"/></td>
+      </tr>
+    <tr>
+        <td align="left" valign="top">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td width="25%" style="border-bottom:#000066 solid 8px;">&nbsp;
+    </td>
+    <td width="75%" style="border-bottom:#3366cc solid 8px;">&nbsp;
+    </td>
+    </tr>
+   </table>
+  </td>
+      </tr>
+      <tr>
+        <td align="left" valign="top"><img src="https://static.cdn.responsys.net/i5/responsysimages/legalz/[EventHandlerPostPurchase]/Service_TM_Comp_Search_Updated_NoCD/2014spacer.gif" width="1" height="16"  alt=" " style="display:block;"/></td>
+      </tr>
+     <tr>
+        <td align="left" valign="top"><a href="http://www.legalzoom.com/" target="_blank"><img src="http://static.cdn.responsys.net/i5/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom" width="194" height="55" title="LegalZoom" style="display:block; font-family:Arial; font-size:18px; font-weight:bold; color:#000066;" border="0"/></a></td>
+      </tr>
+   <tr>
+        <td align="left" valign="top"><img src="https://static.cdn.responsys.net/i5/responsysimages/legalz/[EventHandlerPostPurchase]/Service_TM_Comp_Search_Updated_NoCD/2014spacer.gif" width="1" height="10"  alt=" " style="display:block;"/></td>
+      </tr>
+    
+      <tr>
+        <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table border="0" cellspacing="0" cellpadding="0">
+              
+                  <tr>
+                    <td align="right" valign="top"><table width="640" border="0" align="left" cellpadding="0" cellspacing="0" >
+      
+                     
+                   <tr>
+                        <td align="left" valign="top"><font face="Arial" size="2" color="#000000" style="font-family:Arial; font-size:15px; color:#000000;line-height:22px">Dear {!Contact.FirstName},<br/><br/>The LegalZoom Legal Advantage Plus plan gives you access to the following benefits:<br/><ul><li>Attorney support: Whenever you need expert legal advice, you have access to an experienced attorney to ask questions and get information on any legal topic. Examples include reviewing and getting advice on your last will, reviewing other legal documents, and more.</li><li>Tax Professional advice and consultations.  Speak with an experienced Tax Professional on an unlimited number of new tax issues</li><li>Annual legal checkup with an attorney: Just like getting an annual checkup of your health with your doctor, it&#8217;s important to get an annual checkup of important legal documents with an attorney. You might not realize (or get busy and forget) that changes in your life such as moving, having a child, having more grandchildren, etc., can impact your last will or other legal documents.</li><li>Unlimited access to LegalZoom legal forms: Whenever you need legal support, you can access and download hundreds of legal forms for personal use. Examples include affidavits, bills of sale, nondisclosure agreements, promissory notes and more.</li><li>Unlimited revisions & storage of your Estate Planning documents:  Benefit from the ability to revise & store any of your Estate Planning documents at your convenience.
+</li><li>25% savings on additional attorney services: You get substantial savings on professional attorney services should you need go to court.</li><li>20% savings on any additional tax services</li><li>10% savings on any LegalZoom legal documents: Take advantage of valuable savings on any LegalZoom legal documents, including Living Trusts, LLCs, Trademarks and more. </li></ul>After your 30-day trial, your Legal Advantage Plus membership renews automatically at $_ _._ _ per month. <br/><br/>You can always choose to enroll with a 6 or 12 month membership. A 6 month renewal is $71.94 (equal to $11.99 a month), and a 12 month renewal is $119.88 (equal to $9.99 a month.)<br/><br/>{!snippetVariable.asdsigline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.<br/><br/>{!snippetVariable.bestregardstext}<br/><br/>{!User.FirstName} {!User.LastName}<br/> 
+{!User.Title}<br/> 
+{!User.CompanyName}<br/> 
+{!User.Address}<br/> 
+{!User.Phone} ext. {!User.Extension}
+      
+      </font>
+      </td>
+                      </tr>
+                                     
+                     
+          
+      
+       
+
+                      </table></td>
+                    </tr>
+                  </table></td>
+            
+                </tr>
+              </table></td>
+            </tr>
+        
+          </table></td>
+      </tr>
+  
+      <tr>
+        <td align="left" valign="top">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td width="25%" style="border-bottom:#000066 solid 5px;">&nbsp;
+    </td>
+    <td width="75%" style="border-bottom:#3366cc solid 5px;">&nbsp;
+    </td>
+    </tr>
+   </table>
+  </td>
+      </tr>
+       <tr>
+                        <td align="left" valign="top"><img src="https://static.cdn.responsys.net/i5/responsysimages/legalz/[EventHandlerPostPurchase]/Service_TM_Comp_Search_Updated_NoCD/2014spacer.gif" width="1" height="15"  alt=" " style="display:block;"/></td>
+                        </tr>
+      <tr>
+        <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td align="left" valign="top"><font face="Arial" size="2" color="#666666" style="font-family:Arial; font-size:12px; color:#666666;">Call Customer Care: </font><font face="Arial" size="2" color="#3e93eb" style="font-family:Arial; font-size:12px; font-weight:bold; color:#3e93eb;">(800) 773-0888</font></td>
+    <td align="right" valign="top"><font face="Arial" size="2" color="#000066;" style="font-family:Arial; font-size:12px; color:#000066;font-weight:bold;">LegalZoom. </font><font face="Arial" size="2" color="#3e93eb;" style="font-family:Arial; font-size:12px; font-weight:bold; color:#3e93eb;">Legal help for the modern world.<br><br></font></td>
+  </tr>
+    
+  <tr>
+    <td align="left" valign="top"><font face="Arial" size="2" color="#666666" style="font-family:Arial; font-size:10px; color:#666666;"><a href="http://www.legalzoom.com/privacy-policy-popup.html?" target="_blank"style="color:#666666;">Privacy Policy</a></font></td>
+    <td align="right" valign="top">&nbsp;</td>
+  </tr>
+</table>
+</td>
+      </tr>
+      <tr>
+        <td><img src="https://static.cdn.responsys.net/i5/responsysimages/legalz/[EventHandlerPostPurchase]/Service_TM_Comp_Search_Updated_NoCD/2014spacer.gif" width="1" height="10"  alt=" " style="display:block;"/></td>
+      </tr>
+   
+      <tr>
+        <td align="left" valign="top"><font face="Arial" size="2" color="#666666" style="font-family:Arial; font-size:10px; color:#666666;">
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.<br><br>
+Please add services@emails.legalzoom.com to your address book.<br><br>&copy; LegalZoom.com, Inc. All rights reserved.</font></td>
+      </tr>
+      <tr>
+        <td><img src="https://static.cdn.responsys.net/i5/responsysimages/legalz/[EventHandlerPostPurchase]/Service_TM_Comp_Search_Updated_NoCD/2014spacer.gif" width="1" height="10"  alt=" " style="display:block;"/></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

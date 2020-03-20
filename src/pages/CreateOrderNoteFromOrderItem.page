@@ -1,0 +1,63 @@
+<apex:page showHeader="true" sidebar="true" standardController="Order_Item__c" extensions="CreateOrderNoteFromOrderItemController">
+     <script type="text/javascript" src="/canvas/sdk/js/publisher.js"></script>
+     <apex:includeScript value="/support/console/31.0/integration.js"/>
+
+     <apex:includeScript value="{!URLFOR($Resource.zenform, 'jquery.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.zenform, 'style.css')}"/>
+     <apex:includeScript value="{!URLFOR($Resource.zenform, 'zen-form.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.zenform, 'zen-form.css')}"/> 
+     <script type="text/javascript">
+        function refreshCurrentTab() 
+        {
+            sforce.console.getEnclosingTabId(refreshTab);
+        }
+        var refreshTab = function refreshTab(result) {
+            var tabId = result.id;
+            sforce.console.refreshSubtabById(tabId, true, null);
+        };
+
+        function validateFields()
+        {
+            
+            if($('.description').val() != '')
+                createTaskSuccess();
+            else
+                createTaskFail();
+        }
+
+     </script>  
+    <div> 
+        <apex:form rendered="{!processingNumber != null}"> 
+                <apex:actionFunction action="{!createTask}" name="createTaskFail" rerender="out" status="statusUpdating" 
+            /> 
+            <apex:actionFunction action="{!createTask}" name="createTaskSuccess" rerender="out" status="statusUpdating" oncomplete="refreshCurrentTab();"
+            /> 
+            
+        <apex:outputPanel id="out" > 
+             <div class="input-wrap">
+                <label>Comments</label>
+                <apex:inputField value="{!theTask.Description}" required="true" style="height:92px;" styleClass="description"/>
+             </div>
+                 <button type="button" onclick="this.disabled=true;validateFields();" 
+        style="padding:5px 10px;float:right; 
+        font-size:13px; font-weight:bold; line-height: 
+        18px;background-color:#0271BF;background-image:-moz-linear-gradient(#2DADDC, #0271BF);background-repeat:repeat-x;border-color:#096EB3;" 
+        id="addopportunitybutton">Create</button>
+
+                <apex:actionStatus id="statusUpdating">
+                  <apex:facet name="start">
+                    <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+                  </apex:facet>
+                  <apex:facet name="stop">
+                      <apex:pageMessages /> 
+                  </apex:facet>
+                </apex:actionStatus>
+            
+           
+        </apex:outputPanel>
+        </apex:form>
+            
+      
+        
+    </div>  
+</apex:page>

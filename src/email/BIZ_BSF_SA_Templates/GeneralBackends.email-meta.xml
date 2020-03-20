@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>genbe</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>General Backends</name>
+    <style>none</style>
+    <subject>General Backends</subject>
+    <textOnly>Dear {!Contact.FirstName}:
+
+Thank you for choosing LegalZoom.com for your legal document needs.
+
+Attached, please find your revised BACKENDS for &quot;NAME OF COMPANY&quot;.  If you have any questions or concerns regarding your order, please feel free to contact our {!snippetVariable.cc_dept_full} at {!snippetVariable.ccphone} or by simply replying to this email.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

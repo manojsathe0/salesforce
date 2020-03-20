@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain</letterhead>
+    <name>Case Notification Checkbox</name>
+    <style>freeForm</style>
+    <subject>Please disregard this message</subject>
+    <textOnly>Oops! Someone accidentally checked the &quot;Send Notification Email&quot; checkbox when reassigning a case.
+ 
+Please delete this message. Our apologies for any inconvenience.
+ 
+ 
+Did you know you can set up an Outlook rule to automatically send these messages to your Deleted Items folder? Simply open your Outlook and complete the following steps:
+ 
+1. Go to File
+2. Go to Manage Rules and Alerts
+3. Under Email Rules, click New Rule
+4. Choose &quot;Move Messages with specific words in the subject to a folder&quot; and click Next
+5. Click on the specific words hyperlink and enter Please disregard this message
+6. Click on the specified hyperlink and choose Deleted Items
+7. Click Finish
+8. Enjoy never seeing this message again
+ 
+Thank you!
+ 
+{!User.Name}</textOnly>
+    <type>html</type>
+</EmailTemplate>

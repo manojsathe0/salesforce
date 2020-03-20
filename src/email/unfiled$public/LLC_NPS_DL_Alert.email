@@ -1,0 +1,5 @@
+An update has been made to this case (Case # {!Case.CaseNumber}). Please see below for case comments: 
+<br/><br/>
+{!Case.Last_Case_Comment}
+<br/><br/>
+{!Case.Thread_Id}

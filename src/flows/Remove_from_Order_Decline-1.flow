@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Remove from Order Decline {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Remove from Order Decline</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Remove_from_Order_Decline</name>
+        <label>Remove from Order Decline</label>
+        <locationX>254</locationX>
+        <locationY>117</locationY>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>00GG0000005hyKB</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>UserID</elementReference>
+            </value>
+        </filters>
+        <object>GroupMember</object>
+    </recordDeletes>
+    <startElementReference>Remove_from_Order_Decline</startElementReference>
+    <variables>
+        <name>StoredID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>UserID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

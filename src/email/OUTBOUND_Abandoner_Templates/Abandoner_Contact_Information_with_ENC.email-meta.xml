@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>abandcon</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Abandoner: Contact Information with ENC</name>
+    <style>none</style>
+    <subject>LegalZoom.com – (Entity Type) Information</subject>
+    <textOnly>Dear LegalZoom Customer,
+
+It was great talking to you today and thank you for considering LegalZoom.com.  
+
+As you may already know, you’re only few steps away from forming your {!Case.Products_c}.  However, I understand you may have questions about our pricing, packages, and overall process.   
+
+As per our conversation, I have provided my contact information below along with the link to our Free Entity Name Check questionnaire.
+
+Free Entity Name Check: http://www.legalzoom.com/additional-business-services/entity-name-check.html 
+Please do not hesitate to call me directly at (888) 313-5686 ext. {!User.Extension} should you have any questions or need further assistance.
+
+I look forward to hearing from you.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OppCloseOutStatus</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OppCloseOutStatus</value>
+    </caseValues>
+    <fields>
+        <label><!-- Reason_For_Cancellation --></label>
+        <name>Reason_For_Cancellation__c</name>
+    </fields>
+    <fields>
+        <label><!-- closedOutName --></label>
+        <name>closedOutName__c</name>
+    </fields>
+    <fields>
+        <label><!-- excludeStageNameString --></label>
+        <name>excludeStageNameString__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

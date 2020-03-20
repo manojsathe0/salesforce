@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Subpoena instructions</name>
+    <style>none</style>
+    <subject>Subpoena instructions</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your inquiry.
+
+You may subpoena any documents you need to prove your case by following the instructions below:
+
+- Complete the SC-107 form ?Small Claims Subpoena for personal appearance and production of documents and things at trial or hearing and declaration.? I have attached a copy of this form for your convenience.
+- On your subpoena, be very specific in naming the witness or papers you are requesting.
+- File the subpoena with the clerk?s office. Once the clerk has signed and stamped the subpoena, make three (3) copies.
+- Serve one copy of the subpoena on the required person or business. Anyone, including yourself, can serve your subpoena. Be sure to serve a copy and not the original signed and stamped by the clerk.
+- Once the subpoena is served, fill out Page 3 of the original subpoena (form SC-107). Have the person who served the subpoena sign at the bottom of the page and return it to the clerk before your hearing.
+Please note that witnesses can request payment of $35 a day and 20 cents a mile each way at the time you serve the subpoena, so you should be prepared to pay these fees. If you do not pay the witness fees before your hearing, the witness is not required to attend, but you will only need to pay these fees if your witness makes a request.
+
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

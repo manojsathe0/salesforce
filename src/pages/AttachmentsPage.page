@@ -1,0 +1,49 @@
+<apex:page standardController="Case" extensions="AttachmentsController" title="Attachments - {!Case.Subject}">
+
+<apex:sectionHeader title="Your Attachments for this case" subtitle="{!Case.Subject}"/>
+
+<apex:PageBlock title="HVCR Attachments" rendered="{!HVCRAttachments.size > 0}">
+    <apex:PageBlockTable value="{!HVCRAttachments}" var="a">
+        <apex:column headerValue="File">
+            <a href="{!a.link}">{!a.Name}</a>
+        </apex:column>
+        <apex:column headerValue="Subject" value="{!a.subject}"/>
+        <apex:column headerValue="Created" value="{!a.CreatedDate}"/>
+        <apex:column headerValue="Content Type" value="{!a.ContentType}"/>
+    </apex:PageBlockTable>
+</apex:PageBlock>
+
+<apex:PageBlock title="Email Attachments" rendered="{!EmailAttachments.size > 0}">
+    <apex:PageBlockTable value="{!EmailAttachments}" var="a">
+        <apex:column headerValue="File">
+            <a href="{!a.link}">{!a.Name}</a>
+        </apex:column>
+        <apex:column headerValue="Subject" value="{!a.subject}"/>
+        <apex:column headerValue="Created" value="{!a.CreatedDate}"/>
+        <apex:column headerValue="Content Type" value="{!a.ContentType}"/>
+    </apex:PageBlockTable>
+</apex:PageBlock>
+
+<apex:PageBlock title="Standard Attachments" rendered="{!StdAttachments.size > 0}">
+    <apex:PageBlockTable value="{!StdAttachments}" var="a">
+        <apex:column headerValue="File">
+            <a href="{!a.link}">{!a.Name}</a>
+        </apex:column>
+        <apex:column headerValue="Subject" value="{!a.subject}"/>
+        <apex:column headerValue="Created" value="{!a.CreatedDate}"/>
+        <apex:column headerValue="Content Type" value="{!a.ContentType}"/>
+    </apex:PageBlockTable>
+</apex:PageBlock>
+
+<apex:PageBlock title="Activity Attachments" rendered="{!ActivityAttachments.size > 0}">
+    <apex:PageBlockTable value="{!ActivityAttachments}" var="a">
+        <apex:column headerValue="File">
+            <a href="{!a.link}">{!a.Name}</a>
+        </apex:column>
+        <apex:column headerValue="Subject" value="{!a.subject}"/>
+        <apex:column headerValue="Created" value="{!a.CreatedDate}"/>
+        <apex:column headerValue="Content Type" value="{!a.ContentType}"/>
+    </apex:PageBlockTable>
+</apex:PageBlock>
+
+</apex:page>

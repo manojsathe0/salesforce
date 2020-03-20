@@ -1,0 +1,143 @@
+<apex:page controller="KnowledgeController" standardStylesheets="true" cache="{!cachePage}" expires="{!cacheMaxAge}" language="{!currentLanguage}">
+    <html>
+    <head>      
+        <title>Ask A Question - LegalZoom</title>
+        <apex:includeScript value="{!$Resource.commandLineAPI}" />
+        <apex:includeScript value="{!$Resource.pkb_js_base}" />
+        <apex:includeScript value="{!$Resource.pkb_js_prototype}" />
+        <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+        <!--<apex:includeScript value="{!URLFOR($Resource.lsw2resource, 'lsw2resource/mootools-core-1.4.5-full-compat.js')}"/>-->
+
+        <script src='http://www.legalzoom.com/lib/js_headerfooter.js' type='text/javascript' ></script>
+        <script src='http://www.legalzoom.com/lib/js_utils.js' type='text/javascript' ></script>
+        <script type="text/javascript">
+        var re1 = /"\//gim;
+        
+            function writeHeader(){
+                var sHeader = getPageHeader();
+                //var re1 = /"\//gim;
+                sHeader = sHeader.replace(re1, "\"http://www.legalzoom.com/");
+                document.write(sHeader); 
+            }
+            
+            function writeFooter(){
+                var sFooter = getPageFooter();
+                var re2 = /openWindow_ext\('\//gim;
+                sFooter = sFooter.replace(re1, "\"http://www.legalzoom.com/");
+                sFooter = sFooter.replace(re2, "openWindow_ext('http://www.legalzoom.com/");
+                document.write(sFooter); 
+            }
+        </script>
+         <apex:stylesheet value="{!$Resource.pkb_css_reset}" />
+        <apex:stylesheet value="{!$Page.knowledgeCss}" />                
+        
+    </head>
+    <body class="default knowledgeTab" onLoad="if (this.bodyOnLoad) bodyOnLoad();" onBeforeUnload="if (this.bodyOnBeforeUnload) bodyOnBeforeUnload();" onUnload="if (this.bodyOnUnload) bodyOnUnload();" onFocus="if (this.bodyOnFocus) bodyOnFocus();" style="width:960px">
+
+        <div id="topContentWrapper">
+            <script type="text/javascript">writeHeader();</script>
+        </div>
+        <apex:variable var="securityOK" value="false" />
+        
+        <div id="middleContentDiv">  <!-- this is the middle content of lz css which is access by calling write header above -->
+        
+            <apex:outputPanel styleClass="pkbPage" layout="block" rendered="{!canUserSeeKnowledge}"  >
+                <knowledge:categoryList categoryGroup="{!categoryGroupName}" ancestorsOf="{!currentCategory}" rootCategory="{!rootCategoryName}" categoryVar="ancestor" >
+                    <apex:variable var="securityOK" value="true" rendered="{!ancestor.name = rootCategoryName}" />
+                </knowledge:categoryList>
+    
+                <apex:outputPanel styleClass="pkbPage" layout="block" rendered="{!securityOK!='true'}" style="text-align:center;" >
+                    <span style="color:red; font-size:16px; font-weight:bold" >Error: The PKB Site Setup is not configured correctly. Please verify that the category group name is correct and that the group is active.</span>
+                </apex:outputPanel>
+            </apex:outputPanel>
+    
+            <apex:outputPanel styleClass="pkbPage" layout="block" rendered="{!!canUserSeeKnowledge}" style="text-align:center;" >
+                <span style="color:red; font-size:16px; font-weight:bold" >Configuration ERROR<br />Your user is not allowed to view knowledge</span>
+            </apex:outputPanel>
+            
+    
+            <apex:outputPanel styleClass="pkbPage" layout="block" >            
+    
+                <c:knowledgeHeader />
+                <apex:outputPanel styleClass="pkbSearchBox" layout="block" rendered="{!!isExternalPage}" >                        
+                <apex:outputPanel styleClass="pkbSearchBoxText" layout="block">            
+                    <apex:form id="searchBox">
+                    
+                    <apex:outputText value="{!$Label.PKB_Find_an_Answer}" style="font-size:16px;font-weight:bold;width:50px;"></apex:outputText>
+                    <apex:inputText value="{!currentCategory}" styleClass="categoryHiddenInputField"/>
+                    
+                    
+                    {!$Label.PKB_Search_Support}&nbsp;
+                    <select id="categorySelect" name="searchCategory"  size="1"  >
+                    <apex:outputPanel layout="none" rendered="{!securityOK}" >
+                        <apex:outputPanel layout="none" rendered="{!currentCategory=rootCategoryName}" >
+                            <option value="{!rootCategoryName}" selected="selected">{!$Label.PKB_Search_NoFilter}</option>
+                        </apex:outputPanel>
+                        <apex:outputPanel layout="none" rendered="{!currentCategory!=rootCategoryName}" >
+                            <option value="{!rootCategoryName}">{!$Label.PKB_Search_NoFilter}</option>
+                        </apex:outputPanel>
+                        <knowledge:categoryList categoryGroup="{!categoryGroupName}" rootCategory="{!rootCategoryName}" categoryVar="category" level="-1" >
+                            <apex:outputPanel layout="none" rendered="{!currentCategory=category.name}" >
+                                <option value="{!category.name}" selected="selected">
+                                    <apex:outputText escape="false" value="{!IF(category.depth=1, '', IF(category.depth=2, '&nbsp;&nbsp;', IF(category.depth=3, 
+
+'&nbsp;&nbsp;&nbsp;&nbsp;', IF(category.depth=4, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'))))}" />
+                                    {!category.label}
+                                </option>
+                            </apex:outputPanel>
+                            <apex:outputPanel layout="none" rendered="{!currentCategory!=category.name}">
+                                <option value="{!category.name}">
+                                    <apex:outputText escape="false" value="{!IF(category.depth=1, '', IF(category.depth=2, '&nbsp;&nbsp;', IF(category.depth=3, 
+
+'&nbsp;&nbsp;&nbsp;&nbsp;', IF(category.depth=4, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'))))}" />
+                                    {!category.label}
+                                </option>
+                            </apex:outputPanel>
+                        </knowledge:categoryList>
+                        </apex:outputPanel>
+                    </select>
+                    &nbsp;
+                    <apex:actionFunction name="searchJs" action="{!doSearch}" />
+                    <apex:inputText styleClass="keywordField" value="{!currentKeyword}" size="25" onkeypress="return submitEnter(event)" />
+                 
+                    &nbsp;
+                    <apex:commandButton action="{!doSearch}" value="{!$Label.PKB_Search_Button}" onclick="return updateCategoryField()" id="searchButton" />
+                    </apex:form>
+                </apex:outputPanel>
+                </apex:outputPanel>
+    
+                <apex:outputPanel rendered="{!AND(isExternalPage, securityOK='true')}" layout="none">
+                    <apex:outputPanel styleClass="pkbFullWidthPanel" layout="block">
+                        <apex:outputPanel styleClass="pkbFullWidthTop" layout="block" />
+                        <apex:outputPanel styleClass="pkbFullWidthInner" layout="block">
+                            <apex:insert name="body" />
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+    
+                <apex:outputPanel rendered="{!AND(!isExternalPage , securityOK='true')}" layout="none">
+                    <apex:insert name="content" />
+                </apex:outputPanel>
+    
+                <br class="clear" />
+            </apex:outputPanel>
+    
+            <apex:outputPanel styleClass="pkbPageBottom" layout="block">&nbsp;</apex:outputPanel>
+        </div>
+        
+        <!-- <site:googleAnalyticsTracking />  -->
+        
+        <div id="bottomContentWrapper">
+            <script type="text/javascript">writeFooter();</script>
+        </div>
+        <script type="text/javascript">
+            (function(a,b,c,d){
+            a='//tags.tiqcdn.com/utag/legalzoom/main/prod/utag.js';
+            b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+            a=b.getElementsByTagName(c)[0]a.parentNode.insertBefore(d,a);
+            })();
+        </script>
+    </body>
+         </html>
+
+</apex:page>

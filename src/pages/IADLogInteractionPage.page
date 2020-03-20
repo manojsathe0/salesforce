@@ -1,0 +1,101 @@
+<apex:page showHeader="false" sidebar="false" standardController="Contact" extensions="IADLogInteractionController" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+      <script type="text/javascript" src="/canvas/sdk/js/publisher.js"></script>
+      <apex:includeScript value="/support/console/31.0/integration.js"/>
+      <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+      <apex:stylesheet value="{!URLFOR($Resource.lziad, 'main.css')}"/>
+      <apex:includescript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}" />
+      <style type = "text/css">
+           #transferReason select{background-color: white;color: #16325c;border: 1px solid  #808080;border-radius: 4px;width: 100%;-webkit-transition: border 0.1s linear, background-color 0.1s linear;
+                    transition: border 0.1s linear, background-color 0.1s linear;display: inline-block;padding: 0 16px 0 12px;line-height: 34px;min-height:34px}
+            #theReason select{
+                border: 1px solid #808080;
+            }
+            #theDiscription textarea{
+                border: 1px solid #808080;
+            }
+      </style>  
+    </head>
+    <body>
+    <div class="slds">
+        <apex:form id="theForm">
+          <apex:actionFunction action="{!checIsTransfer}" name="checkIsTransfer" rerender="theForm" />
+          <apex:actionFunction action="{!logInteraction}" name="logInteraction" rerender="theForm" status="statusUpdating" 
+           /> 
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-large-size--1-of-1 slds-form-element slds-text-body--small">
+                  <label class="slds-form-element__label"><strong>Reason For Contact</strong></label>
+                  <div class="slds-form-element__control" id="theReason">
+                      <div class="slds-select_container">
+                         <apex:inputField value="{!theTask.Reason_For_Contact__c}" styleclass="slds-select" required="true"  onChange="checkIsTransfer();"/>
+                     </div>
+                    </div>
+                </div>
+                
+            </div>
+            <apex:outputPanel >
+            <div class="slds-grid slds-wrap" style="{!IF(isTransfer==true,'','display:none')}">
+                <div class="slds-col slds-large-size--1-of-1 slds-form-element slds-text-body--small">
+                  <label class="slds-form-element__label"><strong>Reason For Transfer</strong></label>
+                  <div class="slds-form-element__control" id="transferReason">
+                      <div class="slds-select_container selectContainer">
+                         <apex:inputField value="{!theTask.Reason_For_Transfer__c}" styleClass="slds-select" id="selectTransfer" >
+                             
+                                <script type="text/javascript">
+                                    $( "[id*='selectTransfer']" ).addClass('slds-select');
+                                    window.setInterval(function(){
+                                           $( "[id*='selectTransfer']" ).addClass('slds-select');
+                                        }, 100);
+                                
+                                 
+                             </script>
+                             </apex:inputField>
+                     </div>
+                    </div>
+                </div>
+                
+            </div>
+            </apex:outputPanel>
+            
+            
+            <div class="slds-grid slds-wrap" >
+                <div class="slds-col slds-large-size--1-of-1 slds-form-element slds-text-body--small">
+                  <label class="slds-form-element__label"><strong>Comments</strong></label>
+                  <div class="slds-form-element__control" id="theDiscription">
+                     <apex:inputTextarea value="{!theTask.Description}" rows="4" styleClass="slds-textarea"/>
+                    </div>
+                </div>
+                
+            </div>
+            <br />
+            <div class="slds-grid slds-wrap">
+                 <div class="slds-col slds-large-size--6-of-12">
+                      <button class="slds-button slds-button--brand" type="button" onclick="logInteraction();">Log Interaction</button>
+                </div>
+                <div class="slds-m-left--medium slds-col slds-large-size--6-of-12">
+                   <apex:actionStatus id="statusUpdating">
+                      <apex:facet name="start">
+                        <div class="slds-spinner_container">
+                          <div class="slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                          </div>
+                        </div>
+                      </apex:facet>
+                      <apex:facet name="stop">
+                          <!--<apex:pageMessages />--> 
+                      </apex:facet>
+                    </apex:actionStatus>
+                </div>
+            </div>
+            <br />     
+            <c:IADMessageBox theMessages="{!iadMessages}" />
+
+        </apex:form>
+     </div>  
+
+
+    </body>
+  </html>
+</apex:page>

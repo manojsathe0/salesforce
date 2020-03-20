@@ -1,0 +1,59 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear Valued LegalZoom Customer,<br/><br/>Thank you for your recent inquiry. In regards to your question, LegalZoom offers three types of Revocable Living Trusts:<br/><ul><li>Individual Living Trust: $249. Created and used by one person.<br/><br/><li>Joint Living Trust: $249. Created by two people who may be married or unmarried. This trust gives the two people the option of either leaving everything to one another or designating their own separate list of beneficiaries for their assets.<br/><br/><li>AB Living Trust: $249. Created by a married couple to reduce federal estate taxes. In this trust, spouses have only the option of designating separate beneficiaries in order to maximize tax benefits. According to LegalZoom&#39;s Living Trust questionnaire, &#34;With an AB Living Trust, upon the death of one spouse, the surviving spouse generally does not receive all of the deceased spouse&#39;s property outright. Instead, the surviving spouse receives a &#39;life estate,&#39; which means that he or she can use it for life, but cannot sell it or give it away. This can effectively double a couple&#39;s estate tax exemption.&#34; To read more on how an AB Living Trust can maximize tax benefits, you can visit <a href=http://www.legalzoom.com/living-trusts-guide/a-b-living-trusts.html>here</a>.<br/></ul>In a Joint or AB Living Trust, each creator, while both creators are still alive, may independently make decisions over all property placed into the Trust, including the separate property of the other creator.<br/><br/>With the Living Trust package, LegalZoom also offers an optional service to transfer real estate properties you wish to protect from probate into your trust for you. This transfer service is an additional $204-330 per real estate property depending on the state in which the property is located. This fee covers the preparation of the deed, a property title search, attorney review of the deed, filing and recording of the deed with the county, as well as state filing fees. If you do not wish to use LegalZoom for this transfer process, you may go through other means to do so, such as a real estate escrow company, a title or deed company, county recorder&#8217;s office, or an attorney.<br/><br/>I have included a complimentary &#8220;Living Trust Guide&#8221; to help you become more familiar with LegalZoom&#8217;s Living Trusts.<br/><br/>Please call us toll-free at 1-800-962-7490 if we can be of further assistance. We look forward to hearing from you soon.<br/> <br/>Best regards,<br/> <br/>The LegalZoom Team<br/>{!snippetVariable.lz_address}<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

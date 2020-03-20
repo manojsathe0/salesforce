@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>save</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Refund Save - cancellation request reply</name>
+    <style>none</style>
+    <subject>Refund Save - cancellation request reply</subject>
+    <textOnly>Dear {!Contact.FirstName}:
+
+Thank you for choosing LegalZoom.com, America&apos;s #1 online legal source.
+
+We have received your request to cancel your order. For security purposes, please contact us at 1.800.773.0888 Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+We truly appreciate your business and thank you for choosing LegalZoom, America&apos;s #1 online legal source for your document preparation needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

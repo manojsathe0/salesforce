@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>gs8</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>G&amp;S Acceptable Descriptions</name>
+    <style>none</style>
+    <subject>Response Required: LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+The U.S. Patent and Trademark Office (USPTO) requires a specific list of products (goods) and services for your trademark. These descriptions are important, as they are used to categorize each trademark within specific international classifications. Your current description reads:
+
+[enter customer description]
+
+Below are some examples of acceptable descriptions that can be used for your application:
+
+[enter descriptions here]
+
+Please visit {!snippetVariable.tm_gs_manual} to view the USPTO&apos;s complete list of acceptable descriptions for products and services. To use this tool, please enter specific keywords (i.e. &quot;clothing&quot; or &quot;retail store&quot;) and a listing of descriptions will appear with appropriate class numbers. You can use any of the descriptions displayed that are applicable to your trademark. NOTE: You have paid for one class--each additional class will require a $XXX fee.
+
+PLEASE NOTE: You have paid for one class--each additional class will require a $385 fee.
+
+Because LegalZoom is legally prohibited from giving legal advice, it is our customers&apos; responsibility to develop a description that is appropriate for their trademark*. Although inadequate descriptions are often able to be amended after a trademark application has been filed, the scope of the description cannot be broadened. Such amendments may also delay the registration process. Once a trademark application is filed, LegalZoom will not file amendments on behalf of the applicant.
+
+After reviewing the information provided by the USPTO, please provide us with a detailed list of goods and services.
+
+{!snippetVariable.ip_gs_closing}
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+Best regards,
+
+The LegalZoom Team 
+
+* {!snippetVariable.tmoa_bap} 
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

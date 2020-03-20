@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ConvertLead</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Create_Opportunity</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City</fullName>
+    </fields>
+    <fields>
+        <fullName>CompanyOrAccount</fullName>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Contact_Score__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country</fullName>
+    </fields>
+    <fields>
+        <fullName>Created_By__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created By</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Created_date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL( Lead.CreatedDate ),Contact.CreatedDate,Lead.CreatedDate)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DateTime_Added_to_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>DateTime Added to Campaign</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Modified__c</fullName>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate</formula>
+        <label>Date/Time Modified</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>DoNotCall</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstName</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstRespondedDate</fullName>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfFax</fullName>
+    </fields>
+    <fields>
+        <fullName>HasResponded</fullName>
+    </fields>
+    <fields>
+        <fullName>Hour__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( DATEVALUE( LastModifiedDate ) &gt;=  
+DATE ( YEAR (DATEVALUE( LastModifiedDate )),3,1) 
++ 
+( 
+14- 
+CASE( MOD(DATE ( YEAR (DATEVALUE( LastModifiedDate )),3,1) - DATE (1900,1,7),7) , 
+0,7,MOD(DATE ( YEAR (DATEVALUE( LastModifiedDate )),3,1) - DATE (1900,1,7),7)) 
+) 
+&amp;&amp; 
+DATEVALUE( LastModifiedDate ) &lt; 
+DATE ( YEAR (DATEVALUE( LastModifiedDate )),11,1) 
++ 
+( 
+7- 
+CASE( MOD(DATE ( YEAR (DATEVALUE( LastModifiedDate )),11,1) - DATE (1900,1,7),7) , 
+0,7,MOD(DATE ( YEAR (DATEVALUE( LastModifiedDate )),11,1) - DATE (1900,1,7),7)) 
+), 
+(CASE( VALUE(MID(TEXT( LastModifiedDate ),12,2)) , 
+00, &apos;19:00&apos;, 
+01, &apos;20:00&apos;, 
+02, &apos;21:00&apos;, 
+03, &apos;22:00&apos;, 
+04, &apos;23:00&apos;, 
+05, &apos;00:00&apos;, 
+06, &apos;01:00&apos;, 
+07, &apos;02:00&apos;, 
+08, &apos;03:00&apos;, 
+09, &apos;04:00&apos;, 
+10, &apos;05:00&apos;, 
+11, &apos;06:00&apos;, 
+12, &apos;07:00&apos;, 
+13, &apos;08:00&apos;, 
+14, &apos;09:00&apos;, 
+15, &apos;10:00&apos;, 
+16, &apos;11:00&apos;, 
+17, &apos;12:00&apos;, 
+18, &apos;13:00&apos;, 
+19, &apos;14:00&apos;, 
+20, &apos;15:00&apos;, 
+21, &apos;16:00&apos;, 
+22, &apos;17:00&apos;, 
+23, &apos;18:00&apos;, 
+NULL)) 
+, 
+(CASE( VALUE(MID(TEXT( LastModifiedDate ),12,2)) , 
+00, &apos;18:00&apos;, 
+01, &apos;19:00&apos;, 
+02, &apos;20:00&apos;, 
+03, &apos;21:00&apos;, 
+04, &apos;22:00&apos;, 
+05, &apos;23:00&apos;, 
+06, &apos;00:00&apos;, 
+07, &apos;01:00&apos;, 
+08, &apos;02:00&apos;, 
+09, &apos;03:00&apos;, 
+10, &apos;04:00&apos;, 
+11, &apos;05:00&apos;, 
+12, &apos;06:00&apos;, 
+13, &apos;07:00&apos;, 
+14, &apos;08:00&apos;, 
+15, &apos;09:00&apos;, 
+16, &apos;10:00&apos;, 
+17, &apos;11:00&apos;, 
+18, &apos;12:00&apos;, 
+19, &apos;13:00&apos;, 
+20, &apos;14:00&apos;, 
+21, &apos;15:00&apos;, 
+22, &apos;16:00&apos;, 
+23, &apos;17:00&apos;, 
+NULL)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hour</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initial_Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL( Lead.CreatedDate ),
+Contact.Initial_Product_Text__c,
+Lead.Initial_Product_Text__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Initial Product</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Converted__c</fullName>
+        <externalId>false</externalId>
+        <formula>Lead.IsConverted</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Converted</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LastName</fullName>
+    </fields>
+    <fields>
+        <fullName>LeadId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>Lead.Lead_Score__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MobilePhone</fullName>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>PostalCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Salutation</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <description>This field stores the sum of lead score and contact score. As campaign member can only be a lead or contact at any given time this field is equal to Lead score or Contact score.
+
+This field is used to query the Campaign members for get next button.</description>
+        <externalId>false</externalId>
+        <formula>Lead.Lead_Score__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Street</fullName>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+    </fields>
+</CustomObject>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>cr24_draft</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PROBLEM - Copyright – Inconsistent Publication Dates_draft</name>
+    <style>none</style>
+    <subject>Your Copyright Registration – Inconsistent Publication Dates</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+You indicated on your application a publication date for the work you are seeking to register. However, the work you submitted to accompany your application lists multiple publication dates. 
+
+The U.S. Copyright Office allows only one publication date to be listed for a work. If you submitted to us a revised version of an older work, provide the date this latest version was published. 
+
+In order for us to proceed with your application, please reply to this email as soon as possible with the correct date (Month/Day/Year).
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

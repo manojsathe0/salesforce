@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>needspecs12</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Need Specimen - Services</name>
+    <style>none</style>
+    <subject>Materials Required: LegalZoom Order#</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+In your order, you indicated that you are currently using your trademark. Because you are applying to register on a “Used-In-Commerce” basis, the U.S. Patent and Trademark Office (USPTO) requires that you provide proof of your use (called a “specimen”). The specimen you provide should be an actual, real-world example that clearly shows how the trademark is being used in connection with the services you listed in your application. 
+
+If you are providing services, acceptable specimens include a sign, brochure, advertisement, business card, stationary or website prominently displaying your trademark in connection with the services you’ve listed in your trademark filing. The specimen must include a reference to the service, not just the trademark by itself. Printer’s proofs for advertisements or news articles about your services are generally NOT acceptable specimens for services. . 
+
+See Examples: http://www.legalzoom.com/trademarks-faq/what-is-a-trademark-specimen.html
+
+----------------------------------
+
+SUBMITTING YOUR MATERIALS: 
+
+Please reply to this e-mail and attach your materials, preferably in .jpg, .jpeg, .gif or .pdf format. Email attachments cannot exceed 6MB. 
+
+If you are using a Mac computer or your attachments are larger than 6MB combined, please upload your image(s) directly here: http://legalzoom.force.com/LZWTC  
+
+Or, if you prefer, you can mail us your materials. Our mailing address is: 
+
+$ip_address_tm_materials
+
+Please note: LegalZoom will not share your materials with any third party unless necessary for the completion of your order. Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. 
+
+----------------------------------
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT. 
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+Best regards, 
+
+The LegalZoom Team 
+
+* {!snippetVariable.tmoa_bap}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

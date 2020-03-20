@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TMvsCR</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Trademarks vs. Copyrights</name>
+    <style>none</style>
+    <subject>Trademarks vs. Copyrights</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+Names, titles, short phrases, and slogans are not copyrightable. However, you may have protection under the federal trademark laws. Contact the U.S. Patent &amp; Trademark Office at 1-800-786-9199 or go to the website at www.uspto.gov for more information.  
+
+If you determine that you would like to file a trademark application, LegalZoom can handle the preparation and filing on your behalf. Simply visit www.legalzoom.com and fill out our easy online questionnaire to begin the process. 
+
+The cost to file a standard trademark in a single class (there are 45 different classes) is $494.00.
+
+{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.
+
+{!snippetVariable.ipclosingline}
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

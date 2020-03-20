@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Activity_Commission_Eligible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Activity Commission Eligible</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Contacted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Activity Contacted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Count_By_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Count By Campaign</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Created_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Date time when the activity was created.</description>
+        <externalId>false</externalId>
+        <label>Activity Created By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>OrderLeadOpportunitys</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Created_DateTime__c</fullName>
+        <description>Date time when the activity was created.</description>
+        <externalId>false</externalId>
+        <label>Activity Created DateTime</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Created_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE( Activity_Created_DateTime__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activity Created Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Activity Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>OrderLeadOpportunitys1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Activity_SFDC_Id__c</fullName>
+        <description>SFDC Id of Activity</description>
+        <externalId>true</externalId>
+        <label>Activity SFDC Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Adjustment_Type__c</fullName>
+        <description>Indicates whether the agent lost (negative) on the commission matching adjustment.  If the adjustment is not a lost, then positive adjustment should be used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If there is a commission matching adjustment but it is not a lost, positive adjustment should be used.</inlineHelpText>
+        <label>Adjustment Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Positive Adjustment</fullName>
+                    <default>false</default>
+                    <label>Positive Adjustment</label>
+                </value>
+                <value>
+                    <fullName>Negative Adjustment</fullName>
+                    <default>false</default>
+                    <label>Negative Adjustment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Agent__c</fullName>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Agent 1</fullName>
+                    <default>false</default>
+                    <label>Agent 1</label>
+                </value>
+                <value>
+                    <fullName>Agent 2</fullName>
+                    <default>false</default>
+                    <label>Agent 2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Assistant_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Assistant Manager</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BAP_LAP_Standalone_Commission_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Commission_Eligible__c = (0.25), 0.25 * (Order__r.BAP_Standalone_Product_Count__c + Order__r.LAP_Standalone_Product_Count__c ) , 
+IF( Commission_Eligible__c = (0.75), 0.75 * (Order__r.BAP_Standalone_Product_Count__c + Order__r.LAP_Standalone_Product_Count__c ) , 
+IF( Commission_Eligible__c = (1), Order__r.BAP_Standalone_Product_Count__c + Order__r.LAP_Standalone_Product_Count__c , 
+
+null)))</formula>
+        <label>BAP/LAP (Standalone) Commission Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Duration__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Duration</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unique Queue</fullName>
+                    <default>false</default>
+                    <label>Unique Queue</label>
+                </value>
+                <value>
+                    <fullName>Unique Outbound</fullName>
+                    <default>false</default>
+                    <label>Unique Outbound</label>
+                </value>
+                <value>
+                    <fullName>Direct</fullName>
+                    <default>false</default>
+                    <label>Direct</label>
+                </value>
+                <value>
+                    <fullName>Outbound Follow Up</fullName>
+                    <default>false</default>
+                    <label>Outbound Follow Up</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Commission_Eligible_Revenue_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Commission_Eligible__c = (0.25),  Order_Commission_Eligible_Total__c *0.25, 
+IF( Commission_Eligible__c = (0.75),  Order_Commission_Eligible_Total__c *0.75,
+IF( Commission_Eligible__c = (1),  Order_Commission_Eligible_Total__c, 
+
+null)))</formula>
+        <label>Commission Eligible Revenue Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Commission_Eligible__c</fullName>
+        <externalId>false</externalId>
+        <label>Commission Eligible %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Commission_Order_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Commission_Eligible__c = (0.25), Order__r.Order_Count__c *0.25, 
+IF( Commission_Eligible__c = (0.75), Order__r.Order_Count__c*0.75, 
+IF( Commission_Eligible__c = (1), Order__r.Order_Count__c, 
+
+null)))</formula>
+        <label>Commission Order Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commission_Order_Net_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Commission_Eligible__c = (0.25), Order__r.Net_Total__c *0.25, 
+IF( Commission_Eligible__c = (0.75), Order__r.Net_Total__c*0.75, 
+IF( Commission_Eligible__c = (1), Order__r.Net_Total__c, 
+
+null)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Commission Order Net Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Commission_Order_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Commission_Eligible__c = (0.25), Order_Commission_Eligible_Total__c *0.25, 
+IF( Commission_Eligible__c = (0.75), Order_Commission_Eligible_Total__c *0.75, 
+IF( Commission_Eligible__c = (1), Order_Commission_Eligible_Total__c , 
+
+null)))</formula>
+        <label>Commission Order Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Order Matching Activities</relationshipLabel>
+        <relationshipName>Order_Matching_Activities</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Last_Modified__c</fullName>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date/Time Last Modified</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Matching_Adjusted__c</fullName>
+        <description>The datetime stamp when the commission matching adjustment happened</description>
+        <externalId>false</externalId>
+        <label>Date/Time Matching Adjusted</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Day_of_Week_Created__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(
+MOD(DATEVALUE( CreatedDate ) - DATE(1900, 1, 7), 7),
+0, &quot;Sunday&quot;,
+1, &quot;Monday&quot;,
+2, &quot;Tuesday&quot;,
+3, &quot;Wednesday&quot;,
+4, &quot;Thursday&quot;,
+5, &quot;Friday&quot;,
+6, &quot;Saturday&quot;, &quot;Error&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Day of Week Created</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours_Between_Order_and_Activity_Agent_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND( NOT ISBLANK(Order__r.Declined_To_Approved_Time__c)), (Order__r.Declined_To_Approved_Time__c - Order__r.Agent_2_Activity__c )*24, 
+
+( Order__r.Order_Date_Time_Created__c -Order__r.Agent_2_Activity__c)*24)</formula>
+        <label>Hours Between Order and Activity Agent 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours_between_Order_and_Activity__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND( NOT ISBLANK(Order__r.Declined_To_Approved_Time__c) ), (Order__r.Declined_To_Approved_Time__c -Activity_Created_DateTime__c)*24, 
+
+( Order__r.Order_Date_Time_Created__c -Activity_Created_DateTime__c)*24)</formula>
+        <label>Hours Between Order and Activity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inbound_Outbound__c</fullName>
+        <externalId>false</externalId>
+        <label>Inbound/Outbound</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inbound</fullName>
+                    <default>false</default>
+                    <label>Inbound</label>
+                </value>
+                <value>
+                    <fullName>Outbound</fullName>
+                    <default>false</default>
+                    <label>Outbound</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Is_Created_By_Agent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Created By Agent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Subscription_Activity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Subscription Activity?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Score</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Supervisor__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Supervisor</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipName>OrderLeadOpportunitys</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Manager_1__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Owner:User.Manager.Id = $User.Id, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Manager = 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manager_Check__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(  Activity_Owner__r.ManagerId  =  $User.Id  , 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Manager Check</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Manager</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Matched_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>Matched Campaign</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OMA_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OMA Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>OrderLeadOpportunitys</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Commission_Eligible_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(Order__r.Commission_Eligible_Agent_1__r.Id = Order__r.Commission_Eligible_Agent_2__r.Id, TEXT(Agent__c )= &quot;Agent 2&quot;), Null, 
+
+IF((Order__r.Commission_Eligible_Agent_1__r.Id = Order__r.Commission_Eligible_Agent_2__r.Id &amp;&amp; TEXT(Agent__c )= &quot;Agent 1&quot;) 
+|| (Order__r.Commission_Eligible_Agent_1__r.Id &lt;&gt; Order__r.Commission_Eligible_Agent_2__r.Id)
+,Order__r.Commission_Eligible_Total__c , NULL))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Commission Eligible Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Order_Matching_Activity_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Matching Activity Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <referenceTo>Order__c</referenceTo>
+        <relationshipName>OrderLeadOpportunitys</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Object_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent Object Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pilot_Group_Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact (Pilot Group Use Only)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call 1 - Contacted</fullName>
+                    <default>false</default>
+                    <label>Call 1 - Contacted</label>
+                </value>
+                <value>
+                    <fullName>Call 1 - VM / Email</fullName>
+                    <default>false</default>
+                    <label>Call 1 - VM / Email</label>
+                </value>
+                <value>
+                    <fullName>Call 1 - No Answer / Email</fullName>
+                    <default>false</default>
+                    <label>Call 1 - No Answer / Email</label>
+                </value>
+                <value>
+                    <fullName>Call 2 - Contacted</fullName>
+                    <default>false</default>
+                    <label>Call 2 - Contacted</label>
+                </value>
+                <value>
+                    <fullName>Call 2 - Not Contacted</fullName>
+                    <default>false</default>
+                    <label>Call 2 - Not Contacted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Queue__c</fullName>
+        <externalId>false</externalId>
+        <label>Queue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Abandoner</fullName>
+                    <default>false</default>
+                    <label>Abandoner</label>
+                </value>
+                <value>
+                    <fullName>Inbound</fullName>
+                    <default>false</default>
+                    <label>Inbound</label>
+                </value>
+                <value>
+                    <fullName>Mobile</fullName>
+                    <default>false</default>
+                    <label>Mobile</label>
+                </value>
+                <value>
+                    <fullName>RA Renewal</fullName>
+                    <default>false</default>
+                    <label>RA Renewal</label>
+                </value>
+                <value>
+                    <fullName>Decline</fullName>
+                    <default>false</default>
+                    <label>Decline</label>
+                </value>
+                <value>
+                    <fullName>Retention</fullName>
+                    <default>false</default>
+                    <label>Retention</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Adjustment__c</fullName>
+        <description>The reason for commission matching adjustment</description>
+        <externalId>false</externalId>
+        <label>Reason for Adjustment</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Extended System Downtime</fullName>
+                    <default>false</default>
+                    <label>Extended System Downtime</label>
+                </value>
+                <value>
+                    <fullName>Integration Delay</fullName>
+                    <default>false</default>
+                    <label>Integration Delay</label>
+                </value>
+                <value>
+                    <fullName>Internet Downtime</fullName>
+                    <default>false</default>
+                    <label>Internet Downtime</label>
+                </value>
+                <value>
+                    <fullName>New Bug Discovered</fullName>
+                    <default>false</default>
+                    <label>New Bug Discovered</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Replaced_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field points to the newly adjusted commission matching record from the original commission matching record</description>
+        <externalId>false</externalId>
+        <label>Replaced By</label>
+        <referenceTo>Order_Matching_Activity__c</referenceTo>
+        <relationshipLabel>Commission Matching Replaced</relationshipLabel>
+        <relationshipName>Order_Matching_Activities</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SBR_Commission_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Commission_Eligible__c = (0.25), Order__r.SBR_Product_Count__c *0.25, 
+IF( Commission_Eligible__c = (0.75), Order__r.SBR_Product_Count__c *0.75, 
+IF( Commission_Eligible__c = (1), Order__r.SBR_Product_Count__c , 
+
+null)))</formula>
+        <label>SBR Commission Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Cycle_30__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Cycle (30)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Cycle_Inclusive__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( Hours_between_Order_and_Activity__c &lt;=24, 1, 
+If( Hours_between_Order_and_Activity__c &lt;=48, 2, 
+If( Hours_between_Order_and_Activity__c &lt;=72, 3, 
+If( Hours_between_Order_and_Activity__c &lt;=96, 4, 
+If( Hours_between_Order_and_Activity__c &lt;=120, 5, 
+If( Hours_between_Order_and_Activity__c &lt;=144, 6, 
+If( Hours_between_Order_and_Activity__c &lt;=168, 7, 
+If( Hours_between_Order_and_Activity__c &lt;=192, 8, 
+If( Hours_between_Order_and_Activity__c &lt;=216, 9, 
+If( Hours_between_Order_and_Activity__c &lt;=240, 10, 
+If( Hours_between_Order_and_Activity__c &lt;=264, 11, 
+If( Hours_between_Order_and_Activity__c &lt;=288, 12, 
+If( Hours_between_Order_and_Activity__c &lt;=312, 13, 
+If( Hours_between_Order_and_Activity__c &lt;=336, 14, 
+
+Null 
+))))))))))))))</formula>
+        <label>Sales Cycle Inclusive</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Cycle__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( Hours_between_Order_and_Activity__c &lt;=24, &apos;Day 1&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=48, &apos;Day 2&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=72, &apos;Day 3&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=96, &apos;Day 4&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=120, &apos;Day 5&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=144, &apos;Day 6&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=168, &apos;Day 7&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=192, &apos;Day 8&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=216, &apos;Day 9&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=240, &apos;Day 10&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=264, &apos;Day 11&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=288, &apos;Day 12&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=312, &apos;Day 13&apos;, 
+If( Hours_between_Order_and_Activity__c &lt;=336, &apos;Day 14&apos;, 
+
+Null
+))))))))))))))</formula>
+        <label>Sales Cycle (14)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Activities__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Activities</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Days_From_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <formula>Order__r.Order_Date_Time_Created__c -  Order__r.Date_Time_Questionaire_Started__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Days From Purchase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Spent_till_Purchase__c</fullName>
+        <externalId>false</externalId>
+        <formula>(floor((Order__r.Order_Date_Time_Created__c -  Opportunity__r.Date_Time_Questionaire_Started__c)*24))
++
+(((((Order__r.Order_Date_Time_Created__c -  Opportunity__r.Date_Time_Questionaire_Started__c)*24)-floor((Order__r.Order_Date_Time_Created__c -  Opportunity__r.Date_Time_Questionaire_Started__c)*24))*60)/100)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Hours Spent till Purchase</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Order Matching Activity</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Activity_Created_DateTime__c</columns>
+        <columns>Activity_Created_By__c</columns>
+        <columns>NAME</columns>
+        <columns>Order__c</columns>
+        <columns>Lead__c</columns>
+        <columns>Agent__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Activity_SFDC_Id__c</columns>
+        <columns>Activity_Type__c</columns>
+        <columns>Activity_Commission_Eligible__c</columns>
+        <columns>Activity_Contacted__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Missing_manager</fullName>
+        <columns>NAME</columns>
+        <columns>Activity_Owner__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Manager__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Activity_Owner__c</field>
+            <operation>equals</operation>
+            <value>April Williamson,Terrence Redmond,and Terica Austin</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <filters>
+            <field>Manager__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Missing manager</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>today_created</fullName>
+        <booleanFilter>1 and 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Matched_Campaign__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Matched_Campaign__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>today - created</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>Match-{0000}</displayFormat>
+        <label>Order Matching Activity  Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Order Matching Activities</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Activity_Commission_Eligible__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Activity_Created_By__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Sales_Cycle__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Agent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Commission_Eligible__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Order__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Activity_Commission_Eligible__c</searchFilterFields>
+        <searchFilterFields>Activity_Created_By__c</searchFilterFields>
+        <searchFilterFields>Sales_Cycle__c</searchFilterFields>
+        <searchFilterFields>Agent__c</searchFilterFields>
+        <searchFilterFields>Commission_Eligible__c</searchFilterFields>
+        <searchFilterFields>Order__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

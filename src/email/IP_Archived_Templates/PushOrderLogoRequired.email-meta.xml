@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tmpush2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Push Order (Logo Required)</name>
+    <style>none</style>
+    <subject>Push Order (Logo Required)</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.
+
+We have made several attempts to contact you regarding your trademark application but have not been able to resolve the following issue:
+
+Logo Requirement
+
+Please reply to this email with a copy of your logo, preferably in .gif, .pdf, .jpeg or .jpg format.  Otherwise, you can upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s website: {!snippetVariable.aaq_link_only}.
+
+***MAC USERS: upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s website: {!snippetVariable.aaq_link_only}.***
+
+IMPORTANT NOTE: If you would like to address this issue or place your order on hold, please reply to this email or send an email directly to trademarks@legalzoom.com as soon as possible. If a response is not received within 10 days of this email, LegalZoom will file your trademark application on your behalf to reflect:
+
+Mark Format: Typed (words and/or standard characters only)
+
+Trademark applications submitted in a typed format are filed solely to protect the mark?s wording, without claim to any designs or artwork.  Marks filed in a typed format can be used and altered at the applicant?s discretion, so long as the words (the ?literal element?) remain the same (and the alterations do not result in a mark that is likely to be confused with another entity?s mark).  In other words, the applicant may use the mark in any font style or color, and maintain trademark protection.  Under a typed format, a copy of the logo is not needed.
+
+No changes can be made to the application once the trademark application has been filed.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

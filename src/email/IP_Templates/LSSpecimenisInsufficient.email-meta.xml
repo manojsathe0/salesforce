@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ls6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>L&amp;S Specimen is Insufficient</name>
+    <style>none</style>
+    <subject>Response Required: LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for submitting your specimen to LegalZoom. Unfortunately, the material(s) received appear to be insufficient.
+
+For applications filed on a &quot;Use in Commerce&quot; basis, the U.S. Patent and Trademark Office (USPTO)requires that applicants show sufficient proof that the Trademark is currently being used in the manner described within the list of goods and services.
+
+******************For goods******************
+
+For example, if a company has filed a Federal Trademark Application for &quot;Bob’s Shoes&quot; and listed &quot;shoes&quot; for its goods and services, they would need to submit a picture of a shoe box or pair of shoes that clearly demonstrated that its mark, &quot;Bob’s Shoes,&quot; was being offered in the marketplace.
+
+A specimen is a real world example of how your mark is currently being used in commerce, and is more than just a picture of your Trademark or logo. ***Please note that your Trademark must stand out within the specimen. For example, if your Trademark is found within a body of text, it can be made distinctive by being bolder in text, in a larger or different font, or having a &quot;TM&quot; symbol following the mark.***
+
+For goods (products), acceptable specimens include labels or tags attached to the product, packaging material, instruction manuals and containers which display the Trademark. ***Please note that websites, advertisements, brochures, business cards, catalogs and stationery are generally not acceptable specimens for goods (products).***
+
+******************For services******************
+
+For example, if a company has filed a Federal Trademark Application for &quot;Premier Investments&quot; and listed &quot;investment consultation&quot; for its goods and services, they would need to submit a website screenshot or brochure that clearly demonstrated that its mark, &quot;Premier Investments,&quot; was offering the described service.
+
+A specimen is a real world example of how your mark is currently being used in commerce, and is more than just a picture of your Trademark or logo. ***Please note that your Trademark must stand out within the specimen. For example, if your Trademark is found within a body of text, it can be made distinctive by being bolder in text, in a larger or different font, or having a &quot;TM&quot; symbol following the mark.***
+
+For services, acceptable specimens include brochures, flyers, advertisements, yellow page listings and internet websites. ***Please note that business cards and stationery are generally not acceptable specimens for services.***
+
+********************
+
+Please reply to this e-mail and attach an image of your specimen, preferably in .gif, .pdf, .jpeg or .jpg format. Alternately, you can send the specimen to us by mail. Our mailing address is:
+
+LegalZoom
+Attn: Trademarks, Order [Your Order#]
+101 N. Brand Blvd., 11th Floor
+Glendale, CA 91203&quot;
+
+
+Otherwise, you can upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s Support Center at www.legalzoom.com/questions.html. MAC USERS: please upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s Support Center at www.legalzoom.com/questions.html. 
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT. 
+
+
+Best regards,
+
+The LegalZoom Team 
+
+tel 877.818.8787 | fax 323.389.0658 
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

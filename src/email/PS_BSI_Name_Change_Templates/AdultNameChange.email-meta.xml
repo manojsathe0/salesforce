@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>adultnc</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Adult Name Change</name>
+    <style>none</style>
+    <subject>Adult Name Change</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+ 
+Thank you for your interest in LegalZoom Name Changes.  In regards to your question, LegalZoom offers Adult Name Change documents for $139 that cover the proper and thorough processing of the appropriate documents necessary to file with the county clerk office.  Please note that this fee does not cover any filing fees or publication fees.  You may refer to your local court to inquire on information pertaining to filing fees and other third party fees.
+
+At this time, we do not offer Adult Name Change documents for Alabama, Arkansas, Georgia, Louisiana, Maine, Mississippi, Montana, North Dakota, South Carolina, South Dakota, Tennessee, Wyoming, Audrain County (MO), Guadalupe County (TX), Jackson County (OR), and Palm Beach County (FL). If you are in the mentioned locations, you may refer to the county court office to inquire on the availability of these documents or visit https://www.legalzoom.com/attorneys-lawyers/legal-plans/personal for an attorney referral.
+
+To get started, simply log onto www.legalzoom.com and complete the online questionnaire.  In 2-3 business days, LegalZoom will create your documents and mail them to the address provided through First Class Shipping with instructions for your package.  The documents will then be ready to be filed with the county court office.
+
+To obtain more information on the legal name change process, you may refer to http://www.legalzoom.com/name-change-guide/name-change-instructions.html.
+
+Please call us toll-free at (800) 962-7490 if we can be of further assistance.  We look forward to hearing from you soon.
+ 
+Best regards,
+ 
+The LegalZoom Team
+{!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

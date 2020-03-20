@@ -1,0 +1,158 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes" controller="NextPadController_Ltng">
+    <aura:attribute name="processingNumber" type="String"/>
+    <aura:attribute name="ctrl" type="Object" />
+    <aura:attribute name="customerOrderNumber" type="String"/>
+    <aura:attribute name="orderRecordId" type="String" />
+    <aura:attribute name="orderItemNumber" type="String"/>
+    <aura:attribute name="contact" type="Contact"/>
+    <aura:attribute name="allNotes" type="List"/>
+    <aura:attribute name="selectedObject" type="String"/>
+    <aura:attribute name="sortField" type="String" default="date"/>
+    <aura:attribute name="sortOrder" type="String" default="ascending"/>
+    <aura:attribute name="filter" type="String" default="ALL"/>
+    <aura:attribute name="descriptionArea" type="String"/>
+    <aura:attribute name="isLedgerApp" type="Boolean" default="false" />
+    
+    <aura:method name="openNextPadModal" action="{!c.open_NextPadModal}">
+        <aura:attribute name="processingNumber_arg" type="String"/>
+        <aura:attribute name="customerOrderNumber_arg" type="String"/>
+        <aura:attribute name="orderItemNumber_arg" type="String"/>
+        <aura:attribute name="orderRecordId_arg" type="String" />
+    </aura:method>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <div id="nextPadModalPanel" aura:id="nextPadModalPanel" class="hideOrderHistory"> 
+        <div class="slds-modal slds-fade-in-open slds-modal_medium" aria-hidden="false" role="dialog">
+            <div class="slds-modal__container" style="margin-top: 10%; max-height: 80%">
+                <div class="slds-modal__header">
+                    Ledger - {!v.customerOrderNumber}
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-3">
+                            <span><ui:outputText value="Customer Order Number"/>: {!v.customerOrderNumber}</span>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <span><ui:outputText value="Processing Number"/>: <ui:outputText value="{!v.processingNumber}" /></span>
+                        </div>
+                    </div>
+                    
+                    <br/>
+                    <br/>
+                    <lightning:textarea name="descriptionArea" value="{!v.descriptionArea}" label="" placeholder="Enter description..." />
+                    
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_3-of-12"></div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <span><lightning:button variant="neutral" label="Submit" onclick="{!c.submit}" /></span>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <span><lightning:button variant="neutral" label="Clear" onclick="{!c.clear}" /></span>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <span>
+                                <lightning:select value="{!v.selectedObject}" label="">
+                                    <option text="Order Note" value="note"/>
+                                    <option text="Problem Order" value="case"/>
+                                </lightning:select>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <lightning:spinner aura:id="spinner" alternativeText="loading details" class="hideSpinner"/>
+                    
+                    <div class="sortfilterHolder">
+                        <div class="sortBlock">
+                            <span class="boldLabel">Sort By :
+                                <a onclick="{!c.sortBy}" class="notSelected" aura:id="RecentID" data-order="Recent">Recent</a> || 
+                                <a onclick="{!c.sortBy}" class="notSelected" aura:id="OldestID"  data-order="Oldest">Oldest</a> || 
+                                <a onclick="{!c.sortBy}" class="notSelected" aura:id="CreatedID"  data-order="Created by">Created by</a></span>
+                        </div>
+                        
+                        <div class="filterBlock">
+                            <span class="boldLabel">Display :
+                                <a onclick="{!c.filterBy}" class="notSelected" aura:id="AllID"  data-filter="All">All</a> || 
+                                <a onclick="{!c.filterBy}" class="notSelected" aura:id="CaseID"  data-filter="Case">Case</a> || 
+                                <a onclick="{!c.filterBy}" class="notSelected" aura:id="NotesID"  data-filter="Order Notes">Order Notes</a></span>
+                        </div>
+                    </div>
+                    
+                    <div id="contenttable">
+                        <table class="table-layout: fixed;border-collapse:collapse;">
+                            <thead class="slds-table--bordered">
+                                <tr class="theHeadMain">
+                                    <th scope="col" class="slds-text-body--small slds-cell-shrink "><strong>Type</strong></th>
+                                    <th scope="col" class="slds-p-right_small" ><strong>Created&nbsp;by</strong></th>
+                                    <th scope="col" class="slds-text-body--small slds-cell-shrink "><strong>Date</strong></th>
+                                    <th scope="col" class="slds-p-right_small "><strong>Comments</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <aura:iteration items="{!v.allNotes}" var="note" indexVar="idx">
+                                    <tr class="{!mod(idx, 2) == 0 ? 'even' : 'odd'}">
+                                        <td class="slds-p-right_small">
+                                            <div style="{!note.noteType != 'Case' ? 'display:none' : 'white-space:nowrap'}">
+                                                <lightning:icon iconName="standard:case" size="x-small" alternativeText="Call"/>&nbsp;
+                                                <a onclick="{!c.openRecordDetail}" data-id="{!note.id}" data-label="{!note.caseNumber}" data-objectName="Case">
+                                                    {!note.noteType}
+                                                </a>
+                                                &nbsp;({!note.caseNumber};&nbsp;{!note.status})
+                                            </div>
+                                            <div style="{!note.noteType != 'Order Note' ? 'display:none' : 'white-space:nowrap'}">
+                                                <lightning:icon iconName="standard:note" size="x-small" alternativeText="Call"/>&nbsp;
+                                                <a onclick="{!c.openRecordDetail}" data-id="{!note.id}" data-label="Order Note" data-objectName="Task">
+                                                    {!note.noteType}
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="slds-p-right_small">{!note.userName}</td>
+                                        <td class="slds-p-right_small">{!note.dateTimeCreatedInString}</td>
+                                        <td class="wrappable">
+                                            <div style="{!note.noteType != 'Case' ? 'display:none' : ''}" class="slds-cell-wrap">
+                                                Subject : {!note.subject}
+                                                <br /><br />
+                                                <lightning:formattedText value="{!note.description}" />
+                                            </div>
+                                            <div style="{!note.noteType != 'Order Note' ? 'display:none' : ''}" class="slds-cell-wrap">
+                                                <lightning:formattedText value="{!note.description}" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <aura:renderIf isTrue="{!note.caseCommentsSize > 0}">
+                                        <aura:iteration items="{!note.caseComments}" var="theComment">
+                                            <tr class="odd">
+                                                <td class="slds-p-right_small"><lightning:icon iconName="standard:case_comment" size="x-small" alternativeText="Call"/>&nbsp;&nbsp;
+                                                    <a onclick="{!c.openRecordDetail}" data-id="{!note.id}" data-label="Case Comments" data-objectName="CaseComments" >
+                                                        {!theComment.noteType}
+                                                    </a>
+                                                </td>
+                                                <td class="slds-p-right_small">{!theComment.userName}</td>
+                                                <td class="slds-p-right_small">{!theComment.dateTimeCreatedInString}</td>
+                                                <td class="slds-cell-wrap"><lightning:formattedText value="{!theComment.description}" /></td>
+                                            </tr>
+                                        </aura:iteration>
+                                    </aura:renderIf>
+                                </aura:iteration>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-3">
+                            Old Notes and Cases (if any) Can be Found at : <br/>
+                            <a onclick="{!c.goToArchive}">Archived Data</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-modal__footer" style="{!v.isLedgerApp ? 'display:none;' : ''}">
+                    <button class="slds-button slds-button--neutral" type="button" onclick="{!c.close_NextPadModal}">Close</button>
+                </div>
+            </div>
+        </div>
+        <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+    </div>
+</aura:component>

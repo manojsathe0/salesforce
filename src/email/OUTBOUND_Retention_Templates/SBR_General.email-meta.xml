@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>sbrgen</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SBR General</name>
+    <style>none</style>
+    <subject>SBR General</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing LegalZoom.  It was pleasure speaking with you today regarding your newly formed business.  
+
+As discussed, here is the selected group of partners that our customers have found to be helpful in launching their business on the right foot.   Please keep in mind that LegalZoom has specially arranged Free Trials or Free Consultation for you to see for yourself.
+  
+GIVE YOUR BUSINESS THE BUSINESS IT DESERVES – PRWEB
+You’re now eligible for a FREE press release from PRWeb, a $200 value.  Tell the world about your business and get your name out to the public.  Customers online are looking for you!  Push it to major news sites like Yahoo! News and place it on search engines like Google and Bing.  This can potentially distribute your company information to more than 30,000 journalists and bloggers.  Get in front of millions of people searching online for businesses like yours.  Follow this link to get started: 
+
+http://service.prweb.com/go/pm_legalzoom/?utm_source=legalzoom&amp;utm_campaign=partner&amp;medium=partner
+
+GET A BUSINESS LOAN – FAST &amp; EASY - LENDIO
+At LegalZoom, our goal is to make setting up or administering your business easy.  Now, with our friends at Lendio, we’ve also made getting financing easy.  Whether you own a large corporation or the pizza shop down the street, at some point, you’ll likely need the right financing to grow your business. Lendio helps you do it by instantly comparing thousands of loans and lenders to bring you the best fit, and the best chance of qualifying for financing.  Please see attached file for details.  Follow this link to get started:  
+
+https://www.lendio.com/sign_up?mission=lending?utm_medium=partners&amp;utm_source=legalzoom.com&amp;utm_campaign=314:LegalZoom
+
+FREE BUSINESS INSURANCE CONSULTATION – BOLT INSURANCE
+Your business is your source of income, so you need protection from the potential loss of that income.  The chance that you could suffer a loss begins with the first day of business...you can’t get help after the fact.  Just like your home and your car, your business needs to be protected from loss, damage and liability.   With BOLT, You can have 0 to insurance within 5 minutes.  BOLT will provide you with multiple quotes to find the right coverage at the right price for your business.  Within 5 minutes you will receive up to 6 Real Time quotes from national carriers that you can compare side by side.  
+
+FREE BUSINESS CREDIT CONSULTATION – DUN &amp; BRADSTREET
+Once you establish your new business, you’ll want to establish your business credit profile through Dun &amp; Bradstreet Corp.  By securing your D-U-N-S® number, the industry standard for keeping track of the world’s businesses, and starting to build your credit profile, you are on the path to positively impacting the way companies evaluate whether – and on what terms to do business with you.
+
+BUSINESS PLANS – WISE BUSINESS PLANS  
+Having a professional business plan is an essential part of starting your business on the right foot.   As a valued LegalZoom customer, you will be able to take advantage of a FREE initial consultation with Wise Business Plans and a 50% discount on their business plan services (a $500 value!).  They have expert MBA writers with years of experience in writing winning business plans . Whether you are small business or start-up company looking to lease a new location, apply for a loan, receive funding from investors, or just in need of a roadmap for your company’s success…let Wise Business Plans help you get started today!  Follow this link to get started:  
+
+http://www.wisebusinessplans.com/Create-an-account.html
+
+THE BUSINESS GOLD REWARDS CARD FROM AMERICAN EXPRESS OPEN.  Follow this link for offer details: http://businessresources.legalzoom.com/offers/banking-finance/business-credit-cards/the-gold-card-from-american-express-open?cm_re=Business%20Credit%20Cards-_-Text%20The%20Business%20Gold%20Rewards%20Card%20from%20American%20Express%20OPEN2-_-The%20Busines
+Here is the offer code and the number for American Express Open Card. Simple call and provide the offer code to take advantage of this special offer only for LegalZoom.com
+888-830-4935 – Offer code: LZ09  
+
+Please do not hesitate to contact me directly if you have any questions. 
+
+You can simply reply to this email or call me toll-free at (877) 672 - 9666  x 3609.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

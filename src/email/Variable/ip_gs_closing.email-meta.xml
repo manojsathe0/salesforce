@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.ip_gs_closing</name>
+    <style>none</style>
+    <subject>ip_gs_closing</subject>
+    <textOnly>If you have any questions or would like additional information, simply reply to this email or call us at (888) 383-6483 Monday–Friday from 8 a.m.–5 p.m. PT.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

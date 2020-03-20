@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>COMPARISON - LLC v DBA +TM</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>COMPARISON - LLC v DBA +TM</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in forming your Limited Liability Company (LLC) or Doing Business As (DBA) name.  We simplify the process for you by preparing and filing the necessary documents with your respective state agency to complete the registration, as well as conducting a Trademark Search and submitting the Trademark application to the US Patent &amp; Trademark Office (USPTO) for registration.  
+
+To help you make an informed decision, a comparison of LLCs and DBAs and some of the similarities and differences between them, as well as general information regarding Trademark registration has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below.  By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+ 
+If you intend on conducting business under a name different from your personal name, you may consider filing a DBA (Doing Business As) name.  A DBA will allow you to conduct business under the registered name, open a business bank account, obtain licenses and permits, and hire employees.  A DBA, however, does not provide name exclusivity or liability protection,  thus your personal assets may be liable in the event of a business lawsuit or bankruptcy.
+
+If liability is a concern, you may consider forming an LLC.  LLCs are state-specific business entities that provide several advantages as a business structure.  LLCs are separate and distinct legal entities that provide the people involved in the business with personal liability protection, separating personal assets from business assets.  This liability protection shields personal assets from any debts or liabilities that are incurred by the business.  LLCs also provide name exclusivity in the state in which it is registered, ensuring that other LLCs cannot use the same business name in the state.
+
+DBAs are taxed as pass-through entities, and typically report business income and expenses with the owner&apos;s personal tax return(s), while LLCs provide some tax flexibility.  An LLC may choose to be taxed as a pass-through entity (such as a sole proprietorship or partnership), as a C-Corporation, or as an  S-Corporation.  C-Corporations are subject to double taxation, meaning that profits are taxed at the corporate level, and possibly taxed a second time at the individual level.  S-Corporations are subject to single-taxation, and are taxed similarly to pass-through entities, while potentially providing more tax benefits than a pass-through entity.  For further information on tax structure, please consult an accountant or CPA.
+ 
+Trademark registrations typically protect identifying marks used in commerce such as business or product names, slogans, short phrases, logos, and/or acronyms used to represent specific products and/or services.  The federal Trademark registration protects you against an inferior product or service diminishing your reputation or profitability, and allows you to enforce against any infringement upon these rights.
+
+The link below gives a detailed comparison between these business structures to assist you in determining the best structure to suit your needs.
+ 
+COMPARISON CHART
+http://www.legalzoom.com/business/business-types/compare-business-structures.html
+ 
+For your convenience, we have listed below all relevant pricing, as well as some additional services that may be beneficial to your business.
+ 
+DOING BUSINESS AS
+Standard - $99.00 + filing fee - (7-20 business days)
+ 
+To view the filing fee for your state, please follow the &quot;PACKAGE DETAILS&quot; link below and select your state from the drop-down list
+
+GET STARTED
+http://www.legalzoom.com/legal-dba/dba-doing-business-as-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/legal-dba/dba-pricing.html
+ 
+LIMITED LIABILITY COMPANY
+Express Gold - $359.00 + state fee - (7-10 business days)*
+Standard - $289.00 + state fee + shipping - (20-35 business days)
+Economy - $149.00 + state fee + shipping - (20-35 business days)
+
+To view the state fee for your state, please follow the &quot;PACKAGE DETAILS&quot; link below and select your state from the drop-down list.
+ 
+GET STARTED
+http://www.legalzoom.com/limited-liability-company/limited-liability-company-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/limited-liability-company/limited-liability-company-packages.html
+ 
+ADDITIONAL SERVICES
+EIN Obtainment - $79.00 ($49.00 with Express Gold package)
+Registered Agent - $159.00/year
+Business License Compliance Package - $74.99
+ 
+* Some states may have delays which affect the listed turnaround time.  To determine if your state is affected, please contact a Specialist at the phone number listed below.
+
+TRADEMARK
+Complete Coverage - $189.00 + $325.00 USPTO filing fee
+Basic - $169.00 + $325.00 USPTO filing fee
+
+TRADEMARK SEARCH OPTIONS
+Basic - Included w/package
+Comprehensive Federal &amp; State - $149.00 (w/package)
+Comprehensive Federal, State, and Common Law - $249.00 (w/package)
+WorldScan Comprehensive International Search - $449.00 (w/package)
+ 
+GET STARTED
+http://www.legalzoom.com/trademarks/trademarks-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/trademarks/trademarks-pricing.html
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP Welcome - TX - 7/8/14</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BSP Welcome - TX - 7/8/14</name>
+    <style>none</style>
+    <subject>Welcome!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Congratulations on taking the first steps towards starting your new business! Here are the details of your scheduled consultation with the attorney:
+
+Attorney Name: Chike Okpara, Esq.
+Date/time: ---
+Details:  The attorney will call you directly at --- .
+
+If you have any questions or need to reschedule your consultation, please call me directly at (855) 787-1951 x{!User.Extension}, Monday–Friday from 6 am – 6pm PT or simply reply to his message. If I’m unavailable, you can also email bizhelp@legalzoom.com to reach the next available member of my team.
+
+As your dedicated account manager, I&apos;ll be your primary point of contact for all your business formation needs. My commitment to you is this—I will do whatever possible to help make sure you have the right information to make the best decisions for you—and hopefully, I can also help save you money in the process!
+
+Thank you for reaching out to the LegalZoom Business Starter Team. I look forward to speaking with you soon.
+
+
+{!User.FirstName}
+Business Account Manager
+(855) 787-1951 x{!User.Extension}
+BizHelp@legalzoom.com
+
+Consultation Terms:
+The consultation and Roadmap are provided by an independent attorney, and this email may be deemed attorney advertising. This email is not a lawyer referral service. Any information you submit through this site may not be protected by attorney‐client privilege and may be provided to attorneys for the purpose of determining your need for legal services. The consultation and Roadmap are provided by Chike Okpara, Attorney at Law, 311 W. 5th Street, Suite 100, Austin TX 78701.
+
+The scope of the consultation is limited to discussing general requirements for forming a business under Texas business law only. The consultation is provided for a limited duration of up to 30 minutes. You are fully and solely responsible for obtaining an adequate evaluation of your specific situation by competent counsel. Without a written agreement to engage the attorney, the consultation shall not constitute an offer by you or acceptance by the attorney of any legal representation or employment, or otherwise form the basis of any legal representation or employment.
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

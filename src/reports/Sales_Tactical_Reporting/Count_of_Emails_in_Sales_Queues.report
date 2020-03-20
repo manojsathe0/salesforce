@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>EMAIL.SUBJECT</field>
+    </columns>
+    <columns>
+        <field>EMAIL.STATUS</field>
+    </columns>
+    <columns>
+        <field>EMAIL.MESSAGE_DATE</field>
+    </columns>
+    <description>Count of Emails associated with the Cases that are in the Sales Queues. This is getting directly from EmailMessage.</description>
+    <filter>
+        <criteriaItems>
+            <column>EMAIL.IS_INBOUND</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>ASD-LegalPlan_Retention,Biz BSI,Biz BSI Registered Agents,Biz Special Filings,IP BSI,PSD-BSI</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CASE_NUMBER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Count of Emails in Sales Queues</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseEmail</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

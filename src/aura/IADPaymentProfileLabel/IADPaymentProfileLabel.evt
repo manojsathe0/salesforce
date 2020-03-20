@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Populate payment profile lable" >
+    <aura:attribute name="payProfileId" type="String" />
+</aura:event>

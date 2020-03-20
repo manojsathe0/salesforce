@@ -1,0 +1,23 @@
+<apex:page controller="ShowDetailController">
+
+    <apex:includeScript value="/support/console/28.0/integration.js"/>
+    <apex:includeScript value="/soap/ajax/28.0/connection.js"/>
+    <script type="text/javascript"> 
+        
+         var contactId = '{!contactId}';
+         var tsid = '{!TSID}';
+         var hostURL = '{!hostURL}';
+         var previousOnload = window.onload;        
+         window.onload = function() 
+         { 
+             if (previousOnload) { 
+                 previousOnload();
+             }
+                       
+             window.open(hostURL+'/console?tsid='+tsid+'#%2F'+contactId,'_self');
+
+         }
+
+    </script>
+    
+</apex:page>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TM</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>TM</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in registering a Trademark.  We simplify the process for you by conducting a Trademark Search and submitting the Trademark application to the US Patent &amp; Trademark Office (USPTO) for registration.
+
+For your reference, general information regarding Trademark registration has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact an Intellectual Property Specialist at the phone number listed below.  By speaking with a Specialist, we will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+
+Trademark registrations typically protect identifying marks used in commerce such as business or product names, slogans, short phrases, logos, and/or acronyms used to represent specific products and/or services.  The federal Trademark registration protects you against an inferior product or service diminishing your reputation or profitability, and allows you to enforce against any infringement upon these rights.
+
+A critical part of the Trademark process is to conduct a Trademark Search, for which we offer several options that can be added to your package.  The Basic search serves only to ensure the exact mark is not already registered with the USPTO, however this search does not provide any information on other registrations outside of the USPTO which may potentially limit the ability to use the mark in commerce.  The Comprehensive search options will provide additional information on registrations already in place that may have some rights to the mark even though a federal registration has not been submitted.
+ 
+Upon placing the order for your Trademark, you will be given instructions describing how to submit specimens of your mark(s) to LegalZoom, either by directly uploading the file, emailing copies, or submitting hard copies by mail.  The Trademark Search process typically takes 5-7 business days, and the Trademark application is typically submitted to the USPTO within 7-10 business days of your decision to proceed based upon the Trademark Search results.  The USPTO may take 6-12 months to complete the registration process, however you may be able to use the mark under common law usage while the registration is in process.
+
+For your convenience, we have listed all relevant pricing below.
+
+TRADEMARK
+Complete Coverage - $189.00 + $325.00 USPTO filing fee
+Basic - $169.00 + $325.00 USPTO filing fee
+ 
+GET STARTED
+http://www.legalzoom.com/trademarks/trademarks-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/trademarks/trademarks-pricing.html
+
+TRADEMARK SEARCH OPTIONS
+Basic - Included w/package
+Comprehensive Federal &amp; State - $149.00 (w/package)
+Comprehensive Federal, State, and Common Law - $249.00 (w/package)
+WorldScan Comprehensive International Search - $449.00 (w/package)
+ 
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

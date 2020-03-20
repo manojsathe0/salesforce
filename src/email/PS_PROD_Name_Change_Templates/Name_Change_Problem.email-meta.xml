@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>NC PROB</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Name Change Problem</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.
+
+A preliminary review of your questionnaire indicates that required information is either missing or left out. Please complete the attached form and return it to our support team at your earliest convenience.
+
+Your response is critical. We cannot complete your Name Change documents until we receive the required information. As soon as we receive the information, your document specialist will complete the preparation of your order within 1-2 business days. Should you have further questions or require faster service, please contact our customer care team at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We truly appreciate your business and look forward to serving your future legal document needs.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+If you&apos;re already a member, sign in to schedule a consultation. *Available in most states.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

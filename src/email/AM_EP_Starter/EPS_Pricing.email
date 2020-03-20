@@ -1,0 +1,78 @@
+<html>
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif" width="194" height="55" alt="LegalZoom"></td></tr>
+
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+Dear {!Contact.FirstName},<br><br>
+
+It was a pleasure speaking to you again about your estate planning roadmap. Below, I have provided a breakdown of the package(s) that we discussed today as well as a list of important topics that you will need to think about when you are ready to move forward with the items on your Roadmap.<br><br>
+As always, please don’t hesitate to contact me with any questions you may have, or when you are ready to proceed.  You can call me directly at (888) 269-8232  Monday–Friday from 8 a.m.–5 p.m. PT or simply reply to this message. If I’m unavailable, you can also email MakeAPlan@legalzoom.com to reach the next available member of my team.<br><br>
+[PACKAGES]<br><br>
+Important points to consider: <br><br>
+Last Will<br> 
+1. Executor: The people you choose to collect and distribute your assets according to your will.  You can name one person to act alone or two people to work together.  Also, if you first choice can’t do it, you can name second and third choices.  <br>
+2. Beneficiaries: People or charities you choose to receive your assets.  You can give specific items to people, like your car or a piece of jewelry.  You could also give a certain amount of money to a person or charity.  You also divide up the rest of your assets between the people or group that you choose – such as “all to my spouse” or “equally to my children.”<br>
+3. Trusts: If you would want to make sure a beneficiary doesn’t get his or her share of your assets until he reaches a certain age, you can state that a person’s share be held in a testamentary trust.  Some things to think about:<br>
+&nbsp;&nbsp;&nbsp;a. Who will manage the money in the trust – called a Trustee<br>
+&nbsp;&nbsp;&nbsp;b. At what age(s) will the beneficiaries get their share – all at once (eg. Age 21) or staggered over time (eg. 1/3 at 21, 1/3 at 25, 1/3 at 30)<br>
+4. Guardians: Who do you want to take care of your kids if both parents can’t do it?<br><br>
+Living Will/Healthcare Power of Attorney<br
+1. If you have a terminal condition do you want to be kept on life support? <br>
+2. Do you want to be an organ donor? <br>
+3. Healthcare Agent: Person you appoint to make medical decisions on your behalf if you are unable to make them yourself<br>
+&nbsp;&nbsp;&nbsp;a. Name, address, phone number <br>
+&nbsp;&nbsp;&nbsp;b. Do you have a 2nd choice?<br><br>
+Power of Attorney<br>
+1. Who do you want to make financial decisions for you if you can’t? (known as an agent)<br>
+Do you have a second choice<br>
+2. What types of decisions would you like the agent be able to make for you?<br>
+&nbsp;&nbsp;&nbsp;a. Real estate, personal property, banking/stock and bond/business operating transactions, retirement plans, insurance, estate and trust matters, legal matters, taxes, government assistance, personal and family care, making gifts, pet care. <br>
+3. When will your agent’s powers be effective? <br>
+&nbsp;&nbsp;&nbsp;a. Immediately upon signing and until the POA is r the principal dies<br>
+&nbsp;&nbsp;&nbsp;b. Only if the principal can’t make decisions for him or herself<br>
+&nbsp;&nbsp;&nbsp;c. Immediately upon signing but stops if  the principal can’t make decisions for himself (Not common)<br><br>
+Living Trust<br>
+1. Who do you want to manage the assets in the trust if you and your spouse are unavailable?<br>
+2. Who do you want to take care of your kids if you and your spouse cannot?<br>
+3. Assets you wish to place into trust: real estate; financial accounts (brokerage accounts, mutual funds, bank savings accounts, CDs); business interests (sole proprietorships, LLCs, Corporations<br>
+4. Details regarding the assets, like location of the real estate, types of accounts, bank information, etc.<br>
+5. Do you want to make gifts of specific items (jewelry, furniture) to people, or cash to charities<br>
+6. Who do you want to get the rest of your assets once you and your spouse pass away?<br><br>
+Thank you for reaching out to the LegalZoom Personal Services Team. I look forward to speaking with you soon.<br>
+<br>
+
+<img src="https://lairh6ws243d.legalzoom.com/sites/legalzoom.com/files/images/email/am_{!User.Id}.gif"><br>
+
+{!User.FirstName}<br>
+Personal Account Manager<br>
+(888) 269-8232  x{!User.Extension}<br>
+MakeAPlan@legalzoom.com<br>
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to:  {!Contact.Email}
+  <br /><br />
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</html>

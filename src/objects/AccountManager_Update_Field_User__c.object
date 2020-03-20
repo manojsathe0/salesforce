@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Store user for update new Account Owner when Account Manager field is updated.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>New_Account_Owner__c</fullName>
+        <defaultValue>&quot;Integration User&quot;</defaultValue>
+        <description>Store user for update Account Owner when Account Manager field is updated.</description>
+        <externalId>false</externalId>
+        <label>New Account Owner</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Account Manager Update Field User</label>
+    <visibility>Public</visibility>
+</CustomObject>

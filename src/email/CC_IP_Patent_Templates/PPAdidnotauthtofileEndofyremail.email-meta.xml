@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>PPAendofyr</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PPA did not auth to file End of yr email</name>
+    <style>none</style>
+    <subject>PPA did not auth to file End of yr email</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.
+
+On [Date of Order] you placed an order with LegalZoom to prepare and file the provisional application for patent with the US Patent and Trademark Office (USPTO). 
+
+Our records show that since the submission of your order, you did not respond to any of our emails or contact us to confirm how you wished to proceed with the provisional application for patent. 
+
+To ensure that you receive the earliest possible filing date, LegalZoom filed the application with the information you originally provided on [Date and Time]. Your application number is [Application Number] and serves as your proof of submission. Please keep it in a safe place. You should also receive a confirmation via US mail.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

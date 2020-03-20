@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>outlapdecl</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Outbound LAP Decline</name>
+    <style>none</style>
+    <subject>LegalZoom Order XXXXXXX: Legal Advantage Plus Subscription</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.com your online business resource.
+
+Unfortunately, the most recent payment for your Legal Advantage Plus subscription has failed to charge to the credit card provided on your account. If you could give me a quick call I would be happy to assist you in this matter.
+
+Below is additional information regarding the benefits of your Legal Advantage Plus subscription.:
+
+Legal Advantage Plus:
+{!snippetVariable.ASD_legal_advantage_plus_price} per month/3-month Subscription/6-month Subscription/Annual Subscription
+
+Legal Advantage Plus benefits include:
+
+• Unlimited attorney consultations (Given 30 minutes for every new legal matter)
+• Legal documents (up to 10 pages) reviewed at no additional cost
+• 25% discount on attorney fees for follow-ups on legal work past consultation
+• Unlimited access to LegalZoom’s library legal forms (Download hundreds of blank legal forms for business or personal use. Our forms can cost upwards of $14.95 each. With your Legal Advantage Pro membership, you have access to hundreds of forms for free). 
+• An Annual Check-Up to review and ensure any life changes or changes of heart are reflected in your documents 
+
+
+Here is the link for the Legal Advantage Plus service: http://www.legalzoom.com/attorneys-lawyers/legal-plans/personal.html
+
+Please call me at (866) 698-0053 ext. {!User.Extension} {!snippetVariable.outbsihours} so that I can help you resolve this matter. 
+
+Please refer to your order number: {!Case.Order_Number_c}.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

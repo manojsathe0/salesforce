@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>IRSOMIT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>IRS Form CP 575 Notice</name>
+    <style>none</style>
+    <subject>IRS Form CP 575 Notice</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry regarding your IRS CP 575 Notice. The Internal Revenue Service (IRS) has specific rules around what numbers, words and characters are acceptable in a business name when assigning your federal Employer Identification Number (EIN). The only characters the IRS systems can accept in a business name are:
+
+1. Alpha (A-Z)
+2. Numeric (0-9)
+3. Hyphen (-)
+4. Ampersand (&amp;)
+
+The word “The” will be omitted when it is followed by more than one word.
+
+The name the IRS assigns for your business does not affect the legal business name you filed with your state agency.
+
+If you have questions about your EIN, you can call the IRS business help line at (800) 829-4933 Monday–Friday from 7 a.m.–7 p.m. your local time. If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 5 a.m.–8 p.m. PT and weekends from 7 a.m.–4 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+
+{!snippetVariable.ccsincerely}
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

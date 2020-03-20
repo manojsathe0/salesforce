@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>EPS Welcome</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>EPS Welcome</name>
+    <style>none</style>
+    <subject>Your Consultation Is Scheduled</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Congratulations on taking the first steps towards choosing your estate planning documents! Here are the details of your scheduled consultation with the attorney:
+
+Attorney Name: John Williams
+Date/time: [DATETIME]
+Details: The attorney will call you at [CUSTOMERPHONE]
+
+If you have any questions or need to reschedule your consultation, please call me directly at (888) 269-8232 Monday–Friday from 8 a.m.–5 p.m. PT or simply reply to this message. If I’m unavailable, you can also email MakeAPlan@legalzoom.com to reach the next available member of my team.
+
+As your dedicated account manager, I&apos;ll be your primary point of contact for all your needs. My commitment to you is this—I will do whatever possible to help make sure you have the information you need to make the best decisions for yourself —and hopefully, I can also help save you money in the process!
+Thank you for reaching out to the LegalZoom Personal Services Team. I look forward to speaking with you soon.
+
+
+{!User.FirstName}
+Personal Account Manager
+(888) 269-8232 x{!User.Extension}
+MakeAPlan@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

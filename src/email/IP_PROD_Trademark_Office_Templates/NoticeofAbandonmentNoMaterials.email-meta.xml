@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>abandon1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Notice of Abandonment - No Materials</name>
+    <style>none</style>
+    <subject>Notice of Abandonment - No Materials</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Based on the records of the US Patent and Trademark Office (USPTO), your Trademark application has been abandoned. Abandonment, in this case, was based on your not filing a Statement of Use within six months of your Notice of Allowance (xxxxxxxx), as required.
+
+LegalZoom could not submit your Statement of Use form to the USPTO without a sufficient specimen from you, the applicant. Our records show that we have sent requests to you on repeated occasions, but that you did not provide us with an appropriate specimen reflecting the goods and/or services on your original application, namely XXXX.
+
+Your Notice of Abandonment was issued on DD/MM/YYYY. You have two (2) months from that date to file a Petition to Revive your application, should you decide to continue with the application process. If you do not file a Petition to Revive, your application will remain abandoned. If you would like to file a Petition to Revive, additional fees will apply. Please review the following:
+
+If you did not receive your Notice of Allowance, the USPTO grants you two (2) months from the date your Notice of Abandonment was issued to file a Petition to Revive, and charges you $100 to submit it. Once the USPTO receives and approves your Petition to Revive, a new Notice of Allowance will be issued. Please note that this process may take several months.
+
+If you did receive your Notice of Allowance, the USPTO grants you two (2) months from the date you found out about the abandonment to file your Petition to Revive and charges you $100 to submit the form. Note: you must have been diligent in checking the status of your application every six (6) months. An Extension Request will be included with your Petition to Revive form. This will allow you to submit your Statement of Use immediately after the USPTO has reviewed and approved your Petition to Revive and Extension Request. Additionally, the USPTO charges $150 per class of goods and/or services indicated on your original application when you submit your Extension Request.
+
+LegalZoom provides this service at no additional charge to its customers.  You will be charged only those fees required by the USPTO. Please reply to this email and indicate how you would like to proceed.
+
+If you have any questions, comments, or concerns, simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our Customer Care business hours are {!snippetVariable.cchours}.
+
+Regards,
+
+The LegalZoom Team
+
+* {!snippetVariable.tmoa_bap}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

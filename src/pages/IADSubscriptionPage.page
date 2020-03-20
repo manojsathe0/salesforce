@@ -1,0 +1,794 @@
+<apex:page controller="IADSubscriptionController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:include pageName="MomentJS" />
+        <apex:stylesheet value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" />
+        <apex:includeScript value="{!URLFOR($Resource.IADJS)}"/>
+        <script type="text/javascript">
+            $ = jQuery.noConflict();
+            var svgHash = {};
+            var currentTabId;
+            var currentDate = moment().format("MM/DD/YYYY");
+            var starDateRange;
+            var endDateRange;
+
+            function loadDate(){
+                jQuery(function($){
+                    window.onSaveDetail = function() {
+                            var date = $('#dateInput');
+                            //get the sibling only
+                            var detailMode = $('.textDate').html(date.val());
+                            detailMode.html(date.val());
+                            //date.val(oldDate)
+                            console.log('oldDate = ' + oldDate + ' new date = ' + date.toString());
+                            $("#loading").toggle();
+                        }
+                        //clicking the calendar also shows the datepicker
+                    $(".slds-icon_container").click(function() {
+                        console.log('clicked');
+                        $(this).parent().children('input').datepicker('show');
+                    });
+                    //toggles between detail and edit mode
+                    window.toggleDetailEditMode = function() {
+                            
+                            $(".detailMode").toggle();
+                            $(".editMode").toggle();
+                        }
+                        //toggles between detail and cancel
+                    window.toggleDetailCancelMode = function() {
+                        $(".detailMode").toggle();
+                        $('#update').hide();
+                        $(".cancelMode").toggle();
+                    
+                        afterActionFunction();
+                        collapseTerms();
+                    }
+                    window.collapseTerms = function(){
+                        $( ".accordion" ).each(function( index ) {
+                            //getting the next element
+                            $header = $(this);
+                            $content = $header.next();
+                            //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+                            var isOpen = $content.is(':visible');
+
+                            $header.children().removeClass('ui-icon-triangle-1-s');
+                            $header.children().addClass('ui-icon-triangle-1-e');
+                            if(isOpen){
+                                $content.slideToggle(500, function () {
+                                    //execute this after slideToggle is done
+                                    //change text of header based on visibility of content div
+                                });
+                            }
+                        });
+                    }
+                    window.editSub = function(){
+                        
+                        oldDate = $('#dateInput').val();
+                        $('#dateInput').val();
+                        toggleDetailEditMode();
+                        clearMessages();
+                        collapseTerms();
+                        enableDisableDropdown();
+                        $('#update').show();
+                        closeTheRenewalForm();
+                    }
+                    $("select[id*='selectOptions']" ).change(function() {
+                        var optionVal = $(this).find("option:selected").attr("value");
+                        if (optionVal =='newPayment' ) {
+                            sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+                        }
+                    });
+                    window.showRequired = function(){
+                        $('#req').show();
+                        $('#inputDiv').addClass('is-required');
+                        $('#inputDiv').addClass('slds-has-error');
+                    }
+                    window.toggleReqClass = function(){
+                        $('#inputDiv').toggleClass('is-required');
+                        $('#inputDiv').toggleClass('slds-has-error');
+                    }
+                    window.hideRequired = function(){
+                        $('#req').hide();
+                        $('#inputDiv').removeClass('is-required');
+                        $('#inputDiv').removeClass('slds-has-error');
+                    }
+                    window.fixMinDate = function(){
+                            $(".normalizeDate").each(function(index) {
+                            //for the "Edit mode"
+                             if ($(this).is("input")) {
+                                //instantiate datepicker
+                                $(this).datepicker({
+                                    minDate: 0,
+                                    onSelect: function(dateText, inst) {
+                                        var theDate = $(this).val();
+                                        theDate = normalizeJSDate(theDate, 'MM/DD/YYYY hh:mm A');
+                                        var dueDate = normalizeJSDate( $(this).val(), 'MM/DD/YYYY');
+                                        // /toggleDetailEditMode();
+                                        console.log('dueDate ' + dueDate);
+                                        console.log('currentDate ' + currentDate);
+                                        if (dueDate == currentDate) {
+                                            $('#makePayment').show();
+                                            $('#update').hide();
+                                        }
+                                        else if (dueDate > currentDate) {
+
+                                            //$('#update').show();
+                                            $('#makePayment').hide();
+                                        }
+                                    }
+                                });
+                                var theDate = $(this).val();
+                                if (theDate != null && theDate != '') {
+                                    theDate = normalizeJSDate(theDate, 'MM/DD/YYYY');
+                                    $(this).val(theDate);
+                                }
+                            }
+                            //for the "Detail mode"
+                            else {
+                                var theDate = $(this).html();
+                                if (theDate != null && theDate != '' && theDate != 'Invalid Date') {
+                                    theDate = normalizeJSDate(theDate, 'MM/DD/YYYY');
+                                    $(this).html(theDate);
+                                }
+                            }
+                        });
+
+                        window.fixMinDate2 = function(){
+                            
+                            $(".normalizeDate2").each(function(index) {
+                            //for the "Edit mode"
+                             if ($(this).is("input")) {
+                                //instantiate datepicker
+                                $(this).datepicker('destroy');
+                                var startdt;
+                                var enddt;
+                                if(startDateRange)
+                                {    
+                                    startdt = new Date(startDateRange);
+                                    startdt.setTime(startdt.getTime() + startdt.getTimezoneOffset()*60*1000 );
+                                }    
+                                if(endDateRange)
+                                {
+                                    enddt = new Date(endDateRange);
+                                    enddt.setTime(enddt.getTime() + enddt.getTimezoneOffset()*60*1000 );
+                                }
+                                              
+                                
+                                $(this).datepicker({
+                                    minDate: startdt,
+                                    maxDate: enddt,
+                                    onSelect: function(dateText, inst) {
+                                        var theDate = $(this).val();
+                                        theDate = normalizeJSDate(theDate, 'MM/DD/YYYY hh:mm A');
+                                        var dueDate = normalizeJSDate( $(this).val(), 'MM/DD/YYYY');
+                                        populateRefundAmount(dueDate);
+                                    }
+                                });
+                                var theDate = $(this).val();
+                                if (theDate != null && theDate != '') {
+                                    theDate = normalizeJSDate(theDate, 'MM/DD/YYYY');
+                                    $(this).val(theDate);
+                                }
+                            }
+                            //for the "Detail mode"
+                            else {
+                                var theDate = $(this).html();
+                                if (theDate != null && theDate != '' && theDate != 'Invalid Date') {
+                                    theDate = normalizeJSDate(theDate, 'MM/DD/YYYY');
+                                    $(this).html(theDate);
+                                }
+                            }
+                        });
+                        };    
+
+                  
+                        if($('#autoRenewHidden').val() == 'Yes'){
+                            $('#yesInput').click();
+                            $('#yesInput').addClass('checked');
+                        }
+                        else if($('#autoRenewHidden').val() == 'No'){
+                            $('#noInput').click();
+                            $('#noInput').addClass('checked');
+                        }
+                        $( "input:radio" ).on( "click", function() {
+                             $( "input:radio" ).toggleClass("checked");
+                             if($(this).attr('id') == 'noInput'){
+                                 $( 'select[name*="profileOptions"]' ).val($('#originalPaymentHidden').val());
+                                 $( 'select[name*="profileOptions"]' ).attr('disabled', 'disabled');
+                             }
+                             else{
+                                 $( 'select[name*="profileOptions"]' ).removeAttr('disabled');
+                             }
+                        });
+
+                        $(".accordion").click(function () {
+
+                            $header = $(this);
+                            //getting the next element
+                            $content = $header.next();
+                            //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+
+                                $header.children().toggleClass('ui-icon-triangle-1-s');
+                                $header.children().toggleClass('ui-icon-triangle-1-e');
+                            $content.slideToggle(500, function () {
+                                //execute this after slideToggle is done
+                                //change text of header based on visibility of content div
+                            });
+
+                        });
+                    }
+                });
+            }
+            window.populateSVGHash = function() {
+                svgHash = {};
+                $('.svgParent').each(function(index) {
+                    var idKey = $(this).attr('id');
+                    svgHash[idKey] = $(this).html();
+                });
+                console.log('svg hash ' + svgHash);
+            }
+            window.afterActionFunction = function() {
+                console.log('calling afterActionFunction');
+                $('.svgParent').each(function(index) {
+                     console.log('calling index ' + index);
+                    var idKey = $(this).attr('id');
+                    console.log('calling idKey ' + idKey);
+                    $(this).html(svgHash[idKey]);
+                });
+            }
+            window.onload = function() {
+                populateSVGHash();
+                populateSubscription();
+            };
+
+            window.enableDisableDropdown = function(){
+                console.log('enabledisable');
+                if($('#autoRenewHidden').val() == 'No'){
+                    $( 'select[name*="profileOptions"]' ).val($('#originalPaymentHidden').val());
+                    $( 'select[name*="profileOptions"]' ).attr('disabled', 'disabled');
+                }
+
+            }
+
+            var showTabId = function showTabId(result) {
+                currentTabId = result.id;
+            };
+
+            function openPaymentPage() {
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+            }
+            var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+                var url = '/apex/IADInstallmentPayments?amountdue=1&amount=55&orderId={!theId}';
+                sforce.console.openSubtab(result.id, url, true, 'Make a Payment');
+                $('#makePayment').hide();
+                toggleDetailEditMode();
+            };
+
+            var listener = function(result) {
+                if (result.message == currentTabId)
+                    location.reload(true);
+            };
+            sforce.console.addEventListener('RefreshTab', listener);
+
+            function closeTab() {
+                sforce.console.getEnclosingTabId(closeSubtab);
+            }
+            var closeSubtab = function closeSubtab(result) {
+                var tabId = result.id;
+                sforce.console.closeTab(tabId);
+            };
+
+            function afterDetailSave() {
+                toggleDetailEditMode();
+                onSaveDetail();
+            }
+
+            function doDetailSave() {
+
+                var renewVal = $( ".checked" ).val();
+
+                detailSave(renewVal);
+
+                return false;
+            }
+
+            function doCancellationSave() {
+                var eleId = document.querySelector("[id*='otherCancelReason']").id;
+                var reason = document.getElementById(eleId).value;
+                
+                
+                console.log('cancel desc ' + reason);
+                
+                if(reason == 'Other' && document.getElementById('cancelInput').value == ''){
+                    showRequired();
+                }
+                else{
+                    document.getElementById('cancelInput').value = '';
+                    hideRequired();
+                    cancelSave();
+                }
+                return false;
+            }
+               function showPartialCancel(subscriptionOrderItemId,orderItemId , isPartial){
+                   
+                  
+                   collapseTerms();
+                   populateSelectedSubscriptionTerm(subscriptionOrderItemId,orderItemId,isPartial);
+                                     
+               }
+               function hidePartialCancel(subscriptionOrderItemId,orderItemId,isPartial){
+                  
+                    collapseTerms();
+                    populateSelectedSubscriptionTerm(subscriptionOrderItemId,orderItemId,isPartial);
+                                      
+               }
+               function callProfilesData(){
+
+                    $.when(populateProfiles()).then(populatePaymentProfile());
+               }
+               function hideUpdate(){
+                   $('#update').hide();
+                   $('#footerTable').show();
+               }
+             function openRefundPage(theRenewalId) {
+                renewalId = theRenewalId;
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabForRefund);
+
+            }
+            var orderId;
+            var enclosingPrimaryTabForRefund = function enclosingPrimaryTabForRefund(result) {
+                var theValue = $("input[id*='cancelAmountInput']" ).val();
+                var url = '/apex/IADRefundPage?orderId='+renewalId+'&customerId={!customerId}'+ '&invokingPage=Subscription&invokingPageId={!theId}&amount='+theValue;
+                sforce.console.openSubtab(result.id, url, true, 'Make a Refund');
+            };
+            function refreshPanelPage(){
+                sforce.console.fireEvent('RefreshSubscriptionsPanel', null);
+            }
+
+            var subRefresh = function (result) {
+                console.log('message + ' + result.message + ' id {!theId}');
+               if(result.message == '{!subscriptionId}'){
+                  refresh();
+               }
+            };
+
+            sforce.console.addEventListener('RefreshTheSubscriptionEvent', subRefresh);
+               
+        </script>
+        <style>
+            .accordion{
+                 cursor: pointer;
+            }
+            .editMode {
+                display: none;
+            }
+            
+            .cancelMode {
+                display: none;
+            }
+            
+            #loading {
+                display: none;
+            }
+            #makePayment,
+            #update,
+            .editMode {
+                display: none;
+            }
+            
+            #dataTable, #footerDataTable {
+                border-spacing: 15px;
+                border-collapse: separate;
+                width: 70%;
+            }
+            #footerDataTable{
+                width:65%;
+            }
+            td {
+            overflow: hidden;
+            }
+            .labelWidth{width: 250px;}
+            
+            .alignRight {
+                float: right;
+            }
+            
+            th {
+                font-weight: normal;
+            }
+            .tcolumn{width:220px;}
+        </style>
+    </head>
+
+    <div class="slds">
+         <div class="slds-text-heading--small">Subscription Info</div>
+        
+        <apex:form id="theForm">
+
+            <apex:actionFunction name="populateSubscription" action="{!populateSubscription}" rerender="output,iadMessage, footerButtons,renewTable" status="statusUpdating" oncomplete="callProfilesData(); fixMinDate(); afterActionFunction(); return false;" />
+            <apex:actionFunction name="detailSave" action="{!updateSubscription}" status="statusUpdating" rerender="output, iadMessage,renewTable, footerButtons" oncomplete="hideUpdate(); populateSubscription(); refreshPanelPage(); return false;" >
+                <apex:param assignTo="{!renewChoice}" name="renewVal" value="" />
+            </apex:actionFunction>
+            <apex:actionFunction name="clearMessages" action="{!clearMessages}" rerender="theMessages,theMessages2"/>
+            <apex:actionFunction name="cancelSave" action="{!cancelSubscriptionRenewal}" rerender="renewTable,iadMessage,cancelFormTable,footerButtons" status="statusUpdating" oncomplete="fixMinDate2(); refreshPanelPage();jsUtility.makeDarkBorder(); return false;" />
+            <apex:actionFunction name="setProfileId" action="{!setProfileIdManual}" status="statusUpdating" rerender="theMessages" >
+                <apex:param assignTo="{!profileId}" name="profileId" value="" />
+            </apex:actionFunction>
+            <apex:actionFunction action="{!closeTheForm}" name="closeTheRenewalForm" rerender="cancelFormTable">
+            </apex:actionFunction>
+            <apex:actionFunction name="populateProratedRefund" action="{!populateProratedRefund}" rerender="cancelFormTable" onComplete=" jsUtility.makeDarkBorder();fixMinDate2();" />
+            <apex:actionFunction name="populateRefundAmount" action="{!populateRefundAmount}" rerender="cancelAmountInput">
+                 <apex:param id="sname" name="dueDate" value="" />   
+            </apex:actionFunction>
+            
+            <apex:actionFunction name="populateSelectedSubscriptionTerm" action="{!populateSelectedSubscriptionTerm}" status="statusUpdating" rerender="iadMessage,cancelFormTable,footerButtons" oncomplete=" jsUtility.makeDarkBorder();populateProratedRefund();hideUpdate();clearMessages();return false;" >
+               <apex:param id="aname" name="orderItemSubscriptionId" value="" />
+               <apex:param id="bname" name="currentOrderItemId" value="" />
+               <apex:param id="cname" name="isPartial" value="" />
+                
+            </apex:actionFunction>
+            <apex:actionFunction name="refresh" action="{!populateSubscription}" rerender="output,iadMessage, footerButtons,renewTable" oncomplete="callProfilesData(); fixMinDate(); afterActionFunction(); return false;"  />
+
+            <apex:outputPanel id="output">
+               <script type="text/javascript">
+                    orderId = '{!subscriptionService.orderId}';
+                </script>
+                <apex:actionStatus id="statusUpdating">
+                    <apex:facet name="start">
+                        <div class="slds-spinner_container">
+                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                <div class="slds-spinner__dot-a"></div>c
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </apex:facet>
+                </apex:actionStatus>
+                <input id="autoRenewHidden" type="hidden" value ="{!subscriptionService.subscriptionSingleItem.subscription.autoRenew}"/>
+                <input id="originalPaymentHidden" type="hidden" value="pp{!subscriptionService.subscriptionSingleItem.subscription.userPaymentProfile}"/>
+                <table id="dataTable" >
+
+                    <thead>
+                        <tr>
+                            <th class="detailMode" style="font-weight:normal">
+                                <a onclick="editSub(); return false;" href="">Edit </a>
+                                <!--| <a onclick="toggleDetailCancelMode(); return false;" href=""> Cancel Subscription </a>-->
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Order #</td>
+                            <td>{!subscriptionService.subscriptionSingleItem.subscription.orderId}</td>
+
+                        </tr>
+                        <tr>
+                            <td>Processing #</td>
+                            <td>{!subscriptionService.subscriptionSingleItem.subscription.processing}</td>
+                        </tr>
+                        <tr>
+                            <td>Date Created</td>
+                            <td class="normalizeDate">{!subscriptionService.subscriptionSingleItem.subscription.adjCreatedDate}</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td><b>{!subscriptionService.subscriptionSingleItem.subscription.status}</b></td>
+                        </tr>
+                        <tr>
+                            <td>Term</td>
+                            <td>
+                                <span class="normalizeDate" title="Subscription Start Date"> {!subscriptionService.subscriptionSingleItem.subscription.adjSubscriptionStartDate}</span>-
+
+                                <span id="outputDate" class="detailMode normalizeDate textDate" title="Subscription End Date"> {!subscriptionService.subscriptionSingleItem.subscription.adjSubscriptionEndDate}</span>
+                                <span id="outputDate" class="editMode normalizeDate textDate" title="Subscription End Date"> {!subscriptionService.subscriptionSingleItem.subscription.adjSubscriptionEndDate}</span>
+                                <span id="outputDate" class="cancelMode normalizeDate textDate" title="Subscription End Date"> {!subscriptionService.subscriptionSingleItem.subscription.adjSubscriptionEndDate}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Auto Renew</td>
+
+                            <td class="detailMode">{!subscriptionService.subscriptionSingleItem.subscription.autoRenew}</td>
+
+                            <td class="cancelMode">{!subscriptionService.subscriptionSingleItem.subscription.autoRenew}</td>
+
+                            <td class="editMode">
+                                <form class="slds-form--inline">
+                                    <div class="slds-form-element">
+                                        <label class="slds-radio">
+                                            <span class="slds-form-element__label">Yes</span>
+                                            <input id="yesInput" type="radio" name="renewOptions" value="1" /> <span class="slds-radio--faux" />
+                                        </label>
+                                        <label class="slds-radio">
+                                            <span  class="slds-form-element__label">No</span>
+                                            <input id="noInput" type="radio" name="renewOptions" value="0" /> <span class="slds-radio--faux" />
+                                        </label>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Payment Method</td>
+                            <td class="detailMode">
+                                <c:IADPaymentProfileLabel theProfileId="{!subscriptionService.subscriptionSingleItem.subscription.userPaymentProfile}"/>
+                            </td>
+                            <td class="editMode">
+                                <form class="slds-form--inline">
+                                    <c:IADPaymentProfilesDropdown theUserId="{!customerId}" theInvokingPageType="subscription" theOrderId="{!theId}"
+                                                                  theCurrentProfileId="{!profileId}" theInvokingPageId="{!subscriptionId}" />
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renewal Amount</td>
+                            <td><apex:outputText value="{0, number, currency}">
+                                <apex:param value="{!subscriptionService.subscriptionSingleItem.subscription.renewalPrice}" />
+                            </apex:outputText>
+                            </td>
+                        </tr>
+                      
+                    </tbody>
+
+                </table>
+
+            </apex:outputPanel>
+
+            <apex:outputPanel id="iadMessage">
+                <c:IADMessageBox id="theMessages" theMessages="{!subscriptionService.iadMessages}" rendered="subscriptionService.iadMessages.size>0"/>
+            </apex:outputPanel>
+             <script type = "text/javascript">
+                loadDate();
+             </script>
+            <apex:outputPanel id="renewTable">
+                <script type="text/javascript">
+                    if('{!subscriptionService.isCancelSuccess}' == 'true')
+                        populateSubscription();
+                </script>
+                <div class="">
+                    <div class="accordion">
+                        <span style="display:inline-block" class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span><b>Current Term</b></div>
+                        <div>
+
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                            <thead>
+                            <tr class="slds-text-title--caps">
+                                <th scope="col"  class = "tcolumn">
+                                    <div class="slds-truncate" title="Status"><strong>Status</strong></div>
+                                </th>
+
+                                <th scope="col"  class = "tcolumn">
+                                    <div class="slds-truncate" title="Start Date"><strong>Start Date</strong></div>
+                                </th>
+                                <th scope="col"  class = "tcolumn">
+                                    <div class="slds-truncate" title="End Date"><strong>End Date</strong></div>
+                                </th>
+                                <th scope="col"  class = "tcolumn">
+                                    <div class="slds-truncate" title="Amount"><strong>Amount</strong></div>
+                                </th>
+                                <th scope="col"  class = "tcolumn">
+                                    <div class="slds-truncate" title="Action"><strong>Action</strong></div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              
+                                <td data-label="Status" class = "tcolumn">
+                                    <div class="slds-truncate">
+                                        <apex:outputText value="Active" rendered="{!subscriptionService.lastestSubscriptionInfoDetail.isActive == 'true'}"/>
+                                        <apex:outputText value="Inactive" rendered="{!subscriptionService.lastestSubscriptionInfoDetail.isActive == 'false'}"/>
+                                    </div>
+                                </td>
+
+                                <td data-label="Start Date" class = "tcolumn">
+                                    <div class="slds-truncate">{!subscriptionService.lastestSubscriptionInfoDetail.adjSubscriptionStartDate}</div>
+                                </td>
+                                <td data-label="End Date" class = "tcolumn">
+                                    <div class="slds-truncate">{!subscriptionService.lastestSubscriptionInfoDetail.adjSubscriptionEndDate}</div>
+                                </td>
+                                <td data-label="Amount" class = "tcolumn">
+                                    <apex:outputPanel rendered="{!subscriptionService.lastestSubscriptionInfoDetail.adjSubscriptionStartDate != null}">
+                                        <div class="slds-truncate">
+                                              <apex:outputText value="{0, number, currency}">
+                                                    <apex:param value="{!subscriptionService.subscriptionSingleItem.subscription.renewalPrice}" />
+                                               </apex:outputText>
+                                        </div>
+                                    </apex:outputPanel>
+                                </td>
+                              
+                                <td data-label="Action" class = "tcolumn">
+                                    <apex:outputPanel rendered="{!subscriptionService.lastestSubscriptionInfoDetail.adjSubscriptionStartDate != null}">
+                                    <span class="slds-truncate" title="Partial Cancel"><a onclick="showPartialCancel('{!subscriptionService.lastestSubscriptionInfoDetail.orderItemSubscriptionId}','{!subscriptionService.lastestSubscriptionInfoDetail.orderItemId}','1');" >Partial Refund</a></span> OR
+                                    <span class="slds-truncate" title="Full Cancel"><a onclick="hidePartialCancel('{!subscriptionService.lastestSubscriptionInfoDetail.orderItemSubscriptionId}','{!subscriptionService.lastestSubscriptionInfoDetail.orderItemId}','0');" >Full Refund</a></span>
+                                    </apex:outputPanel>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="accordion"><span style="display:inline-block" class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span><b>Terms</b></div>
+                    <div>
+
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                            
+                            <tbody>
+                              <apex:repeat value="{!subscriptionService.subscriptionInfoDetails}" var="theDetail" id="subscriptionInfoDetailId">
+                                <tr>
+                                    
+                                  
+                                    <td data-label="Status" class = "tcolumn">
+                                        <div class="slds-truncate">
+                                            <apex:outputText value="Active" rendered="{!theDetail.isActive == 'true'}"/>
+                                            <apex:outputText value="Inactive" rendered="{!theDetail.isActive == 'false'}"/>
+                                        </div>
+                                    </td>
+
+                                    <td data-label="Start Date" class = "tcolumn">
+                                        <div class="slds-truncate">{!theDetail.adjSubscriptionStartDate}</div>
+                                    </td>
+                                    <td data-label="End Date" class = "tcolumn">
+                                        <div class="slds-truncate">{!theDetail.adjSubscriptionEndDate}</div>
+                                    </td>
+                                    <td data-label="Amount" class = "tcolumn">
+                                        <div class="slds-truncate">
+                                           <apex:outputText value="{0, number, currency}">
+                                                <apex:param value="{!subscriptionService.subscriptionSingleItem.subscription.renewalPrice}" />
+                                           </apex:outputText>
+                                        
+                                        </div>
+                                    </td>
+                                    <td data-label="Action" class = "tcolumn">
+                                        <div class="slds-truncate" title="Full Cancel"><a onclick="hidePartialCancel('{!theDetail.orderItemSubscriptionId}','{!theDetail.orderItemId}','0');" >Full Refund</a></div>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+               
+            </apex:outputPanel>
+
+            <apex:outputPanel id="cancelFormTable">
+                <script type="text/javascript">
+                    startDateRange = '{!subscriptionService.startDateRange}';
+                    endDateRange = '{!subscriptionService.endDateRange}';
+                   
+
+                </script>
+                <c:IADMessageBox id="theMessages2" theMessages="{!subscriptionService.iadMessages}" />
+                <apex:outputPanel rendered="{!AND(showtheForm,subscriptionService.isAllowedCancel)}">
+                    <table id="footerDataTable">
+                        <tr>
+                            <td>
+                                <div class="slds-text-heading--small">Term # <strong>{!currentOrderItemId}</strong> <br />
+                                <apex:outputText rendered="{!isPartial}" value="Partial Refund" /><apex:outputText rendered="{!NOT(isPartial)}" value="Full Refund" /> Cancellation</div>
+                            </td>
+                        </tr>
+                       
+                        
+                        <tr id="partialCancel">
+                            <td>
+                                <apex:outputPanel rendered="{!isPartial}">
+                                <table>
+                                    <tr>
+                                        <td class = "labelWidth">
+                                            Term End Date
+                                        </td>
+                                        <td>
+                                            <span class="normalizeDate" title="Subscription Start Date">{!subscriptionService.subscriptionDetailToPost.adjSubscriptionStartDate}</span>-
+                                            <span class="slds-input-has-icon slds-input-has-icon--right">
+                                             
+                                                <apex:inputText id="dateInput" style="width:75%;" title="Choose a Date" styleClass="slds-input normalizeDate2"  value="{!subscriptionService.subscriptionDetailToPost.adjSubscriptionEndDate}" />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <apex:outputPanel rendered="{!isPartial}">
+                                    <table>
+                                        <tr>
+                                            <td class = "labelWidth">
+                                                Refund Amount
+                                            </td>
+                                            <td>
+
+                                        
+                                                <div id="inputDivAmount" class="slds-form-element">
+                                                    <div class="slds-form-element__control">
+                                                     
+                                                        <apex:inputText id="cancelAmountInput" value="{!refundAmount}"  styleClass="slds-input" disabled="true"
+                                                       />
+
+                                                    </div>
+                                                   
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <apex:outputPanel >
+                                    <table>
+                                        <tr>
+                                            <td class = "labelWidth">
+                                                Comments
+                                            </td>
+                                            <td>
+
+
+                                                <div id="inputDiv" class="slds-form-element">
+                                                    <div class="slds-form-element__control">
+                                                       
+                                                        <apex:inputTextarea id="cancelInput" value="{!note}" styleClass="slds-textarea"/>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+                        <tr>
+                             <td>
+                                 <table>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td>
+                                            <button class="slds-button slds-button--brand" onclick="cancelSave(); return false;" 
+                                            style= "{!IF(NOT(subscriptionService.isCancelSuccess), '', 'display:none')}">Cancel Term</button>&nbsp;&nbsp;
+                                            <apex:commandButton action="{!closeTheForm}" value="Close" id="cancelForm" rerender="cancelFormTable,iadMessage" styleClass="slds-button slds-button--neutral"/>&nbsp;&nbsp;
+                                            <button class="slds-button slds-button--brand slds-float--right" style= "{!IF(subscriptionService.isCancelSuccess, '', 'display:none')}" type="button" onclick="openRefundPage('{!subscriptionService.renewalOrderId}');return false;" >Proceed to Refunds</button>
+                                        </td>
+                                        
+                                    </tr>
+                                </table>
+                            </td>  
+                        </tr>
+
+                                          
+                      
+                    </table>
+                   
+                 
+                </apex:outputPanel>
+            </apex:outputPanel>
+
+            <apex:outputPanel id="footerButtons">
+
+                        <span class="editMode">
+                            <button onclick="toggleDetailEditMode();" class="slds-button slds-button--neutral" type="button">Cancel</button>
+                        </span>
+                        
+                       
+                        <span id="update" class="detailMode">
+                            <button class="slds-button slds-button--brand" onclick="doDetailSave(); return false;" >Update Subscription</button>
+                        </span>
+                        
+                       
+            </apex:outputPanel>
+        </apex:form>
+        <div>
+
+        </div>
+    </div>
+
+    </html>
+</apex:page>

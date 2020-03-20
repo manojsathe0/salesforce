@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Systems Info</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Systems Infos</value>
+    </caseValues>
+    <fields>
+        <label><!-- Basic Navigation/Functions --></label>
+        <name>Basic_Navigation_Functions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Links --></label>
+        <name>External_Links__c</name>
+    </fields>
+    <fields>
+        <label><!-- How To Links --></label>
+        <name>How_To_Links__c</name>
+    </fields>
+    <fields>
+        <label><!-- How to Access --></label>
+        <name>How_to_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Overview --></label>
+        <name>System_Overview__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tags --></label>
+        <name>Tags__c</name>
+    </fields>
+    <layouts>
+        <layout>Systems Info Layout</layout>
+        <sections>
+            <label><!-- Basic Navigation/Functions --></label>
+            <section>Basic Navigation/Functions</section>
+        </sections>
+        <sections>
+            <label><!-- Due Date --></label>
+            <section>Due Date</section>
+        </sections>
+        <sections>
+            <label><!-- External Links --></label>
+            <section>External Links</section>
+        </sections>
+        <sections>
+            <label><!-- How To Links --></label>
+            <section>How To Links</section>
+        </sections>
+        <sections>
+            <label><!-- How to Access --></label>
+            <section>How to Access</section>
+        </sections>
+        <sections>
+            <label><!-- System Overview --></label>
+            <section>System Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Tags --></label>
+            <section>Tags</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

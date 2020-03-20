@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_With_Approval_Managers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows Sales Adjustment Approval managers to modify records.</description>
+        <label>Share With Approval Managers</label>
+        <sharedTo>
+            <group>Sales_Adj_Approval_Managers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Agent__c</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

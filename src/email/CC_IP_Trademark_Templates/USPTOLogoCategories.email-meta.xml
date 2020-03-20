@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>logocategs</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>USPTO Logo Categories</name>
+    <style>none</style>
+    <subject>USPTO Logo Categories</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+
+As part of the application process, the United States Patent and Trademark Office (USPTO) may assign pseudo marks and/or design codes to your application. If so, you will receive a notice of this status for review. If you would like to add or contest any of the codes listed, please contact the USPTO directly at 1.800.786.9199. Otherwise, there is no need to respond to their email. 
+
+To view more information on design codes, please visit: http://tess2.uspto.gov/tmdb/dscm/dsc_gl.htm. For more information regarding pseudo marks, please visit http://www.uspto.gov/tmdb/helpflds.html#Pseudo_Mark.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

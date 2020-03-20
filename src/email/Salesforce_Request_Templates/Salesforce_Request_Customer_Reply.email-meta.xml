@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>this email template details a New Salesforce Request.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Salesforce Request - Customer Reply</name>
+    <style>none</style>
+    <subject>{!Salesforce_Request__c.Assigned_Administrator__c} has been assigned to Salesforce Request #{!Salesforce_Request__c.Number__c}</subject>
+    <type>text</type>
+</EmailTemplate>

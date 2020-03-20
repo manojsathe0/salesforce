@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMLLC2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Follows initial AM Conversation, no attorney consult</name>
+    <style>none</style>
+    <subject>Getting Started with Your LLC Formation Order [order number]</subject>
+    <textOnly>Meet [AM Name], your LegalZoom Account Manager. 
+
+Dear {!Contact.FirstName},
+
+Thank you for speaking with me about your limited liability company formation order. This email is confirming your order has been received will be reviewed for accuracy.
+
+Don’t forget that you can talk to a business attorney about your new business. As part of the Business Legal Plan, you can consult with the attorney for free for 30 minutes.  Some topics that may be helpful to discuss include:
+
+ -- The best business structure for your company
+ -- How to prepare for future business growth, such as adding employees or expanding into other states
+ -- How to protect your business assets by using trademarks, patents, and copyrights
+
+You can schedule an attorney consultation by contacting me directly using the information below. You may also contact me at any time with questions about your order.
+
+Best Regards,
+
+{!User.FirstName} {!User.LastName} |  {!User.Phone} ext. {!User.Extension}
+Account Management Services
+M-F 9:00 am – 6 pm CT
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

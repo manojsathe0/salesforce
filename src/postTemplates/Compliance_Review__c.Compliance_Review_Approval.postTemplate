@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PostTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <default>false</default>
+    <fields>Name</fields>
+    <fields>Representative__c</fields>
+    <fields>Total_Number_of_Compliance_Violations__c</fields>
+    <fields>Violation_Notes_Summary_Long__c</fields>
+    <label>Compliance Review Approval</label>
+</PostTemplate>

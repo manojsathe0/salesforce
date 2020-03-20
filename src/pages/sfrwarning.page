@@ -1,0 +1,6 @@
+<apex:page showHeader="false" sidebar="false" standardController="Salesforce_Request__c">
+<br/>
+1) We are able to better understand issues when you provide a screenshot for the error message you are experiencing, or images of what you expect to see - and what you actually see - in the system. This helps the troubleshooting process and reduces turnaround time.
+<br/><br/>
+2) Include any additional information as a Chatter post. Please do not update the description of the original request or send updates via email as we share tickets within the team and having all the data in the ticket provides consistency and clarity.
+</apex:page>

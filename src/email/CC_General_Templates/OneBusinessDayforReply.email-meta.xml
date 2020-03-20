@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>1bdreply</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>One Business Day for Reply</name>
+    <style>none</style>
+    <subject>One Business Day for Reply</subject>
+    <textOnly>Please add services@emails.legalzoom.com to your address book.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

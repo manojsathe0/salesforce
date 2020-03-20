@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>MISC - CA SOS Delay Notification</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>MISC - CA SOS Delay Notification</name>
+    <style>freeForm</style>
+    <subject>California State Filing Delays</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for choosing LegalZoom for your business needs.  In regard to your recent Express Gold order, this is a courtesy email to inform you that the state of California is currently backlogged due to budget cuts.  Under normal circumstances, your Express Gold order would be complete within 7-10 business days, however expedited California filings are currently taking approximately XX-XX business days due to the backlog.
+
+Please note that LegalZoom is still processing your order on an expedited basis, and the delay is at the state level.  If you require that your order be further expedited, the state of California offers a 24-hour filing option for an additional fee of $400.00.  This option will allow us to complete your order within 3-5 business days.  If you are interested in this option, please contact us back immediately at (888) 381-8758
+
+If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+The LegalZoom Team
+(888) 381-8758
+www.legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,137 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p style="margin:0in;font-family:Calibri;font-size:10.0pt">Dear
+{!Contact.FirstName} {!Contact.LastName},</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">Thank you for
+contacting LegalZoom for your business needs.&nbsp;
+In regard to your inquiry, LegalZoom can assist you in making the
+changes you are requesting.&nbsp; We simplify
+the process for you by preparing and filing the Articles of Amendment with your
+respective Secretary of State, as well as by drafting a customized,
+state-specific Operating Agreement for your business.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">For your reference,
+general information regarding Amendments and Operating Agreements has been
+outlined below.&nbsp; If you would like to get
+specific, detailed information on your personal situation, please contact a Business
+Formation Specialist at the phone number listed below.&nbsp; By speaking with a Specialist will be able to
+assist with answering further questions, as well as building a customized
+package to best benefit your needs.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">For your
+convenience, we have listed all relevant pricing below.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt"><span style="font-weight:bold">AMENDMENT</span></p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">Rush - $239.00 +
+state fee - (10-15 business days)*</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">Standard - $129.00 +
+state fee + shipping - (20-30 business days)</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">To view the state
+fee for your state, please follow the "GET STARTED" link below and
+select your state from the drop-down list.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">GET STARTED</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt"><a href="http://www.legalzoom.com/additional-business-services/articles-of-amendment-corporation-llc.html">http://www.legalzoom.com/additional-business-services/articles-of-amendment-corporation-llc.html</a></p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt"><span style="font-weight:bold">OPERATING AGREEMENT</span></p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">Rush - $199.00 -
+(3-5 business days)</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">Standard - $99.00 +
+shipping - (7-10 business days)</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">You may purchase an
+editable Microsoft Word format of the Bylaws &amp; Resolutions for an
+additional fee of $50.00.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">GET STARTED</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt"><a href="http://www.legalzoom.com/additional-business-services/stand-alone-operating-agreements.html">http://www.legalzoom.com/additional-business-services/stand-alone-operating-agreements.html</a></p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">* Some states may
+have delays which affect the listed turnaround time.&nbsp; To determine if your state is affected,
+please contact a Specialist at the phone number listed below.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">Thank you for
+contacting LegalZoom with your business inquiries, and we look forward to
+assisting you.&nbsp; If you have any
+additional questions, please feel free to contact us by phone at the phone
+number listed below.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">Best regards,</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">{!User.FirstName}</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt">(800) 773-0888
+x{!User.Extension}</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:10.0pt"><a href="http://www.legalzoom.com">www.legalzoom.com</a></p>
+
+<p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+
+<p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:12pt;
+font-family:Calibri"><a href="http://www.legalzoom.com/privacy-policy-popup.html"><span style="font-size:7.5pt">Privacy Policy</span></a></p>
+
+<p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:12pt;
+font-family:Calibri;font-size:7.5pt;color:#666666">Call Customer Care:
+1.800.773.0888</p>
+
+<p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:12pt;
+font-family:Calibri;font-size:7.5pt;color:#666666">This is a service email
+related to your LegalZoom account.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:7.5pt;color:#666666">LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:7.5pt;color:#666666">Please
+add services@emails.legalzoom.com to your address book. </p>
+
+<p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:7.5pt;color:#666666">This
+email was sent to: {!Contact.Email}</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:11.0pt">&nbsp;</p>
+
+<p style="margin:0in;font-family:Calibri;font-size:7.5pt;color:#666666">©
+LegalZoom.com, Inc. All rights reserved.</p>]]></td>
+</tr>
+</table>

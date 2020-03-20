@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>peachtree</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Peachtree</name>
+    <style>none</style>
+    <subject>Peachtree</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+We are happy to provide you with your Free Sage 50 Pro Accounting 2013.  To access and download simply click on the link below:
+
+http://na.sage.com/sage-50-accounting-us/download/2013/pro
+
+PLEASE NOTE: The free Sage 50 Pro Accounting 2013 offer is available only as software download, and only supports the Windows operating system.
+
+If you have any questions regarding the software, please contact the team at Sage Peachtree directly by visiting their customer support site at http://www.peachtree.com/supporttraining, emailing customer.service@sage.com or calling 1-877-530-5651.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

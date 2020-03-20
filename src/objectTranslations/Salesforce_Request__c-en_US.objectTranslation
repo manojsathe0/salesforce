@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Salesforce Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Salesforce Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active Owner --></label>
+        <name>Active_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Salesforce ID --></label>
+        <name>Activity_Salesforce_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adjustment Type --></label>
+        <name>Adjustment_Type__c</name>
+        <picklistValues>
+            <masterLabel>Negative Adjustment</masterLabel>
+            <translation><!-- Negative Adjustment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Adjustment</masterLabel>
+            <translation><!-- Positive Adjustment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Admin Category --></label>
+        <name>Admin_Category__c</name>
+        <picklistValues>
+            <masterLabel>Access - Deactivated Employee</masterLabel>
+            <translation><!-- Access - Deactivated Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access - Existing Employee</masterLabel>
+            <translation><!-- Access - Existing Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access - New Employee</masterLabel>
+            <translation><!-- Access - New Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access - Reports &amp; Dashboards</masterLabel>
+            <translation><!-- Access - Reports &amp; Dashboards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access - Role and Profile Permissions</masterLabel>
+            <translation><!-- Access - Role and Profile Permissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access - System (App)</masterLabel>
+            <translation><!-- Access - System (App) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access - UAT/Pilot</masterLabel>
+            <translation><!-- Access - UAT/Pilot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bugs and Issues - Error Messages</masterLabel>
+            <translation><!-- Bugs and Issues - Error Messages --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bugs and Issues - Release Fixes</masterLabel>
+            <translation><!-- Bugs and Issues - Release Fixes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bugs and Issues - ServiceDesk</masterLabel>
+            <translation><!-- Bugs and Issues - ServiceDesk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bugs and Issues - User Error</masterLabel>
+            <translation><!-- Bugs and Issues - User Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dashboard - Change Existing</masterLabel>
+            <translation><!-- Dashboard - Change Existing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dashboard - New</masterLabel>
+            <translation><!-- Dashboard - New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Fix</masterLabel>
+            <translation><!-- Data Fix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement - Content</masterLabel>
+            <translation><!-- Enhancement - Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement - Flows</masterLabel>
+            <translation><!-- Enhancement - Flows --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement - List Views</masterLabel>
+            <translation><!-- Enhancement - List Views --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement - New Fields</masterLabel>
+            <translation><!-- Enhancement - New Fields --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement - Objects</masterLabel>
+            <translation><!-- Enhancement - Objects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement - Page Layout</masterLabel>
+            <translation><!-- Enhancement - Page Layout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement - System (App)</masterLabel>
+            <translation><!-- Enhancement - System (App) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancement - Workflows and Approval Processes</masterLabel>
+            <translation><!-- Enhancement - Workflows and Approval Processes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - 3rd Party Applications</masterLabel>
+            <translation><!-- Internal Improvements - 3rd Party Applications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - CRM Configuration/Development</masterLabel>
+            <translation><!-- Internal Improvements - CRM Configuration/Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - Data Fix</masterLabel>
+            <translation><!-- Internal Improvements - Data Fix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - Data Migration</masterLabel>
+            <translation><!-- Internal Improvements - Data Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - Data Storage</masterLabel>
+            <translation><!-- Internal Improvements - Data Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - Process Documentation</masterLabel>
+            <translation><!-- Internal Improvements - Process Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - SFDC Release Notification/Maintenance</masterLabel>
+            <translation><!-- Internal Improvements - SFDC Release Notification/Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - SSO</masterLabel>
+            <translation><!-- Internal Improvements - SSO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Improvements - Salesforce1</masterLabel>
+            <translation><!-- Internal Improvements - Salesforce1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report - Change Existing</masterLabel>
+            <translation><!-- Report - Change Existing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report - New</masterLabel>
+            <translation><!-- Report - New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report Requiring Coding</masterLabel>
+            <translation><!-- Report Requiring Coding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report Requiring Configuration</masterLabel>
+            <translation><!-- Report Requiring Configuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report Requiring Data Fix</masterLabel>
+            <translation><!-- Report Requiring Data Fix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Debt</masterLabel>
+            <translation><!-- Technical Debt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training - Existing Users</masterLabel>
+            <translation><!-- Training - Existing Users --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training - New Hire</masterLabel>
+            <translation><!-- Training - New Hire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training - Trainer</masterLabel>
+            <translation><!-- Training - Trainer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned Administrator --></label>
+        <name>Assigned_Administrator__c</name>
+        <relationshipLabel><!-- Salesforce Requests (Assigned Administrator) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Accounts</masterLabel>
+            <translation><!-- Accounts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attachments</masterLabel>
+            <translation><!-- Attachments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case</masterLabel>
+            <translation><!-- Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chatter</masterLabel>
+            <translation><!-- Chatter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Console</masterLabel>
+            <translation><!-- Console --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Content</masterLabel>
+            <translation><!-- Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error Message</masterLabel>
+            <translation><!-- Error Message --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge Article</masterLabel>
+            <translation><!-- Knowledge Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead</masterLabel>
+            <translation><!-- Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Library</masterLabel>
+            <translation><!-- Library --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunities</masterLabel>
+            <translation><!-- Opportunities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order</masterLabel>
+            <translation><!-- Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication Required --></label>
+        <name>Communication_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complexity Value --></label>
+        <name>Complexity_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complexity --></label>
+        <name>Complexity__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date which you need the request to be completed by --></help>
+        <label><!-- Desired Completion Date --></label>
+        <name>Desired_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Environment --></label>
+        <name>Environment__c</name>
+        <picklistValues>
+            <masterLabel>IAD</masterLabel>
+            <translation><!-- IAD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prod</masterLabel>
+            <translation><!-- Prod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA</masterLabel>
+            <translation><!-- QA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Estimated Burned Hours --></label>
+        <name>Estimated_Burned_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Completion Date --></label>
+        <name>Estimated_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Contacted --></label>
+        <name>First_Contacted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Impact --></label>
+        <name>Impact__c</name>
+        <picklistValues>
+            <masterLabel>Emergency</masterLabel>
+            <translation><!-- Emergency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Intake Status --></label>
+        <name>Intake_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active Sprint</masterLabel>
+            <translation><!-- Active Sprint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Form Required</masterLabel>
+            <translation><!-- Form Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Migrate</masterLabel>
+            <translation><!-- Migrate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review</masterLabel>
+            <translation><!-- Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC</masterLabel>
+            <translation><!-- SFDC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number --></label>
+        <name>Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Matching Activity --></label>
+        <name>Order_Matching_Activity__c</name>
+        <relationshipLabel><!-- Salesforce Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Order --></label>
+        <name>Order__c</name>
+        <relationshipLabel><!-- Salesforce Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority Value --></label>
+        <name>Priority_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Showstopper</masterLabel>
+            <translation><!-- Showstopper --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason for Adjustment --></label>
+        <name>Reason_for_Adjustment__c</name>
+        <picklistValues>
+            <masterLabel>Extended System Downtime</masterLabel>
+            <translation><!-- Extended System Downtime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration Delay</masterLabel>
+            <translation><!-- Integration Delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet Downtime</masterLabel>
+            <translation><!-- Internet Downtime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Bug Discovered</masterLabel>
+            <translation><!-- New Bug Discovered --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Related Account --></label>
+        <name>Related_Account__c</name>
+        <relationshipLabel><!-- Salesforce Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Case --></label>
+        <name>Related_Case__c</name>
+        <relationshipLabel><!-- Salesforce Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Lead --></label>
+        <name>Related_Lead__c</name>
+        <relationshipLabel><!-- Salesforce Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Opportunity --></label>
+        <name>Related_Opportunity__c</name>
+        <relationshipLabel><!-- Salesforce Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Release Process --></label>
+        <name>Release_Process__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsure</masterLabel>
+            <translation><!-- Unsure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Response Within 24 hours? --></label>
+        <name>Response_Within_24_hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduled Launch Date --></label>
+        <name>Scheduled_Launch_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If value is -99, Complexity and/or Priority is not populated. --></help>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Date --></label>
+        <name>Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Project Queue</masterLabel>
+            <translation><!-- In Project Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Servicedesk Queue</masterLabel>
+            <translation><!-- In Servicedesk Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In TFS Queue</masterLabel>
+            <translation><!-- In TFS Queue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for UAT</masterLabel>
+            <translation><!-- Ready for UAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reopened</masterLabel>
+            <translation><!-- Reopened --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Researching</masterLabel>
+            <translation><!-- Researching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on Feedback</masterLabel>
+            <translation><!-- Waiting on Feedback --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Targeted Department --></label>
+        <name>Targeted_Department__c</name>
+        <picklistValues>
+            <masterLabel>Account Manager</masterLabel>
+            <translation><!-- Account Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Care</masterLabel>
+            <translation><!-- Customer Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Production</masterLabel>
+            <translation><!-- Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Team (Internal)</masterLabel>
+            <translation><!-- Salesforce Team (Internal) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ticket Number --></label>
+        <name>Ticket_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ticket URL --></label>
+        <name>Ticket_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Required --></label>
+        <name>Training_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Sub-Category --></label>
+        <name>Type_Sub_Category__c</name>
+        <picklistValues>
+            <masterLabel>Cases</masterLabel>
+            <translation><!-- Cases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create User</masterLabel>
+            <translation><!-- Create User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Routing</masterLabel>
+            <translation><!-- Email Routing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error Messages</masterLabel>
+            <translation><!-- Error Messages --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fields</masterLabel>
+            <translation><!-- Fields --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leads</masterLabel>
+            <translation><!-- Leads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Fields</masterLabel>
+            <translation><!-- Missing Fields --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Items</masterLabel>
+            <translation><!-- Missing Items --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Password Reset</masterLabel>
+            <translation><!-- Password Reset --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Permissions/Privileges</masterLabel>
+            <translation><!-- Permissions/Privileges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queues</masterLabel>
+            <translation><!-- Queues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports/Dashboard</masterLabel>
+            <translation><!-- Reports/Dashboard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requirements/Functionality Review</masterLabel>
+            <translation><!-- Requirements/Functionality Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scorecard</masterLabel>
+            <translation><!-- Scorecard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Access</masterLabel>
+            <translation><!-- Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Administration Request</masterLabel>
+            <translation><!-- Administration Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bugs &amp; Issues</masterLabel>
+            <translation><!-- Bugs &amp; Issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enhancements &amp; Changes</masterLabel>
+            <translation><!-- Enhancements &amp; Changes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issues</masterLabel>
+            <translation><!-- Issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Features/improvements</masterLabel>
+            <translation><!-- New Features/improvements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project</masterLabel>
+            <translation><!-- Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reports &amp; Dashboards</masterLabel>
+            <translation><!-- Reports &amp; Dashboards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working Session</masterLabel>
+            <translation><!-- Working Session --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UAT Required --></label>
+        <name>UAT_Required__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the main user that the request affects (if specific to one user) --></help>
+        <label><!-- User Affected --></label>
+        <name>User_Affected__c</name>
+        <relationshipLabel><!-- Salesforce Requests (User Affected) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Assigned Requests --></label>
+        <name>User_Assigned_Requests__c</name>
+    </fields>
+    <layouts>
+        <layout>Salesforce Request Layout (Feed)</layout>
+        <sections>
+            <label><!-- Administrator Response --></label>
+            <section>Administrator Response</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Request Details --></label>
+            <section>Request Details</section>
+        </sections>
+        <sections>
+            <label><!-- Tips and Tricks --></label>
+            <section>Tips and Tricks</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Salesforce Request --></label>
+        <name>Salesforce_Request</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Updates to the description of the issue need to be done via a Chatter post. You can @mention Salesforce Support and the same group will be notified that would be notified by email. --></errorMessage>
+        <name>Changing_SFR_Description</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your Priority and Desired Completion Date do not match. Desired Completion Date must be after today. --></errorMessage>
+        <name>Non_Showstopper_Completion_Date_Match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You chose &apos;Showstopper&apos; priority, but the desired completion date is not today. Please review your priority. --></errorMessage>
+        <name>Showstopper_Completion_Date_Match</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For password reset issues please fill out the User Affected field. If there is more than one user affected please fill in one and include the rest in the description field. --></errorMessage>
+        <name>User_Affected_Needed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- In order to update the status field to Completed, On Hold, Rejected the comment field must be entered. --></errorMessage>
+        <name>Validation_Complete_Must_Comments</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Attach_Files --></label>
+        <name>Attach_Files</name>
+    </webLinks>
+</CustomObjectTranslation>

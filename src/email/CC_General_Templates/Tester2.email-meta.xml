@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Tester2</name>
+    <style>none</style>
+    <subject>Tester2</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+INSERT EMAIL BODY HERE
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom is not a law firm and is not a substitute for an attorney or law firm. LegalZoom cannot provide legal advice and can only provide self-help services at your specific direction. LegalZoom, Inc. is a registered and bonded legal document assistant, {!snippetVariable.lzbondnumber}, Los Angeles County {!snippetVariable.lzbondexpire}. Prices, features, terms and conditions are subject to change without notice.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+LegalZoom is located at {!snippetVariable.lzaddresstemp}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

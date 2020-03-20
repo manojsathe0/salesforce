@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TM2p1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TM 2-Package Overview</name>
+    <style>none</style>
+    <subject>TM 2-Package Overview</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+In general, Trademarks protect Names, Slogans, Short Phrases, Logos and Acronyms used for specific products and/or services.  By registering for a federal Trademark, you can protect yourself against the possibility that an inferior product will diminish your reputation or profitability. 
+ 
+Additional information is available online at LegalZoom&apos;s Education Center located on the bottom left hand side of the Trademark Overview page.  
+
+To start your Trademark application, please visit www.LegalZoom.com and fill out our easy online questionnaire. LegalZoom will then prepare and file your application with the United States Patent and Trademark Office.
+
+The cost to file a Trademark application under one (1) class is:
+ 
+1. Basic Package: $169
+2. Complete Coverage: $189
+
+All Trademark prices have an additional $325 dollar government filing fee. Additional classes require an additional fee of $385 per additional class.
+
+All Trademark packages have a 7-10 business day processing time frame. To get started on your order, visit: http://www.legalzoom.com/trademarks/trademarks-pricing.html
+
+Online payments can be made by Visa, Mastercard, American Express or Discover.
+
+Once you submit your application along with your logo and specimen (if applicable) we will begin a trademark search within 24-48 business hours. 
+ 
+If you decide to cancel after we have started a trademark search, all of your charges will be refunded minus the search and any applicable processing fees. Refunds must be requested within 60 days of purchase.
+  
+{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.
+
+{!snippetVariable.ipclosingline}
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}
+{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

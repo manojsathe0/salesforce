@@ -1,0 +1,122 @@
+<apex:page controller="IADSubscriptionsPanelController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <script type="text/javascript">
+           
+
+            var oiId ='';
+            var oiSubId ='';
+            function openSubscription(orderItemId, orderItemSubId){
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+
+                oiId = orderItemId;
+                oiSubId = orderItemSubId;
+                console.log('pid ' + orderItemId);
+            }
+            var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+                var url = '/apex/IADSubscriptionPage?subscriptionId=' + oiSubId + '&id={!orderId}&customerId={!customerId}&isdtp=vw';
+                console.log('url ' + url);
+                sforce.console.openSubtab(result.id , url, true, oiSubId);
+            };
+            window.onload = function() 
+            {
+               sforce.console.getFocusedPrimaryTabObjectId(showObjectId);
+
+         
+            };
+             window.populateSVGHash = function() {
+                svgHash = {};
+                $('.svgParent').each(function(index) {
+                    var idKey = $(this).attr('id');
+                    svgHash[idKey] = $(this).html();
+                });
+                console.log('svg hash ' + svgHash);
+            }
+            window.afterActionFunction = function() {
+                console.log('calling afterActionFunction');
+                $('.svgParent').each(function(index) {
+                     console.log('calling index ' + index);
+                    var idKey = $(this).attr('id');
+                    console.log('calling idKey ' + idKey);
+                    $(this).html(svgHash[idKey]);
+                });
+            }
+            jQuery(document).ready(function($) {
+               populateSVGHash();
+            });
+            
+            var showObjectId = function showObjectId(result) {
+                 populateSubscriptions(result.id); 
+            };
+
+            var listener = function(result) {
+                sforce.console.getFocusedPrimaryTabObjectId(showObjectId);
+            };
+
+            sforce.console.addEventListener('RefreshSubscriptionsPanel', listener);
+
+        </script>
+    </head>
+     <div class="slds">
+    <apex:form id="theForm">
+     <script type = "text/javascript">
+        if("{!subscriptionService.isSubscriptionLoaded}" == 'true'){
+         populatePaymentProfiles();
+        }
+     </script>
+     <apex:actionFunction name="populatePaymentProfiles" action="{!populatePaymentProfiles}" rerender="theForm" status="statusUpdating" oncomplete="afterActionFunction();">
+     </apex:actionFunction>
+     <apex:actionFunction name="populateSubscriptions" action="{!populateSubscriptions}" rerender="theForm" status="statusUpdating" oncomplete="afterActionFunction();">
+           <apex:param name="orderId" value=""/>
+     </apex:actionFunction>
+
+      <apex:outputPanel rendered="{!subscriptionService.hasSubscriptions}">
+       <c:IADMessageBox theMessages="{!subscriptionService.iadMessages}" />
+        <apex:actionStatus id="statusUpdating">
+                      <apex:facet name="start">
+                       <div class="slds-spinner_container">
+                          <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                          </div>
+                        </div>
+                      </apex:facet>
+                </apex:actionStatus>
+            <apex:repeat value="{!subscriptionService.subscriptionItem.subscriptions}" var="sub">
+                <div class="slds-m-top--small">
+                      <span class="slds-text-body--small" style="float:right">
+                      <apex:image id="expiredIcon" value="{!$Resource.Payment_Expired}" title="Payment Method Has Expired" rendered="{!sub.hasPaymentProfileExpired}"/>
+                      </span>
+                      <span title="Status" class="slds-text-body--small" style="float:right"> <b>{!sub.status}</b></span>
+                      
+                      <a onclick="openSubscription('{!sub.orderItemId}', '{!sub.orderItemSubscriptionId}' ); return false;" styleClass="slds-text-body--small" title="Click to open Subscription"><b><u>#{!sub.orderItemSubscriptionId}   </u></b> </a>
+                      <div class="slds-m-top--xxx-small slds-text-body--small" title="Product">
+                        {!sub.productName}
+                    </div>
+                </div>
+                <br/>
+            </apex:repeat>
+       </apex:outputPanel>
+        <apex:outputPanel rendered="{!NOT(subscriptionService.hasSubscriptions)}" id="noSubscription">
+            <br/><br/><br/><br/><br/><br/><br/>
+            <div align="center">
+                <span class="slds-icon__container slds-icon-standard-approval svgParent">
+
+                    <svg aria-hidden="false" class="slds-icon slds-icon--small" id="approval">
+                        <path d="{!approvalIcon}"/>
+                    </svg>
+              <span class="slds-assistive-text">medium approval Icon</span>
+                </span>
+            </div>
+            <p class="slds-text-heading slds-text-align--center">no Subscriptions</p>
+        </apex:outputPanel>
+
+    </apex:form>
+   
+     </div>
+    </html>
+</apex:page>

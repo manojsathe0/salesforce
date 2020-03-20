@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.corp_edcenter</name>
+    <style>none</style>
+    <subject>corp_edcenter</subject>
+    <textOnly>http://www.legalzoom.com/business-formations/incorporation/incorporation-guide/definition-of-a-corporation.html</textOnly>
+    <type>custom</type>
+</EmailTemplate>

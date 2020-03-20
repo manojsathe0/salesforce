@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>General Information</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>General Information</value>
+    </caseValues>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External --></label>
+        <name>External__c</name>
+    </fields>
+    <fields>
+        <label><!-- FAQ --></label>
+        <name>FAQ__c</name>
+    </fields>
+    <fields>
+        <label><!-- Information --></label>
+        <name>Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal --></label>
+        <name>Internal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keywords --></label>
+        <name>Keywords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purpose --></label>
+        <name>Purpose__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reminders/Quick-Tips --></label>
+        <name>Reminders_Quick_Tips__c</name>
+    </fields>
+    <layouts>
+        <layout>General Information Layout</layout>
+        <sections>
+            <label><!-- Additional Resources/Links --></label>
+            <section>Additional Resources/Links</section>
+        </sections>
+        <sections>
+            <label><!-- FAQ --></label>
+            <section>FAQ</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- Keywords --></label>
+            <section>Keywords</section>
+        </sections>
+        <sections>
+            <label><!-- Purpose --></label>
+            <section>Purpose</section>
+        </sections>
+        <sections>
+            <label><!-- Reminders/Quick Tips --></label>
+            <section>Reminders/Quick Tips</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

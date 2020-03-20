@@ -1,0 +1,85 @@
+<apex:page controller="LookupSalesQAController" sidebar="false" showheader="false" >
+<script language="javascript">
+   window.onload = new function() 
+   { 
+      // bring popup window to front
+      window.focus(); 
+      var ele=document.getElementById('{!$Component.form.block.section.query}');
+      if (ele)
+      {
+         ele.focus();
+      }
+   }
+   
+   function fillIn(name, id)
+   {
+      var winMain=window.opener;
+      if (null==winMain)
+      {
+         winMain=window.parent.opener;
+      }
+      var ele=winMain.document.getElementById('{!$CurrentPage.parameters.namefield}');
+      ele.value=name;
+      ele=winMain.document.getElementById('{!$CurrentPage.parameters.idfield}');
+      ele.value=id;
+      CloseWindow();
+   }
+
+   function CloseWindow()
+   {
+      var winMain=window.opener;
+      if (null==winMain)
+      {
+         winMain=window.parent.opener;
+      }
+      winMain.closeLookupPopup();
+   }
+   
+</script>
+<style>
+	.contentHeader
+	{
+		font-size: 200%;
+		padding-right: 5px;
+	}
+	.contentHeader2
+	{
+		font-size: 150%;
+		padding-left: 5px;
+	}
+</style>
+<body class="hasMotif lookupTab  LookupSearchFrame" >
+<div>
+	<img src="/img/icon/people32.png" alt="" style="padding-left:5px;" title=""/>
+	<h1 class="contentHeader">Lookup</h1>
+</div>
+
+  <apex:messages />
+  <apex:form id="form" >  
+        
+     <div style="width 100%">
+     	<apex:pageBlock >
+			<apex:pageBlockSection id="section">
+				<apex:pageBlockSectionItem >
+					<apex:inputText value="{!query}" id="query" html-placeholder="Search..."/> 
+			    	<apex:commandButton value="Go" action="{!runQuery}"/>
+				</apex:pageBlockSectionItem>  
+			</apex:pageBlockSection>
+        </apex:pageBlock>
+		<h2 class="contentHeader2">Search Results</h2>
+        <apex:pageBlock >
+          <apex:pageBlockSection columns="1">
+              <apex:pageBlockTable value="{!salesQAList}" var="user">
+                <apex:column headerValue="Name">
+                  <apex:outputLink value="#" onclick="fillIn('{!user.Name}', '{!user.id}')">{!user.Name}</apex:outputLink>       
+                </apex:column>
+                <apex:column headerValue="Sales Team" value="{!user.Sales_Team__c}"/>
+                <apex:column headerValue="IsActive" value="{!user.IsActive}"/>
+              </apex:pageBlockTable>    
+          </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+     </div>
+   </apex:form>
+   </body>
+</apex:page>

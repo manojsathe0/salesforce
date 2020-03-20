@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="SEAD_GetNextService_Ltng">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:attribute name="displayMessage" type="Boolean" default="false"/>
+	<aura:attribute name="messageToDisplay" type="String" default="Test"/>
+	<lightning:workspaceAPI aura:id="workspace"/>
+	<lightning:button label="Get Next" onclick="{!c.getNext}"/><br/>
+	
+
+	<aura:renderIf isTrue="{!v.displayMessage}">
+    	<div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+        	<div class="slds-modal__container">
+            	<div class="slds-modal__header">
+                	<button class="slds-button slds-button--icon-inverse slds-modal__close">
+        				<span class="slds-assistive-text">Close</span>
+	                </button>
+      
+    				<h2 class="slds-text-heading--medium">{!v.messageToDisplay}</h2>
+                                        	
+				</div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button--neutral" type="button" onclick="{!c.closeMessage}">Close</button>
+				</div>
+			</div>
+		</div>
+        <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+     </aura:renderIf>
+	
+	
+</aura:component>

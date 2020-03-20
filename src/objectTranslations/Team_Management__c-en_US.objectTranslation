@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Team Management</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Team Management</value>
+    </caseValues>
+    <fields>
+        <label><!-- ADP ID --></label>
+        <name>ADP_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active User --></label>
+        <name>Active_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow Subscription Save --></label>
+        <name>Allow_Subscription_Save__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Manager --></label>
+        <name>Approval_Manager__c</name>
+        <relationshipLabel><!-- Team Management (Approval Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Assistant Manager --></label>
+        <name>Assistant_Manager__c</name>
+        <relationshipLabel><!-- Team Management (Assistant Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CC Biz --></label>
+        <name>CC_Biz__c</name>
+    </fields>
+    <fields>
+        <label><!-- CC IP --></label>
+        <name>CC_IP__c</name>
+    </fields>
+    <fields>
+        <label><!-- CC PS --></label>
+        <name>CC_PS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliance RR --></label>
+        <name>Compliance_RR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Final RR --></label>
+        <name>Compliance_Round_Robin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliance Status --></label>
+        <name>Compliance_Status__c</name>
+        <picklistValues>
+            <masterLabel>Live</masterLabel>
+            <translation><!-- Live --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lead Supervisor --></label>
+        <name>Lead_Supervisor__c</name>
+        <relationshipLabel><!-- Team Management (Lead Supervisor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manager --></label>
+        <name>Manager__c</name>
+        <relationshipLabel><!-- Team Management (Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Monitored Department --></label>
+        <name>Monitored_Department__c</name>
+        <picklistValues>
+            <masterLabel>CCS</masterLabel>
+            <translation><!-- CCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order Routing --></label>
+        <name>Order_Routing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pulled on Current RR --></label>
+        <name>Pulled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaigns --></label>
+        <name>Skills__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sykes User --></label>
+        <name>Sykes_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Team Management (User) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Compliance Team Management Layout</layout>
+        <sections>
+            <label><!-- Compliance --></label>
+            <section>Compliance</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Team Management Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- QA/Compliance Approval Manger --></label>
+            <section>QA/Compliance Approval Manger</section>
+        </sections>
+        <sections>
+            <label><!-- Reporting Hierachy --></label>
+            <section>Reporting Hierachy</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Team Management Layout</layout>
+        <sections>
+            <label><!-- Commission Matching --></label>
+            <section>Commission Matching</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- QA/Compliance Approval Manager --></label>
+            <section>QA/Compliance Approval Manager</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Compliance Team Management --></label>
+        <name>Compliance_Team_Management</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sales Team Management --></label>
+        <name>Sales_Team_Management</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service Team Management --></label>
+        <name>Service_Team_Management</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please wait for 5 minutes and then try to save the record. --></errorMessage>
+        <name>Restrict_user_to_modify_within_5_mins</name>
+    </validationRules>
+</CustomObjectTranslation>

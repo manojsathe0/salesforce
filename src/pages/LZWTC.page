@@ -1,0 +1,210 @@
+<apex:page Controller="CT_WebToCase_Controller" showHeader="false" sidebar="false" standardStylesheets="true">
+<apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+
+    <html>
+    <head>
+        <title>Ask A Question - LegalZoom</title>
+
+        <script type="text/javascript" src="http://www.legalzoom.com/lib/js_headerfooter.js"></script> 
+                <!--apex:includeScript value="{!URLFOR($Resource.lsw2resource,'/lsw2resource/js_headerfooter.js')}"/-->
+        <style type="text/css">         
+            ul {
+                list-style: none;
+            }
+        </style> 
+        
+        <script type="text/javascript">
+        var re1 = /"\//gim;
+        
+            function writeHeader(){
+                var sHeader = getPageHeader();
+                //var re1 = /"\//gim;
+                sHeader = sHeader.replace(re1, "\"http://www.legalzoom.com/");
+                document.write(sHeader); 
+            }
+            
+            function writeFooter(){
+                var sFooter = getPageFooter();
+                var re2 = /openWindow_ext\('\//gim;
+                sFooter = sFooter.replace(re1, "\"http://www.legalzoom.com/");
+                sFooter = sFooter.replace(re2, "openWindow_ext('http://www.legalzoom.com/");
+                document.write(sFooter); 
+            }
+        </script>
+    </head>
+    <body style="width:901px">
+        <div id="topContentWrapper">
+            <script type="text/javascript">writeHeader();</script>
+        </div>          
+        <div id="middleContentDiv"> 
+        <script type="text/javascript">
+
+           function validate()
+            {
+                var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z0-9-]{2,20}$/i;
+            
+                if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_1.PBSI_1.NewCaseFirstName}').value == '')
+                {
+                    alert("Please enter value in First Name.");
+                    return false;           
+                }
+                else if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_1.PBSI_2.NewCaseLastName}').value == '')
+                {
+                    alert("Please enter value in Last Name.");                    
+                    return false;  
+                }
+                else if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_1.PBSI_3.NewCaseEmail}').value == '')
+                {
+                    alert("Please enter value in Email.");
+                    return false;  
+                }
+                else if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_1.PBSI_4.NewCaseProduct}').value == '')
+                {
+                    alert("Please select a value in Topic.");
+                    return false;  
+                }
+                else if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_1.NewCasePrimaryReason}').value == '')
+                {
+                    alert("Please select a value in Primary Reason.");
+                    return false;  
+                }
+                else if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_1.NewCaseSecondaryReason}').value == '')
+                {
+                    alert("Please select a value in Secondary Reason.");
+                    return false;  
+                }
+                else if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_2.NewCaseSubject}').value == '')
+                {
+                    alert("Please enter value in Subject.");
+                    return false;  
+                }
+                else if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_2.NewCaseDescription}').value == '')
+                {
+                    alert("Please enter value in Description.");
+                    return false;  
+                }
+                else if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_1.PBSI_3.NewCaseEmail}').value != '')
+                {
+                    if(document.getElementById('{!$Component.NewAcctContForm.MainBlock.pbs_1.PBSI_3.NewCaseEmail}').value.search(emailRegEx) == -1){
+                        alert("Please enter a valid email address.");    
+                        return false;                   
+                    }else{
+                        return true;
+                    }
+                    
+                }
+                else
+                {
+                    return false;
+                    <!--EventButtonClickSave();-->
+                }
+                 
+            }
+   
+        </script>
+        
+        <apex:form id="NewAcctContForm">   
+        <apex:actionFunction action="{!EventButtonClickSave}" name="EventButtonClickSave" reRender="MainBlock"/>     
+            <apex:pageBlock id="MainBlock" title="Ask a Question">                
+                <br></br>
+                <apex:outputText >Send us a question. Our specialists will respond to your email within one business day.</apex:outputText>
+                <apex:outputPanel id="Messages" layout="block">
+                    <apex:pageBlockSection rendered="true">
+                        <apex:pagemessages />
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                <!--<apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Clear" action="{!EventButtonClickClear}" />
+                    <apex:commandButton value="Submit" action="{!EventButtonClickSave}" />
+                    <apex:commandButton value="Cancel" action="{!EventButtonClickCancel}" immediate="true" />
+                </apex:pageBlockButtons>-->
+                <apex:outputPanel >
+                    <apex:pageBlockSection id="pbs_1" columns="2" showHeader="false" collapsible="false">
+                        <apex:pageBlockSectionItem id="PBSI_1">
+                            <apex:outputLabel value="First Name" for="NewCaseFirstName"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <div class="requiredInput">
+                                   <div class="requiredBlock"></div>
+                                    <apex:inputText id="NewCaseFirstName" value="{!model.FirstName}" />                                   
+                                </div>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem id="PBSI_2">
+                            <apex:outputLabel value="Last Name" for="NewCaseLastName"/>
+                            <apex:outputPanel styleClass="requiredInput" layout="block">
+                                <div class="requiredInput">
+                                    <div class="requiredBlock"></div>                         
+                                    <apex:inputText id="NewCaseLastName" value="{!model.LastName}" />                                                                          
+                                </div>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem id="PBSI_3">
+                            <apex:outputLabel value="Email" for="NewCaseEmail" />                           
+                            <apex:inputField id="NewCaseEmail" value="{!model.NewCase.SuppliedEmail}" required="true" />                            
+                        </apex:pageBlockSectionItem>
+                        <apex:outputText value="" />                        
+                        <apex:pageBlockSectionItem id="PBSI_4">
+                            <apex:outputLabel value="Topic" for="NewCaseProduct" />
+                            <apex:inputField id="NewCaseProduct" value="{!model.NewCase.Products__c}" required="true" />
+                        </apex:pageBlockSectionItem>
+                        <apex:outputText value="" />
+                        <apex:inputField id="NewCasePrimaryReason" value="{!model.NewCase.Reason}" required="true" />
+                        <apex:inputField id="NewCaseSecondaryReason" value="{!model.NewCase.Case_Sub_Reason__c}" required="true" />                
+                        <!--<apex:inputField id="NewCaseOrderSubmitted" value="{!model.NewCase.Order_Submitted__c}" />-->
+                        <apex:selectRadio id="OrderSubmitted" value="{!model.OrderSubmitted}" label="Order Submitted" required="true">
+                            <apex:selectOptions value="{!RadioButtonOptions}"/>
+                        </apex:selectRadio>
+                        <apex:outputText value="" />                
+                        <apex:inputField id="NewCaseOrderNumber" value="{!model.NewCase.Order_Number__c}" />                                                        
+                        <apex:outputText value="" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection id="pbs_2" columns="1" showHeader="false" collapsible="false">
+                        <apex:inputField id="NewCaseSubject" value="{!model.NewCase.Subject}" required="true" style="width:100%;" />
+                        <apex:inputField id="NewCaseDescription" value="{!model.NewCase.Description}" required="true" style="width:100%; height:100px"/>
+                    </apex:pageBlockSection>
+                    <apex:outputPanel id="ContactPanel">
+                    <!-- <apex:outputPanel id="innerContactPanel" rendered="true"> -->
+                        <apex:actionRegion renderRegionOnly="true">
+                            <apex:pageBlockSection columns="1" title="Attach Document to Question (80 MB Max)" collapsible="false" >
+                                <apex:repeat value="{!model.attachmentFileNames}" var="afn">
+                                    <apex:pageBlockSection columns="3">
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel value="Attached Documents"/>                                          
+                                            <apex:outputLabel value="{!afn}" />
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                </apex:repeat>  
+                                <apex:pageBlockSection columns="3">
+                                    <apex:pageBlockSectionItem >
+                                        <apex:outputLabel value="File" for="ipf"/>                        
+                                        <apex:inputFile id="ipf" value="{!model.fileAttachmentBody}" filename="{!model.fileAttachmentName}" 
+                                            ContentType="{!model.fileAttachmentContentType}"/>
+                                    </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>                            
+                                <apex:commandButton value="Add Another" action="{!EventButtonClickAddAnother}" immediate="true" rerender="" />
+                            </apex:pageBlockSection>
+                        </apex:actionRegion>
+                    <!-- </apex:outputPanel> -->
+                    </apex:outputPanel>                 
+                </apex:outputPanel>             
+                <div style="padding:50px 0px 20px 275px">                   
+                    <apex:commandButton value="Submit Case" onclick="return validate();" action="{!EventButtonClickSave}"/> &nbsp;
+                    <apex:outputText value="please only click submit once" style="font-size:9pt"/>                  
+                </div>
+            </apex:pageBlock>
+            <div id="bottomContentWrapper">
+            <script type="text/javascript">writeFooter();</script>
+        </div>
+        </apex:form>
+        </div>      
+       <script type="text/javascript">
+            (function(a,b,c,d){
+            a='//tags.tiqcdn.com/utag/legalzoom/main/prod/utag.js';
+            b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+            a=b.getElementsByTagName(c)[0]a.parentNode.insertBefore(d,a);
+            })();
+        </script> 
+        
+    </body>
+    </html>
+</apex:page>

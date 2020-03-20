@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>colep5</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain</letterhead>
+    <name>#5 - Educational Materials</name>
+    <style>formalLetter</style>
+    <subject>Your Requested Information: [enter title here, example: Guardianship, Estate Planning Checklist, Everything You Need to Know About Living Trusts, etc.]</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+It was great speaking with you today. As discussed, please click on the link(s) below for more information about [enter title here ex: Guardianship, Estate Planning Checklist, Everything You Need to Know About Living Trusts, etc.]. I hope you find this information helpful.
+
+Estate Plan Checklist
+
+Living Trust Checklist
+
+Everything You Need to Know About Living Trusts
+
+What Happens When You Die Without a Will
+
+Importance of Reviewing Contracts
+
+Role of an Executor
+
+Preventive Law
+
+Guardianship
+
+If you have any questions, feel free to call me directly at {!User.Phone}{!User.Extension}.
+
+Thank you for considering LegalZoom, and I look forward to speaking to you soon!
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Street} {!User.City} {!User.State}, {!User.PostalCode}
+{!User.Phone} {!User.Extension}
+Manage My Account | Explore Services
+Privacy Policy | Unsubscribe
+
+Please do not reply to this message. This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

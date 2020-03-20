@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>exyoon</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Elizabeth Yoon Signature</name>
+    <style>none</style>
+    <textOnly>Elizabeth Yoon
+LegalZoom.com 
+Business Services
+{!snippetVariable.lz_address}
+(888)-381-8758 Ext: 3180</textOnly>
+    <type>custom</type>
+</EmailTemplate>

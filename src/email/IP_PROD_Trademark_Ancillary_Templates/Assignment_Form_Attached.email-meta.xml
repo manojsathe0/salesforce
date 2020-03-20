@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>assignform</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Assignment Form Attached</name>
+    <style>none</style>
+    <subject>Order# [xxx] Assignment Form Attached</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I have attached a sample Trademark Assignment agreement contract.
+
+A Trademark Assignment is the transfer of trademark rights from one or more owners of a mark or marks to someone else. These assignments should be in writing to protect all parties and make clear everyone&apos;s rights going forward. A Trademark transfer is typically accomplished through a contract, like the written agreement form attached.
+
+If you choose to follow the enclosed sample, please read it carefully to make sure it meets all of your needs and that it does not conflict with any other contracts you have in place.  You may make changes to the form as needed, but, just like the form, be sure that those changes accurately reflect the intent of all parties to the contract.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

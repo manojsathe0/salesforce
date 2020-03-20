@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>cr19</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PROBLEM - URL</name>
+    <style>none</style>
+    <subject>URL</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+While reviewing your Copyright application, we noticed a potential issue that may delay your registration application with the US Copyright Office.
+
+You submitted a website address (URL) rather than printouts of your website. The US Copyright Office does not accept a URL to register a Copyright.
+
+If you want to register the contents of your website, send us a copy of each page. If you want to register the design or functionality of your website, send us a readable copy of the website’s source code.
+
+You can either reply to this email with your documents attached or mail copies to:
+
+{!snippetVariable.ip_address_cr_materials}
+
+If you have any questions or would like additional information, please call our Customer Care Team at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT or email us here.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Coaching Suggested</name>
+    <style>none</style>
+    <subject>Sales Rep Coaching Suggested</subject>
+    <textOnly>A Sales Compliance Review has been completed, and although the sales rep was compliant, coaching is suggested.
+
+Compliance Review: {!Compliance_Review__c.Name}
+{!Compliance_Review__c.Link}
+Representative: {!Compliance_Review__c.Representative__c}
+CIC Call ID#: {!Compliance_Review__c.Recorded_Call_ID__c}
+
+Coaching Notes:
+{!Compliance_Review__c.Coaching_Notes__c}
+
+
+Click here to view all Sales Rep where coaching is suggested:
+Compliant - Coaching Recommended
+{!LEFT(Compliance_Review__c.Link, LEN(Compliance_Review__c.Link) - 15)}a0A?fcf=00BG0000007fW70&amp;rolodexIndex=-1&amp;page=1</textOnly>
+    <type>custom</type>
+</EmailTemplate>

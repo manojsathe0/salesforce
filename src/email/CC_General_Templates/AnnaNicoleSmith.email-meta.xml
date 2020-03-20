@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Anna</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Anna Nicole Smith</name>
+    <style>none</style>
+    <subject>Anna Nicole Smith</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your email. We value your business, and we have taken your comments very seriously. 
+
+You raised important concerns over the passing of Anna Nicole Smith. While none of us at LegalZoom.com takes anyone?s passing lightly, the events over the past few weeks have helped raise awareness about the need to create a last will, and even more importantly, to update a last will, especially after important life events, such as the birth of a child.
+
+Since LegalZoom&apos;s inception, we have worked diligently to raise awareness about the need to keep an up-to-date last will and testament. This is one of the most important legal documents an individual or family can prepare during their lifetime. Many people go without a last will or forget to update their will. And unfortunately, legal conflicts such as those involving Anna Nicole Smith?s family are all too common as a result. No family should be put through the additional pain and stress of a public court battle during their time of grief.
+
+Anna Nicole Smith?s tragic passing has taught us a valuable lesson about the importance of protecting our loved ones. Whether families use an attorney, software, a legal self-help book or LegalZoom.com, our goal is to educate and to encourage people to take the necessary steps to care for those who matter most. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

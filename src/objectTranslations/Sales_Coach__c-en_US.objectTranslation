@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Coach</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Coaches</value>
+    </caseValues>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+        <picklistValues>
+            <masterLabel>AS Courtesy</masterLabel>
+            <translation><!-- AS Courtesy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS Decline</masterLabel>
+            <translation><!-- AS Decline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS Retention</masterLabel>
+            <translation><!-- AS Retention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Abandoner</masterLabel>
+            <translation><!-- Abandoner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIZ</masterLabel>
+            <translation><!-- BIZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IP</masterLabel>
+            <translation><!-- IP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS</masterLabel>
+            <translation><!-- PS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA</masterLabel>
+            <translation><!-- RA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBR</masterLabel>
+            <translation><!-- SBR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Friendly Name --></label>
+        <name>Friendly_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link --></label>
+        <name>Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Sales Coach News</masterLabel>
+            <translation><!-- Sales Coach News --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Coach Training</masterLabel>
+            <translation><!-- Sales Coach Training --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Sales Coach Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

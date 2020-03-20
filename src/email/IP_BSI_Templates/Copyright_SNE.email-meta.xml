@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Copyright SNE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Copyright SNE</name>
+    <style>freeForm</style>
+    <subject>LegalZoom.com-Copyright Inquiry</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Thank you for your inquiry. LegalZoom is your premiere legal resource and we have helped thousands like you get the protection that they are looking for.
+
+Copyright registration protects original works of authorship, like books, movies, music, scripts, lyrics, videos, choreography, artwork, photos, etc. They do not protect names, titles, slogans, short phrases, or ideas. 
+
+At LegalZoom our goal is to make this process easy on you and provide you with a complete solution that will give you the protection that you need.  In order for us to provide you with the best service, please give me a call at 1-800-773-0888 ext. {!User.Extension}. You can also email me your phone number and the best time to reach you.
+
+To see more information about copyrights, please go to https://www.legalzoom.com/legal-copyrights/copyrights-overview.html.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>html</type>
+</EmailTemplate>

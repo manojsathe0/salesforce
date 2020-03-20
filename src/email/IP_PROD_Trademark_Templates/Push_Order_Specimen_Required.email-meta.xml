@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tmpush3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Push Order-Specimen Required</name>
+    <style>none</style>
+    <subject>Push Order-Specimen Required</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.
+
+We have made several attempts to contact you regarding your Trademark application but have not been able to resolve the following issue:
+
+Specimen Requirement for Used in Commerce Application
+
+Because you have elected to file your Trademark application on a &quot;Use in Commerce&quot; basis, you must submit a specimen with your application to the US Patent and Trademark Office (USPTO).  A specimen is a real world example of how your mark is currently being used in commerce, and must show sufficient proof that the mark is currently being used in the manner described within the description of goods and services on your application.
+
+******************For goods******************
+
+For example, if a company files a Trademark application for &quot;Bob’s Spectacular Shoes&quot; and lists &quot;shoes&quot; for its goods and services, they could submit a photo of a shoe box or pair of shoes that clearly demonstrate the mark, &quot;Bob’s Spectacular Shoes&quot;, is currently being offered in the marketplace.
+
+For goods (products), acceptable specimens include labels or tags attached to the product, packaging material, instruction manuals and containers which clearly display the Trademark. Websites, advertisements, brochures, business cards, catalogs and stationery are generally NOT acceptable specimens for goods.
+
+NOTE: In general, the Trademark should stand out within the specimen. In some cases, if a Trademark name is listed within a body of text, it can be made distinctive by being in a different font, bolder or larger in text, or followed by the &quot;TM&quot; symbol.***
+
+******************For services******************
+
+For example, if a company files a Trademark application for &quot;Premier Investments&quot; and lists &quot;investment consultation&quot; for its goods and services, they could submit a website screenshot or brochure that clearly demonstrates the mark, &quot;Premier Investments,&quot; is currently being offered for the described service.
+
+For service marks, acceptable specimens include brochures, flyers, advertisements, yellow page listings and internet websites. Business cards and stationery are generally NOT acceptable specimens for services.
+
+NOTE: In general, the Trademark should stand out within the specimen. In some cases, if a Trademark name is listed within a body of text, it can be made distinctive by being in a different font, bolder or larger in text, or followed by the &quot;TM&quot; symbol.***
+
+********************
+
+Please reply to this e-mail and attach an image of your specimen, preferably in .gif, .pdf, .jpeg or .jpg format. Otherwise, you can upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s website: {!snippetVariable.aaq_link_only}
+
+***MAC USERS: upload your image directly by visiting the &quot;Ask A Question&quot; section of LegalZoom&apos;s website: {!snippetVariable.aaq_link_only} ***
+
+IMPORTANT NOTE: If you would like to address this issue or place your order on hold, please reply to this email or send an email directly to trademarks@legalzoom.com as soon as possible. If a response is not received within 10 days of this email, LegalZoom will file your Trademark application on your behalf to reflect:
+
+Basis of Filing: Intent-to-Use
+
+“Intent-to-Use” Trademark applications are a viable way to reserve the rights to your mark before using it in commerce. A specimen is not needed for Intent-to-Use applications at the original time of filing, but will be required when submitting your Statement of Use (see below). The USPTO requires the following information* within six months of your Notice of Allowance, which is usually received 6-7 months after the original application filing date:
+
+A Statement of Use: a sworn statement attesting to the use of the mark in commerce.
+$100 filing fee per class of goods or services.
+A specimen that demonstrates how the mark is being used in commerce for every classification of goods and services included on your application.  A specimen is not just a picture of your Trademark or logo.  Instead, a specimen is a real world example of how your mark is currently being used in commerce.
+
+*If you do not have your specimen ready or are not using your Trademark in commerce when this is due, a Statement of Use Extension can be filed with the USPTO to extend the deadline.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>lpbsi1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LP</name>
+    <style>none</style>
+    <subject>LP</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs.  In regard to your inquiry, LegalZoom can assist in creating a Limited Partnership (LP) on your behalf.  
+
+A Limited Partnership (LP) is a business entity that is comprised of at least two partners: a General Partner and a Limited Partner.  Liability protection is provided only to Limited Partners, who are also commonly known as silent investors.  General Partners are responsible for the operation and maintenance of the LP and therefore assume the liabilities incurred within the business.  A business entity, such as a Corporation or an LLC, may be designated as a partner of an LP. 
+
+For your reference, I have provided the fees and links to our Limited Partnership formation services below:
+
+LIMITED PARTNERSHIP
+Economy Package | $149.00 + state fee + shipping (20 - 35 business days)
+Standard Package | $259.00 + state fee + shipping (20 - 35 business days)
+Express Gold Package | $379.00 + state fee (7 - 10 business days)
+
+OPTIONAL SERVICES
+Federal Tax Identification Number (FEIN) Application Preparation | $30.00 (Included in Express Gold Package)
+FEIN Obtainment | $79.00 ($49.00 with Express Gold Package)
+
+Registered Agent Service | $159.00 for the first year
+
+TO GET STARTED:
+http://www.legalzoom.com/limited-partnerships/limited-partnership-overview.html
+FOR MORE INFORMATION:
+http://www.legalzoom.com/lp-guide/limited-partnership-defined.html
+
+Please feel free to contact LegalZoom at (888) 381-8758 if you have any further questions. Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

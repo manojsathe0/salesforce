@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Days_From_First_Ownership__c</fullName>
+        <description>Days from Lead or Opp&apos;s first ownership, part of the exit criteria</description>
+        <externalId>false</externalId>
+        <label>Days From First Ownership</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Days_from_Ownership__c</fullName>
+        <description>Days from Lead or Opp&apos;s first ownership, part of the exit criteria</description>
+        <externalId>false</externalId>
+        <label>Lead Days from Ownership</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_New_Stage_Activity_Limit__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead New Stage Activity Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Qualified_Stage_Activity_Limit__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Qualified Stage Activity Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Validated_Stage_Activity_Minimum__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Validated Stage Activity Minimum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Days_from_Ownership__c</fullName>
+        <externalId>false</externalId>
+        <label>Opp Days from Ownership</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_New_Stage_Activity_Limit__c</fullName>
+        <externalId>false</externalId>
+        <label>Opp New Stage Activity Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Qualified_Stage_Activity_Limit__c</fullName>
+        <externalId>false</externalId>
+        <label>Opp Qualified Stage Activity Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_Validated_Stage_Activity_Minimum__c</fullName>
+        <externalId>false</externalId>
+        <label>Opp Validated Stage Activity Minimum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>SEAD Configuration</label>
+    <visibility>Public</visibility>
+</CustomObject>

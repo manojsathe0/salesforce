@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip2500</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Clare</name>
+    <style>none</style>
+    <textOnly>Clare G.
+Manager, Copyright Division
+www.LegalZoom.com
+{!snippetVariable.ccphone} ext. 2500</textOnly>
+    <type>custom</type>
+</EmailTemplate>

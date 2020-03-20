@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>LegalZoom Lead Assignment Rule</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>saleslist@legalzoom.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.LeadSource</field>
+                <operation>equals</operation>
+                <value>Mobile</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Lead_Source_Detail__c</field>
+                <operation>equals</operation>
+                <value>Business Services</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

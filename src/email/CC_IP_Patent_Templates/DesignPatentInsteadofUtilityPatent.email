@@ -1,0 +1,60 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for considering LegalZoom for your Intellectual Property needs.<br/><br/>Upon closer review of your application, the core innovation of your invention appears to be heavily infused with design. That is, the new or improved use of the product stems directly from the way that it looks, such that the design cannot be separated from its innovative function. If you determine this is the case, then your invention may be best suited for a design patent rather than a utility patent. If you decide to file a design patent, you will not be able to use the provisional patent product, which is only available for utility patent applications.<br/><br/>Though utility patents are the most common form of patent, design patents are in a specialized class and the requirement standards and protection for each therefore differ. Design patents protect the design of an invention, while utility patents protect the way an invention is made and used. Some inventions qualify for only one type of patent protection, but you should also note that a small number of inventions may qualify for both design and utility patenting. Design patent applications may be filed by either the inventor, or by a registered patent attorney or agent (a current list is available at the United State Patent and Trademark Office (USPTO) website).<br/><br/>If you&#39;re not sure what type of patent protection is appropriate for your situation, please contact the USPTO at 1.800.786.9199 (ask for the Inventor&#39;s Assistance Center) or visit <a href=http://www.uspto.gov/web/offices/com/iip/index.htm>here</a> for more information.<br/><br/>LegalZoom is not a law firm and cannot provide you with legal advice. However, we want to make sure you are aware of the various options that are available to inventors and artists so that you can make a fully informed decision.<br/><br/>When considering this issue, please let us know whether:<br/><br/>(1) You believe, after reviewing these materials, that your invention qualifies for utility patent protection and would like us to move forward with this filing, OR<br/>(2) You would rather cancel the order and/or file for a design patent.<br/><br/>At this time, we can offer you a full refund if you decide to cancel. Alternatively, we can place your order on temporary hold, pending your decision.<br/><br/>{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<br/><br/>{!snippetVariable.ccsincerely}<br/><br/>{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

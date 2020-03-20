@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tm6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post Filing Correspondence from USPTO</name>
+    <style>none</style>
+    <subject>LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+The following correspondence has been forwarded to our office regarding your federal Trademark application. These correspondences are from the US Patent and Trademark Office (USPTO), and are generally either requesting additional information and/or updating you on the status of your application.
+
+If you have installed Anti-Spam filters or software on your email service, please ensure that legitimate emails from TEAS@uspto.gov is not falsely identified as spam or junk. If you wish to view and/or download your application information and correspondences from the USPTO, please visit here.
+
+Because LegalZoom is not a law firm, we are unable to provide legal advice. Although we assisted in the filing of your Trademark application, we are not your attorney. If you need to file a response, you may contact the USPTO Assistance Center at 800-786-9199 or call your examining attorney.
+
+* Members of Business Advantage Pro can receive further guidance from an attorney for no additional cost. If you purchased the Complete Coverage package, you can take advantage of your 30-day trial by simply signing into your LegalZoom Account here, and submitting a request through the Member Center link. If you are not a Business Advantage Pro member and would like more information on this affordable service, please visit here or call Customer Care at (877) 657-8787. Please note that Business Advantage Pro is not available in all states.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

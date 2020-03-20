@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Thank You General Email for Sales - EP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ty_sales_ep</name>
+    <style>none</style>
+    <subject>Thank you for Considering LegalZoom</subject>
+    <textOnly>legalzoom.com
+
+Dear {!Contact.FirstName},
+
+It was great talking to you today and thank you for considering LegalZoom.com.
+
+I understand you may have additional questions about our pricing, packages, and overall process. Please do not hesitate to call me directly at (800) 773-0888 ext. {!User.Extension} if you need any further assistance.  You can also find details about packages and pricing (including billing and subscription details) on our website for Estate Planning Bundles.  We also offer Wills, Trusts, and Power of Attorneys individually.
+
+Once again, thank you for choosing LegalZoom.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Street} {!User.City} {!User.State}, {!User.PostalCode}
+{!User.Phone} ext. {!User.Extension}
+
+Call Customer Care: (800) 773-0888  LegalZoom. Legal help for the modern world.
+
+Privacy Policy
+Terms of Use
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

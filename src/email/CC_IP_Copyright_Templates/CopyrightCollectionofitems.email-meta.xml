@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CRitemColl</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Copyright Collection of items</name>
+    <style>none</style>
+    <subject>Copyright Collection of items</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+
+You can register your copyright material of one item for $149.00 or you can register a &quot;collection&quot; of items for $149.00.
+
+A collection of items may include books, songs, photos, or other items, all included under one title. You may register all items in one collection, whether there are 2, 20, or more, as long as all items are listed under a single collection title and arranged in an organized fashion.  
+
+For example:
+
+Collection title: Take a Chance on Life
+
+1. Take a Chance
+2. Life Is Chances
+3. Whatever It Takes
+4. We Will Overcome
+
+If the items in the collection are unpublished, we require 1 copy of each for registration.
+
+If the items in the collection are published, the US Copyright Office requires 2 copies of each for registration, as well as a separate application for every item. To submit a separate application, please log back onto www.LegalZoom.com and submit a new order.
+
+Your work is under copyright protection the moment it is created and fixed in a tangible form that is perceptible either directly or with the aid of a machine or device.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

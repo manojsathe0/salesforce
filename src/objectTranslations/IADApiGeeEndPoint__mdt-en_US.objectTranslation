@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IADApiGeeEndPoint</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IADApiGeeEndPoints</value>
+    </caseValues>
+    <fields>
+        <label><!-- Is Async? --></label>
+        <name>Is_Async__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>DELETE</masterLabel>
+            <translation><!-- DELETE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GET</masterLabel>
+            <translation><!-- GET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PATCH</masterLabel>
+            <translation><!-- PATCH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POST</masterLabel>
+            <translation><!-- POST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PUT</masterLabel>
+            <translation><!-- PUT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- link --></label>
+        <name>link__c</name>
+    </fields>
+    <layouts>
+        <layout>IADApiGeeEndPoint Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

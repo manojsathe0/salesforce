@@ -1,0 +1,697 @@
+<apex:page controller="IADNewPaymentController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.lziad, 'main.css')}" />
+
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:includeScript value="{!URLFOR($Resource.IADJS)}"/>
+        <script type="text/javascript">
+            var profileId;
+            var apiIndex = 0;
+            var originalRec = false;
+
+            $( document ).ready(function() {
+                  jsUtility.makeDarkBorder();
+            });
+
+            function checkShowDupeModal(){
+                if($('#showDupeModal').val()=='true')
+                    $('#dupeModal').show();
+                else
+                    addNewPayment();
+            }
+            function hideDupeModal(){
+                $('#dupeModal').hide();
+            }
+
+            function checkProfileStatusAndIncrement(){
+                setTimeout(function(){
+                    var statusCode = $('#addPaymentStatusCode').val();
+                    console.log('checking profile status '+ statusCode);
+                    if (statusCode == '201') {
+                        sforce.console.fireEvent('RefreshPaymentProfileDropdown', 'EventMessage', null);
+
+                        incrementChain();
+                    }
+                }, 1000);
+
+            }
+            //increment API chain to get all subs / installments
+            function incrementChain() {
+                var apiChainSize = '{!apichainsize}';
+                console.log('here apiIndex' + apiIndex + ' apiChainSize ' + apiChainSize);
+                if (apiIndex < apiChainSize) {
+                    callAPIChain(apiIndex);
+                    apiIndex++;
+                    $('#updating').show();
+                }
+                else {
+                    clearMessages();
+                }
+            }
+            function closeCurrentTab() {
+                sforce.console.getEnclosingTabId(closeSubtab);
+            }
+            function closeCurrentTabAndRefreshCallingTab() {
+                sforce.console.fireEvent('RefreshTab', '{!tabId}', null);
+                sforce.console.getEnclosingTabId(closeSubtab);
+            }
+            var closeSubtab = function closeSubtab(result) {
+
+                var tabId = result.id;
+                sforce.console.closeTab(tabId);
+            };
+            function hideChangePayment() {
+                closeCurrentTabAndRefreshCallingTab();
+            }
+            function inputLimiter(e, allow) {
+                var AllowableCharacters = '';
+
+                if (allow == 'Letters') {
+                    AllowableCharacters = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                }
+                if (allow == 'Numbers') {
+                    AllowableCharacters = '1234567890';
+                }
+                if (allow == 'NameCharacters') {
+                    AllowableCharacters = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-.\'';
+                }
+                if (allow == 'NameCharactersAndNumbers') {
+                    AllowableCharacters = '1234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-\'';
+                }
+                if (allow == 'Currency') {
+                    AllowableCharacters = '1234567890.';
+                }
+                var k = document.all ? parseInt(e.keyCode) : parseInt(e.which);
+                if (k != 13 && k != 8 && k != 0) {
+                    if ((e.ctrlKey == false) && (e.altKey == false)) {
+                        return (AllowableCharacters.indexOf(String.fromCharCode(k)) != -1);
+                    }
+                    else {
+                        return true;
+                    }
+                }
+                else {
+                    return true;
+                }
+            }
+            function endPopulateProfiles() {
+               incrementChain();
+            }
+            function waitAndCallUpdate(){
+                setTimeout(function(){
+                    var apiChainSize = $('#apiChainSize').val();
+                    console.log('here update apiIndex' + apiIndex + ' apiChainSize ' + apiChainSize);
+                    incrementChainUpdate();
+                }, 1000);
+            }
+
+            function incrementChainUpdate() {
+                var apiChainSize = $('#apiChainSize').val();
+                console.log('here update apiIndex' + apiIndex + ' apiChainSize ' + apiChainSize);
+                if (apiIndex < apiChainSize) {
+                    callAPIChainUpdate(apiIndex);
+                    apiIndex++;
+                    $('#updating').show();
+                }
+                else{
+                     refreshOriginalRecord();
+                     if(!originalRec)
+                        closeModal();
+                }
+            }
+            function hideUpdating(){
+                $('#updating').hide();
+            }
+            function getSelectedCheckboxes(){
+                console.log('updating the profiles {!prevPage}'  );
+                var wrapIds = '';
+                 $(".wrapCB").each(function(index) {
+                    if ($(this).attr('checked')) {
+                        wrapIds += $(this).attr('id') + ',';
+                    }
+                    else{
+                        console.log($(this).attr('id')+  ' not checked');
+                    }
+                });
+                console.log('wrapids ' + wrapIds);
+                if(wrapIds!=''){
+                    originalRec = false;
+                    apiIndex = 0;
+                    callPopulateUpdateChains(wrapIds);
+                }
+            }
+            function checkIfRadioSelected() {
+              console.log('gotocase paymentMethod clicked');
+
+              try {
+                profileId = document.querySelector('input[name = "profileOptions"]:checked').value;
+                console.log('profileId ' + profileId);
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+                hideDupePanel();
+              }
+              catch (err) {
+                if (profileId == '')
+                  showUsrMsg();
+              }
+            }
+            var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+              var url = '/apex/IADEditPaymentPage?isdtp=vw&id='+profileId;
+              console.log('url ' +  url );
+              sforce.console.openSubtab(result.id, url, true, 'Edit Payment Profile');
+            };
+            function refreshOriginalRecord(){
+
+            }
+            function callUpdateOriginalRecord(){
+
+            }
+        </script>
+        <style>
+            #dataTable {
+            border-spacing: 15px;
+            border-collapse: separate;
+            width: 90%;
+            }
+            .slds-spinner_container{
+            z-index:99999;
+            }
+        </style>
+
+    </head>
+
+    <body>
+    <div class="slds" id="mainForm">
+        <apex:form id="theForm">
+            <apex:pageMessages />
+            <apex:actionFunction name="checkForDupe" action="{!populateTheProfiles}" rerender="hiddenInputs, dupePanel" status="statusUpdating" onComplete="checkShowDupeModal(); jsUtility.makeDarkBorder(); return false;"  />
+            <apex:actionFunction name="addNewPayment" action="{!addNewPayment}" rerender="newPaymentForm, hiddenInputs" status="changePaymentUpdating" onComplete="hideDupeModal(); jsUtility.makeDarkBorder();checkProfileStatusAndIncrement(); return false;" />
+
+            <!--Get Data -->
+            <!--make callout(s) to find inst and subs-->
+            <apex:actionFunction name="callAPIChain" action="{!makeAPICallout}" rerender="instSubUpdateModal, hiddenInputs" status="statusUpdating" onComplete="incrementChain(); return false;">
+                <apex:param name="apiIndex" value="" />
+            </apex:actionFunction>
+            <!-- callPopulateWrappers populate the gridwrappers after all the callouts are completed-->
+            <apex:actionFunction name="callPopulateWrappers" action="{!populateWrappers}" rerender="theForm, hiddenInputs" status="statusUpdating" oncomplete="callUpdateOriginalRecord(); jsUtility.makeDarkBorder();" />
+
+            <!--Update Data -->
+            <!-- callPopulateUpdateChains populate the list of updates (wrapIds) after user selections are made-->
+            <apex:actionFunction name="callPopulateUpdateChains" action="{!populateUpdateChains}" rerender="hiddenInputs" onComplete="waitAndCallUpdate(); return false" status="instSubUpdating" >
+                <apex:param name="wrapIds" value="" />
+            </apex:actionFunction>
+            <!--make callout(s) to update inst and subs-->
+            <apex:actionFunction name="callAPIChainUpdate" action="{!makeAPICallout}" status="instSubUpdating" onComplete="incrementChainUpdate(); return false;">
+                <apex:param name="apiIndex" value="" />
+            </apex:actionFunction>
+
+
+
+            <apex:actionFunction name="closeModal" action="{!closeModal}" rerender="theForm, hiddenInputs"  oncomplete="jsUtility.makeDarkBorder(); return false;" />
+            <apex:actionFunction name="clearMessages" action="{!newPaymentService.clearMessages}" rerender="theForm, hiddenInputs" status="statusUpdating" oncomplete="callPopulateWrappers(); jsUtility.makeDarkBorder(); return false;" />
+
+            <apex:actionStatus id="statusUpdating">
+                <apex:facet name="start">
+                    <div class="slds-spinner_container">
+                        <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+
+                    <div  class="slds-backdrop slds-backdrop--open background"></div>
+                </apex:facet>
+
+            </apex:actionStatus>
+            <apex:outputPanel id="hiddenInputs">
+                <input id="apiChainSize" type="hidden" value="{!apiChainSize}" />
+                <input id="addPaymentStatusCode" type="hidden" value="{!newPaymentService.statusCode}" />
+                <input id="showDupeModal" type="hidden" value="{!showDupeModal}" />
+            </apex:outputPanel>
+            <div id="dupeModal" style="display:none">
+                <apex:outputPanel id="dupePanel">
+                    <apex:actionFunction name="hideDupePanel" action="{!hideDupePanel}" rerender="dupePanel" onComplete="hideDupeModal();jsUtility.makeDarkBorder(); return false;" />
+
+                    <apex:actionStatus id="changePaymentUpdating">
+                        <apex:facet name="start">
+                            <div class="slds-spinner_container" style="">
+                                <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                    <div class="slds-spinner__dot-a"></div>
+                                    <div class="slds-spinner__dot-b"></div>
+                                </div>
+                            </div>
+
+                            <div  class="slds-backdrop slds-backdrop--open background"></div>
+                        </apex:facet>
+
+                    </apex:actionStatus>
+                    <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header" style="padding:16px 16px;">
+                                <h2 class="slds-text-heading--medium"><span style="color:red">Warning</span></h2>
+                            </div>
+                            <div class="slds-modal__content slds-p-around--medium">
+                                <div style=" text-align: center;">
+                                    There are already payment method(s) on file with this account number:
+                                    <!--<span style="color:red">Continue?</span>-->
+                                </div>
+                                <br/>
+                                <fieldset class="slds-form-element">
+                                    <apex:repeat value="{!dupeProfiles}" var="theProfile">
+                                        <div class="slds-form-element__control">
+                                            <label class="slds-radio">
+                                                <input type="radio" name="profileOptions" value ="{!theProfile.profileId}" />
+                                                <span class="slds-radio--faux" />
+                                                <span class="slds-form-element__label">{!theProfile.firstDigit}xxxx{!theProfile.last4Digits}</span>
+                                                <span class="slds-form-element__label">Exp: {!theProfile.month}-{!theProfile.year}</span>
+                                                <span class="slds-form-element__label">Created:<apex:outputText value="   {!theProfile.adjCreationDate}"/></span>
+                                            </label>
+                                        </div>
+                                    </apex:repeat>
+                                </fieldset>
+                            </div>
+                            <div class="slds-modal__footer">
+
+                                <span style="float:left;"><button class="slds-button slds-button--neutral" type="button" onclick="hideDupePanel();">Cancel</button></span>
+                                <button class="slds-button slds-button--neutral slds-button--brand" type="button" onclick="checkIfRadioSelected();">Update selected payment method</button>
+                                <button class="slds-button slds-button--destructive" type="button" onclick="addNewPayment();">Save anyway</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+
+                </apex:outputPanel>
+            </div>
+            <apex:outputPanel id="instSubUpdateModal" rendered="{!showModal}">
+
+
+                <script>
+                        $(document).ready(function() {
+                            var replaceAllclicked = false;
+                            var replaceSelectClicked = false;
+                            $('#replaceAll').click(function() {
+                                if (!replaceAllclicked) {
+                                    replaceAllclicked = true;
+                                    toggleCheckboxes(true);
+                                    if (replaceSelectClicked) {
+                                        $('#replaceSelect').click();
+                                    }
+                                }
+                                else {
+                                    replaceAllclicked = false;
+                                    toggleCheckboxes(false);
+                                    if (!replaceSelectClicked) {
+                                        $('#replaceSelect').click();
+                                    }
+                                }
+                                console.log('replaceAll here');
+                            });
+                            $('#replaceSelect').click(function() {
+                                console.log('replaceSelect here');
+                                if (!replaceSelectClicked) {
+                                    replaceSelectClicked = true;
+                                    if (replaceAllclicked) {
+                                        $('#replaceAll').click();
+                                    }
+                                }
+                                else {
+                                    replaceSelectClicked = false;
+                                    if (!replaceAllclicked) {
+                                        $('#replaceAll').click();
+                                    }
+                                }
+                            });
+                            function toggleCheckboxes(toCheck) {
+                                if (toCheck) {
+                                    $(".wrapCB").each(function(index) {
+                                        if (!$(this).attr('checked')) {
+                                            $(this).click();
+                                            $(this).attr('checked', true);
+                                        }
+                                    });
+                                }
+                                else if(!toCheck){
+                                    $(".wrapCB").each(function(index) {
+                                        if ($(this).attr('checked')) {
+                                            $(this).click();
+                                            $(this).removeAttr('checked');
+                                        }
+                                    });
+                                }
+                            }
+                            $('.wrapCB').click(function() {
+                                if ($(this).attr('checked')) {
+                                    $(this).removeAttr('checked');
+                                }
+                                else {
+                                    $(this).attr('checked', true);
+                                }
+                            });
+                        });
+                    </script>
+
+                <div id="changePayment">
+                    <apex:actionStatus id="instSubUpdating">
+                        <apex:facet name="start">
+                            <div class="slds-spinner_container">
+                                <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                    <div class="slds-spinner__dot-a"></div>
+                                    <div class="slds-spinner__dot-b"></div>
+                                </div>
+                            </div>
+
+                            <div  class="slds-backdrop slds-backdrop--open background"></div>
+                        </apex:facet>
+
+                    </apex:actionStatus>
+                    <div class="slds-modal slds-fade-in-open slds-modal--large" aria-hidden="false" role="dialog">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <p style="text-align:center">
+                                    Transaction Status : Approved
+                                    <br /> Authorization Code : {!newPaymentService.profileId}
+                                    <br /> {!responseData.firstDigit}XXX-XXXX-XXXX-{!responseData.last4Digits}
+                                    <br />
+                                            <span style="color:red">Attention : Customer has additional installment or recurring payments set up. See option below for instructions.
+                                            </span>
+                                </p>
+
+                            </div>
+                            <div class="slds-modal__content slds-p-around--medium">
+                                <strong>Option 1 :</strong>
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <label class="slds-checkbox">
+                                            <input type="checkbox" name="options" id="replaceAll" />
+                                            <span class="slds-checkbox--faux"></span>
+                                            <span class="slds-form-element__label">Replace all previous credit cards on file with this one for future scheduled recurring or installment payments (see table below)<span style = "color:red;"> [read each line item to the customer from the table below for confirmation]</span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <br />
+                                <strong>Option 2:</strong>
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <label class="slds-checkbox">
+                                            <input type="checkbox" name="options" id="replaceSelect" />
+                                            <span class="slds-checkbox--faux"></span>
+                                            <span class="slds-form-element__label">Replace only the credit cards selected below with this one for future scheduled recurring or installment payments (make your selection(s) below).<span style = "color:red;"> [read each line item to the customer from the table below and select the corresponding
+                                            check box upon receiving confirmation from the customer]</span></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <table class="slds-table slds-table--bordered slds-table--fixed-layout" style="font-size:12px;">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"><strong>Action</strong></th>
+                                        <!--<th scope="col"><strong>Order ID</strong></th>-->
+                                        <th scope="col"><strong>Description</strong></th>
+                                        <th scope="col"><strong>CCInfo</strong></th>
+                                        <th scope="col"><strong>Payment Status</strong></th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <apex:repeat value="{!gridWrappers}" var="wrap">
+
+                                        <tr class="slds-hint-parent" style="">
+
+                                            <td class="slds-cell-wrap">
+                                                <label class="slds-checkbox">
+                                                    <input id="{!IF(wrap.wrapType=='installment','inst','sub')}{!wrap.wrapId}" type="checkbox" name="options" class="slds-checkbox wrapCB"/>
+                                                    <span class="slds-checkbox--faux"></span>
+                                                </label>
+                                            </td>
+                                            <!--<td class="slds-cell-wrap">{!wrap.orderNum}</td>-->
+                                            <td class="slds-cell-wrap">{!wrap.orderDesc}</td>
+                                            <td class="slds-cell-wrap">{!wrap.ccInfo}</td>
+                                            <!--<td class="slds-cell-wrap">-->
+                                            <!--<apex:outputText value="   {!wrap.lastChargeDate}" />-->
+                                            <!--</td>-->
+                                            <!--<td class="slds-cell-wrap">${!wrap.lastChargeAmnt}</td>-->
+                                            <td class="slds-cell-wrap">{!wrap.status}</td>
+
+
+                                        </tr>
+                                    </apex:repeat>
+
+
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                            <div class="slds-modal__footer">
+
+                                <button class="slds-button slds-button--brand" type="button" onClick="getSelectedCheckboxes(); return false;">Update Credit Card Profiles</button>
+                                <button class="slds-button slds-button--neutral" type="button" onClick="hideChangePayment(); return false;">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                </div>
+
+
+            </apex:outputPanel>
+            <apex:outputPanel id="newPaymentForm">
+                <apex:pageMessages />
+
+                <c:IADMessageBox id="paymentMessages" theMessages="{!newPaymentService.iadMessages}" rendered="{!newPaymentService.iadMessages.size>0}"/>
+
+                <div class="slds-text-heading--small">Credit Card Profile Details:</div>
+                <div class="slds-form">
+                    <div class="slds-cell-shrink">
+                        <table id="dataTable" >
+                            <tr>
+                                <td class="">
+                                    <div class="slds-form-element ">
+                                        <label class="" for="payment type">
+                                            <span class="">Payment Type :</span>
+                                        </label>
+                                    </div>
+                                </td>
+
+                                <td class="">
+                                    <div class="slds-form-element ">
+                                        <div class="slds-select_container">
+                                            <apex:selectList value="{!newPayment.accountType}" multiselect="false" size="1" styleClass="slds-select" required="true">
+                                                <apex:selectOptions value="{!paymentTypes}" />
+                                            </apex:selectList>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div><label class=""></label></div>
+                                </td>
+                                <td class="">
+                                    <div><label class=""></label></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="" >
+                                    <div class="slds-form-element ">
+                                        <label class="" for="payment type">
+                                            <span class="">Card Number :</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="" id="CardNumber">
+                                    <div class="slds-form-element " id="CardNumber">
+                                        <apex:inputText value="{!newPayment.accountNumber}" styleClass="slds-input" size="16" maxlength="16" required="true" label="Card Number" onkeypress="return inputLimiter(event, 'Numbers');" />
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="slds-form-element " >
+                                        <label class="" for="payment type">
+                                            <span class="">Exp :</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <table>
+                                        <tr>
+                                            <td class="slds-size--1-of-2">
+                                                <div class="slds-form-element ">
+                                                    <div class="slds-select_container">
+                                                        <apex:selectList value="{!newPayment.month}" multiselect="false" size="1" styleClass="slds-select" required="true">
+                                                            <apex:selectOptions value="{!expMonths}" />
+                                                        </apex:selectList>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="slds-size--1-of-2">
+                                                <div class="slds-form-element ">
+                                                    <div class="slds-select_container">
+                                                        <apex:selectList value="{!newPayment.year}" multiselect="false" size="1" styleClass="slds-select" required="true">
+                                                            <apex:selectOptions value="{!expYears}" />
+                                                        </apex:selectList>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="" >
+                                    <div class="slds-form-element ">
+                                        <label class="" for="payment type">
+                                            <span class="">Account Holder First Name :</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="slds-form-element ">
+                                        <apex:inputText value="{!newPayment.firstName}" styleClass="slds-input" size="20" required="true" label="First Name" />
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="slds-form-element " >
+                                        <label class="" for="payment type">
+                                            <span class="">Last Name :</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="slds-form-element ">
+                                        <apex:inputText value="{!newPayment.lastName}" styleClass="slds-input" size="20" required="true" label="Last Name" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="">
+                                    <div class="slds-text-heading--small ">Billing Address :</div>
+                                </td>
+                                <td class="">
+                                    <div><label class=""></label></div>
+                                </td>
+                                <td class="">
+                                    <div><label class=""></label></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="" >
+                                    <div class="slds-form-element ">
+                                        <label class="" for="payment type">
+                                            <span class="">Street Address1 :</span>
+                                        </label>
+                                    </div>
+                                </td>
+
+                                <td class="">
+                                    <div class="slds-form-element ">
+                                        <apex:inputText value="{!newPayment.addressLine1}" styleClass="slds-input" size="20" required="true" label="Address1" />
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div><label class=""></label></div>
+                                </td>
+                                <td class="">
+                                    <div><label class=""></label></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="" >
+                                    <div class="slds-form-element ">
+                                        <label class="" for="payment type">
+                                            <span class="">Street Address2 :</span>
+                                        </label>
+                                    </div>
+                                </td>
+
+                                <td class="">
+                                    <div class="slds-form-element ">
+                                        <apex:inputText value="{!newPayment.addressLine2}" styleClass="slds-input" size="20" />
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div><label class=""></label></div>
+                                </td>
+                                <td class="">
+                                    <div><label class=""></label></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="" >
+                                    <div class="slds-form-element ">
+                                        <label class="" for="payment type">
+                                            <span class="">City :</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="slds-form-element ">
+                                        <apex:inputText value="{!newPayment.city}" styleClass="slds-input" required="true" label="City" />
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="slds-form-element " >
+                                        <label class="" for="payment type">
+                                            <span class="">State :</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="" >
+                                    <table>
+                                        <tr>
+                                            <td class="" align="left">
+                                                <div class="slds-form-element ">
+                                                    <apex:selectList value="{!newPayment.State}" multiselect="false" size="1" styleClass="slds-select" required="true">
+                                                        <apex:selectOptions value="{!statePicklist}" />
+                                                    </apex:selectList>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="" >
+                                    <div class="slds-form-element ">
+                                        <label class="" for="payment type">
+                                            <span class="">Phone Number :</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="slds-form-element ">
+                                        <apex:inputText value="{!newPayment.phone}" styleClass="slds-input" maxlength="10" required="true" label="Phone Number" onkeypress="return inputLimiter(event, 'Numbers');" />
+                                    </div>
+                                </td>
+                                <td class="" >
+                                    <div class="slds-form-element " >
+                                        <label class="" for="payment type">
+                                            <span class="">Zip :</span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td class="slds-size--1-of-3" align="left">
+                                    <div class="slds-form-element ">
+                                        <apex:inputText value="{!newPayment.zip}" styleClass="slds-input" maxlength="5" required="true" label="Zip" onkeypress="return inputLimiter(event, 'Numbers');" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="slds-m-top--xx-large slds-m-bottom--xx-large">
+                            <div>
+                                <button class="slds-button slds-button--neutral" onClick="closeCurrentTab();" type="button">Cancel</button>
+                                <button id="saveBtn" class="slds-button slds-button--brand" onClick="checkForDupe(); return false;" type="button">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </apex:outputPanel>
+
+        </apex:form>
+
+
+    </div>
+    </body>
+
+    </html>
+</apex:page>

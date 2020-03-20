@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HVCR Email New</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HVCR Emails New</value>
+    </caseValues>
+    <fields>
+        <label><!-- BCC --></label>
+        <name>BCCAddressesLong__c</name>
+    </fields>
+    <fields>
+        <label><!-- BCC --></label>
+        <name>BCCAddresses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Body --></label>
+        <name>BodyPlainText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Body --></label>
+        <name>Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- CC --></label>
+        <name>CCAddressesLong__c</name>
+    </fields>
+    <fields>
+        <label><!-- CC --></label>
+        <name>CCAddresses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- HVCR Emails New --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- HVCR Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- From --></label>
+        <name>FromAddressLong__c</name>
+    </fields>
+    <fields>
+        <label><!-- From --></label>
+        <name>FromAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsDraft --></label>
+        <name>IsDraft__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsInbound --></label>
+        <name>IsInbound__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsRead --></label>
+        <name>IsRead__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is this email repliable? --></help>
+        <label><!-- Repliable --></label>
+        <name>IsRepliable__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsSent --></label>
+        <name>IsSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original HVCR Email Id --></label>
+        <name>Original_HVCR_Email_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- ReplyToAddress --></label>
+        <name>ReplyToAddressLong__c</name>
+    </fields>
+    <fields>
+        <label><!-- ReplyToAddress --></label>
+        <name>ReplyToAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sent Date --></label>
+        <name>SentDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Case Pending</masterLabel>
+            <translation><!-- Case Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Resolved</masterLabel>
+            <translation><!-- Case Resolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Unresolved</masterLabel>
+            <translation><!-- Case Unresolved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- To --></label>
+        <name>ToAddressesLong__c</name>
+    </fields>
+    <fields>
+        <label><!-- To --></label>
+        <name>ToAddresses__c</name>
+    </fields>
+    <layouts>
+        <layout>HVCR Email New Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

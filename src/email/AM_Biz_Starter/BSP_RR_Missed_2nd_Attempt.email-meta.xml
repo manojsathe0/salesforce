@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP RR Missed 2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BSP RR Missed 2nd Attempt</name>
+    <style>none</style>
+    <subject>Enter Subject</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I was still unable to reach you by phone or email for your Roadmap Review at your scheduled time: DATE-TIME
+
+I truly believe the Roadmap Review will be beneficial to you and the success of your business formation, because it will further explain the attorney’s recommendations from your recent consultation. In short, this is the information you need to successfully establish your business.
+
+If you have any questions or you are ready to reschedule your Roadmap Review, please call me directly at (855) 787-1951 x{!User.Extension}, Monday–Friday from 6 am – 6pm PT or simply reply to his message. If I’m unavailable, you can also email bizhelp@legalzoom.com to reach the next available member of my team.
+
+As your dedicated Account Manager, I&apos;ll be your primary point of contact for all your business formation needs. Thank you again for reaching out to LegalZoom. I look forward to speaking with you soon.
+
+
+{!User.FirstName}
+Business Account Manager
+(855) 787-1951 x{!User.Extension}
+BizHelp@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

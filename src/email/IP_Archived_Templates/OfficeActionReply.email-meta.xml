@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tm oa9</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Office Action - Reply</name>
+    <style>none</style>
+    <subject>Office Action - Reply</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Office Actions are direct correspondences from the US Patent and Trademark Office (USPTO), and are generally either requesting additional information or updating you on the status of your application (or both). If you wish to view and/or download your Office Action, please visit here.  Based on the Office Action received, it appears that your Examining Attorney at the USPTO has the following questions:
+
+****INSERT OFFICE ACTION ISSUES****
+
+LegalZoom can assist you with preparing your Response to Office Action. Please address the following:
+******************For logos*****************
+
+Please reply to this email and attach a clear drawing of your logo, preferably in .jpg, .jpeg, .gif or .pdf format.
+
+******************For color logos*****************
+
+Please reply to this email and attach a clear drawing of your color logo and provide the following information:
+
+(1) A color claim naming the colors that are a feature of the mark; and (2) a separate statement describing where the color(s) appear on the mark. A color drawing will not publish without both of these statements.
+
+A properly worded color claim would read as follows:
+The color(s) &lt;name the color(s)&gt; are claimed as a distinctive feature of the mark.
+
+A properly worded description would read as follows:
+The color(s) &lt;name the color(s)&gt; appear in &lt;specify portion of mark on which color(s) appear&gt;.
+
+If the color claim or description is unclear or ambiguous, the examining attorney must require clarification.
+
+******************For specimens************
+
+Please reply to this email and attach an image of your specimen, preferably in .gif, .pdf, .jpeg or .jpg format. A specimen is a real world example of how your mark is currently being used in commerce, and is more than just a picture of your Trademark or logo. Please read below for more information.
+
+For services, acceptable specimens include brochures, flyers, advertisements, yellow page listings and internet websites. If submitting a business card as your specimen, that business card must state clearly the service provided, as well as including the Trademark. ***Please note that stationery is generally not acceptable as a specimen for services.***
+
+For goods, acceptable specimens include labels or tags attached to the product, packaging material, instruction manuals and containers which display the Trademark. ***Please note that websites, advertisements, brochures, business cards, catalogs and stationery are generally not acceptable specimens for goods.***
+
+Otherwise, you may contact the USPTO Assistance Center at 800-786-9199 or call your Examining Attorney: XXXXXX at XXX-XXX-XXXX. Additional instructions can be found at the bottom of your Office Action.
+
+*************************************************
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Best regards,
+
+The LegalZoom Team
+
+* {!snippetVariable.tmoa_bap}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

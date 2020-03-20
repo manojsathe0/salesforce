@@ -1,0 +1,14 @@
+TEST HTML VERSION
+
+{!Order_Item__c.Name}
+{!Order_Item__c.LZ_Order_ID__c}
+{!Order_Item__c.LZ_Order_Item_ID__c}
+{!Order_Item__c.Order__c}
+{!Order_Item__c.OrderId__c}
+{!Order_Item__c.User_Order_ID__c}
+{!Order360__c.OrderId__c}
+{!Order__c.OwnerId}
+{!Order__c.OrderID__c}
+{!Order__c.User_Order_ID__c}
+
+{!User.FirstName} {!User.LastName}

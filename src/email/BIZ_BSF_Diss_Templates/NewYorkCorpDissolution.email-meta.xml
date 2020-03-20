@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>nydisscorp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>New York Corp Dissolution</name>
+    <style>none</style>
+    <subject>New York Corp Dissolution</subject>
+    <textOnly>Your Legalzoom Order #XXXXXXXX ? URGENT ACTION REQUIRED
+
+Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your Dissolution order.  Attached, please find the customized Certificate of Dissolution and Power of Attorney Tax Authorization Form for your entity. In order to ensure your order is processed as quickly as possible, please follow the steps listed below. 
+
+&gt; Print two (2) copies of each document on white paper using black ink only.
+&gt; Sign your name in black ink on both copies of the Certificate of Dissolution where indicated.
+&gt; Complete and sign (where applicable) sections 1, 3, 6 and 7 of the Power of Attorney Tax Authorization Form. Please note that section 7 must either be signed by two disinterested individuals. In lieu of signing, the document can be notarized on page 3. We will not be able to proceed with your order unless one of these actions has been completed. 
+&gt; Ensure your Federal Employer Identification Number (FEIN) is used on the form. Under no circumstances should you include your personal Social Security Number on any of the documents. 
+&gt; Do not make any changes to the attached Certificate of Dissolution as it will result in delays with your order.  If you need to make changes, please contact our Customer Support.
+&gt; Mail the documents to our address listed below.  Please note that we cannot accept faxes as the state office will only accept original signed documents.
+
+Courier Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd.
+10th Flr.
+Glendale, CA 91203
+
+USPS Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd., 10th Flr.
+POB 29096
+Glendale, CA 91203
+
+&gt; Please ensure that your company is in good standing with all applicable governmental agencies (Secretary of State, Tax Board, etc). We will not be able to proceed with dissolving your company unless it is in good standing.
+
+If you have any questions regarding your order, please contact our Customer Support at (800) 773-0888 or customercare@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

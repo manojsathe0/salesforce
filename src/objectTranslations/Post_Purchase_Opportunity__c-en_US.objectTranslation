@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PostPurchaseOpportunity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PostPurchaseOpportunity</value>
+    </caseValues>
+    <fields>
+        <label><!-- Base Product Name --></label>
+        <name>Base_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact State --></label>
+        <name>Contact_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Processing Status --></label>
+        <name>Order_Processing_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Volume --></label>
+        <name>Order_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vertical --></label>
+        <name>Vertical__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

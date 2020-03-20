@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Office Action - Suspended Record Assignm</name>
+    <style>none</style>
+    <subject>Office Action - Suspended Record Assignm</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Office Actions are direct correspondences from the US Patent and Trademark Office (USPTO), and are generally either requesting additional information or updating you on the status of your application (or both). The Office Action you received is called a Suspension Letter. Suspension Letters suspend the action on an application. If you wish to view and/or download your Office Action, please visit here.
+
+Based on your Suspension Letter, it appears your Examining Attorney has suspended action on your Trademark application pending recordation of an ownership assignment relating to your Trademark.
+
+You may submit a request to remove your application from suspension by presenting appropriate evidence that the assignment in question has been recorded, or to present and/or other arguments related to the ground for suspension stated in your Suspension Letter. If you choose not to present arguments during suspension, it will not affect your right to present arguments later should the USPTO in fact refuse to register your Trademark. If a refusal does issue, you will have six (6) months from the mailing or e-mailing date of the Office Action containing that refusal to submit any response you wish.
+
+Otherwise, you may contact the USPTO Assistance Center at 800-786-9199 or call your Examining Attorney: XXXXXX at XXX-XXX-XXXX. Additional instructions can be found at the bottom of your Office Action.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for using LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+___________________________________
+
+{!snippetVariable.tmoa_bap}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

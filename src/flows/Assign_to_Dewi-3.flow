@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Assign to Dewi {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Assign to Dewi</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Assign_to_Dewi_Smith</name>
+        <label>Assign to Dewi Smith</label>
+        <locationX>220</locationX>
+        <locationY>207</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RecordID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Project_Request_Approver__c</field>
+            <value>
+                <stringValue>005G0000001qs0NIAQ</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Shared_Services_Requests__c</object>
+    </recordUpdates>
+    <startElementReference>Assign_to_Dewi_Smith</startElementReference>
+    <variables>
+        <name>RecordID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>SSRApprover</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>SSRRequestApprover</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>dissohi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Incorporator</name>
+    <style>none</style>
+    <subject>Incorporator</subject>
+    <textOnly>SUBJECT LINE:  URGENT ACTION REQUIRED
+
+Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your dissolution order.  Please follow the steps listed below to complete your order.
+
+Next steps:
+? Do not make any changes to the attached document as it will result in delays with your order.  If you need to make changes, please contact our Customer Support.
+? Print two (2) copies of the document on white paper using black ink only.  
+? Page 1: review information only (no additional action needed)
+? Page 2: no action required
+? Page 3: please sign and date as the Authorized Representative.
+? Page 4: The Ohio Department of Taxation, Ohio Job &amp; Family Services, Treasurer of the county of your business, and Ohio Bureau of Workers? Compensation must be notified in writing that you are dissolving your company.  Please complete the ?DATE NOTIFIED?.  This page must be signed in the presence of a public notary.  In addition, the public notary must include his/her notary seal to validate this page. 
+? Page 5: Select one of the boxes marked ?A? or ?B? in the presence of a public notary.  In addition, the public notary must include his/her notary seal to validate this page. 
+? Mail the documents to our address listed below.  Please note that we cannot accept faxes as the state office will only accept original signed documents.
+
+LegalZoom.com, Inc.
+101 N. Brand Blvd., 10th Floor
+POB 29096
+Glendale, CA 91209-9096
+Attn: Business Filings (Order #XXXXXXX)
+
+? Please be advised that your company must be in good standing before the state will process the dissolution. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

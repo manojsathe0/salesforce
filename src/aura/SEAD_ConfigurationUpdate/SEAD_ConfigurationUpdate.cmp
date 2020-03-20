@@ -1,0 +1,906 @@
+<!--
+ - Created by jboles on 3/9/2017.
+ -->
+
+ <aura:component description="SEAD_ConfigurationUpdate" controller="SEAD_ConfigurationController">
+   
+    
+        <aura:handler name="init" action="{!c.init}" value="{!this}"  />
+        <aura:attribute name="config" type="SEAD_Configuration__c"/>
+        <aura:attribute name="configOnBoardingScoring" type="SEAD_Configuration__c"/>
+        <aura:attribute name="configChildren" type="SEAD_Scoring_Time__c[]"/>
+        <aura:attribute name="configPercentage" type="SEAD_Scoring_Percent__c[]"/>
+        <aura:attribute name="configChild" type="SEAD_Scoring_Time__c"  default="{ 'sobjectType': 'SEAD_Scoring_Time__c', 'Name': '', 'Minimum__c': '','Maximum__c': '','Score__c':'', 'Time_Type__c':''}"/>
+        <aura:attribute name="configPercent" type="SEAD_Scoring_Percent__c"  default="{ 'sobjectType': 'SEAD_Scoring_Percent__c', 'Name': '', 'Score__c':''}"/>
+        <aura:attribute name="tabId" type="String" />
+        <aura:attribute name="objectType" type="String" />
+        <aura:attribute name="errorMessage" type="string"/>
+        <aura:attribute name="selectOptions" type="Integer[]" />
+        <aura:attribute name="selectOptionsPercentage" type="Integer[]" />
+        <!--<aura:method name="updatetable" action="{!c.init}" description="method for rendered list after edit, delete and ad"/>
+        <aura:method name="updatePtable" action="{!c.getPercent1}" description="method for rendered list after edit, delete and ad"/> -->
+        <aura:method name="saveConfig" action="{!c.saveConfig}"/>
+        <aura:method name="saveConfigChild" action="{!c.saveConfigChild}"/>
+        <aura:attribute name="recId" type="string" default='' />
+        <aura:attribute name="precId" type="string" default=''/>
+        <aura:attribute name="switchOnboardingOpp" type="String" default="" />
+    
+    
+        
+        
+    
+        <style>
+            .hideContainer{
+                display:none;
+            }
+        </style>
+    
+        <div class="slds-notify_container hideContainer" style="position:relative;" aura:id="success">
+             
+            <div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture" role="alert">
+                <span class="slds-assistive-text">Info</span>
+                <h1 class="slds-text-heading--small">Update Successful!</h1>
+            </div>
+        </div>
+        <div class="slds-notify_container hideContainer" style="position:relative;" aura:id="failure">
+            <div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                <span class="slds-assistive-text">Info</span>
+                <h1 class="slds-text-heading--small">Update Failed! {!v.errorMessage}</h1>
+            </div>
+        </div>
+        <div class="slds-align--absolute-center" style="float:left">
+           
+            <article class="slds-card slds-m-around--small" >
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                           <span class="slds-icon_container slds-icon-custom-62" title="SEAD Configuration Editor">
+                               <c:svgIcon svgPath="/resource/SLDS0122/assets/icons/custom-sprite/svg/symbols.svg#custom19" class="slds-icon" category="custom" size="small" name="settings" />
+                           </span>
+                        </div>
+                        
+                        <div class="slds-media__body">
+                            <h2>
+                                <span class="slds-text-heading--small">SEAD Configuration Editor</span>
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+                
+                <ul class="slds-tabs--scoped__nav" role="tablist">
+                    <li class="slds-tabs--scoped__item slds-text-body--small slds-active" title="Lead Configuration" role="presentation" aura:id="leadSuperTab">
+                        <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="leadSuperTab" id="leadSuperTab_Item" onclick="{!c.focusLeadTab}" ><b>Lead Configuration</b></a>
+                    </li>
+                    <li class="slds-tabs--scoped__item slds-text-body--small" title="Opportunity Configuration" role="presentation" aura:id="oppSuperTab">
+                        <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="oppSuperTab" id="oppSuperTab_Item" onclick="{!c.focusOppTab}" ><b>Opportunity Configuration</b></a>
+                    </li>
+    
+                </ul>
+                
+                <div class="slds-card__body" style="background-color:white; border: 1px solid rgb(216, 221, 230);">
+    
+                    <div class="slds-tabs--scoped__content slds-show" aura:id="leadSuperPage">
+                        <ul class="slds-tabs--scoped__nav" role="tablist">
+                            <li class="slds-tabs--scoped__item slds-text-body--small slds-active" title="Lead Scoring" role="presentation" aura:id="leadScoreTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="leadScoreTab" id="leadScoreTab_Item" onclick="{!c.focusLeadScore}" ><b>Lead Scoring</b></a>
+                            </li>
+                            <li class="slds-tabs--scoped__item slds-text-body--small" title="Lead Entry / Exit Criteria" role="presentation" aura:id="leadEntryExitTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="leadEntryExitTab" id="leadEntryExitTab_Item" onclick="{!c.focusLeadEntryExit}" ><b>Lead Entry / Exit</b></a>
+                            </li>
+                            <li class="slds-tabs--scoped__item slds-text-body--small" title="Questionnaire Scoring" role="presentation" aura:id="questTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="leadEntryExitTab" id="QuestTab_Item" onclick="{!c.focusQuest}" data-data="Questionnaire" data-object-type="Lead"><b>Questionnaire Scoring</b></a>
+                            </li>
+                            <li class="slds-tabs--scoped__item slds-text-body--small" title="Website Scoring" role="presentation" aura:id="webTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="leadEntryExitTab" id="Web_Item" onclick="{!c.focusWeb}"  data-data="Website" data-object-type="Lead"><b>Website Scoring</b></a>
+                            </li>
+                            <li class="slds-tabs--scoped__item slds-text-body--small" title="Customer Scoring" role="presentation" aura:id="custTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="leadEntryExitTab" id="Cust_Item" onclick="{!c.focusCust}" data-data="Customer" data-object-type="Lead"><b>Customer Engagement Scoring</b></a>
+                            </li>
+                            
+                            <!--
+                            Put back when we release Opportunity
+                            <li class="slds-tabs&#45;&#45;scoped__item slds-text-body&#45;&#45;small" title="Opp" role="presentation" aura:id="oppTab">-->
+                                <!--<a class="slds-tabs&#45;&#45;scoped__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="oppTab" id="oppTab_item" onclick="{!c.swapTabs}"><b>Opportunity</b></a>-->
+                            <!--</li>-->
+                        </ul>
+                        <div aura:id="leadScorePage" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="leadScoreTab_Item">
+                            <fieldset class="slds-form--compound">
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-01">Initial</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Score_Initial__c}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Abandoner</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Abandoner_Score__c}" />
+                                        </div>
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Chat</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Chat_Score__c}" />
+                                        </div>
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Email</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Email_Score__c}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Inbound</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Inbound_Score__c}" />
+                                        </div>
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Mobile</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Mobile_Score__c}" />
+                                        </div>
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Social Media</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Social_Media_Score__c}" />
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div aura:id="leadEntryExitPage" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="leadEntryExitTab_Item">
+                            <fieldset class="slds-form--compound">
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>Entry Criteria Stage Activity</b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                                <br/>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-02">New</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_New_Stage_Activity_Limit__c}" />
+                                        </div>
+                                        <div class="slds-form-element"  style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Qualified</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Qualified_Stage_Activity_Limit__c}" />
+                                        </div>
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Validated</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Validated_Stage_Activity_Minimum__c}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>Lead Exit Criteria</b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                                <br/>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-01">Days from Ownership</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Lead_Days_from_Ownership__c}" />
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div aura:id="questPage" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="questPageTab_Item">
+                            <br/>
+                            <br/>
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>Time Based Score</b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                            <br/>
+                        <br/>
+                            
+                            <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                            <thead>
+                            <tr class="slds-text-title--caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Min">Min</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Max">Max</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Time Type">Time Type</div>
+                                </th>                           
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Score">Score</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Action">Action</div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <aura:iteration items="{!v.configChildren}" var="child">
+                                  <tr>
+                                        <td data-label="Min">
+                                           <div class="slds-truncate">{!child.Minimum__c}</div>  
+                                        </td>
+                                        <td data-label="Max">
+                                            <div class="slds-truncate" >{!child.Maximum__c}</div>
+                                        </td>
+                                        <td data-label="Min Time Type">
+                                            <div class="slds-truncate">{!child.Time_Type__c}</div>
+                                        </td>                                   
+                                        <td data-label="Score">
+                                            <div class="slds-truncate">{!child.Score__c}</div>
+                                        </td>
+                                        <td data-label="Action">
+                                            <div class="slds-truncate" ><a href="" onclick="{!c.editScore}"  data-data="{!child.Id}" rerender="childtable">Edit</a> | <a href="" data-data="{!child.Id}" onclick="{!c.deleteScore}" rerender="childtable" >Delete</a></div>
+                                        </td>
+                                        
+                                    </tr> 
+                                </aura:iteration>
+                            </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <div aura:id="addEditBlock" class="slds-hide">
+                                <div class="slds-form-element__row" style="color:red;">
+                                         <ui:outputText aura:id="warnings" value="" class="text" />
+                                </div>
+                                <fieldset class="slds-form--compound">
+                                    <div class="slds-form-element__group">
+                                        <div class="slds-form-element__row">
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label" for="select-01">Time Type</label>
+                                                <div class="slds-form-element__control" >
+                                                    <div class="slds-select_container" >
+                                                        <!--<select id="select-01" class="slds-select" >
+                                                            <option>Minutes</option>
+                                                            <option>Hours</option>
+                                                        </select> -->
+                                                        <ui:inputSelect aura:id="timeType" class="slds-select" value="{!v.configChild.Time_Type__c}" >
+                                                            <ui:inputSelectOption text="Minutes" />
+                                                            <ui:inputSelectOption text="Hours" />
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>                                     
+                                            <div class="slds-form-element" style="visibility:hidden">
+                                                <label class="slds-form-element__label" for="input-03">Score</label>
+                                                <ui:inputText class="slds-input"  />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+                                <fieldset class="slds-form--compound" >
+                                    <div class="slds-form-element__group">
+                                        <div class="slds-form-element__row">                                        
+                                            <div class="slds-form-element" >
+                                                <label class="slds-form-element__label" for="select-01">Min Time</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <ui:inputSelect aura:id="minSelected" class="slds-select"  >
+                                                            <aura:iteration items="{!v.selectOptions}" var="selectOption">
+                                                                <!-- Padma modified <ui:inputSelectOption text="{!''selectOption}" label="{!selectOption}"/> -->
+                                                                <ui:inputSelectOption aura:Id="minTSel" text="{!''+selectOption}" label="{!selectOption}" />
+                                                            </aura:iteration>
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label" for="select-01">Max Time</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <ui:inputSelect aura:id="maxSelected" class="slds-select" >
+                                                            <aura:iteration items="{!v.selectOptions}" var="selectOption">
+                                                               <!-- Padma modified <ui:inputSelectOption text="{!selectOption}" label="{!selectOption}"/> -->
+                                                               <ui:inputSelectOption aura:Id="maxTSel" text="{!''+selectOption}" label="{!selectOption}" />
+                                                            </aura:iteration>
+                                                            <!--<ui:inputSelectOption text="∞" label="∞"/> -->
+                                                            <ui:inputSelectOption text="99" label="99"/>
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label"  for="input-03">Score</label>
+                                                <ui:inputText class="slds-input" aura:id="score" value="{!v.configChild.Score__c}" />
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </fieldset>
+                                <div class="slds-no-flex">
+                                    <lightning:button aura:id="saveScore" variant="brand" label="Save Score" onclick="{!c.saveConfigChild}"/> | <lightning:button aura:id="cancelScore" variant="brand" label="Cancel Score" onclick="{!c.cancelConfigChild}"/>
+                                </div>
+                            </div>
+                
+                            <div class="slds-no-flex">
+                                <lightning:button aura:id="addNewBtn" variant="brand" label="Add New Score" onclick="{!c.addNewScore}"/>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div aura:id="percentBlock" class="slds-hide">
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>Percentage Based Score</b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                            <br/>
+                        <br/>
+                            <!-- Begin of Percentage Score section -->
+                            <table   id="percenttable" class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                <thead>
+                                <tr class="slds-text-title--caps">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Min">Min</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Max">Max</div>
+                                    </th>                           
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Score">Score</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Action">Action</div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.configPercentage}" var="percent">
+                                        <tr>
+                                            <td data-label="Min">
+                                               <div class="slds-truncate">{!percent.Minimum__c}%</div>                                        
+                                                 
+                                            </td>
+                                            <td data-label="Max">
+                                                <div class="slds-truncate" >{!percent.Maximum__c}%</div>
+                                            </td>
+                                            <td data-label="Score">
+                                                <div class="slds-truncate">{!percent.Score__c}</div>
+                                            </td>
+                                            <td data-label="Action">
+                                                <div class="slds-truncate" ><a href="" onclick="{!c.editPercent}"  data-data="{!percent.Id}" rerender="percenttable">Edit</a> | <a href="" data-data="{!percent.Id}" onclick="{!c.deletePercent}" rerender="percenttable" >Delete</a></div>
+                                            </td>
+                                            
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                              <div aura:id="addEditBlockPercent" class="slds-hide">                            
+                                <div class="slds-form-element__row" style="color:red;">
+                                         <ui:outputText aura:id="perwarnings" value="" class="text" />
+                                </div>
+                                <fieldset class="slds-form--compound" >
+                                    <div class="slds-form-element__group">
+                                        <div class="slds-form-element__row">                                        
+                                            <div class="slds-form-element" >
+                                                <label class="slds-form-element__label" for="select-01">Min Percentage</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <ui:inputSelect aura:id="minPercent" class="slds-select" >
+                                                            <aura:iteration items="{!v.selectOptionsPercentage}" var="perceentOption">
+                                                                <!-- Padma modified <ui:inputSelectOption text="{!''selectOption}" label="{!selectOption}"/> -->
+                                                                <ui:inputSelectOption text="{!''+perceentOption}" label="{!perceentOption}" />
+                                                            </aura:iteration>
+                                                            <!--<ui:inputSelectOption text="" label="∞"/> -->
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label" for="select-01">Max Percentage</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <ui:inputSelect aura:id="maxPercent" class="slds-select" >
+                                                            <aura:iteration items="{!v.selectOptionsPercentage}" var="perceentOption">
+                                                               <!-- Padma modified <ui:inputSelectOption text="{!selectOption}" label="{!selectOption}"/> -->
+                                                               <ui:inputSelectOption text="{!''+perceentOption}" label="{!perceentOption}" />
+                                                            </aura:iteration>
+                                                          <!-- <ui:inputSelectOption text="" label="∞"/> -->
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label"  for="input-03">Score</label>
+                                                <ui:inputText class="slds-input" aura:id="perscore" value="{!v.configPercent.Score__c}" />
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </fieldset>
+                                <div class="slds-no-flex">
+                                    <lightning:button aura:id="savPercent" variant="brand" label="Save Score" onclick="{!c.saveConfigPercent}"/> | <lightning:button aura:id="cancelPercent" variant="brand" label="Cancel Percent" onclick="{!c.cancelConfigPercent}"/>
+                                </div>
+                            </div>
+                             <div class="slds-no-flex">
+                                <lightning:button aura:id="addPercent" variant="brand" label="Add New Score" onclick="{!c.addNewPercent}"/>
+                            </div> 
+                            <br/>
+                            <br/>
+                          </div>
+                        </div>                  
+                        
+         
+                        </div>
+                    
+                    
+                    <!--  The following section adds Opp functionality
+                        Created by Artyom M.
+                        Per Stories: B-16778, B-18406, B-18408, B-18409, B-18410
+                        
+                        START
+                      -->   
+                    <div class="slds-tabs--scoped__content slds-hide" aura:id="oppSuperPage">
+                        <ul class="slds-tabs--scoped__nav" role="tablist">
+                            <li class="slds-tabs--scoped__item slds-text-body--small slds-active" title="Opp Scoring" role="presentation" aura:id="oppScoreTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="oppScoreTab" id="oppScoreTab_Item" onclick="{!c.focusOppScore}" ><b>Opp Scoring</b></a>
+                            </li>
+                            <li class="slds-tabs--scoped__item slds-text-body--small" title="Opp Entry / Exit Criteria" role="presentation" aura:id="oppEntryExitTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="oppEntryExitTab" id="oppEntryExitTab_Item" onclick="{!c.focusOppEntryExit}" ><b>Opp Entry / Exit</b></a>
+                            </li>
+                            <li class="slds-tabs--scoped__item slds-text-body--small" title="Opp Questionnaire Scoring" role="presentation" aura:id="oppQuestTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="oppQuestTab" id="OppQuestTab_Item" onclick="{!c.focusOppQuest}" data-data="Questionnaire" data-object-type="Opp"><b>Opp Questionnaire Scoring</b></a>
+                            </li>
+                            <li class="slds-tabs--scoped__item slds-text-body--small" title="Opp Website Scoring" role="presentation" aura:id="OppWebTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="OppWebTab" id="OppWebTab_Item" onclick="{!c.focusOppWeb}"  data-data="Website" data-object-type="Opp"><b>Opp Website Scoring</b></a>
+                            </li>
+                            <li class="slds-tabs--scoped__item slds-text-body--small" title="Opp Customer Scoring" role="presentation" aura:id="oppCustTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="oppCustTab" id="oppCustTab_Item" onclick="{!c.focusOppCust}" data-data="Customer" data-object-type="Opp"><b>Opp Customer Engagement Scoring</b></a>
+                            </li>
+                              <li class="slds-tabs--scoped__item slds-text-body--small" title="Opp Onboard Scoring" role="presentation" aura:id="opponboardTab">
+                                <a class="slds-tabs--scoped__link" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="opponboardTab" id="opponboard_Item" onclick="{!c.focusOpponboard}" data-data="Onboard" data-object-type="Opp"><b>Opp Onboarding Scoring</b></a>
+                            </li>
+                        </ul>
+                        
+                        <div aura:id="oppScorePage" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="oppScoreTab_Item">
+                            <fieldset class="slds-form--compound">
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-01">Initial</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Score_Initial__c}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Abandoner</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Abandoner_Score__c}" />
+                                        </div>
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Chat</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Chat_Score__c}" />
+                                        </div>
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Email</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Email_Score__c}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Inbound</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Inbound_Score__c}" />
+                                        </div>
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Mobile</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Mobile_Score__c}" />
+                                        </div>
+                                        <div class="slds-form-element" >
+                                            <label class="slds-form-element__label" for="input-01">Social Media</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Social_Media_Score__c}" />
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div aura:id="oppEntryExitPage" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="oppEntryExitTab_Item">
+                            <fieldset class="slds-form--compound">
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>Entry Criteria Stage Activity</b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                                <br/>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-02">New</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_New_Stage_Activity_Limit__c}" />
+                                        </div>
+                                        <div class="slds-form-element"  style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Qualified</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Qualified_Stage_Activity_Limit__c}" />
+                                        </div>
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Validated</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Validated_Stage_Activity_Minimum__c}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>Lead Exit Criteria</b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                                <br/>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-01">Days from Ownership</label>
+                                            <ui:inputText class="slds-input" value="{!v.config.Opp_Days_from_Ownership__c}" />
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div aura:id="opponboardPage" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="oppEntryExitTab_Item">
+                            <!-- @Sai -->
+                            <div class="tab-picklist-head">
+                                <lightning:select name="oppOnboardSelect" aura:id="switchOnboardSelect" label="Please select opp onboarding type" 
+                                    required="true" onchange="{!c.switchOnboardOpp}">
+                                    <option value="" selected="true">choose one...</option>
+                                    <option value="LLC" text="LLC"/>
+                                    <option value="INC" text="INC"/>
+                                </lightning:select>
+                            </div>
+                            <aura:if isTrue="{!v.switchOnboardingOpp}">
+                            <fieldset class="slds-form--compound">
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>{!v.switchOnboardingOpp} Opportunity Onboarding Scoring </b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                                <br/>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-02">RA</label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.RA__c}" />
+                                        </div>
+                                        <div class="slds-form-element"  style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Tax</label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.Tax__c}" />
+                                        </div>
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">BAP</label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.BAP__c}" />
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                         <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Compliance</label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.Compliance__c}" />
+                                        </div>
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-02">Ein</label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.EIN__c}" />
+                                        </div>
+                                        <div class="slds-form-element"  style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Economy</label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.Economy__c}" />
+                                        </div>
+                                      
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row">
+                                          <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Express Gold</label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.Express_Gold__c}" />
+                                        </div>
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-03">Standard</label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.Standard__c}" />
+                                        </div>
+                                        <aura:if isTrue="{!v.switchOnboardingOpp == 'LLC'}">
+                                        <div class="slds-form-element" style="width:33%">
+                                            <label class="slds-form-element__label" for="input-02">Tm Search </label>
+                                            <ui:inputText class="slds-input" value="{!v.configOnBoardingScoring.TM_search__c}" />
+                                        </div>
+                                        </aura:if>
+                                    </div>
+                                </div>
+                                
+                                
+                            </fieldset>
+                        <aura:set attribute="else">
+                                  <div style="font-size: 20px; color: red">Please select any value...</div>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                        
+                        <div aura:id="oppQuestPage" class="slds-tabs--scoped__content slds-hide" role="tabpanel" aria-labelledby="oppQuestPageTab_Item">
+                            <br/>
+                            <br/>
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>Time Based Score</b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                            <br/>
+                            <br/>
+                            
+                            <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                            <thead>
+                            <tr class="slds-text-title--caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Min">Min</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Max">Max</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Time Type">Time Type</div>
+                                </th>                           
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Score">Score</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Action">Action</div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <aura:iteration items="{!v.configChildren}" var="child">
+                                  <tr>
+                                        <td data-label="Min">
+                                           <div class="slds-truncate">{!child.Minimum__c}</div>  
+                                        </td>
+                                        <td data-label="Max">
+                                            <div class="slds-truncate" >{!child.Maximum__c}</div>
+                                        </td>
+                                        <td data-label="Min Time Type">
+                                            <div class="slds-truncate">{!child.Time_Type__c}</div>
+                                        </td>                                   
+                                        <td data-label="Score">
+                                            <div class="slds-truncate">{!child.Score__c}</div>
+                                        </td>
+                                        <td data-label="Action">
+                                            <div class="slds-truncate" ><a href="" onclick="{!c.oppEditScore}"  data-data="{!child.Id}" rerender="childtable">Edit</a> | <a href="" data-data="{!child.Id}" onclick="{!c.oppDeleteScore}" rerender="childtable" >Delete</a></div>
+                                        </td>
+                                        
+                                    </tr> 
+                                </aura:iteration>
+                            </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                            <div aura:id="oppAddEditBlock" class="slds-hide">
+                                <div class="slds-form-element__row" style="color:red;">
+                                         <ui:outputText aura:id="oppWarnings" value="" class="text" />
+                                </div>
+                                <fieldset class="slds-form--compound">
+                                    <div class="slds-form-element__group">
+                                        <div class="slds-form-element__row">
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label" for="select-01">Time Type</label>
+                                                <div class="slds-form-element__control" >
+                                                    <div class="slds-select_container" >
+                                                        <!--<select id="select-01" class="slds-select" >
+                                                            <option>Minutes</option>
+                                                            <option>Hours</option>
+                                                        </select> -->
+                                                        <ui:inputSelect aura:id="oppTimeType" class="slds-select" value="{!v.configChild.Time_Type__c}" >
+                                                            <ui:inputSelectOption text="Minutes" />
+                                                            <ui:inputSelectOption text="Hours" />
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>                                     
+                                            <div class="slds-form-element" style="visibility:hidden">
+                                                <label class="slds-form-element__label" for="input-03">Score</label>
+                                                <ui:inputText class="slds-input"  />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+    
+                                <fieldset class="slds-form--compound" >
+                                    <div class="slds-form-element__group">
+                                        <div class="slds-form-element__row">                                        
+                                            <div class="slds-form-element" >
+                                                <label class="slds-form-element__label" for="select-01">Min Time</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <ui:inputSelect aura:id="oppMinSelected" class="slds-select"  >
+                                                            <aura:iteration items="{!v.selectOptions}" var="selectOption">
+                                                                <!-- Padma modified <ui:inputSelectOption text="{!''selectOption}" label="{!selectOption}"/> -->
+                                                                <ui:inputSelectOption aura:Id="oppMinTSel" text="{!''+selectOption}" label="{!selectOption}" />
+                                                            </aura:iteration>
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label" for="select-01">Max Time</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <ui:inputSelect aura:id="oppMaxSelected" class="slds-select" >
+                                                            <aura:iteration items="{!v.selectOptions}" var="selectOption">
+                                                               <!-- Padma modified <ui:inputSelectOption text="{!selectOption}" label="{!selectOption}"/> -->
+                                                               <ui:inputSelectOption aura:Id="oppMaxTSel" text="{!''+selectOption}" label="{!selectOption}" />
+                                                            </aura:iteration>
+                                                            <!--<ui:inputSelectOption text="∞" label="∞"/> -->
+                                                            <ui:inputSelectOption text="99" label="99"/>
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label"  for="input-03">Score</label>
+                                                <ui:inputText class="slds-input" aura:id="oppScore" value="{!v.configChild.Score__c}" />
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </fieldset>
+                                <div class="slds-no-flex">
+                                    <lightning:button aura:id="oppSaveScore" variant="brand" label="Save Score" onclick="{!c.oppSaveConfigChild}"/> | <lightning:button aura:id="oppCancelScore" variant="brand" label="Cancel Score" onclick="{!c.oppCancelConfigChild}"/>
+                                </div>
+                            </div>
+                
+                            <div class="slds-no-flex">
+                                <lightning:button aura:id="oppAddNewBtn" variant="brand" label="Add New Score" onclick="{!c.oppAddNewScore}"/>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div aura:id="oppPercentBlock" class="slds-hide">
+                                <legend class="slds-form-element__label slds-text-title--caps"><b>Percentage Based Score</b></legend>
+                                <hr style="padding:0px; margin:0px;" />
+                                <br/>
+                                <br/>
+                            <!-- Begin of Percentage Score section -->
+                            <table   id="percenttable" class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                <thead>
+                                <tr class="slds-text-title--caps">
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Min">Min</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Max">Max</div>
+                                    </th>                           
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Score">Score</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Action">Action</div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.configPercentage}" var="percent">
+                                        <tr>
+                                            <td data-label="Min">
+                                               <div class="slds-truncate">{!percent.Minimum__c}%</div>                                        
+                                                 
+                                            </td>
+                                            <td data-label="Max">
+                                                <div class="slds-truncate" >{!percent.Maximum__c}%</div>
+                                            </td>
+                                            <td data-label="Score">
+                                                <div class="slds-truncate">{!percent.Score__c}</div>
+                                            </td>
+                                            <td data-label="Action">
+                                                <div class="slds-truncate" ><a href="" onclick="{!c.oppEditPercent}"  data-data="{!percent.Id}" rerender="percenttable">Edit</a> | <a href="" data-data="{!percent.Id}" onclick="{!c.oppDeletePercent}" rerender="percenttable" >Delete</a></div>
+                                            </td>
+                                            
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <br/>
+                              <div aura:id="oppAddEditBlockPercent" class="slds-hide">                            
+                                <div class="slds-form-element__row" style="color:red;">
+                                         <ui:outputText aura:id="oppPerwarnings" value="" class="text" />
+                                </div>
+                                <fieldset class="slds-form--compound" >
+                                    <div class="slds-form-element__group">
+                                        <div class="slds-form-element__row">                                        
+                                            <div class="slds-form-element" >
+                                                <label class="slds-form-element__label" for="select-01">Min Percentage</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <ui:inputSelect aura:id="oppMinPercent" class="slds-select" >
+                                                            <aura:iteration items="{!v.selectOptionsPercentage}" var="perceentOption">
+                                                                <!-- Padma modified <ui:inputSelectOption text="{!''selectOption}" label="{!selectOption}"/> -->
+                                                                <ui:inputSelectOption text="{!''+perceentOption}" label="{!perceentOption}" />
+                                                            </aura:iteration>
+                                                            <!--<ui:inputSelectOption text="" label="∞"/> -->
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label" for="select-01">Max Percentage</label>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-select_container">
+                                                        <ui:inputSelect aura:id="oppMaxPercent" class="slds-select" >
+                                                            <aura:iteration items="{!v.selectOptionsPercentage}" var="perceentOption">
+                                                               <!-- Padma modified <ui:inputSelectOption text="{!selectOption}" label="{!selectOption}"/> -->
+                                                               <ui:inputSelectOption text="{!''+perceentOption}" label="{!perceentOption}" />
+                                                            </aura:iteration>
+                                                          <!-- <ui:inputSelectOption text="" label="∞"/> -->
+                                                        </ui:inputSelect>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label"  for="input-03">Score</label>
+                                                <ui:inputText class="slds-input" aura:id="oppPerscore" value="{!v.configPercent.Score__c}" />
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </fieldset>
+                                <div class="slds-no-flex">
+                                    <lightning:button aura:id="oppSavPercent" variant="brand" label="Save Score" onclick="{!c.oppSaveConfigPercent}"/> | <lightning:button aura:id="oppCancelPercent" variant="brand" label="Cancel Percent" onclick="{!c.oppCancelConfigPercent}"/>
+                                </div>
+                            </div>
+                             <div class="slds-no-flex">
+                                <lightning:button aura:id="oppAddPercent" variant="brand" label="Add New Score" onclick="{!c.oppAddNewPercent}"/>
+                            </div> 
+                            <br/>
+                            <br/>
+                          </div>
+                        </div>  
+                       </div>
+                    <!--  The following section adds Opp functionality
+                        Created by Artyom M.
+                        Per Stories: B-16778, B-18406, B-18408, B-18409, B-18410
+                        
+                        END
+                      -->   
+    
+                        <!--<div aura:id="oppPage" class="slds-tabs&#45;&#45;scoped__content slds-hide" role="tabpanel" aria-labelledby="oppTab_item">-->
+                            <!--<fieldset class="slds-form&#45;&#45;compound">-->
+                                <!--<legend class="slds-form-element__label slds-text-title&#45;&#45;caps"><b>Opportunity Entry Criteria</b></legend>-->
+                                <!--<hr style="padding:0px; margin:0px;" />-->
+                                <!--<br/>-->
+                                <!--<div class="slds-form-element__group">-->
+                                    <!--<div class="slds-form-element__row">-->
+                                        <!--<div class="slds-form-element slds-size&#45;&#45;1-of-4">-->
+                                            <!--<label class="slds-form-element__label" for="input-02">New Stage Activity Limit</label>-->
+                                            <!--<ui:inputText class="slds-input" value="{!v.config.Opp_New_Stage_Activity_Limit__c}" />-->
+                                        <!--</div>-->
+                                        <!--<div class="slds-form-element slds-size&#45;&#45;1-of-4">-->
+                                            <!--<label class="slds-form-element__label" for="input-03">Qualified Stage Activity Limit</label>-->
+                                            <!--<ui:inputText class="slds-input" value="{!v.config.Opp_Qualified_Stage_Activity_Limit__c}" />-->
+                                        <!--</div>-->
+                                        <!--<div class="slds-form-element slds-size&#45;&#45;1-of-4">-->
+                                            <!--<label class="slds-form-element__label" for="input-03">Validated Stage Activity Minimum</label>-->
+                                            <!--<ui:inputText class="slds-input" value="{!v.config.Opp_Validated_Stage_Activity_Minimum__c}" />-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<br/>-->
+                                <!--<legend class="slds-form-element__label slds-text-title&#45;&#45;caps"><b>Opportunity Exit Criteria</b></legend>-->
+                                <!--<hr style="padding:0px; margin:0px;" />-->
+                                <!--<br/>-->
+                                <!--<div class="slds-form-element__group">-->
+                                    <!--<div class="slds-form-element__row">-->
+                                        <!--<div class="slds-form-element" style="width:33%">-->
+                                            <!--<label class="slds-form-element__label" for="input-01">Days from Ownership</label>-->
+                                            <!--<ui:inputText class="slds-input" value="{!v.config.Opp_Days_from_Ownership__c}" />-->
+                                        <!--</div>-->
+    
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</fieldset>-->
+                        <!--</div>-->
+                    </div>
+                
+                <div class="slds-card__footer">
+                    <a style="visibility:hidden" href="javascript:void(0);">View All <span class="slds-assistive-text">entity type</span></a>
+                    <div class="slds-no-flex">
+                        <lightning:button aura:id="saveBtn" variant="brand" label="Save" onclick="{!c.saveConfig}"/>
+                        <lightning:button aura:id="saveOppOnboardBtn" class="slds-hide" variant="brand" label="Save" onclick="{!c.saveConfigOppOnboardScoring}"/>
+                    </div>
+    
+                </div>
+            </article>
+        </div>
+    
+    </aura:component>

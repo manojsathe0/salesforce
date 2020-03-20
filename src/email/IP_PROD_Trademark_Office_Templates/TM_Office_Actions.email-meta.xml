@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>office action</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TM Office Actions</name>
+    <style>none</style>
+    <subject>LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom about the Office Action issued in connection with your trademark application.
+
+As noted on our website and in the Help Guide that accompanied your trademark application packet, there is an examination process that follows the filing of a trademark application. In that process, a U.S. Patent and Trademark Office (USPTO) examining attorney reviews the trademark application. If there is a problem, the examining attorney issues an Office Action to notify the applicant of the reasons why registration is being refused, including if any application requirements were not met.
+
+An applicant has an opportunity to respond to an Office Action issued in connection with a trademark application. However, the time to do so is limited. If the USPTO does not receive a proper response by the deadline set forth in the Office Action, the trademark application will be declared abandoned. (Note: Generally, most responses to Office Actions must be received by the USPTO within 6 months from the mailing date on the Office Action. However, in certain circumstances, the Office Action will specify a different time period. It is important for you to review the Office Action that was issued in connection with your application and determine the response deadline for your Office Action.)
+
+You may access information about the status of your trademark application and download a copy of the Office Action issued in connection with your application using the Trademark Status &amp; Document Retrieval (TSDR) database on the USPTO website at http://tsdr.uspto.gov/. Additional information about the Office Action and the applicable response deadline can be found in the Office Action itself.
+
+As you know, LegalZoom is not a law firm and cannot provide you with any legal advice or recommendations. In deciding how to respond to the Office Action issued in connection with your application, there are many resources available to you. For example, you can contact the USPTO examining attorney assigned to your application directly with any questions about the Office Action or seek the advice of a qualified attorney to help you respond to the Office Action.  Depending on your state, you may also be able to sign up for a LegalZoom business legal plan to discuss your options with an attorney (see http://www.legalzoom.com/attorneys-lawyers/legal-plans/business.html for more information about the availability and scope of such plans).
+
+If you have any further questions about the trademark registration process in general, please feel free to contact our customer care team at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT or email us at customercare@legalzoom.com.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

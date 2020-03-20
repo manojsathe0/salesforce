@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Knowledge_Article_View__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Knowledge Article Views By User</description>
+    <label>Knowledge Article Views By User</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Article_Id__c</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Article_Number__c</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Article_Title__c</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Article_URL__c</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Article_Viewed_by__c</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <masterLabel>Knowledge Article Views</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Article Viewed by: Manager</displayNameOverride>
+            <field>Article_Viewed_by__c.Manager_Text__c</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Article Viewed by: Lead Supervisor</displayNameOverride>
+            <field>Article_Viewed_by__c.Lead_Supervisor_Text__c</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Article Viewed by: Role</displayNameOverride>
+            <field>Article_Viewed_by__c.UserRole</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Article Viewed by: Assistant Manager</displayNameOverride>
+            <field>Article_Viewed_by__c.Assistant_Manager_Text__c</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Article Viewed by: Profile</displayNameOverride>
+            <field>Article_Viewed_by__c.Profile</field>
+            <table>Knowledge_Article_View__c</table>
+        </columns>
+        <masterLabel>Articles Viewed By: Team</masterLabel>
+    </sections>
+</ReportType>

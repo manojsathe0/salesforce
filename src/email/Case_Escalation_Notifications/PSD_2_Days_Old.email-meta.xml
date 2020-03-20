@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for escalation of cases unhandled for 2 days</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PSD - 2 Days Old</name>
+    <style>none</style>
+    <subject>Incident 2 days old - HANDLE ASAP</subject>
+    <type>text</type>
+</EmailTemplate>

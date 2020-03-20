@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>divbsi3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Divorce-ABAnet.org</name>
+    <style>none</style>
+    <subject>Divorce-ABAnet.org</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+
+Thank you for your recent inquiry.  In regards to your question, LegalZoom offers documents for uncontested divorces.  In an uncontested divorce, both spouses agree on all divorce terms and are willing and able to sign the necessary documents.  At this time, we do not offer uncontested divorce documents for the states of Alabama, Arkansas, Louisiana, Mississippi, Montana, Nebraska, Tennessee, and Virginia.  In addition, we currently do not handle divorce documents for Iowa (if there are minor children involved), Missouri (St. Louis county), Minnesota (if there are minor children involved), and Pennsylvania (if there are minor children involved).
+
+If this is not the situation, you may refer to either your local court to inquire on the options available to you or visit http://www.legalzoom.com/attorneys-lawyers/legal-plans.html for an attorney referral.
+
+Please call us at (800) 962-7490 if we can be of further assistance. 
+
+Best regards,
+
+The LegalZoom Team
+{!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

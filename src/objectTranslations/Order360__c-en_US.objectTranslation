@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Active Revenue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Active Revenue</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agent Name --></label>
+        <name>Agent_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agent --></label>
+        <name>Agent__c</name>
+        <picklistValues>
+            <masterLabel>Agent 1</masterLabel>
+            <translation><!-- Agent 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agent 2</masterLabel>
+            <translation><!-- Agent 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Days from Creation --></label>
+        <name>Days_from_Creation__c</name>
+    </fields>
+    <fields>
+        <label><!-- LZ Order Item Id --></label>
+        <name>LZ_Order_Item_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile Campign --></label>
+        <name>Mobile_Campign__c</name>
+    </fields>
+    <fields>
+        <label><!-- Month --></label>
+        <name>Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net minus Filing Fee --></label>
+        <name>Net_minus_Filing_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Logic --></label>
+        <name>New_Logic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Date/Time Created --></label>
+        <name>Order_Date_Time_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Item Product Line --></label>
+        <name>Order_Item_Product_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Item Product Process --></label>
+        <name>Order_Item_Product_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Item --></label>
+        <name>Order_Item__c</name>
+        <relationshipLabel><!-- Active Revenue (Order Item) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Matching Activity --></label>
+        <name>Order_Matching_Activity__c</name>
+        <relationshipLabel><!-- Active Revenue --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Payment Status --></label>
+        <name>Order_Payment_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Saved --></label>
+        <name>Order_Saved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+        <relationshipLabel><!-- Active Revenue --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent/Child --></label>
+        <name>Parent_Child__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Net Fee --></label>
+        <name>Parent_Net_Fee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Order Date --></label>
+        <name>Parent_Order_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Order Item --></label>
+        <name>Parent_Order_Item__c</name>
+        <relationshipLabel><!-- Active Revenue (Parent Order Item) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Order --></label>
+        <name>Parent_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Process --></label>
+        <name>Parent_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Product Name --></label>
+        <name>Parent_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for cancellation --></label>
+        <name>Reason_for_cancellation__c</name>
+        <picklistValues>
+            <masterLabel>(Free Trial) Used service during Free Trial and is no longer needed</masterLabel>
+            <translation><!-- (Free Trial) Used service during Free Trial and is no longer needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(Paid) No longer needed</masterLabel>
+            <translation><!-- (Paid) No longer needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Already has an Attorney</masterLabel>
+            <translation><!-- Already has an Attorney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attorney referred customer elsewhere</masterLabel>
+            <translation><!-- Attorney referred customer elsewhere --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business has closed</masterLabel>
+            <translation><!-- Business has closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor</masterLabel>
+            <translation><!-- Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Did not understand service value</masterLabel>
+            <translation><!-- Did not understand service value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Has not started business</masterLabel>
+            <translation><!-- Has not started business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Saved</masterLabel>
+            <translation><!-- Order Saved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor Consultation with an Attorney</masterLabel>
+            <translation><!-- Poor Consultation with an Attorney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previously retained but still wants to cancel</masterLabel>
+            <translation><!-- Previously retained but still wants to cancel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price too expensive</masterLabel>
+            <translation><!-- Price too expensive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unaware of service</masterLabel>
+            <translation><!-- Unaware of service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upset and unwilling to listen</masterLabel>
+            <translation><!-- Upset and unwilling to listen --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Cycle --></label>
+        <name>Sales_Cycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subscription Saved --></label>
+        <name>Subscription_Saved__c</name>
+    </fields>
+    <layouts>
+        <layout>Order360 Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

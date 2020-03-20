@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.Activities$Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$Commission_Eligible__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Phone__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Activities$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Adrian Hurtado,Aimen Mouton,Adam Koehler,Antonio Guevara,Bryan Turner,Courtney Coleman,Harper Essex,Jeff Brown,Jeremy Thomas,John Valles,Joseph Tomaszewski,Kenny Browder,Reggie Miles,Steven Monty,Tasha Newton,Tim Sharfman,Whittney Wheeler,Corey Brown,Rudy Tschang,Jon Penn,Chris Gotcher,Christopher Gilbert,Cody Silverman,Darrick Price,Eric Foster,Jackson Davis,Jacqueline Quiroga,Jed Regenwether,Khristina George,Nicholas Ware,Rocky Pourghoraishi,Tyler Hoyle,Vanessa Watkins,Lyanna Fuentes,Steve Schievelbein,Thomas Minier,Alfredo Soto,Anthony Lu,Bianca Sanchez,Christie Vandiver,Corey Jewett,Erin McSpadden,Hitul Gandhi,Jaclyn Michalewicz,Jay Minalgo,Jonathan Kirsch,Kim Riley,Mark McLemore,Matthew Draffen,Osvaldo Carrera,Tory Ryan,Erin Sullivan,Derek Fowler,Dustin Aylor,Jarrod Nall,Jessica Hudson,Natalie Fleming,Patrick Smith,Tyler Schmidt,John Juett,Andy Hibbert,Chase Lundy,James McCarthy,Joseph D&apos;Altilia,Michael Lopez,Michael McFadden,Seth Maxim</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Opportunities w/Phone Number</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Activities_User_Details__c</reportType>
+    <roleHierarchyFilter>Outbound_Lead</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$Date_Time_Created__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

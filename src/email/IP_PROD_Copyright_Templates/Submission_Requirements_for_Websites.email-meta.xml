@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>CRwebsite</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PROBLEM - Submission Requirements for Websites</name>
+    <style>none</style>
+    <subject>Submission Requirements for Websites</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+While reviewing your Copyright application, we noticed a potential issue that may delay your registration application with the US Copyright Office.
+
+You submitted a website address (URL) rather than screenshots of your website. The US Copyright Office does not accept a URL to register a Copyright.
+
+If you want to register the contents of your website, send us a copy of each page. If you want to register the design or functionality of your website, send us a readable copy of the website’s source code.
+
+You have three (3) options for submitting your website materials to complete your Copyright order:
+
+Option 1:
+
+Upload a copy of the entire work through our Ask a Question page with your order number for reference. If the work is too large for a single upload, you may separate the work into multiple uploads. This option is not recommended for extremely large works.
+
+Option 2:
+
+Send us (1) a computer disk (clearly labeled with the work’s title(s) and author(s)) containing the entire work and (2) separate, representative portions of the work being submitted in a format that can be physically examined by the US Copyright Office, such as a printout, audiocassette, or videotape. (This option is often useful for software and other written works of computer code.)
+
+If the work is short—5 pages of text or artwork, or 3 minutes of music, sounds, or audiovisual material—send us the entire work. If the work is longer, send us 5 representative pages or 3 representative minutes. Your materials should include its title(s) and author(s), and the copyright notice, if any.
+
+You can mail your complete materials to:
+
+{!snippetVariable.ip_address_cr_materials}
+
+Option 3:
+
+Send us a non-digital copy of the entire work, regardless of length, in the appropriate format for the work being submitted, such as a printout, audiocassette or videotape. No computer disk or CD-ROM is required with option 3.
+
+You can mail your complete materials to:
+
+{!snippetVariable.ip_address_cr_materials}
+
+For more information regarding registering websites for copyright, please view:
+
+Copyright Circular 66
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you contacting us and look forward to serving you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

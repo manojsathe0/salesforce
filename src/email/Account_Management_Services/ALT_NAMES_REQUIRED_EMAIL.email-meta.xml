@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMALT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ALT NAMES REQUIRED EMAIL</name>
+    <style>none</style>
+    <subject>Your LLC Name is Not Available</subject>
+    <textOnly>Please Respond with Alternate Business Names
+Dear {!Contact.FirstName},
+
+After conducting a name search, we have discovered that your requested [Entity Type] name choices are not available.
+
+Please respond to me via email with three (3) other choices, in order of preference, or call me at (877) 808-1918 M-F, 9:00 AM – 6 PM PT. After I receive your reply, we will conduct another search to determine if the proposed names are available.
+
+Please contact me at your earliest convenience to avoid any delays in your order. We are not able to file your documents with the Secretary of State unless your [Entity Type] name is available.
+
+Best Regards,
+
+[Account Manager] [ext.XXXX]
+Account Management Services
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+
+
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+ 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

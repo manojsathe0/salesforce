@@ -1,0 +1,13 @@
+<aura:component controller="DncStatusController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.getInternal}" />
+    <aura:attribute name="dncStatusMessage" type="String"  />
+    <aura:attribute name="toggleNotification" type="Boolean"  default="false"/>
+    <aura:handler event="force:refreshView" action="{!c.getInternal}"/>
+    
+    <aura:if isTrue="{!v.toggleNotification}">
+          <lightning:icon iconName="utility:end_call" variant="error"/>
+          <a href="javascript:void(0);" class=" slds-truncate" title="DNC call">
+            <span>{!v.dncStatusMessage}</span>
+          </a>
+    </aura:if>
+</aura:component>

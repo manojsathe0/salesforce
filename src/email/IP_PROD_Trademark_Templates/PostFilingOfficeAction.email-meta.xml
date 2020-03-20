@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>oatm</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post Filing Office Action</name>
+    <style>none</style>
+    <subject>Post Filing Office Action</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Office Actions are direct correspondences from the US Patent and Trademark Office (USPTO), and are generally either requesting additional information and/or updating you on the status of your application.
+
+If you have installed Anti-Spam filters or software on your email service, please ensure that legitimate emails from TEAS@uspto.gov is not falsely identified as spam or junk. If you wish to view and/or download your application information and correspondences from the USPTO, please visit here.
+
+Because LegalZoom is not a law firm, we are unable to provide legal advice. Although we assisted in the filing of your Trademark application, we are not your attorney. If you need to file a response, please review the bottom of your Office Action for further instructions. Otherwise, you may contact the USPTO Assistance Center at 800-786-9199 or call your examining attorney: xxxx at (xxx) xxx-xxxx.
+
+If you need to petition a refusal or require legal advice, you may use our attorney locator services to contact a Trademark attorney here.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

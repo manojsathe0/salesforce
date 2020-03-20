@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.econlp_pricing</name>
+    <style>none</style>
+    <subject>econlp_pricing</subject>
+    <textOnly>$139.00 + State Fees</textOnly>
+    <type>custom</type>
+</EmailTemplate>

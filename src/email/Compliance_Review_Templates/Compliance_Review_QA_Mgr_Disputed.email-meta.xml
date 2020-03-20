@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Compliance Review QA Mgr Disputed</name>
+    <style>none</style>
+    <subject>Compliance Review Disputed By QA Manager</subject>
+    <textOnly>Compliance Review Disputed By QA Manager
+
+Compliance Review: {!Compliance_Review__c.Name}
+{!Compliance_Review__c.Link}
+Rep listened to: {!Compliance_Review__c.Representative__c}
+Recorded Call ID#: {!Compliance_Review__c.Recorded_Call_ID__c}
+
+Notes from QA Manager:
+{!ApprovalRequest.Comments}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

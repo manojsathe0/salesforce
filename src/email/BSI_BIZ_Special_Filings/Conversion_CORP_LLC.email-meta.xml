@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Conversion - CORP &gt; LLC</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Conversion - CORP &gt; LLC</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in converting your existing Corporation into a Limited Liability Company (LLC).  We simplify the process for you by preparing and filing the Articles of Conversion with your respective Secretary of State, and by drafting a customized, state-specific Operating Agreement for the business.
+ 
+For your reference, general information regarding Conversions has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below.  By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+
+A Conversion allows an existing entity to be converted directly into another structure, allowing the entity to keep all of its existing records, financial data, and business history throughout the change of business structure.  This process also typically requires that the business’ internal documents be converted to the appropriate documents for the new structure.  
+ 
+Please keep in mind that you may need to contact the IRS to inform them of the change in structure, and fulfill any additional provisions they require.
+ 
+For your convenience, we have listed all relevant pricing below.
+ 
+CONVERSION
+Rush - $339.00 + state fee - (10-15 business days)*
+Standard - $229.00 + state fee + shipping - (20-30 business days)
+ 
+To view the state fee for your state, please follow the &quot;GET STARTED&quot; link below and select your state from the drop-down list.
+
+GET STARTED
+http://www.legalzoom.com/additional-business-services/conversion-between-llc-corporation.html
+ 
+OPERATING AGREEMENT
+Rush - $199.00 - (3-5 business days)
+Standard - $99.00 + shipping - (7-10 business days)
+ 
+GET STARTED
+http://www.legalzoom.com/additional-business-services/stand-alone-operating-agreements.html
+ 
+* Some states may have delays which affect the listed turnaround time.  To determine if your state is affected, please contact a Specialist at the phone number listed below.
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

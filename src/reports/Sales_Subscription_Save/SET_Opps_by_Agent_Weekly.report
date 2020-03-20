@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_84643744</developerName>
+        <masterLabel>Active Saved</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Order360__c$Parent_Order_Item__c.Subscription_Status__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Active</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Active Won&apos;t Renew</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Expired</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Not Yet Started</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Payment Due</sourceValue>
+            </sourceValues>
+            <value>Active Saved</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_67493305</developerName>
+        <masterLabel>Saved Subs</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Order360__c$Reason_for_cancellation__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Order Saved</sourceValue>
+            </sourceValues>
+            <value>Saved</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Order360__c$Order_Matching_Activity__c.Activity_Created_DateTime__c</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Order_Matching_Activity__c</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Parent_Order_Item__c.Extended_Price__c</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Parent_Order_Item__c.Name</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Parent_Order_Item__c.Product__c.Name</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Parent_Order_Item__c.Subscription_Cancellation_Date__c</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Parent_Order_Item__c.Subscription_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Parent_Order_Item__c.Subscription_End_Date__c</field>
+    </columns>
+    <description>Used in SET Day 1 Dashboard</description>
+    <filter>
+        <criteriaItems>
+            <column>Order360__c$Order_Matching_Activity__c.Is_Subscription_Activity__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order360__c$Parent_Order_Item__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Order360__c$Order_Matching_Activity__c.Activity_Created_By__c.Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>SET Opps by Agent Weekly</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Active_Revenue_Report__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Order360__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>noorder</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>No Record of Order fax CC statement</name>
+    <style>none</style>
+    <subject>No Record of Order fax CC statement</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+Unfortunately, the information you provided is not associated with any LegalZoom orders. 
+
+If you would like us to further research this situation please fax your credit card or bank statement with the Legalzoom transaction to {!snippetVariable.cs_fax} and we will research the order further. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

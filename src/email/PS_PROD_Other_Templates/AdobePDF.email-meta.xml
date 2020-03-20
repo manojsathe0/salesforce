@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>PDF1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Adobe PDF</name>
+    <style>none</style>
+    <subject>Adobe PDF</subject>
+    <textOnly>To view the PDF attachment:Open the attached PDF file you must have Acrobat? Reader?  (http://www.adobe.com/products/acrobat/readstep2.html) installed to view the attachment.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

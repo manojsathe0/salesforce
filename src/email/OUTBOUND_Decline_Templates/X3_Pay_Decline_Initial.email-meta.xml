@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>3paydec1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>3-Pay Decline – Initial</name>
+    <style>none</style>
+    <subject>LegalZoom Order XXXXXXX:  Processing your Initial Installment Payment</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.com for your business service needs.  
+
+This e-mail is in reference to an issue we experienced while attempting to process the payment for your order.  We tried to contact you over the phone but were unable to do so.  It is important for us to provide you with timely service, so please contact us at your earliest convenience via e-mail or phone at (866) 698-0053 ext. {!User.Extension}.  We cannot process your order until we clear this issue. 
+
+Please call me at (866) 698-0053 ext. {!User.Extension} {!snippetVariable.outbsihours} so that I can help you resolve this matter. 
+
+Please refer to your order number:  {!Case.Order_Number_c}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LWTrev30d</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LW&amp;T Detailed Rev. Info. - after 30 days</name>
+    <style>none</style>
+    <subject>LW&amp;T Detailed Rev. Info. - after 30 days</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+When you are ready to make revisions, simply click on the link below or copy the URL starting with &quot;http&quot; to the address line of the Browser. 
+
+URL: http://legalzoom.force.com/LZPKB/articles/Answer/170?retURL=%2FLZPKB%2Fapex%2FknowledgeHome&amp;popup=false&amp;lang=en_US
+
+This will direct you to the instructions for revising your document. To view a graphical step-by-step of the instructions, go to the bottom of that screen and click on the link &quot;here&quot; within &quot;Click here for more details.&quot;  Please note that in order for your revisions to be received, you must click &quot;save and continue&quot; when updating your online questionnaire and submit your order again for processing.  
+
+•	Revisions are always free within the first 30 days of your purchase.
+•	After 30 days, revisions are free for members of our personal legal plan.
+•	For non-members, revisions are $29.95.
+•	Each revision, regardless of legal plan membership or time from purchase, has a $2.95 shipping and handling fee.
+
+Please note: In order for your revisions to be received, you must click &quot;save and continue&quot; when updating your online questionnaire and submit your order again for processing.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

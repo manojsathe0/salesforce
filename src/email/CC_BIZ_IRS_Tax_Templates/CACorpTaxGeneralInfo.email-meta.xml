@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cacorptax1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CA Corp Tax - General Info</name>
+    <style>none</style>
+    <subject>CA Corp Tax - General Info</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+The State of California does charge an annual minimum tax of $800.00 in order to have a Corporation operate in California. Generally corporations do not have to pay this $800.00 minimum for their first year; taxes paid to the FTB the first year are determined by the actual tax return you file that year with the State and the income made.  
+
+For subsequent years, you would be paying the $800.00 minimum tax to the Franchise Tax Board directly, usually due on April 15th. If taxes on the income of the company equal more than $800.00 in a year, than those taxes would be paid instead of the minimum. For further questions about this tax, you would likely want to speak with the Franchise Tax Board directly by calling: 800.852.5711
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

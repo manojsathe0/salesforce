@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>KnowledgeArticle$Id</field>
+    </columns>
+    <columns>
+        <field>KnowledgeArticle$ArticleNumber</field>
+    </columns>
+    <columns>
+        <field>KnowledgeArticle$Title</field>
+    </columns>
+    <columns>
+        <field>KnowledgeArticle$Summary</field>
+    </columns>
+    <columns>
+        <field>KnowledgeArticle$IsLatestVersion</field>
+    </columns>
+    <columns>
+        <field>KnowledgeArticle$LastModifiedBy</field>
+    </columns>
+    <dataCategoryFilters>
+        <dataCategory>Patent</dataCategory>
+        <dataCategoryGroup>Products</dataCategoryGroup>
+        <operator>below</operator>
+    </dataCategoryFilters>
+    <dataCategoryFilters>
+        <dataCategory>Copyright</dataCategory>
+        <dataCategoryGroup>Products</dataCategoryGroup>
+        <operator>below</operator>
+    </dataCategoryFilters>
+    <format>Summary</format>
+    <name>Knowledge Articles: Copyright &amp; Patents</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Knowledge_Articles__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>KnowledgeArticle$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

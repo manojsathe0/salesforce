@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>sou5</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SOU - NOA Deadline Reminder</name>
+    <style>none</style>
+    <subject>SOU - NOA Deadline Reminder</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As a reminder, we are still waiting for some materials from you in order to complete your trademark Statement of Use order. The deadline to complete your Statement to Use is [Enter Date Here]. If you miss this deadline, the U.S. Patent and Trademark Office (USPTO) will deem your trademark application abandoned. No refunds will be possible.
+
+To complete your trademark registration, the USPTO requires that you submit a Statement of Use, along with proof (called a “specimen”) that you are using your trademark in connection with the sales of the goods and services listed in your application. The specimen you provide should be an actual example that clearly shows how the trademark is being used. 
+
+----------------------------------
+SUBMITTING YOUR MATERIALS:
+
+Please reply to this e-mail and attach your materials, preferably in .jpg, .jpeg, .gif or .pdf format. Email attachments cannot exceed 6MB.
+
+If you are using a Mac computer or your attachments are larger than 6MB combined, please upload your image(s) directly at http://legalzoom.force.com/LZWTC. 
+
+Or, if you prefer, you can mail us your materials.  Our mailing address is:
+
+{!snippet.Variable.ip_address_tm_materials}
+
+Please note: LegalZoom will not share your materials with any third party unless necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you.
+
+----------------------------------
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+* Members of Business Advantage Pro can receive further guidance from an attorney for no additional cost—take advantage of your membership by scheduling a consultation through our Member Center at https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=1. If you are not a Business Advantage Pro member and would like more information on this valuable service, please visit us at http://www.legalzoom.com/attorneys-lawyers/business-advantage-pro.html or call customer care at (877) 657-8787. Please note that Business Advantage Pro is not available in all states.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

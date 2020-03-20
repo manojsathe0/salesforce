@@ -1,0 +1,6 @@
+*** NEW LEAD ASSIGNMENT NOTIFICATION *** 
+<br /><br />
+The following lead has been assigned to you.<br /><br /> 
+Email: {!Lead.Company} <br />
+Name: <a href="{!Lead.Link}">{!Lead.Name}</a> <br />
+Owner: {!Lead.OwnerFullName}

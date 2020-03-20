@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>bapbenef1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BAP Benefits Comprehensive</name>
+    <style>none</style>
+    <subject>BAP Benefits Comprehensive</subject>
+    <textOnly>legalzoom.com
+
+Dear {!Contact.FirstName},
+
+Thank you for your email.
+
+The LegalZoom Business Advantage Pro gives you access to the following benefits:
+
+Attorney advice and consultations. Speak with an experienced attorney on an unlimited number of new legal matters
+Tax Professional advice and consultations.  Speak with an experienced Tax Professional on an unlimited number of new tax issues
+Attorney drafted letters. Your attorney can draft legal letters or on your behalf
+Unlimited access to LegalZoom legal forms. Download hundreds of blank legal forms for business or personal use
+1 Free copyright per month, all you pay is the Federal filing fee
+Access to CreditAlert Plus from Dun &amp; Bradstreet Credibility Corp.  Establish &amp; monitor your Business Credit Profile.
+25% savings on additional attorney services. Get significant savings on additional attorney work if you need it
+20% savings on any additional tax services
+10% savings on any LegalZoom legal documents. Get any LegalZoom business or personal documents at a discount
+
+After your 30-day trial, your Business Advantage Pro membership renews automatically at $__.__ per month.
+You can always choose to enroll with a 6 or 12 month membership. A 6 month renewal is $161.94 (equal to $26.99 a month), and a 12 month renewal is $287.88 (equal to $23.99 a month).
+
+{!snippetVariable.asdsigline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.
+
+{!snippetVariable.bestregardstext}
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+Call Customer Care: (800) 773-0888  LegalZoom. Legal help for the modern world.
+
+Privacy Policy
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

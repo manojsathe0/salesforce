@@ -1,0 +1,100 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+
+Dear {!Contact.FirstName},<br/><br/>
+
+At this time, we are unable to proceed with your trademark application. You have selected one class on your order; however, based on guidelines from the U.S. Patent and Trademark Office (USPTO), your products (goods) and services description appears to cover multiple classes. To list more than one class on your application, additional fees will apply.<br/><br/>
+
+Please review the information below for a breakdown of your original description and the corresponding class numbers.<br/><br/>
+
+[enter descriptions here]<br/><br/>
+
+<b>To resolve this issue, reply to this email and select ONE of the following options:<br/><br/> </b>
+
+1.  Narrow the list of products and services protected by the trademark to ONE class, or<br/>
+2.  Continue with two or more of the classes (a charge of <font color="red">$XXX</font> per additional class will apply -- please confirm to charge your credit card on file).<br/>
+3. Submit the application with your current description. You may have the opportunity to resolve these issues with your assigned USPTO examiner during the examination period.<br/> 
+4. Put your order on hold and consult with an attorney*<br/><br/>
+
+1. Narrow the list of products and services protected by the trademark to ONE class, or
+2. Continue with two or more of the classes (a charge of $XXX per additional class will apply -- please confirm to charge your credit card on file).
+3. Submit the application with your current description. You may have the opportunity to 
+resolve these issues with your assigned USPTO examiner during the examination period.
+4. Put your order on hold and consult with an attorney*
+
+
+If you would like to narrow your products and services to one class, reply to this email and let us know which products or services you would like to include on the application.  If you would like to file for additional classes, please also reply to this email authorizing your payment to your credit card on file.<br/><br/> 
+
+You can also <a href=http://tess2.uspto.gov/netahtml/tidm.html>click here</a> to view the USPTO's complete list of acceptable descriptions for products and services. To use this tool, please enter specific keywords (i.e. "clothing" or "retail store") and a listing of descriptions will appear with appropriate class numbers. You can use any of the descriptions displayed that are applicable to your trademark. <b>NOTE: You have paid for one class--each additional class will require a <font color="red">$XXX</font> fee.<br/><br/></b>
+For more information about classes of products and services, click on the following link:  {!snippetVariable.tm_gs_classes_list}<br/><br/>
+
+***We will not move forward with your order until we receive your response and the issue has been resolved.***<br/><br/>
+
+{!snippetVariable.ip_gs_closing}<br/><br/>
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. <br/><br/>
+ 
+
+Best regards,<br/><br/>
+
+The LegalZoom Team<p>
+
+* {!snippetVariable.tmoa_bap} 
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>.  
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

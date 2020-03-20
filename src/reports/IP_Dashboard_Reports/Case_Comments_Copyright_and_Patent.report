@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case.CaseComments$CommentBody</field>
+    </columns>
+    <columns>
+        <field>Case.CaseComments$Id</field>
+    </columns>
+    <columns>
+        <field>Case.CaseComments$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Case.CaseComments$LastModifiedDate</field>
+    </columns>
+    <description>IP Fulfillment Teams - Copyright and Patent</description>
+    <filter>
+        <criteriaItems>
+            <column>Case.CaseComments$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Anthony Gomez,BeLinda Jackson,Carl Anthony,Catherine Thangathurai,Constance Aguiar,Joyce Santos,Miyah Bradford,Natalie Trotter,Reginald Bruner,Van Truong</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case.CaseComments$CreatedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Case Comments: Copyright and Patent</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Comments__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Case.CaseComments$CreatedDate</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

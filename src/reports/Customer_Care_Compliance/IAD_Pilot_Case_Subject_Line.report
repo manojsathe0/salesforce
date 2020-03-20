@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Subject</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case$CreatedBy.Profile</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>IAD Pilot</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Erin Sullivan,Bryan Panovec,Thao Redmond,CC Test1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Subject</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>Test</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>IAD Pilot Case Subject Line</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Profile_ID__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Case$Subject</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Case$CreatedDate</dateColumn>
+        <endDate>2016-07-18</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-07-08</startDate>
+    </timeFrameFilter>
+</Report>

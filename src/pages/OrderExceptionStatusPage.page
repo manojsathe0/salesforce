@@ -1,0 +1,39 @@
+<apex:page standardController="Order_Exception__c" extensions="OrderExceptionStatusPageController" sidebar="false" showHeader="false">
+<apex:includeScript value="/support/console/42.0/integration.js"/>
+    <script type="text/javascript">
+        function testGetFocusedSubtabId() {
+            sforce.console.getFocusedSubtabId(showTabId);
+            
+        }
+        var showTabId = function showTabId(result) {
+                // Display the tab ID
+           
+            sforce.console.refreshSubtabById(result.id, true,refreshSuccess);
+        };
+         var refreshSuccess = function refreshSuccess(result) {
+            //Report whether refreshing the subtab was successful
+            if (result.success == true) {
+                
+            } else {
+                
+            }
+        };
+    </script>                                 
+<div style="text-align: center;height:25px">
+<apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme3'}">
+    <apex:form id="form" rendered="{!thisException.Exception_Type__c!="Resolved"}" >
+    
+    
+    <apex:outputPanel rendered="{!onHold}">
+        <apex:commandButton value="Take order off Hold" disabled="{!thereAreOpenCases}" action="{!removeFromHold}"  onComplete="testGetFocusedSubtabId();"/>
+    </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!NOT(onHold)}">
+        <apex:commandButton value="Put order on Hold" action="{!putOnHold}" onComplete="testGetFocusedSubtabId();" />
+    </apex:outputPanel>
+    
+    
+    </apex:form>
+    </apex:outputPanel>
+    </div>
+</apex:page>

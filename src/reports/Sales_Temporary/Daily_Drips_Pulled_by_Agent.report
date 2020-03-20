@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_90079941</developerName>
+        <masterLabel>Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>OWNER</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Integration User</sourceValue>
+            </sourceValues>
+            <value>Unclaimed</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Lead.Date_Time_Assigned__c</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <description>For daily dashboard sent out to agents; save in S Drive: Sales_Business Development/Sales Operations/Business Analytics/Agent Daily Reports/Inputs/Daily Drips Pulled.xlsx</description>
+    <filter>
+        <criteriaItems>
+            <column>CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LZPKB Site Guest User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_90079941</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Other</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>LZPKB Site Guest User,Authorized User</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_90079941</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Daily Drips Pulled by Agent</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead.Date_Time_Assigned__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

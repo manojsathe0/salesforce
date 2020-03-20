@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBar</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Opportunity$CreatedBy</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Opportunity.Activities$Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$Account</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Activities$Subject</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.Activities$Subject</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>QuickBooks Online Offer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Activities$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Rudy Tschang,Aimen Mouton,Jon Penn,Amit Sharma,Antonio Guevara,Courtney Coleman,Harper Essex,John Valles,Joseph Tomaszewski,Katie Coleman,Kenny Browder,Michael Goldwater,Reggie Miles,Steven Monty,Tasha Newton,Whittney Wheeler,Corey Brown,Tim Sharfman,Brian Kavecki,Chris Gotcher,Jackson Davis,Jacqueline Quiroga,Zachary Rutter,Lyanna Fuentes,Ashley Merrell,Do Pham,Don Dewitt,Khristina George,Manuel Gutierrez,Roberto Ramon</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Activities$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Steve Schievelbein,Thomas Minier,Alfredo Soto,Bianca Sanchez,Brian Lee,Christie Vandiver,Colby Verrett,Don Jones,Emilee Crowther,Ivor Carcamo,Jay Minalgo,Jeremy Austin,Tanja Hofmann,Brian Romer,Katie Etheridge,Erin Sullivan,Andy Hibbert,Chase Lundy,Derek Fowler,Heather French,James McCarthy,Jarrod Nall,Joseph D&apos;Altilia,Marcos Carcamo,Michael Lopez,Natalie Fleming,Nikki McSpadden,Patrick Smith,Seth Maxim,Tyler Schmidt</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$CreatedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IB QuickBooks Email Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Activities_User_Details__c</reportType>
+    <roleHierarchyFilter>Outbound_Lead</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity.Activities$Date_Time_Created__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.Activities$Date_Time_Created__c</dateColumn>
+        <interval>INTERVAL_TODAY</interval>
+    </timeFrameFilter>
+</Report>

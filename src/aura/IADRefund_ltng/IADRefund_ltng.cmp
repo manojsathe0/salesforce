@@ -1,0 +1,224 @@
+<aura:component controller="IADRefundController_ltng"
+    implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+    access="global">
+    <aura:attribute name="amount" type="Decimal" />
+    <aura:attribute name="amtCheckbox" type="Boolean" default="false" />
+    <aura:attribute name="otherAmount" type="Decimal" default="0.00" />
+    <aura:attribute name="othrAmtCheckbox" type="Boolean" default="false" />
+    <aura:attribute name="processTotal" type="Decimal" default="0.00" />
+    <aura:attribute name="amountDue" type="Decimal" />
+    <aura:attribute name="refundTransactions" type="List" />
+    <aura:attribute name="currentRefundTransactionOptionId" type="String" />
+    <aura:attribute name="refundOptions" type="List" />
+    <aura:attribute name="currentRefundOptionId" type="String" />
+    <aura:attribute name="refundReasons" type="List" />
+    <aura:attribute name="currentRefundReasonId" type="String" />
+    <aura:attribute name="comments" type="String" />
+    <aura:attribute name="notificationEmail" type="String" />
+    <aura:attribute name="orderId" type="String" />
+    <aura:attribute name="customerId" type="String" />
+    <aura:attribute name="invokingPage" type="String" />
+    <aura:attribute name="invokingPageId" type="String" />
+    <aura:attribute name="pTransactionToProfileId" type="Map" />
+    <aura:attribute name="pTransactionToAmount" type="Map" />
+    <aura:attribute name="storecreditId" type="String" />
+    <aura:attribute name="isRefundProcessed" type="Boolean" />
+    <aura:attribute name="currentstate" type="String" />
+    <aura:attribute name="address" type="String" />
+    <aura:attribute name="firstname" type="String" />
+    <aura:attribute name="lastname" type="String" />
+    <aura:attribute name="city" type="String" />
+    <aura:attribute name="zipcode" type="String" />
+    <aura:attribute name="manualrefundReasons" type="List" />
+    <aura:attribute name="statelist" type="List" />
+    <aura:attribute name="manualcheckreasonid" type="String" />
+    <aura:attribute name="manualsection" type="Boolean" default="false" />
+
+    <!--    STORY B-39538 -->
+    <aura:attribute name="openModal" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="managerApprovedBy" type="string" default=""></aura:attribute>
+    <!-- STORY B-39538 -->
+
+    <aura:handler name="init" action="{!c.doInitRefund}" value="this" />
+
+    <lightning:workspaceAPI aura:id="workspace" />
+
+    <div class="slds-card" style="padding: 1% 2% 1% 1%">
+        <lightning:spinner aura:id="mySpinner" alternativeText="loading default refund values" />
+        <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="custom:custom17" size="medium" />
+            </div>
+            <div class="slds-media__body">
+                <p class="slds-text-title--caps slds-line-height--reset">Refund</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate"
+                    title="Make a Refund">Make a Refund</h1>
+            </div>
+        </div>
+        <div class="slds-form slds-form_compound" style="padding: 1% 0 0 0; margin-bottom:3%;">
+            <div class="slds-form-element__group">
+                <form>
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div style="margin-left: -25px">
+                            <lightning:input aura:id="amountCheckbox" type="checkbox" label="" name="blue"
+                                onchange="{!c.setOrUnsetProcessTotalToAmount}" checked="{!v.amtCheckbox}" />
+                        </div>
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="refundForm" type="number" label="Amount" name="amount"
+                                value="{!v.amount}" disabled="true" formatter="currency" />
+                        </div>
+                    </div>
+                    <a aura:id="addOtherAmount" class="show-add-othr-amt" style="margin-left: 35px"
+                        onclick="{!c.hideAddOtherAmtLinkAndShowOthrAmt}">Add other amount</a>
+                    <div aura:id="otherAmount" class="slds-hide">
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div style="margin-left: -25px">
+                                <!-- style="margin:26px 0 0 25px" -->
+                                <lightning:input aura:id="otherAmountCheckbox" type="checkbox" label=""
+                                    onchange="{!c.setOrUnsetProcessTotalToOtherAmount}"
+                                    checked="{!v.othrAmtCheckbox}" />
+                            </div>
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="refundForm" type="number" label="Other Amount"
+                                    name="otherAmount" value="{!v.otherAmount}" min="0" formatter="currency"
+                                    onchange="{!c.setOrUnsetProcessTotalToOtherAmount}" step="0.01" />
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="slds-size_4-of-6" style="margin: 13px 0 11px 35px; width: 65%" />
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="refundForm" type="number" label="Process Total"
+                                name="processTotal" value="{!v.processTotal}" disabled="true" formatter="currency" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="refundForm" type="number" label="Amount Due" name="amountDue"
+                                value="{!v.amountDue}" disabled="true" formatter="currency" />
+                        </div>
+                    </div>
+                    <div aura:id="refundTransactionId" class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:select aura:id="refundTransaction" label="Transaction for Refund"
+                                name="refundTransactions" value="{!v.currentRefundTransactionOptionId}"
+                                onchange="{!c.setRefundMethod}">
+                                <aura:iteration items="{!v.refundTransactions}" var="transaction" indexVar="key">
+                                    <option value="{!transaction.key}" text="{!transaction.value}" />
+                                    <!--  selectedvalue="{!transaction.key == v.currentRefundTransactionOptionId}" -->
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                    </div>
+                    <div aura:id="refundMethodId" class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:select aura:id="refundMethod" label="Refund Method" name="refundMethods"
+                                value="{!v.currentRefundOptionId}" onchange="{!c.hideUnhideEditButton}">
+                                <aura:iteration items="{!v.refundOptions}" var="refundOption" indexVar="key">
+                                    <option value="{!refundOption.key}" text="{!refundOption.value}" />
+                                    <!--  selectedvalue="{!refundOption.key == v.currentRefundOptionId}"  -->
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                        <div style="margin:28px 0 0 25px" aura:id="editbutton" class="edit-button">
+                            <a onclick="{!c.openEditPayment}">Edit</a>
+                        </div>
+                    </div>
+                    <div aura:id="payreason" class="pay-reason">
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:select aura:id="refundReason" label="Reason for Refund" name="reason"
+                                    value="{!v.currentRefundReasonId}">
+                                    <aura:iteration items="{!v.refundReasons}" var="reason" indexVar="key">
+                                        <option value="{!reason.key}" text="{!reason.value}"
+                                            selectedvalue="{!reason.key == v.currentRefundReasonId}" />
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </div>
+                    </div>
+                    <aura:if isTrue="{!v.manualsection}">
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:select aura:id="refundForm" label="Request Reason" name="reason"
+                                    value="{!v.manualcheckreasonid}" required="{!v.manualsection}">
+                                    <aura:iteration items="{!v.manualrefundReasons}" var="reason" indexVar="key">
+                                        <option value="{!reason.key}" text="{!reason.value}"
+                                            selectedvalue="{!reason.key == v.manualcheckreasonid}" />
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </div>
+
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="refundForm" value="{!v.firstname}" type="text"
+                                    label="Payee First Name " name="Request Reason" required="{!v.manualsection}" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="refundForm" value="{!v.lastname}" type="text"
+                                    label="Last Name " name="Request Reason" required="{!v.manualsection}" />
+
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="refundForm" value="{!v.address}" type="text"
+                                    label="Delivery Address " name="Request Reason" required="{!v.manualsection}" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="refundForm" type="text" value="{!v.city}" label="City "
+                                    name="Request Reason" required="{!v.manualsection}" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row" style="margin-left: 35px">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:select aura:id="refundForm" label="State" name="reason"
+                                    value="{!v.currentstate}" required="{!v.manualsection}">
+                                    <aura:iteration items="{!v.statelist}" var="reason" indexVar="key">
+                                        <option value="{!reason.value}" text="{!reason.key}"
+                                            selectedvalue="{!reason.value == v.currentstate}" />
+                                    </aura:iteration>
+                                </lightning:select>
+
+                                <lightning:input aura:id="refundForm" type="text" value="{!v.zipcode}" label="Zip Code "
+                                    name="Request Reason" required="{!v.manualsection}" maxlength="5" minlength="5" />
+                            </div>
+                        </div>
+                    </aura:if>
+                    <div class="slds-form-element__row" style="margin-left: 35px">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="refundForm" label="Comments" name="comments" value="{!v.comments}"
+                                required="true" />
+                        </div>
+                    </div>
+                    <div aura:id="emailnotification">
+                        <div class="slds-form-element__row" style="margin-left: 35px;">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input aura:id="refundForm" type="email" label="Notification Email"
+                                    name="notificationEmail" value="{!v.notificationEmail}" required="true" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="margin:25px 0 0 35px;">
+                <button class="slds-button slds-button--neutral" onclick="{!c.closeFocusedTab}">Cancel</button>
+                <button class="slds-button slds-button--brand" onclick="{!c.validateFormAndPostRefund}"
+                    disabled="{!v.amountDue != 0 ? 'false' : 'true'}">Process</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- STORY B-39538 -->
+    <aura:if isTrue="{!v.openModal}">
+        <c:managerCredentialsLWC onclose="{!c.handleMCCloser}" onsuccess="{!c.handleMCSuccess}">
+        </c:managerCredentialsLWC>
+    </aura:if>
+    <!--    STORY B-39538 -->
+
+</aura:component>

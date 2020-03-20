@@ -1,0 +1,49 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center"><tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+</td></tr></table><table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr><tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;"> Dear {!Contact.FirstName},<br><br> If you have already received your California State Board of Equalization Seller’s Permit, please disregard this email. If not, read on.<br><br>
+
+The California Board of Equalization (BOE) recently changed their process for applying for a seller’s permit to electronic registration and will no longer accept paper applications by mail. Because of this, we need to collect more information from you to complete your order.<br><br>
+
+Please call us as soon as possible to provide the following information:<br><br>
+
+1.	Name and home address of the person requesting the seller’s permit, along with their role in the business (i.e., member, manager or managing member);<br>
+2.	Names of all members, managers and managing members, including each person’s title (i.e., John Doe, member);<br>
+3.	Contact information for all members, managers and managing members, including:<br><br>
+
+<ul>a.	Home address<br>
+b.	Phone number<br>
+c.	Date of birth<br>
+d.	Driver’s license number and state of issue<br>
+e.	Social Security number (if the member is an entity, Federal Employer ID Number);<br><br></ul>
+
+4.	Name, address and phone numbers of all suppliers;<br>
+5.	Products purchased from all suppliers;<br>
+6.	NAICS code (go to http://www.naics.com/search.htm to search for the code for your primary business activity);<br>
+7.	Name and contact information for the person who will be maintaining the company’s books and records;<br>
+8.	Name and contact information for the person who can answer questions about the company’s business activities.<br><br>
+
+In order for us to complete your order in a timely manner, please call us as soon as possible at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.<br><br>
+
+We appreciate your prompt attention to this matter and look forward to hearing from you soon.<br><br>
+
+Best regards,<br><br>
+
+The LegalZoom Team
+<br>
+</p></div>
+<div class="emailBody"><p class="templateBody"></p>
+</div><div class="emailFooter"><p><br></td></tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center"><tr>
+<td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+<br>  <br>
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. <br /><br />Please add services@emails.legalzoom.com to your address book. <br />
+<br />This email was sent to: {!Contact.Email}
+<br /><br /> <br><br>&copy; LegalZoom.com, Inc. All rights reserved.
+</span></td></tr></table></body></p></div></html>

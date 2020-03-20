@@ -1,0 +1,9 @@
+<apex:page showHeader="False" controller="Test_Redirect_Controller">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:form >
+  <div><apex:commandButton action="{!go}" value="go"/></div>
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

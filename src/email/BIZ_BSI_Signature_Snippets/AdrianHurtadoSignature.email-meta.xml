@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>ahurtado</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Adrian Hurtado Signature</name>
+    <style>none</style>
+    <textOnly>Adrian Hurtado
+Manager - Business Formations and Sales
+LegalZoom.com 
+Business Services
+10900 South Stonelake Blvd.
+Austin, TX 78759
+(888)-381-8758 Ext: 7050</textOnly>
+    <type>custom</type>
+</EmailTemplate>

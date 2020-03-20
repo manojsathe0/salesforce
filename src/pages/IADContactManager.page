@@ -1,0 +1,92 @@
+<apex:page Controller="IADContactManagerController" title="Contact Manager" showHeader="false" sidebar="false" >
+<apex:includeScript value="/support/console/32.0/integration.js"/>
+<apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+
+ <script type="text/javascript">
+    var $j = jQuery.noConflict();
+    function setTabTitle()
+    {
+        sforce.console.setTabTitle('Manage Contact');
+    }
+    
+    var primaryTabId;
+    $j(function () 
+    {
+        setTabTitle();
+        sforce.console.getEnclosingPrimaryTabId(getPrimaryTab);
+    });
+    
+    var getPrimaryTab= function getPrimaryTab(result) 
+    {
+       primaryTabId = result.id;
+    };
+    
+    function refreshPrimaryTab()
+    {
+        if(primaryTabId != null)
+        {
+             sforce.console.refreshPrimaryTabById(primaryTabId, true, null);
+             closeCurrentTab();   
+        }
+    }
+    
+    function closeCurrentTab()
+    {
+        sforce.console.getEnclosingTabId(closeSubtab);
+    }
+    
+     var closeSubtab = function closeSubtab(result) {
+            var tabId = result.id;
+            sforce.console.closeTab(tabId);
+        };
+        
+         
+ </script>
+
+  <apex:form id="theform" >
+   <apex:pageBlock title="Create/Edit Contact" mode="edit" rendered="{!showNewContactForm}">
+    <apex:pageMessages />
+    <apex:pageBlockButtons rendered="{!NOT(orderAuthorizedContact)}">
+        <apex:commandButton action="{!createNewContact}" value="Create" rendered="{!newContact.Id == null}" rerender="theform" status="statusUpdating"/>
+        <apex:commandButton action="{!updateContact}" value="Save" rendered="{!newContact.Id != null}" rerender="theform" status="statusUpdating"/>
+        <button type="button" onclick="refreshPrimaryTab();" class="btn">Close</button>
+        <apex:commandButton action="{!resetPassword}" rendered="{!newContact.Id != null}" value="Reset Password" status="statusUpdating" rerender="theform"/>
+        <apex:actionStatus id="statusUpdating">
+      <apex:facet name="start">
+      <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+      </apex:facet>
+      <apex:facet name="stop">
+                                <c:IADMessageBox theMessages="{!contactManagerService.iadMessages}" />
+                            </apex:facet>
+    </apex:actionStatus>
+    </apex:pageBlockButtons>
+
+       <apex:pageBlockSection title="Contact" columns="2" rendered="{!NOT(orderAuthorizedContact)}">
+       <apex:pageBlockSectionItem >
+          <apex:outputLabel value="Contact Type" for="contact_type"/>
+            <apex:selectList value="{!newContact.Contact_Type__c}" multiselect="false" size="1" required="true" >
+                <apex:selectOption itemValue="Primary Contact" itemLabel="Primary Contact" rendered="{!newContact.Id != null}"/>
+                <apex:selectOption itemValue="Authorized Contact" itemLabel="Authorized Contact" rendered="{!OR(AND(newContact.Id != null,newContact.Contact_Type__c = 'Authorized Contact'),newContact.Id == null)}"/>
+            </apex:selectList>
+          </apex:pageBlockSectionItem>
+            <apex:inputHidden />
+          <apex:repeat value="{!fields}" var="f"> 
+                <apex:inputField value="{!newContact[f.fieldPath]}" required="{!OR(f.required, f.dbrequired)}"/>
+          </apex:repeat>
+          <apex:inputHidden />
+          <apex:pageBlockSectionItem >
+             <apex:outputLabel value="MailingState" for="mailingState" />
+             <apex:outputPanel >
+              <div class="requiredInput">
+              <div class="requiredBlock"></div>
+                <apex:selectList value="{!newContact.MailingState}" id="mailingState"  multiselect="false" size="1" required="true">
+                <apex:selectOptions value="{!statePicklist}"/>
+             </apex:selectList>
+            </div>
+            </apex:outputPanel>
+          </apex:pageBlockSectionItem>
+       </apex:pageBlockSection>
+
+   </apex:pageBlock>  
+   </apex:form>
+</apex:page>

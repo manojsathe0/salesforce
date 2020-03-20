@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Compliance Review - Sales Approval Reminder</name>
+    <style>none</style>
+    <subject>Compliance Review - Sales Approval Reminder</subject>
+    <textOnly>*** 3 Day Reminder ***
+
+This is a reminder that a call by one of your reps ({!Compliance_Review__c.Rep_Alias__c}) has an outstanding violation awaiting your approval.
+
+Please follow the link below to Approve or Reject the violation:
+{!Compliance_Review__c.Name}
+https://legalzoom.my.salesforce.com/{!Compliance_Review__c.Id}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

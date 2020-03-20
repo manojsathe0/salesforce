@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Biz_AM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Biz AM</label>
+        <sharedTo>
+            <group>Round_Robin_Rule_for_Biz_AM</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Business Account Services</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Quick_Start</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Quick Start</label>
+        <sharedTo>
+            <group>Round_Robin_Rule_for_Sales</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Quick Start</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sales</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sales</label>
+        <sharedTo>
+            <group>Round_Robin_Rule_for_Sales</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sales</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_RoundRobin_Rules_among_Order_Save_Managers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share RoundRobin Rules among Order Save Managers</description>
+        <label>Share RoundRobin Rules among Order Save Managers</label>
+        <sharedTo>
+            <role>Order_Save_Manager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Order Save</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TM_AM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>TM AM</label>
+        <sharedTo>
+            <group>Round_Robin_Rule_for_TM_AM</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Trademark Account Services</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

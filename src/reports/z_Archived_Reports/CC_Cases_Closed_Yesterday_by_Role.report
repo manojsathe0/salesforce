@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$UserRole</field>
+    </columns>
+    <columns>
+        <field>User.Cases__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>User.Cases__r$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>User.Cases__r$Order_Number__c</field>
+    </columns>
+    <columns>
+        <field>User.Cases__r$Origin</field>
+    </columns>
+    <columns>
+        <field>User.Cases__r$Subject</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User$IsActive</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Cases__r$Origin</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Phone-Inbound ACD,Phone-Inbound Direct,Phone-Outbound Courtesy,Phone-Outbound Sales</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>email to Case User,LZWTC Site Guest User,System</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User*User$Department2__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC-Cases Closed Yesterday by Role</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_w_Cases__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Cases__r$ClosedDate</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

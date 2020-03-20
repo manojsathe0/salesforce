@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Business Token --></label>
+        <name>XactlyCorp__BusinessToken__c</name>
+    </fields>
+    <fields>
+        <label><!-- url --></label>
+        <name>XactlyCorp__url__c</name>
+    </fields>
+</CustomObjectTranslation>

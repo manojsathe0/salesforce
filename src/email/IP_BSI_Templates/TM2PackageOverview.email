@@ -1,0 +1,59 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for your recent inquiry.<br/><br/>In general, Trademarks protect Names, Slogans, Short Phrases, Logos and Acronyms used for specific products and/or services. By registering for a federal Trademark, you can protect yourself against the possibility that an inferior product will diminish your reputation or profitability. <br/><br/>Additional information is available online at LegalZoom&#39;s Education Center <a href=http://www.legalzoom.com/trademarks-guide/trademarks-service-mark-definition.html>here</a>.<br/><br/>To start your Trademark application, please visit <a href=www.LegalZoom.com>us</a> and fill out our easy online questionnaire. LegalZoom will then prepare and file your application with the United States Patent and Trademark Office.<br/><br/>The cost to file a Trademark application under one (1) class is:<br/>1. Basic Package: $169<br/>2. Complete Coverage: $189<br/><br/>All Trademark prices have an additional $325 dollar government filing fee. Additional classes require an additional fee of $385 per additional class.  All Trademark packages have a 7-10 business day processing time frame. To get started on your order, visit <a href=http://www.legalzoom.com/trademarks/trademarks-pricing.html>here</a>.<br/><br/>Online payments can be made by Visa, Mastercard, American Express or Discover.<br/><br/>Once you submit your application along with your logo and specimen (if applicable) we will begin a trademark search within 24-48 business hours. <br/> <br/>If you decide to cancel after we have started a trademark search, all of your charges will be refunded minus the search and any applicable processing fees. Refunds must be requested within 60 days of purchase.<br/><br/>{!snippetVariable.cccontactline} {!snippetVariable.ipbsi_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ip_phone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} $iphours.<br/><br/>{!snippetVariable.ipclosingline}<br/><br/>{!snippetVariable.ccsincerely}<br/><br/>{!snippetVariable.cclegalzoomline} {!snippetVariable.ipbsi_dept_full}<br/>{!snippetVariable.ip_phone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/>
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

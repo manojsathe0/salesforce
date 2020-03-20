@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ccpben</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CCP Benefits</name>
+    <style>none</style>
+    <subject>LegalZoom Continuing Coverage Plan Service</subject>
+    <textOnly>legalzoom.com
+
+Dear {!Contact.FirstName},
+
+The LegalZoom Continuing Coverage Plus plan is a monthly membership that gives you access to the following:
+
+Unlimited Revisions to LegalZoom Estate Planning Documents &amp; storage of Estate Planning Documents. Have the assurance of knowing that if the need arises, changes can be made quickly and easily and with our vaulting, and the latest version of your document can always be kept safe.
+Unlimited free downloads of all LegalZoom legal forms. From General Agreements and Sale of Goods to Promissory notes, our library has hundreds of helpful legal forms that can be used on a daily basis.
+10% savings on any LegalZoom legal documents: Take advantage of valuable savings on any LegalZoom legal documents, including Living Trusts, LLCs, Trademarks and more.
+
+Your monthly Continuing Coverage plan membership will renew automatically at $4.99 on the (Date) of each month.
+
+If you have any questions or need further information, please call our Customer Care Team at 877.818.8787 Monday-Friday from 6:00 a.m. to 7:00 p.m. PT.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+Call Customer Care: (800) 773-0888  LegalZoom. Legal help for the modern world.
+
+Privacy Policy
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

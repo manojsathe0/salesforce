@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>abandenc</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Abandoner: ENC</name>
+    <style>none</style>
+    <subject>LegalZoom.com – (Entity Type) Information</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.  Per your request, the preliminary search for your business name has been completed.  Please contact me directly at (877) 677 - 8787 ext. {!User.Extension} to discuss the results of your name check. 
+ 
+Please note that the preliminary name check does not secure the name.  In order to secure the name, you must promptly register the proper documents with the Secretary of State. 
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

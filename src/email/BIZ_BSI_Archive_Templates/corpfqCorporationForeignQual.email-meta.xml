@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>corpfq - Corporation Foreign Qual</name>
+    <style>none</style>
+    <subject>corpfq - Corporation Foreign Qual</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.
+
+Foreign Qualification is the process by which your Corporation registers to do business in a state other than its home state.  Effectively, you will have one Corporation that is registered to do business in multiple states.  This will allow your Corporation to conduct business under the same name and use the same federal tax identification number in multiple states.
+
+For your convenience, I have provided a summary of our Foreign Qualification fees:
+
+Standard Foreign Qualification Package $stdfq_pricing
+(20 to 35 business days)
+Rush Foreign Qualification Package $rushfq_pricing
+(10 to 15 business days)
+
+To place your Foreign Qualification order, simply reply to this email or contact me by phone at $biz_phone  $biz_hours.  Please provide the following information:
+
+1. Existing or pending LegalZoom order number
+2. Name of Corporation
+3. State of formation
+4. Foreign Qualification state
+5. Business address
+6. Registered Agent name and address 
+
+Best regards, 
+
+[ Your Name ]
+{!snippetVariable.bizbsi_address}
+{!snippetVariable.bizbsi_phone}
+{!snippetVariable.bizbsi_fax}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

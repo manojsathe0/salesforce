@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>QS Order Confirmation &amp; Survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QS Order Confirmation &amp; Survey</name>
+    <style>none</style>
+    <subject>Subject</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Congratulations, we have successfully completed the process of placing your order. Your order confirmation number is #---. This number can be used to reference your order anytime.
+
+Per our cursory name check, your entity name appears to be available. However, a more thorough check will still be done by a specialist in the business division to determine if the entity name appears available on preliminary basis. Please keep in mind that an entity name is not confirmed to be available until it is filed by your respective state.
+
+The LegalZoom team is very interested in providing the best possible service to customers like you.  We are very interested in continually improving our services and your feedback is vital. I would greatly appreciate a minute of your time to gather your feedback on our service. Please click on the link below to take a 2 question survey so that we can understand what you liked and what could be improved in the future.
+
+The survey is linked below. If the link does not work, you can also copy and paste the address directly: 
+
+https://www.surveymonkey.com/s/HJGCD66
+
+It has been my pleasure working with you on the establishment of your business.  Thank you for choosing LegalZoom for your business needs.
+
+As always, should you need additional help, please don’t hesitate to contact me directly at (855) 787-1958 x{!User.Extension} Monday–Friday from 6 am – 6 pm PT or simply reply to this message.  If I’m unavailable, you can also email QuickStart@legalzoom.com to reach the next available member of my team.
+
+{!User.FirstName}
+Business Account Manager
+(855)-787-1958 x{!User.Extension}
+QuickStart@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

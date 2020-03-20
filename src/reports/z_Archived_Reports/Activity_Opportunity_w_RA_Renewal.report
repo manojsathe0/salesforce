@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order_Matching_Activity__c$Name</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Activity_Created_By__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Activity_Created_DateTime__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Opportunity__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Opportunity__c.Order_Number__c</field>
+    </columns>
+    <description>Opportunity with RA Renewal checkbox checked</description>
+    <format>Tabular</format>
+    <name>Activity/Opportunity w/ RA Renewal</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OMA_w_Orders__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Order_Matching_Activity__c$Activity_Created_Date__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

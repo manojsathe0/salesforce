@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>bereject</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Customer Verbiage Change Backends-Reject</name>
+    <style>none</style>
+    <subject>Customer Verbiage Change Backends-Reject</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for placing your order with LegalZoom.
+
+Since the Secretary of State does not review Operating Agreement/Bylaws documents, you may make any changes that suit your business needs. We are happy to assist you with your documents, however, LegalZoom is not a law firm and cannot provide legal advice.
+
+After initial review, we have determined that due to the nature of the changes requested, we recommend you consult with an attorney.
+
+If you are an Express Gold customer, you are automatically eligible for a Business Advantage Pro Attorney consult. If not, you may purchase LegalZoom’s Business Advantage Pro subscription to receive attorney advice on this and other legal issues. To learn more about our Business Advantage Pro plan or to receive other resources for seeking legal advice to resolve this issue, please call (877) 818-8787.
+
+A soft copy of the document has been enclosed to facilitate such change, at no additional cost. We are here to assist you with any additional questions/concerns you might have.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717 }
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

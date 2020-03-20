@@ -1,0 +1,37 @@
+<aura:component controller="IADSubscriptionServicesController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="customerId" type="String" />
+    <aura:attribute name="hasSubscriptionServices" type="Boolean" />
+    <aura:attribute name="subscriptionServices" type="Object" />
+        
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="slds-card">
+        <lightning:spinner aura:id="mySpinner" />
+        <div style="{!v.hasSubscriptionServices ? '' : 'display:none'}">    
+            <aura:iteration items="{!v.subscriptionServices}" var="subService">
+                <div class="slds-m-top--small">
+                    <div class="slds-grid slds-grid--align-spread slds-text-body--small">
+                        <div class="slds-col slds-size--2-of-3">
+                            <b><u id="codeId"> {!subService.serviceName} </u></b>
+                        </div>
+                        <div class="slds-col slds-size--1-of-3" id="amountId">
+                            {!subService.serviceStatus}
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </aura:iteration>
+        </div>
+        
+        <div style="{!v.hasSubscriptionServices ? 'display:none' : ''}">  
+            <br/><br/><br/><br/>
+            <div align="center">
+                <lightning:icon iconName="standard:approval" size="small" alternativeText="approval Icon"  id="approvalIcon"/>
+                <span class="slds-assistive-text">medium approval Icon</span>
+            </div>
+            <p class="slds-text-heading slds-text-align--center" id="noCredlabel">No subscription services</p>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>RFRI</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Request for Required Info</name>
+    <style>none</style>
+    <subject>Request for Required Info</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}:
+
+Thank you for choosing LegalZoom.
+
+A preliminary review of your questionnaire indicates that required information is either missing or left out.  Please reply back at your earliest convenience with the following information:
+
+Missing Information 
+Missing Information 
+Missing Information 
+
+Your response is critical.  We cannot complete your divorce documents until we receive the required information. 
+
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at {!snippetVariable.psd_phone} {!snippetVariable.cchours}.  We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

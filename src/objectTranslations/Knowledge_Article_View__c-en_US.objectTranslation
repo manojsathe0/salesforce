@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Knowledge Article View</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Knowledge Article Views</value>
+    </caseValues>
+    <fields>
+        <label><!-- Article Id --></label>
+        <name>Article_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Number --></label>
+        <name>Article_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Title --></label>
+        <name>Article_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article URL --></label>
+        <name>Article_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Viewed by --></label>
+        <name>Article_Viewed_by__c</name>
+        <relationshipLabel><!-- Knowledge Article Views --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manager --></label>
+        <name>Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profile --></label>
+        <name>Profile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Full Name --></label>
+        <name>User_Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Viewed Year --></label>
+        <name>Viewed_Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

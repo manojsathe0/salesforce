@@ -1,0 +1,172 @@
+<apex:component controller="IADOpenCasesModalController" allowDML="true">
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ 
+  
+  <style>
+    .slds .slds-radio .slds-radio--faux {
+      border: 1px solid #696969;
+    }
+    .slds .slds-radio [type="radio"]:checked + .slds-radio--faux:after,
+    .slds .slds-radio [type="radio"]:checked ~ .slds-radio--faux:after {
+      background: #000000;
+    }
+    
+      span.slds-form-element__label {
+          color: red !important;
+      }
+  </style>
+  <apex:attribute name="showModal" description="Tracking if the modal is showing or not" type="Boolean" required="true" />
+  <body>
+  <script type="text/javascript">
+    //Modal logic
+    var caseId = '';
+    
+   
+   
+
+    function callDismiss() {
+      //logDismissal();
+      
+      dismiss();
+    }
+    function checkIfRadioSelected() {
+      console.log('gotocase clicked');
+
+      try {
+        caseId = document.querySelector('input[name = "caseOptions"]:checked').value;
+        console.log('caseid ' + caseId);
+        sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+      }
+      catch (err) {
+        if (caseId == '')
+          showUsrMsg();
+      }
+    }
+    var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+    
+  
+            VAR theme  ='{!$User.UIThemeDisplayed}';
+            if(theme=='Theme4d')
+            {
+             var url = '/lightning/r/Case/' + caseId;
+             
+             alert(url);
+            }
+            else
+            {
+           
+            var url = '/' + caseId;
+             alert(url);
+            }
+   
+      sforce.console.openSubtab(result.id, url, true);
+      dismiss();
+    };
+    /*
+    function dismiss()
+    {
+      document.getElementById("modalDiv").style.display = "none";
+      
+      return false;
+    }
+    */
+  </script>
+  <apex:inputHidden value="{!showModal}" id="hiddenShowModal" />
+  
+  <!--<apex:actionFunction name="logDismissal" action="{!logDismissal}" rerender="none" /> -->
+  <apex:actionFunction name="showUsrMsg" action="{!setMsg}" rerender="modalPanel" />
+  <apex:outputPanel id="modalPanel" rendered="{!IF((openCasesSize>0), true,false)}">
+    <div id="modalDiv" style="">
+      <div class="slds-modal slds-fade-in-open slds-modal" aria-hidden="false" role="dialog">
+        <div class="slds-modal__container">
+          <div class="slds-modal__header">
+            <h2 class="slds-text-heading--small">Please review open cases</h2>
+          </div>
+          <div class="slds-modal__content slds-p-around--medium slds-grid slds-grid--align-center">
+            <div>
+              <fieldset class="slds-form-element">
+                <legend class="form-element__legend slds-form-element__label"> <b>Review the following case(s) prior to ending your customer call:</b></legend>
+                <apex:repeat value="{!openCases}" var="openCase">
+                  <div class="slds-form-element__control">
+                    <label class="slds-radio">
+                      <input type="radio" name="caseOptions" value="{!openCase.Id}" />
+                      <span class="slds-radio--faux" />
+                      <span class="slds-form-element__label"><apex:outputField value="{!openCase.CaseNumber}" /> </span>
+                      <span class="slds-form-element__label"><apex:outputField value="{!openCase.Subject}" /></span>
+                      <span class="slds-form-element__label"><apex:outputField value="{!openCase.CreatedDate}" /></span>
+                    </label>
+                  </div>
+                </apex:repeat>
+              </fieldset>
+            </div>
+          </div>
+          <div class="slds-modal__footer">
+            <div style="{!IF((showMsg == true), '','display:none')}">Please select a case</div>
+            <!--<apex:commandButton onclick="callDismiss(); return false;" styleClass="slds-button slds-button--neutral" action="{!logDismissal}" rerender="none" value="Dismiss" /> -->
+            <button onclick="callDismiss(); return false;" class="slds-button slds-button--neutral">Dismiss</button>
+            <button type="button" onclick="check(); return false;" class="slds-button slds-button--neutral slds-button--brand">Go To Case</button>
+          </div>
+        </div>
+      </div>
+      <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+    </div>
+   <script>
+    //Modal logic
+    var caseId = '';
+    
+   
+
+function callDismiss() {
+    
+      
+      dismiss();
+    }
+    
+    function dismiss()
+    {
+      document.getElementById("modalDiv").style.display = "none";
+      
+      return false;
+  }
+  
+  function check() {
+      
+      try {
+        caseId = document.querySelector('input[name = "caseOptions"]:checked').value;
+        console.log('caseid ' + caseId);
+        sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+      }
+      catch (err) {
+        if (caseId == '')
+          showUsrMsg();
+      }
+    }
+    
+     var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+    
+  
+            var theme  ='{!$User.UIThemeDisplayed}';
+            if(theme=='Theme4d')
+            {
+             var url = '/lightning/r/Case/' + caseId;
+             
+            
+             sforce.one.navigateToSObject(caseId);
+            }
+            else
+            {
+           
+            var url = '/' + caseId;
+            
+            }
+   
+      sforce.console.openSubtab(result.id, url, true);
+      dismiss();
+    };
+   
+  </script>
+  </apex:outputPanel>
+  
+</body>
+  </html>
+</apex:component>

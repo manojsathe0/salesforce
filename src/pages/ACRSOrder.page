@@ -1,0 +1,40 @@
+<apex:page standardController="Account" extensions="ACRSOrderController">
+		<apex:includeScript value="/support/console/26.0/integration.js"/>
+		<script type = "text/javascript">
+		   var orderId , orderNum , theUrl; 
+	       function openOrder(orderId , orderNum) {
+	            
+	            orderId = orderId;
+	            orderNum = orderNum;
+	            theUrl = "/"+orderId;
+	            if (sforce.console.isInConsole()) 
+	            {
+	            	sforce.console.getEnclosingPrimaryTabId(openSubtab);
+	            } 
+	            else
+	            {
+	            	top.location.href = theUrl;
+	            }
+	        }
+	        var openSubtab = function openSubtab(result)
+	        {
+	            var primaryTabId = result.id;
+	            sforce.console.openSubtab(primaryTabId , theUrl , true , 
+	                orderId , null, null , orderNum);
+        	};
+		</script>
+		<apex:pageblock id="CustomList">
+			<apex:pageBlockTable value="{!acrsOrders}" var="o" rendered="{!NOT(acrsOrders.empty)}">
+		        <apex:column >
+		        	<apex:facet name="header">Order Number</apex:facet>
+		        	<apex:outputLink value="#" onClick="openOrder('{!o.Id}' , '{!o.Name}');">{!o.Name}</apex:outputLink>
+		        </apex:column>
+		        <apex:column value="{!o.Base_Product__r.Name}"/>
+		        <apex:column value="{!o.Order_Date_Time_Created__c}"/>
+		        <apex:column value="{!o.ACR_Date_Time__c}"/>
+		        <apex:column value="{!o.Legal_Matter__c}"></apex:column>
+		        <apex:column value="{!o.Fulfillment_Status__c}"/>
+	   		</apex:pageBlockTable>
+   			<apex:outputLabel value="No records to display" rendered="{!(acrsOrders.empty)}" styleClass="noRowsHeader"></apex:outputLabel>
+ 		</apex:pageblock>
+</apex:page>

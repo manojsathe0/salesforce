@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_94084656</developerName>
+        <masterLabel>Full Name</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Jan Aguilar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Laura Aguirre</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Adam Alejandro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brian Alejandro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nathan Amber</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristen Andas-Meranda</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jairo Aparicio</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Barbara Baird</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sandra Balderas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kim Barron</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susie Battle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kyle Benkie</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Garrett Bertram</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jonathan Beserra</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Roberto Betancourt</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Abraham Bitar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christopher Boike</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Victoria Bonner</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Adam Borrego</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Faith Brown</sourceValue>
+            </sourceValues>
+            <value>Customer Care 0</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Lavern Browne</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>William Buck</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Marybeth Byrd</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Karen Chen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Patty Chikamagalur</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shonda Clark</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeanelle Clum</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Victoria Coe</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matthew Coy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kasey Cromer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Juan Cuellar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Whitney Cyrus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andrew Dalton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeremy Davis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shennell Davis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tammy Davis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carrie Dearinger</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Arteisha Dickens</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dmitry Dyment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Elbe</sourceValue>
+            </sourceValues>
+            <value>Customer Care 1</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_18535941</developerName>
+        <masterLabel>Full Name -d</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Holland Rancier</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andrea Rangel</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Janice Ratcliffe</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chelsea Ray</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chikas Reynolds</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Emma Richardson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christopher Rivera</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keith Robinson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Rockmore</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Rodriguez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Laura Rogers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Summer Rosales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jerel Sarate</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robert Seaton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>LaTasha Selman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Aurora Serrato</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jamie Shelton</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chyna Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dee Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dewi Smith</sourceValue>
+            </sourceValues>
+            <value>Customer Care 6</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Kristi Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mindi Smola</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sarah Somogyi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andrae Strange</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Cedricke Taylor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Wendall Tillman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Abel Trinidad</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jenea Tucker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Monica Varner</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeremy Vernassal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carlos Villegas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Luis Villegas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tamarra Washington</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rachel Waters</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dawn Watson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bernice White</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>April Williams</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carmen Williams</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kate Wood</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kathy Wood</sourceValue>
+            </sourceValues>
+            <value>Customer Care 7</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_34186120</developerName>
+        <masterLabel>Full Name -e</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Aaron Woodul</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Darnisha Yates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Janet Yoo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hector Zapata</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kevin Zimmerman</sourceValue>
+            </sourceValues>
+            <value>Customer Care 8</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_99453770</developerName>
+        <masterLabel>Full Name-b</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Brian Ferington</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Audrey Finn</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Monica Fletcher</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Meagan Flores</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Edward Flowers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Troy Flowers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tira Fountain</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ana Maria Frayre</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Molly Freeman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carrie Frizzell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Angela Frost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Taneka Fryar</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Furstenberg</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Colleen Gallion</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alexandra Garcia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jaime Garcia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>James Gathecha</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Flora Goboy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeffrey Gray</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Joseph Greene</sourceValue>
+            </sourceValues>
+            <value>Customer Care 2</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Devon Guliford</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christopher Gunn</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Fabio Gutierrez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jerrod Harrison</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robyn Hays</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>James Henderson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jessica Hervey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Donna Hill</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sean Hoffman-Murphy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sivetra Lee Hubert</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carol Hudgins</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Leehla Huerta</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristian Iraheta</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Jackson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Latisha Janousek</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nalani Jefferson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Veronica Johnson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Yolanda Johnson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kanyanette Jones</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lena Jones</sourceValue>
+            </sourceValues>
+            <value>Customer Care 3</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_19353883</developerName>
+        <masterLabel>Full Name-c</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Margot Jones</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tanya Kendrick</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Janecissa Kendrix</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Zahirah Khan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tania Lemus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Erin Lewis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michelle Lopez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Anthony Lyons</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Nicholas Martin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Benjamin Martinez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susan Maruca</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tremecia McGee</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bruce McGilvray</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeremy Mercer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Mersmann</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brenton Miller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Iyanla Mitchell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Montgomery</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Elizabeth Moreno</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ronnie Morgan</sourceValue>
+            </sourceValues>
+            <value>Customer Care 4</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Deshawn Morrall</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gerard Morrison II</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rickey Mosser</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Adrian Munoz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Hassim Muthleb</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Ashwin Nagre</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Caryn Neal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Thao Nguyen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Heidy Ochoa</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Joi Offineer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Olivarez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Peavey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alex Perales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jennifer Phung</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kenneth Picou</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Deonne Poovey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lauren Pressley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Adam Prieto</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kyle Quintanilla</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Johnny Ramirez</sourceValue>
+            </sourceValues>
+            <value>Customer Care 5</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>field_key</field>
+    </columns>
+    <columns>
+        <field>OLDVAL</field>
+    </columns>
+    <columns>
+        <field>NEWVAL</field>
+    </columns>
+    <columns>
+        <field>CASE_OWNER</field>
+    </columns>
+    <columns>
+        <field>BucketField_94084656</field>
+    </columns>
+    <columns>
+        <field>Case.Product_Line__c</field>
+    </columns>
+    <columns>
+        <field>Case.Product2__c</field>
+    </columns>
+    <columns>
+        <field>ORIGIN</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Case.Units__c</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>BucketField_99453770</field>
+    </columns>
+    <columns>
+        <field>BucketField_19353883</field>
+    </columns>
+    <columns>
+        <field>BucketField_18535941</field>
+    </columns>
+    <columns>
+        <field>BucketField_34186120</field>
+    </columns>
+    <columns>
+        <field>CREATED_ROLE</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 OR 2 OR 3 OR 4 OR 5</booleanFilter>
+        <criteriaItems>
+            <column>BucketField_94084656</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care 0,Customer Care 1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_99453770</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care 2,Customer Care 3</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_19353883</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care 4,Customer Care 5</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_18535941</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care 6,Customer Care 7</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_34186120</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care 8</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Customer Care - Cases Last Edited Yester</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <sortColumn>CREATED_DATE</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

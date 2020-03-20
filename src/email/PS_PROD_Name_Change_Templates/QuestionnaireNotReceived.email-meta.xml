@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>NCReminder</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Questionnaire Not Received</name>
+    <style>none</style>
+    <subject>Questionnaire Not Received</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We have not heard back from you in regards to your name change questionnaire. We cannot begin the process of your name change application until we receive the questionnaire. If you are having problems receiving or downloading the questionnaire please reply back to this e-mail or call 1-800-773-0888. 
+
+If you experience any problems with the formatting please do not worry. Fill it out the best you can and we will call you if we have any questions. This is just a simple reminder so please take your time filling out the questionnaire and help us to do it right. When you are finished, simply reply to this email and re-attach your completed questionnaire.
+
+If you wish to fill out this questionnaire by hand, please retain a copy for your records and mail the completed form to: 
+
+LegalZoom.com
+Att: Name Change Department
+7083 Hollywood Blvd., Suite 180
+Los Angeles, California 90028 
+
+Thanks again for choosing Legalzoom! America&apos;s #1 online legal source! 
+
+Best regards, 
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,107 @@
+<!--  
+Log a Call for Opps and Lead, Ltng version.
+Created by Artyom M.
+Per Story: B-25879
+
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="LogCallLeadOppController_Ltng">
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="hasErrors" type="Boolean"/>
+    <aura:attribute name="success" type="Boolean"/>
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="recordId" type="String"/>
+
+	<aura:attribute name="contactStatusValues" type="String[]"/>
+	<aura:attribute name="contactStatusSelected" type="String"/>
+	
+	<aura:attribute name="reasonForContactValues" type="String[]"/>
+	<aura:attribute name="reasonForContactSelected" type="String"/>
+	
+	<aura:attribute name="reasonForTransferValues" type="String[]"/>
+	<aura:attribute name="reasonForTransferSelected" type="String"/>
+    
+    <aura:attribute name="otherReason" type="String"/>
+    <aura:attribute name="description" type="String"/>
+	
+	<div class="myClass">
+		<section role="dialog" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+			<div class="slds-modal__container">
+            	<header class="slds-modal__header">
+                	<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Log a Call</h2>
+				</header>
+                    
+                    
+			<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+				<aura:if isTrue="{!v.hasErrors}">
+					<div>
+						<ui:message title="Error" severity="error" closable="true">
+							Cannot Log activity at this time.
+         				</ui:message>
+      				</div>
+   				</aura:if>
+    
+    			<aura:if isTrue="{!v.success}">
+      		      <div>
+			         <ui:message title="Confirmation" severity="confirm" closable="true">
+						Activity Logged
+				     </ui:message>
+				  </div>
+				</aura:if>
+
+ 
+				<div class="input-wrap">
+	                <label>Contact Status!</label>
+	                <ui:inputSelect value="{!v.contactStatusSelected}" aura:id="contStatus">
+	                	<aura:iteration items="{!v.contactStatusValues}" var="values">
+							<ui:inputSelectOption text="{!values}"/>
+	                    </aura:iteration>
+	                </ui:inputSelect>
+	             </div>
+
+           		<div class="input-wrap">
+	                <label>Reason for Contact</label>
+					<ui:inputSelect value="{!v.reasonForContactSelected}" aura:id="rsnContact">
+						<aura:iteration items="{!v.reasonForContactValues}" var="values">
+							<ui:inputSelectOption text="{!values}"/>
+	                    </aura:iteration>
+	                </ui:inputSelect>
+               </div>
+
+	           <aura:renderIf isTrue="{!v.reasonForContactSelected == 'Transfer'}">  
+					<div class="input-wrap">
+	                <label>Reason for Transfer</label>
+					<ui:inputSelect value="{!v.reasonForTransferSelected}" aura:id="rsnTransfer">
+						<aura:iteration items="{!v.reasonForTransferValues}" var="values">
+							<ui:inputSelectOption text="{!values}"/>
+	                    </aura:iteration>
+	                </ui:inputSelect>
+	                  
+	
+	            </div>
+				</aura:renderIf> 
+				
+				<aura:renderIf isTrue="{!v.reasonForContactSelected == 'Other'}">
+					<div class="input-wrap">
+						<label>Other Reason</label>
+	                    <ui:inputText value="{!v.otherReason}" aura:id="otherRsn"/>
+					</div>
+				</aura:renderIf> 
+
+			
+				<div class="input-wrap">
+	                <label>Comments</label>
+	                <ui:inputTextArea value="{!v.description}" aura:id="comment"/>
+	             </div>
+			
+			
+	
+		
+				</div>	
+				<footer class="slds-modal__footer">
+		            <lightning:button class="slds-button slds-button_brand" aura:id="saveButton" label="Submit" onclick="{!c.submit}"/>
+		        	<lightning:button class="slds-button" label="Cancel" onclick="{!c.handleCancel}"/>
+		    	</footer>
+	    	</div>
+		 </section>
+	 </div>	
+</aura:component>

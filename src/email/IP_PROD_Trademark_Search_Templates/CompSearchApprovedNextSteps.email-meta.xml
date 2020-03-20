@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cs6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Comp Search Approved Next Steps</name>
+    <style>none</style>
+    <subject>Comp Search Approved Next Steps</subject>
+    <textOnly>Dear {!Contact.FirstName},
+We will now prepare your specimen and logo. Once your specimen and logo have been properly formatted we will submit your Federal Trademark Application to the US Patent and Trademark Office (USPTO). You will receive a time sensitive email within two business days from the USPTO (teas@uspto.gov) requesting your electronic signature (e-signature) of the application form.
+
+Please review the application for accuracy before signing. Once your application has been signed, many aspects cannot be changed or modified in any way, and all application fees are non-refundable.
+If you have installed Anti-Spam filters or software on your email service, please ensure that legitimate emails from TEAS@uspto.gov is not falsely identified as spam or junk.
+
+Upon receipt of your completed e-signature, LegalZoom will complete your order by paying the required filing fee. In addition, LegalZoom will send you a packet containing hard copies of your application materials. These materials will include your USPTO serial number, which can be used to track the status of your application online here. (Note*: After receiving your serial number, please allow 2-3 weeks before checking the status).
+
+It normally takes between 8-12 months for the USPTO to make a final determination on your mark.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

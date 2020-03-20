@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>count for Sorting</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Template_Developer_Name__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Template_Folder_Name__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Template_Description__c</field>
+    </columns>
+    <columns>
+        <field>Case$Queue__c</field>
+    </columns>
+    <description>Email Template associated to Case assigned to a &apos;CC&apos; Queue.</description>
+    <filter>
+        <criteriaItems>
+            <column>Case.Activities$Email_Template__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>CC_Name_Change,CC AS Approval,CC AS Courtesy Calls,CC Attorney Services,CC Biz,CC Biz Approval,CC Biz Faxes,CC BIZ Outgoing,CC Deeds Billing Requests,CC General Support,CC IP,CC IP Approval,CC IP Failed Delivery,CC IP Faxes,CC IP Outgoing,CC Manager Call-Back,CC Mock Launch Requests,CC PS,CC PS Approval,CC PS Faxes,CC PS Outgoing,CC Tier II,CC Tier II 501c3</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case.Activities$Email_Template__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC Email Template for Marketing</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Case_with_Activities_Custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <sortColumn>Case$CaseNumber</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Case.Activities$Date_Time_Created__c</dateColumn>
+        <endDate>2016-11-07</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-10-24</startDate>
+    </timeFrameFilter>
+</Report>

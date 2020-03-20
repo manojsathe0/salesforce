@@ -1,0 +1,1194 @@
+<apex:page standardStylesheets="false" controller="IADSearchController" showHeader="true" sideBar="true" id="pg">
+    <html lang="en" ng-app="gSearchApp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+    <apex:includeScript value="/support/console/45.0/integration.js" />
+    
+
+    <script type="text/javascript" src="/soap/ajax/26.0/connection.js"></script>
+    
+    <meta charset="UTF-8" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js" />
+        <apex:includeScript value="{!$Resource.svg4everybody}" />
+        <apex:includeScript value="{!$Resource.moment}" />
+        <apex:includeScript value="{!$Resource.moment_timezone_data}" />
+        <apex:includeScript value="{!URLFOR($Resource.jstz, 'jstz/dist/jstz.min.js')}" />
+        
+    <script type="text/javascript">
+        svg4everybody();
+        var openCustomSearch_url = "";
+        $(document).ready(function() {
+            var sPageURL = window.location.search.substring(1);
+            console.log('sPageURL--->');
+            console.log(sPageURL);         
+            openCustomSearch_url = window.location.href.substring(1);
+            console.log('openCustomSearch_url');
+            console.log(openCustomSearch_url);
+            var sURLVariables = sPageURL.split('&');
+            console.log('sURLVariables--->'+sURLVariables);
+            for (var i = 0; i < sURLVariables.length; i++) { 
+                var sParameterName = sURLVariables[i].split('='); 
+                console.log('sParameterName-->'+sParameterName);
+                if (sParameterName[0] == "openCustomSearch"){
+                    //rebuild string with | separating the params instead of &
+                    openCustomSearch_url = decodeURIComponent(sParameterName[1]);
+                    console.log("openCustomSearch_url = " + openCustomSearch_url);
+                    //sample url :
+                    //apex/g_CustomLookup?lksrch=5115&lkorder=36789012000&lkprofile=Sales_BusinessServices&ixnId=010A02783313000C&inServiceCloudConsole=true
+                    openCustomSearch_url = openCustomSearch_url.replace('one/one.app#/alohaRedirect/','');                    
+                    openCustomSearch_url = openCustomSearch_url.replace('apex/','');
+                    //openCustomSearch_url = openCustomSearch_url.replace('?','|'); 
+                    //openCustomSearch_url = openCustomSearch_url.replace(/&/g,'|');              
+                    console.log("updated openCustomSearch_url = " + openCustomSearch_url);
+                    
+                    return;
+                }
+            }
+        });
+      
+    function ctiMessage() {
+            this.action = 'ObjectSelected',
+            this.id = '',
+            this.interactionId = '',
+            this.url=''
+    }
+    
+    function refreshPage(objId)
+    
+    {   
+        var inConsole = '{!inServiceCloudConsole}'; 
+        console.log('in console ' + inConsole);
+        var iD = '{!ixnId}';       
+        selectedObjId = objId;       
+        //var full_url = ' ../one/one.app#/sObject/' + objId + '?openCustomSearch=' + openCustomSearch_url;
+        //var full_url = '/lightning/r/Contact/' + objId + '/view'; // + '?openCustomSearch=' + openCustomSearch_url
+        // var full_url = '/lightning/r/Contact/' + objId + '/view?openCustomSearch=' + openCustomSearch_url;
+         var full_url = '/lightning/r/Contact/' + objId + '/view?openCustomSearch=' + openCustomSearch_url;       
+        console.log("full_url = " + full_url);
+        window.top.location.href = full_url; 
+        //window.open(full_url, "_self");
+        // Padma @D-06695 commenting the below code as the sforce.console.fireEvent is not wroking in lightning and using the visualforce remoting
+        /*
+        var message = new ctiMessage();        
+        message.action = 'ObjectSelected';
+        message.id = objId;
+        message.interactionId = '{!ixnId}';
+        message.url = full_url;    
+        var ctiMessageAsJSON = JSON.stringify(message);
+        console.log('ctiMessageAsJSON'+ctiMessageAsJSON);
+        
+        sforce.console.fireEvent('CTIEvent', ctiMessageAsJSON, function (result) {
+            console.log("CTIEvent fired result: " + result);
+        });
+        
+        console.log('PrimarytabId is ' + sforce.console.getFocusedPrimaryTabId());
+        console.log('After');
+        */
+          Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.IADSearchController.updateObjectById}',
+            objId, iD,
+            function(result, event){
+               
+            }, 
+            {escape: true}
+        );
+        
+         Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.IADSearchController.linkActivityToObjectSelected}',
+            objId, iD,
+            function(result, event){
+               
+            }, 
+            {escape: true}
+        );
+        
+        
+        //inform workspace of SFobject id for subsequent use in activity creation and transfer
+        var newData = '{"sfdcObjectId":"' + objId + '","id":"' + iD + '"}';
+        //For legalzoom, need to differentiate on what type of object was selected.
+        var contactID = "003";
+        var leadID = "00Q";
+        
+       
+        if(objId.indexOf(contactID)>-1 )
+            newData = '{"sfdcObjectId":"' + objId + '","sfdcContactId":"' + objId + '","id":"' + iD + '"}';
+        else if(objId.indexOf(leadID)>-1 )
+            newData = '{"sfdcObjectId":"' + objId + '","sfdcLeadId":"' + objId + '","id":"' + iD + '"}'; 
+        
+        //workspace.sendAttachData(newData);
+        //window.top.location.href = full_url; 
+        
+    }
+   </script>
+   <script>
+            if (!window.console) console = {
+                log: function() {}
+            };
+            $ = jQuery.noConflict();
+
+            var contactFields = JSON.parse('{!ContactTableFieldsSerialized}');
+            var orderFields = JSON.parse('{!OrderTableFieldsSerialized}');
+            var orderItemFields = JSON.parse('{!OrderItemsTableFieldsSerialized}');
+            var caseFields = JSON.parse('{!CaseTableFieldsSerialized}');
+            var leadFields = JSON.parse('{!LeadTableFieldsSerialized}');
+            var isSales = '{!isSales}';
+            //console.log(caseFields);
+
+            var recordLists = '';
+            var contactList = [];
+            var orderList = [];
+            var orderItemsList = [];
+            var caseList = [];
+            var leadList = [];
+            var objTypes = [];
+
+
+            function resetArrays() {
+                objTypes = [];
+                contactList = [];
+                orderList = [];
+                orderItemsList = [];
+                caseList = [];
+                leadList = [];
+            }
+            // define the app
+            var gSearchApp = angular.module('gSearchApp', []);
+
+            gSearchApp.factory('recordSharingService', function($rootScope) {
+                var sharedService = {};
+
+                sharedService.contactMessage = [];
+                sharedService.orderMessage = [];
+                sharedService.orderItemsMessage = [];
+                sharedService.caseMessage = [];
+                sharedService.leadMessage = [];
+
+                sharedService.prepForContactBroadcast = function(msg) {
+                    this.contactMessage = msg;
+                    this.broadcastContactItem();
+                };
+                sharedService.prepForOrderBroadcast = function(msg) {
+                    this.orderMessage = msg;
+                    this.broadcastOrderItem();
+                };
+                sharedService.prepForOrderItemsBroadcast = function(msg) {
+                    this.orderItemsMessage = msg;
+                    this.broadcastOrderItemsItem();
+                };
+                sharedService.prepForCaseBroadcast = function(msg) {
+                    this.caseMessage = msg;
+                    this.broadcastCaseItem();
+                };
+                sharedService.prepForLeadBroadcast = function(msg) {
+                    this.leadMessage = msg;
+                    this.broadcastLeadItem();
+                };
+
+                sharedService.broadcastContactItem = function() {
+                    $rootScope.$broadcast('handleContactBroadcast');
+                };
+                sharedService.broadcastOrderItem = function() {
+                    $rootScope.$broadcast('handleOrderBroadcast');
+                };
+                sharedService.broadcastOrderItemsItem = function() {
+                    $rootScope.$broadcast('handleOrderItemsBroadcast');
+                };
+                sharedService.broadcastCaseItem = function() {
+                    $rootScope.$broadcast('handleCaseBroadcast');
+                };
+                sharedService.broadcastLeadItem = function() {
+                    $rootScope.$broadcast('handleLeadBroadcast');
+                };
+
+                return sharedService;
+            });
+            gSearchApp.controller('SearchCtrl', ['$scope', 'recordSharingService', function($scope, sharedService) {
+                // init the filtered items
+                $scope.init = function(){
+                    $('#fName').val('{!firstName}');
+                    $('#lName').val('{!lastName}');
+                    $('#email').val('{!email}');
+                    $('#state').val('{!stateOfFormation}');
+                    $('#cNumber').val('{!caseNumber}');
+                    $('#oNumber').val('{!orderNumber}');
+                    $('#pNumber').val('{!processingNumber}');
+                    $('#entity').val('{!entityName}');
+                    $('#phNumber').val('{!phoneNum}');
+                    $scope.search();
+                };
+                angular.element(document).ready(function () {
+                    if({!runSearch}){
+                        $scope.search();
+                        console.log('running search');
+                    }
+                });
+                $scope.search = function() {
+                    //console.log('clicked');
+                    var vals = [];
+                    var noVals = true;
+                    $("#searchForm input[type=text]").each(function() {
+                        if(this.value != '' && this.value.length > 1)
+                            noVals = false;
+                       vals.push(this.value);
+                       //console.log('got value ' + this.value);
+                    });
+                    if (vals.length > 0 && !noVals) {
+                        $scope.searching = true;
+                        //alert('here');
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.IADSearchController.performSearch}',
+                            vals,
+                            function(result, event) {
+                                //alert(result);
+                                if (event.status) {
+                                    resetArrays();
+                                    console.log('success');
+                                    $scope.searching = false;
+                                    console.log(result);
+                                    //kind of a hack... 
+                                    var x = document.createElement('div');
+                                    x.innerHTML = result;
+                                    var fixed = x.innerHTML;
+                                    recordLists = JSON.parse(fixed);
+                                    for (var i = 0; i < recordLists.length; i++) {
+                                        var recordList = recordLists[i];
+                                        for (var j = 0; j < recordList.length; j++) {
+                                            var objType = recordList[j].attributes.type;
+                                            if (objType != null && !contains(objTypes, objType)) {
+                                                objTypes.push(objType);
+                                                if (objType == 'Contact') {
+                                                    contactList = recordList;
+                                                } else if (objType == 'Order__c') {
+                                                    orderList = recordList;
+                                                } else if (objType == 'Order_Item__c') {
+                                                    orderItemsList = recordList;
+                                                } else if (objType == 'Case') {
+                                                    caseList = recordList;
+                                                } else if (objType == 'Lead') {
+                                                    leadList = recordList;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    sharedService.prepForContactBroadcast(contactList);
+                                    sharedService.prepForOrderBroadcast(orderList);
+                                    sharedService.prepForOrderItemsBroadcast(orderItemsList);
+                                    sharedService.prepForCaseBroadcast(caseList);
+                                    sharedService.prepForLeadBroadcast(leadList);
+                                } else if (event.type === 'exception') {
+                                    alert('Exception: ' + event.message + " " + event.where);
+                                    console.log('Exception: ' + event.message + " " + event.where );
+
+                                } else {
+                                    console.log(event.message);
+                                }
+                            }, {escape: true}
+                        );
+                    }
+                };
+                $scope.$on('handleContactBroadcast', function() {
+                    $scope.contactMessage = sharedService.contactMessage;
+                });
+                $scope.$on('handleOrderBroadcast', function() {
+                    $scope.orderMessage = sharedService.orderMessage;
+                });
+                $scope.$on('handleOrderItemsBroadcast', function() {
+                    $scope.orderItemsMessage = sharedService.orderItemsMessage;
+                });
+                $scope.$on('handleCaseBroadcast', function() {
+                    $scope.caseMessage = sharedService.caseMessage;
+                });
+                $scope.$on('handleLeadBroadcast', function() {
+                    $scope.leadMessage = sharedService.leadMessage;
+                });
+                $scope.searching = false;
+            }]);
+
+            //Contacts
+            gSearchApp.controller('ContactTableCtrl', ['$scope', '$filter', 'recordSharingService', function($scope, $filter, sharedService) {
+                $scope.sortingOrder = 'Name';
+                $scope.reverse = false;
+                $scope.filteredItems = [];
+                $scope.groupedItems = [];
+                $scope.itemsPerPage = 10;
+                $scope.pagedItems = [];
+                $scope.currentPage = 0;
+                $scope.fields = contactFields;
+                $scope.message = '';
+                $scope.items = [];
+
+                $scope.refresh = function(objId){
+                    refreshPage(objId);
+                }
+                $scope.sort_by = function(newSortingOrder) {
+                    if ($scope.sortingOrder == newSortingOrder)
+                        $scope.reverse = !$scope.reverse;
+
+                    $scope.sortingOrder = newSortingOrder;
+                };
+                $scope.afterSearch = function(newItems) {
+                    $scope.items = newItems;
+                    console.log('contacts here are new items ' + newItems);
+                    $scope.filteredItems = $filter('filter')($scope.items, function(item) {
+                        for (var attr in item) {
+                            if (searchMatch(item[attr], $scope.query))
+                                return true;
+                        }
+                        return false;
+                    });
+                    if ($scope.sortingOrder !== '') {
+                        $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
+                    }
+                    $scope.currentPage = 0;
+                    $scope.groupToPages();
+                    //fix page not refreshing
+                    try {
+                        $scope.$apply();
+                    } catch (err) {}
+                };
+                // calculate page in place
+                $scope.groupToPages = function() {
+                    $scope.pagedItems = [];
+                    for (var i = 0; i < $scope.filteredItems.length; i++) {
+                        if (i % $scope.itemsPerPage === 0) {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [$scope.filteredItems[i]];
+                        } else {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+                        }
+                    }
+                };
+                $scope.range = function(start, end) {
+                    var ret = [];
+                    if (!end) {
+                        end = start;
+                        start = 0;
+                    }
+                    for (var i = start; i < end; i++) {
+                        ret.push(i);
+                    }
+                    return ret;
+                };
+                $scope.prevPage = function() {
+                    if ($scope.currentPage > 0)
+                        $scope.currentPage--;
+                };
+                $scope.nextPage = function() {
+                    if ($scope.currentPage < $scope.pagedItems.length - 1)
+                        $scope.currentPage++;
+                };
+                $scope.setPage = function() {
+                    $scope.currentPage = this.n;
+                };
+                $scope.$on('handleContactBroadcast', function() {
+                    $scope.afterSearch(sharedService.contactMessage);
+                });
+
+            }]);
+            //Orders
+            gSearchApp.controller('OrderTableCtrl', ['$scope', '$filter', 'recordSharingService', function($scope, $filter, sharedService) {
+                $scope.sortingOrder = 'Name';
+                $scope.reverse = false;
+                $scope.filteredItems = [];
+                $scope.groupedItems = [];
+                $scope.itemsPerPage = 10;
+                $scope.pagedItems = [];
+                $scope.currentPage = 0;
+                $scope.fields = orderFields;
+                $scope.message = '';
+                $scope.items = [];
+                $scope.extIdArray = ['Contact__c', 'Customer_Login__c'];
+
+                $scope.refresh = function(objId){
+                    refreshPage(objId);
+                }
+                $scope.normalizeDate = function(dataType, fieldVal) {
+                    return normalizeDate(dataType, fieldVal);
+                }
+                $scope.sort_by = function(newSortingOrder) {
+                    if ($scope.sortingOrder == newSortingOrder)
+                        $scope.reverse = !$scope.reverse;
+
+                    $scope.sortingOrder = newSortingOrder;
+                };
+                $scope.afterSearch = function(newItems) {
+                    $scope.items = newItems;
+                    console.log('order here are new items ' + newItems);
+                    $scope.filteredItems = $filter('filter')($scope.items, function(item) {
+                        for (var attr in item) {
+                            if (searchMatch(item[attr], $scope.query))
+                                return true;
+                        }
+                        return false;
+                    });
+                    if ($scope.sortingOrder !== '') {
+                        $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
+                    }
+                    $scope.currentPage = 0;
+                    $scope.groupToPages();
+                    //fix page not refreshing
+                    try {
+                        $scope.$apply();
+                    } catch (err) {}
+                };
+                // calculate page in place
+                $scope.groupToPages = function() {
+                    $scope.pagedItems = [];
+
+                    for (var i = 0; i < $scope.filteredItems.length; i++) {
+                        if (i % $scope.itemsPerPage === 0) {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [$scope.filteredItems[i]];
+                        } else {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+                        }
+                    }
+                };
+                $scope.range = function(start, end) {
+                    var ret = [];
+                    if (!end) {
+                        end = start;
+                        start = 0;
+                    }
+                    for (var i = start; i < end; i++) {
+                        ret.push(i);
+                    }
+                    return ret;
+                };
+                $scope.prevPage = function() {
+                    if ($scope.currentPage > 0)
+                        $scope.currentPage--;
+                };
+                $scope.nextPage = function() {
+                    if ($scope.currentPage < $scope.pagedItems.length - 1)
+                        $scope.currentPage++;
+                };
+                $scope.setPage = function() {
+                    $scope.currentPage = this.n;
+                };
+
+                $scope.$on('handleOrderBroadcast', function() {
+                    $scope.afterSearch(sharedService.orderMessage);
+                });
+            }]);
+            //Order Items
+             gSearchApp.controller('OrderItemsTableCtrl', ['$scope', '$filter', 'recordSharingService', function($scope, $filter, sharedService) {
+                $scope.sortingOrder = 'Name';
+                $scope.reverse = false;
+                $scope.filteredItems = [];
+                $scope.groupedItems = [];
+                $scope.itemsPerPage = 10;
+                $scope.pagedItems = [];
+                $scope.currentPage = 0;
+                $scope.fields = orderItemFields;
+                $scope.message = '';
+                $scope.items = [];
+                $scope.extIdArray = ['Order__c', 'Relationship_Type__c'];
+
+                $scope.refresh = function(objId){
+                    refreshPage(objId);
+                }
+                $scope.normalizeDate = function(dataType, fieldVal) {
+                    return normalizeDate(dataType, fieldVal);
+                }
+
+                $scope.sort_by = function(newSortingOrder) {
+                    if ($scope.sortingOrder == newSortingOrder)
+                        $scope.reverse = !$scope.reverse;
+
+                    $scope.sortingOrder = newSortingOrder;
+                };
+                $scope.afterSearch = function(newItems) {
+                    $scope.items = newItems;
+                    console.log('order items here are new items ' + newItems);
+                    $scope.filteredItems = $filter('filter')($scope.items, function(item) {
+                        for (var attr in item) {
+                            if (searchMatch(item[attr], $scope.query))
+                                return true;
+                        }
+                        return false;
+                    });
+                    if ($scope.sortingOrder !== '') {
+                        $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
+                    }
+                    $scope.currentPage = 0;
+                    $scope.groupToPages();
+                    //fix page not refreshing
+                    try {
+                        $scope.$apply();
+                    } catch (err) {}
+                };
+                // calculate page in place
+                $scope.groupToPages = function() {
+                    $scope.pagedItems = [];
+
+                    for (var i = 0; i < $scope.filteredItems.length; i++) {
+                        if (i % $scope.itemsPerPage === 0) {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [$scope.filteredItems[i]];
+                        } else {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+                        }
+                    }
+                };
+
+                $scope.range = function(start, end) {
+                    var ret = [];
+                    if (!end) {
+                        end = start;
+                        start = 0;
+                    }
+                    for (var i = start; i < end; i++) {
+                        ret.push(i);
+                    }
+                    return ret;
+                };
+                $scope.prevPage = function() {
+                    if ($scope.currentPage > 0)
+                        $scope.currentPage--;
+                };
+                $scope.nextPage = function() {
+                    if ($scope.currentPage < $scope.pagedItems.length - 1)
+                        $scope.currentPage++;
+                };
+                $scope.setPage = function() {
+                    $scope.currentPage = this.n;
+                };
+
+                $scope.$on('handleOrderItemsBroadcast', function() {
+                    $scope.afterSearch(sharedService.orderItemsMessage);
+                });
+            }]);
+            //Cases
+            gSearchApp.controller('CaseTableCtrl', ['$scope', '$filter', 'recordSharingService', function($scope, $filter, sharedService) {
+                $scope.sortingOrder = 'Name';
+                $scope.reverse = false;
+                $scope.filteredItems = [];
+                $scope.groupedItems = [];
+                $scope.itemsPerPage = 10;
+                $scope.pagedItems = [];
+                $scope.currentPage = 0;
+                $scope.fields = caseFields;
+                $scope.message = '';
+                $scope.items = [];
+                $scope.extIdArray = ['ContactId', 'AccountId', 'OwnerId'];
+
+                $scope.refresh = function(objId){
+                    refreshPage(objId);
+                }
+                $scope.normalizeDate = function(dataType, fieldVal) {
+                    return normalizeDate(dataType, fieldVal);
+                }
+                $scope.sort_by = function(newSortingOrder) {
+                    if ($scope.sortingOrder == newSortingOrder)
+                        $scope.reverse = !$scope.reverse;
+
+                    $scope.sortingOrder = newSortingOrder;
+                };
+                $scope.afterSearch = function(newItems) {
+                    $scope.items = newItems;
+                    console.log('case here are new items ' + newItems);
+                    $scope.filteredItems = $filter('filter')($scope.items, function(item) {
+                        for (var attr in item) {
+                            if (searchMatch(item[attr], $scope.query))
+                                return true;
+                        }
+                        return false;
+                    });
+                    if ($scope.sortingOrder !== '') {
+                        $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
+                    }
+                    $scope.currentPage = 0;
+                    $scope.groupToPages();
+                    //fix page not refreshing
+                    try {
+                        $scope.$apply();
+                    } catch (err) {}
+                };
+                // calculate page in place
+                $scope.groupToPages = function() {
+                    $scope.pagedItems = [];
+
+                    for (var i = 0; i < $scope.filteredItems.length; i++) {
+                        if (i % $scope.itemsPerPage === 0) {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [$scope.filteredItems[i]];
+                        } else {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+                        }
+                    }
+                };
+
+                $scope.range = function(start, end) {
+                    var ret = [];
+                    if (!end) {
+                        end = start;
+                        start = 0;
+                    }
+                    for (var i = start; i < end; i++) {
+                        ret.push(i);
+                    }
+                    return ret;
+                };
+                $scope.prevPage = function() {
+                    if ($scope.currentPage > 0)
+                        $scope.currentPage--;
+                };
+                $scope.nextPage = function() {
+                    if ($scope.currentPage < $scope.pagedItems.length - 1)
+                        $scope.currentPage++;
+                };
+                $scope.setPage = function() {
+                    $scope.currentPage = this.n;
+                };
+
+                $scope.$on('handleCaseBroadcast', function() {
+                    $scope.afterSearch(sharedService.caseMessage);
+                });
+            }]);
+            //Leads
+            gSearchApp.controller('LeadTableCtrl', ['$scope', '$filter', 'recordSharingService', function($scope, $filter, sharedService) {
+                $scope.sortingOrder = 'Name';
+                $scope.reverse = false;
+                $scope.filteredItems = [];
+                $scope.groupedItems = [];
+                $scope.itemsPerPage = 10;
+                $scope.pagedItems = [];
+                $scope.currentPage = 0;
+                $scope.fields = leadFields;
+                $scope.message = '';
+                $scope.items = [];
+
+                $scope.refresh = function(objId){
+                    refreshPage(objId);
+                }
+                $scope.isSalesProfile = function(){
+                    var returnVal
+                    if(isSales == 'true'){
+                        returnVal = true;
+                    }
+                    else{
+                        returnVal = false;
+                    }
+                    return returnVal;
+                };
+
+                $scope.sort_by = function(newSortingOrder) {
+                    if ($scope.sortingOrder == newSortingOrder)
+                        $scope.reverse = !$scope.reverse;
+
+                    $scope.sortingOrder = newSortingOrder;
+                };
+                $scope.afterSearch = function(newItems) {
+                    $scope.items = newItems;
+                    console.log('lead here are new items ' + newItems);
+                    $scope.filteredItems = $filter('filter')($scope.items, function(item) {
+                        for (var attr in item) {
+                            if (searchMatch(item[attr], $scope.query))
+                                return true;
+                        }
+                        return false;
+                    });
+                    if ($scope.sortingOrder !== '') {
+                        $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
+                    }
+                    $scope.currentPage = 0;
+                    $scope.groupToPages();
+                    //fix page not refreshing
+                    try {
+                        $scope.$apply();
+                    } catch (err) {}
+                };
+                // calculate page in place
+                $scope.groupToPages = function() {
+                    $scope.pagedItems = [];
+
+                    for (var i = 0; i < $scope.filteredItems.length; i++) {
+                        if (i % $scope.itemsPerPage === 0) {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [$scope.filteredItems[i]];
+                        } else {
+                            $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]);
+                        }
+                    }
+                };
+
+                $scope.range = function(start, end) {
+                    var ret = [];
+                    if (!end) {
+                        end = start;
+                        start = 0;
+                    }
+                    for (var i = start; i < end; i++) {
+                        ret.push(i);
+                    }
+                    return ret;
+                };
+                $scope.prevPage = function() {
+                    if ($scope.currentPage > 0)
+                        $scope.currentPage--;
+                };
+                $scope.nextPage = function() {
+                    if ($scope.currentPage < $scope.pagedItems.length - 1)
+                        $scope.currentPage++;
+                };
+                $scope.setPage = function() {
+                    $scope.currentPage = this.n;
+                };
+
+                $scope.$on('handleLeadBroadcast', function() {
+                    $scope.afterSearch(sharedService.leadMessage);
+                });
+            }]);
+            
+            function findTimezone(){
+              var tz = jstz.determine();
+              console.log('tz detected '+ tz.name());
+              return String(tz.name());
+            }
+            function normalizeDate(dataType, fieldVal) {
+                try {
+                    if (dataType.indexOf('Date') > -1) {
+                        //console.log('date val ' + fieldVal);
+                       var tempstr =  fieldVal.substring(0, fieldVal.lastIndexOf('.')) + 'Z';
+                        var convertedDate = moment(tempstr);
+                        convertedDate = convertedDate.tz(findTimezone()).format('MM/DD/YYYY h:mm a');
+                        return convertedDate;
+                    }
+                } catch (err) {
+                    return fieldVal;
+                }
+                return fieldVal;
+            }
+            function contains(arr, obj) {
+                var i = arr.length;
+                while (i--) {
+                    if (arr[i] === obj) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            //console.log('normalized date ' + normalizeDate('2016-03-01T18:25:00.000+0000'));
+
+            var searchMatch = function(haystack, needle) {
+                if (!needle) {
+                    return true;
+                }
+                return String(haystack).toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+            };
+            //register ng-enter for hitting enter button
+            gSearchApp.directive('ngEnter', function() {
+                return function(scope, element, attrs) {
+                    element.bind("keydown keypress", function(event) {
+                        if (event.which === 13) {
+                            scope.$apply(function() {
+                                scope.$eval(attrs.ngEnter);
+                            });
+
+                            event.preventDefault();
+                        }
+                    });
+                };
+            });
+    </script>
+    </head>
+     <body>
+        <div class="slds">
+            <div ng-controller="SearchCtrl" class="slds-form-element" ng-init="init()">
+                <div id ="searchForm" ng-enter="search()">
+                    <div class="slds-grid">
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="name">First Name</label>
+                            <div class="slds-form-element__control">
+                                <input id="fName" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="email">Last Name</label>
+                            <div class="slds-form-element__control">
+                                <input id="lName" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="name">Phone Number</label>
+                            <div class="slds-form-element__control">
+                                <input id="phNumber" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="email">Email</label>
+                            <div class="slds-form-element__control">
+                                <input id="email" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="name">Order Number</label>
+                            <div class="slds-form-element__control">
+                                <input id="oNumber" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="email">Processing Number</label>
+                            <div class="slds-form-element__control">
+                                <input id="prNumber" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-grid">
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="name">State of Formation</label>
+                            <div class="slds-form-element__control">
+                                <input id="state" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="email">Entity Name</label>
+                            <div class="slds-form-element__control">
+                                <input id="entity" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-col">
+                            <label class="slds-form-element__label" for="name">Case Number</label>
+                            <div class="slds-form-element__control">
+                                <input id="cNumber" class="slds-input" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="slds-form--inline">
+                         <div class="slds-form-element">
+                            <button ng-click="search()" class="slds-button slds-button--brand" type="button">Search</button>
+                        </div>
+                        <div class="slds-form-element">
+                        </div>
+                        <div class="slds-form-element" ng-show="searching">
+                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                              <div class="slds-spinner__dot-a"></div>
+                              <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <!-- Contacts List -->
+            <div ng-controller="ContactTableCtrl" class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact slds-icon--small">
+                                <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/standard-sprite/svg/symbols.svg#contact')}"></use>
+                            </svg>
+                        </div>
+                        <div class="slds-media__body">
+                            <h3 class="slds-text-heading--small slds-truncate">Contacts</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered">
+                        <thead>
+                            <tr class="slds-text-heading--label" ng-show="(items.length > 0)">
+                                <th ng-repeat="field in fields" class="slds-is-sortable slds-is-resizable {{field.fieldPath}}" scope="col">
+                                    <div class="slds-truncate">{{field.label}}
+                                        <button class="slds-button slds-button--icon-bare" ng-click="sort_by(field.fieldPath);">
+                                          <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                                            <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#sort')}" />
+                                          </svg>
+                                          <span class="slds-assistive-text">Sort</span>
+                                        </button>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr class="slds-grid slds-grid--align-center" ng-hide="(items.length > 0)">
+                                <td style="border:none">
+                                    <div>No Results</div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse | filter : Id">
+                                <td ng-repeat="field in fields">
+                                    <!--<a href="/{{item.Id}}?test=test" target="_top">{{item[field.fieldPath]}}</a>-->
+                                    <a ng-click="refresh(item.Id);" >{{item[field.fieldPath]}}</a><!-- -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer slds-grid slds-grid--align-center">
+                    <div class="slds-button-group" role="group" ng-show="(items.length > 10)">
+                        <button class="slds-button slds-button--neutral" ng-click="prevPage()">
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronleft')}" />
+                      </svg>Prev
+                    </button>
+                        <button ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()" class="slds-button slds-button--neutral" ng-bind="n + 1">1</button>
+                        <button class="slds-button slds-button--neutral" ng-click="nextPage()">Next
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}" />
+                      </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Orders List -->
+            <div ng-controller="OrderTableCtrl" class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" class="slds-icon slds-icon-standard-quotes slds-icon--small">
+                    <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/custom-sprite/svg/symbols.svg#custom40')}"></use>
+                  </svg>
+                        </div>
+                        <div class="slds-media__body">
+                            <h3 class="slds-text-heading--small slds-truncate">Orders</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered">
+                        <thead>
+                            <tr class="slds-text-heading--label" ng-show="(items.length > 0)">
+                                <th ng-repeat="field in fields" class="slds-is-sortable slds-is-resizable {{field.fieldPath}}" scope="col">
+                                    <div class="slds-truncate">{{field.label}}
+                                        <button class="slds-button slds-button--icon-bare" ng-click="sort_by(field.fieldPath);">
+                              <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                                <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#sort')}" />
+                              </svg>
+                              <span class="slds-assistive-text">Sort</span>
+                            </button>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr class="slds-grid slds-grid--align-center" ng-hide="(items.length > 0)">
+                                <td style="border:none">
+                                    <div>No Results</div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse | filter : Id">
+                                <td ng-repeat="field in fields">
+                                     <div ng-if="extIdArray.indexOf(field.fieldPath) > -1"><a ng-click ="refresh(item[field.fieldPath]);" >{{item[field.fieldPath]}}</a></div>
+                                     <div ng-init="value = normalizeDate(field.fieldPath, item[field.fieldPath])" ng-if="extIdArray.indexOf(field.fieldPath) < 0"><a ng-click="refresh(item.Id);" >{{value}}</a></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer slds-grid slds-grid--align-center">
+                    <div class="slds-button-group" role="group" ng-show="(items.length > 10)">
+                        <button class="slds-button slds-button--neutral" ng-click="prevPage()">
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronleft')}" />
+                      </svg>Prev
+                    </button>
+                        <button ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()" class="slds-button slds-button--neutral" ng-bind="n + 1">1</button>
+                        <button class="slds-button slds-button--neutral" ng-click="nextPage()">Next
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}" />
+                      </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Order Items List -->
+            <div ng-controller="OrderItemsTableCtrl" class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact slds-icon--small">
+                                <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/custom-sprite/svg/symbols.svg#custom21')}"></use>
+                              </svg>
+                        </div>
+                        <div class="slds-media__body">
+                            <h3 class="slds-text-heading--small slds-truncate">Order Items</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered">
+                        <thead>
+                            <tr class="slds-text-heading--label" ng-show="(items.length > 0)">
+                                <th ng-repeat="field in fields" class="slds-is-sortable slds-is-resizable {{field.fieldPath}}" scope="col">
+                                    <div class="slds-truncate">{{field.label}}
+                                        <button class="slds-button slds-button--icon-bare" ng-click="sort_by(field.fieldPath);">
+                              <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                                <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#sort')}" />
+                              </svg>
+                              <span class="slds-assistive-text">Sort</span>
+                            </button>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr class="slds-grid slds-grid--align-center" ng-hide="(items.length > 0)">
+                                <td style="border:none">
+                                    <div>No Results</div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse | filter : Id">
+                                <td ng-repeat="field in fields">
+                                     <div ng-if="extIdArray.indexOf(field.fieldPath) > -1"><a ng-click ="refresh(item[field.fieldPath]);" >{{item[field.fieldPath]}}</a></div>
+                                     <div ng-init="value = normalizeDate(field.fieldPath, item[field.fieldPath])" ng-if="extIdArray.indexOf(field.fieldPath) < 0"><a ng-click="refresh(item.Id);" >{{value}}</a></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer slds-grid slds-grid--align-center">
+                    <div class="slds-button-group" role="group" ng-show="(items.length > 10)">
+                        <button class="slds-button slds-button--neutral" ng-click="prevPage()">
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronleft')}" />
+                      </svg>Prev
+                    </button>
+                        <button ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()" class="slds-button slds-button--neutral" ng-bind="n + 1">1</button>
+                        <button class="slds-button slds-button--neutral" ng-click="nextPage()">Next
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}" />
+                      </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cases List -->
+
+            <div ng-controller="CaseTableCtrl" class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" class="slds-icon slds-icon-standard-case slds-icon--small">
+                    <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/standard-sprite/svg/symbols.svg#case')}"></use>
+                  </svg>
+                        </div>
+                        <div class="slds-media__body">
+                            <h3 class="slds-text-heading--small slds-truncate">Cases</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered">
+                        <thead>
+                            <tr class="slds-text-heading--label" ng-show="(items.length > 0)">
+                                <th ng-repeat="field in fields" class="slds-is-sortable slds-is-resizable {{field.fieldPath}}" scope="col">
+                                    <div class="slds-truncate">{{field.label}}
+                                        <button class="slds-button slds-button--icon-bare" ng-click="sort_by(field.fieldPath);">
+                              <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                                <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#sort')}" />
+                              </svg>
+                              <span class="slds-assistive-text">Sort</span>
+                            </button>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr class="slds-grid slds-grid--align-center" ng-hide="(items.length > 0)">
+                                <td style="border:none">
+                                    <div>No Results</div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse | filter : Id">
+                                <td ng-repeat="field in fields">
+                                    <!--
+                                    <div ng-if="extIdArray.indexOf(field.fieldPath) > -1"><a href="/{{item[field.fieldPath]}}" target="_blank">{{item[field.fieldPath]}}</a></div>
+                                    <div ng-init="value = normalizeDate(field.fieldPath, item[field.fieldPath])" ng-if="extIdArray.indexOf(field.fieldPath) < 0"><a href="/{{item.Id}}" target="_blank">{{value}}</a></div>
+                                    -->
+                                     <div ng-if="extIdArray.indexOf(field.fieldPath) > -1"><a ng-click ="refresh(item[field.fieldPath]);" >{{item[field.fieldPath]}}</a></div>
+                                     <div ng-init="value = normalizeDate(field.fieldPath, item[field.fieldPath])" ng-if="extIdArray.indexOf(field.fieldPath) < 0"><a ng-click="refresh(item.Id);" >{{value}}</a></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer slds-grid slds-grid--align-center">
+                    <div class="slds-button-group" role="group" ng-show="(items.length > 10)">
+                        <button class="slds-button slds-button--neutral" ng-click="prevPage()">
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronleft')}" />
+                      </svg>Prev
+                    </button>
+                        <button ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()" class="slds-button slds-button--neutral" ng-bind="n + 1">1</button>
+                        <button class="slds-button slds-button--neutral" ng-click="nextPage()">Next
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}" />
+                      </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leads List -->
+
+            <div ng-controller="LeadTableCtrl" class="slds-card" ng-show="isSalesProfile()">
+                <div class="slds-card__header slds-grid">
+                    <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" class="slds-icon slds-icon-standard-lead slds-icon--small">
+                    <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/standard-sprite/svg/symbols.svg#lead')}"></use>
+                  </svg>
+                        </div>
+                        <div class="slds-media__body">
+                            <h3 class="slds-text-heading--small slds-truncate">Leads</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                    <table class="slds-table slds-table--bordered">
+                        <thead>
+                            <tr class="slds-text-heading--label" ng-show="(items.length > 0)">
+                                <th ng-repeat="field in fields" class="slds-is-sortable slds-is-resizable {{field.fieldPath}}" scope="col">
+                                    <div class="slds-truncate">{{field.label}}
+                                        <button class="slds-button slds-button--icon-bare" ng-click="sort_by(field.fieldPath);">
+                              <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                                <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#sort')}" />
+                              </svg>
+                              <span class="slds-assistive-text">Sort</span>
+                            </button>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr class="slds-grid slds-grid--align-center" ng-hide="(items.length > 0)">
+                                <td style="border:none">
+                                    <div>No Results</div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse | filter : Id">
+                                <td ng-repeat="field in fields">
+                                    <!--<a href="/{{item.Id}}" target="_blank">{{item[field.fieldPath]}}</a>-->
+                                    <a ng-click="refresh(item.Id);" >{{item[field.fieldPath]}}</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-card__footer slds-grid slds-grid--align-center">
+                    <div class="slds-button-group" role="group" ng-show="(items.length > 10)">
+                        <button class="slds-button slds-button--neutral" ng-click="prevPage()">
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronleft')}" />
+                      </svg>Prev
+                    </button>
+                        <button ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()" class="slds-button slds-button--neutral" ng-bind="n + 1">1</button>
+                        <button class="slds-button slds-button--neutral" ng-click="nextPage()">Next
+                      <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                        <use xlink:href="{!URLFOR($Resource.SLDS0122, '/assets/icons/utility-sprite/svg/symbols.svg#chevronright')}" />
+                      </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    </html>
+</apex:page>

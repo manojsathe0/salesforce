@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TMpmat</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Proceed (Materials Rcvd)</name>
+    <style>none</style>
+    <subject>Proceed (Materials Rcvd)</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+This email is to confirm we have received your materials to complete your trademark order. If any issues arise, a specialist will contact you directly. 
+
+Please note: LegalZoom will not share your materials with any third party unless necessary for the completion of your order. Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. 
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT. 
+
+We appreciate you choosing LegalZoom. 
+
+Best regards, 
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

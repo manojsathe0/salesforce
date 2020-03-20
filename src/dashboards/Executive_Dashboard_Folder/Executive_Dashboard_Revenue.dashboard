@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Day 1</values>
+        </dashboardFilterOptions>
+        <name>Sales Cycle</name>
+    </dashboardFilters>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <header>Sales Total Revenue</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Sales Total Revenue - Current Week</metricLabel>
+            <report>z_Archived_Reports/js_Sales_Total_Revenue_Current_Week</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Sales Total Revenue - Previous Week</metricLabel>
+            <report>z_Archived_Reports/exec_Sales_Total_Revenue_Previous_Week</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Sales Total Revenue - Current Month</metricLabel>
+            <report>z_Archived_Reports/exec_Sales_Total_Revenue_Current_Month</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <footer>Please Note: Cancelled, Declined &amp; RA Renewal Orders are not included in this Dashboard. Salesforce does not capture all Orders. Please refer to LZ Data for complete list of Orders.</footer>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Sales Total Revenue - Previous Month</metricLabel>
+            <report>z_Archived_Reports/exec_Sales_Total_Revenue_Previous_Month</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <header>Inbound Revenue</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Inbound Revenue - Current Week</metricLabel>
+            <report>z_Archived_Reports/IB_Total_Revenue_Current_Week</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Inbound Revenue - Previous Week</metricLabel>
+            <report>z_Archived_Reports/IB_Total_Revenue_Previous_Week</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Inbound Revenue - Current Month</metricLabel>
+            <report>z_Archived_Reports/IB_Total_Revenue_Current_Month</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <footer>Please Note: Cancelled, Declined &amp; RA Renewal Orders are not included in this Dashboard. Salesforce does not capture all Orders. Please refer to LZ Data for complete list of Orders.</footer>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Inbound Revenue - Previous Month</metricLabel>
+            <report>z_Archived_Reports/IB_Total_Revenue_Previous_Month</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>Top 5 Inbound Reps</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <maxValuesDisplayed>5</maxValuesDisplayed>
+            <report>z_Archived_Reports/IB_Total_Revenue_Current_Week</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Current Week</title>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <displayUnits>Integer</displayUnits>
+            <header>Web Only Revenue</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Web Only Revenue - Current Week</metricLabel>
+            <report>z_Archived_Reports/Web_Total_Revenue_Current_Week</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <displayUnits>Integer</displayUnits>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Web Only Revenue - Previous Week</metricLabel>
+            <report>z_Archived_Reports/Web_Total_Revenue_Previous_Week</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <displayUnits>Integer</displayUnits>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Web Only Revenue - Current Month</metricLabel>
+            <report>z_Archived_Reports/Web_Total_Revenue_Current_Month</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <displayUnits>Integer</displayUnits>
+            <footer>Please Note: Cancelled and Declined Orders are not included in this Dashboard. Salesforce does not capture all Orders. Please refer to LZ Data for complete list of Orders.</footer>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Web Only Revenue - Previous Month</metricLabel>
+            <report>z_Archived_Reports/Web_Total_Revenue_Previous_Month</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <header>Abandoner Revenue</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Abandoner Revenue - Current Week</metricLabel>
+            <report>z_Archived_Reports/OB_Total_Revenue_Current_Week</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Abandoner Revenue - Previous Week</metricLabel>
+            <report>z_Archived_Reports/OB_Total_Revenue_Previous_Week</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Abandoner Revenue - Current Month</metricLabel>
+            <report>z_Archived_Reports/OB_Total_Revenue_Current_Month</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <column>FORMULA1</column>
+            </chartSummary>
+            <componentType>Metric</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <footer>Please Note: Cancelled, Declined &amp; RA Renewal Orders are not included in this Dashboard. Salesforce does not capture all Orders. Please refer to LZ Data for complete list of Orders.</footer>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <metricLabel>Abandoner Revenue - Previous Month</metricLabel>
+            <report>z_Archived_Reports/OB_Total_Revenue_Previous_Month</report>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+            <componentType>Table</componentType>
+            <dashboardFilterColumns>
+                <column>Order_Matching_Activity__c$Sales_Cycle__c</column>
+            </dashboardFilterColumns>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <header>Top 5 Abandoner Reps</header>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <maxValuesDisplayed>5</maxValuesDisplayed>
+            <report>z_Archived_Reports/OB_Total_Revenue_Current_Week</report>
+            <showPicturesOnTables>true</showPicturesOnTables>
+            <sortBy>RowValueDescending</sortBy>
+            <title>Current Week</title>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Please note: The definition of &apos;Claimed vs Unclaimed&apos; is whether an agent has taken ownership of an Abandoner Opportunity. Verification of payment is not included in these dashboards.</footer>
+            <header>Abandoner Opportunities (8:00AM-8:00PM cst)</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>z_Archived_Reports/Sales_Abandoners_Weekly</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Current Week</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Column</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>false</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Please note: The definition of &apos;Claimed vs Unclaimed&apos; is whether an agent has taken ownership of an Abandoner Opportunity. Verification of payment is not included in these dashboards.</footer>
+            <legendPosition>Bottom</legendPosition>
+            <report>z_Archived_Reports/Sales_Abandoners_Current_Month</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Current Month</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>integration@legalzoom.com</runningUser>
+    <textColor>#000000</textColor>
+    <title>Executive Dashboard: Revenue</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

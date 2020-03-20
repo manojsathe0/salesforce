@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>sig12</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>salutation</name>
+    <style>none</style>
+    <subject>salutation</subject>
+    <textOnly>Personal Services  Business Services  Trademark, Patent &amp; Copyright
+
+
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.com.
+
+Best regards,
+
+
+Connect &amp; Share:
+
+LegalZoom.com
+About Us
+Contact Us
+100% Satisfaction
+Guarantee
+Article Center
+Video Center
+Legal Info
+Personal Services
+Last Will and Testament
+Living Trust
+Living Will
+Power of Attorney
+Divorce
+Bankruptcy
+Business Services
+LLC (Limited Liability Company)
+Incorporation (S-Corp, C-Corp)
+DBA/Business Names
+Non-Profit
+Partnership Agreements
+Annual Reports
+Trademark, Patent &amp; Copyright
+Trademarks
+Copyright
+Patents
+Trademark Search
+Patent Search
+Trademark Monitoring
+
+Privacy Policy   Call Customer Care: {!snippetVariable.ccphone}
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!snippetVariable.emailaddressdollarsign}
+
+LegalZoom is located {!snippetVariable.lzaddresstemp}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

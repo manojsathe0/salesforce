@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Svcsnforms</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Services and Forms</name>
+    <style>none</style>
+    <subject>Services and Forms</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+LegalZoom offers a large number of state-specific legal forms that you can download or request by e-mail.  To find your document, please click the link below:
+
+www.uslegalforms.com/legalzoom  
+
+For more complex legal needs, or if you would simply like the help of an attorney, we also offer a special attorney matching service.  Up to 5 pre-screened attorneys will confidentially review your legal matter, and you choose the one that&apos;s right for you.  To get started, please click the link below:
+
+http://www.casepost.com/index.php
+ 
+Thank you once again for contacting LegalZoom, America&apos;s #1 online legal source. 
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cantsignin</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Existing member sign-in probs</name>
+    <style>none</style>
+    <subject>Existing member sign-in probs</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry regarding signing in at www.LegalZoom.com.
+
+If you submitted your order online, you were required to provide your email address and create a password prior to filling out the online questionnaire. This makes you an ?Existing Member? on www.LegalZoom.com.
+
+If you are getting an error message that another user already has your email address, you may be attempting to sign in under the ?New Member? registration. 
+
+Use your email address and password to sign in under the ?Existing Member? section on the sign in page located at https://www.legalzoom.com/signin/signin.html. The password associated with the email address [Email Address] is [Password].
+
+Hopefully, this will resolve the problem. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

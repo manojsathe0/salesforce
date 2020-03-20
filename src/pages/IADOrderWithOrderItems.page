@@ -1,0 +1,1629 @@
+<apex:page controller="IADOrderWithOrderItemsController" standardstylesheets="false" showheader="true" sidebar="false" doctype="html-5.0" applybodytag="false" >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+    
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.lziad, 'main.css')}" />
+        <apex:includescript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}" />
+        <apex:includescript value="/support/console/34.0/integration.js" />
+        <apex:includeScript value="{!URLFOR($Resource.SortJS, 'sortableTable.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.IADJS)}"/>
+        <script type="text/javascript">
+           
+            sforce.console.addEventListener('RefreshEvent', listener);
+            var listener = function(result) {
+               //location.reload(true);
+              console.log(result);
+              
+            };
+
+            var $ = jQuery.noConflict();
+            var orderContactId;
+            var tabId = '';
+            var currentMousePos = {
+                x: -1,
+                y: -1
+            };
+
+            var focusSuccess = function focusSuccess(result) {
+                //Report whether going to the open primary tab was successful
+                if (result.success == true) {
+                    console.log('Going to the sub tab was successful');
+                    populateOrderController();
+                } else {
+                    console.log('Going to the sub tab was not successful');
+                }
+            };
+            
+            var getOrderTabIdAndRefresh = function getOrderTabIdAndRefresh(result) {
+                console.log('result id ' + result.id);
+                tabId = result.id;
+
+                console.log('tabid is ' + tabId);
+                sforce.console.focusSubtabById(tabId, focusSuccess);
+            };
+
+            var orderRefresh = function (result) {
+                console.log('message + ' + result.message + ' order num {!orderNumber}');
+               if(result.message == '{!orderNumber}'){
+                    sforce.console.getEnclosingTabId(getOrderTabIdAndRefresh);
+               }
+            };
+
+            
+
+            
+            //Add a listener for the 'SampleEvent' event type
+            sforce.console.addEventListener('FocusOrderTabEvent', orderRefresh);
+            
+            var getOrderTabIdAndRefreshOnly = function getOrderTabIdAndRefreshOnly(result) {
+                console.log('result id ' + result.id);
+                tabId = result.id;
+
+                console.log('tabid is ' + tabId);
+                populateOrderController();
+
+                
+               
+            };
+
+            var orderRefreshOnly = function (result) {
+            
+               console.log('message + ' + result.message + ' order num {!orderNumber}');
+               if(result.message == '{!orderNumber}'){
+                    sforce.console.getEnclosingTabId(getOrderTabIdAndRefreshOnly);
+               }
+            };
+           
+            
+            sforce.console.addEventListener('RefreshOrderTabEvent', orderRefreshOnly);
+
+
+             window.onload = function() {
+                    populateOrderController();
+            };
+
+            function closeAndFocusOtherTab(){
+                openRefundPage();
+             }
+            
+            $(document).ready(function() {
+
+                preserveIcons();
+                $(".orderItemOption").click(function() {
+                    addItem();
+                });
+                $("#btnTrigger").click(function() {
+                    $("#btnTrigger").toggleClass("slds-is-open");
+                    return false;
+                });
+                $("#closeModal").click(function() {
+                    console.log('hiding modal');
+                    $("#shippingPopover").hide();
+                });
+                window.openShippingPopover = function() {
+                    var xpos = currentMousePos.x - 155; // $('#shippingPopover').width();
+                    var ypos = currentMousePos.y - 175; // - $('#shippingPopover').height();
+
+                    console.log('x pos ' + xpos);
+                    console.log('y pos ' + ypos);
+                    $("#shippingPopover").css({
+                        top: ypos + 'px'
+                    });
+                    $("#shippingPopover").css({
+                        right: xpos + 'px'
+                    });
+                    $("#shippingPopover").show();
+                }
+                window.closeTOSModal = function(){
+                    $("#tosModalDiv").hide();
+                }
+                $(document).mousemove(function(event) {
+                    currentMousePos.x = event.pageX;
+                    currentMousePos.y = event.pageY;
+                });
+            });
+            
+            function openEditShippingAddressPage() {
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabShippingAddress);
+
+            }
+            var enclosingPrimaryTabShippingAddress = function enclosingPrimaryTabShippingAddress(result) {
+
+                var url = '/apex/IADEditShippingAddressPage?Id={!orderNumber}';
+                 console.log('url ' + url);
+                sforce.console.openSubtab(result.id, url, true, 'Edit Shipping Address');
+            };
+            function openPaymentPageAsAmountDue() {
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabPaymentAmountDue);
+
+            }
+            var enclosingPrimaryTabPaymentAmountDue = function enclosingPrimaryTabPaymentAmountDue(result) {
+                var amt = 0.00;
+
+                $( ".orderItemPrices" ).each(function( index ) {
+                  console.log( index + ": " + $( this ).val() );
+                  var value = $( this ).val();
+                  if(value!= null)
+                      amt+=parseFloat(value);
+
+                });
+                console.log('amt value' + amt);
+                var url = '/apex/IADInstallmentPayments?amountdue=1&amount=' + amt+'&orderId={!orderNumber}&customerId={!customerId}'+ '&invokingPage=Order&invokingPageId={!orderNumber}';
+             
+                console.log('url ' + url);
+                sforce.console.openSubtab(result.id, url, true, 'Make a Payment');
+            };
+            function openPaymentPage() {
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabPayment);
+            }
+            var enclosingPrimaryTabPayment = function enclosingPrimaryTabPayment(result) {
+                var amt = $('#total').html();
+
+                var url = '/apex/IADInstallmentPayments?installment=1&amount=' + amt+'&orderId={!orderNumber}&customerId={!customerId}'+ '&invokingPage=Order&invokingPageId={!orderNumber}';
+                 console.log('url ' + url);
+
+                sforce.console.openSubtab(result.id, url, true, 'Make a Payment');
+            };
+
+            function openRefundPage() {
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabForRefund);
+
+            }
+
+            var enclosingPrimaryTabForRefund = function enclosingPrimaryTabForRefund(result) {
+                var amt = $('#total').html();
+
+                var url = '/apex/IADRefundPage?orderId={!orderNumber}&customerId={!customerId}' + '&invokingPage=Order&invokingPageId={!orderNumber}';
+                 console.log('url ' + url);
+                sforce.console.openSubtab(result.id, url, true, 'Make a Refund');
+            };
+
+            var getOrderTabId = function getOrderTabId(result) {
+                console.log('result id ' + result.id);
+                tabId = result.id;
+            };
+
+
+            function openPromoCode() {
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryOpenPromoTab);
+
+            }
+
+            var enclosingPrimaryOpenPromoTab = function enclosingPrimaryOpenPromoTab(result) {
+                sforce.console.getEnclosingTabId(getOrderTabId);
+                var url = '/apex/IADPromoCodePage?orderId={!orderNumber}';
+                sforce.console.openSubtab(result.id, url, true, 'Add Promo Code');
+            };
+
+            function openDiscountCode() {
+                sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryOpenDiscountTab);
+
+            }
+
+            var enclosingPrimaryOpenDiscountTab = function enclosingPrimaryOpenDiscountTab(result) {
+                sforce.console.getEnclosingTabId(getOrderTabId);
+                var url = '/apex/IADDiscountPage?orderId={!orderNumber}';
+                sforce.console.openSubtab(result.id, url, true, 'Add Discount');
+            };
+
+            var enclosingPrimaryOpenPromoTab = function enclosingPrimaryOpenPromoTab(result) {
+                sforce.console.getEnclosingTabId(getOrderTabId);
+                var url = '/apex/IADPromoCodePage?orderId={!orderNumber}';
+                sforce.console.openSubtab(result.id, url, true, 'Add Promo Code');
+            };
+
+
+            function createSVGElement(theClass, theIcon) {
+
+                var SVG = $('<svg/>', {
+                    class: 'slds-icon slds-icon-standard-contact slds-icon--small',
+                });
+                var SVGPath = $('<path/>');
+                SVGPath.attr('d', '{!removeIcon}');
+
+
+                $('.svgOther').prepend(SVG.append(SVGPath));
+                $('.svgOther').html($('.svgOther').html());
+            }
+             function PopupCenter(url, title, w, h) {
+                try{
+                    console.log('url is ' + url);
+                  // Fixes dual-screen position Most browsers Firefox
+                  var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+                  var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+                  width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+                  height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+                  var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+                  var top = ((height / 2) - (h / 2)) + dualScreenTop;
+                  var newWindow = window.open(url, title, 'scrollbars=yes,resizable=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+                }
+                catch(err){
+                  //do nothing, just catch it bc of ie11
+                }
+            }
+
+            var svgHash;
+
+
+            function preserveIcons() {
+                svgHash = {};
+                $('.svgParent').each(function(index) {
+                    var idKey = $(this).attr('id');
+                    svgHash[idKey] = $(this).html();
+                });
+            }
+
+            function renderIcons() {
+                $('.svgParent').each(function(index) {
+                    var idKey = $(this).attr('id');
+                    $(this).html(svgHash[idKey]);
+                });
+                //createSVGElement(); // for the ones that is not in the map
+            }
+
+            function displayConvert3Pay() {
+                $("#modalDiv").show();
+            }
+
+            function hideConvertTo3Pay() {
+                $("#modalDiv").hide();
+            }
+
+            function hideConvertTo3Pay() {
+                $("#modalDiv").hide();
+            }
+
+            function displayOnHold() {
+                $("#onHold").show();
+            }
+
+            function hideOnHold() {
+                $("#onHold").hide();
+            }
+
+            function displayOffHold() {
+                $("#offHold").show();
+            }
+
+            function hideOffHold() {
+                $("#offHold").hide();
+            }
+
+
+            function displayUnCancelOrder() {
+                clearFlags();
+                $("#uncancelOrder").show();
+            }
+
+            function hideUnCancelOrder() {
+                $("#uncancelOrder").hide();
+            }
+
+            function displayCancelOrder() {
+                clearFlags();
+                $("#cancelOrder").show();
+            }
+
+            function hideCancelOrder() {
+                $("#cancelOrder").hide();
+            }
+
+            function displayOrderHistory() {
+                $("#orderHistory").show();
+                callOrderHistory();
+            }
+
+            function hideOrderHistory() {
+                $("#orderHistory").hide();
+            }
+
+            function displayShippingEstimate() {
+                $("#shippingEstimate").show();
+            }
+
+            function hideMiscItem()
+            {
+                
+                $("#miscItem").hide();   
+            }   
+            function displayMiscItem() {
+              
+                $("#miscItem").show();
+            }
+
+            function hideShippingEstimate()
+            {
+                 $("#shippingEstimate").hide();
+            }
+
+            function showSuccessMessage() {
+                
+                hideConvertTo3Pay();
+                hideCancelOrder();
+                openPaymentPage();
+                openRefundPage();
+            }
+
+            function show3Pay()
+            {
+                
+                convertOrderTo3pay();
+            }
+
+
+
+
+           
+
+           function doNothing(){
+
+           }
+          function addListeners(){
+
+              $( ".availProduct" ).click(function(e) {
+                   
+                   $("#orderItemDiv").show();
+                   $("#orderItemDiv").offset({left:e.pageX-415,top:e.pageY+20});
+                   var theOrderItemId = $(this).attr("data-orderItemId");
+                   console.log('theOrderItemId ' + theOrderItemId);
+                   populateActionItems(theOrderItemId);
+                });
+                
+                $(document).click(function(e) {
+                    $("#orderItemDiv").hide();
+                });
+
+                $(".mainLineItem").each(function(){
+                    if($(this).attr('data-cancel') == 'true')
+                            $(this).hide();
+                });
+                $("#displayCancel").change(function(){
+                        var isChecked = this.checked;
+                        $(".mainLineItem").each(function(){
+                            if($(this).attr('data-cancel') == 'true')
+                            {
+                                if(isChecked)
+                                    $(this).show();
+                                else
+                                    $(this).hide();
+                            }
+                        });
+
+                });
+          }
+          $(document).mouseup(function (e) {
+                var container = $("#availDropdown");
+                var container1 = $("#addNewDropdown");
+            
+                if (!container.is(e.target) // if the target of the click isn't the container...
+                    && container.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    container.hide();
+                }
+                if (!container1.is(e.target) // if the target of the click isn't the container...
+                    && container1.has(e.target).length === 0) // ... nor a descendant of the container
+                {
+                    container1.hide();
+                }
+            });
+            function showAvailPackages(mainOrderItemId,actionType){
+                $("#availDropdown").toggle();
+                if($("#availDropdown").is(':visible')){
+                     populateActionItemsByPackage(mainOrderItemId,actionType);
+                }
+            }
+            function showAddNewDropdown(mainOrderItemId,actionType){
+                $("#addNewDropdown").toggle();
+                if($("#addNewDropdown").is(':visible')){
+                     populateOrderItemAvailableProducts(mainOrderItemId,actionType);
+                }
+            }
+          function showModifyOrderItemPopover(){
+              console.log('avail prod ' + $('#availProductSize').val());
+              if($('#availProductSize').val()!=0){
+                 $("[id*='theOrderItemForm']").css({ 'position': 'absolute'});
+                 $("[id*='theOrderItemForm']").css( "zIndex", 1000 );
+                 $("[id*='orderItemPopover']").css({ 'position': 'relative' });
+                 $("#orderItemDiv").show();
+                 
+              }
+          }
+
+          function hideActionPopover()
+          {
+            $("#orderItemDiv").hide();
+            $("#availDropdown").hide();
+            $("#addNewDropdown").hide();
+         }
+
+        function openContactTab(ocId) {
+            orderContactId = ocId;
+            sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabOrderContact);
+        }
+        var enclosingPrimaryTabOrderContact = function enclosingPrimaryTabOrderContact(result) {
+
+            var url = '/apex/IADEditShippingAddressPage?id={!orderNumber}&orderContactId=' + orderContactId;
+             console.log('url ' + url);
+            sforce.console.openSubtab(result.id, url, true, 'Edit Order Specific Contact');
+        };
+        function createContactTab() {
+            sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabOrderContactNew);
+        }
+        var enclosingPrimaryTabOrderContactNew = function enclosingPrimaryTabOrderContactNew(result) {
+
+            var url = '/apex/IADEditShippingAddressPage?id={!orderNumber}&isNew=true';
+             console.log('url ' + url);
+            sforce.console.openSubtab(result.id, url, true, 'Add Order Specific Contact');
+        };
+
+        var newOrderId;   
+        function openRenewalOrderTab(rOrderId) {
+            newOrderId = rOrderId;
+            sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabOrder);
+        }
+        var enclosingPrimaryTabOrder = function enclosingPrimaryTabOrder(result) {
+
+            var url = '/apex/IADOrderWithOrderItems?orderId='+newOrderId+'&customerId={!customerId}';
+            sforce.console.openSubtab(result.id, url, true, newOrderId);
+        };
+
+        function callModifyOrderItem(productConfiguratioId,productComponentId,orderItemId)
+        {
+            
+            if(productComponentId == '1222')//Miscceleanous Item Component Id
+            {
+                //do Pop Up for Miscell
+                displayMiscItem();
+                jsUtility.makeDarkBorder();
+            }
+            else
+               modifyOrderItem(productConfiguratioId,orderItemId);
+        }
+        function callModifyOrderItemLine(productConfiguratioId,productComponentId,orderItemId)
+        {
+            modifyOrderItem(productConfiguratioId,orderItemId);
+        }
+         var processId
+         
+         ;
+         var enclosingPrimaryTabLedger = function enclosingPrimaryTabLedger(result) {
+                var url = '/apex/nextpad?processingNumber=' + processIdLedger;
+                sforce.console.openSubtab(result.id, url, true, 'Ledger');
+            };
+             function openLedger(processId){
+                 processIdLedger = processId;
+                 sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTabLedger);
+             }
+
+
+        </script>
+        <style type="text/css">
+            .slds-card__footer {
+                height: 40px;
+            }
+            #orderItemDiv {
+                display: none;
+                z-index: 1000;
+            }
+            #shippingPopover {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+            }
+
+            #background {
+                position: fixed;
+                z-index: 999;
+                pointer-events: none;
+            }
+            .background {
+                position: fixed;
+                z-index: 1001;
+                pointer-events: none;
+            }
+            #closeModal {
+                cursor: pointer;
+            }
+            #availDropdown, #addNewDropdown{
+                display:none;
+            }
+            #threePayIcon, #threePayIcon:hover{
+                padding-right: 0px;
+                padding-left: 0px;
+                line-height:22px;
+                color:white;
+                border:1px solid #54698d;
+                background-color: #54698d;
+                background-clip: border-box;
+            }
+            .removeTop{top:0px !important;}
+        </style>
+    </head>
+    <body>
+
+        <div class="slds">
+            <apex:outputpanel id="tosModalPanel">
+                <div id="tosModalDiv" style="{!IF(OR(thisOrder.TOS_Accepted__c, AND(thisOrder.CreatedBy.Name !='Integration User', thisOrder.LastModifiedBy.Name !='Integration User')), 'display:none', '')}">
+
+                        <div class="slds-modal slds-fade-in-open slds-modal" aria-hidden="false" role="dialog">
+                            <div class="slds-modal__container">
+                                <div class="slds-modal__header">
+                                    <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                                            <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#close"></use>
+                                        </svg>
+                                        <span class="slds-assistive-text">Close</span>
+                                    </button>
+                                    <h2 class="slds-text-heading--medium">Terms of Service</h2>
+                                </div>
+                                <div class="slds-modal__content slds-p-around--medium slds-grid slds-grid--align-center">
+                                    Terms of Service have not been accepted for this order.  Please notify the customer that the order cannot be processed until the Terms of Service have been accepted.
+                                </div>
+                                <div class="slds-modal__footer">
+                                    <button onclick="closeTOSModal(); return false;" class="slds-button slds-button--neutral">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tosBackground" class="slds-backdrop slds-backdrop--open"></div>
+
+                </div>
+            </apex:outputpanel>
+        </div>
+        <div class="slds">
+          
+        
+             <apex:form id="theOrderItemForm">
+                 <apex:actionfunction name="populateActionItems" action="{!populateActionItemsByOrderItemId}" rerender="orderItemPopover, errorMessages" oncomplete="showModifyOrderItemPopover();" status="statusUpdating">
+                    <apex:param name="orderItemId" value="" />
+                </apex:actionfunction>
+                    <div class="slds-popover slds-nubbin--top-right" role="dialog" id="orderItemDiv" style="width:450px;">
+                        <apex:outputPanel id="orderItemPopover">
+                         <input type="hidden" id="availProductSize" value="{!orderService.currentActionItems.size}"/>
+                            <div class="">
+                                <ul class="dropdown__list" >
+                                  <apex:repeat value="{!orderService.currentActionItems}" var="availProduct">
+                                    <li class="slds-dropdown__item">
+                                        <a class="slds-text-body--small" role="menu-item" onclick="callModifyOrderItemLine('{!availProduct.productConfigurationId}','{!availProduct.productComponentId}','{!availProduct.orderItemId}');"><apex:outputText escape="false" value="{!availProduct.productTypeName}:{!availProduct.description}"></apex:outputText> </a>
+                                    </li>
+                                 </apex:repeat>
+                                </ul>
+                              </div>
+                              
+                        </apex:outputPanel>
+                    
+                    </div>
+             </apex:form>
+            <!--
+            <div id="shippingPopover">
+                    <div class="slds-popover slds-nubbin--bottom-left" role="dialog">
+                        <div class="slds-popover__body">
+                            <div style="float:left; ">
+                                <span class="slds-icon_container">
+                                    <svg aria-hidden="true" class="slds-icon slds-icon-text-error" viewBox="0 0 47 55">
+                                        <path fill="#F5B827" d="{!upsLogoBG}" />
+                                        <path fill="#281705" d="{!upsLogoFG}" />
+                                    </svg>
+                                    <span class="slds-assistive-text">Lock Icon</span>
+                                </span>
+                            </div>
+                            <div id="closeModal" style="float:right; ">
+                                <span class="slds-icon_container">
+                                    <svg aria-hidden="true" class="slds-icon slds-icon-text-error">
+                                        <path d="{!removeIcon}" />
+                                    </svg>
+                                    <span class="slds-assistive-text">Lock Icon</span>
+                                </span>
+                            </div>
+                            <br />
+                            <div class="slds-p-around--small slds-grid slds-grid--align-center slds-wrap">
+                                <div class="slds-col--padded">
+                                    Shipped : 09/16/2015
+                                </div>
+                                <div class="slds-col--padded">
+                                    UPS Tracking Number:
+                                </div>
+                                <div class="slds-col--padded">
+                                    1Z1W7W420375521274
+                                </div>
+                                <div class="slds-col--padded">
+                                    <a onclick="PopupCenter('https://wwwapps.ups.com/WebTracking/track?track=yes&trackNums=1Z1W7W420375521274','UPS','800','650'); return false;" href="#">Click here to go to UPS.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+            -->
+        </div>
+        <apex:form id="theForm">
+            <apex:outputPanel id="ThreePayEvent">
+                <script type="text/javascript">
+                    if('{!orderService.is3PayConverted}' == 'true')
+                    {
+                        var jsonData = '{!orderNumber}';
+                        sforce.console.fireEvent('RefreshInstallmentEvent', jsonData , null);
+
+                    }   
+
+                </script>
+            </apex:outputPanel>
+
+            <apex:outputPanel id="jsScript">
+                <script type = "text/javascript">
+                    function populateOrder()
+                    {
+                        if('{!orderService.isNewOrderAdded}' == 'true')
+                            openRenewalOrderTab('{!orderService.newOrderId}');
+                        if('{!orderService.refreshOrder}' == 'true')
+                            populateOrderController();
+                        if('{!orderService.isCrossSell}' == 'true')
+                            sforce.console.fireEvent('RefreshSubscriptionsPanel', null);
+                    }
+                </script>
+            </apex:outputPanel>
+            <apex:actionfunction name="createMiscItem" action="{!createMiscItem}" rerender="jsScript,errorMessages,footerBtns,modifiedItems,originalItems,cancelOrder,undoCancelOrder,availProductsPanel,availPackagePanel,addNewDropDownPanel" status="statusUpdatingMisc" oncomplete="populateOrder();addListeners();hideActionPopover();hideMiscItem();">
+            </apex:actionfunction>
+
+            <apex:actionfunction name="modifyOrderItem" action="{!modifyOrderItem}" rerender="jsScript,errorMessages,footerBtns,modifiedItems,originalItems,cancelOrder,undoCancelOrder,availProductsPanel,availPackagePanel,addNewDropDownPanel" status="statusUpdating" oncomplete="populateOrder();addListeners();hideActionPopover();">
+                <apex:param name="productConfigurationId" value="" />
+                <apex:param name="orderItemId" value="" />
+            </apex:actionfunction>
+            <apex:actionfunction name="convertOrderTo3pay" action="{!convertOrderTo3pay}" rerender="ThreePayEvent,jsScript,errorMessages,footerBtns,modifiedItems,originalItems,cancelOrder,undoCancelOrder,availProductsPanel,availPackagePanel,addNewDropDownPanel,topMenu" status="statusUpdating" oncomplete="populateOrder();addListeners();hideConvertTo3Pay();">
+           </apex:actionfunction>
+
+
+            <apex:actionfunction name="populateOrderController" action="{!startRequestsInParallel}" rerender="errorMessages,footerBtns,modifiedItems,originalItems,cancelOrder,undoCancelOrder,availProductsPanel,availPackagePanel,addNewDropDownPanel,cancelEntireOrder,baserProductName,topMenu,theHeader,upperLeftMenu" status="statusUpdating" oncomplete="addListeners();" />
+          
+
+            <apex:actionfunction name="populateActionItemsByPackage" action="{!populateActionItemsByOrderItemId}" rerender="availProductsPanel, errorMessages, modifiedItems" status="statusUpdating" oncomplete="renderIcons();">
+                  <apex:param name="orderItemId" value="" />
+                  <apex:param name="actionType" value="" />
+            </apex:actionfunction>
+            
+            <apex:actionfunction name="populateOrderItemAvailableProducts" action="{!populateActionItemsByOrderItemId}" rerender="addNewPanel, errorMessages, modifiedItems" status="statusUpdating" oncomplete="renderIcons();">
+                  <apex:param name="orderItemId" value="" />
+                  <apex:param name="actionType" value="" />  
+            </apex:actionfunction>
+            
+            <apex:actionfunction name="callOrderHistory" action="{!populateOrderHistory}" rerender="errorMessages, orderHistoryPanel, consultationHistoryPanel" status="statusUpdating"  oncomplete="renderIcons();"  />
+            
+            <apex:actionfunction name="clearFlags" action="{!clearFlags}" rerender="errorMessages,uncancelOrder,cancelEntireOrder" />
+
+            <div class="slds">
+                
+                <apex:actionstatus id="statusUpdating">
+                    <apex:facet name="start">
+                        <div class="slds-spinner_container">
+                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                        
+                    <div  class="slds-backdrop slds-backdrop--open background"></div>
+                    </apex:facet>
+                    
+                </apex:actionstatus>
+                <apex:outputPanel id="errorMessages">
+                    <c:IADMessageBox theMessages="{!orderService.iadMessages}" rendered="{!orderService.iadMessages.size>0}" />
+                </apex:outputPanel>
+
+                <!--<div class="slds-text-heading--medium">Order Details</div>-->
+                <div style="float:right; clear:both;">
+                   
+                        <div class="slds-button-group" role="group">
+                            <!--<button class="slds-button slds-button--neutral" onclick="launchLedger();" type="button">Ledger</button>
+                            <button class="slds-button slds-button--neutral" onclick="launchProofer();" type="button">Proofer</button>
+                            -->
+                            <button class="slds-button slds-button--neutral" onclick="displayOrderHistory(); return false;">Order History</button>
+                            <button class="slds-button slds-button--neutral" onclick="openEditShippingAddressPage(); return false;">Edit Shipping Address</button>
+
+                            
+                            <apex:outputPanel id="topMenu">
+                                <button class="slds-button slds-button--neutral" onclick="displayConvert3Pay(); return false;" style= "{!IF(orderService.isThreePay, 'display:none','')}">
+                                    Convert To Installments
+                                </button>
+                                <button class="slds-button slds-button--neutral" onclick="displayCancelOrder(); return false;" style= "{!IF(orderService.theOrder.Order.isCancelled = false, '', 'display:none')}">
+                                    Cancel Entire Order
+                                </button>
+                                <button class="slds-button slds-button--neutral" onclick="displayUnCancelOrder(); return false;" style= "{!IF(orderService.theOrder.Order.isCancelled = false, 'display:none', '')}">
+                                    Undo Cancel Order
+                                </button>
+                            </apex:outputPanel>
+                            <!--<div id="btnTrigger" class="slds-dropdown-trigger slds-dropdown-trigger&#45;&#45;click" aria-expanded="true">-->
+                                <!--<button class="slds-button slds-button&#45;&#45;icon-border-filled" aria-haspopup="true">-->
+                                    <!--<svg aria-hidden="true" class="slds-button__icon slds-button__icon&#45;&#45;hint" viewBox="0 0 24 24">-->
+                                        <!--<path d="{!downIcon}" />-->
+                                    <!--</svg>-->
+                                    <!--<span class="slds-assistive-text">Show More</span>-->
+                                <!--</button>-->
+                                <!--<div class="slds-dropdown slds-dropdown&#45;&#45;right" id="cancelUncancelButtons">-->
+                                    <!--<ul class="dropdown__list" role="menu">-->
+                                    <!-- -->
+                                        <!--<li class="slds-dropdown__item">-->
+                                            <!--<a href="#void" role="menuitem">-->
+                                            <!--<apex:outputPanel id="cancelOrder" style="{!IF(orderService.theOrder.Order.isCancelled = false, '', 'display:none')}" >-->
+                                                <!--<p style="{!IF(orderService.theOrder.Order.isCancelled = false, '', 'display:none')}" onClick="displayCancelOrder(); return false;" class="slds-truncate">Cancel Entire Order</p>-->
+                                            <!--</apex:outputPanel>-->
+                                            <!--<apex:outputPanel id="undoCancelOrder" style="{!IF(orderService.theOrder.Order.isCancelled = false, 'display:none', '')}">-->
+                                            <!--<p style="{!IF(orderService.theOrder.Order.isCancelled = false, 'display:none', '')}" onClick="displayUnCancelOrder(); return false;" class="slds-truncate"> Undo Cancel Order</p>-->
+                                            <!--</apex:outputPanel>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                        <!--&lt;!&ndash;-->
+                                        <!--<li class="slds-dropdown__item">-->
+                                            <!--<a href="#void" role="menuitem">-->
+                                                <!--<p style="{!IF(isOnHold = false, '', 'display:none')}" onClick="displayOnHold(); return false;" class="slds-truncate">Put On Hold</p>-->
+                                                <!--<p style="{!IF(isOnHold = true, '', 'display:none')}" onClick="displayOffHold(); return false;" class="slds-truncate">Put Off Hold</p>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                        <!--&ndash;&gt;-->
+                                        <!--&lt;!&ndash;-->
+                                        <!--<li class="slds-dropdown__item">-->
+                                            <!--<a href="#void" role="menuitem" title="Customer accepted terms on {!orderService.termAcceptedDate}">-->
+                                                <!--<p class="slds-truncate">Terms</p>-->
+                                            <!--</a>-->
+                                        <!--</li>-->
+                                        <!--&ndash;&gt;-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                   
+                </div>
+
+
+                <br />
+                <br />
+
+                <div class="slds-card">
+                    
+                    <div class="slds-card__header slds-grid">
+                        <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                            <!--<div class="slds-media__figure" id="topOrderId">
+                                <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact slds-icon--small">
+                                    <path d="{!orderIcon}"></path>
+                                </svg>
+                            </div>
+                            -->
+                            <div class="slds-media__body">
+
+
+                                <!--<span class="slds-button-group" role="group">-->
+                                <apex:outputPanel id="upperLeftMenu">
+                                    <span class="" role="group">
+                                        <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true" style="{!IF(orderService.isThreePay, '', 'display:none')}">
+                                            <button class="slds-button slds-button--neutral" id="threePayIcon" >
+                                                $$$
+                                            </button>
+                                            <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left" style="left:-18px">
+                                                <ul class="dropdown__list" role="menu">
+                                                    <li class="slds-dropdown__item"><a class="slds-text-body--small" style="pointer-events:none">3 Pay Order </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                            <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true" style="{!IF(AND(thisOrder.TOS_Accepted__c, thisOrder.OrderTerms__c), '', 'display:none')}">
+                                            <a id="documentIcon" class="svgParent">
+                                                <svg aria-hidden="true" class="slds-icon slds-icon-standard-sossession slds-icon--small">
+                                                    <path d="{!documentIcon}"></path>
+                                                </svg>
+                                            </a>
+                                            <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left" style="left:-18px">
+                                                <ul class="dropdown__list" role="menu">
+                                                    <li class="slds-dropdown__item">
+                                                        <a class="slds-text-body--small" role="menu-item" style="pointer-events:none">Customer Accepted terms on <apex:outputText value="   {!thisOrder.Date_Time_TOS_Accepted__c}"/> </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true" style="{!IF(orderService.theOrder.Order.orderFlags.isPhoneOrder, '', 'display:none')}">
+                                            <a id="phoneHistoryIcon" class="svgParent">
+                                                <svg aria-hidden="true" class="slds-icon slds-icon-standard-sossession slds-icon--small">
+                                                    <path d="{!phoneHistoryIcon}"></path>
+                                                </svg>
+                                            </a>
+                                            <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left" style="left:-18px">
+                                                <ul class="dropdown__list" role="menu">
+                                                    <li class="slds-dropdown__item"> <a class="slds-text-body--small" role="menu-item" style="pointer-events:none">Phone order placed on <apex:outputText value="   {!orderService.theOrder.Order.dateCreatedDatetime}"/> </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true">
+                                            <a id="orderContactsIcon" class="svgParent" >
+                                                <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact slds-icon--small">
+                                                    <path d="{!contactIcon}"></path>
+                                                </svg>
+                                            </a>
+                                            <div class="slds-dropdown slds-dropdown--left slds-nubbin--top-left" style="left:-18px">
+                                                <ul class="dropdown__list" role="menu">
+                                                    <apex:repeat value="{!authorizedContacts}" var="authContact">
+                                                        <li class="slds-dropdown__item">
+                                                            <a class="slds-text-body--small" role="menu-item" onclick="openContactTab('{!authContact.Contact__r.LZ_Order_Contact_ID__c}');">{!authContact.Contact__r.Name } </a>
+                                                        </li>
+                                                    </apex:repeat>
+                                                    <li class="slds-dropdown__item">
+                                                        <a class="slds-text-body--small" role="menu-item" onclick="createContactTab();">Add Order Specific Contact</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                             <span>
+                                                    <apex:image url="{!$Resource.English}" rendered="{!thisOrder.Language_Preferance__c = "English"}" style="cursor:pointer;text-decoration:none;height: 25px;" title="Language: English" />
+                                                    <apex:image url="{!$Resource.Spanish}" rendered="{!thisOrder.Language_Preferance__c = "Spanish"}" style="cursor:pointer;text-decoration:none;height: 25px;" title="Language: Spanish" />
+                                            </span>
+                                    </span>
+                                </apex:outputPanel>{!orderService.theOrder.Order.dateCreatedDatetime}
+
+                                &nbsp;&nbsp;
+                                     <span class="slds-text-heading--small">
+                                         <strong><apex:outputLabel id="baserProductName" value="{!orderService.baseProductName}"/>
+                                         </strong>
+                                     </span>
+
+
+                                <br />
+                                <br />
+                                <div class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-float--right slds-is-open" aria-expanded="true" id="newItemTrigger" >
+                                    <apex:outputPanel id="addNewDropDownPanel">
+                                        <apex:outputPanel rendered="{!NOT(orderService.theOrder.Order.isCancelled)}">
+                                            <button onclick="showAddNewDropdown('{!orderService.mainOrderItemId}','addItem');" class="slds-button slds-button--neutral slds-picklist__label" aria-haspopup="true" id="availOrderItem"  type="button" >
+                                                <span class="slds-truncate">Add New Order Item</span>
+                                                <svg aria-hidden="true" class="slds-icon slds-icon--small" viewBox="0 0 20 20" >
+                                                    <path d="{!downIcon}"></path>
+                                                </svg>
+
+                                            </button>
+                                        </apex:outputPanel>
+                                    </apex:outputPanel>
+
+                                    <div class="slds-dropdown slds-dropdown slds-dropdown--right slds-dropdown--menu" style="width:450px;" id="addNewDropdown">
+                                        <apex:outputpanel id="addNewPanel">
+                                            <ul class="dropdown__list" role="menu">
+                                                <apex:repeat value="{!orderService.currentActionItems}" var="availProduct">
+                                                    <li class="slds-dropdown__item orderItemOption">
+                                                        <a class="slds-text-body--small" role="menu-item" onclick="callModifyOrderItem('{!availProduct.productConfigurationId}','{!availProduct.productComponentId}','{!availProduct.orderItemId}');" style="white-space: normal"><apex:outputText escape="false" value="{!availProduct.productTypeName}:{!availProduct.description}"></apex:outputText> </a>
+                                                    </li>
+                                                </apex:repeat>
+                                            </ul>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+
+                                <div class="slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click slds-float--right slds-is-open" aria-expanded="true" id="packageTrigger" >
+                                    <apex:outputpanel id="availPackagePanel">
+                                        <apex:outputPanel rendered="{!NOT(orderService.theOrder.Order.isCancelled)}">
+                                            <button onclick="showAvailPackages('{!orderService.mainOrderItemId}','changePackage');" class="slds-button slds-button--neutral slds-picklist__label" aria-haspopup="true" id="availablePackages"  type="button" >
+                                                <span class="slds-truncate">Available Packages</span>
+                                                <svg aria-hidden="true" class="slds-icon slds-icon--small" viewBox="0 0 20 20" id="downIconSVG">
+                                                    <path d="{!downIcon}"></path>
+                                                </svg>
+
+                                            </button>
+                                        </apex:outputPanel>
+                                    </apex:outputpanel>
+
+                                    <div class="slds-dropdown slds-dropdown slds-dropdown--right slds-dropdown--menu" style="width:450px;" id="availDropdown">
+                                        <apex:outputpanel id="availProductsPanel">
+                                            <ul class="dropdown__list" role="menu">
+                                                <apex:repeat value="{!orderService.currentActionItems}" var="availProduct">
+                                                    <li class="slds-dropdown__item">
+                                                        <a class="slds-text-body--small" role="menu-item" onclick="callModifyOrderItem('{!availProduct.productConfigurationId}','{!availProduct.productComponentId}','{!availProduct.orderItemId}');" style="white-space: normal"><apex:outputText escape="false" value="{!availProduct.productTypeName}:{!availProduct.description}"></apex:outputText> </a>
+                                                    </li>
+                                                </apex:repeat>
+                                            </ul>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                                 <input type="checkbox" id="displayCancel" value="" />&nbsp;&nbsp;Show Cancelled Items
+                            </div>
+                           
+                            
+                        </div>
+
+                    </div>
+                    
+                    <div class="slds-card__body">
+                        <apex:outputpanel id="originalItems">
+                        
+                            <table class="slds-table slds-table--bordered" style="font-size:12px;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="slds-size--3-of-12"><strong>Product Name</strong></th>
+                                        <th scope="col" class="slds-size--1-of-12"><strong>Processing Number</strong></th>
+                                        <th scope="col" class="slds-size--1-of-12"><strong>Date Ordered</strong></th>
+                                        <th scope="col" class="slds-size--2-of-12"><strong>Status</strong></th>
+                                        <th scope="col" class="slds-size--1-of-12"><strong>Quantity</strong></th>
+                                        <th scope="col" class="slds-size--1-of-12"><strong>Price</strong></th>
+                                        <th scope="col" class="slds-size--2-of-12"><strong>Links</strong></th>
+                                        <th scope="col" class="slds-size--1-of-12"><strong>Modify Item</strong></th>
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <apex:variable var="orderItemToRemove" value="{!0}" />
+
+                                    <apex:repeat value="{!orderService.finalOrderItemWrappers}" var="theOrderItemWrapper">
+
+                                        <tr class="slds-hint-parent mainLineItem" data-cancel="{!theOrderItemWrapper.isCancelled}" style="{!IF(theOrderItemWrapper.isCancelled, 'text-decoration:line-through;','text-decoration:none;')}">
+
+                                            <td>
+                                             <!--2 is Package , 9 is CrossSell-->    
+                                            <p style = "white-space: normal; {!IF(theOrderItemWrapper.productTypeId == '2' || theOrderItemWrapper.productTypeId == '9','font-weight:bold;','font-weight:normal;')}{!IF(theOrderItemWrapper.indent == 1,'padding-left: 20px;',
+                                            IF(theOrderItemWrapper.indent == 2,'padding-left: 40px;',IF(theOrderItemWrapper.indent == 3,'padding-left: 60px;','')))}"
+                                            ><span style="" title ="{!IF(orderService.mainOrderItemId == theOrderItemWrapper.orderItemId , orderService.entityName,'')}">{!theOrderItemWrapper.productName}
+                                            </span>
+                                            </p>
+                                            
+                                            </td>
+                                            <td>{!IF(theOrderItemWrapper.processingOrderId == '', '',theOrderItemWrapper.processingOrderId)}</td>
+                                           
+                                            <td>{!theOrderItemWrapper.dateTimeCreatedInString}</td>
+                                            <td style = "white-space: normal;"><strong>{!theOrderItemWrapper.processingStatus}</strong></td>
+                                            <td>{!theOrderItemWrapper.quantity}</td>
+                                            <td><span >{!theOrderItemWrapper.extendedPrice}</span></td>
+                                            <td>
+                                                 <apex:outputPanel rendered="{!theOrderItemWrapper.processingOrderId != ''}" 
+                                                 style="{!IF(theOrderItemWrapper.isCancelled, 'display:none;','display:block;')}">
+                                                     <span class="slds-icon__container" title="FileNet">
+                                                           
+                                                                <a onclick="PopupCenter('http://filenetweb.legalzoom.com/navigator/_lz/DisplayOrderFilenet.jsp?fkUserOrder={!theOrderItemWrapper.processingOrderId}&problem=1','FileNet','800','650'); return false;">
+                                                                  <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default" viewBox="0 0 24 24">
+                                                                    <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#record')}"></use>-->
+                                                                    <path d="{!recordIcon}" />
+                                                                  </svg>
+                                                                </a>
+                                                                <span class="slds-assistive-text">FileNet Icon</span>
+                                                           
+                                                        </span>
+                                                        <span class="slds-icon__container " title="Questionnaire">
+                                                        <a onclick="PopupCenter('http://lztools.legalzoom.com/check_individual_order.asp?iOrder={!theOrderItemWrapper.processingOrderId}','Questionnaire','800','650'); return false;" styleClass="slds-text-body--small">
+                                                          <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default" viewBox="0 0 24 24">
+                                                            <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#inbox')}"></use>-->
+                                                            <path d="{!inboxIcon}" />
+                                                          </svg>
+                                                          </a>
+                                                          <span class="slds-assistive-text">Questionnaire Icon</span>
+                                                        </span>
+                                                        <span class="slds-icon__container " title="Proofer">
+                                                          <a onclick="PopupCenter('http://lzapps/Proofer/{!theOrderItemWrapper.processingOrderId}','Proofer','800','650');  return false;">
+                                                              <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default" viewBox="0 0 24 24">
+                                                                <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#settings')}"></use>-->
+                                                                <path d="{!settingsIcon}" />
+                                                              </svg>
+                                                          </a>
+                                                            <span class="slds-assistive-text">Proofer Icon</span>
+                                                        </span>
+                                                        <span class="slds-icon__container " title="Ledger">
+                                                            <!--Story B-19202 SF Archival Ledger Update - Added customerordernumer in the parameter to create new cases in case of no Order items due to archival-->
+                                                           <a onclick="PopupCenter('/apex/nextpad?processingNumber={!theOrderItemWrapper.processingOrderId}&CustomerOrderNumber={!ordernumber}','Ledger','1000','800'); return false;" class="slds-text-body--small">
+                                                            <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-icon-xx--small" viewBox="0 0 24 24">
+                                                              <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#page')}"></use>-->
+                                                              <path d="{!pageIcon}" />
+                                                            </svg>
+                                                          </a>
+                                                          <span class="slds-assistive-text">Ledger Icon</span>
+                                                        </span>
+                                                        <!--  Padma @B-22215 -->
+                                                        <span class="slds-icon__container" title="OrderStatus" style= "{!IF(AND(CONTAINS(theOrderItemWrapper.productName,'LLC'), (thisOrder.Order_Date_Time_Created__c > DATETIMEVALUE( "2018-03-16 12:00:00" )) ), '','display:none')}">
+
+                                                            <!--<a onclick="PopupCenter('/apex/IADOrderStatus?processingNumber={!theOrderItemWrapper.processingOrderId}','OrderStatus', '1205','900'); return false;" > -->
+                                                             <a onclick="window.open('/apex/IADOrderStatus?processingNumber={!theOrderItemWrapper.processingOrderId}','OrderStatus')" >
+                                                                <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default" viewBox="0 0 24 24">
+                                                                    <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#record')}"></use>-->
+                                                                    <path d="{!checkIcon}" />
+                                                                </svg>
+                                                            </a>
+                                                            <span class="slds-assistive-text">Order Status</span>
+
+                                                        </span>
+                                                        <!-- EOC Padma-->
+                                                    </apex:outputPanel>
+
+                                            </td>
+                                            <td>
+                                               
+                                               <div class="slds-dropdown-trigger slds-text-align--left" aria-expanded="true" style="{!IF(theOrderItemWrapper.isCancelled || theOrderItemWrapper.isMainOrderItem, 'visibility: hidden;','')}" >
+                                                  <a class="svgParent availProduct" data-orderItemId = "{!theOrderItemWrapper.orderItemId}">
+                                                    <svg aria-hidden="true" class="slds-icon slds-icon-standard-sossession slds-icon--small">
+                                                        <path d="{!gearIcon}"></path>
+                                                    </svg>
+                                                  </a>
+                                                  
+                                                  
+                                                </div>
+                                            </td>
+                            
+                                            <apex:variable var="orderItemToRemove" value="{!orderItemToRemove+1}" />
+
+                                        </tr>
+                                    </apex:repeat>
+                                    <tr>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><strong>SubTotal</strong></td>
+                                        <td><strong>
+
+                                            <apex:outputText value="{0, number, currency}">
+                                                <apex:param value="{!orderService.theOrderBalance.subTotalCharges}" />
+                                            </apex:outputText>
+
+                                        </strong></td>
+                                        <td></td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a onClick="openPromoCode(); return false;"><strong>Promo Code</strong></a></td>
+                                        <td>
+                                       
+                                        <strong>
+                                                        
+                                            <apex:outputText value="{0, number, currency}">
+                                                      <apex:param value="{!orderService.promoCodeAmount}" />
+                                            </apex:outputText>
+
+                                        </strong></td>
+                                        <td></td>
+
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><a onClick="openDiscountCode(); return false;"><strong>Discount</strong></a></td>
+                                        <td><strong>
+                                            <apex:outputText value="{0, number, currency}">
+                                                   <apex:param value="{!orderService.orderDiscount}" />
+                                            </apex:outputText>
+                                        </strong></td>
+                                        <td></td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <strong>TOTAL PRICE</strong>
+                                        </td>
+                                        <td>
+                                            <strong id="totalPrice">
+                                                <apex:outputText value="{0, number, currency}">
+                                                   <apex:param value="{!orderService.theOrderBalance.totalOrderAmount}" />
+                                                </apex:outputText>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <strong>Due Amount</strong>
+                                        </td>
+                                        <td>
+                                            <strong id="total">
+                                                <apex:outputText value="{0, number, currency}">
+                                                   <apex:param value="{!orderService.theOrderBalance.orderBalanceAmount}" />
+                                                </apex:outputText>
+                                            </strong>
+                                        </td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </apex:outputpanel>
+
+                    </div>
+                    <div class="slds-card__footer">
+                     
+                   
+                        
+                       
+
+                    </div>
+                </div>
+                <br />
+            
+                <apex:outputpanel id="modifiedItems">
+                    <apex:outputpanel rendered="{!orderService.modifiedOrderItemWrappers.size > 0}" >
+                        <div class="slds-card">
+                            <div class="slds-card__header slds-grid">
+                                <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                                    <div class="slds-media__figure" id="bottomOrderId">
+                                        <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact slds-icon--small">
+                                            <path d="{!orderIcon}"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <h2 class="slds-text-heading--small slds-truncate">Order Changes</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-card__body">
+                                <table class="slds-table slds-table--bordered" style="font-size:12px;">
+                                    <thead>
+                                        <tr>
+                                           
+                                            <th scope="col" class="slds-size--2-of-12"><strong>Product Name</strong></th>
+                                            <th scope="col" class="slds-size--2-of-12"><strong>Processing Number</strong></th>
+                                            <th scope="col" class="slds-size--2-of-12"><strong>Order Item Number</strong></th>
+                                            <th scope="col" class="slds-size--1-of-12">
+                                                <strong>Order Item Created</strong>
+                                            </th>
+                                            
+                                            <th scope="col" class="slds-size--2-of-12"><strong>Update Type</strong></th>
+                                            <!--<th scope="col" class="slds-size--1-of-12"><strong>Price</strong></th>-->
+
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--<apex:variable var="orderItemToRemoveModified" value="{!0}" />-->
+                                        <apex:repeat value="{!orderService.modifiedOrderItemWrappers}" var="theOrderItemWrapper">
+                                            <tr class="slds-hint-parent">
+                                                <td>{!theOrderItemWrapper.productName}</td>
+                                                <td>{!theOrderItemWrapper.processingOrderId}</td>
+                                                <td>{!theOrderItemWrapper.orderItemId}</td>
+                                                <td>{!theOrderItemWrapper.dateTimeCreatedInString}</td>
+                                                <td>{!theOrderItemWrapper.modificationType}</td>
+                                                <td>
+                                                    <!--<apex:inputtext styleclass="orderItemPrices" value="{!theOrderItemWrapper.price}" id="theTextInput" />-->
+                                                </td>
+
+
+
+                                            </tr>
+                                            <!--<apex:variable var="orderItemToRemoveModified" value="{!orderItemToRemoveModified+1}" />-->
+                                        </apex:repeat>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <!--
+                            <div class="slds-card__footer">
+                                <div class="slds-float--right">
+                                    <apex:commandbutton action="{!cancel}" value="Cancel" id="theButton1" styleclass="slds-button slds-button--neutral" rerender="modifiedItems,originalItems" oncomplete="renderIcons();" />
+                                    <button class="slds-button slds-button--brand slds-float--right" style= "{!IF(AND(orderService.theOrderBalance != NULL, orderService.theOrderBalance.grandTotal > 0.00), '', 'display:none')}" type="button" onclick="openPaymentPageAsAmountDue();return false;">Proceed to Payments</button>
+                                    <button class="slds-button slds-button--brand slds-float--right" style= "{!IF(AND(orderService.theOrderBalance != NULL, orderService.theOrderBalance.grandTotal < 0.00), '', 'display:none')}" type="button" onclick="openRefundPage();return false;" >Proceed to Refunds</button>
+                                    <apex:commandButton action="{!proceedToPayments}" value="Proceed to Payments" id="theButton2"  styleClass="slds-button slds-button--brand" rerender="theForm"/>
+                                </div>
+
+                            </div>
+                            -->
+                            
+                        </div>
+                    </apex:outputpanel>
+                </apex:outputpanel>
+                 <apex:outputPanel id="footerBtns">
+                     <button class="slds-button slds-button--brand slds-float--right" style= "{!IF(AND(orderService.theOrderBalance != NULL, orderService.theOrderBalance.orderBalanceAmount > 0.00), '', 'display:none')}" type="button" onclick="openPaymentPageAsAmountDue();return false;">Proceed to Payments</button>
+                     <button class="slds-button slds-button--brand slds-float--right" style= "{!IF(AND(orderService.theOrderBalance != NULL, orderService.theOrderBalance.orderBalanceAmount < 0.00), '', 'display:none')}" type="button" onclick="openRefundPage();return false;" >Proceed to Refunds</button>
+                </apex:outputPanel>
+                <br />
+               
+                <div id="modalDiv" style="display:none">
+                    <apex:outputPanel id="threePayPanel">
+                        
+                            <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                                <div class="slds-modal__container">
+                                    <div class="slds-modal__header">
+                                        <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                            <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                                                <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#close"></use>
+                                            </svg>
+                                            <span class="slds-assistive-text">Close</span>
+                                        </button>
+                                        <apex:outputPanel rendered="{!NOT(orderService.theOrder.Order.isCancelled)}">
+                                            <h2 class="slds-text-heading--medium">Convert to 3-pay?</h2>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!orderService.theOrder.Order.isCancelled}">
+                                            <h2 class="slds-text-heading--medium">Order is Cancelled</h2>
+                                        </apex:outputPanel>
+                                    </div>
+                                    <div class="slds-modal__content slds-p-around--medium">
+                                       
+                                    </div>
+                                    <div class="slds-modal__footer">
+                                        <apex:outputPanel rendered="{!NOT(orderService.theOrder.Order.isCancelled)}">
+                                            <button class="slds-button slds-button--neutral slds-button--brand" type="button" onclick="show3Pay();">Convert To 3 Pay</button>
+                                        </apex:outputPanel>
+                                        <button class="slds-button slds-button--neutral" type="button" onclick="hideConvertTo3Pay();">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                        
+                    </apex:outputPanel>
+                </div>
+                
+                <div id="orderHistory" style="display:none;">
+                        <div class="slds-modal slds-fade-in-open slds-modal--large" aria-hidden="false" role="dialog">
+                            <div class="slds-modal__container">
+                                <div class="slds-modal__header">
+                                    Order History #{!ordernumber}
+                                    <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                                            <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#close"></use>
+                                        </svg>
+                                        <span class="slds-assistive-text">Cancel</span>
+                                    </button>
+                                </div>
+                                <div class="slds-modal__content slds-p-around--medium">
+                                         <apex:outputpanel id="orderHistoryPanel">
+                                            <table class="slds-table sortable " >
+                                                <thead class="slds-table--bordered">
+                                                    <tr class="slds-text-body--label">
+                                                        <th scope="col" class="slds-text-body--small slds-cell-shrink"><strong>ORDER ITEM</strong></th>
+                                                        <th scope="col" class="slds-text-body--small slds-cell-shrink"><strong>DATE</strong></th>
+                                                        <th scope="col" class="slds-text-body--small slds-cell-shrink"><strong>CHANGED BY</strong></th>
+                                                        <th scope="col" class="slds-text-body--small slds-cell-shrink"><strong>DESCRIPTION</strong></th>
+                                                        <th scope="col" class="slds-text-body--small slds-cell-shrink"><strong>ADDITIONAL INFO</strong></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <apex:variable value="{!1}" var="parentRowNum"/>
+                                                    <apex:repeat value="{!orderService.theOrderHistory.orderItemsHistory}" var="theOrderItemsHistory">
+                                                        <apex:variable value="{!1}" var="rowNum"/>
+                                                         <apex:repeat value="{!theOrderItemsHistory.history}" var="theOrderItemHistory">
+                                                            <tr class="slds-text-heading--label slds-has-divider" style = "{!IF(rowNum == theOrderItemsHistory.history.size && parentRowNum != orderService.theOrderHistory.orderItemsHistory.size , 'border-bottom: 2px solid black;','')}">
+                                                                <td><span style = "{!IF(rowNum == 1 , 'display:block;' , 'display:none;')} white-space: normal">{!orderService.orderItemIdToProductName[theOrderItemsHistory.orderItemId]}</span></td>
+                                                                <td>{!theOrderItemHistory.adjCreatedDateString}</td>
+                                                                <td>{!theOrderItemHistory.updatedBy}</td>
+                                                                <td>{!theOrderItemHistory.description}</td>
+                                                                <td>{!theOrderItemHistory.additionalInfo}</td>
+                                                                <apex:variable value="{!rowNum+1}" var="rowNum"/>
+                                                                
+                                                            </tr>
+                                                        </apex:repeat>
+                                                        <apex:variable value="{!parentRowNum+1}" var="parentRowNum"/>
+                                                    </apex:repeat>
+                                                </tbody>
+                                            </table>
+                                        </apex:outputpanel>
+                                   
+                                </div>
+                                <div class="slds-modal__footer">
+                                    <button class="slds-button slds-button--neutral" type="button" onclick="hideOrderHistory();">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+    
+                
+                </div>
+                <div id="cancelOrder" style="display:none">
+                    <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <h2 class="slds-text-heading--medium">Cancel Order</h2>
+                            </div>
+                            <apex:outputPanel id="cancelEntireOrder">
+                           
+                            <div class="slds-modal__content slds-p-around--medium">
+                                <div class="slds-form--horizontal">
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Order Number: </label>
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-form-element__label">{!orderService.orderNumber}</span>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Customer Login:</label>
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-form-element__label">{!orderService.customerLogin}</span>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Processing Number:</label>
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-form-element__label">{!orderService.processingNumber}</span>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Processing Status:</label>
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-form-element__label">{!orderService.baseProcessingStatus}</span>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Base Product:</label>
+                                        <div class="slds-form-element__control">
+                                           <span class="slds-form-element__label">{!orderService.baseProductName}</span>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Gross Total:</label>
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-form-element__label">${!orderService.theOrderBalance.totalOrderAmount}</span>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label removeTop">Order Date/Time Created:</label>
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-form-element__label">{!orderService.orderDateTimeCreated}</span>
+                                        </div>
+                                    </div>
+                                    <!--
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label">Reason for cancellation</label>
+                                        <div class="slds-form-element__control">
+                                            <apex:selectlist value="{!cancellationReason}" size="1" styleclass="slds-select" rendered="true" label="Reason For Cancellation">
+                                                <apex:selectoptions value="{!CancellationReasons}"></apex:selectoptions>
+                                            </apex:selectlist>
+                                        </div>
+                                    </div>
+                                    -->
+                                    <c:IADMessageBox theMessages="{!orderService.iadMessages}" />
+                                    <br />
+                                    <apex:actionstatus id="statusUpdatingCancel">
+                                        <apex:facet name="start">
+                                            <div class="slds-spinner_container">
+                                                <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                                    <div class="slds-spinner__dot-a"></div>
+                                                    <div class="slds-spinner__dot-b"></div>
+                                                </div>
+                                            </div>
+                                            
+                                        <div  class="slds-backdrop slds-backdrop--open background"></div>
+                                        </apex:facet>
+                                            
+                                    </apex:actionstatus>
+                                    <div class="slds-modal__footer">
+                                        <apex:commandButton action="{!callCancelOrder}" styleClass="slds-button slds-button--neutral slds-button--brand" value="Cancel Order" reRender="cancelEntireOrder,originalItems" status="statusUpdatingCancel" rendered="{!IF(orderService.cancelUnCancelResponse = false, true,false)}" />
+
+                                       
+                                        <button class="slds-button slds-button--neutral" type="button" onclick="openRefundPage();" style="{!IF(orderService.cancelUnCancelResponse = true, '', 'display:none')}">Go to Refund Page</button>
+                                        
+                                        <button class="slds-button slds-button--neutral" type="button" onclick="hideCancelOrder();">Close</button>
+
+                                        <apex:commandButton action="{!refreshPage}" styleClass="slds-button slds-button--neutral" value="Refresh Order" status="statusUpdating" rendered="{!IF(orderService.cancelUnCancelResponse = true, true,false)}" />
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                          </apex:outputPanel>
+
+                        </div>
+                    </div>
+                    <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                </div>
+                
+                <div id="uncancelOrder" style="display:none">
+                <apex:outputPanel id="uncancelOrder">
+                    <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <h2 class="slds-text-heading--medium">Undo Cancel Order</h2>
+                            </div>
+                            <div class="slds-modal__content slds-p-around--medium">
+                                <p> Are you sure you want to Undo the Cancellation?</p>
+                                <c:IADMessageBox theMessages="{!orderService.iadMessages}" />
+                                <br />
+                                 <apex:actionstatus id="statusUpdatingUncancel">
+                                    <apex:facet name="start">
+                                        <div class="slds-spinner_container">
+                                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                                <div class="slds-spinner__dot-a"></div>
+                                                <div class="slds-spinner__dot-b"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    <div  class="slds-backdrop slds-backdrop--open background"></div>
+                                    </apex:facet>
+                                        
+                                </apex:actionstatus>
+                                <div class="slds-modal__footer">
+                                    <apex:commandButton action="{!callUncancelOrder}" styleClass="slds-button slds-button--neutral slds-button--brand" value="Uncancel Order" reRender="uncancelOrder" status="statusUpdatingUncancel" rendered="{!IF(orderService.cancelUnCancelResponse = false, true,false)}"/>
+                                
+                                    <button class="slds-button slds-button--neutral" type="button" onclick="hideUnCancelOrder();">Close</button>
+                                    <apex:commandButton action="{!refreshPage}" styleClass="slds-button slds-button--neutral" value="Refresh Order" status="statusUpdating" rendered="{!IF(orderService.cancelUnCancelResponse = true, true,false)}" />
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                    </apex:outputPanel>
+                </div>
+                
+                <!--
+                <div id="onHold" style="display:none">
+                    <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <h2 class="slds-text-heading--medium">Put On Hold</h2>
+                            </div>
+                            <div class="slds-modal__content slds-p-around--medium">
+                                <p> Are you sure you want to put the Order On Hold?</p>
+                                <apex:pagemessages />
+                                <br />
+                                <div class="slds-modal__footer">
+                                    <button class="slds-button slds-button--neutral slds-button--brand" type="button" onclick="hideOnHold();">Confirm</button>
+                                    <button class="slds-button slds-button--neutral" type="button" onclick="hideOnHold();">Cancel </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                </div>
+                <div id="offHold" style="display:none">
+                    <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <h2 class="slds-text-heading--medium">Put Off Hold</h2>
+                            </div>
+                            <div class="slds-modal__content slds-p-around--medium">
+                                <p> Are you sure you want to put Order Off Hold?</p>
+                                <apex:pagemessages />
+                                <br />
+                                <div class="slds-modal__footer">
+                                    <button class="slds-button slds-button--neutral slds-button--brand" type="button" onclick="hideOffHold();">Confirm</button>
+                                    <button class="slds-button slds-button--neutral" type="button" onclick="hideOffHold();">Cancel</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                </div>
+                
+                <div id="shippingEstimate" style="display:none">
+                    <div class="slds-modal slds-fade-in-open slds-modal--large" aria-hidden="false" role="dialog">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                                        <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#close"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                            </div>
+                            <div class="slds-modal__content slds-p-around--medium">
+                                <div>
+                                    <p style="text-align:center">Shipping Estimation</p>
+                                </div>
+                                <br />
+
+                                Estimated Shipping Date : 06/26/2016  <br />
+                                UPS Tracking Number: 1Z1W7W444371900282
+
+
+                            </div>
+                            <div class="slds-modal__footer">
+                                <button class="slds-button slds-button--neutral" type="button" onclick="hideShippingEstimate();">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+
+                </div>
+                -->
+                <apex:outputPanel id="miscItemPanel">
+                    <div id="miscItem" style="display:none">
+
+                        
+                        <div class="slds-modal slds-fade-in-open slds-modal--large" aria-hidden="false" role="dialog">
+                            <div class="slds-modal__container">
+                                
+
+                                <div class="slds-modal__header">
+                                    Add Miscellaneous Item
+                                    <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                                            <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#close"></use>
+                                        </svg>
+                                        <span class="slds-assistive-text">Close</span>
+                                    </button>
+                                </div>
+                                <div class="slds-modal__content slds-p-around--medium">
+                                        <div class="slds-form--horizontal slds-float--left slds-m-top--medium">
+                                            <div class="slds-form-element slds-m-bottom--x-small">
+                                                <label class="slds-form-element__label">Quantity</label>
+                                                <div class="slds-form-element__control">
+                                                    
+                                                    <apex:inputText value="{!orderService.miscItem.quantity}" styleClass="slds-input" size="60" />
+
+                                                   
+                                                </div>
+                                            </div>
+
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label">Price Per Unit</label>
+                                                <div class="slds-form-element__control">
+                                                  
+                                                    <apex:inputText value="{!orderService.miscItem.pricePerUnit}" styleClass="slds-input" size="60" />
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label">Description</label>
+                                                <div class="slds-form-element__control">
+                                                                                           
+
+                                                    <apex:inputTextarea value="{!orderService.miscItem.description}" styleClass="slds-input"/>
+
+                                                </div>
+                                            </div>
+                                   
+                                     
+                                 
+                                        </div>
+
+
+
+                                </div>
+                                <apex:actionstatus id="statusUpdatingMisc">
+                                    <apex:facet name="start">
+                                        <div class="slds-spinner_container">
+                                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                                <div class="slds-spinner__dot-a"></div>
+                                                <div class="slds-spinner__dot-b"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    <div  class="slds-backdrop slds-backdrop--open background"></div>
+                                    </apex:facet>
+                                        
+                                </apex:actionstatus>
+                                <div class="slds-modal__footer">
+                                     <button class="slds-button slds-button--brand" onClick = "createMiscItem(); return false;">Submit</button>
+                                    <button class="slds-button slds-button--brand"  onClick = "hideMiscItem(); return false;">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                        
+                    </div>
+                </apex:outputPanel>
+
+
+            </div>
+        </apex:form>
+    </body>
+</html>
+</apex:page>

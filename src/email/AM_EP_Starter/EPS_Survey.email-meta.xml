@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>EPS Survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>EPS Survey</name>
+    <style>none</style>
+    <subject>Your Feedback Helps Us</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you again for reaching out to our Personal Services Team.
+
+To help us continually improve our service, please take a quick, 5-minute survey to give us your feedback.
+
+The survey is linked below. If the link does not work, you can also copy and paste the address directly: 
+
+https://www.surveymonkey.com/s/EstatePlan
+
+As always, please don’t hesitate to contact me at (888) 269-8232 Monday–Friday from 8 a.m.–5 p.m. PT or simply reply to this message. If I’m unavailable, you can also email MakeAPlan@legalzoom.com to reach the next available member of my team.
+
+
+{!User.FirstName}
+Personal Account Manager
+(888) 269-8232 x{!User.Extension}
+MakeAPlan@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

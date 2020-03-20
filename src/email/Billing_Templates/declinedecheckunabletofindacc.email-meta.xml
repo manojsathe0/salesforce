@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>decauth6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>declined echeck -unable to find acc</name>
+    <style>none</style>
+    <subject>declined echeck -unable to find acc</subject>
+    <textOnly>Legalzoom.com Order#  (E-Check Declined)
+
+Thank you for using LegalZoom.  
+
+Unfortunately, your initial eCheck payment for $XX.XX was declined with a reason ?Unable to Locate Account?.  
+
+Please note that LegalZoom charges an additional $25 each time a transaction is declined in order to cover incurred processing costs. 
+
+Please respond to this e-mail today or call us at 1-800-773-0888 (Monday through Friday, 7AM - 5PM Pacific Time) so that we can resolve this matter.   
+
+We look forward to hearing from you.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

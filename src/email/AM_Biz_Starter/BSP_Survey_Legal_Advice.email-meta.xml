@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>$BSP Survey LA</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BSP Survey - Legal Advice</name>
+    <style>none</style>
+    <subject>Enter Subject</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you again for giving me the opportunity to help you start your business!
+
+The LegalZoom team is very interested in providing the best help possible to customers like you, and we would greatly appreciate a minute of your time to provide your feedback on our service. Please click on the link below to take a 2 question survey so that we can understand what you liked and what could be improved in the future.
+
+Take the survey by accessing the following link:
+
+https://www.surveymonkey.com/s/9R8N3JG
+
+It has been my pleasure working with you on the establishment of your business. Thank you for choosing LegalZoom for your business needs. As your Account Manager, I will be following-up with you in roughly 45 days. This call is just to touch base with you and see if there is anything that I can further assist you with.
+
+As always, should you need additional help, please don’t hesitate to contact me directly at (855) 787-1951 x{!User.Extension}, Monday–Friday from 6 am – 6pm PT or simply reply to his message. If I’m unavailable, you can also email bizhelp@legalzoom.com to reach the next available member of my team.
+
+
+{!User.FirstName}
+Business Account Manager
+(855) 787-1951 x{!User.Extension}
+BizHelp@legalzoom.com
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to:  {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

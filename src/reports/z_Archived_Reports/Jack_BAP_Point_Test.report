@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_21126957</developerName>
+        <masterLabel>BAP/LAP</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Order_Matching_Activity__c$Order__c.Base_Product__c.Name</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Business Advantage Pro Monthly Membership</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Legal Advantage Plus Monthly Membership</sourceValue>
+            </sourceValues>
+            <value>0.5</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Legal Advantage Plus 3 Month Membership</sourceValue>
+            </sourceValues>
+            <value>1</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Business Advantage Pro 6 Month Membership</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Legal Advantage Plus 6 Month Membership</sourceValue>
+            </sourceValues>
+            <value>3</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Business Advantage Pro Annual Membership</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Legal Advantage Plus Annual Membership</sourceValue>
+            </sourceValues>
+            <value>5</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Order_Matching_Activity__c$Activity_Created_DateTime__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Agent__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Base_Product__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Commission_Eligible_Agent_1_Day1__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Commission_Eligible_Agent_2_Day1__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_21126957</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order_Matching_Activity__c$Order__c.Commission_Eligible_Total__c</field>
+    </columns>
+    <description>BAP/LAP Point Count</description>
+    <filter>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Business Advantage Pro Standalone,Legal Advantage Plus Standalone</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Activity_Created_By__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Adrian Hurtado,Edmund Yip,Adam Koehler,Antonio Guevara,Bryan Turner,Jeremy Thomas,John Valles,Kenny Browder,Reggie Miles,Seth Levy,Tasha Newton,Tim Sharfman,Corey Brown,Rudy Tschang,Aimen Mouton,Chris Gotcher,Christopher Gilbert,Danielle Mizerak,Darrick Price,Eric Foster,Jackson Davis,Jed Regenwether,Kay Depper,Khristina George,Sophia Sam,Steve Schievelbein,Jack Chang,Anthony Lu,Gina Morreale,Jay Minalgo,Lyanna Fuentes,Mark McLemore,Matthew Draffen,Osvaldo Carrera,Thomas Minier,Bianca Sanchez,Corey Jewett,Jonathan Kirsch,Kim Riley,Parker Haynes,Ryan LeBlanc,Erin Sullivan,Derek Fowler,Illya Ross,Jarrod Nall,Jessica Hudson,Natalie Fleming,Scott Pearson,John Juett,Chase Lundy,James McCarthy,Joseph D&apos;Altilia,Michael Lopez,Michael McFadden,Seth Maxim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Order_Payment_Status__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Approved</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Monthly BAP/LAP Point Count</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OMA_w_Orders__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Order_Matching_Activity__c$Order__c.Base_Product__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Order_Matching_Activity__c$Activity_Created_Date__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

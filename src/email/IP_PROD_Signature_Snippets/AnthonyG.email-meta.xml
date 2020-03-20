@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip1130</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Anthony G.</name>
+    <style>none</style>
+    <textOnly>Anthony G.
+Intellectual Property Division
+www.LegalZoom.com
+1-800-773-0888 ext.1130</textOnly>
+    <type>custom</type>
+</EmailTemplate>

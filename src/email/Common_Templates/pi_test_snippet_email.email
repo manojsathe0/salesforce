@@ -1,0 +1,6 @@
+<messaging:emailTemplate subject="Thank You for Considering LegalZoom" recipientType="Lead" >
+<messaging:plainTextEmailBody >
+Congratulations!
+This is your new Visualforce Email Template.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

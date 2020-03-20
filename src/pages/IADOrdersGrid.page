@@ -1,0 +1,141 @@
+<apex:page controller="IADOrdersGridController" standardstylesheets="false"  >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <apex:includeScript value="{!URLFOR($Resource.SortJS, 'sortableTable.js')}" />
+        <apex:includescript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+        <script type="text/javascript">
+            var svgHash;
+            var orderId;
+            var oldOrderNum;
+			 window.onload = function() {
+			     console.log('calling orders');
+                populateOrders();
+
+            };
+            window.populateSVGHash = function() {
+                svgHash = {};
+                $('.svgParent').each(function(index) {
+                    var idKey = $(this).attr('id');
+                    svgHash[idKey] = $(this).html();
+                });
+                console.log('svg hash ' + svgHash);
+            }
+            window.afterActionFunction = function() {
+                console.log('calling afterActionFunction');
+                $('.svgParent').each(function(index) {
+                     console.log('calling index ' + index);
+                    var idKey = $(this).attr('id');
+                    console.log('calling idKey ' + idKey);
+                    $(this).html(svgHash[idKey]);
+                });
+            }
+            jQuery(document).ready(function($) {
+               populateSVGHash();
+            });
+            var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+                var url = '/apex/IADOrderWithOrderItems?orderId=' +  orderId + '&customerId={!theId}';
+                console.log('url ' + url);
+                sforce.console.openSubtab(result.id, url, true, 'Order Details');
+            };
+            function openOrderDetail(id){
+                oldOrderNum = id;
+                createOrder(oldOrderNum);
+            }
+            function openPrimaryTab(){
+                var oldOrderId = $("input[id*='oldOrderId']").val();
+                console.log('oldOrderId' + oldOrderId);
+                sforce.console.openPrimaryTab(null, '/'+oldOrderId, true);
+            }
+        </script>
+    </head>
+    <body>
+
+    <div class="slds">
+    <apex:form id="theForm">
+
+             <apex:outputPanel id="theOrderPanel">
+                 <apex:outputPanel id="hiddenInput">
+                     <apex:inputHidden id="oldOrderId" value="{!oldOrderId}"/>
+                 </apex:outputPanel>
+                 <apex:actionFunction name="populateOrders" action="{!populateOrders}" rerender="theOrderPanel" status="statusUpdating" onComplete="afterActionFunction(); return false;" />
+                 <apex:actionFunction name="createOrder" action="{!createOrder}" rerender="hiddenInput" status="statusUpdating" onComplete="openPrimaryTab(); return false;" >
+                     <apex:param assignTo="{!oldOrderNum}" name="oldOrderNum" value="" />
+                 </apex:actionFunction>
+                 <c:IADMessageBox theMessages="{!orderService.iadMessages}" rendered="{!orderService.iadMessages.size>0}"/>
+                 <apex:actionStatus id="statusUpdating">
+                     <apex:facet name="start">
+                         <div class="slds-spinner_container">
+                             <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                 <div class="slds-spinner__dot-a"></div>
+                                 <div class="slds-spinner__dot-b"></div>
+                             </div>
+                         </div>
+                     </apex:facet>
+                     <apex:facet name="stop">
+
+                     </apex:facet>
+                 </apex:actionStatus>
+             <div class="slds-text-body--small">
+                 <div class="slds-card__header slds-grid ">
+                     <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                         <div class="slds-media__figure">
+                             <span  id="header" class="svgParent">
+                                 <svg aria-hidden="true" class="slds-icon slds-icon-standard-quotes slds-icon--small">
+                                     <path d="{!orderIcon}" />
+                                 </svg>
+                             </span>
+                         </div>
+                         <div class="slds-media__body">
+                             <h3 class="slds-text-heading--small slds-truncate">Orders ({!theOrders.size})</h3>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="slds-card__body">
+
+                     <table class="slds-table slds-table--bordered sortable">
+                         <thead>
+                            <tr class="slds-text-heading--label">
+                                <th class="slds-is-sortable slds-is-resizable" scope="col">
+                                    <div class="slds-truncate">Order #
+                                    </div>
+                                </th>
+                                <th class="slds-is-sortable slds-is-resizable" scope="col">
+                                    <div class="slds-truncate">Product Name
+                                    </div>
+                                </th>
+                                <th class="slds-is-sortable slds-is-resizable" scope="col">
+                                    <div class="slds-truncate">Status
+                                    </div>
+                                </th>
+                                <th class="slds-is-sortable slds-is-resizable" scope="col">
+                                    <div class="slds-truncate">Date Ordered
+                                    </div>
+                                </th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                         <apex:repeat value="{!theOrders}" var="theOrder">
+                             <tr>
+                                 <td><apex:outputLink value="#" styleClass="slds-text-body--x-small" title="Click to open Order" onClick="openOrderDetail('{!theOrder.orderId}');return false;"><b><u> {!theOrder.orderId}</u></b></apex:outputLink></td>
+                                 <td>{!theOrder.productName}</td>
+                                 <td>{!theOrder.paymentStatusName}</td>
+                                 <td><apex:outputText value="   {!theOrder.dateCreatedDatetime}" /></td>
+                             </tr>
+                         </apex:repeat>
+                         </tbody>
+                     </table>
+
+                 </div>
+             </div>
+
+             </apex:outputPanel>
+
+    </apex:form>
+    </div>
+    </body>
+    </html>
+</apex:page>

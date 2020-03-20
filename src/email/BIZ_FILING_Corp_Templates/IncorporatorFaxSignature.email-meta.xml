@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>corpinfax</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Incorporator Fax Signature</name>
+    <style>none</style>
+    <subject>Incorporator Fax Signature</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your incorporation order.  Please follow the steps listed below to complete your order.
+
+Next steps:
+•  Do not make any changes to the attached document as it will result in delays with your order.  If you need to make changes, please contact our Customer Support Team.
+•  Print two (2) copies of the document on white paper using black ink.  Please do not use color ink.
+•  Please sign your name in black ink on both copies as the incorporator where indicated.  
+•  Mail the documents to our address listed below.  
+
+LegalZoom.com, Inc.
+101 N. Brand Blvd., 10th Floor
+POB 29096
+Glendale, CA 91209-9096
+Attn: Business Filings (Order #XXXXXXX)
+
+•  Alternatively, you can fax the signed documents to (323) 962-4521.  Please include your name and order number on the fax coversheet to ensure proper routing of your document to our processing team.
+
+If you have any questions regarding your order, please contact our {!snippetVariable.cc_dept_full} at {!snippetVariable.ccphone} or customercare@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

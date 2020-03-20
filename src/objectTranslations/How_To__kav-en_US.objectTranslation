@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>How To</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>How To</value>
+    </caseValues>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Links --></label>
+        <name>External__c</name>
+    </fields>
+    <fields>
+        <label><!-- FAQ --></label>
+        <name>FAQ__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal --></label>
+        <name>Internal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keywords --></label>
+        <name>Keywords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overview --></label>
+        <name>Overview__c</name>
+    </fields>
+    <fields>
+        <label><!-- Procedure/Process --></label>
+        <name>Procedures__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purpose --></label>
+        <name>Purpose__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reminders/Quick-Tips --></label>
+        <name>Reminders_Quick_Tips__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tags --></label>
+        <name>Tags__c</name>
+    </fields>
+    <layouts>
+        <layout>How To: Process/Policy/System Layout</layout>
+        <sections>
+            <label><!-- Due Date --></label>
+            <section>Due Date</section>
+        </sections>
+        <sections>
+            <label><!-- External Links --></label>
+            <section>External Links</section>
+        </sections>
+        <sections>
+            <label><!-- FAQ --></label>
+            <section>FAQ</section>
+        </sections>
+        <sections>
+            <label><!-- Overview --></label>
+            <section>Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Procedure/Process --></label>
+            <section>Procedure/Process</section>
+        </sections>
+        <sections>
+            <label><!-- Reminders/Quick Tips --></label>
+            <section>Reminders/Quick Tips</section>
+        </sections>
+        <sections>
+            <label><!-- Tags --></label>
+            <section>Tags</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

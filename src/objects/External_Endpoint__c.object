@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Information about external Endpoint</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Access_Key__c</fullName>
+        <externalId>false</externalId>
+        <label>Access Key</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Api_Endpoint_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Api Endpoint URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notepad_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Notepad URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secret_key__c</fullName>
+        <externalId>false</externalId>
+        <label>Secret key</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>External Endpoint</label>
+    <visibility>Public</visibility>
+</CustomObject>

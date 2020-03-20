@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>expreq</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Expedited Filing Request with IRS</name>
+    <style>none</style>
+    <subject>Expedited Filing Request with IRS</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for your inquiry regarding an expedited filing with the IRS for your 501c3 order.  While Legalzoom does not have the authority to request an expedited filing of a 501c3 with the IRS, there are steps that might be applicable to your situation.  
+
+In general, applications are processed in the order received by the IRS.  In some occasions, the IRS will review a case in an expedited manner.  However, this requires a compelling reason to process the case ahead of others.  
+
+Compelling reasons include the following:
+?A pending grant, where failure to secure the grant will have an adverse impact on the organization&apos;s ability to continue operating. 
+?A newly created organization providing disaster relief to victims of emergencies.
+?IRS errors have caused undue delays in issuing a determination letter.
+
+For a pending grant, the following specific information would help  support a request for expedited processing:
+?The name of the person or organization committed to giving the grant or asset,
+?The amount of the grant or the value of the asset,
+?The date the grant will be forfeited or permanently redirected to another organization,
+?The impact on the organization&apos;s operations if it does not receive the grant/asset, and
+?The signature of a principal officer or authorized representative.
+
+A request for expedited processing must be made in writing and must fully explain the compelling reason.  Granting expedited processing is at the discretion of the IRS.
+
+Where to send request for expedited handling:
+After an application has been filed, a written request for expedite handling must be sent to the following address:
+
+Internal Revenue Service
+P.O. Box 2508
+Room 4024
+Cincinnati, OH 45201
+
+Express mail or a hand-delivery service must be sent to the following address:
+Internal Revenue Service
+550 Main Street
+Room 4024
+Cincinnati, OH 45202
+
+If you have any additional questions regarding expedited 501c3 filing, please contact the IRS.  You can also contact our Customer Care Department at (800) 773-0888 or nonprofit@legalzoom.com.  However, please be advised that Legalzoom does not have any affiliation or relationship with the IRS and cannot request your order to be expedited.
+
+Best regards,
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

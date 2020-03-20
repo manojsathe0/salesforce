@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Compliance Review Approval</name>
+    <style>none</style>
+    <subject>Compliance Review: Your Approval is Required</subject>
+    <textOnly>You have received a Compliance Review to approve.  Please see the links below for further assistance.
+
+Compliance Review: https://na11.salesforce.com/{!Compliance_Review__c.Id}
+Representative: {!Compliance_Review__c.Representative__c}
+CIC Call ID#: {!Compliance_Review__c.Recorded_Call_ID__c}
+
+
+Approve/Reject: {!LEFT(Compliance_Review__c.Link, LEN(Compliance_Review__c.Link) - 15)}p/process/ProcessInstanceWorkitemWizardStageManager?id={!Workitem.ID}
+
+Click below to see all items you have pending approval:
+Items To Approve
+{!LEFT(Compliance_Review__c.Link, LEN(Compliance_Review__c.Link) - 15)}04i</textOnly>
+    <type>custom</type>
+</EmailTemplate>

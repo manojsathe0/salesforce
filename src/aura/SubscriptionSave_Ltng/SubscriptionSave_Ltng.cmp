@@ -1,0 +1,106 @@
+<!--  
+
+Subscription Save application.
+Created by Artyom M.
+Per Story: B-24904
+
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"  controller="SubscriptionSaveController_Ltng">
+
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+	
+	<aura:attribute name="IsThereLoggedCall" type="Boolean"/>
+	<aura:attribute name="recordId" type="Id" />
+	<aura:attribute name="orderItems" type="Order_Item__c[]"/>
+    <aura:attribute name="subscriptionItems" type="SubscriptionSaveController.SubscriptionItemWrapper"/>
+    <aura:attribute name="state" type="String"/>
+	<aura:attribute name="cancellationReasons" type="String[]" default="--None--"/>
+    <style>
+        .myClass{
+               max-width: 70rem !important;
+               width:90% !important;
+               
+        }
+    </style>
+    <div class="myClass">
+    <section role="dialog" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+        <div class="slds-modal__container">
+        
+            <!-- 
+            <ui:inputCheckbox aura:id="mainCheckBox" label="Is Subcription Save?" name="isSafe" value="{!v.IsSubcriptionSave}"/>
+        
+            Test25: <ui:outputText value="{!v.errors}" aura:id="testId"/>
+           Test25: <ui:outputText value="{!v.errors}" aura:id="testId"/> 
+        
+        -->
+            <div class="slds-modal__content" id="modal-content-id-1">
+        		<ui:outputText value="{!v.state}" aura:id="testId2"/>
+            <aura:renderIf isTrue="{!v.IsThereLoggedCall}">
+                <div class="slds-form-element__row" style="color:red;">
+                    <ui:outputText aura:id="warningArea" value="" class="text" />
+                </div>
+                <div class="slds-scrollable">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <td scope="col"><div class="slds-truncate" title="Select">Select</div></td>
+                                <td scope="col"><div class="slds-truncate" title="Product">Product</div></td> <!--  -->
+                                <td scope="col"><div class="slds-truncate" title="Start Date">Start Date</div></td>
+                                <td scope="col"><div class="slds-truncate" title="End Date">End Date</div></td>  
+                                <td scope="col"><div class="slds-truncate" title="Parent Order#">Parent Order#</div></td>
+                                <td scope="col"><div class="slds-truncate" title="Status">Status</div></td> 
+                            </tr>
+                        
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">
+                                    
+                                </td>
+                            </tr>
+                            <aura:iteration items="{!v.subscriptionItems}" var="theSubscriptionItem">
+                                <tr>
+                                    <td scope="row"><ui:inputCheckbox value="{!theSubscriptionItem.isSelected}" class="slds-truncate"/></td>
+                                    <td scope="row"><div class="slds-truncate" title="{!theSubscriptionItem.productName}">{!theSubscriptionItem.productName}</div></td><!-- -->
+                                    <td scope="row"><div class="slds-truncate" title="{!theSubscriptionItem.subscriptionStartDate}">{!theSubscriptionItem.subscriptionStartDate}</div></td>
+                                    <td scope="row"><div class="slds-truncate" title="{!theSubscriptionItem.subscriptionEndDate}">{!theSubscriptionItem.subscriptionEndDate}</div></td> 
+                                    <td scope="row"><div class="slds-truncate" title="{!theSubscriptionItem.parentOrderNumber}">{!theSubscriptionItem.parentOrderNumber}</div></td>
+                                    <td scope="row"><div class="slds-truncate" title="{!theSubscriptionItem.susbcriptionStatus}">{!theSubscriptionItem.susbcriptionStatus}</div></td>
+                                </tr>
+                                <tr class="body">
+                                    <td colspan="3">
+                                        <ui:inputSelect label="Reason" value="{!theSubscriptionItem.cancellationReason}">
+                                            <aura:iteration items="{!v.cancellationReasons}" var="cancellationReason">
+                                                <ui:inputSelectOption text="{!cancellationReason}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect>
+                                    </td>
+                                </tr>
+                             </aura:iteration>    
+                        </tbody>
+                    </table>
+                </div>
+                
+                
+            <aura:set attribute="else">
+               <ui:message title="Warning" severity="warning" closable="false">
+                   Not possible to log a Subsription Save at this time as there is no inbound call indicator.
+               </ui:message>
+            </aura:set>
+          </aura:renderIf> 
+         </div>
+        
+            <footer class="slds-modal__footer">
+            
+                <lightning:button class="slds-button slds-button_brand" aura:id="saveButton" label="Submit" onclick="{!c.submit}" disabled="{!v.IsThereLoggedCall ? false : true}"/>
+                <lightning:button class="slds-button" label="Cancel" onclick="{!c.handleCancel}"/>
+             
+            
+          </footer>
+            </div>
+        <div class="slds-no-flex"></div>
+        
+        
+            
+        </section></div>
+</aura:component>

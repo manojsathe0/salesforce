@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>synopsis</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PROBLEM - Need Synopsis</name>
+    <style>none</style>
+    <subject>Need Synopsis</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your Federal Copyright Registration through LegalZoom.
+
+During review of your file, we noticed an issue that may delay the registration of your work.
+
+For motion picture works, the Copyright Office requires that you send “a separate description of the nature and general content of the work—for example, a shooting script, a synopsis, or a pressbook.”
+
+However, we have not received any of those items from you.
+
+If you have an electronic version of any of the above items, you can send it as an attachment in reply to this email. If you only have physical copies, you can mail one to the address below:
+
+LegalZoom
+Attn: Copyrights
+101 N. Brand Blvd 10th Floor
+Glendale, CA 91203
+Re: Order # XXXXXXXX
+
+If you have any questions or concerns regarding your Copyright order, feel free to contact us at the number and extension below. We look forward to receiving your work. Thank you for choosing LegalZoom.
+
+
+Best regards,
+
+{!User.Name}, {!User.Title}
+{!User.CompanyName}
+{!User.Street}, {!User.City}, {!User.State} {!User.PostalCode}
+{!User.Phone}, ext. {!User.Extension}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

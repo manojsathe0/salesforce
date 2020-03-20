@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>newaltname</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Follow-up-New Business Name Required</name>
+    <style>none</style>
+    <subject>Follow-up-New Business Name Required</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As we discussed, unfortunately the name you selected for your new business is not available—either because the name is already used by another company or because the state has determined that the name is too similar to a name already in use. To be able to proceed with your business filing, we need you to provide other options for business names.
+
+Please provide a minimum of three other names in order of priority that you are willing to use for your business. We will check the names in the order they are listed and file the first available one with the state. 
+
+Send your business name options to: alternatenames@legalzoom.com.
+
+If you have any questions or would like additional information, please call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT or email us at customercare@legalzoom.com.
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

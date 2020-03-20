@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>nshani@legalzoom.com</contactEmail>
+    <label>ServiceDesk</label>
+    <logoUrl>https://legalzoom--c.na11.content.force.com/servlet/servlet.ImageServer?id=015G000000PXSqW&amp;oid=00DG0000000BmQx</logoUrl>
+    <startUrl>http://servicedesk.legalzoom.com/ProcessManager/Portal/Template33_66-100.aspx?PageID=6deeb623-9ab1-4f68-8104-0fb4fd609e9b</startUrl>
+</ConnectedApp>

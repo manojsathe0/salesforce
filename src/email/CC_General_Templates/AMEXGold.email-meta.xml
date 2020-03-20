@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>amexgold</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AMEX Gold</name>
+    <style>none</style>
+    <subject>AMEX Gold</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+Over the past several years, LegalZoom has been exploring ways to assist our new customers in the development of their businesses. We&apos;ve found that the American Express OPEN Gold Card is an effective tool for saving money on common business expenses and quickly earning Membership Rewards Points -- the best rewards program we&apos;ve found.
+
+To apply for the card, complete the application by clicking here:
+
+http://click.linksynergy.com/fs-bin/click?id=HbtvYgJ2BRo&amp;offerid=132189.10001658&amp;type=3&amp;subid=0&amp;u1=csfollowup
+
+Tip: The application does not require your Federal EIN. However, it is a good idea to update AMEX with this information, along with any changes to your corporation&apos;s name, when you have it.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

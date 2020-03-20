@@ -1,0 +1,55 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+
+Dear {!Contact.FirstName},
+
+<br/><br/>After reviewing your order, it appears that you have left the literal element section of your application blank.  The literal element is made up of any words, letters, or punctuation on your logo. 
+ <br/><br/>
+The U.S. Patent and Trademark Office (USPTO) requires your logo to display the exact literal element listed in the application. No additional words, letters or punctuation marks may appear on your application if they are not on your logo. To read more about the literal element, <a href=http://legalzoom.force.com/LZPKB/articles/Answer/2396>click here</a>.<br/><br/>
+
+Please reply and indicate how the literal element should be listed on your application (we will also complete your comprehensive search based on this information), and include a copy of your logo.<br /><br />
+
+
+----------------------------------<br /><br />
+
+SUBMITTING YOUR LOGO: <br /><br />
+
+Please reply to this e-mail and attach your logo sample, preferably in .jpg, .jpeg, .gif or .pdf format. Email attachments cannot exceed 6MB. <br /><br />
+
+If you are using a Mac computer or your attachments are larger than 6MB combined, please upload your image(s) directly <a href= http://legalzoom.force.com/LZWTC >here</a>. <br /><br />
+
+Or, if you prefer, you can mail us your materials.  Our mailing address is: <br /><br />
+
+{!snippetVariable.ip_address_tm_materials}<br /><br />
+
+<b>Please note: </b>LegalZoom will not share your materials with any third party unless necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. <br /><br />
+
+----------------------------------<br /><br />
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+
+<br/><br/>
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+<br/><br/>Best regards,<br/><br/>The LegalZoom Team<br/>
+
+
+</p></div><div class="emailBody"><p class="templateBody"></p></div><div class="emailFooter"><p><br></td></tr></table><table width="614" border="0" cellspacing="0" cellpadding="5" align="center">  <tr>    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+Your trademark search report is subject to LegalZoom’s  <a style="color: #336699;" href="https://www.legalzoom.com/terms_of_service.html">Terms of Service</a>. This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>.<br><br>
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.<br /><br />Please add services@emails.legalzoom.com to your address book.<br /><br />
+This email was sent to: {!Contact.Email}  <br /><br /> <br><br>  &copy; LegalZoom.com, Inc. All rights reserved. </span></td></tr></table></body></p></div></html>

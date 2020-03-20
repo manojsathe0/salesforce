@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>General Email for CC Agents to send customers requested information</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>cc_info_requested</name>
+    <style>none</style>
+    <subject>Information You Requested From LegalZoom</subject>
+    <textOnly>legalzoom.com
+
+Dear {!Contact.FirstName},
+
+Here is the information you requested while speaking with a representative:
+
+
+
+If you have additional questions, you may visit our website or call Customer Care at (800) 773-0888.
+
+
+Best regards,
+
+{!User.Department}
+{!Organization.Name}
+{!Organization.Street} {!Organization.City} {!Organization.State}, {!Organization.PostalCode}
+
+Call Customer Care: (800) 773-0888  LegalZoom. Legal help for the modern world.
+
+Privacy Policy
+Terms of Use
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

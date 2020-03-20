@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tm prob2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Unregistrable Marks</name>
+    <style>none</style>
+    <subject>Unregistrable Marks</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As a courtesy, we would like to remind you that there are various reasons for a Trademark application to be refused by the US Patent &amp; Trademark Office (USPTO). In such cases, refunds are not available once the application is submitted. Please review USPTO&apos;s common grounds for refusal to satisfy yourself that your proposed Trademark does not fall into one of these categories:
+
+1. the proposed mark consists of or comprises immoral, deceptive, or scandalous matter;
+2. the proposed mark may disparage or falsely suggest a connection with persons (living or dead), institutions, beliefs, or national symbols, or bring them into contempt or disrepute;
+3. the proposed mark consists of or comprises the flag or coat of arms, or other insignia of the United States, or of any State or municipality, or of any foreign nation;
+4. the proposed mark consists of or comprises a name, portrait or signature identifying a particular living individual, except by that individual&apos;s written consent; or the name, signature, or portrait of a deceased President of the United States during the life of his widow, if any, except by the written consent of the widow;
+5. the proposed mark so resembles a mark already registered in the Patent and Trademark Office (PTO) that use of the mark on applicant&apos;s goods or services are likely to cause confusion, mistake, or deception;
+6. the proposed mark is merely descriptive or deceptively misdescriptive of applicant&apos;s goods or services;
+7. the proposed mark is primarily geographically descriptive or deceptively geographically misdescriptive of applicant&apos;s goods or services;
+8. the proposed mark is primarily merely a surname; and
+9. matter that, as a whole, is functional.
+
+Because LegalZoom is not a law firm, we are unable to provide legal advice or pass judgment on the eligibility of your application. If you wish to update or revise your mark prior to the submission of your application, please respond with your changes. Otherwise, we will continue with your order as submitted. The Trademark in your application cannot be changed once submitted to the USPTO.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.attorneypod</name>
+    <style>none</style>
+    <subject>attorneypod</subject>
+    <textOnly>If you&apos;re already a member, sign in to schedule a consultation: https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess=
+*Available in most states.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

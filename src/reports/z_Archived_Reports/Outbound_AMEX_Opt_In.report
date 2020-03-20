@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order_Item__c$Order__c.Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Order_Item__c$Order__c</field>
+    </columns>
+    <columns>
+        <field>Order_Item__c$Product__c</field>
+    </columns>
+    <columns>
+        <field>Order_Item__c$Order__c.Commission_Eligible_Agent_1_Day1__c</field>
+    </columns>
+    <columns>
+        <field>Order_Item__c$Order__c.Commission_Eligible_Agent_2_Day1__c</field>
+    </columns>
+    <description>Outbound AMEX Opt-In Report</description>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <column>Order_Item__c$Product__c.LZ_Product_ID__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>3795,3796,3797,3798,3799,3800,3801,3972,1015,1170,1174,1178,1180,1288,1364,3971</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Item__c$Order__c.Commission_Eligible_Agent_1_Day1__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Annie Williams,Omar Dreidi,Eric Rodgers,Emily Smith,Sean Juarez,Brad Williams,Brendan Deville,Chris Gatus,Christian Gallo,Christopher Shepard,Chris Sterrs,Critta Snyder,Jack Akers,Jakob Christian,Jenny Boyd,Jesse Sanchez,Jim Corriveau,Kenneth Picou,Laura Garner,Matthew Moore,Ryan Guest,Ryan Metz,Sean Maguire,Zack Ingraham,Lily Aldrich,Tod Mackey,Daniel Castro,bill lewis,brian helmick,jeffrey greaves,rick griffin,michael carusillo,michael pipper,jena erickson</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Item__c$Order__c.Commission_Eligible_Agent_2_Day1__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Annie Williams,Brad Williams,Brendan Deville,Chris Gatus,Christian Gallo,Christopher Shepard,Chris Sterrs,Critta Snyder,Dude Henderson,Jack Akers,Jakob Christian,Jenny Boyd,Jereme Robinson,Jesse Sanchez,Jim Corriveau,Kenneth Picou,Laura Garner,Mandy Henderson,Matthew Moore,Peter Kim,Rob Moreno,Ryan Guest,Ryan Metz,Sean Maguire,Zack Ingraham,Lily Aldrich,Tod Mackey,Daniel Castro,bill lewis,brian helmick,don gregory,jeffrey greaves,rick griffin,michael carusillo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Item__c$Order__c.Order_Payment_Status__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Declined,Cancelled</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Outbound AMEX Opt-In</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Orders_w_Order_Items__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Order_Item__c$Order__c.Date_Time_Created__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Order_Item__c$Order_Item_Date_Time_Created__c</dateColumn>
+        <endDate>2014-03-01</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-02-01</startDate>
+    </timeFrameFilter>
+</Report>

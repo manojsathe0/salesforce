@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>spotsorry</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Spotlight Apology</name>
+    <style>none</style>
+    <subject>Spotlight Apology</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+We?d like to apologize for any inconvenience you?ve experienced while applying for the LegalZoom Spotlight. Spotlight is a fully automated service that allows customers to build free web pages hosted by LegalZoom.com. Because the program is automated, users may only be added through an online application process. 
+
+Due to the extreme popularity of the Spotlight program and certain space limitations, we are unable to activate your application at this time. For additional information, including how to be added to a Spotlight Interest list, please visit us at www.legalzoom.com/questions.html to submit your inquiry. 
+
+There are a number of other online resources where you can build a simple, customizable webpage including Yahoo Geocities and Google Page Creator. Performing a simple search for ?free web pages? should produce a variety of options for free online hosting. Please note LegalZoom is not affiliated with any of the above-listed websites.
+
+In appreciation of your patience, we?d like to offer you a $10 discount good on any LegalZoom service. Simply log back in to LegalZoom and use this discount code at checkout: WECARE 
+
+Thank you again for choosing LegalZoom. We look forward to assisting you with any future legal document needs.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

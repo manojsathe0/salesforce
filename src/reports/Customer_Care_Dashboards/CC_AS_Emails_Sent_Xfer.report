@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_36207309</developerName>
+        <masterLabel>cc as xfer queues</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Case.Queue__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>ASD-LegalPlan_Retention</sourceValue>
+            </sourceValues>
+            <value>cc as xfer queues</value>
+        </values>
+    </buckets>
+    <filter>
+        <criteriaItems>
+            <column>EMAIL.STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2,3,4</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Email to Case User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Created_By_User_Division__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_36207309</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC AS Emails Sent &amp; Xfer</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseEmail</reportType>
+    <scope>queue</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>EMAIL.MESSAGE_DATE</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

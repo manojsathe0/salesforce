@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>No_Email_On_Contact</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Email On Contact</shortDescription>
+        <value>Selected Contact under To: doesn\&apos;t have an email. If you want to use this contact, please close the compose form and update the email on the contact.</value>
+    </labels>
+    <labels>
+        <fullName>PKB_All_Article_Types</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Article types list</shortDescription>
+        <value>Article Types:</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Find_an_Answer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PKB Find an Answer</shortDescription>
+        <value>Find an Answer</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Language</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Language picklist label</shortDescription>
+        <value>Language</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Last_Updated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recently Updated articles list</shortDescription>
+        <value>Recently Updated</value>
+    </labels>
+    <labels>
+        <fullName>PKB_MostPopular</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Most Viewed articles list</shortDescription>
+        <value>Most Viewed</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Next10</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Forward pagination</shortDescription>
+        <value>Next 10</value>
+    </labels>
+    <labels>
+        <fullName>PKB_No_Result</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No articles in the selected category</shortDescription>
+        <value>No articles</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Previous10</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back pagination</shortDescription>
+        <value>Previous 10</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Button</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_NoFilter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No filter in category drop-down</shortDescription>
+        <value>-- No filter --</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_No_Result</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No search result</shortDescription>
+        <value>No articles found containing</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_Result</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Successful search result</shortDescription>
+        <value>Search Results for</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Search_Support</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Category filter label</shortDescription>
+        <value>Category</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Tab_Home</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home tab</shortDescription>
+        <value>Home</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Tab_Product</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product tab</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
+        <fullName>PKB_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Browser title</shortDescription>
+        <value>Public Knowledge Base</value>
+    </labels>
+</CustomLabels>

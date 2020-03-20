@@ -1,0 +1,63 @@
+<apex:page Controller="CT_WebToCase_Controller" showHeader="false" sidebar="false" standardStylesheets="true">
+    <html>
+    <head>
+        <title>Knowledge Base - LegalZoom</title>       
+        <script type="text/javascript" src="http://www.legalzoom.com/lib/coremetrics.js"></script> 
+        <script src='http://www.legalzoom.com/lib/js_headerfooter.js' type='text/javascript' ></script>
+        
+        <apex:stylesheet value="{!URLFOR($Resource.SiteSamples, 'SiteStyles.css')}"/>        
+		<style type="text/css">			
+			ul {
+			    list-style: none;
+			}
+		</style>        
+        
+         <script type="text/javascript">
+         var re1 = /"\//gim;
+         
+            function writeHeader(){
+                var sHeader = getPageHeader();
+                 //var re1 = /"\//gim;
+                sHeader = sHeader.replace(re1, "\"http://www.legalzoom.com/");
+                document.write(sHeader); 
+            }
+            
+            function writeFooter(){
+                var sFooter = getPageFooter();
+                var re2 = /openWindow_ext\('\//gim;
+                sFooter = sFooter.replace(re1, "\"http://www.legalzoom.com/");
+                sFooter = sFooter.replace(re2, "openWindow_ext('http://www.legalzoom.com/");
+                document.write(sFooter); 
+            }
+        </script>
+    </head>
+	
+    <body style="width:901px">
+        <div id="topContentWrapper">
+            <script type="text/javascript">writeHeader();</script>
+        </div>  
+        &nbsp;
+        <div id="middleContentDiv">         
+              <center>
+                <apex:panelGrid bgcolor="white" columns="1"> 
+                  	<br/>
+                    <apex:outputText styleClass="title" value="Your Question has been Submitted"/>
+                  	<br/>
+					<br/>					
+					<apex:outputText value="You should receive a response by email from a LegalZoom Customer Support Specialist within one business day."/>
+     				<br/>
+                  	<apex:outputText value="Thank you again for choosing LegalZoom, America's #1 legal document service. We look forward to serving you."/> 
+                    <br/>
+
+               </apex:panelGrid>
+              </center>
+              <br/>
+        </div>
+        
+        <div id="bottomContentWrapper">
+            <script type="text/javascript">writeFooter();</script>
+        </div>
+        
+    </body>
+    </html>
+</apex:page>

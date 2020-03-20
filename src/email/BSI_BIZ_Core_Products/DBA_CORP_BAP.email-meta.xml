@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>DBA - CORP (BAP)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>DBA - CORP (BAP)</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in forming your Doing Business As (DBA) name under your Corporation.  We simplify the process for you by preparing and filing the DBA Statement with your respective state agency, as well as handling any publication requirements, if applicable.
+
+For your reference, general information regarding establishing a DBA has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below.  By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+ 
+A Doing Business As (DBA) name registration allows the Corporation to operate under a name other than the legal name of the entity.  Upon registering the DBA, the Corporation will be able to conduct business under the DBA name.  
+ 
+For specific legal or tax advice, we offer our Business Advantage Pro (BAP) membership to provide you with access to licensed attorneys and tax professionals.  This service provides unlimited half-hour consultations on new legal and/or tax matters with licensed attorneys and tax professionals to help you ensure you are making the best choice from a legal and/or tax perspective.  In addition, this membership provides unlimited access to our Legal Forms database, which includes over 100 legal business forms, and one free Copyright registration per month (excluding US Copyright Office filing fees).
+
+For your convenience, we have listed below all relevant pricing, as well as some additional services that may be beneficial to your business.
+ 
+BUSINESS ADVANTAGE PRO
+6-Month - $161.94 ($26.99/month)
+12-Month - $287.88 ($23.99/month)
+
+GET STARTED
+http://www.legalzoom.com/attorneys-lawyers/legal-plans/business.html
+
+DOING BUSINESS AS
+Standard - $99.00 + filing fee - (7-20 business days)
+ 
+To view the filing fee for your state, please follow the &quot;PACKAGE DETAILS&quot; link below and select your state from the drop-down list
+
+GET STARTED
+http://www.legalzoom.com/legal-dba/dba-doing-business-as-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/legal-dba/dba-pricing.html
+ 
+ADDITIONAL SERVICES
+EIN Obtainment - $79.00
+Business License Compliance Package - $74.99
+ 
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

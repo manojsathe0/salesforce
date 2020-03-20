@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ACR_Date_Time__c</fullName>
+        <description>Scheduled attorney consultation date/time. Data integration will provide the data.</description>
+        <externalId>false</externalId>
+        <label>ACR Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Entity_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Entity Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LZ_Order_Item_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>LZ Order Item ID</label>
+        <length>12</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>LZ_Reopen__c</fullName>
+        <description>Versioning of the User Order</description>
+        <externalId>false</externalId>
+        <label>LZ Reopen</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LZ_User_Order_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>LZ User Order ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legal_Matter__c</fullName>
+        <description>Data Integration will provide data.</description>
+        <externalId>false</externalId>
+        <label>Legal Matter</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prior_Processing_Status_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Prior Processing Status Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Processing_Status__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Prior Processing Status</label>
+        <referenceTo>Processing_Status__c</referenceTo>
+        <relationshipName>Prior_User_Orders</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Prior Reason Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unable to Conduct Search</fullName>
+                    <default>false</default>
+                    <label>Unable to Conduct Search</label>
+                </value>
+                <value>
+                    <fullName>G&amp;S Issue</fullName>
+                    <default>false</default>
+                    <label>G&amp;S Issue</label>
+                </value>
+                <value>
+                    <fullName>Materials Needed</fullName>
+                    <default>false</default>
+                    <label>Materials Needed</label>
+                </value>
+                <value>
+                    <fullName>Insufficient Materials</fullName>
+                    <default>false</default>
+                    <label>Insufficient Materials</label>
+                </value>
+                <value>
+                    <fullName>Missing Information</fullName>
+                    <default>false</default>
+                    <label>Missing Information</label>
+                </value>
+                <value>
+                    <fullName>Internal Clarification</fullName>
+                    <default>false</default>
+                    <label>Internal Clarification</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Consult</fullName>
+                    <default>false</default>
+                    <label>Waiting for Consult</label>
+                </value>
+                <value>
+                    <fullName>Customer Hold</fullName>
+                    <default>false</default>
+                    <label>Customer Hold</label>
+                </value>
+                <value>
+                    <fullName>Final Contact Attempt Needed</fullName>
+                    <default>false</default>
+                    <label>Final Contact Attempt Needed</label>
+                </value>
+                <value>
+                    <fullName>Missed Atty Appt</fullName>
+                    <default>false</default>
+                    <label>Missed Atty Appt</label>
+                </value>
+                <value>
+                    <fullName>No Contact</fullName>
+                    <default>false</default>
+                    <label>No Contact</label>
+                </value>
+                <value>
+                    <fullName>Post Consult Follow-Up</fullName>
+                    <default>false</default>
+                    <label>Post Consult Follow-Up</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Processing_Status_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Processing Status Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Processing_Status__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Processing Status</label>
+        <referenceTo>Processing_Status__c</referenceTo>
+        <relationshipName>User_Orders</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unable to Conduct Search</fullName>
+                    <default>false</default>
+                    <label>Unable to Conduct Search</label>
+                </value>
+                <value>
+                    <fullName>G&amp;S Issue</fullName>
+                    <default>false</default>
+                    <label>G&amp;S Issue</label>
+                </value>
+                <value>
+                    <fullName>Materials Needed</fullName>
+                    <default>false</default>
+                    <label>Materials Needed</label>
+                </value>
+                <value>
+                    <fullName>Insufficient Materials</fullName>
+                    <default>false</default>
+                    <label>Insufficient Materials</label>
+                </value>
+                <value>
+                    <fullName>Missing Information</fullName>
+                    <default>false</default>
+                    <label>Missing Information</label>
+                </value>
+                <value>
+                    <fullName>Internal Clarification</fullName>
+                    <default>false</default>
+                    <label>Internal Clarification</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Consult</fullName>
+                    <default>false</default>
+                    <label>Waiting for Consult</label>
+                </value>
+                <value>
+                    <fullName>Customer Hold</fullName>
+                    <default>false</default>
+                    <label>Customer Hold</label>
+                </value>
+                <value>
+                    <fullName>Final Contact Attempt Needed</fullName>
+                    <default>false</default>
+                    <label>Final Contact Attempt Needed</label>
+                </value>
+                <value>
+                    <fullName>Missed Atty Appt</fullName>
+                    <default>false</default>
+                    <label>Missed Atty Appt</label>
+                </value>
+                <value>
+                    <fullName>No Contact</fullName>
+                    <default>false</default>
+                    <label>No Contact</label>
+                </value>
+                <value>
+                    <fullName>Post Consult Follow-Up</fullName>
+                    <default>false</default>
+                    <label>Post Consult Follow-Up</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>User Order Extension</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>LZ_Order_Item_ID__c</columns>
+        <columns>Prior_Processing_Status__c</columns>
+        <columns>Prior_Processing_Status_Date_Time__c</columns>
+        <columns>Processing_Status__c</columns>
+        <columns>Processing_Status_Date_Time__c</columns>
+        <columns>LZ_User_Order_ID__c</columns>
+        <columns>LZ_Reopen__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Today</fullName>
+        <columns>NAME</columns>
+        <columns>LZ_Order_Item_ID__c</columns>
+        <columns>Prior_Processing_Status__c</columns>
+        <columns>Prior_Processing_Status_Date_Time__c</columns>
+        <columns>Processing_Status__c</columns>
+        <columns>Processing_Status_Date_Time__c</columns>
+        <columns>LZ_User_Order_ID__c</columns>
+        <columns>LZ_Reopen__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>UOE-{0}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>User Order Extensions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>LZ_Order_Item_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Processing_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Processing_Status_Date_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Prior_Processing_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Prior_Processing_Status_Date_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LZ_User_Order_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LZ_Reopen__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

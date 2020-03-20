@@ -1,0 +1,177 @@
+<apex:page controller="IADHighlightsPanelPOROpenCasesController" standardstylesheets="false" docType="html-5.0" >
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <apex:includeScript value="{!$Resource.svg4everybody}" />
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <script type="text/javascript">
+
+            svg4everybody();
+           
+            var orderItemId = '';
+
+            function PopupCenter(url, title, w, h) {
+                try{
+                    console.log('url is ' + url);
+                  // Fixes dual-screen position Most browsers Firefox 
+                  var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+                  var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+                  width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+                  height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+                  var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+                  var top = ((height / 2) - (h / 2)) + dualScreenTop;
+                  var newWindow = window.open(url, title, 'scrollbars=yes,resizable=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+                  // Puts focus on the newWindow 
+                  /*
+                  if (window.focus) {
+                      newWindow.focus();
+                  }
+                  */
+                  //newWindow.focus();
+                }
+                catch(err){
+                  //do nothing, just catch it bc of ie11
+                }
+            }
+
+            var listener = function(result) {
+                //location.reload(true);
+                 var tabId = result.message;
+
+                refreshPage();
+                sforce.console.refreshSubtabById(tabId, false ,null, true);
+            };
+
+            sforce.console.addEventListener('RefreshCaseTab', listener);
+            
+            var enclosingPrimaryTab = function enclosingPrimaryTab(result) {
+                var url = '/apex/nextpad?id=' + orderItemId;
+                sforce.console.openSubtab(result.id, url, true, 'Ledger');
+            };
+             function openLedger(oiId){
+                 orderItemId = oiId;
+                 sforce.console.getEnclosingPrimaryTabId(enclosingPrimaryTab);
+             }
+			
+	         function openOrderDetail(id){
+	               sforce.console.openPrimaryTab(null, '/'+id, true);
+	         }
+	       
+        </script>
+        <style>
+          th{padding:5px!important;font-size: 9pt!important;}
+          td,a{font-size: 8pt!important;}
+        </style>
+
+    </head>
+    <body>
+    <apex:form rendered="{!hasOpenCases}" id="theForm">
+         <apex:actionFunction name="refreshPage" action="{!refreshPage}" rerender="theForm" />
+        <div class="slds">
+            <p class="slds-text-body--medium">Unresolved Problem Orders ({!problemCases.size})</p>
+            <table class="slds-table"  >
+                <thead class="slds-table--bordered">
+                    <tr class="slds-text-body--label">
+                        <th class="slds-text-body--small slds-cell-shrink" scope="col">Order Status</th>
+                        <th class="slds-text-body--small slds-cell-shrink" scope="col">Order#</th>
+                        <th class="slds-text-body--small slds-cell-shrink" scope="col">Proc #</th>
+                        <th class="slds-text-body--small slds-cell-shrink" scope="col">Order Item</th>
+                        <th class="slds-text-body--small slds-cell-shrink" scope="col">Case#</th>
+                        <th class="slds-text-body--small slds-cell-shrink" scope="col">Case Status</th>
+                        <th class="slds-text-body--small slds-cell-shrink" scope="col">Applications</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!problemCases}" var="theProblemCase">
+                        <tr class="slds-text-heading--label slds-has-divider">
+                            <td class="slds-cell-wrap slds-cell-shrink">
+                              {!theProblemCase.processingStatus}
+                            </td>
+                            <td class="slds-cell-wrap slds-cell-shrink">
+                                <a href="#" onClick="openOrderDetail('{!theProblemCase.orderId}');return false;" class="slds-text-body--small">{!theProblemCase.orderNumber}</a>
+                            </td>
+                            <td class="slds-cell-wrap slds-cell-shrink">
+                                 <a href="#" onClick="openOrderDetail('{!theProblemCase.orderId}');return false;" class="slds-text-body--small">{!theProblemCase.processingNumber}</a>
+                             </td>
+                               
+                            <td lass="slds-cell-wrap slds-cell-shrink">
+                                <apex:outputLink value="/{!theProblemCase.orderItemId}" styleClass="slds-text-body--small">{!theProblemCase.orderItem } </apex:outputLink>
+                            </td>
+                            <td class="slds-cell-shrink">
+                              <apex:outputLink value="/{!theProblemCase.caseId}" styleClass="slds-text-body--small ">{!theProblemCase.caseNumber}</apex:outputLink>
+                            </td>
+
+                            <td class="slds-cell-shrink">{!theProblemCase.caseStatus}</td>
+                          
+                            <td>
+                                <span class="slds-icon__container" title="FileNet">
+                                    <a onclick="PopupCenter('http://filenetweb.legalzoom.com/navigator/_lz/DisplayOrderFilenet.jsp?fkUserOrder={!theProblemCase.processingNumber}&problem=1','FileNet','800','650'); return false;">
+                                      <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default" viewBox="0 0 24 24">
+                                        <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#record')}"></use>-->
+                                        <path d="{!recordIcon}" />
+                                      </svg>
+                                    </a>
+                                    <span class="slds-assistive-text">FileNet Icon</span>
+                                </span>
+                                <span class="slds-icon__container " title="Questionnaire">
+                                <a onclick="PopupCenter('http://lztools.legalzoom.com/check_individual_order.asp?iOrder={!theProblemCase.processingNumber}','Questionnaire','800','650'); return false;" styleClass="slds-text-body--small">
+                                  <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default" viewBox="0 0 24 24">
+                                    <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#inbox')}"></use>-->
+                                    <path d="{!inboxIcon}" />
+                                  </svg>
+                                  </a>
+                                  <span class="slds-assistive-text">Questionnaire Icon</span>
+                                </span>
+                                <span class="slds-icon__container " title="Proofer">
+                                  <a onclick="PopupCenter('http://lzapps/Proofer/{!theProblemCase.processingNumber}','Proofer','800','650');  return false;">
+                                      <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default" viewBox="0 0 24 24">
+                                        <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#settings')}"></use>-->
+                                        <path d="{!settingsIcon}" />
+                                      </svg>
+                                  </a>
+                                    <span class="slds-assistive-text">Proofer Icon</span>
+                                </span>
+                                <span class="slds-icon__container " title="Ledger">
+                                  <a onclick="PopupCenter('/apex/nextpad?processingNumber={!theProblemCase.processingNumber}','Ledger','800','650'); return false;" class="slds-text-body--small">
+                                    <svg aria-hidden="true" class="slds-icon slds-icon--x-small slds-icon-text-default slds-icon-xx--small" viewBox="0 0 24 24">
+                                      <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/utility-sprite/svg/symbols.svg#page')}"></use>-->
+                                      <path d="{!pageIcon}" />
+                                    </svg>
+                                  </a>
+                                  <span class="slds-assistive-text">Ledger Icon</span>
+                                </span>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+        </div>
+    </apex:form>
+    <apex:form rendered="{!IF(hasOpenCases,false,true)}">
+
+        <apex:actionFunction name="refreshPage" action="{!refreshPage}" rerender="theForm" />
+        <div class="slds">
+            <br/>
+            <br/>
+            <div align="center">
+                <span class="slds-icon__container slds-icon-standard-approval ">
+                  <svg aria-hidden="false" class="slds-icon slds-icon--small">
+                    <!--<use xlink:href="{!URLFOR($Resource.SLDS0122,'/assets/icons/action-sprite/svg/symbols.svg#approval')}"></use>-->
+                    <path  d="{!approvalIcon}"/>
+                  </svg>
+                  <span class="slds-assistive-text">medium approval Icon</span>
+                </span>
+            </div>
+            <p class="slds-text-heading slds-text-align--center">no open cases or problem orders</p>
+        </div>
+    </apex:form>
+    </body>
+    </html>
+
+</apex:page>

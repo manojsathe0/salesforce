@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SSNEIN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SSN Needed to Obtain Your EIN</name>
+    <style>none</style>
+    <subject>ORDER ON HOLD: Missing Information [Order #XXXXXXX]</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+While processing your order, we came across information we were missing to be able to complete your federal Employer Identification Number (EIN) application for the IRS.
+
+Please contact us at your earliest convenience. We can be reached at (800) 773-0888 Monday–Friday from 5 a.m.–8 p.m. PT and weekends from 7 a.m.–4 p.m. PT.
+
+We appreciate your prompt attention to this matter.
+
+{!snippetVariable.ccsincerely}
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

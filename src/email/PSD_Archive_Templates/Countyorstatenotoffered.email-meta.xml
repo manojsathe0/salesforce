@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>namenot</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>County or state not offered</name>
+    <style>none</style>
+    <subject>County or state not offered</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent order.
+
+Our records indicate that you have placed an order for a [county or state] Name Change package. Unfortunately, LegalZoom does not prepare Name Change documents for residents of [county or state] at this time, and we will not be able to assist you with this order.
+
+Our billing department will process your refund within 5-7 business days. Please allow a few days for this billing adjustment to appear on your statement.
+
+Please do not hesitate to contact us if we can be of further assistance. Simply reply to this email or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+Thank you once again for contacting LegalZoom, America&apos;s #1 online legal source.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

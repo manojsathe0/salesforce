@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>lapconsult</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LAP how to sub consultation</name>
+    <style>none</style>
+    <subject>LAP how to sub consultation</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}, 
+
+You can start taking advantage of all your plan benefits by visiting your Member here: 
+
+https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=1 
+
+Instructions:
+
+•Log in  as &apos;existing member&apos; using your username and password 
+•Click on the link  “Legal Advantage Member Center” 
+•Click on  &quot;Request a Consultation&quot; 
+•Complete all the empty fields 
+•Click on submit 
+•Click on Schedule Consultation 
+•Select time and date from attorneys schedule, or quick call back option (if available) 
+•On the Appointment Details page, click on Make Appointment (bottom right)
+•You will receive an Attorney Consultation Appointment Confirmed email.
+
+Legal Advantage Plus is a membership that gives you access to the following benefits: 
+
+• Attorney support: Whenever you need expert legal advice, you have access to an experienced attorney to ask questions and get information on any legal topic. Examples include reviewing and getting advice on your last will, reviewing other legal documents, and more.
+• Tax professional advice and consultations. Speak with an experienced tax professional on an unlimited number of new tax issues
+• Annual legal checkup with an attorney: Just like getting an annual checkup of your health with your doctor, it’s important to get an annual checkup of important legal documents with an attorney. You might not realize (or get busy and forget) that changes in your life such as moving, having a child, having more grandchildren, etc., can impact your last will or other legal documents.
+• Unlimited access to LegalZoom legal forms: Whenever you need legal support, you can access and download hundreds of legal forms for personal use. Examples include affidavits, bills of sale, nondisclosure agreements, promissory notes and more.
+• 25% savings on additional attorney services: You get substantial savings on professional attorney services should you need go to court.
+• 20% savings on any additional tax services
+• 10% savings on any LegalZoom legal documents: Take advantage of valuable savings on any LegalZoom legal documents, including Living Trusts, LLCs, Trademarks and more.
+
+{!snippetVariable.asdsigline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.
+
+{!snippetVariable.bestregardstext}
+
+{!snippetVariable.thelegalzoomteamline}
+
+{!snippetVariable.asdphone} | {!snippetVariable.asdfax} | {!snippetVariable.lacemail}
+{!snippetVariable.lz_website} | {!snippetVariable.lz_address}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

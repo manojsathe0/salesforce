@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>wyar</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>WY AR template</name>
+    <style>none</style>
+    <subject>AZ Corp Fax Signature</subject>
+    <textOnly>Dear {!  Contact.FirstName},
+
+Thank you for choosing LegalZoom for your Registered Agent order. Attached, please find the customized document(s) to change your registered agent to LegalZoom. In order to ensure your order is processed as quickly as possible, please follow the steps listed below.
+
+*  Open the attached Annual Report Balance Grid.
+*  Fill in the blanks that apply to your organization.
+*  Do not revise the formatting of our Annual Report Balance Grid as it conforms with the Secretary of State application format. Doing so will result in delays with your order. 
+*  If you need to make changes, please contact our customer support.
+*  Email the Annual Report Balance Grid to bzsupport@legalzoom.com OR mail the documents to our address listed below.
+
+
+Courier and USPS Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+9900 Spectrum Drive
+Austin, TX 78717
+
+LegalZoom cannot accept walk-in customers to our offices. Please follow the instructions above to return signed documents to us.  We apologize for any inconvenience.
+
+Alternatively, you can fax the signed documents to (323) 962-4521. Please include your name and registered agent services order number on the fax coversheet to ensure proper routing of your document to our processing team
+
+If you have any questions regarding your order, please contact our {!  snippetVariable.cc_dept_full} at {!snippetVariable.ccphone} or customercare@legalzoom.com. Please include your order number in your correspondences for  prompt service.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!  snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

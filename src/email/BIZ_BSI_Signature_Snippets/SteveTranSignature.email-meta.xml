@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>stran</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Steve Tran Signature</name>
+    <style>none</style>
+    <textOnly>Steve Tran
+LegalZoom.com 
+Business Services
+{!snippetVariable.lz_address}
+(888)-381-8758 Ext: 1060</textOnly>
+    <type>custom</type>
+</EmailTemplate>

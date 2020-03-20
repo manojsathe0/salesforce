@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Qsend12</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Questionnaire Send</name>
+    <style>none</style>
+    <subject>Questionnaire Send</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom. We look forward to processing your name change application.
+
+Attached, you will find LegalZoom&apos;s name change questionnaire. Please answer every question carefully and in complete detail. We only ask what is necessary to complete accurate documents for you. Please take your time and help us to do it right. When you are finished, simply reply to this email and re-attach your completed questionnaire.
+
+If you wish to fill out this questionnaire by hand, please retain a copy
+for your records and mail the completed form to:
+
+LegalZoom.com
+Att: Name Change Department
+7083 Hollywood Blvd., Suite 180
+Los Angeles, California 90028
+
+To people who electronically fill out the Questionnaire: If you experience
+any problems with the formatting please do not worry. Fill it out the best
+you can and we will call you if we have any questions.
+
+Thanks again for choosing Legalzoom! America&apos;s #1 online legal source!
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

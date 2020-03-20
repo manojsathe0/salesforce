@@ -1,0 +1,121 @@
+.THIS.orderItemPopover{
+    width:450px;
+    display:none;
+    z-index:1000;
+    position:absolute;
+}
+
+.THIS #orderTags{
+    margin: 0;
+    padding-left:5px;
+    padding-top:5px;
+    padding-right:5px;
+    padding-bottom: 0;
+}
+
+.THIS .om-tags{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:5px;
+    width:100%
+}
+
+.THIS .om-tags:hover{
+    padding-left:5px
+}
+
+.THIS .om-tag{
+    -webkit-border-top-left-radius:20px;
+    -webkit-border-top-right-radius:20px;
+    -webkit-border-bottom-right-radius:20px;
+    -webkit-border-bottom-left-radius:20px;
+    -moz-border-radius-topleft:20px;
+    -moz-border-radius-topright:20px;
+    -moz-border-radius-bottomright:20px;
+    -moz-border-radius-bottomleft:20px;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+    border-bottom-left-radius:20px;
+    text-indent:0;
+    border:1px solid #4867a5;
+    display:inline-block;
+    color:#fff;
+    font-family:Arial;
+    font-size:8pt;
+    font-weight:normal;
+    font-style:normal;
+    height:30px;
+    line-height:23px;
+    text-decoration:none;
+    text-align:center;
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:2px;
+    padding-top:2px;
+    margin-right:3px;
+    margin-top:2px
+}
+
+.THIS .om-tag-user{
+    background-color:#5b5999
+}
+
+.THIS .om-tag-system{
+    background-color:#b5b4cc;
+    border:1px solid #b5b4cc;
+}
+
+.THIS .om-tag-remove{
+    color:#fff;
+    border-left:1px solid #eee;
+    padding-left:5px;
+    text-align:center;
+    text-decoration:none;
+    margin-left:2px
+}
+
+.THIS .om-new-tag{
+    top:2px;
+    position:relative;
+    border:solid 1px #fff;
+    background:transparent;
+    width:200px;
+}
+
+.THIS .om-new-tag:focus{
+    outline:0
+}
+
+.THIS .om-new-tag:focus{
+    border:solid 1px #ccc
+}
+
+.THIS .om-new-tag:hover{
+    border:solid 1px #ccc
+}
+
+.THIS .hideSpinner {
+	display: none;
+}
+
+.THIS .showSpinner {
+	display: block;
+}
+
+.THIS .showOrderHistory {
+    display: block;
+}
+
+.THIS .hideOrderHistory {
+    display: none;
+}
+
+.THIS .icn1 svg {
+    fill:rgb(0,128,0);
+}
+
+
+.THIS .icn2 svg {
+    fill:rgb(255,0,0);
+}

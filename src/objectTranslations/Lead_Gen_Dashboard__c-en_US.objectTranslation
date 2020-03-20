@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Lead Gen Dashboard</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lead Gen Dashboards</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Lead Gen Dashboards --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amex Clicks to Landing Page --></label>
+        <name>Amex_Clicks_to_Landing_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Budget (Revised) --></label>
+        <name>Budget_Revised__c</name>
+    </fields>
+    <fields>
+        <label><!-- LZ Order Volume --></label>
+        <name>LZ_Order_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Month-Year --></label>
+        <name>Month_Year__c</name>
+        <picklistValues>
+            <masterLabel>Apr-2011</masterLabel>
+            <translation><!-- Apr-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2012</masterLabel>
+            <translation><!-- Apr-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2013</masterLabel>
+            <translation><!-- Apr-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2014</masterLabel>
+            <translation><!-- Apr-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2015</masterLabel>
+            <translation><!-- Apr-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2016</masterLabel>
+            <translation><!-- Apr-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2017</masterLabel>
+            <translation><!-- Apr-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2018</masterLabel>
+            <translation><!-- Apr-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2019</masterLabel>
+            <translation><!-- Apr-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2020</masterLabel>
+            <translation><!-- Apr-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2021</masterLabel>
+            <translation><!-- Apr-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2022</masterLabel>
+            <translation><!-- Apr-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2023</masterLabel>
+            <translation><!-- Apr-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2024</masterLabel>
+            <translation><!-- Apr-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2025</masterLabel>
+            <translation><!-- Apr-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2026</masterLabel>
+            <translation><!-- Apr-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2027</masterLabel>
+            <translation><!-- Apr-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2028</masterLabel>
+            <translation><!-- Apr-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apr-2029</masterLabel>
+            <translation><!-- Apr-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2011</masterLabel>
+            <translation><!-- Aug-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2012</masterLabel>
+            <translation><!-- Aug-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2013</masterLabel>
+            <translation><!-- Aug-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2014</masterLabel>
+            <translation><!-- Aug-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2015</masterLabel>
+            <translation><!-- Aug-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2016</masterLabel>
+            <translation><!-- Aug-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2017</masterLabel>
+            <translation><!-- Aug-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2018</masterLabel>
+            <translation><!-- Aug-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2019</masterLabel>
+            <translation><!-- Aug-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2020</masterLabel>
+            <translation><!-- Aug-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2021</masterLabel>
+            <translation><!-- Aug-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2022</masterLabel>
+            <translation><!-- Aug-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2023</masterLabel>
+            <translation><!-- Aug-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2024</masterLabel>
+            <translation><!-- Aug-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2025</masterLabel>
+            <translation><!-- Aug-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2026</masterLabel>
+            <translation><!-- Aug-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2027</masterLabel>
+            <translation><!-- Aug-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2028</masterLabel>
+            <translation><!-- Aug-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug-2029</masterLabel>
+            <translation><!-- Aug-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2011</masterLabel>
+            <translation><!-- Dec-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2012</masterLabel>
+            <translation><!-- Dec-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2013</masterLabel>
+            <translation><!-- Dec-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2014</masterLabel>
+            <translation><!-- Dec-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2015</masterLabel>
+            <translation><!-- Dec-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2016</masterLabel>
+            <translation><!-- Dec-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2017</masterLabel>
+            <translation><!-- Dec-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2018</masterLabel>
+            <translation><!-- Dec-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2019</masterLabel>
+            <translation><!-- Dec-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2020</masterLabel>
+            <translation><!-- Dec-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2021</masterLabel>
+            <translation><!-- Dec-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2022</masterLabel>
+            <translation><!-- Dec-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2023</masterLabel>
+            <translation><!-- Dec-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2024</masterLabel>
+            <translation><!-- Dec-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2025</masterLabel>
+            <translation><!-- Dec-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2026</masterLabel>
+            <translation><!-- Dec-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2027</masterLabel>
+            <translation><!-- Dec-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2028</masterLabel>
+            <translation><!-- Dec-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec-2029</masterLabel>
+            <translation><!-- Dec-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2011</masterLabel>
+            <translation><!-- Feb-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2012</masterLabel>
+            <translation><!-- Feb-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2013</masterLabel>
+            <translation><!-- Feb-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2014</masterLabel>
+            <translation><!-- Feb-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2015</masterLabel>
+            <translation><!-- Feb-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2016</masterLabel>
+            <translation><!-- Feb-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2017</masterLabel>
+            <translation><!-- Feb-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2018</masterLabel>
+            <translation><!-- Feb-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2019</masterLabel>
+            <translation><!-- Feb-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2020</masterLabel>
+            <translation><!-- Feb-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2021</masterLabel>
+            <translation><!-- Feb-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2022</masterLabel>
+            <translation><!-- Feb-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2023</masterLabel>
+            <translation><!-- Feb-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2024</masterLabel>
+            <translation><!-- Feb-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2025</masterLabel>
+            <translation><!-- Feb-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2026</masterLabel>
+            <translation><!-- Feb-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2027</masterLabel>
+            <translation><!-- Feb-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2028</masterLabel>
+            <translation><!-- Feb-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2029</masterLabel>
+            <translation><!-- Feb-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb-2030</masterLabel>
+            <translation><!-- Feb-2030 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2011</masterLabel>
+            <translation><!-- Jan-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2012</masterLabel>
+            <translation><!-- Jan-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2013</masterLabel>
+            <translation><!-- Jan-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2014</masterLabel>
+            <translation><!-- Jan-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2015</masterLabel>
+            <translation><!-- Jan-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2016</masterLabel>
+            <translation><!-- Jan-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2017</masterLabel>
+            <translation><!-- Jan-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2018</masterLabel>
+            <translation><!-- Jan-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2019</masterLabel>
+            <translation><!-- Jan-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2020</masterLabel>
+            <translation><!-- Jan-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2021</masterLabel>
+            <translation><!-- Jan-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2022</masterLabel>
+            <translation><!-- Jan-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2023</masterLabel>
+            <translation><!-- Jan-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2024</masterLabel>
+            <translation><!-- Jan-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2025</masterLabel>
+            <translation><!-- Jan-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2026</masterLabel>
+            <translation><!-- Jan-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2027</masterLabel>
+            <translation><!-- Jan-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2028</masterLabel>
+            <translation><!-- Jan-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2029</masterLabel>
+            <translation><!-- Jan-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan-2030</masterLabel>
+            <translation><!-- Jan-2030 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2011</masterLabel>
+            <translation><!-- Jul-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2012</masterLabel>
+            <translation><!-- Jul-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2013</masterLabel>
+            <translation><!-- Jul-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2014</masterLabel>
+            <translation><!-- Jul-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2015</masterLabel>
+            <translation><!-- Jul-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2016</masterLabel>
+            <translation><!-- Jul-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2017</masterLabel>
+            <translation><!-- Jul-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2018</masterLabel>
+            <translation><!-- Jul-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2019</masterLabel>
+            <translation><!-- Jul-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2020</masterLabel>
+            <translation><!-- Jul-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2021</masterLabel>
+            <translation><!-- Jul-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2022</masterLabel>
+            <translation><!-- Jul-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2023</masterLabel>
+            <translation><!-- Jul-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2024</masterLabel>
+            <translation><!-- Jul-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2025</masterLabel>
+            <translation><!-- Jul-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2026</masterLabel>
+            <translation><!-- Jul-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2027</masterLabel>
+            <translation><!-- Jul-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2028</masterLabel>
+            <translation><!-- Jul-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul-2029</masterLabel>
+            <translation><!-- Jul-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2011</masterLabel>
+            <translation><!-- Jun-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2012</masterLabel>
+            <translation><!-- Jun-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2013</masterLabel>
+            <translation><!-- Jun-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2014</masterLabel>
+            <translation><!-- Jun-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2015</masterLabel>
+            <translation><!-- Jun-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2016</masterLabel>
+            <translation><!-- Jun-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2017</masterLabel>
+            <translation><!-- Jun-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2018</masterLabel>
+            <translation><!-- Jun-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2019</masterLabel>
+            <translation><!-- Jun-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2020</masterLabel>
+            <translation><!-- Jun-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2021</masterLabel>
+            <translation><!-- Jun-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2022</masterLabel>
+            <translation><!-- Jun-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2023</masterLabel>
+            <translation><!-- Jun-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2024</masterLabel>
+            <translation><!-- Jun-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2025</masterLabel>
+            <translation><!-- Jun-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2026</masterLabel>
+            <translation><!-- Jun-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2027</masterLabel>
+            <translation><!-- Jun-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2028</masterLabel>
+            <translation><!-- Jun-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun-2029</masterLabel>
+            <translation><!-- Jun-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2011</masterLabel>
+            <translation><!-- Mar-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2012</masterLabel>
+            <translation><!-- Mar-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2013</masterLabel>
+            <translation><!-- Mar-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2014</masterLabel>
+            <translation><!-- Mar-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2015</masterLabel>
+            <translation><!-- Mar-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2016</masterLabel>
+            <translation><!-- Mar-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2017</masterLabel>
+            <translation><!-- Mar-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2018</masterLabel>
+            <translation><!-- Mar-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2019</masterLabel>
+            <translation><!-- Mar-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2020</masterLabel>
+            <translation><!-- Mar-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2021</masterLabel>
+            <translation><!-- Mar-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2022</masterLabel>
+            <translation><!-- Mar-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2023</masterLabel>
+            <translation><!-- Mar-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2024</masterLabel>
+            <translation><!-- Mar-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2025</masterLabel>
+            <translation><!-- Mar-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2026</masterLabel>
+            <translation><!-- Mar-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2027</masterLabel>
+            <translation><!-- Mar-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2028</masterLabel>
+            <translation><!-- Mar-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2029</masterLabel>
+            <translation><!-- Mar-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar-2030</masterLabel>
+            <translation><!-- Mar-2030 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2011</masterLabel>
+            <translation><!-- May-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2012</masterLabel>
+            <translation><!-- May-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2013</masterLabel>
+            <translation><!-- May-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2014</masterLabel>
+            <translation><!-- May-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2015</masterLabel>
+            <translation><!-- May-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2016</masterLabel>
+            <translation><!-- May-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2017</masterLabel>
+            <translation><!-- May-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2018</masterLabel>
+            <translation><!-- May-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2019</masterLabel>
+            <translation><!-- May-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2020</masterLabel>
+            <translation><!-- May-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2021</masterLabel>
+            <translation><!-- May-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2022</masterLabel>
+            <translation><!-- May-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2023</masterLabel>
+            <translation><!-- May-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2024</masterLabel>
+            <translation><!-- May-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2025</masterLabel>
+            <translation><!-- May-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2026</masterLabel>
+            <translation><!-- May-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2027</masterLabel>
+            <translation><!-- May-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2028</masterLabel>
+            <translation><!-- May-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May-2029</masterLabel>
+            <translation><!-- May-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2011</masterLabel>
+            <translation><!-- Nov-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2012</masterLabel>
+            <translation><!-- Nov-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2013</masterLabel>
+            <translation><!-- Nov-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2014</masterLabel>
+            <translation><!-- Nov-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2015</masterLabel>
+            <translation><!-- Nov-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2016</masterLabel>
+            <translation><!-- Nov-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2017</masterLabel>
+            <translation><!-- Nov-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2018</masterLabel>
+            <translation><!-- Nov-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2019</masterLabel>
+            <translation><!-- Nov-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2020</masterLabel>
+            <translation><!-- Nov-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2021</masterLabel>
+            <translation><!-- Nov-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2022</masterLabel>
+            <translation><!-- Nov-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2023</masterLabel>
+            <translation><!-- Nov-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2024</masterLabel>
+            <translation><!-- Nov-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2025</masterLabel>
+            <translation><!-- Nov-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2026</masterLabel>
+            <translation><!-- Nov-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2027</masterLabel>
+            <translation><!-- Nov-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2028</masterLabel>
+            <translation><!-- Nov-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov-2029</masterLabel>
+            <translation><!-- Nov-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2011</masterLabel>
+            <translation><!-- Oct-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2012</masterLabel>
+            <translation><!-- Oct-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2013</masterLabel>
+            <translation><!-- Oct-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2014</masterLabel>
+            <translation><!-- Oct-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2015</masterLabel>
+            <translation><!-- Oct-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2016</masterLabel>
+            <translation><!-- Oct-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2017</masterLabel>
+            <translation><!-- Oct-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2018</masterLabel>
+            <translation><!-- Oct-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2019</masterLabel>
+            <translation><!-- Oct-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2020</masterLabel>
+            <translation><!-- Oct-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2021</masterLabel>
+            <translation><!-- Oct-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2022</masterLabel>
+            <translation><!-- Oct-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2023</masterLabel>
+            <translation><!-- Oct-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2024</masterLabel>
+            <translation><!-- Oct-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2025</masterLabel>
+            <translation><!-- Oct-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2026</masterLabel>
+            <translation><!-- Oct-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2027</masterLabel>
+            <translation><!-- Oct-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2028</masterLabel>
+            <translation><!-- Oct-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct-2029</masterLabel>
+            <translation><!-- Oct-2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2011</masterLabel>
+            <translation><!-- Sep-2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2012</masterLabel>
+            <translation><!-- Sep-2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2013</masterLabel>
+            <translation><!-- Sep-2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2014</masterLabel>
+            <translation><!-- Sep-2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2015</masterLabel>
+            <translation><!-- Sep-2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2016</masterLabel>
+            <translation><!-- Sep-2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2017</masterLabel>
+            <translation><!-- Sep-2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2018</masterLabel>
+            <translation><!-- Sep-2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2019</masterLabel>
+            <translation><!-- Sep-2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2020</masterLabel>
+            <translation><!-- Sep-2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2021</masterLabel>
+            <translation><!-- Sep-2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2022</masterLabel>
+            <translation><!-- Sep-2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2023</masterLabel>
+            <translation><!-- Sep-2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2024</masterLabel>
+            <translation><!-- Sep-2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2025</masterLabel>
+            <translation><!-- Sep-2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2026</masterLabel>
+            <translation><!-- Sep-2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2027</masterLabel>
+            <translation><!-- Sep-2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2028</masterLabel>
+            <translation><!-- Sep-2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sep-2029</masterLabel>
+            <translation><!-- Sep-2029 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Monthly Budget --></label>
+        <name>Monthly_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Revenue --></label>
+        <name>Monthly_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Lead Gen Dashboards --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Percentage to Budget --></label>
+        <name>Percentage_to_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Total Opt-in&apos;s --></label>
+        <name>Total_Opt_in_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Variance --></label>
+        <name>Variance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Lead Generation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>URR</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RE Lease Unlimited Revision Request</name>
+    <style>none</style>
+    <subject>RE Lease Unlimited Revision Request</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}:
+
+We have received your request to revise Real Estate Lease order #.  To get the revisions started, simply reply to this email and specify the changes you?d like to make. We must get your changes in writing before we can proceed with your request.
+
+Once your revision email is received, your documents will be prepared and emailed to you within 24 hours, along with an easy-to-follow next steps guide. Please note, all revisions are handled electronically.
+
+If you have any questions, simply reply to this email or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}. We appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>revokePOA</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Revoking Power of Attorney</name>
+    <style>none</style>
+    <subject>Revoking Power of Attorney</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+You have a choice of when Power of Attorney ends. It could end either if you become mentally incapacitated, or with a Durable Power of Attorney, it can continue until death. That means that you cannot give your agent authority to handle things after your death, such as paying debts, making funeral or burial arrangements or transferring your property to the people who inherit it. A Last Will and Testament addresses those issues.
+
+Your Durable Power of Attorney also ends if:
+
+* You revoke it. As long as you are mentally competent, you can revoke a Durable Power of Attorney at any time.
+
+* A court invalidates your document. This rarely happens, but a court may declare that you were mentally incompetent when you signed it, or that you were the victim of fraud.
+
+* You get a divorce. In a handful of states, such as Alabama, California, Colorado, Illinois, Indiana, Minnesota, Missouri, Pennsylvania, Texas and Wisconsin, if your spouse is your agent, your ex-spouse&apos;s authority is automatically terminated.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

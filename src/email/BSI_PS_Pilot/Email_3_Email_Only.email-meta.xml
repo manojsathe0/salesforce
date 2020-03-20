@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>pspemail3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Email 3: Email Only</name>
+    <style>freeForm</style>
+    <subject>Is your [will/living trust/living will] up-to-date?</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+If you’ve had any recent life changes, such as having a baby, purchasing a new home or moving to a new state, now may be a good time to revise your [will/living trust/living will].  Simply sign in to your account, go to your completed orders and click “revise.”
+
+Not sure what you might need to change?  Have an attorney review your estate plan. Learn more.
+
+Please don’t hesitate to reach out if you have any questions. Just give us a call at (866) 679-0483
+
+www.legalzoom.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

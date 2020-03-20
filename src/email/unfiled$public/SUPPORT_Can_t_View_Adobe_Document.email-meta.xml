@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Use when a customer has trouble opening a .pdf from LegalZoom</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SUPPORT: Can&apos;t View Adobe Document</name>
+    <style>none</style>
+    <subject>Assistance with Your Document from LegalZoom</subject>
+    <textOnly>LegalZoom.com
+
+
+
+Thank you for choosing LegalZoom. View online
+
+
+Hello ,
+
+Per your request, we will resend the document to you in a separate e-mail.
+
+When you receive the email, the document will be in PDF format. Please note that you must have Acrobat Reader installed to view the attachment. If you have trouble opening this attachment, cannot download Acrobat Reader, or have other questions, simply reply to this email or call us at 1 (800) 773-0888 Mon-Fri 5am to 7pm PT; Saturday 7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+Manage My Account | Explore Services
+Privacy Policy | Unsubscribe
+
+Please do not reply to this message. This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

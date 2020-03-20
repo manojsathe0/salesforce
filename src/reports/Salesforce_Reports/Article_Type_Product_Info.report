@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Product_Information__ka.Product_Information__kav$IsLatestVersion</field>
+    </columns>
+    <columns>
+        <field>Product_Information__ka.Product_Information__kav$Tags__c</field>
+    </columns>
+    <columns>
+        <field>Product_Information__ka$Id</field>
+    </columns>
+    <columns>
+        <field>Product_Information__ka$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Product_Information__ka.Product_Information__kav$Title</field>
+    </columns>
+    <columns>
+        <field>Product_Information__ka.Product_Information__kav$Summary</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 or 3 or 4)</booleanFilter>
+        <criteriaItems>
+            <column>Product_Information__ka.Product_Information__kav$IsLatestVersion</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Product_Information__ka.Product_Information__kav$Tags__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Trademark,Trademark Search,Provisional Patent,Utility Patent,Design Patent,Copyrights,Professional Patent Drawings</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Product_Information__ka.Product_Information__kav$Title</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>specimen,logo,drawings,materials,deposits</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Product_Information__ka.Product_Information__kav$Summary</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>specimen,logo,drawings,materials,deposits</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Article Type: Product Info</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Article_Type_Product_Info__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Product_Information__ka$ArchivedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,143 @@
+<apex:page showHeader="false" controller="APIServerStatus">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+        <script src="/soap/ajax/36.0/connection.js" type="text/javascript"></script>
+        <script src="/soap/ajax/36.0/apex.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            sforce.connection.sessionId = "{!$Api.Session_ID}";
+            var onlineHTML = '<div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture" role="alert"> <span class="slds-assistive-text">Success</span> <h2>{callout} is ONLINE; {time}</h2> </div>';
+            var offlineHTML = '<div class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert"> <span class="slds-assistive-text">Error</span> <h2>{callout} is OFFLINE; {time}</h2> </div>';
+            var index;
+            var results = sforce.connection.query("select Label, Request_Type__c, link__c from IADApiGeeEndPoint__mdt where Request_Type__c != 'DELETE'");
+            var api = new CheckAPIStatus();
+            var apiList = [];
+            var records;
+            $(document).ready(function() {
+                records = results.getArray("records");
+                index = 0;
+                createURL(records);
+            });
+            function rerender() {
+                console.log('rerendering ' + $('#hidden').val());
+                api.endTime = new Date().getTime();
+                api.timeElapsed = (api.endTime - api.startTime)/1000;
+                var calloutText = 'callout took ' + api.timeElapsed + ' seconds';
+                var theStatus = $('#hidden').val();
+                console.log('hidden ' + theStatus);
+                if(theStatus.startsWith('5')){
+                    var text = offlineHTML;
+                    text = text.replace('{callout}', api.requestType + ' ' + theStatus + ' ' + api.link);
+                    text = text.replace('{time}', calloutText);
+                    $("#wrap").append(text);
+                }
+                else{
+                    var text = onlineHTML;
+                    text = text.replace('{callout}', api.requestType + ' ' + theStatus + ' ' + api.link);
+                    text = text.replace('{time}', calloutText);
+                    $("#wrap").append(text);
+                }
+               index = index + 1;
+               createURL(records);
+            }
+            function CheckAPIStatus() {
+                this.isAPIOnline;
+                this.startTime;
+                this.endTime;
+                this.timeElapsed;
+                this.link;
+                this.requestType;
+            }
+            function createURL(records){    
+                var val = records[index];
+                if(val != null){
+                    console.log('request is ' + val.Request_Type__c);
+                    if (1==1) {
+                        api.startTime = new Date().getTime();
+
+                        console.log('val is ' + val.link__c);
+                        var link = 'https://api.legalzoom.com/' + val.link__c.toLowerCase();
+
+                        if (link.indexOf('{') != -1) {
+                            link = link.replace('{orderid}', '1234');
+                            link = link.replace('{orderitemid}', '1234');
+                            link = link.replace('{customerid}', '1234');
+                            link = link.replace('{contactid}', '1234');
+                            link = link.replace('{promocode}', '1234');
+                            link = link.replace('{installmentid}', '1234');
+                            link = link.replace('{paymentprofileid}', '1234');
+                            link = link.replace('{storecreditid}', '1234');
+                            link = link.replace('{subscriptionid}', '1234');
+                            link = link.replace('{userid}', '1234');
+                            link = link.replace('{id}', '1234');
+                            link = link.replace('{referencevalue}', '1234');
+                            link = link.replace('{processingid}', '1234');
+                            link = link.replace('{ruletype}', '1');
+                            link = link.replace('{processnumber}', '1234');
+                            link = link.replace('{ordergroupid}', '1234');
+                            link = link.replace('{productcomponentid}', '1234');
+                            link = link.replace('{custid}', '1234');
+                            link = link.replace('{processingorderid}', '1234');
+                            link = link.replace('{processingnumber}', '1234');
+                            link = link.replace('{processingorderid}/{ruletype}' ,'1234/1');
+                            link = link.replace('{scheduleid}', '1');
+                            
+                            
+                            
+
+                            
+                           
+                        }
+                        else {
+                            link = link + '1234';
+                        }
+
+                        api.link = link;
+                        api.requestType= val.Request_Type__c;
+                        console.log('link ' + link );
+                        console.log('label ' + val.Label );
+                        callController(link, val.Label);
+                    }
+                }
+            }
+        </script>
+
+        <body class="slds">
+
+                <div id="wrap" >
+                </div>
+            <apex:form id="theForm">
+                <input id="hidden" type="hidden" value="{!responseCode}"></input>
+                <apex:actionFunction action="{!makeCallout}" name="callController" status="statusUpdating" rerender="theForm" oncomplete="rerender(); return false;">
+                    <apex:param name="endpoint" assignTo="{!endpoint}" value="" />
+                    <apex:param name="label" assignTo="{!label}" value="" />
+                </apex:actionFunction>
+                <br/>
+                 <br/>
+                <div align="Center">
+                <apex:outputPanel >
+                                <apex:actionStatus id="statusUpdating">
+                                      <apex:facet name="start">
+                                     <div class="slds-form--inline">
+                                        <div class="slds-form-element" >
+                                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                              <div class="slds-spinner__dot-a"></div>
+                                              <div class="slds-spinner__dot-b"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      </apex:facet>
+                                </apex:actionStatus>
+                                </apex:outputPanel>
+                            </div>
+
+            </apex:form>
+            
+        </body>
+    </head>
+
+    </html>
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SA_SNIP_LAP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SA_SNIP_LAP</name>
+    <style>none</style>
+    <subject>SA_SNIP_LAP</subject>
+    <textOnly>With LegalZoom’s Legal Advantage Plus membership, you will have unlimited consultations with attorneys and tax professionals for any new legal matter.  This service includes unlimited downloads from our extensive Legal Form Library, as well as a 10% discount on future LegalZoom purchases.  To view additional benefits of Legal Advantage Plus, click here.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>courtfu</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Courtesy Followup</name>
+    <style>none</style>
+    <subject>Courtesy Followup</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}:
+
+On mm/dd/yy, we emailed a set of follow up questions for your 501c3 order.  We are unable to complete your order due to the missing information.  The previously sent follow up questions have been attached to this email for your convenience.  
+
+Please follow the steps listed below to complete your order.
+
+Next steps:
+?Complete the attached questions using Microsoft Word
+?Review and revise the attached budget using Microsoft Excel
+?Email completed responses as attachments in MS Word/MS Excel format to nonprofit@legalzoom.com.  
+
+Using any other software formats will result in delays with your order.  In addition, we cannot accept these documents via fax and/or hardcopy mail.
+
+It is very important that your answers are complete and detailed as much as possible.  IRS carefully scrutinizes every application before approval and does not accept generalization.  If your answers are generic and/or lack detail, IRS can delay the approval of your 501c3.  
+
+If you have any questions regarding your order, please contact our Customer Care Department at (800) 773-0888 or nonprofit@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+Thank you for placing your order with us.
+
+Best regards,
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

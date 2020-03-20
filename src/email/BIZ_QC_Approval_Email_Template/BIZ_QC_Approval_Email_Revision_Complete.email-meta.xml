@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>BIZ QC Approval Email  - Revision Complete</name>
+    <style>freeForm</style>
+    <subject>Biz QC Revision Complete - Case #{!Case.CaseNumber}</subject>
+    <textOnly>Hi All,
+
+The list of errors on Case #{!Case.CaseNumber} have been resolved.
+
+Case Status: {!Case.Status}
+Case#: {!Case.CaseNumber}
+Order#: {!Case.Order_Number__c}
+
+Case Created By: {!Case.CreatedBy}
+Processor: {!Case.Biz_QC_Processor__c}
+Identified By: {!Case.QC_Errors_Identified_By__c}
+Errors Resolved:
+
+{!Case.QC_Revision_Errors__c}
+{!Case.Other_QC_Revision_Errors__c}
+
+Steps to Revision Complete Check:
+
+1. Click the following link or go to the Biz QC Revision Complete List View
+2. Verify all Errors have been resolved.
+3. Update the Case &apos;Status&apos; to Closed.
+4. Click &apos;Save&apos;.
+
+ALL CHANGES ARE BEING TRACKED.
+
+{!Case.Link}
+
+Thank you,
+{!User.FirstName} {!User.LastName}</textOnly>
+    <type>html</type>
+</EmailTemplate>

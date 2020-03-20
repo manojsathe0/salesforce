@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>arorg</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Annual Report - Original Signature</name>
+    <style>none</style>
+    <subject>Annual Report - Fax Signature</subject>
+    <textOnly>SUBJECT LINE: Your LegalZoom Order# XXXXXXXX - URGENT ACTION REQUIRED
+
+Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your Annual Report order.  In order to ensure your order is processed as quickly as possible, please follow the steps listed below. 
+
+&gt; Do not make any changes to the attached Annual Report as it will result in delays with your order.  If you need to make changes, please contact our Customer Support.
+&gt; Print two (2) copies of the document on white paper using black ink only.  
+&gt; Sign where indicated
+&gt; Mail the documents to our address listed below.  Please note that we cannot accept faxes as the state office will only accept original signed documents.
+
+Courier Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd.
+10th Flr.&lt;br/&gt;
+Glendale, CA 91203
+
+USPS Deliveries
+LegalZoom.com, Inc.
+ATTN: Business Filings
+101 North Brand Blvd., 10th Flr.
+POB 29096
+Glendale, CA 91203
+
+If you have any questions regarding your order, please contact our Customer Support at (800) 773-0888 or customercare@legalzoom.com. Please include your order number in your correspondences for prompt service.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

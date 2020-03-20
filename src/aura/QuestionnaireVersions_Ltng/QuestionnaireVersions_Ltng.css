@@ -1,0 +1,20 @@
+.THIS .hideSpinner {
+	display: none;
+}
+
+.THIS .showSpinner {
+	display: block;
+}
+
+.THIS .showFieldTable {
+    display: block;
+}
+
+.THIS .hideFieldTable {
+    display: none;
+}
+
+.THIS .wrappable { 
+    max-width: 400px; 
+    word-wrap: break-word; 
+}

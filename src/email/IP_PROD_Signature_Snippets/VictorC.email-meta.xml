@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip3210</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Victor C.</name>
+    <style>none</style>
+    <textOnly>Victor C.
+Intellectual Property Division
+www.LegalZoom.com
+{!snippetVariable.ccphone} ext. 3210</textOnly>
+    <type>custom</type>
+</EmailTemplate>

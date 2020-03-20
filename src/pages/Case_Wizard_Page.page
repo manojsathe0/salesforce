@@ -1,0 +1,29 @@
+<apex:page showHeader="False" title="CaseWizard" controller="Case_Wizard_Controller" >
+<flow:interview name="Case_Wizard_Customer_Care" interview="{!CaseWizard}" />
+<apex:includeScript value="/support/console/22.0/integration.js"/>
+<script type="text/javascript">
+var ReturnId = '{!ReturnId}';
+var theEnd = '{!TheEnd}';
+if(theEnd != '' && ReturnId != ''){
+    window.location.href = '/{!ReturnId}';
+} 
+else if(theEnd != '' && ReturnId == '') {
+    if (sforce.console.isInConsole()) {
+        CloseCurrentTab();
+    }
+    else {
+        self.close();
+    }
+}
+function CloseCurrentTab() {
+    sforce.console.getEnclosingTabId(closeSubtab);
+}
+
+var closeSubtab = function closeSubtab(result) {
+    var tabId = result.id;
+    sforce.console.closeTab(tabId);
+};
+
+
+</script>
+</apex:page>

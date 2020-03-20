@@ -1,0 +1,81 @@
+<apex:page standardController="Compliance_Review__c" extensions="NewComplianceReviewController" recordSetVar="wtf" >
+  <script type="text/javascript">
+  		var $j = jQuery.noConflict();
+  		function validateRecordCallID()
+         {
+         	if(document.getElementById('{!$Component.form.pageBlock.pageBlockSection.pageBlockSectionItem_chooseRep.inputText_chooseRep}').value == '')
+             {
+                 alert("Please enter value in Chosen Rep.");
+                 return false;           
+             }
+             else if(document.getElementById('{!$Component.form.pageBlock.pageBlockSection.pageBlockSectionItem_RecordCallID.recordCallIDField}').value == '')
+             {
+                 alert("Please enter value in Record Call ID.");
+                 return false;           
+             }     
+         }
+         
+         var newWin=null;
+		function openLookupPopup(name, id)
+		{
+			var url="/apex/LookupSalesQA?namefield=" + name + "&idfield=" + id;
+			newWin=window.open(url, 'Popup','height=500,width=600,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');
+			if (window.focus) 
+			{
+				newWin.focus();
+			}
+				
+		    return false;
+	    }
+					  
+		function closeLookupPopup()
+		{
+		   if (null!=newWin)
+		   {
+		      newWin.close();
+		   }  
+		}
+  </script>
+
+  <apex:pageMessages escape="false"></apex:pageMessages>
+  <apex:form id="form">
+    <apex:pageBlock id="pageBlock" title="New Compliance Review">
+      <apex:pageBlockSection id="pageBlockSection">
+        <apex:pageBlockSectionItem >
+          <apex:commandButton value="Get Random Rep" action="{!chooseRandomRep}" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem id="pageBlockSectionItem_chooseRep">
+          <apex:outputLabel value="Chosen Rep"/>
+          <apex:outputPanel >
+          	<apex:inputHidden value="{!repID}" id="inputHidden_repId"/>
+            <apex:inputText value="{!repName}" id="inputText_chooseRep" onFocus="this.blur()" disabled="false" style="background-color:silver;" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/> 
+            <apex:image url="{!URLFOR($Resource.lsw2resource, 'lsw2resource/lookup.gif')}" style="vertical-align:middle; padding-left:5px;"  
+	            	onclick="openLookupPopup('{!$Component.inputText_chooseRep}', '{!$Component.inputHidden_repId}'); return false"/>
+          </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem id="pageBlockSectionItem_RecordCallID" >
+          <apex:outputLabel value="Recorded Call ID"/>
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+		     <div class="requiredInput">
+		         <div class="requiredBlock"></div>
+         			<apex:inputText id="recordCallIDField" value="{!recordedCallId}" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+         	 </div>
+          </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection >
+      	<apex:pageBlockSectionItem id="pageBlockSectionItem_LengthOfCall" >
+          <apex:outputLabel value="Length of Call (Minute)"/>
+          <apex:inputText id="lengthOfCallField" value="{!lengthOfCall}" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+        </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+      <apex:pageBlockButtons location="bottom">
+        <apex:commandButton value="Create Compliance Review" action="{!newReview}" onclick="return validateRecordCallID();" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+        <apex:commandButton value="Skip & Next"  action="{!skipAndNext}" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+        <apex:commandButton value="Cancel"       action="{!cancel}" onkeydown="if(event.keyCode==13){this.blur();actionFunction();}"/>
+      </apex:pageBlockButtons>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

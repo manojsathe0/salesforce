@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>EmailFirst</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email and First Class</name>
+    <style>none</style>
+    <subject>Email and First Class</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}:
+
+Thank you for choosing LegalZoom.
+
+We have reviewed and created your personalized order based on the information you provided in our online questionnaire. We have attached an electronic copy of your documents. Printed copies of these documents will be shipped to you according to your chosen shipping method.
+
+If you have any additional questions, simply reply to this email or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}. We appreciate your business and look forward to serving you in the future.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+To view the PDF attachment: Open the attached PDF file. You must have Acrobat® Reader® (http://www.adobe.com/products/acrobat/readstep2.html) installed to view the attachment.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

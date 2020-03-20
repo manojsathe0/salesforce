@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tm oa4</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Office Action - Conflict (missed)</name>
+    <style>none</style>
+    <subject>Office Action - Conflict (missed)</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Office Actions are direct correspondences from the US Patent and Trademark Office (USPTO), and are generally either requesting additional information or updating you on the status of your application (or both). If you wish to view and/or download your Office Action, please visit here.
+
+Based on your Office Action, it appears your proposed Trademark is being rejected due to a likelihood of confusion with Trademark Registration No. XXXXXX (US serial number XXXXXXX) [add additional if necessary]. Currently, you have the following options:
+
+1. Receive a refund of $XXX.XX.; or
+2. Submit a new mark for submission at no additional cost to you.; or
+3. Contact LegalZoom Business Advantage Pro to be connected with an experienced Trademark attorney for a consultation.
+
+If you purchased the Complete Coverage package, you can take advantage of your subscription by simply signing into your LegalZoom Account here and submitting a request through the Member Center link for a free consultation on this matter. If you are not a Business Advantage Pro member and would like more information on this affordable service, visit here or call Customer Care at (877) 657-8787. Please note that Business Advantage Pro is not available in all states. You can also, of course, use any attorney of your own choosing.
+
+Please reply to this email and indicate which option you prefer.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for using LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

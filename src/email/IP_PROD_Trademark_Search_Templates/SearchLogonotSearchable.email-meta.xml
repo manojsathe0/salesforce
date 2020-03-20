@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>sc7</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Search Logo not Searchable</name>
+    <style>none</style>
+    <subject>LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We have received your logo; however, we are unable to conduct a design search. In order to conduct a design search, your logo must contain distinct design elements, such as flowers, hearts, multiple geometric shapes, etc. 
+
+***Please note that fonts are not considered to be searchable design elements.***
+
+Because LegalZoom cannot conduct a search on your logo, we will issue a refund of $250 for the cancellation of your design search. The refund will be applied to your original account, and will take 5-7 business days to be reflected.
+We apologize for any inconveniences. 
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

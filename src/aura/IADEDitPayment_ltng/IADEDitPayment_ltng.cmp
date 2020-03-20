@@ -1,0 +1,170 @@
+<aura:component controller="IADEditPaymentController_ltng"  implements="force:appHostable" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:attribute name="expmonths" type="object[]" />
+    <aura:attribute name="selectedmonth" type="string" />
+    <aura:attribute name="years" type="object[]" />
+    <aura:attribute name="selectedyear" type="string" />
+    <aura:attribute name="cardtypes" type="object[]" />
+    <aura:attribute name="selectedcardtype" type="string" />
+    <aura:attribute name="states" type="object[]" />
+    <aura:attribute name="dupeprofiles" type="object[]" />
+    <aura:attribute name="selectedstate" type="string" />
+    <aura:attribute name="newpayment" type="object" />
+    <aura:attribute name="customerId" type="string" />
+    <aura:attribute name="profileid" type="string" />
+    <aura:attribute name="hasdupeprofiles" type="boolean" />
+    <aura:attribute name="checkdelete" type="boolean" default="false"/>
+    <lightning:spinner variant="brand" size="large" aura:id="mySpinner1" />
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <lightning:icon iconName="custom:custom93"  size="small" />
+                </div>
+                <div class="slds-media__body">
+                    <h2>
+                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]" id="mainHeader">
+                            <span class="slds-text-heading_small">Credit Card Profile Details</span>
+                        </a>
+                    </h2>
+                </div>
+            </header>
+            
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            
+            
+            <div class="slds-form slds-form_compound">
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row ">
+                            <lightning:select name="mySelect" class="slds-size_1-of-3" disabled="true" label="Payment Type" aura:id="field" value="{!v.newpayment.accountType}" required="true">
+                                <aura:iteration items="{!v.cardtypes}" var="item">
+                                    <option text="{!item.label}" value="{!item.value}" selected="{!item.value == v.newpayment.accountType }" />
+                                </aura:iteration>
+                            </lightning:select>
+                            
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-3">
+                                
+                                <lightning:input label="Card Number" disabled="true" pattern="^\d*$" messageWhenPatternMismatch="Please Enter Only Digits for Credit Card Number " name="code" aura:id="field" value="{!v.newpayment.last4Digits}"  required="true" maxlength="16"/>
+                            </div>
+                            <div class="slds-form-element slds-size_2-of-12 " id="expirationMonthSelect">
+                                <lightning:select name="mySelect" label="Exp"  aura:id="field" value="{!v.newpayment.month}" required="true">
+                                    <aura:iteration items="{!v.expmonths}" var="item" >
+                                        <option text="{!item.label}" value="{!item.value}" selected="{!item.value == v.newpayment.month }" />
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                           
+                            <div class="slds-form-element slds-size_2-of-12 slds-gutters_x-small" id="expirationYearSelect">
+                                <lightning:select name="mySelect1"  label=" " aura:id="field1" value="{!v.newpayment.year}" required="true">
+                                    <aura:iteration items="{!v.years}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}" selected="{!item.value == v.newpayment.year }" />
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Account Holder First Name"  aura:id="field" name="code" value="{!v.newpayment.firstName}"  required="true"  id="inputFirstname"/>
+                            </div>
+                            
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Last Name"  name="code" aura:id="field" value="{!v.newpayment.lastName}"  required="true"  id="inputLastname"/>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                 <br/>
+                <fieldset class="slds-form-element">
+                    <legend class="slds-form-element__label slds-text-title_caps">Billing Address</legend>
+                    <br/>
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Street Adress1"  aura:id="field" name="code" value="{!v.newpayment.addressLine1}"  required="true" id="inputStreet1" />
+                            </div>          
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row">
+                            
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Street Adress2"  name="code" value="{!v.newpayment.addressLine2}" id="inputStreet2"/>
+                            </div>          
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="City"  name="code" aura:id="field" value="{!v.newpayment.city}" required="true" id="inputCity"/>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-3" id="inputState">
+                                <lightning:select name="mySelect" label="State"  aura:id="field" value="{!v.newpayment.state}" required="true">
+                                    <aura:iteration items="{!v.states}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}"  selected="{!item.value == v.newpayment.state }"/>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Phone Number"   pattern="^\d*$" messageWhenPatternMismatch="Please Enter Only Digits for Phone  Number "   name="code" aura:id="field" value="{!v.newpayment.phone}" required="true" id="inputPhone"/>
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-3">
+                                <lightning:input label="Zip"  name="code"  aura:id="field" value="{!v.newpayment.zip}" required="true"  maxlength="5" minlength="5" id="inputZip"/>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="slds-form-element">
+                    
+                    <div class="slds-form-element__group">
+                        
+                        <div class="slds-form-element__row slds-size_1-of-2">
+                            <div class="slds-form-element slds-size_1-of-6" id="cancelButton">
+                                <lightning:button variant="brand" label="Cancel" onclick="{!c.closeFocusedTab }" />
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-6" id="saveButton">
+                                <lightning:button variant="brand" label="Save" onclick="{!c.updateprofile}" />
+                            </div>
+                            <div class="slds-form-element slds-size_1-of-6" id="deleteButton">
+                                <lightning:button variant="brand" label="Delete" onclick="{!c.deleteprofile}" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div></div>
+        
+    </article>
+    
+</aura:component>

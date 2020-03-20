@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CASPLLC</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CASPLLC</name>
+    <style>none</style>
+    <subject>PLEASE READ: Your CA Seller&apos;s Permit Order [#        ]</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+If you have already received your California State Board of Equalization Seller’s Permit, please disregard this email. If not, read on.
+
+The California Board of Equalization (BOE) recently changed their process for applying for a seller’s permit to electronic registration and will no longer accept paper applications by mail. Because of this, we need to collect more information from you to complete your order.
+
+Please call us as soon as possible to provide the following information:
+
+1.	Name and home address of the person requesting the seller’s permit, along with their role in the business (i.e., member, manager or managing member);
+2.	Names of all members, managers and managing members, including each person’s title (i.e., John Doe, member);
+3.	Contact information for all members, managers and managing members, including:
+
+a.	Home address
+b.	Phone number
+c.	Date of birth
+d.	Driver’s license number and state of issue
+e.	Social Security number (if the member is an entity, Federal Employer ID Number);
+
+
+4.	Name, address and phone numbers of all suppliers;
+5.	Products purchased from all suppliers;
+6.	NAICS code (go to http://www.naics.com/search.htm to search for the code for your primary business activity);
+7.	Name and contact information for the person who will be maintaining the company’s books and records;
+8.	Name and contact information for the person who can answer questions about the company’s business activities.
+
+In order for us to complete your order in a timely manner, please call us as soon as possible at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate your prompt attention to this matter and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

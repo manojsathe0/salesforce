@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>bizsurvey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BIZ BSI Customer Segmentation Survey</name>
+    <style>none</style>
+    <subject>BIZ BSI Customer Segmentation Survey</subject>
+    <textOnly>Dear LegalZoom Customer:
+
+At LegalZoom, we want to provide our customers with the best products and service possible.  If you could spend about 3 minutes answering a few questions in a customer survey, it would help us better understand how we can make improvements.  Since we know your time is valuable, we will provide you a discount code upon completion of the survey for $10 off any LegalZoom Business Product that we offer (excludes 3rd party services).  This one-time discount code will be valid until 4/30/10.
+
+Please follow the link provided to begin this survey:
+http://www.surveymonkey.com/s/legalzoombiz2
+
+Thank you for your help,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

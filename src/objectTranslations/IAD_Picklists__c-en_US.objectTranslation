@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IAD Picklists</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IAD Picklists</value>
+    </caseValues>
+    <fields>
+        <label><!-- Order Reasons for Cancellation --></label>
+        <name>Order_Reasons_for_Cancellation__c</name>
+        <picklistValues>
+            <masterLabel>Downgrade</masterLabel>
+            <translation><!-- Downgrade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange Product</masterLabel>
+            <translation><!-- Exchange Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requires non-LZ Service</masterLabel>
+            <translation><!-- Requires non-LZ Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Satisfaction (Full Refund)</masterLabel>
+            <translation><!-- Satisfaction (Full Refund) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Satisfaction (Partial Refund)</masterLabel>
+            <translation><!-- Satisfaction (Partial Refund) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason for Discount --></label>
+        <name>Reason_for_Discount__c</name>
+        <picklistValues>
+            <masterLabel>Change to Order</masterLabel>
+            <translation><!-- Change to Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Overcharged</masterLabel>
+            <translation><!-- Customer Overcharged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Satisfaction</masterLabel>
+            <translation><!-- Customer Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Plan Adjustment</masterLabel>
+            <translation><!-- Managed Plan Adjustment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subscription Cancellation</masterLabel>
+            <translation><!-- Subscription Cancellation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Other Reasons for Cancel --></label>
+        <name>Sub_Other_Reasons_for_Cancel__c</name>
+        <picklistValues>
+            <masterLabel>Not Satisfied with Consultations</masterLabel>
+            <translation><!-- Not Satisfied with Consultations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price is too Expensive</masterLabel>
+            <translation><!-- Price is too Expensive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service No Longer Needed</masterLabel>
+            <translation><!-- Service No Longer Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unaware of Services</masterLabel>
+            <translation><!-- Unaware of Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Registered Agent Reasons for Cancel --></label>
+        <name>Sub_Registered_Agent_Reasons_for_Cancel__c</name>
+        <picklistValues>
+            <masterLabel>Dissolved</masterLabel>
+            <translation><!-- Dissolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Other</masterLabel>
+            <translation><!-- Pending Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA Changed with SOS</masterLabel>
+            <translation><!-- RA Changed with SOS --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Case</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Cases</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assigned User --></label>
+        <name>Assigned_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Product --></label>
+        <name>Base_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Status --></label>
+        <name>Case_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Subject --></label>
+        <name>Case_Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Type --></label>
+        <name>Case_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Order Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date/Time Last Modified --></label>
+        <name>Date_Time_Last_Modified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time Order Created --></label>
+        <name>Date_Time_Order_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+        <relationshipLabel><!-- Order Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Queue --></label>
+        <name>Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Processing Number --></label>
+        <name>User_Order_ID__c</name>
+    </fields>
+    <layouts>
+        <layout>Order Case Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

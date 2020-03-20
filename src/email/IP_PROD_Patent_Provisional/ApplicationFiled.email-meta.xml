@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>pap app6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Application Filed</name>
+    <style>none</style>
+    <subject>Application Filed</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+Congratulations! Your application has been successfully filed with the U.S. Patent and Trademark Office (USPTO). You now have the official “Patent Pending” status for your invention.
+
+Attached is a copy of your completed application, which includes your USPTO e-filing receipt and assigned application number.
+
+Please note that your Provisional Application for Patent is valid for exactly ONE YEAR. You must apply for a corresponding (Non-Provisional) Utility Patent before its expiration, or your early filing date will be forfeited. To learn more about Utility Patents, please visit here.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

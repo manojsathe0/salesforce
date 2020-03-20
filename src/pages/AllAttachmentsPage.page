@@ -1,0 +1,10 @@
+<apex:page standardController="Case" extensions="AllAttachmentsController">
+<br><h1>Your Attachments for this case:</h1></br>
+<apex:repeat value="{!attLinks}" var="ad">
+<script>
+   var linkName  = "{!ad}";
+   linkName = linkName.substring(linkName.indexOf("fname")+6);
+   document.write("<a href=" + "{!ad}"+ ">" + linkName + "</a></br>");
+</script>
+</apex:repeat>
+</apex:page>

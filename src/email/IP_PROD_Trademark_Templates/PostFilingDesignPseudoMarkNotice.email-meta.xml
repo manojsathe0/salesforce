@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tm7</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post Filing Design_Pseudo Mark Notice</name>
+    <style>none</style>
+    <subject>Post Filing Design_Pseudo Mark Notice</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+As part of the application process, the US Patent and Trademark Office (USPTO) may assign pseudo marks and/or design codes to your application. If so, you will receive a notice of this status for review. 
+
+Pseudo Marks:
+
+For some marks, the USPTO has added a pseudo mark to the search data to assist TESS users in identifying relevant marks related to their search term. Pseudo mark entries are not displayed or printed in the search results and are not part of the official application or registration. Pseudo marks provide an additional search tool for locating documents whose word mark may contain an alternative or intentionally corrupted spelling for a normal English word. The pseudo mark field often contains spellings that are very similar or phonetically equivalent to the word mark. For example, a document with the word mark 4U might contain a pseudo mark of FOR YOU. 
+
+Design Codes:
+
+Design codes identify design elements that comprise a mark that contain a design (drawing). A mark may have more than one design code associated with it. Design search codes are defined in the Design Search Code Manual (http://tess2.uspto.gov/tmdb/dscm/dsc_gl.htm).
+
+If you would like to add or contest any of the codes listed, please contact the USPTO directly at 800-786-9199. Otherwise, there is no need to respond to their email. 
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

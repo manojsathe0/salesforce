@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>patapp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Application Completed</name>
+    <style>none</style>
+    <subject>Application Completed</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for placing your Patent order with LegalZoom.
+
+We recently sent you an email with your completed patent application for review.
+
+We are currently awaiting your response. After reviewing your application, please reply to this email, indicating your approval. Or, if you have revisions, please make your desired edits directly onto the attached document and either email or fax the changes back to us. 
+
+If you have any questions, simply reply to this email or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+Thank you for choosing LegalZoom, America&apos;s #1 legal document service.
+
+Best regards,
+
+The LegalZoom Patent Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

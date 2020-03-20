@@ -1,0 +1,60 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for considering LegalZoom for your Intellectual Property needs.<br/><br/>The United States Patent and Trademark Office (USPTO) breaks down all products and services into 45 classifications. Based on the description of goods and/or services listed on your application, the USPTO will assign a class to your application.<br/><br/>Classification is also the basis for determining the number of fees which must be paid. One product or service is ordinarily classified in a single class, unless it has many uses. For example, if a mark used to identify a brand of motorcycles also becomes a brand for clothing, then two classes are required. <br/><br/>The USPTO associates the following word titles with the respective trademark class numbers:<br/><br/><b>Products ("Goods"):</b><br/>1. Chemicals <br/>2. Paints <br/>3. Cosmetics and cleaning preparations <br/>4. Lubricants and fuels <br/>5. Pharmaceuticals <br/>6. Metal goods <br/>7. Machinery <br/>8. Hand tools <br/>9. Electrical and scientific apparatus <br/>10. Medical apparatus <br/>11. Environmental control apparatus <br/>12. Vehicles <br/>13. Firearms <br/>14. Jewelry <br/>15. Musical instruments <br/>16. Paper goods and printed matter <br/>17. Rubber goods <br/>18. Leather goods <br/>19. Non-metallic building materials <br/>20. Furniture and articles not otherwise classified <br/>21. Housewares and glass <br/>22. Cordage and fibers <br/>23. Yarns and threads <br/>24. Fabrics <br/>25. Clothing <br/>26. Fancy goods <br/>27. Floor coverings <br/>28. Toys and sporting goods <br/>29. Meats and processed foods <br/>30. Staple foods <br/>31. Natural agricultural products <br/>32. Light beverages <br/>33. Wines and spirits <br/>34. Smokers&#39; articles<br/><br/><b>Services:</b><br/>35. Advertising and business <br/>36. Insurance and financial <br/>37. Building construction and repair <br/>38. Telecommunications <br/>39. Transportation and storage <br/>40. Treatment of materials <br/>41. Education and entertainment <br/>42. Computer, scientific and legal <br/>43. Hotels and restaurants <br/>44. Medical, beauty and agricultural <br/>45. Personal and social services<br/><br/>For further information, visit LegalZoom's <http://www.legalzoom.com/trademarks-glossary/trademark-class-classification.html>Education Center</a>.<br/><br/>{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}. {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.<br/><br/>{!snippetVariable.ccsincerely}<br/><br/>{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}<br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

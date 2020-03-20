@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>gs mj</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>G&amp;S Marijuana Description</name>
+    <style>none</style>
+    <subject>Response Required: LegalZoom Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Currently, we are unable to continue processing your trademark application. The products (goods) and services listed on your questionnaire appear to include illegal or illicit material. Per LegalZoom&apos;s policy, we will not process such orders.
+
+Because LegalZoom is legally prohibited from giving advice, it is our customers&apos; responsibility to develop a description that is appropriate for their trademark application.* For more information relating to products and services as well as international classifications from the U.S. Patent and Trademark Office (USPTO), please visit {!snippetVariable.tm_gs_manual}
+
+After reviewing this information, please provide us with a detailed list of your products and services. If you choose to cancel at this time, you are eligible for a refund minus any search and processing fees already incurred.
+
+{!snippetVariable.ip_gs_closing}
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. 
+
+Best regards,
+
+The LegalZoom Team
+
+* {!snippetVariable.tmoa_bap} 
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>NoLegal</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Legal Advice</name>
+    <style>none</style>
+    <subject>Legal Advice</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for your inquiry.  LegalZoom understands the importance of Estate Planning and strives to make the process as easy as possible.
+
+While LegalZoom&apos;s specialists can prepare the highest quality legal documents, we unfortunately cannot provide legal advice.  Based on the complexity of your question, you may want to seek the advice of an attorney.  
+
+To help you find a qualified, local attorney, LegalZoom offers an attorney matching service through our online partner, Casepost.com.  Simply type in your legal question and up to 5 pre-screened attorneys will confidentially review it. Then, you can choose the one who?s right for you.  To get started, visit www.casepost.com. 
+
+If you prefer to do your own research, visit our free online law library. If you find an estate planning document that meets your needs, simply log into LegalZoom and complete our easy-to-follow questionnaire.  Our specialists will take care of the rest. 
+
+If you have any additional questions, simply reply to this email or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}. We appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

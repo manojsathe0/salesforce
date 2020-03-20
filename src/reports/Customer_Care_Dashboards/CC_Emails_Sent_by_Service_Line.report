@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_36207309</developerName>
+        <masterLabel>cc queues</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Case.Queue__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>CC Biz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC Biz Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC Deeds Billing Requests</sourceValue>
+            </sourceValues>
+            <value>CC BS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CC IP</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC IP Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC IP Outgoing</sourceValue>
+            </sourceValues>
+            <value>CC IP</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CC Attorney Services</sourceValue>
+            </sourceValues>
+            <value>CC AS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CC PS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC PS Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC PS Faxes</sourceValue>
+            </sourceValues>
+            <value>CC PS</value>
+        </values>
+    </buckets>
+    <filter>
+        <criteriaItems>
+            <column>Case.Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>ASD-Copyright Correction Letter,CC_Name_Change,CC AS Approval,CC AS Courtesy Calls,CC Attorney Services,CC Biz,CC Biz Admin,CC Biz Approval,CC Biz Faxes,CC Deeds Billing Requests,CC General Support,CC IP,CC IP Approval,CC IP Failed Delivery,CC IP Faxes,CC PS,CC PS Approval,CC PS Faxes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>EMAIL.STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>2,3,4</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Email to Case User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Created_By_User_Division__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Care</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_36207309</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC Emails Sent by Service Line</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseEmail</reportType>
+    <scope>queue</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>EMAIL.MESSAGE_DATE</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

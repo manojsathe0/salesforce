@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>authsig</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>E-Sig Authorized Signatory</name>
+    <style>none</style>
+    <subject>E-Sig Authorized Signatory</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using Legalzoom.
+
+We are almost ready to file your Trademark application; however we are unable to continue processing the application because we are missing the Signatory’s Position.
+
+The US Patent and Trademark Office (USPTO) requires that all applications be signed by an individual with legal authority to bind the application. As part of this requirement, you must indicate the position or title of the signatory for this application.
+
+Examples of acceptable position(s) include Owner, President, Vice President, Treasurer, Partner, Legal Guardian, or Attorney of Record. Examples of unacceptable descriptions include Self, Applicant, Employee, Friend, and Spouse. For more information, visit here: http://legalzoom.force.com/LZPKB/articles/Answer/02824?retURL=%2FLZPKB%2Fapex%2FknowledgeSearch%3Fc%3DAll_Products%26k%3Dsignatory%26lang%3Den_US&amp;popup=false&amp;lang=en_US
+
+Please respond to this email with the following:
+
+Name of the Authorized Signatory
+Position and/or Title of Signatory
+
+We will not be able to proceed with your application until this information is received.
+
+Feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

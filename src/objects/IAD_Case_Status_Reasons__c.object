@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Business Services</fullName>
+                    <default>false</default>
+                    <label>Business Services</label>
+                </value>
+                <value>
+                    <fullName>Intellectual Property</fullName>
+                    <default>false</default>
+                    <label>Intellectual Property</label>
+                </value>
+                <value>
+                    <fullName>Personal Services</fullName>
+                    <default>false</default>
+                    <label>Personal Services</label>
+                </value>
+                <value>
+                    <fullName>Attorney Services</fullName>
+                    <default>false</default>
+                    <label>Attorney Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Problem</fullName>
+                    <default>false</default>
+                    <label>Problem</label>
+                </value>
+                <value>
+                    <fullName>Service Inquiry</fullName>
+                    <default>false</default>
+                    <label>Service Inquiry</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>--None--</fullName>
+                    <default>false</default>
+                    <label>--None--</label>
+                </value>
+                <value>
+                    <fullName>Assigned for Customer Outreach</fullName>
+                    <default>false</default>
+                    <label>Assigned for Customer Outreach</label>
+                </value>
+                <value>
+                    <fullName>LZ Research Required</fullName>
+                    <default>false</default>
+                    <label>LZ Research Required</label>
+                </value>
+                <value>
+                    <fullName>Assigned for Resolution</fullName>
+                    <default>false</default>
+                    <label>Assigned for Resolution</label>
+                </value>
+                <value>
+                    <fullName>Auto Closed (Timeout) - Unresolved</fullName>
+                    <default>false</default>
+                    <label>Auto Closed (Timeout) - Unresolved</label>
+                </value>
+                <value>
+                    <fullName>Customer Submitting Materials</fullName>
+                    <default>false</default>
+                    <label>Customer Submitting Materials</label>
+                </value>
+                <value>
+                    <fullName>Customer didn&apos;t have needed info</fullName>
+                    <default>false</default>
+                    <label>Customer didn&apos;t have needed info</label>
+                </value>
+                <value>
+                    <fullName>Customer not reached (VM/disconnect)</fullName>
+                    <default>false</default>
+                    <label>Customer not reached (VM/disconnect)</label>
+                </value>
+                <value>
+                    <fullName>Email Sent, Pending Response</fullName>
+                    <default>false</default>
+                    <label>Email Sent, Pending Response</label>
+                </value>
+                <value>
+                    <fullName>Customer Submitting Revision</fullName>
+                    <default>false</default>
+                    <label>Customer Submitting Revision</label>
+                </value>
+                <value>
+                    <fullName>Issue Resolved (non Proofer resolution)</fullName>
+                    <default>false</default>
+                    <label>Issue Resolved (non Proofer resolution)</label>
+                </value>
+                <value>
+                    <fullName>Revision Placed for Customer</fullName>
+                    <default>false</default>
+                    <label>Revision Placed for Customer</label>
+                </value>
+                <value>
+                    <fullName>Proofer Updated</fullName>
+                    <default>false</default>
+                    <label>Proofer Updated</label>
+                </value>
+                <value>
+                    <fullName>Proceeding As Is/No Update Required</fullName>
+                    <default>false</default>
+                    <label>Proceeding As Is/No Update Required</label>
+                </value>
+                <value>
+                    <fullName>Order Cancelled</fullName>
+                    <default>false</default>
+                    <label>Order Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Customer-Requested Item Complete</fullName>
+                    <default>false</default>
+                    <label>Customer-Requested Item Complete</label>
+                </value>
+                <value>
+                    <fullName>No Order Problem (Case created in error)</fullName>
+                    <default>false</default>
+                    <label>No Order Problem (Case created in error)</label>
+                </value>
+                <value>
+                    <fullName>Revision Placed on LZ.com</fullName>
+                    <default>false</default>
+                    <label>Revision Placed on LZ.com</label>
+                </value>
+                <value>
+                    <fullName>Revision Placed (after 7 day closure)</fullName>
+                    <default>false</default>
+                    <label>Revision Placed (after 7 day closure)</label>
+                </value>
+                <value>
+                    <fullName>LZML</fullName>
+                    <default>false</default>
+                    <label>LZML</label>
+                </value>
+                <value>
+                    <fullName>VIP</fullName>
+                    <default>false</default>
+                    <label>VIP</label>
+                </value>
+                <value>
+                    <fullName>Social Media</fullName>
+                    <default>false</default>
+                    <label>Social Media</label>
+                </value>
+                <value>
+                    <fullName>BBB</fullName>
+                    <default>false</default>
+                    <label>BBB</label>
+                </value>
+                <value>
+                    <fullName>Escalated Customer</fullName>
+                    <default>false</default>
+                    <label>Escalated Customer</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>LZ Working on Case</fullName>
+                    <default>false</default>
+                    <label>LZ Working on Case</label>
+                </value>
+                <value>
+                    <fullName>Waiting on Customer</fullName>
+                    <default>false</default>
+                    <label>Waiting on Customer</label>
+                </value>
+                <value>
+                    <fullName>Escalated</fullName>
+                    <default>false</default>
+                    <label>Escalated</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>IAD Case Status Reasons</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Record_Type__c</columns>
+        <columns>Product__c</columns>
+        <columns>Status__c</columns>
+        <columns>Status_Reason__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Record_Type__c</field>
+            <operation>contains</operation>
+            <value>Problem</value>
+        </filters>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>SR - {000}</displayFormat>
+        <label>IAD Case Status Reasons Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>IAD Case Status Reasons</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

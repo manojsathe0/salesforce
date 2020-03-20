@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>PP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>PP</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in filing your Provisional Patent Application.  We simplify the process for you by assembling and submitting the Provisional Patent Application to the US Patent &amp; Trademark Office (USPTO).
+
+
+For your reference, general information regarding filing a Provisional Patent has been outlined below.
+
+
+Provisional Patent Applications are intended to establish an initial filing date for your invention, and allow you to legally use the term &quot;patent pending&quot; in conjunction with your invention.  The Provisional Patent Application gives you 12 months to subsequently submit a Utility (Non-Provisional) Patent Application to complete the Patent filing process.  You can also choose to abandon the Provisional Patent Application should you choose not to pursue the protection of the invention with a full Utility Patent application.
+
+
+Upon placing the order for your Provisional Patent Application, you will be given instructions describing how to submit supplemental details of your items(s) to LegalZoom, either by directly uploading the file, emailing copies, or submitting hard copies by mail.  The Provisional Patent Application is typically submitted to the USPTO within 2-3 weeks of placing the order.
+
+
+For your convenience, we have listed all relevant pricing below.
+
+
+PROVISIONAL PATENT APPLICATION
+
+Standard - $199.00 +  USPTO filing fee
+
+
+GET STARTED
+
+http://www.legalzoom.com/patents/provisional-patent-application-overview.html
+
+PACKAGE DETAILS
+
+http://www.legalzoom.com/patents/provisional-patent-application-pricing.html
+
+
+ADDITIONAL SERVICES
+
+Attorney-Assisted Review &amp; Preparation - $390.00
+
+Patent Search - $299.00
+
+Professional Illustrations - $399.00
+
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+
+
+
+Best regards,
+
+
+{!User.FirstName}
+
+(800) 773-0888 x{!User.Extension}
+
+www.legalzoom.com
+
+
+
+Privacy Policy
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm.  Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+
+Please add services@emails.legalzoom.com to your address book.
+
+
+This email was sent to: {!Contact.Email}
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMOPTIN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>OPTED INTO PROGRAM EMAIL</name>
+    <style>none</style>
+    <subject>Take Advantage of Your Business Starter Benefits</subject>
+    <textOnly>Take Advantage of Your Business Starter Benefits
+
+Dear {!Contact.FirstName},
+
+It was a pleasure speaking with you about starting your business. As your dedicated Account Manager, I will be reaching out to you on a regular basis to provide you with the progress on your order and help answer any questions you may have.
+
+Included in your [Product Type] order, you get unlimited 30-minute attorney and/or tax consultations on new matters. The more you know, the more power you have to build a business that is a lasting source of income and satisfaction. Don’t miss out on your benefits. Call me to schedule a consultation.
+
+My direct number is 877-808-1918 [ext.XXXX].
+
+Thank you for choosing LegalZoom.
+
+Best Regards,
+
+[Account Manager] [ext.XXXX]
+Account Management Services
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

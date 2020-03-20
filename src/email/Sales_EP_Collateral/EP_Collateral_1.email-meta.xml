@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>EP Collateral Test</name>
+    <style>freeForm</style>
+    <subject>More information about your [Last Will Estate Plan / Living Trust Estate Plan / Legal Advantage Plus plan]</subject>
+    <textOnly>Hi [name],
+
+
+It was great talking with you today and thank you for considering LegalZoom. I understand you may have additional questions about our pricing, packages, and overall process.
+
+As we discussed, I’m sending you more information about our [product name ex: Last Will Estate Plan goes here] product. The material I’m sharing provides information about what’s included with the product as well as the benefits, the pricing and some customer reviews.
+
+
+Please feel free to reach out to me directly if you have any questions. You can call me directly at (800) 773-0888 ext. {!User.Extension}
+
+
+Thanks again,
+
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Street} {!User.City} {!User.State}, {!User.PostalCode}
+{!User.Phone} ext. {!User.Extension}
+
+Manage My Account | Explore Services
+Privacy Policy | Unsubscribe
+
+Please do not reply to this message. This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: $EMAIL_ADDRESS_$
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

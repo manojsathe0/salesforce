@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Survey email</name>
+    <style>none</style>
+    <subject>Survey email</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for taking the time to complete the survey concerning our service and product.
+
+It is the mission of LegalZoom to provide not only professional legal documents, but also exemplary customer service. As a valued customer, your feedback is extremely important to us and it is our goal to establish long term relationships with all our customers.
+
+We would greatly appreciate any constructive feedback you could provide in order for us to better serve your needs. 
+
+At your convenience, please contact me at (800) 773-0888, ext. 231.
+
+Thank you for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,8 @@
+Notification - Manager Email.<br/>
+<br/>
+Compliance Review: <a href="{!Compliance_Review__c.Link}">{!Compliance_Review__c.Name}</a><br/>
+Rep listened to: {!Compliance_Review__c.Representative__c}<br/>
+Recorded Call ID#: {!Compliance_Review__c.Recorded_Call_ID__c}<br/>
+<br/>
+
+Thanks,

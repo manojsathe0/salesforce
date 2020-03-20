@@ -1,0 +1,242 @@
+<apex:page controller="IADEditShippingAddressController" standardstylesheets="false" sidebar="false" doctype="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:includeScript value="{!$Resource.svg4everybody}" />
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.IADJS)}"/>
+        <script type="text/javascript">
+            window.onload = function() {
+                   jsUtility.makeDarkBorder();
+                   if(!{!isNew}){
+                      getShippingAddress();
+                    }
+                };
+                function closeCurrentTab() {
+                    sforce.console.getEnclosingTabId(closeSubtab);
+                }
+            var closeSubtab = function closeSubtab(result) {
+                var tabId = result.id;
+                sforce.console.closeTab(tabId);
+            };
+            function fixBindings(){
+                $( "input" ).each(function() {
+                    $(this).focus();
+                    $(this).blur();
+                });
+            }
+            function maxLengthCheck(object)
+              {
+                if (object.value.length > object.maxLength)
+                  object.value = object.value.slice(0, object.maxLength)
+              }
+        </script>
+        <style>
+            #dataTable {
+            border-spacing: 10px;
+            border-collapse: separate;
+            }
+
+            td {
+            overflow: hidden;
+            }
+
+            input[type=number]::-webkit-outer-spin-button,
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance:textfield;
+            }
+            .slds .slds-input{
+            width:300px;
+            }
+
+        </style>
+    </head>
+    <body>
+    <apex:form id="theForm">
+
+        <apex:actionFunction name="createContact" action="{!createContact}" rerender="theForm" status="statusUpdating" oncomplete="jsUtility.makeDarkBorder();"/>
+        <apex:actionFunction name="updateContact" action="{!updateContact}" rerender="theForm" status="statusUpdating" oncomplete="jsUtility.makeDarkBorder();"/>
+        <apex:actionFunction name="deleteContact" action="{!deleteContact}" rerender="theForm" status="statusUpdating" oncomplete="jsUtility.makeDarkBorder();"/>
+        <apex:actionFunction name="getShippingAddress" action="{!populateShippingAddress}" rerender="theForm" status="statusUpdating" oncomplete="fixBindings();jsUtility.makeDarkBorder();"/>
+        <div class="slds">
+
+            <c:IADMessageBox theMessages="{!addressService.iadMessages}" rendered="{!addressService.iadMessages.size>0}" />
+            <div class="slds-text-heading--small">
+                {!IF(isNew==true, 'Add ', 'Edit ')} {!IF(AND(orderContactId == null, isNew==false), 'Shipping Address', 'Order Specific Contact')}
+                <div align="center">
+                    <apex:outputPanel >
+                        <apex:actionStatus id="statusUpdating">
+                            <apex:facet name="start">
+                                <div class="slds-form--inline">
+                                    <div class="slds-form-element" >
+                                        <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                            <div class="slds-spinner__dot-a"></div>
+                                            <div class="slds-spinner__dot-b"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+                            </apex:facet>
+                        </apex:actionStatus>
+
+                    </apex:outputPanel>
+
+                </div>
+            </div>
+            <br/>
+            <table id="dataTable" >
+                <tr>
+                    <td>
+                        First Name
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.firstName}" id="firstName" />
+                            <input class="slds-input" type="text" value="{!shippingContact.firstName}"  size="60" onblur ="document.getElementById('{!$Component.firstName}').value = this.value;" />
+                        </div>
+                    </td>
+
+                    <td>
+                        Last Name
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.lastName}" id="lastName" />
+                            <input class="slds-input" type="text" value="{!shippingContact.lastName}" size="60" onblur ="document.getElementById('{!$Component.lastName}').value = this.value;"  />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address 1
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.addressLine1}" id="addressLine1" />
+                            <input class="slds-input" type="text" value="{!shippingContact.addressLine1}"  onblur ="document.getElementById('{!$Component.addressLine1}').value = this.value;"  size="60" />
+                        </div>
+                    </td>
+
+                    <td>
+                        Address 2
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.addressLine2}" id="addressLine2" />
+                            <input class="slds-input" type="text" value="{!shippingContact.addressLine2}"   onblur ="document.getElementById('{!$Component.addressLine2}').value = this.value;" size="60" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        City
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.city}" id="city" />
+                            <input class="slds-input" type="text" value="{!shippingContact.city}"  onblur ="document.getElementById('{!$Component.city}').value = this.value;" size="60" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        State
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <div class="slds-select_container" style="width:300px;">
+                                <apex:selectList value="{!shippingContact.state}" multiselect="false" size="1" styleClass="slds-select" required="true" id="statePicklist" >
+                                    <apex:selectOptions value="{!statePicklist}" id="option"/>
+                                </apex:selectList>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        Zip Code
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.zipCode}" id="zipCode" />
+                            <input id="zipcodeInput" class="slds-input scroll" oninput="maxLengthCheck(this)"
+                                   type = "number"
+                                   maxlength = "5"
+									value="{!shippingContact.zipCode}" onblur ="document.getElementById('{!$Component.zipCode}').value = this.value;" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Home Phone
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.homePhone}" id="homePhone" />
+                            <input class="slds-input" type="text" value="{!shippingContact.homePhone}"  size="60" onblur ="document.getElementById('{!$Component.homePhone}').value = this.value;" />
+                        </div>
+                    </td>
+
+                    <td>
+                        Work Phone
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.workPhone}" id="workPhone" />
+                            <input class="slds-input" type="text" value="{!shippingContact.workPhone}"  size="60" onblur ="document.getElementById('{!$Component.workPhone}').value = this.value;" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mobile Phone
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.mobilePhone}" id="mobilePhone" />
+                            <input class="slds-input" type="text" value="{!shippingContact.mobilePhone}"  size="60" onblur ="document.getElementById('{!$Component.mobilePhone}').value = this.value;" />
+                        </div>
+                    </td>
+
+                    <td>
+                        Fax Phone
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.faxPhone}" id="faxPhone" />
+                            <input class="slds-input" type="text" value="{!shippingContact.faxPhone}"  size="60" onblur ="document.getElementById('{!$Component.faxPhone}').value = this.value;" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       Email
+                    </td>
+                    <td>
+                        <div class="slds-form-element__control">
+                            <apex:inputHidden value="{!shippingContact.theEmail}" id="theEmail" />
+                            <input class="slds-input" type="text" value="{!shippingContact.theEmail}"  size="60" onblur ="document.getElementById('{!$Component.theEmail}').value = this.value;" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class = "slds-m-top--medium slds-float--left">
+                <button class="slds-button slds-button--neutral" onClick = "closeCurrentTab();">Cancel</button>
+                <button class="slds-button slds-button--brand" style="{!IF(isNew==true, 'display:none', '')}" onClick = "updateContact(); return false;">Update</button>
+                <button class="slds-button slds-button--brand" style="{!IF(isNew==true, '', 'display:none')}" onClick = "createContact(); return false;">Create</button>
+                <button class="slds-button slds-button--brand" style="{!IF(isNew==true, 'display:none', '')}" onClick = "deleteContact(); return false;">Delete</button>
+            </div>
+
+
+        </div>
+
+    </apex:form>
+    </body>
+    </html>
+</apex:page>

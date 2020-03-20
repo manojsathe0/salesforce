@@ -1,0 +1,188 @@
+<aura:component controller="IADInstallmentController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,flexipage:availableForRecordHome" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="installmentdetail" type="object" />
+    <aura:attribute name="status" type="string" />
+    <aura:attribute name="profilelabel" type="string"/>
+    <aura:attribute name="detailmode" type="boolean" default="true" />
+    <aura:attribute name="editmode" type="boolean" default="false" />
+    <aura:attribute name="paymentOptions" type="List" />
+    <aura:attribute name="currentPaymentOptionId" type="String" />
+    <aura:attribute name="customerId" type="String" />
+    <aura:attribute name="showproceed" type="boolean"  />
+    <aura:attribute name="showupdate" type="boolean"  />
+    <aura:attribute name="duedate" type="DateTime"/>
+    <aura:attribute name="currentdate" type="DateTime"/>
+    <aura:attribute name="installmentdetailid" type="string"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="ordernum" type="String" />
+    <aura:attribute name="orderrecordid" type="String"/>
+    <aura:attribute name="profiletag" type="String"/>
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <lightning:spinner variant="brand" size="large" aura:id="mySpinner1"  />
+    <aura:if isTrue="{!v.detailmode}">
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
+                            <lightning:icon iconName="custom:custom93"  size="small" />
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2>
+                            <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+                                <span class="slds-text-heading_small">Installment Detail</span>
+                            </a>
+                        </h2>
+                    </div>
+                </header>
+                
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <div class="slds-form slds-form_compound">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <a id="edit" onclick="{!c.openinstallmentmode}" href="#" >Edit </a>
+                            
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Installment #" class="slds-size_1-of-2" name="code" value="{!v.installmentdetail.installment.installmentId}" disabled="true" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <c:IADPaymentProfileLabel_ltng ></c:IADPaymentProfileLabel_ltng>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Due Date" class="slds-size_1-of-2" name="datecreated" value="{!v.installmentdetail.installment.adjDueDateInString}" disabled="true" />
+                            
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Created Date" class="slds-size_1-of-2" name="datecreated" value="{!v.installmentdetail.installment.adjCreationDateInString}" disabled="true" />
+                            
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Status" class="slds-size_1-of-2" name="Status" value="{!v.installmentdetail.installment.status}" disabled="true" />
+                            
+                        </div>     
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Amount" class="slds-size_1-of-2" name="amount" value="{!'$'+v.installmentdetail.installment.totalDueAmount}" disabled="true" />
+                            
+                        </div>     
+                    </div>                 
+                    
+                    <div class="slds-button-group slds-p-top_medium" role="group">
+                        <div class="slds-col slds-size_1-of-4 ">
+                            <lightning:button variant="brand" label="Cancel" onclick="{! c.closeFocusedTab }" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-p-left_medium">
+                            <lightning:button variant="brand"  class="{!v.status == 'PastDue' ? 'showSpinner' : 'hideSpinner'}"  onclick="{!c.openPaymentsPage}" label="Proceed to Payments"  />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </aura:if>
+    <aura:if isTrue="{!v.editmode}">
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
+                            <lightning:icon iconName="custom:custom93"  size="small" />
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2>
+                            <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+                                <span class="slds-text-heading_small">Installment Edit</span>
+                            </a>
+                        </h2>
+                    </div>
+                </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                
+                <div class="slds-form slds-form_compound">
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Installment #" class="slds-size_1-of-2" name="code" value="{!v.installmentdetail.installment.installmentId}" disabled="true" />
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element__group">
+                        <div class="slds-form-element__row"> 
+                            <div class="slds-form-element slds-size_1-of-2">
+                                <lightning:select aura:id="paymentOption" label="Method of Payment" name="paymentMethod" value="{!v.currentPaymentOptionId}" onchange="{!c.getprofileid}"  >
+                                    <aura:iteration items="{!v.paymentOptions}" var="option" indexVar="key">
+                                        <option value="{!option.key}" text="{!option.value}" selectedvalue="{!option.key == v.currentPaymentOptionId}"/>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class=" slds-form-element slds-size_1-of-2 slds-p-top_large slds-p-left_medium ">
+                                <a onclick="{!c.openpaymentedit}" > Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input type="datetime" label="Due Date" class="slds-size_1-of-2" name="datecreated" value="{!v.duedate}"  disabled="{!v.status == 'PastDue' ?true :false}"  onchange="{!c.datecomparisons}"/>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Created Date" class="slds-size_1-of-2" name="datecreated" value="{!v.installmentdetail.installment.adjCreationDateInString}" disabled="true" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Status" class="slds-size_1-of-2" name="Status" value="{!v.installmentdetail.installment.status}" disabled="true" />
+                        </div>     
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:input label="Amount" class="slds-size_1-of-2" name="amount" value="{!'$'+v.installmentdetail.installment.totalDueAmount}" disabled="true" />
+                        </div>     
+                    </div>   
+                    
+                    <div class="slds-button-group slds-p-top_medium" role="group">
+                        <div >
+                            <div class="slds-col slds-size_1-of-4">
+                                <lightning:button variant="brand" label="Cancel" onclick="{!c.RedirecttoDetail }" />
+                            </div>
+                        </div> 
+                        
+                        <aura:if isTrue="{!v.showupdate}">
+                            <div class="slds-col slds-size_1-of-4 slds-p-left_small">
+                                <lightning:button variant="brand" label="Update"   aura:id="updatebutton" onclick="{! c.UpdateInstallment }" />
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.showproceed}">
+                            <div class="slds-col slds-size_1-of-1 slds-p-left_small">
+                                <lightning:button variant="brand"   label="Proceed to Payments"  onclick="{!c.openPaymentsPage}"   aura:id="proceedpayment"/>
+                            </div>  
+                        </aura:if>
+                    </div>               
+                </div>                          
+            </div>
+        </article>
+    </aura:if>
+</aura:component>

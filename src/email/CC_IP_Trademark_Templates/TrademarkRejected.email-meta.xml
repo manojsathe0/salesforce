@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tmrejected</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Trademark Rejected</name>
+    <style>none</style>
+    <subject>Trademark Rejected</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+
+I understand it is disappointing when an examining attorney rejects the registration of a mark.  During the application process, marks may be rejected for a variety of reasons.  The specific reason behind the rejection should be documented in the Office Action letter from the United States Patent and Trademark Office (USPTO).
+
+As I am sure you are aware, LegalZoom is precluded from giving legal advice of any kind.  LegalZoom is a document preparation service and is not a substitute for an attorney.  We provide education and general information that allows our customers to make informed decisions regarding how to complete and file various types of documents.  We try to provide this education and information to our customers so that they can avoid the high cost of an attorney and essentially &quot;do it themselves&quot;.  LegalZoom cannot and does not guarantee that your application will be registered -- that decision rests solely with the USPTO.
+
+For further clarification, you may contact the USPTO Assistance Center at 800-786-9199 or call the examining attorney indicated at the bottom of your letter. 
+ 
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

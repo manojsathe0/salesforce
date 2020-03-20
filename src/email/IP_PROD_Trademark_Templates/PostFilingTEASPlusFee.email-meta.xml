@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>tm TEAS</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post Filing TEAS Plus Fee</name>
+    <style>none</style>
+    <subject>Post Filing TEAS Plus Fee</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+The total you&apos;ve paid is inclusive of the US Patent and Trademark Office (USPTO) filing and LegalZoom processing fees. Refunds are not applicable for applicants who are eligible for the TEAS Plus form.
+
+Please note that the USPTO provides 2 separate forms for filing Trademarks, the TEAS Plus ($275 per class) and TEAS ($325 per class). If specific requirements cannot be met, the TEAS form is filed. The type of form used will not necessarily affect your application process with the USPTO. Additionally, if the TEAS Plus form is submitted and the examiner does not find that it meets certain requirements, they will request an additional $50 to change the application to follow TEAS requirements. If this issue arises for your application, the said charges will be covered by LegalZoom. In general, the type of form cannot be determined until the end of the filing process. Therefore, to allow up-front pricing, all LegalZoom customers are charged the full price of filing.
+
+To view our TEAS Plus policy, please visit here. You can also view our Terms of Service here here
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+LegalZoom {!snippetVariable.ipdtm_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

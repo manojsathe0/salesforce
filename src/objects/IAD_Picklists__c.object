@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <fields>
+        <fullName>Order_Reasons_for_Cancellation__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Reasons for Cancellation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Downgrade</fullName>
+                    <default>false</default>
+                    <label>Downgrade</label>
+                </value>
+                <value>
+                    <fullName>Exchange Product</fullName>
+                    <default>false</default>
+                    <label>Exchange Product</label>
+                </value>
+                <value>
+                    <fullName>Requires non-LZ Service</fullName>
+                    <default>false</default>
+                    <label>Requires non-LZ Service</label>
+                </value>
+                <value>
+                    <fullName>Satisfaction (Full Refund)</fullName>
+                    <default>false</default>
+                    <label>Satisfaction (Full Refund)</label>
+                </value>
+                <value>
+                    <fullName>Satisfaction (Partial Refund)</fullName>
+                    <default>false</default>
+                    <label>Satisfaction (Partial Refund)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Discount__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Discount</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer Satisfaction</fullName>
+                    <default>false</default>
+                    <label>Customer Satisfaction</label>
+                </value>
+                <value>
+                    <fullName>Subscription Cancellation</fullName>
+                    <default>false</default>
+                    <label>Subscription Cancellation</label>
+                </value>
+                <value>
+                    <fullName>Customer Overcharged</fullName>
+                    <default>false</default>
+                    <label>Customer Overcharged</label>
+                </value>
+                <value>
+                    <fullName>Change to Order</fullName>
+                    <default>false</default>
+                    <label>Change to Order</label>
+                </value>
+                <value>
+                    <fullName>Managed Plan Adjustment</fullName>
+                    <default>false</default>
+                    <label>Managed Plan Adjustment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sub_Other_Reasons_for_Cancel__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Other Reasons for Cancel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Service No Longer Needed</fullName>
+                    <default>false</default>
+                    <label>Service No Longer Needed</label>
+                </value>
+                <value>
+                    <fullName>Unaware of Services</fullName>
+                    <default>false</default>
+                    <label>Unaware of Services</label>
+                </value>
+                <value>
+                    <fullName>Not Satisfied with Consultations</fullName>
+                    <default>false</default>
+                    <label>Not Satisfied with Consultations</label>
+                </value>
+                <value>
+                    <fullName>Price is too Expensive</fullName>
+                    <default>false</default>
+                    <label>Price is too Expensive</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sub_Registered_Agent_Reasons_for_Cancel__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Registered Agent Reasons for Cancel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dissolved</fullName>
+                    <default>false</default>
+                    <label>Dissolved</label>
+                </value>
+                <value>
+                    <fullName>RA Changed with SOS</fullName>
+                    <default>false</default>
+                    <label>RA Changed with SOS</label>
+                </value>
+                <value>
+                    <fullName>Pending Other</fullName>
+                    <default>false</default>
+                    <label>Pending Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>IAD Picklists</label>
+    <nameField>
+        <label>IAD Picklists Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>IAD Picklists</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

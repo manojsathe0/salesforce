@@ -1,0 +1,97 @@
+<html>
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif" width="194" height="55" alt="LegalZoom"></td></tr>
+
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+
+Dear {!Contact.FirstName}, 
+<br><br>
+
+It was a pleasure speaking to you again about your business. Below, I have provided a breakdown of the package(s) that we discussed today: <br><br>
+
+Economy LLC/Corporation Package: $99.00 (7 – 8 weeks)<br>
+CA State Filing Fee: $85.00/$115.00 <br>
+Federal Tax Identification Number (EIN) Obtainment: $79.00<br>
+S Corporation Election Obtainment: $80.00<br>
+Sellers Permit Application Preparation: $35.00 <br>
+State Tax ID Application Preparation: $35.00<br>
+Business Licenses Compliance Package: $74.99<br>
+Statement of Information Initial Report Filing: $55.00/$66.00 (Includes $20.00/$31.00 CA State Fee)<br>
+Standard Shipping: $9.95<br><br>
+
+Total: $437.94<br><br>
+
+Standard LLC/Corporation Package: $289.00 (7 – 8 weeks)<br>
+CA State Filing Fee: $85.00/$115.00<br>
+Federal Tax Identification Number (EIN) Obtainment: $79.00<br>
+S Corporation Election Obtainment: $80.00<br>
+Sellers Permit Application Preparation: $35.00<br>
+State Tax ID Application Preparation: $35.00<br>
+Business Licenses Compliance Package: $74.99<br>
+Statement of Information Initial Report Filing: $55.00/$66.00 (Includes $20.00/$31.00 CA State Fee)<br>
+Standard Shipping: $9.95<br><br>
+
+Total: $627.94<br><br>
+
+Express Gold LLC/Corporation Package: $359.00 (2 – 3 weeks)<br>
+CA State Filing Fee: $85.00/$115.00<br>
+Federal Tax Identification Number (EIN) Obtainment: $49.00<br>
+S Corporation Election Obtainment: $35.00<br>
+Sellers Permit Application Preparation: $35.00<br>
+State Tax ID Application Preparation: $35.00<br>
+Business Licenses Compliance Package: $74.99<br>
+Statement of Information Initial Report Filing: $55.00/$66.00 (Includes $20.00/$31.00 CA State Fee)
+30 Day Trial of Attorney Access: Included (normally $29.99/month)<br><br>
+
+Total: $657.99<br><br>
+
+The Registered Agent Service is another optional service that may be added to any package for an annual fee of $159.00. Please keep in mind that this service is charged only after the LLC is filed. <br><br>
+
+Finally, payment of the package you choose may be split into 3 monthly installments, and doing so will not affect the turnaround time. <br><br>
+
+
+As always, please don't hesitate to contact me with any questions you may have, or when you are ready to proceed. You can call me at (855) 787-1953 Monday–Friday from 8 a.m.–5 p.m. PT or email me anytime at BizHelp@legalzoom.com <br><br>
+
+<img src="https://lairh6ws243d.legalzoom.com/sites/legalzoom.com/files/images/email/am_{!User.Id}.gif"><br>
+
+{!User.Name}<br>
+Business Account Manager<br>
+(855) 787-1953 <br>
+BizHelp@legalzoom.com<br>
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: $EMAIL_ADDRESS_$ 
+  <br /><br />
+
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</html>

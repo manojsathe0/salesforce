@@ -1,0 +1,61 @@
+<apex:page standardController="Account" extensions="CT_NewAcctCont_Controller" tabStyle="Account" >
+<apex:sectionHeader title="Account & Contact Entry" subtitle="New Account & Contact" />
+<apex:form id="NewAcctContForm">
+	<apex:pageBlock id="MainBlock">
+        <apex:outputPanel id="Messages" layout="block">
+            <apex:pageBlockSection rendered="true">
+                <apex:pagemessages />
+            </apex:pageBlockSection>
+        </apex:outputPanel>
+    
+        <apex:pageBlockButtons location="bottom">
+            <apex:commandButton action="{!EventButtonClickClear}" value="Clear" />
+            <apex:commandButton action="{!EventButtonClickSave}" value="Save" />
+            <apex:commandButton action="{!EventButtonClickCancel}" immediate="true" value="Cancel"/>
+        </apex:pageBlockButtons>
+
+		<apex:outputPanel >
+			<apex:pageBlockSection columns="2" title="New Account" collapsible="false" >
+				<apex:inputField id="NewAcctName" value="{!model.NewAcct.Name}" />
+				<apex:inputField id="NewAcctType" value="{!model.NewAcct.Type}" />
+				
+				<!--
+				<apex:inputField id="NewAcctBillingStreet" value="{!model.NewAcct.BillingStreet}" />
+				<apex:inputField id="NewAcctBillingCity" value="{!model.NewAcct.BillingCity}" />
+				
+				<apex:inputField id="NewAcctBillingAddress3" value="{!model.NewAcct.BillingState}" />
+				<apex:inputField id="NewAcctPhone" value="{!model.NewAcct.Phone}" />
+				<apex:inputField id="NewAcctBillingAddress4" value="{!model.NewAcct.BillingPostalCode}" />
+				<apex:inputField id="NewAcctFax" value="{!model.NewAcct.Fax}" />
+				<apex:inputField id="NewAcctBillingAddress5" value="{!model.NewAcct.BillingCountry}" />
+				-->
+			</apex:pageBlockSection>
+
+			<apex:outputPanel id="ContactPanel">
+			<apex:pageBlockSection columns="2" title="New Contact" collapsible="false" >
+				<apex:inputField id="NewContFirstName" value="{!model.NewCont.FirstName}" />
+				<apex:inputField id="NewContLastName" value="{!model.NewCont.LastName}" />
+				
+				<apex:inputField id="NewContType" value="{!model.NewCont.Contact_Type__c}" />
+				<apex:inputField id="NewContPhone" value="{!model.NewCont.Phone}" />
+				<apex:inputField id="NewContMailingAddress1" value="{!model.NewCont.MailingStreet}" />
+				<apex:inputField id="NewContMobilePhone" value="{!model.NewCont.MobilePhone}" />
+				<apex:inputField id="NewContMailingAddress2" value="{!model.NewCont.MailingCity}" />
+				<apex:inputField id="NewContFax" value="{!model.NewCont.Fax}" />
+				<apex:inputField id="NewContMailingAddress4" value="{!model.NewCont.MailingPostalCode}" />
+				<apex:inputField id="NewContHomePhone" value="{!model.NewCont.HomePhone}" />
+				<!--
+				<apex:inputField id="NewContMailingAddress3" value="{!model.NewCont.MailingState}" />
+				-->
+				<apex:inputField id="NewContMailingAddress5" value="{!model.NewCont.MailingCountry}" />
+				<apex:inputField id="NewContEmail" value="{!model.NewCont.Email}" />
+				<apex:inputField id="NewContAltEmail1" value="{!model.NewCont.Alt_Email_1__c}" />
+				<apex:inputField id="NewContAltEmail2" value="{!model.NewCont.Alt_Email_2__c}" />
+			</apex:pageBlockSection>
+			</apex:outputPanel>
+    	</apex:outputPanel>
+    </apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

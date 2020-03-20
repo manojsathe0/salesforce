@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Case_Access_to_All_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Case Access to All Users</label>
+        <sharedTo>
+            <roleAndSubordinates>SalesforceSupport296281</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Fulfillment QC Case,Internal Case,UAT Launch Weekend,Attorney Consultation,Web Case,Standard Service Inquiry</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>AllInternalUsers318764</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AllInternalUsers</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <queue>UserAcceptanceTestCases</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>AllInternalUsers318765</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AllInternalUsers</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <group>PublicSiteandEmailUsers</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

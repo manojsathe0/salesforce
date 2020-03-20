@@ -1,0 +1,305 @@
+<apex:page Controller="LeadContactController" showHeader="false" sidebar="false" id="mainPage" standardStylesheets="True">
+        <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'media/css/demo_table_jui.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.DataTables, 'examples/examples_support/themes/smoothness/jquery-ui-1.8.4.custom.css')}"/> 
+         
+        <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.DataTables, 'media/js/jquery.js')}"></script>
+        <script type="text/javascript" language="javascript" src="{!URLFOR($Resource.DataTables, 'media/js/jquery.dataTables.js')}"></script>
+         <apex:includeScript value="/support/console/22.0/integration.js"/>
+         <!-- <apex:includeScript value="{!$Resource.TestStaticResource}"/>-->
+         <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+         <script type="text/javascript" src="{!URLFOR($Resource.JQuery, '/js/jquery-ui-1.8.20.custom.min.js')}"></script>
+        <script type="text/javascript">
+         var $j = jQuery.noConflict();
+         var escapedName;
+        function getNewAbandoners()
+        {
+            Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.LeadContactController.assignNewAbandoners}',
+            function(result, event)
+            {
+                if (event.status)
+                {
+                  if(result != null)
+                  {
+                      if(result.statusId == 0)
+                      {
+                          refreshPage();
+                          sforce.console.openPrimaryTab(null, '/'+result.id, true, 
+                          result.Name , null , result.Name);
+                      }
+                      else if(result.statusId == 1)
+                      {
+                      
+                        $j("#dialog").html(result.message);
+                        $j('#dialog').dialog('open');
+                      }
+                      else if(result.statusId == 2)
+                      {
+                        $j("#dialog").html(result.message);
+                        $j('#dialog').dialog('open'); 
+                      }
+                      else if(result.statusId == 3)
+                      {
+                        $j("#dialog").html(result.message);
+                        $j('#dialog').dialog('open');   
+                      }
+                   }
+                } 
+                else if (event.type === 'exception')
+                {
+                  alert(event.message+'-'+ event.method +'-'+event.where+'-'+event.data);  
+                } else 
+                {
+                    alert('Error happened');
+                }
+            }, 
+            {escape: true}
+            );
+        }
+         
+         function openInPrimaryTab(theId , theName , theDialogBox) {
+                $j("#dialog").dialog('close');
+            sforce.console.openPrimaryTab(null, '/'+theId, true, 
+                theName , openSuccessNewLead, theName);
+        }
+        
+        function openNewLeadTab() {
+           sforce.console.openPrimaryTab(null, '/setup/ui/recordtypeselect.jsp?ent=Lead&ekp=00Q&retURL=%2F00Q%3Ffcf%3D00BZ0000000TwHj%26isdtp%3Dnv&save_new_url=%2F00Q%2Fe%3FretURL%3D%252F00Q%253Ffcf%253D00BZ0000000TwHj%2526isdtp%253Dnv&isdtp=vw&lea3=UNKNOWN', false, 
+                'New Lead', openSuccessNewLead , 'New Lead');
+        }
+        
+         var openSuccessNewLead = function openSuccessNewLead(result) {
+            //Report whether opening the new tab was successful
+            if (result.success == true) {
+                sforce.console.focusPrimaryTabById(result.id, null); //focus it
+            } else {
+               // alert('Primary tab cannot be opened');
+            }
+        };
+           
+          function setTabTitle()
+          {
+               sforce.console.setTabTitle('My Leads and Contacts');
+          }       
+           var previousOnload = window.onload;        
+           window.onload = function() 
+           { 
+            if (previousOnload) { 
+                previousOnload();
+            }                
+            setTabTitle(); 
+            }    
+        
+        function getCheckedBoxes(option)
+        {
+            var checkedBoxesId = '';
+            $j('input[id$="selectBox"]:checked').each(function()
+            {
+                checkedBoxesId += $j(this).siblings(':first').attr("value")+','; 
+            })
+            if(checkedBoxesId != '')
+            {
+                if(option == 'changeOwner')
+                {
+                    changeOwner(checkedBoxesId);
+                }
+                else if(option == 'changeStatus')
+                {
+                    changeStatus(checkedBoxesId);
+                }
+            }
+            else
+            {
+                alert('Please select atleast one record.');
+            }       
+        }               
+        
+        function openPrimaryTab(theId , theName)
+        {
+        
+             sforce.console.openPrimaryTab(null, '/'+theId, true, 
+                theName, null , theName);
+        }
+        </script>
+        <style type="text/css">
+            .dataTables_length{display:none;}
+            .ui_state_default{background:#9598D0;}
+            .availableAbandoners
+            {
+            font-size:20px;
+            color:green;
+            }
+        </style>
+        <div id="dialog" title="System Message">
+           
+        </div>
+        <apex:form id="mainForm" style="font-size:11px;">
+        <apex:actionFunction name="refreshPage" rerender="mainForm" action="{!retrieveFreshLeadsAndContacts}"/>
+             <script type="text/javascript" charset="UTF-8">
+                var gaiSelected =  [];
+                var oTable;
+                $j(document).ready( function () 
+                {
+                $j("#dialog").dialog({ autoOpen: false });//just initialize right now
+                oTable = $j('#oppleadTable').dataTable({
+                "bFilter": false,
+                "bJQueryUI": true,
+                "sPaginationType": "full_numbers",
+                "aaSorting": [ {!sortString}],
+                "iDisplayLength": 40,
+                "sScrollY": "580px",
+                "fnDrawCallback": function( oSettings ) {
+                    }
+                });
+          });
+        
+        function openQuickLog()
+        {
+             sforce.console.openPrimaryTab(null, '/apex/Quick_Log_Page?isdtp=vw', true, 
+                'Quick Log', null , 'Quick Log');
+        }
+        function openSuperflow()
+        {
+             sforce.console.openPrimaryTab(null, '/apex/SFlowMain?isdtp=vw', true, 
+                'Superflow', null , 'Superflow');
+        }
+        
+        </script>
+        <div style="background:#9598D0;padding-left:10px;padding-top:3px;padding-bottom:1px;height:25px">
+            <apex:outPutPanel id="optionHolder">
+                <!--<apex:SelectList value="{!selectedOption}" size="1">
+                    <apex:selectOptions value="{!optionsList}" />
+                    <apex:actionSupport event="onchange"  action="{!refreshView}"  rerender="mainForm" />
+                </apex:SelectList>
+                -->
+                 <button type="button" onClick="getNewAbandoners();" >Get Next</button>&nbsp;&nbsp;&nbsp;
+                 <button type="button" onClick="openNewLeadTab();">Create new Lead</button>&nbsp;&nbsp;&nbsp;
+            </apex:outPutPanel>
+            
+        </div>
+        <apex:pageMessages />
+        <apex:actionFunction name="changeOwner" action="{!updateOwner}" rerender="mainForm">
+            <apex:param name="firstParam" assignTo="{!selectedRecordIds}" value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="changeStatus" action="{!updateStatus}" rerender="mainForm">
+            <apex:param name="firstParam" assignTo="{!selectedRecordIds}" value="" />
+        </apex:actionFunction>
+        
+        <apex:outputPanel id="leadAndContactHolder">
+                 <apex:outputPanel style="background:#B4C9ED;padding:10px;" layout="block">
+                    <apex:outputPanel style="margin:0px auto;width:400px;" layout="block">
+                        <apex:outputPanel id="sortHolder" layout="block">
+                            <apex:repeat value="{!orderList}" var="field">
+                                <apex:outputLabel value="Sort By : "/>
+                                <apex:selectList value="{!fieldsForSorting[field].selectedField}" size="1">
+                                    <apex:selectOptions value="{!fieldsForSorting[field].fieldNames}"/>
+                                </apex:selectList>&nbsp;&nbsp;
+                                <apex:selectList value="{!fieldsForSorting[field].sortOrder}" size="1">
+                                    <apex:selectOptions value="{!fieldsForSorting[field].sortOrders}"/>
+                                </apex:selectList>
+                                <apex:outputLabel value="And" rendered="{!IF(field==0,true,false)}"/>
+                                <apex:outputLabel value="And" rendered="{!IF(field==1,true,false)}"/>
+                                <br/>
+                            </apex:repeat>
+                            <br/>
+                            <apex:commandButton action="{!retrieveFreshLeadsAndContacts}" value="Sort Leads and Contacts" id="getLeadContactButton" rerender="mainForm" styleClass="theButton"/>&nbsp;&nbsp;
+                            <apex:commandButton action="{!changeOwner}" value="Change Owner" id="changeOwnerButton" rerender="massUpdateButtonHolder" />&nbsp;&nbsp;
+                            <apex:commandButton action="{!changeStatus}" value="Change Status" id="changeStatusButton" rerender="massUpdateButtonHolder" />
+                        </apex:outputPanel>
+                        <apex:outputPanel id="massUpdateButtonHolder">
+                            <apex:outputPanel id="changeOwnerHolder">
+                                <apex:outputPanel rendered="{!changeOwner}">
+                                        <apex:outputLabel value="Select New Owner : " />
+                                        <apex:inputField value="{!dummyContact.OwnerId}"  />
+                                         <button type="button" onClick="getCheckedBoxes('changeOwner');" id="changeOwnerButton">Change Owner</button>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                            
+                            <apex:outputPanel id="changeStatusHolder">
+                                <apex:outputPanel rendered="{!changeStatus}" >
+                                        <br />
+                                        <apex:outputLabel value="Lead Status : " />
+                                        <apex:selectList value="{!selectedLeadStatusOption}" size="1">
+                                            <apex:SelectOptions value="{!LeadStatusOptions}" />
+                                        </apex:selectList>
+                                        <br/><br/>
+                                         <button type="button" onClick="getCheckedBoxes('changeStatus');" id="changeStatusButton">Change Status</button>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                   </apex:outputPanel> 
+                </apex:outputPanel>
+            <table cellpadding="0" cellspacing="0" border="0" class="display" id="oppleadTable">
+                <thead> 
+                    <tr>
+                        <th>Select</th>
+                        <th width="150px">Name</th>
+                        <th>Object</th>
+                        <th>State</th>
+                        <th>Product</th>
+                        <th width="150px">Status</th>
+                        <th width="200px">Last Activity</th>
+                        <th width="200px">Total Activities</th>
+                        <th width="200px">Temperature</th>
+                        <th>Campaign</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Date/Time Modified</th>
+                        <th>Date/Time Created</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!leadAndContacts}" var="lo">
+                        <tr>
+                            <td><apex:inputCheckbox value="{!lo.isSelected}" id="selectBox"/>
+                            <apex:inputHidden value="{!lo.objectId}" id="theId"/>
+                            </td>
+                            <td><a href="javascript:openPrimaryTab('{!lo.objectId}', '{!lo.escapedName}')">{!lo.Name}</a></td>
+                            <td>{!lo.objectType}</td>
+                            <td>{!lo.state}</td>
+                            <td>{!lo.Product}</td>
+                            <td>{!lo.status}</td>
+                            <td>{!lo.lastActivity}</td>
+                            <td>{!lo.totalActivities}</td>
+                            <td>{!lo.temperature}</td>
+                            <td>{!lo.campaignName}</td>
+                            <td>{!lo.accountLoginId}</td>
+                            <td>{!lo.Phone}</td>
+                            <td>{!lo.dateTimeModified}</td>
+                            <td>{!lo.dateTimeCreated}</td>
+                            
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+            </apex:outputPanel>
+        
+         <!--<apex:outputPanel id="myTasksHolder" rendered="{!IF(selectedOption == 'My Tasks' , true , false)}">
+             <table cellpadding="0" cellspacing="0" border="0" class="display" id="taskTable">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Name</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!myTasks}" var="theTask">
+                        <tr>
+                            <td>{!theTask.Who.Name}</td>
+                            <td>{!theTask.subject}</td>
+                            <td>{!theTask.ActivityDate}</td>
+                            <td>{!theTask.Status}</td>
+                            <td>{!theTask.Priority}</td>
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+         </apex:outputPanel>
+         -->
+        </apex:form>
+         
+</apex:page>

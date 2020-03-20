@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Patent SNE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Patent SNE</name>
+    <style>freeForm</style>
+    <subject>LegalZoom.com-Patent Inquiry</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Thank you for your inquiry. LegalZoom is your premiere legal resource and we have helped thousands like you get the protection that they are looking for.
+
+There are two different types of patents, a Utility Patent and a Design Patent.  A utility patent is meant to protect the way an invention works, so something that has a unique function, process or method.  A Design Patent is meant to protect the way an invention looks, so something that has a unique outward appearance to a manufacture product.  The provisional application is only meant for inventions that would qualify for a Utility Patent. 
+
+At LegalZoom our goal is to make this process easy on you and provide you with a complete solution that will give you the protection that you need.  In order for us to provide you with the best service, please give me a call at 1-800-773-0888 ext. {!User.Extension}. You can also email me your phone number and the best time to reach you.
+
+To see more information regarding patents, please go to https://www.legalzoom.com/trademarks-patents-copyrights/patent-overview.html.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+
+
+
+To view privacy policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+Call Customer Care: 1.800.773.0888
+
+This is a service email related to your LegalZoom account.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm.  Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}
+
+LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

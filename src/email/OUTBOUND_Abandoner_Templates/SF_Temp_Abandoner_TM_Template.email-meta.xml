@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LegalZoom.com - Trademark Order</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF Temp Abandoner TM Template</name>
+    <style>freeForm</style>
+    <subject>LegalZoom.com - Trademark Order</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom to file your Trademark.  
+
+As you may already know, you’re only few steps away from filing your Trademark.   However, I understand you may have questions regarding the overall process, type of package you should choose, pricing and any other concerns you may have.    
+
+To prove how committed we are, I am making myself available for you to call me directly to answer your questions or even complete your Trademark order over the phone.  Our customers are often one or two questions away from taking the next steps.  This is where I can guide you through the process.   
+
+I look forward to hearing from you,
+ 
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

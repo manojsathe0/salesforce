@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>logosearch</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Logo Search Results (Unbundled)</name>
+    <style>none</style>
+    <subject>Logo Search Results – Order# {!Case.Order_Number__c}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We have conducted a Basic Federal Direct-Hit Logo Search of your proposed logo design, and have attached a report with your results to this email.
+
+What is a Trademark conflict?
+As part of your Trademark application review, the USPTO searches its records for conflicts between your proposed logo design and other federally registered or pending logos.  For examination purposes, a conflict exists when one Trademark is confusingly similar with another Trademark already registered or is pending registration.  The principal factors used by the USPTO to determine potential conflicts include:
+
+•         The similarity of the marks in appearance, sound, and meaning
+•         Whether the marks are used to sell similar types of products (“goods”) or services
+•         The number of similar marks currently in use
+•         The similarity of established sales channels and the sophistication of the relevant buyers
+
+Click here for more information about Trademark conflicts.
+
+Please note: To be considered a conflict, your logo does not have to be identical to another logo and the products and/or services associated with the marks do not have to be exactly the same. Conflicts are determined by the USPTO, not by LegalZoom. You can also consult with an attorney about your Trademark and search results.*
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+* {!snippetVariable.tmoa_bap}
+
+
+
+Your Trademark search report is subject to LegalZoom’s Terms of Service. 
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

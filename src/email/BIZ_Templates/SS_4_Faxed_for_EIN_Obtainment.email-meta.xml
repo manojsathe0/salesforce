@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SS4FAXED</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SS-4 Faxed for EIN Obtainment</name>
+    <style>none</style>
+    <subject>SS-4 Faxed for EIN Obtainment</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry. You can check the status of your order any time by signing in to your account and clicking on the Open Orders tab. Your federal Employer Identification Number (EIN) will be posted there as soon as we process it.
+
+Your EIN application was submitted to the IRS on [submission date]. You should receive a notification letter directly from the IRS (CP 575) with your number. If you need to know EIN as soon as possible, please call the IRS business help line at (800) 829-4933 Monday–Friday from 7 a.m.–7 p.m. your local time.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+If you&apos;re already a member, sign in to schedule a consultation. *Available in most states.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

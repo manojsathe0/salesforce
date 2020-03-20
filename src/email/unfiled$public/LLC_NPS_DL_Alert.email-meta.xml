@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Any updates to cases with the above mentioned subject line should trigger an email to the LLC NPS DL with the following template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LLC NPS DL Alert</name>
+    <style>none</style>
+    <subject>Update to {!Case.Subject}</subject>
+    <textOnly>An update has been made to this case (Case # {!Case.CaseNumber}). Please see below for case comments:
+
+{!Case.Last_Case_Comment}
+
+{!Case.Thread_Id}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

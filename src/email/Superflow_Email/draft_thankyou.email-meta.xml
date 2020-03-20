@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Draft for email agent can send customer after order is placed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>draft_thankyou</name>
+    <style>none</style>
+    <subject>Thank You For Using LegalZoom</subject>
+    <type>text</type>
+</EmailTemplate>

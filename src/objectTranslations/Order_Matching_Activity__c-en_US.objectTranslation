@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Matching Activity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Matching Activities</value>
+    </caseValues>
+    <fields>
+        <label><!-- Activity Commission Eligible --></label>
+        <name>Activity_Commission_Eligible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Contacted --></label>
+        <name>Activity_Contacted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Count By Campaign --></label>
+        <name>Activity_Count_By_Campaign__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Created By --></label>
+        <name>Activity_Created_By__c</name>
+        <relationshipLabel><!-- Order Matching Activities (Activity Created By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activity Created DateTime --></label>
+        <name>Activity_Created_DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Created Date --></label>
+        <name>Activity_Created_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Owner --></label>
+        <name>Activity_Owner__c</name>
+        <relationshipLabel><!-- Order Matching Activities (Activity Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activity SFDC Id --></label>
+        <name>Activity_SFDC_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Type --></label>
+        <name>Activity_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- If there is a commission matching adjustment but it is not a lost, positive adjustment should be used. --></help>
+        <label><!-- Adjustment Type --></label>
+        <name>Adjustment_Type__c</name>
+        <picklistValues>
+            <masterLabel>Negative Adjustment</masterLabel>
+            <translation><!-- Negative Adjustment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Adjustment</masterLabel>
+            <translation><!-- Positive Adjustment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Agent --></label>
+        <name>Agent__c</name>
+        <picklistValues>
+            <masterLabel>Agent 1</masterLabel>
+            <translation><!-- Agent 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agent 2</masterLabel>
+            <translation><!-- Agent 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assistant Manager --></label>
+        <name>Assistant_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- BAP/LAP (Standalone) Commission Count --></label>
+        <name>BAP_LAP_Standalone_Commission_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Duration --></label>
+        <name>Call_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Type --></label>
+        <name>Call_Type__c</name>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound Follow Up</masterLabel>
+            <translation><!-- Outbound Follow Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unique Outbound</masterLabel>
+            <translation><!-- Unique Outbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unique Queue</masterLabel>
+            <translation><!-- Unique Queue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Commission Eligible Revenue Amount --></label>
+        <name>Commission_Eligible_Revenue_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commission Eligible % --></label>
+        <name>Commission_Eligible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commission Order Count --></label>
+        <name>Commission_Order_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commission Order Net Total --></label>
+        <name>Commission_Order_Net_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commission Order Value --></label>
+        <name>Commission_Order_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Status --></label>
+        <name>Contact_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Order Matching Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date/Time Last Modified --></label>
+        <name>Date_Time_Last_Modified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time Matching Adjusted --></label>
+        <name>Date_Time_Matching_Adjusted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day of Week Created --></label>
+        <name>Day_of_Week_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Between Order and Activity Agent 2 --></label>
+        <name>Hours_Between_Order_and_Activity_Agent_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Between Order and Activity --></label>
+        <name>Hours_between_Order_and_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound/Outbound --></label>
+        <name>Inbound_Outbound__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Created By Agent --></label>
+        <name>Is_Created_By_Agent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Subscription Activity? --></label>
+        <name>Is_Subscription_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Score --></label>
+        <name>Lead_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Status --></label>
+        <name>Lead_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Supervisor --></label>
+        <name>Lead_Supervisor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Order Matching Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manager = 1 --></label>
+        <name>Manager_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager Check --></label>
+        <name>Manager_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager --></label>
+        <name>Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Matched Campaign --></label>
+        <name>Matched_Campaign__c</name>
+    </fields>
+    <fields>
+        <label><!-- OMA Count --></label>
+        <name>OMA_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Order Matching Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Commission Eligible Total --></label>
+        <name>Order_Commission_Eligible_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Matching Activity Count --></label>
+        <name>Order_Matching_Activity_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+        <relationshipLabel><!-- Order Matching Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Object Id --></label>
+        <name>Parent_Object_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact (Pilot Group Use Only) --></label>
+        <name>Pilot_Group_Contact__c</name>
+        <picklistValues>
+            <masterLabel>Call 1 - Contacted</masterLabel>
+            <translation><!-- Call 1 - Contacted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call 1 - No Answer / Email</masterLabel>
+            <translation><!-- Call 1 - No Answer / Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call 1 - VM / Email</masterLabel>
+            <translation><!-- Call 1 - VM / Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call 2 - Contacted</masterLabel>
+            <translation><!-- Call 2 - Contacted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call 2 - Not Contacted</masterLabel>
+            <translation><!-- Call 2 - Not Contacted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Queue --></label>
+        <name>Queue__c</name>
+        <picklistValues>
+            <masterLabel>Abandoner</masterLabel>
+            <translation><!-- Abandoner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Decline</masterLabel>
+            <translation><!-- Decline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RA Renewal</masterLabel>
+            <translation><!-- RA Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retention</masterLabel>
+            <translation><!-- Retention --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason for Adjustment --></label>
+        <name>Reason_for_Adjustment__c</name>
+        <picklistValues>
+            <masterLabel>Extended System Downtime</masterLabel>
+            <translation><!-- Extended System Downtime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration Delay</masterLabel>
+            <translation><!-- Integration Delay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet Downtime</masterLabel>
+            <translation><!-- Internet Downtime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Bug Discovered</masterLabel>
+            <translation><!-- New Bug Discovered --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Replaced By --></label>
+        <name>Replaced_By__c</name>
+        <relationshipLabel><!-- Commission Matching Replaced --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SBR Commission Count --></label>
+        <name>SBR_Commission_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Cycle (30) --></label>
+        <name>Sales_Cycle_30__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Cycle Inclusive --></label>
+        <name>Sales_Cycle_Inclusive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Cycle (14) --></label>
+        <name>Sales_Cycle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Activities --></label>
+        <name>Total_Activities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Days From Purchase --></label>
+        <name>Total_Days_From_Purchase__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Hours Spent till Purchase --></label>
+        <name>Total_Hours_Spent_till_Purchase__c</name>
+    </fields>
+    <layouts>
+        <layout>Order Matching Activity Layout</layout>
+        <sections>
+            <label><!-- Adjustment --></label>
+            <section>Adjustment</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

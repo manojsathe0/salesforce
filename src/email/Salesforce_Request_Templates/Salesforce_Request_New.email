@@ -1,0 +1,14 @@
+****NEW SALESFORCE REQUEST NOTIFICATION**** 
+
+Request Number: {!Salesforce_Request__c.Number__c} 
+Type: {!Salesforce_Request__c.Type__c} 
+Priority: {!Salesforce_Request__c.Priority__c}
+
+Subject: {!Salesforce_Request__c.Name} 
+
+Description: 
+{!Salesforce_Request__c.Description__c} 
+
+Please add a chatter post by clicking the Salesforce Request Link below if you have any questions or additional comments.
+-------------------------------------------------------------------------- 
+ {!Salesforce_Request__c.Link}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>dbasales - DBA Sales Info</name>
+    <style>none</style>
+    <subject>dbasales - DBA Sales Info</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.
+
+DBA stands for ?doing business as? (also known as a ?fictitious business name,? ?trade name? or ?assumed name? in some jurisdictions). 
+
+DBA registration is necessary if your business operates under a name other than its legal name. The legal name of a corporation, LLC, or other state registered entity is the name on the articles filed with the state.  For businesses that have not registered as a corporation or LLC, the legal name is the personal name of the business owner or owners.
+
+Conducting business and opening a bank account under a name other than the legal name of your business is only possible after you have fulfilled your state?s DBA filing requirement.
+
+For your convenience, I have provided additional information and links to begin your DBA Registration:
+
+Standard DBA Package  {!snippetVariable.dba_pricing}
+{!snippetVariable.dba_turnaround}
+
+To Get Started:
+{!snippetVariable.dba_application}
+Pricing:
+{!snippetVariable.dba_pricelink}
+Education Center:
+{!snippetVariable.dba_edcenter}
+
+Prepare Federal Tax ID Application {!snippetVariable.ein_prep}
+Obtain Tax ID Number from IRS  {!snippetVariable.ein_obt}
+Prepare Seller&apos;s Permit Application  {!snippetVariable.sellperm_prep}
+
+Best regards,
+
+[ Your Name ]
+{!snippetVariable.bizbsi_address}
+{!snippetVariable.bizbsi_phone}
+{!snippetVariable.bizbsi_fax}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

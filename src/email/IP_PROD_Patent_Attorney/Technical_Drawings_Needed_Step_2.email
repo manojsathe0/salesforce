@@ -1,0 +1,83 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/> 
+
+As part of your Utility Patent application, the U.S. Patent and Trademark Office (USPTO) requires drawings of your invention wherever necessary for your examiner to understand your invention. Our records show that you have not provided drawings of your invention as part of your application.  <br/><br/>
+
+Please visit the following links for more information on the USPTO standards for patent drawings: <br/><br/>
+<a href=http://www.uspto.gov/web/offices/pac/mpep/documents/appxr_1_83.htm>Content of drawing. - Appendix R Patent Rules</a><br/><br/>
+<a href=http://www.uspto.gov/web/offices/pac/mpep/documents/appxr_1_84.htm>Standards for drawings. - Appendix R Patent Rules</a><br/><br/>
+
+LegalZoom offers a Patent Illustration Service: you and your assigned Patent attorney or agent work with Professional Patent Illustrators to make sure your drawings meet the USPTO’s standards and show your invention to its best advantage. For more information, visit: <br/><br/><a href=http://www.legalzoom.com/patent-drawings/patent-drawings-overview.html>Professional Patent Drawings Overview</a><br/><br/>
+
+Please reply to this email to let us know how you would like to move forward:
+(1) Work with your Patent Agent or attorney and Professional Illustrators to create professionally-drafted Patent Illustrations to accompany your application; 
+(2) Submit your own drawings to us and we will forward them to your Patent Professional along with the rest of your materials; or 
+(3) Continue with your application as-is, if you believe that your invention can be understood without any drawings. <br/><br/>
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. Submitted physical materials are securely destroyed.  <br/><br/>
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.<br/><br/>
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon. <br/><br/>
+
+Best regards, <br/><br/>
+
+The LegalZoom Team<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

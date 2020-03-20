@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_17609012</developerName>
+        <masterLabel>Email Queue Origin</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Case$Origin</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>logo@legalzoom.com</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>tmsearch@legalzoom.com</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>trademark@legalzoom.com</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>trademarks@legalzoom.com</sourceValue>
+            </sourceValues>
+            <value>IP Trademarks</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_88795444</developerName>
+        <masterLabel>IP Fulfillment Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Case.Activities$Owner</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Ennio Ochoa</sourceValue>
+            </sourceValues>
+            <value>Trademark Management</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>William Shahin</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Earvin Guanzon</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Isabel Valencia</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robert McCrum</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Angela Poghosyan</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Lam</sourceValue>
+            </sourceValues>
+            <value>Goods &amp; Services Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Marlon Andino</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Victor Cun</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael Valino</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kendy Tran</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lorenzo del Castillo</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Abigail Barrientez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alison Steinberg</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Eric Wicker</sourceValue>
+            </sourceValues>
+            <value>Logo &amp; Specimen Team</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Mallary Snodgrass</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David de Villa</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Joshua Hart</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Andre Paulk</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maria Clark</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Liliana Cansiani</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Vance Parker</sourceValue>
+            </sourceValues>
+            <value>Trademark Application Processing Team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Case$Units__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Case.Activities$CC_Queue__c</groupingColumn>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Case$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>BucketField_17609012</field>
+    </columns>
+    <columns>
+        <field>BucketField_88795444</field>
+    </columns>
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Subject</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Case$Units__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Account</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Owner</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Action__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Type__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Template__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$CreatedDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case.Activities$Email_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Incoming</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Activities$CC_Queue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>IP Trademark Materials,IP Trademark Monitoring,IP Trademarks</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case.Activities$CC_Queue__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IP Trademark Incoming Email</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Case$CaseNumber</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Case.Activities$CreatedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

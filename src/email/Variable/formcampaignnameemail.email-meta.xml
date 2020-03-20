@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.formcampaignnameemail</name>
+    <style>none</style>
+    <subject>formcampaignnameemail</subject>
+    <textOnly>formlink(campaignname(), EMAIL_ADDRESS_, FIRST_NAME)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

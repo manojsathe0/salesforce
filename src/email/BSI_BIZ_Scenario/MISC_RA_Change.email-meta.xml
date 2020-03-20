@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>MISC - RA Change</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>MISC - RA Change</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in changing the Registered Agent for your business.  In order to begin this process, you will need to provide the name and address of the party you wish to designate as the new Registered Agent.
+ 
+Please keep in mind that this party must be an adult with a physical address in the state of formation; PO Boxes are not permitted.  The agent must be available at that address during standard business hours to accept any documentation.  The name and address of this Agent become public record which typically results in reduced privacy and increased junk mail.
+ 
+For your convenience, we have listed the relevant pricing below.
+ 
+REGISTERED AGENT CHANGE
+Rush - $55.00 + state fee - (7-10 business days)*
+Standard - $35.00 + state fee + shipping - (20-35 business days)
+
+To determine the state fee for your state, please contact a Business Formation Specialist at the phone number listed below.
+
+GET STARTED
+- This service must be purchased by speaking with a Business Formation Specialist directly, and cannot be purchased online.  Please contact a Specialist at the phone number listed below to proceed with this service.
+ 
+* Some states may have delays which affect the listed turnaround time.  To determine if your state is affected, please contact a Specialist at the phone number listed below.
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

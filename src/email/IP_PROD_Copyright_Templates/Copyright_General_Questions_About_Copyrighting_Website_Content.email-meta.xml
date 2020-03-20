@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr28</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GENERAL INFO – General Questions About Copyrighting Website Content</name>
+    <style>none</style>
+    <subject>Copyright Registration for Online Works</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting us about registering a copyright for your blog or website.
+
+The U.S. Copyright Office generally accepts most applications to register online works, such as a blog or website. However, only the exact version of the materials that are received with a given application may be registered.
+
+Since many online works are updated frequently, it’s important to understand the rules surrounding revisions. The U.S. Copyright Office generally requires that online works published or revised on separate days be registered separately. Registration of the revised work only covers the new or revised material, while previous registrations cover material previously submitted.
+
+To learn more about Copyright registration for online works, access the U.S. Copyright Office information circular here.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you contacting us and look forward to serving you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,310 @@
+<apex:page controller="EmailController"   title="Integrated Email List" standardStylesheets="false" showHeader="true"   docType="xhtml-1.0-transitional"   >
+  <apex:includeScript value="/support/console/20.0/integration.js"/>
+  <script type="text/javascript" language="javascript">
+    function SendAnEmail(){
+        if('{!caseId}'.length > 0){
+            var pageName = "Custom_Email";
+            var url = "/apex/" + pageName + "?id={!caseId}&recordId={!recordId}";
+            if(typeof(srcUp) != 'undefined') {
+                url = url + "&isdtp=vw";
+                srcUp(url);
+            }else{
+                if(sforce.console.isInConsole()){
+                    openSubtab(url, 'Send An Email');
+                }else{
+                    window.open(url, '_blank');
+                    //window.location.href = url;
+                }
+            }
+        }
+    }
+  </script>
+  <apex:stylesheet value="{!URLFOR($Resource.SFDCStyles, 'SFDCStyles/all.css')}"/>
+  <style>
+    .errorConsole .x-grid3-row-over,
+    .headerStyle{background-color:#FFFFFF;color:#000000;text-align:left}
+    
+    A:link {text-decoration: none}
+    A:visited {text-decoration: none;color: RoyalBlue  }
+    A:active {text-decoration: none}
+    A:hover {text-decoration: underline; color: RoyalBlue }
+  </style> 
+  <apex:includeScript value="/support/console/22.0/integration.js"/>
+  <script type="text/javascript">
+    var url = null;
+    var titlename = null;
+    function openPrimaryTab(){
+        sforce.console.openPrimaryTab(undefined, 
+            'http://www.salesforce.com', true, 'salesforce');
+    }
+    
+    //The callback function that openSubtab will call once it's got the ID for its primary tab
+    var callOpenSubtab=function callOpenSubtab(result){
+        sforce.console.openSubtab(result.id, url, true,titlename);
+    };
+    
+    function openSubtab(urllink,title){
+        url = urllink;
+        titlename = title;
+        if(sforce.console.isInConsole()){
+            sforce.console.getEnclosingPrimaryTabId(callOpenSubtab);
+        }else{
+            window.open(url, '_blank');
+        }
+    }
+    
+    //Sets the title of the current tab to "SFDC"
+    function setTitle(){
+        sforce.console.setTabTitle('SFDC');
+    }
+    
+    //The callback function that closeTab will call once it's got the ID for its tab
+    var callCloseTab= function callCloseTab(result){
+        sforce.console.closeTab(result.id);
+    };
+    
+    function closeTab(){
+        sforce.console.getEnclosingTabId(callCloseTab);
+    }
+    
+    function disableSelection(target){
+        if(typeof target.onselectstart!="undefined") //IE route
+            target.onselectstart=function(){return false}
+        else if(typeof target.style.MozUserSelect!="undefined") //Firefox route
+            target.style.MozUserSelect="none"
+        else //All other route (ie: Opera)
+            target.onmousedown=function(){return false}
+        target.style.cursor = "default"
+    }
+    
+    function delStyleClass(a,b){
+        var c=" "+a.className+" ",d=b.length,e=c.indexOf(" "+b+" ");
+        if(e>=0){
+            d=e+d+1;
+            a.className=trim(c.substring(0,e)+c.substring(d,c.length))
+        }
+    }
+    
+    function hiOn(a){
+        a!=null&&delStyleClass(a,"highlight")
+    }
+    
+    function backtoRecord(){
+        if(sforce.console.isInConsole()){
+            closeTab();
+        }else{
+            var url = "/{!recordId}";
+            window.open(url, '_parent');
+        }
+    }
+    
+    function forward(value , objectName){
+        var pageName = "Email_Forward_Page";
+        var url = "/apex/" + pageName+"?id={!caseId}&value="+value+"&page="+"EmailList&option=forward&objectname="+objectName+"&recordId={!recordId}";
+        if(sforce.console.isInConsole()){
+            openSubtab(url, 'Forward Email');
+        }else{
+            window.open(url, '_parent');
+        }
+    }
+    
+    function reply(value,objectName){
+        var pageName = "Custom_Email";
+        var url = "/apex/" + pageName+"?id={!caseId}&customEmailId="+value+"&option=reply&page="+"EmailList&objectname="+objectName+"&recordId={!recordId}";
+        if(sforce.console.isInConsole()){
+            openSubtab(url, 'Reply');
+        }else{
+            window.open(url, '_parent');
+        }
+    }
+    
+    function replyAll(value, objectName){
+        var pageName = "Custom_Email";
+        var url = "/apex/" + pageName+"?id={!caseId}&customEmailId="+value+"&option=replyAll&page="+"EmailList&objectname="+objectName+"&recordId={!recordId}";
+        if(sforce.console.isInConsole()){
+            openSubtab(url, 'Reply');
+        }else{
+            window.open(url, '_parent');
+        }
+    }
+    
+    function editDraft(value){
+        var pageName = "Custom_Email";
+        var url = "/apex/" + pageName+"?id={!CaseId}&customEmailId="+value+"&recordid={!recordId}";
+        if(sforce.console.isInConsole()){
+            openSubtab(url, 'Edit Draft Email'); 
+        }else{
+            window.open(url, '_parent');            
+        }
+    }
+    
+    function editHVCRDraft(){
+        //var url = "https://scca01.cs11.visual.force.com/apex/CACaseEmails?id={!caseId}&isdtp=vw";
+        var url = "https://scca01.na11.visual.force.com/apex/CACaseEmails?id={!caseId}&isdtp=vw";
+        
+        if(sforce.console.isInConsole()){
+            openSubtab(url, 'Edit Draft Email');
+        }else{
+            window.open(url, '_parent');
+        }
+    }
+  </script>
+  <left>
+    <apex:outputPanel >
+        <apex:outputText value="« " style="color:rgb(50,120,180)"/>
+        <a href="#" onclick="backtoRecord()"  style="color:rgb(50,120,180)">Back</a>
+    </apex:outputPanel>
+  </left>
+  
+  <apex:form id="pbForm" >
+  
+    <apex:actionFunction name="getMessage" action="{!getMessageDetail}" reRender="pbForm" status="myActionStatus" >
+      <apex:param name="first" value=""  assignTo="{!objectId}"  />
+      <apex:param name="second" value=""  assignTo="{!sObjectName}"  />
+      <apex:param name="third" value=""  assignTo="{!internalRowNum}"  />
+    </apex:actionFunction>
+    
+    <apex:actionFunction name="updateExpand" action="{!updateExpandValue}" reRender="pbForm" status="myActionStatus" >
+      <apex:param name="first" value=""  assignTo="{!objectId}"  />
+    </apex:actionFunction>
+    
+    <apex:outputPanel id="ReRenderArea">
+      <apex:pageMessages />
+    </apex:outputPanel>
+    <apex:outputPanel >
+      <apex:pageMessage rendered="{!NOT(ISBLANK($CurrentPage.parameters.message))}" summary="{!$CurrentPage.parameters.message}" severity="CONFIRM" strength="3" title="Success"/>
+    </apex:outputPanel>
+    <apex:outputPanel >
+      <apex:pageMessage rendered="{!NOT(ISBLANK($CurrentPage.parameters.messagefail))}" summary="{!$CurrentPage.parameters.messagefail}" severity="ERROR" strength="3" title="Fail"/>
+    </apex:outputPanel>
+    <apex:PageBlock >
+      <center>
+        <apex:commandButton onclick="SendAnEmail()" value="Send an Email"  reRender="ReRenderArea"/>
+        <apex:actionStatus id="statusUpdating">
+          <apex:facet name="start">
+            <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+          </apex:facet>
+        </apex:actionStatus>
+      </center> 
+      <apex:variable value="{!1}" var="rowNum"/>
+      <apex:PageBlockTable value="{!ListOfEmail}" var="a" columns="7" style="text-decoration:none;" width="100%" cellspacing="0" id="pgBlockTb" >
+        <apex:column headerValue="Detail" width="5%" headerClass="headerStyle" style="text-align:center;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+          <apex:outputPanel id="toExpandLink" rendered="{!NOT(a.isExpanded)}">
+            <a id="myHeader{!rowNum + 1}" href="javascript:getMessage('{!a.Id}' , '{!a.sObjectName}' , '{!rowNum}' );" style="font-size:12pt;color:rgb(50,120,180)">[ + ]</a>
+          </apex:outputPanel>
+          <apex:outputPanel id="toCollapseLink" rendered="{!a.isExpanded}">
+            <a id="myHeader{!rowNum + 1}" href="javascript:updateExpand('{!a.id}');" style="font-size:12pt;color:rgb(50,120,180)">[ - ]</a>
+          </apex:outputPanel>
+        </apex:column>
+        
+        <apex:column headerValue="Action" width="15%" headerClass="headerStyle" style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+          <apex:outputPanel >
+            <apex:commandLink value="Resend" action="{!SendEmail}" status="statusUpdating" rendered="{! a.legacyid == '' && a.status != 'Draft' && a.statustip=='Outbound'}"  style="color:rgb(50,120,180)" onclick="if(confirm('Confirm to send this email: {!a.subject}?')){}else{return false;}" oncomplete="location.reload(true);" >
+              <apex:param name="value" value="{!a.Id}" />
+              <apex:param value="12345" assignTo="{!statusResend}" name="statusResend" />
+              <apex:param value="{!a.sObjectName}" name="objectName"  />
+              <apex:param value="{!a.id}" name="objectId"  />
+            </apex:commandLink>
+            <apex:outputText value=" | " rendered="{! a.legacyid == '' && a.status != 'Draft' && a.statustip=='Outbound'}"/>
+            <apex:outputLink value="#" onClick="forward('{!a.Id}','{!a.sObjectName}')" style="color:rgb(50,120,180)" rendered="{!a.status != 'Draft'}">Forward</apex:outputLink>
+            
+            <apex:outputText value=" | " rendered="{!a.isIncoming}"/>
+            <apex:outputLink value="#" onClick="replyAll('{!a.Id}' , '{!a.sObjectName}')" style="color:rgb(50,120,180)" rendered="{!a.isIncoming}">Reply All</apex:outputLink>
+            <apex:outputText value=" | " rendered="{!a.isIncoming}"/>
+            <apex:outputLink value="#" onClick="reply('{!a.Id}' , '{!a.sObjectName}')" style="color:rgb(50,120,180)" rendered="{!a.isIncoming}">Reply</apex:outputLink>
+            
+            <!--<apex:commandLink value="Edit" action="{!editEmailDraft}" rendered="{!a.status = 'Draft' && a.sObjectName = 'Draft_Email__c'}"  style="color:rgb(50,120,180)"  >
+              <apex:param name="value" value="{!caseId}" />
+              <apex:param name="rowId" value="{!a.Id}" />
+            </apex:commandLink>-->
+            <apex:outputLink value="#" onClick="editDraft('{!a.Id}')" style="color:rgb(50,120,180)" rendered="{!a.status = 'Draft' && a.sObjectName = 'Draft_Email__c'}">Edit</apex:outputLink>
+            <apex:outputLink value="#" onClick="editHVCRDraft();" style="color:rgb(50,120,180)" rendered="{!a.status = 'Draft' && a.sObjectName = 'SCCA01__BCCaseEmail__c'}">Edit</apex:outputLink>
+            
+            <apex:outputText value=" | " rendered="{!a.status = 'Draft' && a.sObjectName = 'Draft_Email__c'}"/>
+            <apex:commandLink value="Send" action="{!sendEmailDraft}" rendered="{!a.status = 'Draft' && a.sObjectName = 'Draft_Email__c'}"  style="color:rgb(50,120,180)"  >
+              <apex:param name="value" value="{!caseId}" />
+              <apex:param name="rowId" value="{!a.Id}" />
+            </apex:commandLink>
+   
+            <apex:outputText value=" | " rendered="{!a.status = 'Draft' && a.sObjectName = 'Draft_Email__c'}"/>
+            <apex:commandLink value="Delete" action="{!DeleteEmailDraft}" rendered="{!a.status = 'Draft' && a.sObjectName = 'Draft_Email__c'}"  style="color:rgb(50,120,180)" onclick="if(confirm('Confirm to delete this email: {!a.subject}? ')){}else{return false;}" oncomplete="location.reload(true);" >
+              <apex:param name="value" value="{!caseId}" />
+              <apex:param name="rowId" value="{!a.Id}" />
+            </apex:commandLink>
+
+          </apex:outputPanel>
+        </apex:column>
+        
+        <apex:column headerValue="Status" value="{!a.status}" width="10%" headerClass="headerStyle"  style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey"/>
+        <apex:column headerValue="Remark"  width="10%" headerClass="headerStyle" style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+          <apex:variable var="imageVar" value="{!a.inboundPicture}"/>
+          <apex:image url="{!URLFOR($Resource.EmailPicture, imageVar)}"  rendered="{!imageVar != ''}" title="{!a.statusTip}" />
+          &nbsp;
+          <apex:variable var="imageVar2" value="{!a.attachmentPicture}"/>
+          <apex:image url="{!URLFOR($Resource.EmailPicture, imageVar2)}" rendered="{!imageVar2 != ''}" title="Has Attachment" />
+        </apex:column>
+        
+        <apex:column headerValue="Subject" width="30%" headerClass="headerStyle" style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey">
+          <apex:outputPanel id="expandLink" rendered="{!NOT(a.isExpanded)}">
+            <a href="javascript:getMessage('{!a.Id}' , '{!a.sObjectName}' , '{!rowNum}' );" style="color:black">{!a.subject}</a>&nbsp;
+          </apex:outputPanel>
+          <apex:outputPanel id="collapseLink" rendered="{!a.isExpanded}">
+            <a href= "javascript:updateExpand('{!a.id}');" style="color:black">{!a.subject}</a>&nbsp;
+          </apex:outputPanel>
+          <apex:variable var="rowNum" value="{!rowNum + 1}"/>
+        </apex:column>
+        
+        <apex:column headerValue="Email Address" value="{!a.email} " width="15%" headerClass="headerStyle"  style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey"/>
+        <apex:column headerValue="Message Date" value="{!a.CreatedDate}" width="25%" headerClass="headerStyle"  style="text-align:left;border-bottom-width:1px;border-style:solid;border-color:lightgrey"  />
+        
+        <apex:column colspan="7" breakBefore="true" width="100%" style="margin:0px;padding:0px;border-bottom-width:0px;border-style:solid;border-color:lightgrey">
+          <div style="clear:both;"></div>
+          <apex:outputPanel id="dataHolder" rendered="{!a.isExpanded}">
+            <apex:variable var="imageVar3" value="{!a.attachmentPicture}"/>
+            
+            <table cellspacing="0" style="width:100%;table-layout:fixed;">
+              <tr id="FrmAddress{!rowNum}" style="{!IF(a.fromAddress != '' , 'display:block' ,'display:none;')}">
+                <td id="FrmAddressD{!rowNum}" style="border-width:0px;width:100px" bgcolor="#EEEEEE"><apex:outputText rendered="{! a.fromAddress != ''}">From&nbsp;:</apex:outputText></td>
+                <td style="border-width:0px;" bgcolor="#EEEEEE" ><apex:outputText rendered="{! a.fromAddress != ''}">{! a.fromAddress}</apex:outputText></td>
+              </tr>
+              <tr id="TAddress{!rowNum}" style="{!IF(a.toAddress != '' , 'display:block' ,'display:none;')}">
+                <td id="TAddressD{!rowNum}" style="border-width:0px;width:100px" bgcolor="#EEEEEE"><apex:outputText rendered="{! a.toAddress != ''}">To&nbsp;:</apex:outputText></td>
+                <td style="border-width:0px;" bgcolor="#EEEEEE" ><apex:outputText rendered="{! a.toAddress != ''}">{! a.toAddress}</apex:outputText></td>
+              </tr>
+              <tr id="CCAddress{!rowNum}" style="{!IF(a.ccAddress != '' , 'display:block' ,'display:none;')}" >
+                  <td id="CCAddressD{!rowNum}" style="border-width:0px;width:100px" bgcolor="#EEEEEE"><apex:outputText rendered="{! a.ccAddress != ''}">CC&nbsp;:</apex:outputText></td>
+                  <td style="border-width:0px;" bgcolor="#EEEEEE" ><apex:outputText rendered="{! a.ccAddress != ''}">{! a.ccAddress}</apex:outputText></td>
+              </tr>
+              <tr id="BCCAddress{!rowNum}" style="{!IF(a.bccAddress != '' , 'display:block' ,'display:none;')}">
+                <td id="BCCAddressD{!rowNum}" style="border-width:0px;width:100px" bgcolor="#EEEEEE"><apex:outputText rendered="{! a.bccAddress != ''}">BCC&nbsp;:</apex:outputText></td>
+                <td style="border-width:0px;" bgcolor="#EEEEEE" ><apex:outputText rendered="{! a.bccAddress != ''}">{! a.bccAddress}</apex:outputText></td>
+              </tr>
+              <tr id="Attachment{!rowNum}" style="{!IF(a.link.size != 0 , 'display:block' ,'display:none;')}">
+                <td id="AttachmentD{!rowNum}" style="border-width:0px;width:100px" bgcolor="#EEEEEE"><apex:outputText rendered="{! a.link.size != 0}">Attachment(s)&nbsp;:</apex:outputText></td>
+                <td style="border-width:0px;" bgcolor="#EEEEEE" >
+                  <apex:repeat value="{!a.link}" var="item">
+                    <a href="{!item.link}" target="_new" style="color:rgb(50,120,180)">{!item.Name}</a>&nbsp;&nbsp;<apex:outputText rendered="{! item.sep != ''}">{! item.sep}</apex:outputText>&nbsp;
+                  </apex:repeat>
+                </td>
+              </tr>
+              <tr id="Message{!rowNum}" bgcolor="#FFFFFF" style="{!IF(a.textBody != '' , 'display:block' ,'display:none;')}">
+                <td id="MessageD{!rowNum}" style="border-width:0px;vertical-align:top;width:100px" bgcolor="#FFFFFF" >
+                  <apex:outputText rendered="{! a.textBody != ''}" >Message&nbsp;:</apex:outputText>
+                </td>
+                <td style="border-width:0px;text-align:left;" bgcolor="#FFFFFF">
+                  <div style="width:630px;text-wrap:suppress;word-wrap:break-all;"><apex:outputText rendered="{! a.textBody != ''}" escape="false" value="{!a.textBody}"></apex:outputText></div>
+                </td>           
+              </tr>                
+              <tr >
+                <td align="center" style="width:100px" bgcolor="#EEEEEE">
+                  <a id="myHeader{!rowNum}" href="javascript:updateExpand('{!a.id}');" style="font-size:8pt;color:rgb(50,120,180)">[ - ]</a>
+                </td>
+                <td bgcolor="#EEEEEE">&nbsp;</td>
+              </tr>
+            </table>                                
+          </apex:outputPanel>
+        </apex:column>
+      </apex:pageBlockTable>  
+    </apex:PageBlock>
+  </apex:form> 
+</apex:page>

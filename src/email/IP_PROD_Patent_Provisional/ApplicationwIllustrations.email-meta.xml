@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>pap app1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Application w/ Illustrations</name>
+    <style>none</style>
+    <subject>Application w/ Illustrations</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for using LegalZoom.
+
+You will find a copy of your Provisional Application for Patent attached to this email. Please look over the application thoroughly to ensure that all of the provided information is correct. Once filed, changes cannot be made.
+
+1. If no changes are needed, simply reply to this e-mail with instructions to continue filing as is.
+2. If changes are required, please make changes TO THE ATTACHED DOCUMENT*, save it to your computer, and email us the revised document as an attachment with instructions to &quot;apply the changes as attached.&quot;
+
+*Note: The &quot;Abstract&quot; field is limited to 150 words. Details should be listed within the &quot;Description&quot; section.
+
+If no response is received within 15 days, we will continue with the filing of your Provisional Application for Patent with the U.S. Patent and Trademark Office (USPTO). If more time is needed, simply let us know and we will put your order on hold.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+Thank you again for choosing LegalZoom.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

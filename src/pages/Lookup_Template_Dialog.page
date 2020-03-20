@@ -1,0 +1,112 @@
+<apex:page standardcontroller="Case" extensions="Lookup_Template_Dialog_Controller" title="Lookup Dialog" showHeader="false" sidebar="false">
+<script type="text/javascript">
+//function changeStart(start){
+//    window.location="/apex/Lookup_Template_Dialog"+"?id={!$CurrentPage.parameters.Id}&start="+start;
+//}
+//function bodyOnLoad() {
+//  if({!NOT(ISBLANK($CurrentPage.parameters.lksrch))}){
+//    document.getElementById('{!$Component.theform.lksrch}').value = '{!$CurrentPage.parameters.lksrch}';
+    
+//  }
+//}
+function selectdata(a){
+    window.opener.pickupValue3(a);
+    window.close();                                          
+}
+</script>
+<body class="hasMotif lookupTab  LookupSearchFrame" >
+  <apex:form id="theform" >
+   <apex:pageMessages />
+    <div class="lookup">
+    <div class="bPageTitle">
+    <div class="ptBody secondaryPalette">
+    <div class="content">
+    <!--<img src="/s.gif" alt="" class="pageTitleIcon" title="" />-->
+    <!--<h1>Lookup</h1>-->
+    </div>
+    </div>
+    </div>
+    <div class="pBody">
+    <label for="lksrch">Folder</label> 
+    <apex:actionFunction name="search" action="{!searchContact}" />
+    <!--<apex:inputText id="lksrch" value="{!textdatat}" size="20" maxlength="80" />-->
+    <apex:selectList id="lksrch" value="{!textdatat}" size="1">
+        <apex:selectOptions value="{!folders}"/>
+        <apex:actionSupport event="onchange" status="statusUpdating" rerender="result" />
+    </apex:selectList>
+    <apex:actionStatus id="statusUpdating">
+                                <apex:facet name="start">
+                                    <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+                                </apex:facet>
+    </apex:actionStatus>
+    <div class="bDescription"></div>
+    </div>
+    </div>
+    <div class="lookupSearch">
+    <div class="clearResults"> 
+    <apex:actionFunction name="Clear" action="{!ClearResult}" />
+    <script type="text/javascript">
+    function clearSearch() {
+        document.getElementById('{!$Component.theform.lksrch}').value = '';
+        Clear();
+    }
+    </script> 
+    <a href="javascript:clearSearch()"></a></div>
+    <div class="srch"></div>
+    <div class="individualPalette">
+    <div class="list0">
+    <div class="bRelatedList" id="Contact">
+    <a name="Contact_target"></a>
+    <div id="srchErrorDiv_Contact" style="display: none">
+    <span class="errorMsg">Error: null</span></div>
+    <div class="listRelatedObject contactBlock">
+    <div class="bPageBlock secondaryPalette">
+    <apex:outputPanel id="result">
+    <div class="pbHeader">
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="pbTitle">
+            <!--<img src="/s.gif" alt="" width="1"  height="1" class="minWidth" title="" />--> 
+            <!--<img src="/s.gif" alt="" class="relatedListIcon" title="" />-->
+            <h3><span class="searchFirstCell">Templates [{!searchT.size}] </span></h3>
+            </td>
+            <td class="pbButton">&nbsp;</td>
+            <td class="pbHelp"></td>
+        </tr>
+    </table>
+    </div>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!searchT}" var="r" columns="3">
+            <apex:column headerClass="headerStyle">
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputPanel >
+                    <apex:commandLink value="{!r.name}" onclick="selectdata('{!r.Id}')" style="text-align:left;color:black" />
+                </apex:outputPanel>
+            </apex:column>
+            <apex:column headerClass="headerStyle">
+                <apex:facet name="header">Type</apex:facet>
+                <apex:outputPanel >
+                    <apex:outputLabel value="{!r.templatetype}" style="text-align:left;color:black"></apex:outputLabel>
+                </apex:outputPanel>
+            </apex:column>
+            <apex:column headerClass="headerStyle">
+                <apex:facet name="header">Template Hotkey</apex:facet>
+                <apex:outputPanel >
+                    <apex:outputLabel value="{!r.description}" style="text-align:left;color:black"></apex:outputLabel>
+                </apex:outputPanel>
+            </apex:column>
+        </apex:pageBlockTable>
+        <apex:outputPanel rendered="{!searchT.size == 0}" >
+                    <apex:outputText value="No record to display" />
+         </apex:outputPanel>
+    </apex:pageBlock>
+    </apex:outputPanel>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+     </apex:form>
+    </body>
+</apex:page>

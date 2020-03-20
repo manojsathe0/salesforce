@@ -1,0 +1,56 @@
+<apex:page controller="IADSecurityQuestionController" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false"
+           showHeader="false" standardStylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+    <apex:includeScript value="/support/console/36.0/integration.js" />
+     <script type="text/javascript">
+         window.onload = function() {
+            populateSecurityQuestion();
+         };
+     </script>
+    </head>
+    <body>
+        <div class = "slds">
+              <apex:form id="theForm">
+                   <c:IADMessageBox theMessages="{!securityQuestionService.iadMessages}" />
+         <apex:actionFunction name="populateSecurityQuestion" action="{!populateSecurityQuestion}" rerender="theForm" status="statusUpdating" />
+                  
+                  
+                  
+       
+        <div class="slds-modal .slds-modal--large slds-fade-in-open" aria-hidden="false" role="dialog">
+                <div class="slds-modal__container">
+                  <div class="slds-modal__header">
+                      <h2 class="slds-text-heading--medium">Security Question</h2>
+                  </div>
+                   <div class="slds-modal__content slds-p-around--medium">
+                    <div align="Center">
+                        <apex:outputPanel >
+                                <apex:actionStatus id="statusUpdating">
+                                      <apex:facet name="start">
+                                     <div class="slds-form--inline">
+                                        <div class="slds-form-element" >
+                                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                              <div class="slds-spinner__dot-a"></div>
+                                              <div class="slds-spinner__dot-b"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      </apex:facet>
+                                </apex:actionStatus>
+                                </apex:outputPanel>
+                      <p > <b>{!securityQuestionService.securityQuestion[0].securityQuestion.question}</b></p>
+                      <p>{!securityQuestionService.securityQuestion[0].securityQuestion.answer}</p>
+                    </div>
+                  </div>
+                </div>
+        </div>
+        <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+        
+        </apex:form>
+        </div>
+    </body>
+    </html>
+</apex:page>

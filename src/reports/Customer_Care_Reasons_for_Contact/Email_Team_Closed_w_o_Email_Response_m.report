@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(Activity.Number_Outgoing_Emails__c:SUM &gt;Case.Units__c:SUM, 0,Case.Units__c:SUM -Activity.Number_Outgoing_Emails__c:SUM)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Closed Cases w/o Email Response</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Case.Units__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Closed Cases from Incoming Emails</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_62516487</developerName>
+        <masterLabel>Agent Closed</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Case$LastModifiedBy</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Hassim Muthleb</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>aaron Lopez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Adam Borrego</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Holland Rancier</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeanne Sommers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Molly Freeman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Marie Nguyen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Courtney Stoker</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rodney Thomas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Adam Alejandro</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carrie Frizzell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carmen Williams</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Knatasha Chambers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Brett Copenhaver</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Channa Spencer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Peavey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kaitlyn Sughrue</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Michael De Luca</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Rebecca Belisle</sourceValue>
+            </sourceValues>
+            <value>Team Abel</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Case$LastModifiedBy</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Small</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>Incoming Email to Cases</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Case.Activities$Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Queue__c</field>
+    </columns>
+    <columns>
+        <field>Case$Origin</field>
+    </columns>
+    <columns>
+        <field>Case$Status</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Action__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Type__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Number_Outgoing_Emails__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_62516487</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case$Status</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_62516487</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Team Abel</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Week</dateGranularity>
+        <field>Case$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case$LastModifiedBy</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Email Team: Closed w/o Email Response_m</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Case_with_Activities_Custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <sortColumn>Case.Activities$Number_Outgoing_Emails__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Case$ClosedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Divorce Guide Email Template</name>
+    <style>none</style>
+    <subject>Divorce Guide Email Template</subject>
+    <textOnly>Dear XXXXXXXXXX,
+
+Thank you for your interest in our Divorce package. As we discussed from our earlier conversation, enclosed you will find LegalZoom&apos;s &quot;Guide to Uncontested Divorce&quot; as an attachment to this email. This guide has helped many customers to further understand the process of an Uncontested Divorce.
+
+If you are interested in our Divorce Package please:
+
+1. Log into the LegalZoom site 
+2. Complete our simple online form 
+3. Proceed through the checkout page and in 3-5 business days your order will be processed.
+
+Thank you and please call me at {!snippetVariable.ccphone} if we can be of further assistance. 
+
+Best regards,
+
+XXXX and the LegalZoom Team
+ 
+Personal Services Division
+XXXXX@legalzoom.com
+
+{!snippetVariable.lz_address}
+
+{!snippetVariable.ccphone}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>comord</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Completed Order</name>
+    <style>none</style>
+    <subject>Completed Order</subject>
+    <textOnly>Your Legalzoom Order # XXXXXXX ? Your Completed 501c3 Documents
+
+Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing LegalZoom.com for your legal document needs.
+
+Please find attached your completed 501c3 application documents. Hard copies have already been shipped from our office. 
+
+If you have any questions regarding your order, please contact our Customer Care Department at (800) 773-0888 or nonprofit@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+Thank you for placing your order with us.
+
+Best regards,
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

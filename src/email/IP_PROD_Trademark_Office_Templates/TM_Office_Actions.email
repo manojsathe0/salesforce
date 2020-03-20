@@ -1,0 +1,24 @@
+<html><div class="emailHeader"><body bgcolor="#FFFFFF" style="margin-top:0px;"><img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br><table width="614" border="0" cellspacing="0" cellpadding="0" align="center"><tr><td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;"></td></tr></table><table cellpadding="4" cellspacing="0" border="0" width="614" align="center"><tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr><tr><td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">
+
+Dear {!Contact.FirstName},
+<p>
+Thank you for contacting LegalZoom about the Office Action issued in connection with your trademark application.
+<p>
+As noted on our website and in the Help Guide that accompanied your trademark application packet, there is an examination process that follows the filing of a trademark application. In that process, a U.S. Patent and Trademark Office (USPTO) examining attorney reviews the trademark application. If there is a problem, the examining attorney issues an Office Action to notify the applicant of the reasons why registration is being refused, including if any application requirements were not met.
+<p>
+An applicant has an opportunity to respond to an Office Action issued in connection with a trademark application. However, the time to do so is limited. If the USPTO does not receive a proper response by the deadline set forth in the Office Action, the trademark application will be declared abandoned. <i> (Note: Generally, most responses to Office Actions must be received by the USPTO within 6 months from the mailing date on the Office Action. However, in certain circumstances, the Office Action will specify a different time period. It is important for you to review the Office Action that was issued in connection with your application and determine the response deadline for your Office Action.) </i>
+<p>
+You may access information about the status of your trademark application and download a copy of the Office Action issued in connection with your application using the Trademark Status & Document Retrieval (TSDR) database on the <a href=http://tsdr.uspto.gov/>USPTO website</a>. Additional information about the Office Action and the applicable response deadline can be found in the Office Action itself.
+<p>
+As you know, LegalZoom is not a law firm and cannot provide you with any legal advice or recommendations. In deciding how to respond to the Office Action issued in connection with your application, there are many resources available to you. For example, you can contact the USPTO examining attorney assigned to your application directly with any questions about the Office Action or seek the advice of a qualified attorney to help you respond to the Office Action.  Depending on your state, you may also be able to sign up for a LegalZoom business legal plan to discuss your options with an <a href=http://www.legalzoom.com/attorneys-lawyers/legal-plans/business.html for more information about the availability and scope of such plans> attorney</a>.
+<p>
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.<br/><br/>
+
+Best regards,
+<p>
+The LegalZoom Team
+
+</p></div><div class="emailBody"><p class="templateBody"></p></div><div class="emailFooter"><p><br></td></tr></table><table width="614" border="0" cellspacing="0" cellpadding="5" align="center">  <tr>    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>.<br><br>
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.<br /><br />Please add services@emails.legalzoom.com to your address book.<br /><br />
+This email was sent to: {!Contact.Email}  <br /><br /> <br><br>  &copy; LegalZoom.com, Inc. All rights reserved. </span></td></tr></table></body></p></div></html>

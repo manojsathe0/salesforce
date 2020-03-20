@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>ip1290</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Ennio O.</name>
+    <style>none</style>
+    <textOnly>Ennio O.
+Intellectual Property Division
+www.LegalZoom.com
+{!snippetVariable.ccphone} ext. 1290</textOnly>
+    <type>custom</type>
+</EmailTemplate>

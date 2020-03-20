@@ -1,0 +1,59 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName}, <br/><br/>Thank you for contacting LegalZoom. Our records show that the application for your work, &#34;XXXXXXXXXXXX,&#34; was entered into the Copyright Office&#39;s system for processing on XXXXXXXXXX. Please note that the delay between the date the Copyright Office receives your application and the date it is entered into their system for processing is normal. Your application&#39;s corresponding Service Request Number is XXXXXXXXXX.<br/><br/>Please note that the Copyright Office has recently revised its projected timeline for registration to up to 3 months, from the date an application is received by their offices. <br/><br/>Unfortunately, once your application is entered by the Copyright Office, LegalZoom has no way of tracking its status. If you would like to contact the Copyright Office directly, you can either call 202-707-5959, or visit their website <a href=http://www.copyright.gov/help/general-form.html>here</a> and complete the online inquiry form. In general, the latter method is the most efficient, and a representative from the Copyright Office should respond to you within 1-2 business days. <br/><br/>If you decide to contact the Copyright Office, please reference the name of the author of the work, as well as the title and Service Request Number. Please do NOT reference your LegalZoom order number, for it will not appear in the Copyright Office&#39;s records. <br/><br/>Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.<br/><br/>Best regards,<br/><br/>LegalZoom {!snippetVariable.ipdc_dept_full} <br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/>
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

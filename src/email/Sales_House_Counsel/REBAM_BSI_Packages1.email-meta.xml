@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>House Counsel - Follow Up 2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>House Counsel - Follow Up 2</name>
+    <style>freeForm</style>
+    <subject>LegalZoom - House Counsel</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+
+It was a pleasure speaking with you today.  As discussed, you can learn more about our House Counsel program and directly enroll by visiting our provider&apos;s website at www.arroyolawgroup.com/housecounsel.  Please feel free to contact us with additional questions or to discuss in more detail at (888) 785-4480, Monday - Friday from 9:00 am to 6:00 pm CST or email us at housecounsel@legalzoom.com.
+
+
+Sincerely,
+
+
+
+{!User.FirstName}
+
+(800) 773-0888 x{!User.Extension}
+
+www.legalzoom.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

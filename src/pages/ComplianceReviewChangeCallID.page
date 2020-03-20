@@ -1,0 +1,108 @@
+<apex:page doctype="html-5.0" controller="ComplianceReviewChangeCallIDController" sidebar="false" showheader="false">
+<apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-ui-1.8.20.custom.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.JQuery, '/postmessage/jquery.ba-postmessage.js')}"/>
+
+<style type="text/css">
+    .recordCallIDError { color: red; font-weight: strong;}
+
+        .custPopup{
+        	float : left;
+        	position: absolute;
+        	top:50%;
+            left: 50%;
+            margin-top: -50px;
+			margin-left: -160px;
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            padding:10px;
+            width: 300px;  
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+    	
+    	input[type="button"], input[type="reset"], input[type="submit"] {
+	        float: left;
+    		margin-left: 130px;
+		}
+
+</style>
+    
+    
+<script language="javascript">
+ function ReloadParent()
+ { 
+	if ( document.getElementById("j_id0:form:pageBlock:pageBlockSection:pageBlockSectionItem_ChangeCallID:recordCallIDField").value=='' ) 
+	{
+        $('.custPopup').hide();
+        $('.popupBackground').hide();
+     }
+     else
+     {
+     	$('.custPopup').hide();
+        $('.popupBackground').hide();
+     	//window.top.close();
+    	//window.close();
+     }
+ }  
+    
+ function Successful()
+ {
+    alert('SUCCESS');
+ }
+</script>
+
+    
+    
+<body class="hasMotif lookupTab  LookupSearchFrame" >
+  <apex:messages styleClass="recordCallIDError"/>
+  <apex:form id="form" >  
+        
+        <apex:pageBlock id="pageBlock" title="Change Record Call ID#" >
+            <apex:pageBlockSection id="pageBlockSection">
+                <apex:pageBlockSectionItem id="pageBlockSectionItem_ChangeCallID">
+                    <apex:outputText value="Recorded Call ID"/>
+                     <apex:outputPanel styleClass="requiredInput" layout="block">                         
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:inputText id="recordCallIDField" styleClass="recordCallIDField" value="{!recordCallId}" />
+                        </div>
+                     </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom" id="buttons">
+                           <apex:commandButton id="savebutton" value="Save"  action="{!save}"  >
+                  <apex:actionSupport event="onclick"
+                                action="{!showPopup}"
+                                rerender="frm1"/>
+                             </apex:commandButton>
+                <apex:commandButton value="Cancel" onClick="window.top.close();" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+      
+        <!-- Dialog Box -->
+        <apex:outputPanel id="tstpopup" >
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!IsError}" />
+            <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!IsError}">
+            	<h1>Message :</h1><br/><br/>
+                {!errorMessage}<br/><br/>
+                
+                <input type="button" onclick="javascript:ReloadParent();" value="OK"/>
+            </apex:outputPanel>
+        </apex:outputPanel>
+      
+      
+   </apex:form>
+</body>
+</apex:page>

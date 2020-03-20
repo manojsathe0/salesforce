@@ -1,0 +1,451 @@
+<apex:page controller="IADInstallmentPaymentController" standardstylesheets="false"  docType="html-5.0" id="page">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:includeScript value="/support/console/34.0/integration.js" />
+        <script type="text/javascript">
+            var currentTabId = '';
+
+
+            function closeAndFocusOtherTab() {
+
+                checkIfStoreCredit();
+                setTimeout(function() {
+                    console.log('amoutn due ' + $('#amountDueHidden').val());
+                    if ($('#amountDueHidden').val() == '0.00' || '{!invokingPage}'=='Installment') {
+                        $('#process').attr('disabled', 'disabled');
+                        setTimeout(function() {
+                            if('{!invokingPage}'=='Order'){
+                                sforce.console.fireEvent('FocusOrderTabEvent', '{!invokingPageId}', null);
+                            }
+                            else if('{!invokingPage}'=='Installment'){
+                                sforce.console.fireEvent('FocusInstallmentTabEvent', '{!invokingPageId}', null);
+                                sforce.console.fireEvent('UpdateInstallmentTabEvent', '{!invokingPageId}', null);
+                                sforce.console.fireEvent('RefreshInstallmentEvent',  null);
+                            }
+                            if($('#isStoreCredit').val() == 'true'){
+                                sforce.console.fireEvent('RefreshStoreCreditsPanel', null);
+                            }
+                            sforce.console.fireEvent('RefreshPayments', null);
+                            closeCurrentTab();
+                        }, 5000);
+                    }
+                }, 1000);
+
+
+            }
+            function refreshBalance() {
+
+                checkIfStoreCredit();
+                if ($('#Status').val() == 'Approved') {
+                    $.when(populateOrderBalance()).then(closeAndFocusOtherTab());
+                }
+
+            }
+            jQuery(document).ready(function($) {
+                $('#mainForm').on("change", "input[type='checkbox']", function() {
+                    changeTotal();
+                });
+
+            });
+
+            function closeCurrentTab() {
+                sforce.console.getEnclosingTabId(closeSubtab);
+            }
+
+            var closeSubtab = function closeSubtab(result) {
+                var tabId = result.id;
+                sforce.console.closeTab(tabId);
+            };
+
+
+            var listener = function(result) {
+                if (result.message == currentTabId) {
+                    location.reload(true);
+                }
+            };
+            sforce.console.addEventListener('RefreshTab', listener);
+            window.onload = function() {
+                populateOrderBalance();
+            };
+
+            function changeTotal() {
+                var inst = document.getElementById("installment").value;
+                var instCB = document.getElementById('instCB').checked;
+
+                var total = 0.00;
+                var zero = 0.00;
+                if (getUrlParameter('refund') == '1') {
+                    var total = parseFloat(getUrlParameter('amount'));
+                }
+                else if (instCB && inst != '' && isNumeric(inst)) {
+                    total = parseFloat(inst);
+                }
+                else {
+                    total = 0.00;
+                    $('input:checkbox.otherCB').each(function() {
+                        if (this.checked) {
+                            var index = $(this).attr('id');
+                            index = index.replace('cb', '');
+                            total+=parseFloat($('#in'+index).val());
+                        }
+                    });
+                }
+                if(isNumeric(total)){
+                    document.getElementById("total").innerHTML = total.toFixed(2);
+                }
+                else{
+                     document.getElementById("total").innerHTML = zero.toFixed(2);
+                }
+            }
+            function uncheckOthers(){
+                $('input:checkbox.otherCB').each(function() {
+                    this.checked = false;
+                });
+            }
+            function uncheckTop(){
+                $('input:checkbox.topCB').each(function() {
+                    this.checked = false;
+                });
+            }
+            <!-- Changes added by Artyom M. per B-15671 -->
+            function checkOthers(){
+                $('input:checkbox.otherCB').each(function() {
+                    this.checked = true;
+                });
+            }
+            function checkTop(){
+                $('input:checkbox.topCB').each(function() {
+                    this.checked = true;
+                });
+            }
+
+            function isNumeric(num) {
+                return !isNaN(num)
+            }
+            function getSelectOptionsSer(){
+                var val = $('#options').val();
+                console.log('val is ' + val);
+                addRow(val);
+            }
+            function setTheProfileId(){
+                 var theprofileid =  $( 'select[name*="profileOptions"]' ).val();
+                 console.log('theprofile id ' + theprofileid);
+                 setProfileIdAndPay(theprofileid);
+            }
+            function postPayment() {
+                var theTotal = $('#total').html();
+                console.log('total amount ' + theTotal);
+                var instCB = document.getElementById('instCB').checked;
+
+                goToPostPayment(theTotal);
+            }
+
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            };
+            function checkIfStoreCredit(){
+                 var theprofileid =  $( 'select[name*="profileOptions"]' ).val();
+                 console.log('theprofile id ' + theprofileid);
+                 if(theprofileid.includes('sc')){
+                    $('#theEmail').hide();
+                    $('#theReasons').hide();
+                 }
+                 else{
+                    $('#theEmail').show();
+                    $('#theReasons').show();
+                 }
+                 darkenJS();
+            }
+
+        </script>
+        <style>
+            .slds .slds-form-element__static {
+                line-height: 40px;
+            }
+            .slds .slds-form--compound .slds-form-element__row {
+             margin-bottom: 0px;
+                }
+        </style>
+
+    </head>
+
+    <body id="body">
+        <div id="mainForm" class="slds">
+
+            <div class="slds-m-left--medium">
+
+                <div class="slds-text-heading--small">{!paymentType}</div>
+                <br />
+                <apex:form id="theForm">
+
+                    <input id="Status" type="hidden" value="{!responseStatus}" />
+
+                    <input id="amountDueHidden" type="hidden" value="{!amountDue}" />
+
+                    <input id="isStoreCredit" type="hidden" value="{!isStoreCreditPayment}" />
+
+                    <apex:actionFunction name="populateOrderBalance" action="{!populateOrderBalances}" rerender="theForm" status="statusUpdating"
+                        onComplete="populateProfiles(); return false" />
+
+
+                    <apex:actionFunction name="addRow" action="{!addOtherAmt}" status="statusUpdating" rerender="theForm" immediate="true" oncomplete=" checkIfStoreCredit(); return false;"  />
+
+
+                    <apex:actionFunction name="goToPostPayment" action="{!postPayment}" rerender="theForm" status="statusUpdating"  onComplete="refreshBalance(); return false;">
+                        <apex:param name="totalAmount" value="" />
+                    </apex:actionFunction>
+                    <apex:actionFunction name="setProfileIdAndPay" action="{!setProfileIdManual}" rerender="none" oncomplete="postPayment();" >
+                        <apex:param assignTo="{!profileId}" name="profileId" value="" />
+                    </apex:actionFunction>
+                    <apex:actionFunction name="setProfileId" action="{!setProfileIdManual}" rerender="none" oncomplete="checkIfStoreCredit();" >
+                        <apex:param assignTo="{!profileId}" name="profileId" value="" />
+                    </apex:actionFunction>
+                    <div class="slds-form" id="firstdiv">
+
+                        <div >
+                            <table style="width:70%">
+
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input onchange = "uncheckOthers(); changeTotal(); return false;" type="checkbox" class="topCB" name="options" id="instCB" />
+                                            <!-- Changes added by Artyom M. per B-15671 -->
+                                            <script>
+                                                checkTop();
+                                                changeTotal();
+                                            </script>
+                                            <span class="slds-checkbox--faux"></span>
+                                            <span class="">{!paymentName} :</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-form-element">
+                                            <div class="slds-form-element__control slds-input-has-fixed-addon">
+                                                <span class="slds-form-element__addon">$</span>
+                                                <input id="installment" class="slds-input" type="text" value="{!amount}" disabled="disabled" />
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                        <br/>
+                                    </td>
+                                </tr>
+
+                                <tr style="{!IF(OR(otherAmntList.size!=0, paymentName=='Installment'),'display:none', '')}">
+                                    <td >
+                                        <label id="otherAmntLabel" class="" for="textareaSample2"><apex:outputLink value="" onclick="getSelectOptionsSer(); return false;">Add other amount</apex:outputLink></label>
+                                    </td>
+                                </tr>
+
+
+
+                                <apex:repeat value="{!otherAmntMap}" var="otherAmntIndx" >
+                                    <tr class="trOther" id="tr{!otherAmntIndx + 2}">
+                                        <td>
+                                            <div >
+                                                <input id="cb{!otherAmntIndx + 2}" class="otherCB" onchange = "uncheckTop(); changeTotal(); return false;" type="checkbox" name="options"/>
+                                                <!-- Changes added by Artyom M. per B-15671 -->
+                                                <script>
+                                                    checkOthers();
+                                                    uncheckTop();
+                                                    changeTotal();
+                                                </script>
+                                                <span class="slds-checkbox--faux"/>
+                                                <span class="">Other Amount :</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-form-element">
+                                                <div class="slds-form-element__control slds-input-has-fixed-addon">
+                                                    <span class="slds-form-element__addon">$</span>
+                                                    <input id="in{!otherAmntIndx + 2}" oninput="changeTotal(); return false;" class="slds-input otherAmnt" type="text" placeholder="0.00" value="{!otherAmntMap[otherAmntIndx].amount}" />
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                     <tr height="20px" >
+                                    <td colspan="4" style="line-height:0">
+
+                                        <hr style="padding:0px; margin:0px;  display:none;" />
+                                    </td>
+
+                                </tr>
+                                </apex:repeat>
+
+                                <tr height="20px">
+                                    <td colspan="5">
+
+                                        <hr style="padding:0px; margin:0px;" />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <span class="">Process Total :</span>
+                                        </div>
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="slds-form-element">
+                                            <div class="slds-form-element__control slds-input-has-fixed-addon">
+                                                <span class="slds-form-element__addon">$</span>
+                                               <div class="slds-form-element__control">
+                                                <span id="total" class="slds-form-element__static">0.00</span>
+                                              </div>
+                                            </div>
+                                              
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <span class="">Amount Due :</span>
+                                        </div>
+                                    </td>
+
+                                    <td colspan="2">
+                                        <div class="slds-form-element">
+                                            <div class="slds-form-element__control slds-input-has-fixed-addon">
+                                                <span class="slds-form-element__addon">$</span>
+                                               <span class="slds-form-element__control">
+                                                <span id="amount_due" class="slds-form-element__static">{!amountDue}</span>
+                                              </span>
+                                            </div>
+                                              
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                        <br/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <span class="">Method of Payment :</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-form-element">
+                                            <c:IADPaymentProfilesDropdown theUserId="{!customerId}" theOrderId="{!orderNum}" theInvokingPageType="MakePayment"  />
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr  id="theReasons">
+                                    <td>
+                                        <span class="">Reason :</span>
+                                    </td>
+                                    <td>
+                                        <div class="slds-form-element">
+                                            <div class="slds-select_container">
+                                                <apex:selectList value="{!selectedReason}" multiselect="false" size="1" styleClass="slds-select" >
+                                                    <apex:selectOptions value="{!paymentReasons}" />
+                                                </apex:selectList>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="">Comments :</span>
+                                    </td>
+                                    <td>
+                                        <div class="slds-form-element">
+                                            <apex:inputTextarea value="{!comments}" styleClass="slds-textarea" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                        <br/>
+                                    </td>
+                                </tr>
+                                <tr id="theEmail">
+                                    <td>
+                                        <span class="">Notification Email :</span>
+                                    </td>
+                                    <td>
+                                        <div class="slds-form-element">
+                                            <apex:input type="email" styleClass="slds-input" value="{!email}" />
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+
+                            <c:IADMessageBox theMessages="{!paymentService.iadMessages}" rendered="{!paymentService.iadMessages.size>0}" />
+                            <div class="slds-m-top--xx-large slds-float--left slds-m-bottom--x-large">
+
+                                <button class="slds-button slds-button--neutral" onClick="closeCurrentTab();">Cancel</button>
+                                <button id="process" onclick="setTheProfileId(); return false;" class="slds-button slds-button--brand">Process</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <apex:outputPanel id="spinner">
+                        <apex:actionStatus id="statusUpdating">
+                            <apex:facet name="start">
+                                <div class="slds-spinner_container">
+                                    <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                        <div class="slds-spinner__dot-a"></div>
+                                        <div class="slds-spinner__dot-b"></div>
+                                    </div>
+                                </div>
+                            </apex:facet>
+                        </apex:actionStatus>
+
+                    </apex:outputPanel>
+                </apex:form>
+            </div>
+
+        </div>
+
+
+    </body>
+
+    </html>
+</apex:page>

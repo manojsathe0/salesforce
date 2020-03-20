@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_94084656</developerName>
+        <masterLabel>BCS Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Abel Ojeda</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carolina Sotomayor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Celesta Duplechain</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christopher Bailey</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Daniel Tashjian</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Danielle Holliman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>David Andrews</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Denise Fabian</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Erika Cushingberry</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Heather Madrigal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeanette Martinez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeremy Thomas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jesse Lucero</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jessica Hudson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>John Diaz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Richardson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Loena Rodgers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Maria Chavez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Mary Stanislao</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Miyah Bradford</sourceValue>
+            </sourceValues>
+            <value>bcs</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Nancy Gutierrez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Natalie Martinez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Natalie Trotter</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Noelia Donis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Pat Wilson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Paula Galvez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sedona Hafling</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Tamara Blue</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Timothy Blackwell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Wagner Barrios</sourceValue>
+            </sourceValues>
+            <value>bcs 2</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>field_key</field>
+    </columns>
+    <columns>
+        <field>OLDVAL</field>
+    </columns>
+    <columns>
+        <field>NEWVAL</field>
+    </columns>
+    <columns>
+        <field>CASE_OWNER</field>
+    </columns>
+    <columns>
+        <field>BucketField_94084656</field>
+    </columns>
+    <columns>
+        <field>Case.Product_Line__c</field>
+    </columns>
+    <columns>
+        <field>Case.Product2__c</field>
+    </columns>
+    <columns>
+        <field>ORIGIN</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Case.Units__c</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>BucketField_94084656</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>bcs,bcs 2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CASE_CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Email to Case User,LZWTC Site Guest User,System</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Updated by Customer</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>BCS - Emails Yesterday</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <sortColumn>CREATED_DATE</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

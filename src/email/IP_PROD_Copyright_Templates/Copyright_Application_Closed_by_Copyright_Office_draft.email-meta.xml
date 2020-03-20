@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>cr36_draft</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>POST FILING Copyright – Application Closed by Copyright Office_draft</name>
+    <style>none</style>
+    <subject>Your Copyright Registration Closed Due to No Response</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting us about your copyright registration application.
+
+The letter you recently received from the U.S. Copyright Office indicates that the Copyright Office attempted to contact you about your application. As stated in your communication from the Copyright Office, the office closed your application and returned your materials to you because it did not receive a sufficient response from you within a specified time. Under certain conditions, applications may be re-opened.
+
+Mailed letters or emails sent to you directly from the U.S. Copyright Office may be to request additional information or update you on the status of your application (or both). LegalZoom is not included in these communications.
+
+To discuss this matter further, contact the U.S. Copyright Office directly at (202) 707-5959 and provide your case # [INSERT CASE #] as reference.
+
+If you have any questions or would like additional information, simply reply to this email or call us at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We appreciate you choosing LegalZoom and look forward to serving you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

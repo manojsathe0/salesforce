@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>llcsales - LLC Sales Info</name>
+    <style>none</style>
+    <subject>llcsales - LLC Sales Info</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.
+
+A Limited Liability Company, or LLC, is an entity created under state laws, which has characteristics of both a corporation and a partnership. Like a corporation, the owners of an LLC are not personally liable for the debts of the LLC. Like a partnership and sole proprietorship, an LLC is easier to manage than a corporation.  It also acts as a pass-through entity for tax purposes meaning that the profits of the LLC are passed through and taxable to the owners of the LLC.
+
+For your convenience, I have provided additional information and links to begin your LLC formation:
+
+Economy LLC Package   {!snippetVariable.econllc_pricing}
+(20-35 Business Days)
+Standard LLC Package   {!snippetVariable.stdllc_pricing}
+(20-35 Business Days)
+Express Gold LLC Package   {!snippetVariable.goldllc_pricing}
+(7-10 Business Days)
+
+Get Started:
+{!snippetVariable.llc_application}
+Additional Pricing Information:
+{!snippetVariable.llc_pricelink}
+Additional LLC Information:
+{!snippetVariable.llc_edcenter}
+
+I recommend the Express Gold Package because it offers significant benefits. The Gold Package includes free preparation of your Tax ID application (for easy self-filing) OR a {!snippetVariable.ein_prep} discount toward LegalZoom&apos;s complete Tax ID Obtainment Service. Most importantly, it will expedite your filing process, reducing the waiting period to 7-10 business days. Other packages take 20-35 business days.
+
+Also, you may want to consider using LegalZoom&apos;s Registered Agent Service. Setting up a registered agent is a state requirement for all LLCs. LegalZoom&apos;s Registered Agent Service ensures professional handling of your company&apos;s state correspondence and also helps ensure your privacy. We offer Registered Agent Services at an affordable rate of {!snippetVariable.ra_annual} per year.
+
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at $biz_phone $biz_hours.
+
+Best regards,
+
+[ Your Name ]
+{!snippetVariable.bizbsi_address}
+{!snippetVariable.bizbsi_phone}
+{!snippetVariable.bizbsi_fax}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

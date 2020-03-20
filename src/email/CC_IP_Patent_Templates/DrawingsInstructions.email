@@ -1,0 +1,60 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for choosing LegalZoom.<br/><br/>To complete the filing for your provisional application for patent, we will need your drawings to file your application with the US Patent &#38; Trademark Office.<br/><br/>You can email your drawings to MyPatents@legalzoom.com, fax a copy to (323) 446-7133, or mail them to:<br/><br/>LegalZoom &#8211; Attn: Patents<br/>101 N. Brand Blvd., 11th Floor<br/>Glendale, CA 91203<br/>Re: Order Number: |#|<br/><br/><b>NOTE:</b>Whatever method you choose, be sure to reference your LegalZoom order number.<br/><br/>If you would like us to prepare professional patent drawings based on your sketches, call us at the number below. The fee for this service is $399.<br/><br/>If you have any questions or need additional information, please call customer care at (800) 773-0888 Monday&#8211;Friday from 6 a.m.&#8211;7 p.m. PT or email patents@legalzoom.com.<br/><br/>We appreciate you choosing LegalZoom and look forward to hearing from you soon.<br/><br/>Best regards,<br/><br/>The LegalZoom Team<br/><br/><br/>******** Drawing Specifications *********<br/><br/>Make sure your drawings have dark lines. Photographs are generally not acceptable.<br/><br/>&#8226; If your invention is a device or apparatus: Please provide any views of the invention that you feel would be necessary and beneficial in order to understand it.<br/><br/>&#8226; If your invention is a system, method or process: Please provide flowcharts or diagrams of the invention. Also include, step-by-step, each function with its name, as well as any functions that send the user to another part of the process, and at what point the method or process should stop.<br/><br/>&#8226; If your invention is a chemical combination: Please provide a list of ingredients, including quantities and how to combine the ingredients. You may consider including a molecular structural diagram of the end product. If you are claiming the manner of making the compound, please include a flowchart or diagram of this process as well.<br/><br/>We will continue to process you provisional application for patent upon receipt of your drawings, or upon your approval of the Professional Patent Drawings ordered.<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

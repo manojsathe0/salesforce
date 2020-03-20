@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SF Temp BAP Confirmation of Purchase</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF Temp BAP Confirmation of Purchase</name>
+    <style>freeForm</style>
+    <subject>Business Advantage Pro Subscription: Order Number XXXXXXX</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for being a valued LegalZoom customer and your responsible decision to take advantage of the Business Advantage Pro service.  
+
+Based on our conversation, Business Advantage Pro member benefits include: 
+
+•  Attorney advice and consultations. Speak with an experienced attorney on an unlimited number of new legal matters
+• Tax professional advice and consultations. Speak with an experienced tax professional on an unlimited number of new tax issues
+•  Attorney drafted letters. Your attorney can draft legal letters or on your behalf 
+•  Unlimited access to LegalZoom legal forms. Download hundreds of blank legal forms for business or personal use
+•  1 Free copyright per month, all you pay is the Federal filing fee
+•  25% savings on additional attorney services. Get significant savings on additional attorney work if you need it
+• 20% savings on additional tax services. 
+• 10% savings on any LegalZoom legal documents. Get any LegalZoom business or personal documents at a discount 
+
+To access your member benefits please login using the following link:
+https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess=
+
+After logging in you will find a Business Advantage Member Center link under your Order Summary where you will find access to all of your member benefits.
+
+Please feel free to contact me at 877-818-8787 ext. {!User.Extension} (M-F 8am-5pm CST/PST), should you have any questions.  
+
+Your order number: {!Case.Order_Number_c}
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

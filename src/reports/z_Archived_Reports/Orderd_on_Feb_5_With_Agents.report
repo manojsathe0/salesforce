@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Order__c.Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Order__c.Commission_Eligible_Agent_1_Day1__c</field>
+    </columns>
+    <description>Orders created in Feb 5 with Commission Agent</description>
+    <filter>
+        <criteriaItems>
+            <column>Order__c.Commission_Eligible_Agent_1_Day1__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Orderd on Feb 5 with Agents</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Order__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Order__c.Date_Time_Created__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Order__c.Date_Time_Created__c</dateColumn>
+        <endDate>2014-02-05</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-02-05</startDate>
+    </timeFrameFilter>
+</Report>

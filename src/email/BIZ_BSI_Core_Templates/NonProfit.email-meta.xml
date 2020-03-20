@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>npbsi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Non Profit</name>
+    <style>none</style>
+    <subject>Non Profit</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs.  In regard to your inquiry, LegalZoom can assist you in filing a Non-Profit Corporation in every state, except New York. 
+
+Generally speaking, forming a Non-Profit Corporation is a two-step process.  The first step is to incorporate with the Secretary of State.  Once the Non-Profit is incorporated, the second step is to apply for the tax-exempt status with the IRS through the 501(c)(3) Application.
+
+For your reference, I have provided a summary of our Non-Profit Corporation fees below:
+
+NON-PROFIT CORPORATION
+Economy Package | $99.00 + state fee + shipping (20 - 35 business days)
+Standard Package | $239.00 + state fee + shipping (20 - 35 business days)
+Express Gold Package | $359.00 + state fee (7 - 10 business days)
+
+501(C)(3) APPLICATION PREPARATION | $495.00
+
+Our 501(c)(3) preparation service consists of an online questionnaire that will ask you for information about the directors and officers, the activities that will be conducted, and your estimated annual income and expenses. 
+
+Please be aware, however, that you are responsible for filing the prepared 501(c)(3) Application with the IRS.  The IRS will take anywhere between 3 - 6 months to approve you application and will charge its own filing fee.  If your estimated annual income for your first four years is less than $10,000, the filing fee will be $400.00.  If your annual income is $10,000 or more per year, the filing fee will be $850.00.
+
+If you apply for 501(c)(3) status within 27 months of your initial date of incorporation in your state, you will typically be retroactively tax-exempt from that date. 
+
+TO GET STARTED:
+http://www.legalzoom.com/non-profits/non-profit-corporation-overview.html
+FOR MORE INFORMATION:
+http://www.legalzoom.com/nonprofits-guide/non-profit-defined.html
+
+Please feel free to contact LegalZoom at (888) 381-8758 if you have any further questions.  Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title}
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

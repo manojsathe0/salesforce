@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LWTLW</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Last Will to Living Will</name>
+    <style>none</style>
+    <subject>Last Will to Living Will</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}:
+
+Thank you for choosing LegalZoom to prepare your Last Will and Testament.
+
+Many of our Last Will customers also prepare a Living Will to protect their health care wishes in case of a medical emergency.
+
+Your Last Will specifies who will inherit your property. A Living Will specifies whether or not you would like to remain on life support should you become incapacitated. LegalZoom&apos;s Living Wills include a Health Care Power of Attorney, which allows you to name someone to make medical decisions on your behalf. 
+
+Documenting your wishes in advance helps avoid family conflict and spares your loved ones from making these difficult choices for you.
+
+For more information on Living Wills, click here: http://www.legalzoom.com/law_library/living_wills/introduction.html
+
+To prepare a customized Living Will, simply log back into LegalZoom and complete our easy-to-follow questionnaire. Our specialists will take care of the rest.
+
+If you have any additional questions, simply reply to this email or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}. We appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

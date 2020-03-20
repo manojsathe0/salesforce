@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SF TEMP ECON/ALL QuickBooks Online Email Template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF TEMP ECON/ALL QuickBooks Online Email Template</name>
+    <style>freeForm</style>
+    <subject>LegalZoom-QuickBooks Online Offer</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for choosing LegalZoom.com.  As a LegalZoom customer, we want to extend to you a special FREE 90-day trial to QuickBooks Online, the leader in cloud-based accounting for small businesses. With QuickBooks Online, it has never been easier to organize all your business finances in one place. Call 1-800-843-0928 to sign up today. 
+
+Benefits of QuickBooks Online:
+
+Securely access all your business information from wherever you work
+Automatically import business information from your bank and Excel
+Create invoices and track income and expenses with ease
+Gather all your tax info in one place 
+Automatic data back-up and free expert help included with your subscription 
+
+Redeem this special offer from LegalZoom and your first 90 days are completely free—up to a $119 value. No credit card is required and you can cancel at any time.  
+
+Call 1-800-843-0928 or click the link below to sign up for QuickBooks Online today. 
+
+http://www.legalzoom-quickbooks.com
+
+Best Regards, 
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

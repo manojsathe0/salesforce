@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>corpdiss - Corporation Dissolution</name>
+    <style>none</style>
+    <subject>corpdiss - Corporation Dissolution</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business needs.
+
+A Corporation is dissolved by filing Articles of Dissolution with the Secretary of State. LegalZoom can prepare and file the required Dissolution paperwork with the appropriate state agency.
+
+For your convenience, I have provided a summary of our Dissolution fees: 
+
+Standard Dissolution Package  {!snippetVariable.stddiss_pricing}
+(20-35 Business Days)
+Rush Dissolution Package  {!snippetVariable.rushdiss_pricing}
+(7-10 Business Days)
+
+To place your Dissolution order, simply reply to this email or contact me by phone at $biz_phone  $biz_hours.  Please provide the following information:
+
+1. Your name, phone number, email address, and mailing address
+2. Corporation name and state of formation
+3. Business address
+4. Previous LegalZoom order number (if applicable)
+5. Credit card number and expiration date
+
+Best regards,
+
+[ Your Name ]
+{!snippetVariable.bizbsi_address}
+{!snippetVariable.bizbsi_phone}
+{!snippetVariable.bizbsi_fax}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

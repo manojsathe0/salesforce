@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Queue__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Opportunity__c.RecordType</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Agent__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Owner</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Activity_Commission_Eligible__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Sales_Cycle__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Activity_Owner__c.Sales_Team__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Activity_Created_DateTime__c</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Base_Product__c.Product_Line__c.Name</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c.Name</field>
+    </columns>
+    <columns>
+        <field>Order_Matching_Activity__c$Order__c.Order_Payment_Status__c.Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Agent__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Agent 1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Base_Product__c.Process__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>last will and testament,living will,living trust,power of attorney</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order_Matching_Activity__c$Order__c.Base_Product__c.Product_Line__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Personal Services</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>BSI Order Details (Estate Planning)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OMA_w_Orders__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Order_Matching_Activity__c$Order__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Order_Matching_Activity__c$Activity_Created_DateTime__c</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

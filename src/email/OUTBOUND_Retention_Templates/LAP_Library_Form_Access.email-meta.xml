@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>laplibac</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LAP Library Form Access</name>
+    <style>none</style>
+    <subject>Legal Advantage Plus Subscription: Order Number XXXXXXX</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing Legalzoom.com for your personal filing needs
+
+Per our discussion earlier, below are the links to get access to the LegalZoom library of legal forms, as well as the link to set up the attorney consultation. 
+
+To access your member benefits please login using the following link:
+https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess=
+
+After logging in, you can access the Legal Advantage Plus subscription through the link for the Members Center, and from there you can set up the consultations.
+
+Please do not hesitate to reach out to me if you have any questions regarding the service.  Thank you again.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

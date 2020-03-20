@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_46111339</developerName>
+        <masterLabel>CC Groups</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Case.Queue__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>CC Biz</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC Biz Approval</sourceValue>
+            </sourceValues>
+            <value>CC BIZ Queues</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CC IP Outgoing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC IP Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC IP</sourceValue>
+            </sourceValues>
+            <value>CC IP Queues</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CC Attorney Services</sourceValue>
+            </sourceValues>
+            <value>CC AS Queues</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CC Deeds Billing Requests</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC PS</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC PS Approval</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CC PS Faxes</sourceValue>
+            </sourceValues>
+            <value>CC PS Queues</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CC General Support</sourceValue>
+            </sourceValues>
+            <value>CC GEN Queue</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>EMAIL.STATUS</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>CC Biz,CC Biz Admin,CC Biz Approval,CC Biz Faxes,CC IP Outgoing,CC IP Faxes,CC IP Failed Delivery,CC IP Approval,CC IP,ASD-Copyright Correction Letter,CC AS Approval,CC AS Courtesy Calls,CC Attorney Services,CC_Name_Change,CC Deeds Billing Requests,CC PS,CC PS Approval,CC PS Faxes,CC General Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>EMAIL.STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>EMAIL.IS_INBOUND</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_46111339</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>EMAIL.MESSAGE_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Daily Email (Maybe)</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseEmail</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>EMAIL.MESSAGE_DATE</dateColumn>
+        <endDate>2014-03-08</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-03-02</startDate>
+    </timeFrameFilter>
+</Report>

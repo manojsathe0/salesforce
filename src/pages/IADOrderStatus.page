@@ -1,0 +1,390 @@
+<apex:page controller="IADOrderStatusController" standardstylesheets="false" showheader="false" sidebar="false" doctype="html-5.0" applybodytag="false" >
+
+    <html >
+    <head>
+        <script src="bootstrap-treeview.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css"/>
+        <apex:includeScript value="{!$Resource.OrderStatus}" />
+        <apex:includeScript value="{!$Resource.svg4everybody}" />
+        <apex:stylesheet value="{!URLFOR($Resource.OrderStatus, 'styles.css')}" />
+        <apex:stylesheet value="{!URLFOR($Resource.OrderStatus, 'animate.css')}" />         
+        <apex:stylesheet value="{!URLFOR($Resource.OrderStatus, 'bootstrap-treeview.css')}" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        
+            <table style="width:100%;">
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <div class="row mt-4 flex-column text-center">
+                            <h4 class="color-dark text-semilight">Order Update</h4>
+                            <p class="mt-2 color-grey">Estimated completion date</p>
+                            <h2 id="eta_heading" class="color-dark text-light heading-1"></h2>
+                        </div>
+                    </td>
+                </tr>
+                            
+                <tr>
+                    <td class="view-title"><h2 class="color-dark text-light heading-1">Customer View</h2></td>
+                    <td class="view-title"><h2 class="color-dark text-light heading-1">Internal View</h2></td>
+                </tr>
+                <tr>
+                    <td style="width:50%; text-align: center;">
+                        <div class="row mt-4 status-section zoomIn animated" style="width:50%">
+                            <div class="col-xl-6 text-right bg-white pos-absolute" style="width:50%; margin: 0 -36% 0;">
+                                <ul class="status-list">
+                                    <!--<li class="status-item" data-circle-id="submit">Submit</li>-->
+                                </ul>
+                            </div>
+                            <div class="col-xl-12 text-center background-style" style="width:28%; margin: 0 -15% 0;">
+                                <div id="circle-progress">
+                                    <!--<svg id="" xmlns="http://www.w3.org/2000/svg" width="650" height="650" viewBox="0 0 49 49">-->
+                                    <!--<circle class="reg" fill="none" stroke="currentColor"  fill-rule="evenodd" stroke-width="1.3" cx="24.9" cy="24.9" r="21"/>
+                                    <!--</svg>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row overflow-hidden">
+                            <div class="information-section col-xl-12 text-center">                         
+                                <p  id="desc-status" class="mt-2 color-grey text-semilight" style="max-width:700px;margin:auto"></p>
+                                <br/>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width:50%; text-align:left; vertical-align:top; padding-top:3%; padding-left:2%">
+                        <div id="tree"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <script>
+            $(document).ready(function() {
+                var main = {data: {}};
+                
+                var milestoneTrackerColors = ['#143380', '#00A2FF', '#00C1E5', '#00E0CB', '#55E08F', '#AAE052', '#FFE016'];
+                
+                var RADIUS_COOFICIENT = 275;
+                var STATUS_HEIGHT = 260;
+
+                
+                
+                function displayEtaDate(eta_date)
+                {
+                    var date  = new Date(Date.parse(eta_date));
+                    var year  = date.getFullYear();
+                    var month = (1 + date.getMonth()).toString();
+                    var day   = date.getDate().toString();
+                    
+                    if (eta_date != null)
+                        $('#eta_heading').text( (month.length > 1 ? month : '0' + month) + '/' + (day.length > 1 ? day : '0' + day) + '/' + date.getFullYear());
+                    else
+                        $('#eta_heading').text('No ETA Date Provided');
+                };
+                
+                function displayMilestoneStepCount(currentStepCount, numOfSteps)
+                {
+                    if ((currentStepCount != null) && (numOfSteps != null))
+                        $('#step-count').text('Step ' + currentStepCount + ' of ' + numOfSteps);
+                    else
+                        $('#step-count').text("");
+                };
+                
+                function displayMilestoneName(milestoneName)
+                {
+                    if (milestoneName != null)
+                        $('#update-status').text(milestoneName);
+                    else
+                        $('#update-status').text("");
+                };
+                
+                function displayMilestoneDescription(description)
+                {
+                    var newdescription = description.replace(new RegExp('&#39;','g'), '\'');
+                    
+                    if (newdescription != null)
+                        $('#desc-status').text(newdescription);                    
+                    
+                    else
+                        $('#desc-status').text("");
+                };
+                
+                //
+                // Build the milestone navigation tree. Currently we are interested
+                // in viewing a parent node that displays the event name with a percentage completed next to it.
+                // For the child nodes, whe are going to display the event description in one node, and 
+                // the actual events in another node.
+                // In the event nodes we will display each event as a child node. Events that are not completed
+                // Will show up in red text.
+                //
+                function getTree(milestones)
+                {
+                    var json_data = '';
+
+                    json_data = json_data + '[';
+                    
+                    milestones.forEach(function(element, index) 
+                    {
+                        if (element != null)
+                        {
+                            json_data = json_data + '{';
+                            json_data = json_data + '  "text":"' + element.milestoneName + ' (' + element.percentComplete + '%)"';
+                            json_data = json_data + '  ,';
+                            json_data = json_data + '  "backColor":"' + milestoneTrackerColors[index] + '"';
+                            json_data = json_data + '  ,';
+                            json_data = json_data + '  "color":"#FFFFFF"';
+                            json_data = json_data + '  ,';
+                            
+                            json_data = json_data + '  "nodes": ';
+                            json_data = json_data + '   ['; 
+                            json_data = json_data + '     {';
+                            json_data = json_data + '       "text":"Description:"';
+                            json_data = json_data + '       ,';
+                            json_data = json_data + '       "nodes": ';
+                            json_data = json_data + '        ['; 
+                            json_data = json_data + '          {';
+                            json_data = json_data + '            "text":"' + element.description.replace(/\n/g, "<br/>") + '"';
+                            json_data = json_data + '          }';
+                            json_data = json_data + '        ]';
+                            json_data = json_data + '     }';
+                            json_data = json_data + '     ,';
+                            json_data = json_data + '     {';
+                            json_data = json_data + '       "text":"Events:"';
+                            json_data = json_data + '       ,';
+                            json_data = json_data + '       "nodes": ';
+                            json_data = json_data + '        [';
+
+                            element.events.forEach(function(event, event_index)
+                            {
+                            
+                                json_data = json_data + '          {';
+                                json_data = json_data + '            "text":"' + event.eventName + '"';
+                                
+                                if (event.isComplete == false)
+                                {
+                                    json_data = json_data + '            ,';
+                                    json_data = json_data + '            "color":"#FF0000"';
+                                }
+                                
+                                json_data = json_data + '          }';
+                                
+                                if ((event_index + 1) < element.events.length)
+                                {
+                                    json_data = json_data + ',';
+                                }
+                            }, this);
+                            
+                            json_data = json_data + '        ]';
+                            json_data = json_data + '     }';
+                            json_data = json_data + '   ]';
+                            json_data = json_data + '}';
+                            
+                            if ((index + 1) < milestones.length)
+                            {
+                                json_data = json_data + ',';
+                            }
+                        }
+                    }, this);
+                                     
+                    json_data = json_data + ']';
+                                    
+                    return(json_data);
+                };
+                setTimeout(function() {
+                   
+                    
+//Padma added @B-22215 Kollaborate
+               
+                   Visualforce.remoting.Manager.invokeAction(
+                       '{!$RemoteAction.IADOrderStatusController.IADorderStatuscontroller1}', "{!$CurrentPage.parameters.processingNumber}",
+
+
+                        function(data){ 
+                                  
+                                     
+                                    // console.log(data.orderStatus.milestones);
+                                    
+                                    var result = data.orderStatus;
+                                    // main.data = result;
+                                    
+                                    // Display the order status ETA date
+                                    displayEtaDate(data.orderStatus.eta);
+
+                                    $('.information-section').addClass('show fadeInUp animated');
+
+                                    var lineHeight = Math.ceil(STATUS_HEIGHT / result.milestones.length);
+                                    var firstRadius = 21;
+                                    var RADIUS_DECREMENT = ((lineHeight) / (RADIUS_COOFICIENT) * firstRadius).toFixed(2);
+                                    
+                                    svg = '<svg id="" xmlns="http://www.w3.org/2000/svg" width="650" height="650" viewBox="0 0 49 49">';
+                                    var li = '';
+                                    
+                                    
+                                    result.milestones.forEach(function(element, index) 
+                                    {
+                                       
+                                        // Create and append the milestone status names 
+                                        li += '<li class="status-item" data-event-id="'+ element.statusMilestoneId +'" data-circle-id="';
+                                        li += element.milestoneName + '"';
+                                        li +=  ' style="height:' + lineHeight + 'px;">' + element.milestoneName + '</li>'
+                                        
+                                        //calculate dash array
+                                        var dashArray = (2 * 3.14 * firstRadius).toFixed(2);
+
+                                        // Create and append the svg element with its arc path elements representing the status progress for each milestone element
+                                        svg += '<circle class="color-uncompleted-milestone-tracker" fill="none" stroke="currentColor" stroke-linecap="round" fill-rule="evenodd" stroke-dashoffset="'+ dashArray / 4 +'" stroke-dasharray="'+ dashArray +'" stroke-width="1.6" cx="24.9" cy="24.9" r="'+firstRadius+'"/>';
+                                        
+                                        svg += '<circle class="progress-info '+ element.milestoneName.replace(/ /g, '-') +'" stroke-linecap="round" stroke-dashoffset="'+ dashArray +'" stroke-dasharray="'+ dashArray +'" class="submit" fill="none" stroke="currentColor"  fill-rule="evenodd" stroke-width="1.6" cx="24.9" cy="24.9" r="'+firstRadius+'"/>';
+                                        
+                                        firstRadius -= RADIUS_DECREMENT;
+                                        firstRadius = firstRadius.toFixed(2);
+                                        //Padma added
+                                        if(result.currentMilestoneId ===element.statusMilestoneId)
+                                        {
+                                          
+                                            $('#desc-status').text(element.description);
+                                            
+                                            
+                                            currMilestoneIndex =index+1;  
+                                            currentmileStone = element.milestoneName;
+                                            
+                                            /* displayMilestoneStepCount(currMilestoneIndex, result.milestones.length);
+                                            displayMilestoneName(currentmileStone);*/
+                                            displayMilestoneDescription(element.description);
+                                        }
+                                        //Padma added
+                                    }, this);
+                                    
+                                    // Add the milestone text.
+                                    $('.status-list').append(li);
+
+                                    svg += '</svg>';
+                                    $('#circle-progress').append(svg);
+                                    
+                                    // Populate the milestone treeview
+                                    // $('#tree').treeview({data: getTree()});
+                                    
+                                    var $tree = $('#tree').treeview({data: getTree(data.orderStatus.milestones), levels: 1});
+                                    
+
+                                    // Animate status and circle one by one
+                                    var count = 0;
+
+                                    var intervalS = setInterval(function() {
+                                        var el = result.milestones[count];
+                                        var index = count;
+                                        var milestoneStatus = true;
+                                        var percentageCompleted = result.milestones[count].percentComplete;
+                                        
+                                        if (percentageCompleted !== 0)
+                                        {
+                                            var itemToAnimate = $('.status-list .status-item[data-event-id="'+ el.statusMilestoneId +'"]');
+                                            
+                                            if (percentageCompleted === 100) {
+                                            
+                                                $(itemToAnimate).addClass('done');
+                                                
+                                                var currentOfsset = $('.' + $.escapeSelector(el.milestoneName.replace(/ /g, '-'))).attr('stroke-dashoffset');
+                                                
+                                                createFullKeyFrame(currentOfsset, el.statusMilestoneId, index);
+                                                $('.' + $.escapeSelector(el.milestoneName.replace(/ /g, '-'))).addClass('fill-'+el.statusMilestoneId);
+                                            }
+                                            else if ((percentageCompleted > 0) && (percentageCompleted < 100)) {
+                                            
+                                                $(itemToAnimate).addClass('current');
+                                                
+                                                var currentOfsset = $('.' + $.escapeSelector(el.milestoneName.replace(/ /g, '-'))).attr('stroke-dashoffset');
+                                                
+                                                var offset = currentOfsset / 4; // 75% filled offset
+                                                var remainingOffsetPoints = currentOfsset - offset;
+                                                offset += remainingOffsetPoints - (remainingOffsetPoints * (percentageCompleted / 100));
+                                                
+                                                createKeyFrame(offset, el.statusMilestoneId, percentageCompleted, index);
+                                                $('.' + $.escapeSelector(el.milestoneName.replace(/ /g, '-'))).addClass('fill-'+el.statusMilestoneId);
+                                                
+                                            }
+                                            
+                                            /* displayMilestoneStepCount((index + 1), result.milestones.length);
+                                                displayMilestoneName(el.milestoneName);
+                                            displayMilestoneDescription(el.description);*/
+                                            
+                                        }
+                                        
+                                        /* if(result.currentMilestoneId ===element.statusMilestoneId){
+                                                displayMilestoneStepCount((index + 1), result.milestones.length);
+                                                displayMilestoneName(el.milestoneName);
+                                                displayMilestoneDescription(el.description);
+                                            }*/
+                                        
+                                        function createFullKeyFrame(fullOffset, keyFrameId, indexCount) {
+                                            var keyframe = '';
+                                            var offset = fullOffset / 4;
+                                            
+                                            keyframe += '@keyframes dash-custom-'+keyFrameId+' {0%{color:#ff5815;}50%{color:#ffdf15;}100%{stroke-dashoffset: '+offset+';color:' + milestoneTrackerColors[indexCount] + '}}';
+
+                                            var res = '<style id="dash-custom-full">';
+                                            res += keyframe;
+                                            res += '.fill-'+keyFrameId+' {animation: dash-custom-'+keyFrameId+' 0.8s ease-in forwards;}';
+                                            res += '</style>';
+
+                                            $('head').append(res);
+                                        }
+                                        
+                                        function createKeyFrame(offset, keyFrameId, offsetPercentage, indexCount) {
+                                            var keyframe;
+                                            
+                                            if (offsetPercentage === 0) {
+                                                keyframe = '';
+                                            } else {
+                                                keyframe = '@keyframes dash-custom-'+keyFrameId+' {from{color:#ff5815;} to{color:' + milestoneTrackerColors[indexCount] + '; stroke-dashoffset: '+offset+'}}';
+                                            }
+                                            
+                                            keyframe += '.fill-' + keyFrameId + ' {animation: dash-custom-' + keyFrameId + ' 0.8s ease-in forwards;}';
+                                            
+                                            var res = '<style id="dash-custom">';
+                                            res += keyframe;
+                                            res += '</style>';
+
+                                            $('head').append(res);
+                                        }
+                                        
+                                        count += 1;
+                                        
+                                        if(count >= result.milestones.length) {
+                                            clearInterval(intervalS);
+                                        }
+                                    }, 200);
+                                }
+                            // EOC Padma
+                );
+                }, 300);
+                
+                function isDataEqual(currentData, nextData) {
+                    for (var i = 0; i < currentData.milestones.length; i++) {
+                        if(JSON.stringify(currentData.milestones[i]) !== JSON.stringify(nextData.milestones[i])) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+
+                function getMilestoneById(data, milestoneId) {
+                    for (milestone in data.milestones) {
+                        if (data.milestones[milestone].statusMilestoneId === milestoneId) {
+                            return data.milestones[milestone]
+                        }
+                    }
+
+                    return false;
+                }
+            });
+        </script>
+    </body>
+</html>
+</apex:page>

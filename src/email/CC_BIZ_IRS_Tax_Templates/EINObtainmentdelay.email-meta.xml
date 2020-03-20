@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>eindelay</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>EIN Obtainment delay</name>
+    <style>none</style>
+    <subject>EIN Obtainment delay</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+We are currently experiencing delays with the IRS which has inhibited our ability to obtain your EIN within the normal turnaround time. The IRS has changed the hours in which we are able to process your EIN application from 3:00am-9:00pm PST to 6:00am-2:00pm PST. Due to these restricted hours, please allow 2-3 business days for the obtainment process to be completed. We will notify you once the EIN has been obtained.
+
+This Application is Available During the Following Hours:
+
+-Monday to Friday 6:00AM to 12:30AM Eastern Time
+-Saturday 6:00am to 9:00pm Eastern time
+-Sunday 7:00p.m to 12:00 a.m. Eastern time
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

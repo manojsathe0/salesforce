@@ -1,0 +1,5 @@
+The following case is over 24 hours old.  Please handle this ASAP!
+
+Case Number: {!Case.CaseNumber}
+Case Subject: {!Case.Subject}
+Link to Case: {!Case.Link}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lead Quick LLC Auto Response</name>
+    <style>none</style>
+    <subject>Next steps for your business</subject>
+    <textOnly>Thank you for choosing LegalZoom.
+
+Congratulations on taking an important step in forming your new business. We’re excited you’ve chosen us to help.
+
+What happens next?
+
+A LegalZoom agent will give you a call to complete your business application, personally guiding you through the remaining information needed to form your new business.
+
+In the meantime, we’ve prepared a Business Starter Roadmap with 8 essential things for many new business owners to consider.
+
+Download Your Roadmap 
+
+http://www.legalzoom.com/resources/downloads/LegalZoom_Business_Starter_Roadmap.pdf
+
+Get your business off to a good start
+
+
+
+Have questions? We&apos;re here to help. (866) 385-5028
+Mon-Fri 5am to 8pm PT Weekends 7am to 4pm PT
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+This email was sent to: {!Lead.Company}
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

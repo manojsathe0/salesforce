@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order360__c$Order__c.Name</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Order_Matching_Activity__c.Activity_Created_By__c.Name</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Order_Matching_Activity__c.Manager__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order360__c$Order__c.Net_minus_Filing_Fee__c</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Order_Item__c.Product_Name__c</field>
+    </columns>
+    <columns>
+        <field>Order360__c$Order__c.Order_Date_Time_Created__c</field>
+    </columns>
+    <description>Active Rev by Rep for Abandoner/Drip campaign only. Filtered by Matched Campaign, to show Agent, Manager, Net Minus Filing Fee and Order Number.</description>
+    <filter>
+        <criteriaItems>
+            <column>Order360__c$Order__c.Order_Payment_Status__c.Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Approved,Pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order360__c$Agent__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Agent 1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order360__c$Sales_Cycle__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>30</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order360__c$Order_Matching_Activity__c.Matched_Campaign__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Abandoner/Drip</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Active Rev by Rep (Aban/Mobile)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Active_Revenue_Report__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Order360__c$Order__c.Net_minus_Filing_Fee__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Order360__c$Order__c.Order_Date_Time_Created__c</dateColumn>
+        <endDate>2016-05-09</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-05-09</startDate>
+    </timeFrameFilter>
+</Report>

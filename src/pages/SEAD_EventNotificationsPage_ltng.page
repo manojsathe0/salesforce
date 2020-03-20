@@ -1,0 +1,172 @@
+<apex:page showHeader="true" standardStylesheets="false" controller="SEAD_EventNotifications">
+    <apex:slds rendered="{! !isClassic}" />
+    <head>
+        <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+        <apex:includeScript value="/support/console/42.0/integration.js" />
+       <!-- <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" /> -->
+        <apex:include pageName="MomentJS" />
+        <script type="text/javascript">
+        var snoozeReminder = false;
+        function openTab(id) {
+            //sforce.console.openPrimaryTab(null, '/'+id, true);
+             sforce.console.openPrimaryTab(null, '/one/one.app?source=aloha#/sObject/'+id+'/view', true);
+        }
+        function checkEventUpdated(){
+
+            setTimeout(function(){
+                snoozeReminder = false;
+                var shouldPop = false;
+                console.log('eventUpdated val ' + $('#eventUpdated').val());
+                var eventArray = $('#eventUpdates').val();
+                var timerId;
+                console.log('events ' + eventArray);
+
+                if(eventArray.length>0){
+
+                    var arr = JSON.parse(eventArray);
+
+
+                    for (i = 0; i < arr.length; i++) {
+
+                        if(arr[i].Snoozed_Time__c != null){
+                            console.log('snoozed');
+                            if(timerId != null)
+                                clearInterval(timerId);
+                            var d = new Date(arr[i].Snoozed_Time__c);
+                            var convertdate = d.getUTCFullYear() + '-' + ('0' + (d.getUTCMonth()+1)).slice(-2) + '-' + ('0' + d.getUTCDate()).slice(-2) +'T' + ('0' + d.getUTCHours()).slice(-2)+':'+('0' + d.getUTCMinutes()).slice(-2)+':'+d.getUTCSeconds()+'0';
+                            console.log(d.toDateString());
+                            console.log(convertdate);
+                            var momentDate = normalizeJSONDate(arr[i].Snoozed_Time__c, 'MM/DD/YYYY h:mm');
+                            console.log('moment date ' + momentDate);
+                            var now = moment().format("MM/DD/YYYY h:mm");
+                            console.log('moment now ' +  moment().format("MM/DD/YYYY h:mm"));
+                            if(momentDate <= now){
+                                console.log('initing events');
+                                if($('#eventUpdated').val() == 'true'){
+                                   shouldPop = true;
+                                }
+                            }
+                            else{
+                                snoozeReminder = true;
+                            }
+                        }
+                        else{
+                            shouldPop = true;
+                        }
+                    }
+                    if(shouldPop && $('#eventUpdated').val()=='true'){
+                        console.log('opening from shouldPop');
+                        sforce.console.setCustomConsoleComponentVisible(true);
+                    }
+
+                }
+                else{
+                    clearInterval(timerId);
+                }
+            }, 1000);
+
+
+
+
+        }
+        function checkForEventsOnLoad(){
+            console.log('eventUpdated val ' + $('#eventUpdated').val());
+            var eventArray = $('#eventUpdates').val();
+            console.log('eventArray ' + eventArray);
+            console.log('events ' + eventArray.length);
+            if(eventArray.length > 0 && $('#eventUpdated').val()=='true'){
+                console.log('opening from checkForEventsOnLoad');
+                sforce.console.setCustomConsoleComponentVisible(true);
+            }
+
+        }
+        foundUpdate = function(theRecordId){
+            console.log('parent was called with ' + theRecordId);
+            getEventChanges(theRecordId);
+        }
+        $(document).ready(function() {
+            callEveryMin();
+            initEvents();
+        });
+        function callEveryMin() {
+            console.log('setting to call');
+            setInterval(checkForEventChanges, 60*1000); //900000 = 15 minutes,  60*1000 = 1 minute, 5000 = 5 seconds
+        }
+        function callDismiss(eventId){
+            console.log('dismissing with ' + eventId);
+            sforce.console.setCustomConsoleComponentVisible(false);
+            dismiss(eventId);
+
+        }
+        function callSnooze(eventId){
+            console.log('snoozing with ' + eventId);
+            sforce.console.setCustomConsoleComponentVisible(false);
+            snooze(eventId);
+        }
+    </script>
+    </head>
+    <br/>
+    <div id="datastream"></div>
+    <div class="slds">
+        <apex:iframe height="0" width="0" src="/apex/SubscribePage?topic=EventUpdates"/>
+        <apex:form id="theForm">
+            <apex:actionFunction name="initEvents" action="{!initEvents}" rerender="theForm" oncomplete="checkForEventsOnLoad(); return false"/>
+            <apex:actionFunction name="checkForEventChanges" action="{!initEvents}" rerender="theForm" oncomplete="checkEventUpdated(); return false"/>
+            <apex:actionFunction name="getEventChanges" action="{!getEventChanges}" rerender="theForm" oncomplete="checkEventUpdated(); return false">
+                <apex:param name="eventId" value="" />
+            </apex:actionFunction>
+            <apex:actionFunction name="dismiss" action="{!dismiss}" rerender="theForm" oncomplete="checkEventUpdated(); return false">
+                <apex:param name="eventId" value="" />
+            </apex:actionFunction>
+            <apex:actionFunction name="snooze" action="{!snooze}" rerender="theForm" oncomplete="checkEventUpdated(); return false">
+                <apex:param name="eventId" value="" />
+            </apex:actionFunction>
+            <input id="eventUpdated" type="hidden" value="{!eventUpdated}"/>
+            <input id="eventUpdates" type="hidden" value="{!eventUpdatesJSON}"/>
+            <table class="slds-table slds-wrap"  >
+                <thead class="slds-table--bordered">
+                <tr class="slds-text-body--label">
+                    <th class="slds-text-body--small" scope="col">Event Reminders</th>
+                    <th class="slds-text-body--small" scope="col">Related To</th>
+                    <th class="slds-text-body--small" scope="col">Time</th>
+                    <th class="slds-text-body--small" scope="col"></th>
+                    <th class="slds-text-body--small" scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <apex:repeat value="{!eventUpdates}" var="theUpdate">
+                    <tr class="slds-text-heading--label slds-has-divider" id="{!theUpdate.id}">
+                        <td class="slds-cell">
+                            <a title="View Event"  class="slds-text-body--small" onclick="openTab('{!theUpdate.id}');">
+                                    {!theUpdate.Name}
+                            </a>
+                        </td>
+                        <td class = "slds-cell">
+                            <a title="View Record"  class="slds-text-body--small" onclick="openTab('{!IF(theUpdate.Related_To__c = 'Lead', theUpdate.Lead__c, theUpdate.Contact__c)}');">
+                                {!theUpdate.Related_To__c}        
+                            </a>
+                            
+                        </td>
+                        <td class = "slds-cell">
+                            <a title="View Event"  class="slds-text-body--small" onclick="openTab('{!theUpdate.id}');">
+                                <apex:outputText value="   {!theUpdate.Event_Time__c}"/>
+                            </a>
+                        </td>
+                        <td class="slds-cell-shrink">
+                            <a title="Snooze Until 5 Minutes Before Event" class="slds-text-body--small" onclick="callSnooze('{!theUpdate.id}');"  style="color:#ffcc33">
+                                Snooze
+                            </a>
+                        </td>
+
+                        <td class="slds-cell-shrink">
+                            <a title="Dismiss" class="slds-text-body--small" onclick="callDismiss('{!theUpdate.id}');" style="color:#ff3300">
+                                Dismiss
+                            </a>
+                        </td>
+                    </tr>
+                </apex:repeat>
+                </tbody>
+            </table>
+        </apex:form>
+    </div>
+</apex:page>

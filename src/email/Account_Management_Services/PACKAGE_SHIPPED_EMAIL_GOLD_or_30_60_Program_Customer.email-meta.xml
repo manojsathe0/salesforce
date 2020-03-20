@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMSHIP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PACKAGE SHIPPED EMAIL – GOLD or 30/60 Program Customer</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order # [XXXXXXX] has shipped!</subject>
+    <textOnly>Your [Entity Type] Order Has Shipped
+
+Dear {!Contact.FirstName},
+
+It was a pleasure speaking with you about starting your business. This email confirms that your [Entity Type] order was completed and shipped, and is scheduled for delivery [Provide Range].  Your UPS Tracking Number is [xxxxx].  You may track your package using this link:
+
+[**UPS Shipment Tracking Link**]
+
+I will be giving you a follow up call to help walk you through the package contents and instructions so you don’t miss important deadlines.  If you prefer, you can schedule the call ahead of time. Simply respond to this email with your preferred times.
+
+If you have not yet taken advantage of your benefits, now is a great time to do so. We know that managing a business is complicated. Now that you are officially on your way, the legal plan attorneys and tax consultants can address any of your questions and concerns. Please call me directly at 877-808-1908 if I can assist you in setting up a consultation.
+
+Best Regards,
+
+[Account Manager] [ext.XXXX]
+Account Management Services
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

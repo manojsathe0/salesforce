@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Compliance Review Day Delay</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Compliance Review Day Delay</value>
+    </caseValues>
+    <fields>
+        <label><!-- Hours Delay --></label>
+        <name>Hours_Delay__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

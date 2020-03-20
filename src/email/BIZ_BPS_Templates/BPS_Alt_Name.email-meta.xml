@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>bpsalt</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BPS Alt Name</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order #</subject>
+    <textOnly>Dear {!Contact.FirstName},
+ 
+Thank you for your email.
+ 
+We have received your alternate name(s) and we have forwarded your name(s) to our Name Check Department. The name(s) submitted is/are as follows:
+ 
+1.        XXXXX
+2.        XXXXX
+3.        XXXXX
+ 
+Our Business Specialists will conduct a new name search free of charge.  We understand the importance of selecting your company name and research your choices based on your priority.
+ 
+If no conflicts are found, we will submit your documents for filing and send you an email confirmation. If additional alternate names are required, we will notify you by email.
+ 
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+ 
+{!snippetVariable.ccsincerely}
+ 
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>patatty2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Technical Drawings Needed (Step 2)</name>
+    <style>none</style>
+    <subject>Your LegalZoom Order #</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As part of your Utility Patent application, the U.S. Patent and Trademark Office (USPTO) requires drawings of your invention wherever necessary for your examiner to understand your invention. Our records show that you have not provided drawings of your invention as part of your application.
+
+Please visit the following links for more information on the USPTO standards for patent drawings:
+
+Content of drawing. - Appendix R Patent Rules
+
+Standards for drawings. - Appendix R Patent Rules
+
+LegalZoom offers a Patent Illustration Service: you and your assigned Patent attorney or agent work with Professional Patent Illustrators to make sure your drawings meet the USPTO’s standards and show your invention to its best advantage. For more information, visit:
+
+Professional Patent Drawings Overview
+
+Please reply to this email to let us know how you would like to move forward: (1) Work with your Patent Agent or attorney and Professional Illustrators to create professionally-drafted Patent Illustrations to accompany your application; (2) Submit your own drawings to us and we will forward them to your Patent Professional along with the rest of your materials; or (3) Continue with your application as-is, if you believe that your invention can be understood without any drawings.
+
+Please note: In no case does LegalZoom share your materials with any third party not necessary for the completion of your order.  Furthermore, LegalZoom does not retain physical copies of your submissions, and will not be held responsible for returning those materials to you. Submitted physical materials are securely destroyed.
+
+Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance.  Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}.  Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

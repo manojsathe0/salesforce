@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
+<<<<<<< HEAD
+    <apiVersion>40.0</apiVersion>
+=======
+    <apiVersion>38.0</apiVersion>
+>>>>>>> branch 'sead' of https://github.legalzoom.com/enterprise-applications/LZ-Salesforce/
+    <status>Active</status>
+</ApexClass>

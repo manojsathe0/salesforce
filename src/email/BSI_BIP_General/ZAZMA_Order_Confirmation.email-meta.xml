@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>ZAZMA - Order Confirmation Instructions</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>ZAZMA - Order Confirmation Instructions</name>
+    <style>freeForm</style>
+    <subject>Zazma Order Confirmation Instructions</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for choosing LegalZoom for your business needs and for your recent order.  In regard to your order, you must confirm your order details with Zazma so that they can process the payment of the order to LegalZoom so we can begin processing your order.  
+
+Once your order(s) is/are placed, you will receive an email from Zazma requesting that you confirm your order details.  The email contains a link that will take you directly to the Zazma website to complete the confirmation process.  Please make sure to check your Junk or Spam email folder(s) if you do not see the email from Zazma in your inbox.  Below is a link to an instructional video if you would like a video tutorial on how to confirm your order details.
+
+It is important to note that we cannot being processing your order until you have confirmed the order details with Zazma.  So that we can promptly begin processing your orders, please complete the confirmation process with Zazma immediately.
+
+TUTORIAL VIDEO
+http://www.youtube.com/watch?v=D-V6rU3AYLI&amp;feature=youtu.be
+
+In the event that you cannot locate the email from Zazma, you can follow the instructions below to sign in and confirm the order details.
+
+	1) Click the following link:  https://www.zazma.com/ref/legalzoom
+	2) Click the &quot;Get Funded button (disregard the payment amount on this page)
+	3) Enter your company information as follows:
+		a. Enter your First Name:  [FIRST NAME]
+		b. Enter your Last Name:  [LAST NAME]
+		c. Enter your Company Name:  [COMPANY NAME W/ZAZMA]
+		d. Enter your Email Address:  [EMAIL ADDRESS W/ZAZMA]
+		e. Create a password (8 character minimum)
+	4) Click the &quot;Sign Up&quot; button
+	5) Upon signing in, you will see a link requesting you to confirm your email address
+	6) Upon confirming your email address, you will be prompted to confirm your order detail and account profile information
+	7) Upon entering all of your account information, click the &quot;Submit this Request&quot; button
+	8) OPTIONAL:  Confirm your online banking details for additional security
+
+Upon completing this process, we will be notified of the confirmation and we will begin processing your LegalZoom order(s).
+
+If you have any additional questions, please feel free to contact us by phone at (800) 773-0888.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

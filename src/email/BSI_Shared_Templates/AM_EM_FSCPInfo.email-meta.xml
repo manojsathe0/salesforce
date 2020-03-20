@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>AM_EM_FSCPInfo</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AM_EM_FSCPInfo</name>
+    <style>none</style>
+    <subject>Access Your {OrderType} Benefits</subject>
+    <textOnly>legalzoom.com
+
+Dear {!Contact.FirstName} {!Contact.LastName},
+
+To provide you with some further help in accessing the benefits of {!Opportunity.Product__c}, Order # {!Opportunity.User_Order_ID__c}, below is some helpful information:
+
+With LegalZoom’s Full Service Compliance Package, you will have access to many tools to help keep your business compliant:
+
+Business Advantage Pro – Please click here and enter your email address &amp; password under Existing Member. Choose the Business Advantage tab, where you will be able to schedule consultations with Attorneys and Tax Professionals. You can also access the legal form library by clicking on Downloadable Legal Forms.
+Unlimited access to our Legal Forms Library
+Compliance Calendar – Please click here and enter your email address &amp; password under Existing Member. Choose the Corporate Center tab, where you will be able to access information regarding your upcoming business requirements.
+Minutes Manager – Please click here and enter your email address &amp; password under Existing Member. Click on the link under the Orders Completed tab of your My Account page, where you will be able to enter the necessary information to complete your meeting minutes.
+Tax help and planning tips from independent tax professionals (1-800Accountant)
+Annual Reports (state fees still apply)
+Initial Report (If required by your state, state fees still apply)
+Credit Alert + D&amp;B D-U-N-S® number
+
+
+Thank you for choosing LegalZoom.com for your legal needs.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address}
+{!User.Phone} ext. {!User.Extension}
+
+Call Customer Care: (800) 773-0888  LegalZoom. Legal help for the modern world.
+
+Privacy Policy
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice. LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

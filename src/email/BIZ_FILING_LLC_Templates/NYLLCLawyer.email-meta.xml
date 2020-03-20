@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>llcnylaw</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NY LLC Lawyer</name>
+    <style>none</style>
+    <subject>NY LLC Lawyer</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom for your Limited Liability Company (LLC) order.  Due to the complexity of filing your LLC as a professional entity in New York, please review the following information.  
+
+Filing as a professional LLC in New York requires 3 stages: (1) obtainment of Certificate of Good Standing, (2) file the Articles of Organization with the NY Secretary of State, and (3) submit certified copy of your Articles of Organization to your admitted Appellate Division.
+
+In order to complete your order, please follow the steps listed below.
+
+Steps to complete Stage 1:
+• You must obtain a Certificate of Good Standing from the Appellate Division of the Court in which you were admitted to.  The certificate must be less than one (1) year old.
+• Fax your Certificate of Good Standing to (323) 962-8300.  Please include your name and order number on the fax coversheet to ensure proper routing of your document to our processing team.
+• Please note that we can obtain your Certificate of Good Standing for $30.00.  Please provide the time &amp; date of admission, as well as the Appellate Division to which you were admitted to.  Please reply to this email with the authorization to charge your credit card on file for the fee.
+• In accordance with the NY state law, each member and officer of the LLC must be a licensed lawyer.  Please contact us if your LLC does not meet this requirement.  
+• If you have additional members and/or officers, we will also need the Certificate of Good Standing for each individual.  Each certificate must be less than one (1) year old.  You can fax the certificate(s) to (323) 962-8300.  Please include your name and order number on the fax coversheet to ensure proper routing of your document to our processing team.
+• Upon receipt of your Certificate of Good Standing, we will prepare and email the Articles of Organization for your signature.  We cannot prepare your Articles of Organization without the proper Certificate of Good Standing. 
+
+If you have any questions regarding your order, please contact our {!snippetVariable.cc_dept_full} at {!snippetVariable.ccphone} or customercare@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

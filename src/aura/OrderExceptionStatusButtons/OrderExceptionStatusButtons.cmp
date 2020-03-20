@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" controller="POR_OrderExceptionStatusController_Ltng2">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<aura:attribute name="recordId" type="string" />
+	<aura:attribute name="isOnHold" type="Boolean" />
+	<aura:attribute name="thereAreOpenCases" type="Boolean" />
+	<div> 
+	<lightning:spinner aura:id="spinner" alternativeText="loading details" class="hideSpinner"/>
+	</div>
+	<aura:renderIf isTrue="{!v.isOnHold}">
+		
+		<lightning:button label="Take order off Hold" onclick="{!c.removeFromHoldStatus}" disabled="{!v.thereAreOpenCases}"/>
+		<aura:set attribute="else">
+			<lightning:button label="Put order on Hold" onclick="{!c.putOnHoldStatus}" disabled="false"/>
+		</aura:set>
+	
+	</aura:renderIf>
+	
+	
+</aura:component>

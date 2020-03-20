@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>45.0</apiVersion>
+    <description>This is the component to replace IADContactManger.page in classic. 
+it will be used when the Edit Contact/Authorized Contact links are clicked on the IAD Primary contact page</description>
+</AuraDefinitionBundle>

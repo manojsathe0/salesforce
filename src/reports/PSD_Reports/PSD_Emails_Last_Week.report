@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_94084656</developerName>
+        <masterLabel>PSD Teams</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>CREATED</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Alex Perales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Carrie Frizzell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Caryn Neal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Darnisha Yates</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jason Furstenberg</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeanelle Clum</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jennifer Phung</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Keith Robinson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lisa Rodriguez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sandra Balderas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Summer Rosales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susie Battle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Robyn Robertson</sourceValue>
+            </sourceValues>
+            <value>Austin</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>April Williams</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chyna Smith</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>LaVern Browne</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Luis Villegas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sarah Somogyi</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Shennell Davis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Susan Maruca</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kristen Andas-Meranda</sourceValue>
+            </sourceValues>
+            <value>Glendale</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>field_key</field>
+    </columns>
+    <columns>
+        <field>OLDVAL</field>
+    </columns>
+    <columns>
+        <field>NEWVAL</field>
+    </columns>
+    <columns>
+        <field>CASE_OWNER</field>
+    </columns>
+    <columns>
+        <field>Case.Product_Line__c</field>
+    </columns>
+    <columns>
+        <field>Case.Product2__c</field>
+    </columns>
+    <columns>
+        <field>ORIGIN</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Case.Units__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 2 AND 4) OR ( 1 AND 3 AND 4 )</booleanFilter>
+        <criteriaItems>
+            <column>BucketField_94084656</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Austin,Glendale</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CASE_CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Email to Case User,LZWTC Site Guest User,System</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Updated by Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ORIGIN</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Phone-Inbound ACD,Phone-Inbound Direct,Phone-Outbound Courtesy,Phone-Outbound Sales</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_94084656</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CREATED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CASE_NUMBER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>PSD - Emails (Last Week)</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

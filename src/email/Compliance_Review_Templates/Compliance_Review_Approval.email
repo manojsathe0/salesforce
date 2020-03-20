@@ -1,0 +1,12 @@
+<p>You have received a Compliance Review to approve.  Please see the links below for further assistance.</p>
+<p>Compliance Review: &nbsp;
+<a href="{!Compliance_Review__c.Link}">{!Compliance_Review__c.Name}</a><br/>
+Representative: {!Compliance_Review__c.Representative__c}<br/>
+CIC Call ID#: {!Compliance_Review__c.Recorded_Call_ID__c}<br/>
+<br/>
+Approve/Reject: &nbsp;
+<a href="{!LEFT(Compliance_Review__c.Link, LEN(Compliance_Review__c.Link) - 15)}p/process/ProcessInstanceWorkitemWizardStageManager?id={!Workitem.ID}">Click here</a>
+</p>
+<p>Click below to see all items you have pending approval:<br/>
+<a href="{!LEFT(Compliance_Review__c.Link, LEN(Compliance_Review__c.Link) - 15)}04i">Items To Approve</a>
+</p>

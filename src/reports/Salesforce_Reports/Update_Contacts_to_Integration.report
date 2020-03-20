@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Id</field>
+    </columns>
+    <columns>
+        <field>Contact$Contact_Type__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$Owner</field>
+    </columns>
+    <columns>
+        <field>Contact$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Contact$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Contact$LastModifiedDate</field>
+    </columns>
+    <description>SIP: Updating Contacts</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact$Owner</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Integration User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$LastModifiedDate</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>6/20/2015 3:02 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Contact_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Primary Contact</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Update Contacts to Integration</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Contact$LastModifiedDate</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <endDate>2015-06-19</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

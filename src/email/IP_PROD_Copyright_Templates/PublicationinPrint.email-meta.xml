@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>cr17</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PROBLEM - Publication in Print?</name>
+    <style>none</style>
+    <subject>Publication in Print?</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+While reviewing your Copyright application, we noticed a potential issue that may delay your registration with the US Copyright Office.
+
+We need to confirm whether your work has only been published online, or if it had been printed in physical form and made available to the public. If the work was published physically, the US Copyright Office requires two hard copies of the published version for your work to be submitted with your application.
+
+To process your Copyright application without further delay, please call me at the number and extension below at your earliest convenience.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+{!User.Name}, {!User.Title}
+{!User.CompanyName}
+{!User.Street}, {!User.City}, {!User.State} {!User.PostalCode}
+{!User.Phone}, ext. {!User.Extension}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

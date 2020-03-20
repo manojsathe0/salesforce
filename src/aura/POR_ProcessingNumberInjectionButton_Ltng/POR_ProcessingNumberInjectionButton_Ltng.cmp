@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" controller="POR_PNInjectionButtonController_Ltng">
+    <aura:attribute name="displayMessage" type="Boolean" default="false"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="orderNumber" type="String"/>
+    <aura:attribute name="processingNumber" type="String"/>
+    <aura:attribute name="buttonDisabled" type="Boolean"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.checkRelaunchEligibility}"/>
+    <div aura:id="relaunchOrder">
+        <lightning:button label="Relaunch Order" onclick="{!c.showDialog}" disabled="{!v.buttonDisabled}"/>	
+        <aura:renderIf isTrue="{!v.displayMessage}">
+            <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog">
+                <!-- <lightning:spinner aura:id="spinner" alternativeText="Loading details" /> -->
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        
+                        <h2 class="slds-text-heading--medium">Relaunching Order</h2>
+                        
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <p>
+                            <b>
+                                Clicking "Yes" will re-launch the processing order number to the start of the workflow. Do you want to proceed?
+                            </b>
+                        </p>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button--neutral" type="button" onclick="{!c.processInjection}">Yes</button>
+                        <button class="slds-button slds-button--neutral" type="button" onclick="{!c.closeMessage}">No</button>
+                    </div>
+                </div>
+            </div>
+            <div id="background" class="slds-backdrop slds-backdrop--open">r</div>
+            
+        </aura:renderIf>
+    </div>
+</aura:component>

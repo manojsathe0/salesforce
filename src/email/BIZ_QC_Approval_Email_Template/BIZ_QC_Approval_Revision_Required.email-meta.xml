@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>BIZ QC Approval - Revision Required</name>
+    <style>freeForm</style>
+    <subject>Biz QC Revision Required - Case #{!Case.CaseNumber}</subject>
+    <textOnly>{!Case.Assigned_User__c},
+
+You are receiving this email because Revision is Required on Case #{!Case.CaseNumber}. Please review and resolve the following errors listed on this Case within one hour.
+
+Case#: {!Case.CaseNumber}
+Order#: {!Case.Order_Number__c}
+Case Created By: {!Case.CreatedBy}
+Processor: {!Case.Assigned_User__c}
+Identified By: {!User.FirstName} {!User.LastName}
+
+Errors Listed:
+
+{!Case.QC_Revision_Errors__c}
+{!Case.Other_QC_Revision_Errors__c}
+
+Steps to Resolve:
+
+1. Click the following link to view the Case.
+2. Resolve above Errors.
+3. Update the Case &apos;Status&apos; to Revision Complete.
+4. Click &apos;Save&apos;.
+
+DO NOT MODIFY THE QC ERRORS FIELD. ALL CHANGES ARE BEING TRACKED.
+
+{!Case.Link}
+
+Thank you,
+{!User.FirstName} {!User.LastName}</textOnly>
+    <type>html</type>
+</EmailTemplate>

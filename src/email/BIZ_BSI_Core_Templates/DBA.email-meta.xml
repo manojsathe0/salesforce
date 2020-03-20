@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>dbabsi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DBA</name>
+    <style>none</style>
+    <subject>DBA</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs.  In regard to your inquiry, LegalZoom can register a DBA (Doing Business As) name in the state of your choice.  LegalZoom will make the process easy for you by preparing the DBA Application and filing it on your behalf, as well as taking care of any publication requirements if needed.  
+
+A DBA (trade name or fictitious business name) is a name registration that allows you to conduct business under a name that is different from your legal name.  With a DBA you will be able to obtain a Federal Tax Identification Number (FEIN), open a business bank account, and accept or write checks under the business name.  [Please note that a DBA does not offer liability protection to its owner(s), and in most states the DBA does not provide name exclusivity.] 
+
+For your reference, I have provided the fee and links to our DBA service below:
+
+DBA
+Standard Package | $99.00 + county/state fees (7 - 20 business days)
+
+TO GET STARTED:
+http://www.legalzoom.com/legal-dba/dba-doing-business-as-overview.html
+FOR MORE INFORMATION:
+http://www.legalzoom.com/dba-guide/dba-defined.html
+
+OPTIONAL SERVICES
+Federal Tax Identification Number (FEIN) Application Preparation 
+FEIN Obtainment | $79.00 
+
+Please feel free to contact LegalZoom at (888) 381-8758 if you have any further questions.  Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

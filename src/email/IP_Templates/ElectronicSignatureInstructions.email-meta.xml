@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>EsigHow</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Electronic Signature Instructions</name>
+    <style>none</style>
+    <subject>Electronic Signature Instructions</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+
+To finalize the submission of your trademark, you are required to review and electronically sign your application. To electronically sign, locate the e-mail sent to you with the subject “LegalZoom Order (order #) Signature Request…” and then follow the directions below:
+
+1. Follow the “Click Here” link.
+2. Review the information contained within the application. If you would like to make a change to the application, please send a written request via email to trademarks@legalzoom.com or reply to this email. ***Please note changes cannot be made after the application is signed.***
+3. Complete the electronic signature portion of the application. To sign the application, you will need to type your name between two (2) forward slashes. For example: /John Doe/
+
+Please keep in mind, that once you click on the &quot;Sign It&quot; button, no further changes can be made to your application.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

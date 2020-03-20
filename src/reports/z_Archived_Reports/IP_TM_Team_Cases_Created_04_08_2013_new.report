@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case.Assigned_User__c</field>
+    </columns>
+    <columns>
+        <field>Case.Queue__c</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>field_key</field>
+    </columns>
+    <columns>
+        <field>CASE_CREATED_DATE</field>
+    </columns>
+    <description>cases created</description>
+    <filter>
+        <criteriaItems>
+            <column>CASE_CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Liliana Yong,Vance Parker,Mallary Snodgrass,Andre Paulk,David De Villa,Joshua Hart,Ennio Ochoa,Earvin Guanzon,Kendy Tran,Michael Valino,Marlon Andino,Victor Cun,Hoa Cun,Isabel Valencia,Liliana Cansiani,Robert McCrum</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>field_key</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Created.</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CASE_CREATED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>STATUS</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>IP TM Team Cases Created 04/08/2013 new</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CASE_CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

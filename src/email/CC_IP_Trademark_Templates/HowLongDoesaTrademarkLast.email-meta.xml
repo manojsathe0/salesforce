@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tm4howlong</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>How Long Does a Trademark Last?</name>
+    <style>none</style>
+    <subject>How Long Does a Trademark Last?</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+For a trademark registration to remain valid, you must take action to ensure the proper documents are filed with the U.S. Patent and Trademark Office (USPTO). There are a few different types of documents required, depending on the length of time following the original registration date. See below:
+
+Between years 5-6*: Section 8 Declaration of Continued Use or Excusable Nonuse
+Between years 9-10*: Combined Section 8 Declaration/Section 9 Trademark Renewal
+Every 10 years thereafter: Combined Section 8 Declaration/Section 9 Trademark Renewal
+
+Filing the Section 8 Declaration tells the USPTO that your trademark is still being used in commerce in the way in which you claimed on your registration (of you have an acceptable reason for its nonuse). Renewal of your trademark is required for your registration to remain valid for the next term (see below for term duration).
+
+Term duration: Trademark registrations granted PRIOR to November 16, 1989 have a 20-year term, and ON or AFTER that date, a 10-year term. The same goes for renewal periods. Renewals granted PRIOR to November 16, 1989 have a 20-year term, and renewals granted ON or AFTER that date, a 10-year term.
+
+Click on the following links for more information or to get started. 
+Section 8: http://www.legalzoom.com/trademarks-section8-declaration/trademarks-section8-declaration-overview.html
+Section 9: http://www.legalzoom.com/trademarks-section9-renewal/trademarks-section9-renewal-overview.html 
+Combined Section 8 &amp; 9: http://www.legalzoom.com/trademarks-section9-renewal/trademarks-section9-renewal-overview.html 
+
+If you have any questions or would like additional information, please call us at (800) 773-0888 Monday?Friday from 6 a.m.?7p.m. PT or email us at customercare@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to serving you again soon.
+
+Best regards,
+
+The LegalZoom Team
+
+*Unless you request a 6-month grace period for an additional fee of $100 per class.
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

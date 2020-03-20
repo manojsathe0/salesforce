@@ -1,0 +1,207 @@
+<div class="emailHeader">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style type="text/css">
+ html { -webkit-text-size-adjust:none; } </style>
+
+</head>
+
+<body><div align="center">
+  <!--start preheader -->
+  <table width="640" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+<td align="right" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666;"><div style="margin-bottom:5px;"> </div></td>
+    </tr>
+  </table>
+  
+  <!--end preheader -->
+ <!--start body --> 
+  
+  <!--start header 04 -->
+  <table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer -->
+    
+    <table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="194" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666;"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom_Logo.gif" width="194" height="55" alt="LegalZoom.com" style="display:block; border:0;" /></td>
+    <td align="right"><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+</td>
+  </tr>
+</table>
+
+    </td>
+  </tr>
+  <tr>
+    <td><table width="640" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td width="142" height="27" align="center" valign="middle" background="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/nvbg1.jpg" bgcolor="#3F93ED"><a href="http://www.legalzoom.com/wills-estate-planning/wills-estate-planning.html" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight:bold; text-decoration:none;">Personal Services</a></td>
+  <td width="145" align="center" valign="middle" background="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/nvbg2.jpg" bgcolor="#3F93ED"><a href="http://www.legalzoom.com/business-formations/business-formations.html" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight:bold; text-decoration:none;">Business Services</a></td>
+  <td width="218" align="center" valign="middle" background="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/nvbg3.jpg" bgcolor="#3F93ED"><a href="http://www.legalzoom.com/trademarks-patents-copyrights/trademarks-patents-copyrights.html" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight:bold; text-decoration:none;">Trademark, Patent & Copyright</a></td>
+  <td width="135" align="right" background="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/nvbg4.jpg" bgcolor="#3F93ED">
+     <table border="0" cellspacing="0" cellpadding="0" bgcolor="#3F93ED">
+<tr>
+  <td width="21" align="left"><a href="http://twitter.com/legalzoom?header"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/twitter.jpg" width="18" height="19" alt="twitter" style="display:block; border:0;" /></a></td>
+  <td width="21" align="left"><a href="http://www.facebook.com/LegalZoom?header"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/facebook.jpg" width="17" height="19" alt="facebook" style="display:block; border:0;" /></a></td>
+  <td align="left"><a href="http://blog.legalzoom.com?header"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/blog.jpg" width="19" height="19" alt="blog" style="display:block; border:0;" /></a></td>
+  <td width="9"></td>
+</tr>
+    </table>
+
+ </td>
+</tr>
+    </table></td>
+  </tr>
+</table>
+    <!--end header 04 -->
+ <!-- start secondary 3 -->
+  <table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+   <td align="left" valign="middle"><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer --><div style="font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#000066; margin-bottom:10px; line-height:18px;"></div><div style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#666666; margin-right:80px; margin-bottom:0px;">
+<p>Dear {!Contact.FirstName},<br/>Thank you for your recent Small Claims order.<br/>We have received your completed questionnaire and are in the process of reviewing the claim information. We will prepare all your documents and ship them to you within 2 business days, along with detailed instructions on how to file your claim and serve your defendant. If you have any questions, please contact us by replying to this email, or feel free to call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.<br/></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter">
+<div style="font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#666666; margin-right:80px; margin-bottom:0px;">
+<p>We truly appreciate your business and look forward to serving your future legal document needs.<br/><br/>Best regards,<br/><br/>The LegalZoom Team<br/><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer --></td>
+  </tr>
+</table>
+
+<!--dotted div -->
+  <table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="10"></td>
+  </tr>
+  <tr>
+    <td><img src="2011_8_26_BCS_Response_Pending_Email.images/div.gif" width="640" height="1" style="display:block; border:0;" /></td>
+  </tr>
+  <tr>
+     <td height="10"></td>
+  </tr>
+</table>
+<!--dotted div -->
+   <!--end secondary 3 -->  
+  
+   <!--end body body --> 
+<!--start footer nav -->
+<table width="640" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="5" bgcolor="#3673CC"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/ftr_top.jpg" width="640" height="5" alt="" style="display:block; border:0;" /></td>
+  </tr>
+  <tr>
+    <td height="173" valign="top" background="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/ftr_bg.jpg" bgcolor="#3673CC" style="background-repeat:no-repeat;"><table width="620" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+  <td valign="top"><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="5"></td></tr></table><!--spacer --><table width="620" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+<td align="left" valign="middle"><!--preference center link and text --> </td>
+<td align="right"><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#ffffff; font-weight:bold;"><div style="margin-right:5px;">Connect & Share:</div></td>
+    <td><a href="http://twitter.com/legalzoom?linkfarm"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/ftr_twitter.jpg" alt="twitter" width="25" height="22" style="display:block; border:0;" /></a></td>
+    <td><a href="https://www.facebook.com/LegalZoom?linkfarm"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/ftr_fb.jpg" width="25" height="22" alt="facebook" style="display:block; border:0;" /></a></td>
+    <td><a href="http://blog.legalzoom.com?linkfarm"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/ftr_blog.jpg" width="27" height="22" alt="blog" style="display:block; border:0;" /></a></td>
+  </tr>
+</table></td>
+    </tr>
+  </table>
+  <!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer -->
+  </td>
+</tr>
+<tr>
+  <td height="1" bgcolor="#8abbef"></td>
+</tr>
+<tr>
+  <td align="left" valign="top">   <!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="8"></td></tr></table><!--spacer -->
+  
+  <table width="620" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+  <td align="left" valign="top"><div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight:bold; color:#FFFFFF; line-height:13px; margin-bottom:8px; margin-right:10px;"><a href="http://www.legalzoom.com" style="text-decoration: none;"><span style="color:#FFFFFF; text-decoration:none;" border="0">LegalZoom.com</span></a></div>
+
+   
+    <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/about-us?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">About Us</span></a></div>
+     <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/customer-support/contact-us.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Contact Us</span></a></div>
+   <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/satisfaction-guarantee.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">100% Satifsfaction<br/>Guarantee</span></a></div>
+ <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/article-center?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Article Center</span></a></div>
+<div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/videos?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Video Center</span></a></div>
+<div style="line-height:13px; margin-bottom:1px;"><a href="http://info.legalzoom.com/?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Legal Info</span></a></div> 
+    </td>
+  <td align="left" valign="top"><div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight:bold; color:#FFFFFF; line-height:13px; margin-bottom:8px; margin-right:10px;"><a href="http://www.legalzoom.com/wills-estate-planning/wills-estate-planning.html" style="text-decoration: none;"><span style="color:#FFFFFF; text-decoration:none;" border="0">Personal Services</span></a></div>
+    <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/legal-wills/lwt-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Last Will and Testament</span></a></div>
+     <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/living-trusts/living-trusts-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Living Trust</span></a></div>
+   <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/living-wills/living-wills-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Living Will</span></a></div>
+ <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/power-of-attorney/power-of-attorney-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Power of Attorney</span> </a></div>
+<div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/legal-divorce/divorce-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Divorce</span></a></div>
+<div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/bankruptcy/bankruptcy-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Bankruptcy</span></a></div>
+    </td>
+    <td align="left" valign="top"><div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight:bold; color:#FFFFFF; line-height:13px; margin-bottom:8px; margin-right:10px;"><a href="http://www.legalzoom.com/business-formations/business-formations.html" style="text-decoration: none;"><span style="color:#FFFFFF; text-decoration:none;" border="0">Business Services</span></a></div>
+    <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/limited-liability-company/limited-liability-company-overview.html" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">LLC (Limited Liability Company)</span></a></div>
+     <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/legal-incorporation/incorporation-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Incorporation (S-Corp, C-Corp)</span></a></div>
+   <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/legal-dba/dba-doing-business-as-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">DBA/Business Names</span></a></div>
+ <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/non-profits/non-profit-corporation-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Non-Profit</span> </a></div>
+<div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/partnership-agreement/partnership-agreement-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Partnership Agreements</span></a></div>
+<div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/additional-business-services/annual-reports.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Annual Reports</span></a></div></td>
+    <td align="left" valign="top"><div style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight:bold; color:#FFFFFF; line-height:13px; margin-bottom:8px;"><a href="http://www.legalzoom.com/trademarks-patents-copyrights/trademarks-patents-copyrights.html" style="text-decoration: none;"><span style="color:#FFFFFF; text-decoration:none;" border="0">Trademark, Patent & Copyright</span></a></div>
+    <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/trademarks/trademarks-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Trademarks</span></a></div>
+     <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/legal-copyrights/copyrights-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Copyright</span></a></div>
+   <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/trademarks-patents-copyrights/patent-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Patents</span></a></div>
+ <div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/trademark-search/trademark-search-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Trademark Search</span>
+ </a></div>
+<div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/patent-search/patent-search-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Patent Search</span></a></div>
+<div style="line-height:13px; margin-bottom:1px;"><a href="http://www.legalzoom.com/trademark-monitoring/trademark-monitoring-overview.html?linkfarm" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFFFFF; text-decoration:none;"><span style="color:#FFFFFF;">Trademark Monitoring</span></a></div>
+    </td>
+  </tr>
+</table>
+
+
+  </td>
+</tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="5" bgcolor="#3673CC"><img src="https://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/ftr_btm.jpg" width="640" height="5" alt="" style="display:block; border:0;" /></td>
+  </tr>
+</table>
+<!--end footer nav -->
+  
+  <!--start footer text -->
+  
+<table width="620" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer -->
+    
+    <table width="620" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666;"><a href="http://www.legalzoom.com/privacy-policy-popup.html?" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666; text-decoration:underline;"><span style="color:#666666;">Privacy Policy</span></a> </td>
+    <td align="right" style="font-family:Arial, Helvetica, sans-serif; color:#000066; font-size:11px;">Call Customer Care: <span style="font-size:12px; font-weight:bold;">{!snippetVariable.ccphone} </span> </td>
+  </tr>
+</table>
+
+    </td>
+  </tr>
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#666666;"><!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer -->This is a service email related to your 
+LegalZoom account.<br/><br/>LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+<br/><br/>
+Please add services@emails.legalzoom.com to your address book. 
+<br/><br/>
+This email was sent to: {!snippetVariable.emailaddressdollarsign}
+<br/><br/>
+&copy; LegalZoom.com, Inc. All rights reserved.
+<!--spacer --><table border="0" cellspacing="0" cellpadding="0"><tr><td height="10"></td></tr></table><!--spacer -->
+</td>
+  </tr>
+</table></p></div>
+
+  
+  <!--end footer text -->
+</div>
+</body>
+</html>

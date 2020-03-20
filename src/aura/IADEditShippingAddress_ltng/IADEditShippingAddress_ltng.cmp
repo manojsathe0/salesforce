@@ -1,0 +1,97 @@
+<aura:component controller="IADEditShippingAddressController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="shippingContact" type="Object" />
+    <aura:attribute name="states" type="String[]" />
+    <aura:attribute name="orderNumber" type="String" />
+    <aura:attribute name="authorizedid" type="String" />
+    <aura:attribute name="orderContactId" type="String" />
+    <aura:attribute name="isNewOrderSpecificContact" type="Boolean" default="false"/>
+    <aura:attribute name="isDeletable" type="Boolean" default="false" />
+    <aura:handler name="init" action="{!c.doInit}" value="this" />
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <div class="slds-card" style="padding: 1% 2% 1% 1%">
+        <lightning:spinner aura:id="mySpinner" />
+        <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="custom:custom83" size="medium"/>
+            </div>
+            <div class="slds-media__body">
+                <p class="slds-text-title--caps slds-line-height--reset">Contacts</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Edit Shipping Address">{!v.title}</h1>
+            </div>
+        </div> 
+        <div class="slds-form slds-form_compound" style="padding: 1% 0 0 0">
+            <div class="slds-form-element__group">
+                <form>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" label="First Name" name="firstName" value="{!v.shippingContact.firstName}" />
+                        </div>
+                        
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" label="Last Name" name="lastName" value="{!v.shippingContact.lastName}" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" label="Address 1" name="address1" value="{!v.shippingContact.addressLine1}" />
+                        </div>
+                        
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" label="Address 2" name="address2" value="{!v.shippingContact.addressLine2}" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" label="City" name="city" value="{!v.shippingContact.city}" />
+                        </div>
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:select aura:id="shippingAddressform" label="State" name="state" value="{!v.shippingContact.state}">
+                                <option value="">-- None --</option>
+                                <aura:iteration items="{!v.states}" var="state">
+                                    <option value="{!state}" text="{!state}" selected="{!v.shippingContact.state == state ? true : false}"></option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" name="zipCode" label="Zip Code" value="{!v.shippingContact.zipCode}" pattern="^\d{5}(?:[-\s]\d{4})?$"/> <!--  pattern="^\d{5}(?:[-\s]\d{4})?$" -->
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" type="tel" label="Home Phone" name="homePhone" value="{!v.shippingContact.homePhone}" /> <!-- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
+                        </div>
+                        
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" type="tel" label="Work Phone" name="workPhone" value="{!v.shippingContact.workPhone}" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" type="tel" label="Mobile Phone" name="mobilePhone" value="{!v.shippingContact.mobilePhone}" />
+                        </div>
+                        
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" type="tel" label="Fax Phone" name="faxPhone" value="{!v.shippingContact.faxPhone}" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_1-of-2">
+                            <lightning:input aura:id="shippingAddressform" type="email" label="Email" name="email" value="{!v.shippingContact.theEmail}"  />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div style="margin-top:25px;text-align:center;">
+                <button class="slds-button slds-button--neutral" onclick="{!c.closeFocusedTab}">Cancel</button>
+                <button class="slds-button slds-button--brand" style="{!v.isNewOrderSpecificContact ? 'display:none' : ''}" onclick="{!c.updateOrderSpecificContact}">Update</button>
+                <button class="slds-button slds-button--brand" style="{!v.isNewOrderSpecificContact ? '' : 'display:none'}" onclick="{!c.createOrderSpecificContact}">Create</button>
+                <button class="slds-button slds-button--brand" style="{!v.isNewOrderSpecificContact || v.isDeletable == 'false' ? 'display:none' : ''}" onclick="{!c.deleteOrderSpecificContact}">Delete</button>
+            </div>
+        </div>
+    </div>
+</aura:component>

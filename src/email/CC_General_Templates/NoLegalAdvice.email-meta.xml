@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>nla</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>No Legal Advice</name>
+    <style>none</style>
+    <subject>No Legal Advice</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+LegalZoom is not an attorney and cannot provide legal advice. However, we are always seeking innovative ways for people to get the benefits of the law. While we offer a wide variety of documents and services, people often need the advice and guidance of an attorney.
+
+If you wish to find an attorney to answer your legal questions, please visit the link to our Attorney Connect national directory of pre-screened and insured attorneys at http://attorneyconnect.legalzoom.com/.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

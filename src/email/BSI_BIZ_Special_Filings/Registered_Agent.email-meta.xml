@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Registered Agent</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Registered Agent</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, we can assist you in providing Registered Agent services for your business.
+ 
+For your reference, general information regarding Registered Agent services has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below.  By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+
+A Registered Agent is a designated party which is responsible for receiving all official state correspondence and service of process on behalf of the entity.  This party must be an adult with a physical address in the state of formation; PO Boxes are not permitted.  The agent must be available at that address during standard business hours to accept any documentation.  
+ 
+Having LegalZoom act as the Registered Agent can help protect privacy, and also help you keep the entity in compliance with state and federal authorities.  As the Registered Agent, we forward state or legal correspondence to you, while filtering out junk mail and solicitations.  We also provide monthly email notifications to keep you informed of any upcoming state or federal filing deadlines, annual requirements, or taxes.
+ 
+For your convenience, the relevant pricing is included below.
+ 
+REGISTERED AGENT - $159.00/year
+ 
+GET STARTED
+http://www.legalzoom.com/additional-business-services/registered-agent-services.html
+ 
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TradE1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Trademark Electronic Filing Update</name>
+    <style>none</style>
+    <subject>Trademark Electronic Filing Update</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent order.
+
+We have attempted to contact you at XXX-XXX-XXXX, to let you know that the USPTO will be updating their Trademark application forms on xx/xx/xxxx.
+
+If you have received an &quot;e-signature request&quot; email from LegalZoom, you will need to e-sign and return the form by xx/xx/xxxx 4:00p.m.PST. If you have not received the e-signature request, please contact LegalZoom as soon as possible so we may resend your application via e-mail.
+
+If you are unable to e-sign and return your form to LegalZoom by the specified time, we will need to reprocess your application, using the new form, and you may experience a 2-3 day delay
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

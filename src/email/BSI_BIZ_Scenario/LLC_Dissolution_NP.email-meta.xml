@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LLC - Dissolution + NP</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>LLC - Dissolution + NP</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, LegalZoom can assist you in changing your current business structure from a Limited Liability Company (LLC) into a Non-Profit Corporation.  We simplify the process for you by preparing and filing the Articles of Dissolution with your respective Secretary of State, and by preparing and filing the Articles of Incorporation with your respective Secretary of State, and by providing templates for drafting the Bylaws &amp; Resolutions for the entity.
+ 
+For your reference, general information regarding dissolving an existing LLC and filing a new Non-Profit Corporation has been outlined below.  If you would like to get specific, detailed information on your personal situation, please contact a Business Formation Specialist at the phone number listed below.  By speaking with a Specialist will be able to assist with answering further questions, as well as building a customized package to best benefit your needs.
+
+Many states do not offer a direct conversion process to convert from an LLC to a Non-Profit Corporation.  In these circumstances, the process typically involves dissolving the existing LLC and filing a new Non-Profit Corporation in its place.  This change may require the entity to obtain a new Employer Identification Number (EIN), however you may contact the IRS directly to inquire about the possibility of keeping the existing EIN.
+
+One of the biggest advantages of a Non-Profit Corporation is the ability to apply for tax exempt status from the Internal Revenue Service (IRS) and state government.  This tax exempt status allows the Non-Profit to be exempt from income taxes on any funds coming into the business, and also allows the donors to the organization to deduct their contributions on their individual tax returns.  Tax exempt status with the IRS is obtained by applying for a 501(c) designation from the IRS.  We offer preparation services for this application, in which we will fill out the application for your Non-Profit based on the information you provide in our online questionnaires, ensuring the application is filled out properly.
+ 
+Our 501(c) Application preparation service makes the process easy for you to apply for tax exemption for your Non-Profit Corporation.  We prepare the entire Application and provide you step-by-step instructions on what needs to be submitted to the IRS with the Application.  The IRS has a processing fee that will be paid at the time the Application is submitted, and this fee will depend on the projected income of the Non-Profit.  If the projected average annual income for the first four years of the Non-Profit’s existence is $10,000 or less, the IRS filing fee is $400; otherwise it is $850.  
+
+For your convenience, we have listed below all relevant pricing, as well as some additional services that may be beneficial to your business.
+ 
+DISSOLUTION
+Rush - $239.00 + state fee - (10-15 business days)*
+Standard - $129.00 + state fee + shipping - (20-30 business days)
+ 
+To view the state fee for your state, please follow the &quot;GET STARTED&quot; link below and select your state from the drop-down list.
+
+GET STARTED
+http://www.legalzoom.com/additional-business-services/articles-of-dissolution-corporation-llc.html
+
+NON-PROFIT CORPORATION
+Express Gold - $359.00 + state fee - (7-10 business days)*
+Standard - $239.00 + state fee + shipping - (20-35 business days)
+Economy - $99.00 + state fee + shipping - (20-35 business days)
+
+To view the state fee for your state, please follow the &quot;PACKAGE DETAILS&quot; link below and select your state from the drop-down list.
+ 
+GET STARTED
+http://www.legalzoom.com/non-profits/non-profit-corporation-overview.html
+PACKAGE DETAILS
+http://www.legalzoom.com/non-profits/non-profits-packages.html
+ 
+ADDITIONAL SERVICES
+EIN Obtainment - $79.00 ($49.00 with Express Gold package)
+501(c) Application Preparation - $495.00 (with any package)
+Registered Agent - $159.00/year
+ 
+* Some states may have delays which affect the listed turnaround time.  To determine if your state is affected, please contact a Specialist at the phone number listed below.
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

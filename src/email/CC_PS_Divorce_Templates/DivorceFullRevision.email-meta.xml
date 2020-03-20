@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>divrevfull</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Divorce - Full Revision</name>
+    <style>none</style>
+    <subject>Divorce - Full Revision</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Based on your recent request for changes and/or additions to your order, LegalZoom requires additional information to complete your request. You will be credited your initial purchase amount to allow you to re-enter the website and complete a new order. This email is to confirm that a store credit in the amount of $299.00 for order #XXXXXXXXXXX has been applied to your account. This credit is good for 60 days and can be used towards the purchase of your new LegalZoom order.
+
+To use your credit, simply go to www.legalzoom.com :
+
+- Sign in using the same email address and password used on your credited order.
+
+- Select the Divorce product.
+
+- During checkout your credit will be automatically applied to the order total.
+
+- Any remaining credit will be automatically refunded to you.  
+
+- Within the special instructions of your questionnaire add ?revision for order #XXXXXXXXXX? (to reference your old order number)
+
+- Reference the attached previously completed questionnaire to assist you in completion of your revisions.
+
+- LegalZoom will complete your order within 5-7 business days.
+
+You can check your available store credit balance by visiting www.legalzoom.com and logging in to My Account.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

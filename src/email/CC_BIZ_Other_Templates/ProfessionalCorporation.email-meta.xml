@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>profcorp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Professional Corporation</name>
+    <style>none</style>
+    <subject>Professional Corporation</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry.
+
+In many states, professionals (for example, doctors, lawyers or accountants) who want to incorporate their practices must create what&apos;s called a professional corporation.  The list of professionals required to incorporate as a professional corporation is different in each state. Usually, though, mandatory professional incorporation requirements apply to these professionals:
+
+? Accountants 
+? Engineers 
+? Health care professionals such as audiologists, dentists, nurses, opticians, optometrists, pharmacists, physical therapists, physicians and speech pathologists 
+? Lawyers 
+? Psychologists 
+? Social workers 
+? Veterinarians
+
+You&apos;ll need to call your state&apos;s corporate filing office (usually the Secretary of State or Corporation Commissioner) to see which professions are required to form professional corporations in your own state, or if applicable, contact your licensing board for details.
+ 
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

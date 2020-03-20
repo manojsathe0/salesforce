@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>statreq</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Status Request</name>
+    <style>none</style>
+    <subject>Status Request</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom regarding your 501c3 order. 
+
+Your responses are currently being reviewed.  The 501c3 application requires extensive detail about your company&apos;s programs, fundraising, and directors in order to verify its legitimacy, as well as its suitability for tax exemption.  
+ 
+In order to make sure the application is well put-together, it is continually reviewed throughout our preparation process to improve the likelihood of approval by the IRS.  Though the IRS takes 3-6 months to approve the tax exemption, the tax-exempt status is extended back to the original date of Incorporation.  If the IRS needs more information, the process can be significantly delayed as you will need to resolve the issues with the IRS via mail directly.  Our goal is to make the approval process as smooth as possible by taking the time necessary to prepare your forms with the information the IRS needs upfront.  This will limit your interaction with the IRS after the application has been submitted.  
+
+Within 1-2 business days, you may be receiving additional questions from Legalzoom in order to complete your application.  However, if no other information is needed, the prepared application will be sent to you via email and mail.  
+
+If you have any questions regarding your order, please contact our Customer Care Department at (800) 773-0888 or nonprofit@legalzoom.com.  Please include your order number in your correspondences for prompt service.
+
+Best regards,
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

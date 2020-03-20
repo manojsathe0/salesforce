@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>15</activeVersionNumber>
+    <description>IN USE IN PRODUCTION - This is a team-specific subflow, part of the larger Case Wizard - Customer Care Flow. See the Flow Name to determine the team this flow supports.</description>
+    <masterLabel>Case Wizard CC AS</masterLabel>
+</FlowDefinition>

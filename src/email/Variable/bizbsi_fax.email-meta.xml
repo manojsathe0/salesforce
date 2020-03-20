@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.bizbsi_fax</name>
+    <style>none</style>
+    <subject>bizbsi_fax</subject>
+    <textOnly>(323) 790-1991 Fax</textOnly>
+    <type>custom</type>
+</EmailTemplate>

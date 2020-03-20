@@ -1,0 +1,40 @@
+<aura:component controller="IADStoreCreditPanelController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="storeCreditPanelService" type="Object" />
+    <aura:attribute name="hasStoreCredit" type="Boolean" default="false" />
+    <aura:attribute name="orderId" type="String" />
+    <aura:attribute name="customerId" type="String" />
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="slds-card">
+        <lightning:spinner aura:id="mySpinner" />
+        <div style="{!v.hasStoreCredit ? '' : 'display:none'}">    
+            <aura:iteration items="{!v.storeCreditPanelService.storeCredit.storeCredits}" var="theStoreCredit">
+                <div class="slds-m-top--small">
+                    <div class="slds-grid slds-grid--align-spread slds-text-body--small">
+                        <div class="slds-col slds-size--2-of-3">
+                            <a styleClass="slds-text-body--x-small" title="Click to open Store Credit" data-storecredit ="{!theStoreCredit.storeCreditId}" data-storecreditcode ="{!theStoreCredit.code}" onclick="{!c.openStoreCredit}" id="storeCredit"> <!-- onclick="openStoreCredit('{!theStoreCredit.storeCreditId}', '{!theStoreCredit.code}'); return false;" -->
+                                <b><u id="codeId"> {!theStoreCredit.code} </u></b>
+                            </a> 
+                        </div>
+                        <div class="slds-col slds-size--1-of-3" id="amountId">
+                            ${!theStoreCredit.amount}
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </aura:iteration>
+        </div>
+        
+        <div style="{!v.hasStoreCredit ? 'display:none' : ''}">  
+            <br/><br/><br/><br/>
+            <div align="center">
+                <lightning:icon iconName="standard:approval" size="small" alternativeText="approval Icon"  id="approvalIcon"/>
+                <span class="slds-assistive-text">medium approval Icon</span>
+            </div>
+            <p class="slds-text-heading slds-text-align--center" id="noCredlabel">no store credits</p>
+        </div>
+    </div>
+</aura:component>

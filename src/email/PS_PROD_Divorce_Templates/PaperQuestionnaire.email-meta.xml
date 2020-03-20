@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>PQ12</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Paper Questionnaire</name>
+    <style>none</style>
+    <subject>Paper Questionnaire</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing Legalzoom.  
+
+We have attached your XXXXXXXXX questionnaire in Word 95 format.  If you have any problems opening this attachment, please contact us at {!snippetVariable.ccphone} or respond to this email.
+
+LegalZoom prepares documents for uncontested divorces, meaning that both you and your spouse have agreed on all the terms of the divorce. Our divorce form also requires the current addresses of both parties and your signatures.  Please read through the questionnaire and discard any sections pertaining to children if you and your spouse do not have any.
+
+Once you have completed your questionnaire, please reply to this email and attach your completed questionnaire. Your Divorce documents will be shipped within 3-5 business days after we receive your questionnaire.
+
+If you have any further questions, please simply reply to this email, or feel free to call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.  We truly appreciate your business and look forward to serving your future legal document needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

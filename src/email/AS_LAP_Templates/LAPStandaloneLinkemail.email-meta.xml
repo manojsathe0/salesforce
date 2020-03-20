@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>laplink2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LAP Standalone Link (email)</name>
+    <style>none</style>
+    <subject>LAP Standalone Link (email)</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+LegalZoom is not an attorney and cannot provide legal advice. However, we are always seeking innovative ways for people to get the benefits of the law. While we offer a wide variety of documents and services, people often need the advice and guidance of an attorney.
+
+Please visit the link to our Legal Advantage Plus product offering to learn more about getting advice addressing your personal legal needs from an experienced attorney.
+
+https://www.legalzoom.com/attorneys-lawyers/legal-plans/personal
+
+{!snippetVariable.asdsigline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.
+
+{!snippetVariable.bestregardstext}
+
+{!snippetVariable.thelegalzoomteamline}
+
+{!snippetVariable.asdphone} | {!snippetVariable.asdfax} | {!snippetVariable.lacemail}
+{!snippetVariable.lz_website} | {!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

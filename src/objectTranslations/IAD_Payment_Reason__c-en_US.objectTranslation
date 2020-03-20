@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IAD Payment Reason</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IAD Payment Reason</value>
+    </caseValues>
+    <fields>
+        <label><!-- ReasonId --></label>
+        <name>ReasonId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

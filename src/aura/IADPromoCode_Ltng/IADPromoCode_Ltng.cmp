@@ -1,0 +1,74 @@
+<aura:component controller="IADPromoCodeController_Ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+    <aura:attribute name="orderId" type="String"/>
+    <aura:attribute name="promoCode" type="String"/>
+    <aura:attribute name="promoValue" type="Decimal"/>
+    <aura:attribute name="comments" type="String"/>
+    
+    <aura:attribute name="promoApplied" type="Boolean" default="false"/>
+    <aura:attribute name="promoAppliedAmount" type="Decimal" />
+    <aura:attribute name="currentPromoCode" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    
+    <div class="slds-card" style="padding: 1% 2% 1% 1%;">
+        <lightning:spinner aura:id="spinner" alternativeText="loading promo values" />
+        <div class="slds-media slds-no-space slds-grow">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="custom:custom17" size="medium"/>
+            </div>
+            <div class="slds-media__body">
+                <p class="slds-text-title--caps slds-line-height--reset">Promotion</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Add Promo">Add Promo</h1>
+            </div>
+        </div>
+        <div class="slds-form slds-form_compound">                        
+            <div class="slds-form slds-form_compound" style="{!v.promoApplied ? 'padding: 1% 0 0 0' : 'display:none'}"> 
+                <div class="slds-form-element__group">
+                    <form>                    
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input label="Current Promo Code" name="currentPromoCode" value="{!v.currentPromoCode}" disabled="true"/>
+                            </div>
+                        </div>
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size_4-of-6">
+                                <lightning:input type="number" label="Amount" name="amount" value="{!v.promoAppliedAmount}" formatter="currency" disabled="true" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <button class="slds-button slds-button--brand" onclick="{!c.cancelPromotionalCode}"> Cancel Promo Code</button>
+                    <p style="color:red;">If Promo Code exists, you need to Cancel the existing Promo Code before you can apply another.</p>
+                </div>
+            </div>
+            
+            <div class="slds-form slds-form_compound" style="{!v.promoApplied ? 'display:none' : 'padding: 1% 0 0 0'}"> 
+                <div class="slds-form-element__group">
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:input aura:id="promoForm" label="Promo Code" name="promoCode" value="{!v.promoCode}" required="true"/>
+                        </div>
+                        <div style="{!v.promoValue != null ? 'margin:28px 0 0 5px' : 'display:none'}" >
+                            ${!v.promoValue}
+                        </div>
+                        <div style="margin:20px 0 0 10px" aura:id="editbutton" class="edit-button">
+                            <button class="slds-button slds-button--brand" onclick="{!c.checkPromo}"> Check Promo Code </button>
+                        </div>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size_4-of-6">
+                            <lightning:textarea aura:id="promoForm" name="comments" value="{!v.comments}" label="Comments" maxlength="300" required="true"/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="slds-button slds-button--neutral" onclick="{!c.closeFocusedTab}"> Close </button>
+                    <button class="slds-button slds-button--brand" onclick="{!c.validateFormAndApplyPromoCode}"> Apply Promo </button>
+                </div>
+            </div>    
+        </div>
+    </div>
+</aura:component>

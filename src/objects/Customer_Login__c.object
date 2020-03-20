@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The equivalent of LZData User table</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Box_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Box Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Create__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( &quot;/apex/ContactManager?CustomerLoginId=&quot; &amp; Id &amp; &quot;&amp;fkUser=&quot; &amp;  Customer_ID__c  , IMAGE( &quot;/resource/1434143528000/NewAuthorizedContactButton&quot; , &quot;New Authorized Contact&quot; ) , &quot;_self&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Create</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>fkUser in User table in LZData</description>
+        <externalId>true</externalId>
+        <label>Customer Number</label>
+        <length>13</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Has_Active_Box_Account__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Has Active Box Account</description>
+        <externalId>false</externalId>
+        <label>Has Active Box Account</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Login</relationshipLabel>
+        <relationshipName>Customer_Login</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Customer Login</label>
+    <listViews>
+        <fullName>All_Customer_Logins_Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>Customer_ID__c</columns>
+        <columns>Primary_Contact__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>All Customer Logins - Created Today</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Customer Login/Email</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Customer Login</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Primary_Contact__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Primary_Contact__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Primary_Contact__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Primary_Contact__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Authorized_Contact</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Authorized Contact</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/22.0/integration.js&quot;)} 
+if(!{!ISBLANK( Customer_Login__c.Customer_ID__c  )})
+{
+if (typeof(srcUp) == &apos;function&apos;) { 
+srcUp(&apos;/apex/ContactManager?isdtp=vw&amp;fkUser={!Customer_Login__c.Customer_ID__c}&amp;CustomerLoginId={!Customer_Login__c.Id}&apos;); 
+} else { 
+location.replace(&apos;/apex/ContactManager?fkUser={!Customer_Login__c.Customer_ID__c}&amp;CustomerLoginId={!Customer_Login__c.Id}&apos;); 
+}
+}else
+{
+window.alert(&apos;Cannot create new contact. Reason: Customer id = null&apos;); 
+}</url>
+    </webLinks>
+</CustomObject>

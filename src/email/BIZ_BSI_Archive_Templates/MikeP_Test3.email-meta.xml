@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>mp3</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>MikeP Test3</name>
+    <style>none</style>
+    <subject>Mike P Test 3</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.
+
+Currently, we are unable to continue processing your trademark application.  The goods and services listed on your questionnaire appear to include illegal or illicit material ? and per LegalZoom&apos;s policy, we will not process such orders.
+
+Because LegalZoom is legally prohibited from giving advice, it is our customers&apos; responsibility to develop a goods and services description that is appropriate for their trademark application*.  For more information relating to goods and services as well as International Classifications from the US Patent and Trademark Office (USPTO), please visit {!snippetVariable.tm_gs_manual}
+
+After reviewing this information, please provide us with a detailed list of goods and services.  If you choose to cancel at this time, you are eligible for a refund minus any search and processing fees already incurred.
+
+* Members of Business Advantage Pro can receive further guidance from an attorney for no additional cost.  If you purchased the Complete Coverage package, you can take advantage of your 30-day trial by simply signing into your LegalZoom Account at www.legalzoom.com/LZWeb/Welcome/SignIn.aspx, and submitting a request through the Member Center link. If you are not a Business Advantage Pro member and would like more information on this affordable service, please visit www.legalzoom.com/attorneys-lawyers/business-advantage-pro.html or call Customer Care at (877) 657-8787. Please note that Business Advantage Pro is not available in all states.
+
+{!snippetVariable.ip_gs_closing}
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

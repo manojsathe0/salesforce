@@ -1,0 +1,179 @@
+<apex:page controller="IADPromoCodeController" standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.IADJS)}"/>
+        <script type="text/javascript">
+           
+            function closeTab() {
+                sforce.console.getEnclosingTabId(closeSubtab);
+            }
+            var closeSubtab = function closeSubtab(result) {
+
+                var tabId = result.id;
+                sforce.console.closeTab(tabId);
+            };
+
+            window.onload = function() {
+                    displayPromoCode();
+            };
+            
+            var callback = function(result) { 
+            if (result.success) { 
+                   closeTab();
+             } else { 
+                   alert('The custom event could not be fired!');
+             } 
+            };
+
+            var callback2 = function(result) { 
+            if (result.success) { 
+                  
+             } else { 
+                   alert('The custom event could not be fired!');
+             } 
+            };
+            function notifyCallerCloseTab()
+            {
+              var jsonData = '{!orderId}';
+              sforce.console.fireEvent('RefreshOrderTabEvent', jsonData , callback);
+            
+            }
+            
+            function notifyCallerNoCloseTab()
+            {
+              var jsonData = '{!orderId}';
+              sforce.console.fireEvent('RefreshOrderTabEvent', jsonData , callback2);
+            
+            } 
+
+        </script>
+        <style type="text/css">
+            .slds td{padding-bottom:25px;}
+        </style>
+    </head>
+
+    <div class="slds">
+
+        <apex:form >
+            <apex:actionFunction name="applyPromoCode" action="{!applyPromoCode}"
+                                 status="statusUpdating" reRender="output" oncomplete="jsUtility.makeDarkBorder();">
+            </apex:actionFunction>
+            <apex:actionFunction name="displayPromoCode" action="{!displayPromoCode}"
+                                 status="statusUpdating" reRender="output" oncomplete="jsUtility.makeDarkBorder();">
+            </apex:actionFunction>
+
+            <apex:actionFunction name="checkPromoCode" action="{!checkPromoCode}"
+                                 status="statusUpdating" reRender="output" oncomplete="jsUtility.makeDarkBorder();">
+            </apex:actionFunction>
+            <apex:actionFunction name="cancelPromoCode" action="{!cancelPromoCode}"
+                                 status="statusUpdating" reRender="output" oncomplete="jsUtility.makeDarkBorder();">
+            </apex:actionFunction>
+
+            <apex:outputPanel id="output">
+                <script type="text/javascript">
+                    if('{!promocodeService.isPromoCodeApplied}' == 'true')
+                    {
+                       
+                       setTimeout(notifyCallerCloseTab,3000);
+
+                    }
+                    if('{!promocodeService.isPromoCodeCancelled}' == 'true')
+                    {
+                       
+                       setTimeout(notifyCallerNoCloseTab,3000);
+
+                    }
+
+                </script>
+                <c:IADMessageBox id="theMessages" theMessages="{!promoCodeService.iadMessages}" />
+                <apex:actionStatus id="statusUpdating">
+                    <apex:facet name="start">
+                        <div class="slds-spinner_container">
+                            <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                <div class="slds-spinner__dot-a"></div>c
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </apex:facet>
+                </apex:actionStatus>
+                <apex:outputPanel rendered="{!promoCodeService.hasPromoCode}">
+                    Current Promo Code : <strong>{!promoCodeService.currentPromoCode}</strong>
+                    <br />
+                    Amount : <strong>{!promoCodeService.currentAmount}</strong>
+                    <br />
+                    <br />
+                    <button onClick="cancelPromoCode(); return false;" class="slds-button slds-button--brand" type="button">Cancel PromoCode</button>
+                </apex:outputPanel>
+                <br />
+                <br />
+                <apex:outputPanel id="addPromoCodeSection" rendered="{!NOT(promoCodeService.hasPromoCode)}">
+                    <table>
+                        <tr>
+
+                            <td>
+                                Promo Code
+                            </td>
+                            <td>
+                                <apex:inputText id="promoCode" value="{!promoCode}"  styleClass="slds-input" />
+                            </td>
+                            <td>
+
+                                <apex:outputText value="{0, number, currency}">
+                                    <apex:param value="{!promoCodeService.promoCodeValue}" />
+                                </apex:outputText>
+
+                                &nbsp;&nbsp;<button onClick="checkPromoCode(); return false;" class="slds-button slds-button--brand" type="button">Check Promo Code</button>
+                            </td>
+
+
+
+                        </tr>
+
+                        <tr>
+
+
+                            <td>
+                                Comments
+                            </td>
+                            <td>
+
+
+                                <div id="inputDiv" class="slds-form-element">
+                                    <div class="slds-form-element__control">
+
+                                        <apex:inputTextarea id="theComment" value="{!comments}" styleClass="slds-textarea"/>
+                                    </div>
+
+                                </div>
+                            </td>
+
+
+                        </tr>
+
+
+
+
+                    </table>
+                    <br />
+                    <button onClick="closeTab(); return false;" class="slds-button slds-button--neutral" type="button">Close</button>
+                    <button onClick="applyPromoCode(); return false;" class="slds-button slds-button--brand" type="button">Add Promo Code</button>
+
+                </apex:outputPanel>
+                <br />
+                <br />
+                <apex:outputPanel rendered="{!promoCodeService.hasPromoCode}">
+                    <p style="color:red;">If Promo Code exists, you need to Cancel the existing Promo Code before you can apply another.</p>
+                </apex:outputPanel>
+
+            </apex:outputPanel>
+
+
+        </apex:form>
+
+    </div>
+
+    </html>
+</apex:page>

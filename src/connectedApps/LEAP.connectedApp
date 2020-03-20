@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>nshani@legalzoom.com</contactEmail>
+    <label>L.E.A.P.</label>
+    <logoUrl>https://legalzoom--c.na11.content.force.com/servlet/servlet.ImageServer?id=015G000000PXSqH&amp;oid=00DG0000000BmQx</logoUrl>
+    <startUrl>http://zoomercentral/Pages/LEAP/LEAP.html</startUrl>
+</ConnectedApp>

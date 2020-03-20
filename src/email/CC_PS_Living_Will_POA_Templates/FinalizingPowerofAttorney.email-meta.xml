@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>poafinaliz</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Finalizing Power of Attorney</name>
+    <style>none</style>
+    <subject>Finalizing Power of Attorney</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry.
+
+Here are the instructions for finalizing your Power of Attorney:
+
+1. You and your attorney-in-fact will need to sign all signature lines in the presence of two (or three, depending on the state) witnesses.
+
+2. Your witnesses will also have to sign the document(s). Do not use the following persons as witnesses: 
+
+*   Any person you appointed as attorney-in-fact or alternate
+*   The spouse or children of your attorney-in-fact or alternate
+*   Any person related to you by blood, marriage or adoption
+*   Any person entitled to receive anything under any last will and testament that you have made
+
+3. The Power of Attorney should be notarized by a notary public.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

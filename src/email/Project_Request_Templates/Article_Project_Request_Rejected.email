@@ -1,0 +1,9 @@
+****DENIED PROJECT REQUEST NOTIFICATION**** 
+
+Project Request Approver: {!Article_Project_Request__c.Project_Request_Approver__c} 
+Request Number:{!Article_Project_Request__c.Request__c} 
+Project Request Name: {!Article_Project_Request__c.Name} 
+
+Please click the following link to view Denied Project Request: 
+------------------------------------- 
+{!Article_Project_Request__c.Link}

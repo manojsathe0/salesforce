@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>IF(Activity.Number_Outgoing_Emails__c:SUM &gt;Case.Units__c:SUM, 0,Case.Units__c:SUM -Activity.Number_Outgoing_Emails__c:SUM)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Closed Cases w/o Email Response</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Case.Units__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Closed Cases from Incoming Emails</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_64769579</developerName>
+        <masterLabel>CC Email Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Case$Assigned_User__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>adam borrego</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>aaron lopez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>elizabeth moreno</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>hassim muthleb</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>holland rancier</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jeanne sommers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>molly freeman</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>rachel vanway</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>sean hoffman-murphy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Knatasha Chambers</sourceValue>
+            </sourceValues>
+            <value>Email Team</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Case.Activities$Date_Time_Created__c</field>
+    </columns>
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Queue__c</field>
+    </columns>
+    <columns>
+        <field>Case$Origin</field>
+    </columns>
+    <columns>
+        <field>Case$Status</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Action__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Email_Type__c</field>
+    </columns>
+    <columns>
+        <field>Case.Activities$Number_Outgoing_Emails__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case$CreatedBy</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Email to Case User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Status</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Assigned_User__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>adam borrego,aaron lopez,elizabeth moreno,hassim muthleb,holland rancier,jeanne sommers,molly freeman,rachel vanway,sean hoffman-murphy,adam alejandro,carrie frizzell,carmen williams,Knatasha Chambers</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case$ClosedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case$Assigned_User__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC Email Team_Emails No Resp(month View)</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Case_with_Activities_Custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Case$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

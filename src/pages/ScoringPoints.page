@@ -1,0 +1,2 @@
+<apex:page controller="ProcessScoringPoints" action="{!processUrlParameters}">
+</apex:page>

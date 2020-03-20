@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order360__c.Order_Item__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Order_Matching_Activity__c.Commission_Eligible_Revenue_Amount__c</field>
+    </columns>
+    <description>Commission Eligible Activities specific to email by agent and total</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Order_Matching_Activity__c.Activity_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Email</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Order360__c.Agent_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Order360__c.Order__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Commission Eligible Activities/Agent</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Order360__c@Order360__c.Order_Matching_Activity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <endDate>2016-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2013-01-01</startDate>
+    </timeFrameFilter>
+</Report>

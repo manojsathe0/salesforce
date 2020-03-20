@@ -1,0 +1,16 @@
+Thank you. Your inquiry has been received by our Customer Care Team. One of our Customer Care Specialists will review your inquiry and respond within one business day. 
+
+Did you know you can quickly find the answers to many of your questions at the LegalZoom Customer Care Center? 
+
+http://www.legalzoom.com/customer-support/customer-support.html?utm_source=salesforce&utm_medium=email&utm_campaign=selfservice 
+
+Visit anytime to check the status of your order, look up the answers to commonly asked questions, or browse our easy-to-read Education Center. 
+
+Thank you for choosing LegalZoom, America's #1 legal document service. We look forward to serving you. 
+
+Thank you,   
+{!Organization.Name} Customer Care Team
+
+
+
+ {!Case.Thread_Id}

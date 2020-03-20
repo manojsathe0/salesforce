@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SF Temp Abandoner Links &amp; Discount</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF Temp Abandoner Links &amp; Discount</name>
+    <style>freeForm</style>
+    <subject>LegalZoom Product Inquiry</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.com and taking the time to speak with me in regards to your business needs.  
+
+Per our conversation, please contact me directly before placing your order to ensure that your questionnaire is accurate and complete.
+
+TO GET STARTED:  
+
+LLC:  http://www.legalzoom.com/limited-liability-company/limited-liability-company-overview.html (Select &quot;Get Started&quot; orange box)
+Corp:  http://www.legalzoom.com/legal-incorporation/incorporation-overview.html (Select &quot;Get Started&quot; orange box)
+Non Profit:  http://www.legalzoom.com/non-profits/non-profit-corporation-overview.html (Select &quot;Get Started&quot; orange box)
+DBA: http://www.legalzoom.com/legal-dba/dba-doing-business-as-overview.html (Select &quot;Get Started&quot; orange box)
+
+Please feel free to call or email me to set up a time to complete your order.  I am more than happy to schedule time to assist you with getting your business started.
+
+Regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

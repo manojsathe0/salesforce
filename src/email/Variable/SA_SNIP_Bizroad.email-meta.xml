@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SA_SNIP_Bizroad</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SA_SNIP_Bizroad</name>
+    <style>none</style>
+    <subject>SA_SNIP_Bizroad</subject>
+    <textOnly>Attached you will find a basic roadmap, which outlines some of the other important things to consider when forming and running your business.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

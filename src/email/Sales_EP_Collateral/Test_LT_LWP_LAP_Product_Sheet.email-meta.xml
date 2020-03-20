@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Test_LT_LWP_LAP_Product_Sheet</name>
+    <style>none</style>
+    <subject>Your Requested Information About Our [Last Will Estate Plan / Living Trust Estate Plan]</subject>
+    <type>custom</type>
+</EmailTemplate>

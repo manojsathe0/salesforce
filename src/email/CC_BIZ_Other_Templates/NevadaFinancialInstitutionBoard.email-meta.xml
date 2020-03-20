@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>nvboard</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Nevada Financial Institution Board</name>
+    <style>none</style>
+    <subject>Nevada Financial Institution Board</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your inquiry.
+
+The State of Nevada Financial Institution Regulatory Board enforces regulations and provides licenses to financial institutions in the state. As such, prior to using certain finance-related terms in a business name, an applicant must petition the board for consent.
+
+To obtain consent, complete the following steps:
+
+1. Compose a letter to Deputy Commissioner Steven Kondrup, Las Vegas Office, Nevada Financial Institution Regulatory Board.
+
+2. In the letter, clearly identify the applicant&apos;s name, proposed business name(s), a brief description of the business activity, and the method by which you would like to receive consent or denial.
+
+3. Fax the letter to 702.486.4563, attention to Deputy Commissioner Steven Kondrup, Las Vegas Office.
+
+When you receive consent, fax the letter of consent to our offices at {!snippetVariable.ccbizfax}. However, if the board denies the request, the next step would be to provide us with up to 3 alternate business names so that we can proceed with your order.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+ 
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

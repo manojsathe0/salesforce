@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>keepmember</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AS Keep Membership Signature</name>
+    <style>none</style>
+    <subject>AS Keep Membership Signature</subject>
+    <textOnly>{!snippetVariable.keepmembershipline} {!snippetVariable.cc_dept_full} {!snippetVariable.attt} {!snippetVariable.asdphone2} {!snippetVariable.asdhours}.
+
+{!snippetVariable.bestregardstext}
+
+{!snippetVariable.thelegalzoomteamline}
+
+{!snippetVariable.asdphone} | {!snippetVariable.asdfax} | {!snippetVariable.lacemail}
+{!snippetVariable.lz_website} | {!snippetVariable.lz_address}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

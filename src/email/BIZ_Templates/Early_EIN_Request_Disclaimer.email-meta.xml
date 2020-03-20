@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>EARLYEIN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Early EIN Request Disclaimer</name>
+    <style>none</style>
+    <subject>Early EIN Request Disclaimer</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your inquiry. We can proceed to apply for your federal Employee Identification Number (EIN) before your business formation documents are filed by the state, but we normally wait until after we receive your filed documents. That’s because the state could reject your proposed business name. In that case, you would need to go to the IRS on your own and change your business name. We would not be able to change the name for you.
+
+Even though your business name is preliminarily available as noted in your account (when we conduct a name check), it is not officially yours to use until after the state approves it by accepting your documents for filing.
+
+Please let us know how you would like to proceed. Reply to this message and indicate:
+
+You would like us to proceed to obtain your EIN by the IRS, or
+You would like us to wait and obtain your EIN after your documents are filed by the state.
+
+If you choose #1 and your name is rejected by the state, you can visit the IRS website here for instructions on how to change your business name with the IRS. Or you can call the IRS business help line at (800) 829-4933 Monday–Friday from 7 a.m.–7 p.m. your local time.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+If you&apos;re already a member, sign in to schedule a consultation. *Available in most states.
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

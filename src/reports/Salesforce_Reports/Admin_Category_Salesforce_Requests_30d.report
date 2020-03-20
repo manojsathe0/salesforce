@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_42265038</developerName>
+        <masterLabel>Category</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Salesforce_Request__c.Admin_Category__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Access - Deactivated Employee</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Access - Existing Employee</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Access - New Employee</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Access - Reports &amp; Dashboards</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Access - Role and Profile Permissions</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Access - System (App)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Access - UAT/Pilot</sourceValue>
+            </sourceValues>
+            <value>Access</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Dashboard - Change Existing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dashboard - New</sourceValue>
+            </sourceValues>
+            <value>Dashboard</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Data Fix</sourceValue>
+            </sourceValues>
+            <value>Data Fix</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Enhancement - Content</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Enhancement - Flows</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Enhancement - List Views</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Enhancement - New Fields</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Enhancement - Objects</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Enhancement - Page Layout</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Enhancement - System (App)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Enhancement - Workflows and Approval Processes</sourceValue>
+            </sourceValues>
+            <value>Enhancement</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Bugs and Issues - Error Messages</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bugs and Issues - Release Fixes</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bugs and Issues - ServiceDesk</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Bugs and Issues - User Error</sourceValue>
+            </sourceValues>
+            <value>Bugs and Issues</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Internal Improvements - 3rd Party Applications</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal Improvements - CRM Configuration/Development</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal Improvements - Data Fix</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal Improvements - Data Migration</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal Improvements - Data Storage</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal Improvements - Process Documentation</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal Improvements - Salesforce1</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal Improvements - SSO</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Internal Improvements - SFDC Release Notification/Maintenance</sourceValue>
+            </sourceValues>
+            <value>Internal Improvements</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Report - Change Existing</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Report - New</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Report Requiring Coding</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Report Requiring Configuration</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Report Requiring Data Fix</sourceValue>
+            </sourceValues>
+            <value>Reporting</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Technical Debt</sourceValue>
+            </sourceValues>
+            <value>Technical Debt</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Training - Existing Users</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Training - New Hire</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Training - Trainer</sourceValue>
+            </sourceValues>
+            <value>Training</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Type__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Assigned_Administrator__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Comments__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Complexity__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Description__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Estimated_Completion_Date__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Number__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Priority__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Related_Account__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Related_Case__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Scheduled_Launch_Date__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Status_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_ALIAS</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_ROLE</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_ALIAS</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE_ALIAS</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>Salesforce_Request__c.Category__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_42265038</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Salesforce_Request__c.Admin_Category__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Admin Category: Salesforce Requests 30d</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Salesforce_Request__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,4 @@
+<apex:page controller="SendToCustomEmailController" action="{!createCaseAndForward}" sidebar="true" showHeader="true">
+
+<apex:pageMessages escape="false"/>
+</apex:page>

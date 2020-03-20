@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>mirwillhow</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Creating Mirror Will (not bundle)</name>
+    <style>none</style>
+    <subject>Creating Mirror Will (not bundle)</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+
+Thank you for your recent inquiry.  In regards to your question, please follow these steps to create a Mirror Will for your spouse:
+ 
+1. Visit www.legalzoom.com.
+
+2. Click on the &quot;My Account&quot; tab on the top of the page.
+
+3. Enter your email address and your password in the Existing Member Section.  Please make sure to use the email address you previously used when creating the first Will.
+
+4. Click Submit.  You should then be directed to a &quot;Welcome&quot; screen, and you should see your ordered Will below your &quot;Account Profile&quot;.  At the bottom of the page, you should see a section that reads, &quot;Start a New Order.&quot;
+ 
+5. Click on that drop-down menu and select &quot;Wills.&quot;
+
+6. Click on &quot;Get Started.&quot;
+
+7. Click on START next to the top choice, &quot;Start a mirror will...&quot;
+  
+8. Click through the questionnaire, and make sure to change the designated names, relationships, etc. to reflect your spouse&apos;s wishes. 
+
+I have included a complimentary ?Estate Planning Guide? to help you become more familiar with LegalZoom&apos;s documents.
+
+Please call us toll-free at (800) 962-7490 if we can be of further assistance. We look forward to hearing from you soon.
+ 
+Best regards,
+ 
+The LegalZoom Team
+{!snippetVariable.lz_address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,44 @@
+<!-- DNCAddList -->
+<aura:component controller="DNCController_ltng" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="selectedValue" type="String" default="Phone"/>
+    <aura:attribute name="otherreason" type="String" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="dncinternal" type="boolean"  default="false"/>
+    <aura:attribute name="dncpermission" type="boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}" />
+    <aura:attribute name="toggleModal" type="boolean" default="false" />
+
+    <aura:handler event="force:refreshView" action="{!c.loadOptions}"/>
+    
+    
+    <lightning:button    label="Do Not Call " class="{!v.dncinternal? v.dncpermission? 'slds-show' :'slds-hide'   : ''}"   onclick="{!c.toggleModal}"/>
+    <aura:if isTrue="{!v.toggleModal}">
+        <div class="slds-modal slds-fade-in-open slds-modal--medium" aria-hidden="false" role="dialog">
+                <lightning:spinner alternativeText="Loading" aura:id="mySpinner" class="slds-hide" size="medium"/>
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    State how DNC was requested or select Cancel
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <form class="slds-form_stacked">
+                        
+                        <lightning:select name="mySelect" label="Select a option " aura:id="mySelect" value="{!v.selectedValue}">
+                            <aura:iteration items="{!v.options}" var="item">
+                                <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                        
+                        <lightning:input   value="{!v.otherreason}"  class ="{!v.selectedValue=='Other - please specify'? 'slds-show':'slds-hide'}" type="text" label="Other Reason " name="Other Reason" required="true"  />
+                    </form>
+                </div>                        
+                <div class="slds-modal__footer">
+                    <lightning:button variant="brand" label="Save" onclick="{!c.save}"/>
+                    <lightning:button variant="brand" label="Cancel" onclick="{!c.toggleModal}"/>
+                </div>
+            </div>
+        </div>
+        <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+</aura:component>

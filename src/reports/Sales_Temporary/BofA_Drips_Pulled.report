@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_90079941</developerName>
+        <masterLabel>Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>OWNER</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Integration User</sourceValue>
+            </sourceValues>
+            <value>Unclaimed</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Lead.Date_Time_Assigned__c</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>PHONE</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>LZPKB Site Guest User</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Brian Helmick,Andrew Caltagirone,Malaya Lewis,Robert Gayle,Roderick Allen,Joette Wright,Amanda Owens,Anthony Lu,Beth Spangenberg,Matthew Moore,Jasmine Johnson</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>BofA Drips Pulled</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Lead.Date_Time_Assigned__c</dateColumn>
+        <endDate>2016-02-16</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-02-01</startDate>
+    </timeFrameFilter>
+</Report>

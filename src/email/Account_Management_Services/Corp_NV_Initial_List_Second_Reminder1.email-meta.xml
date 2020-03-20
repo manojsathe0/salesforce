@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AM-CorpNV-Alert-Second</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Corp NV Initial Filing List – Second Reminder</name>
+    <style>none</style>
+    <subject>Corp NV Initial Filing List – Second Reminder</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+As part of your compliance package, we help ensure your required state filings are completed and filed on time.
+
+The state of Nevada requires you to file an initial list of officers, directors and resident agent and a state business license application for your corporation within 30 days of your business being formed. Failure to file your documents on time may put your company at risk of late fees and dissolution.
+
+Before we can complete your filings, we need additional information and payment for the state fees. The required state filings fees are listed below*.
+
+Name of Filing - Fee to State of Nevada
+Initial List of Officers/Directors - $125
+Business License Registration - $200
+
+*Please note that state filing fees are subject to change without notice.
+
+Please sign in to your LegalZoom account here and click the Completed Orders tab: https://www.legalzoom.com/LZWeb/Welcome/SignIn.aspx?TIMESTRING=&amp;iProcess=. There you can access your compliance package and fill out the Annual Report questionnaire.
+
+Once you provide the necessary information and fees, we will file your forms with the state.  If you have already provided us with these items, please disregard this email.  This is your second email reminder of this state filing.  LegalZoom processing fees for this filing are included as long as you remain an active compliance member.
+
+You can reach us at 1 (800) 773-0888, ext. 5208, Monday–Friday from 7 a.m.–6 p.m. PT.
+
+We appreciate your prompt attention to this matter.
+
+{!snippetVariable.ccsincerely}
+
+{!User.Name} {!User.Extension} 
+Account Management Services 
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

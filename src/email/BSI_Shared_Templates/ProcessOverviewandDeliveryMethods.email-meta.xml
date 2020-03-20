@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>ovandship</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Process Overview and Delivery Methods</name>
+    <style>none</style>
+    <subject>Process Overview and Delivery Methods</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your recent inquiry regarding delivery methods.
+
+The information you provide on the online questionnaire is used by our Legal Document Specialists to create your customized legal documents.
+
+Once your document is completed, it will be sent to you via the shipping method that you specified on your questionnaire. You will receive the completed legal documents printed on quality acid-free paper. 
+
+LegalZoom offers the following delivery methods:
+
+First Class Mail (FREE)
+Email ($3.00)
+FedEx Overnight ($18.00)
+
+You may upgrade your shipping method at any time by contacting [Department Name].
+
+If you need the document urgently, expedited processing may available for an additional fee. Simply reply to this email or call us toll free at 1-800-773-0888 to learn if expedited service is available for your product.
+
+Thank you once again for choosing LegalZoom, America?s #1 online legal document service.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

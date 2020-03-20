@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.lz_address2</name>
+    <style>none</style>
+    <subject>lz_address2</subject>
+    <textOnly>9900 Spectrum Drive
+Austin, TX 78717</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>test6</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2553 form received</name>
+    <style>none</style>
+    <subject>2553 form received</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your inquiry. 
+
+This is to confirm that the 2553 form you sent in has been received and is currently being reviewed to ensure that we can proceed with your order. If any further information is needed, a Document Processor will contact you directly. If you have any questions on this or any other matter regarding  your order, please call us toll-free at 1.800.773.0888. Our Customer Care Representatives are available Monday through Friday, 7:00am - 5:00pm (PST).
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

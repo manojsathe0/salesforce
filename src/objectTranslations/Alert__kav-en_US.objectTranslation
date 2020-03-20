@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Alert</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Alerts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External --></label>
+        <name>External__c</name>
+    </fields>
+    <fields>
+        <label><!-- FAQ --></label>
+        <name>FAQ__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal --></label>
+        <name>Internal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keywords --></label>
+        <name>Keywords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lifespan --></label>
+        <name>Lifespan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purpose --></label>
+        <name>Purpose__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reminders/Quick-Tips --></label>
+        <name>Reminders_Quick_Tips__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tags --></label>
+        <name>Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- What is Changing --></label>
+        <name>What_is_Changing__c</name>
+    </fields>
+    <fields>
+        <label><!-- What is Not Changing --></label>
+        <name>What_is_Not_Changing__c</name>
+    </fields>
+    <fields>
+        <label><!-- What’s Happening --></label>
+        <name>What_s_Happening__c</name>
+    </fields>
+    <layouts>
+        <layout>Alert Layout</layout>
+        <sections>
+            <label><!-- Due Date --></label>
+            <section>Due Date</section>
+        </sections>
+        <sections>
+            <label><!-- Tags --></label>
+            <section>Tags</section>
+        </sections>
+        <sections>
+            <label><!-- What&apos;s Happening --></label>
+            <section>What&apos;s Happening</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

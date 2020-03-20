@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>store1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>store credit</name>
+    <style>none</style>
+    <subject>store credit</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for visiting LegalZoom.com.
+
+A store credit in the amount of $XX.XX has been applied to your account. To redeem this credit, please log in at www.LegalZoom.com using your account information and select a new product for purchase. During the checkout process, your store credit will automatically be applied to the total amount due.
+
+Please note that a store credit expires 60 days from the date of issue; therefore, you should submit your new order as soon as possible.
+
+Up until the expiration date, you can check your available store credit balance by signing in at www.LegalZoom.com and clicking the &quot;My Account&quot; link.
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

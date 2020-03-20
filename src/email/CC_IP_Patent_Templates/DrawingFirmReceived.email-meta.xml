@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>patdraw</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Drawing Firm Received</name>
+    <style>none</style>
+    <subject>Drawing Firm Received</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for placing your Patent order with LegalZoom.
+
+Your order includes a Patent Search, which is a detailed search of existing patent applications that may be relevant to your invention. We recently completed the search and sent you the results, along with instructions on how to read and interpret the report.
+
+The purpose of the report is to help you determine the patentability of your invention by identifying any possible conflicts in advance. When reviewing the report, if you determine you would like to examine any listing in greater detail, you can obtain a free copy at www.uspto.gov.  Under ?Search,? select either Issued Patents or Published Applications. Choose Number Search and enter the number of the listing you?d like to view. These numbers are located just below the illustrations in the Primary and Secondary sections of your report.
+
+We are currently awaiting your response. After reviewing your results, if you determine you would like to move forward with your application or if you have any questions, simply respond to this email or call us toll-free at {!snippetVariable.ccphone} {!snippetVariable.cchours}.
+
+Thank you for choosing LegalZoom, America&apos;s #1 legal document service.
+
+Best regards,
+
+The LegalZoom Patent Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

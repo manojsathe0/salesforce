@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TMChgOwner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Change Owner of Trademark</name>
+    <style>none</style>
+    <subject>Change Owner of Trademark</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting us about trademark assignments. 
+
+When a registered trademark is assigned from one party to another, the U.S. Patent &amp; Trademark Office (USPTO) recommends that you file a trademark assignment recordation form so that the office can maintain current trademark ownership records.
+
+LegalZoom can help you record your trademark assignment with the USPTO. For more information or to get started, go to https://www.LegalZoom.com/Trademarks-assignment/Trademarks-assignment-overview.html. 
+
+If you have any questions or would like additional information, please call us at (800) 773-0888 Monday?Friday from 6 a.m.?7p.m. PT or email us at customercare@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

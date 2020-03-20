@@ -1,0 +1,81 @@
+<apex:page controller="IADContactHistoryController" standardstylesheets="false" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <apex:includescript value="{!$Resource.svg4everybody}" />
+        <apex:includescript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+        <script type="text/javascript">
+            
+        window.onload = function() {
+          populateCustomerHistory();
+         
+        };
+        </script>
+
+    </head>
+    <body>
+    <div class = "slds">
+        <apex:form id="theForm">
+
+            <apex:actionFunction name="populateCustomerHistory" action="{!populateCustomerHistory}" rerender="theForm" status="statusUpdating"/>
+
+            <c:IADMessageBox theMessages="{!contactHistoryService.iadMessages}" />
+            <div id ="contactHistory">
+                <div class="slds-modal slds-fade-in-open slds-modal--large" aria-hidden="false" role="dialog">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-text-heading--medium">Contact History</h2>
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium">
+                            <apex:outputPanel >
+
+                                <apex:actionStatus id="statusUpdating">
+                                    <apex:facet name="start">
+                                        <div class="slds-form--inline">
+                                            <div class="slds-form-element" >
+                                                <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                                                    <div class="slds-spinner__dot-a"></div>
+                                                    <div class="slds-spinner__dot-b"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </apex:facet>
+                                </apex:actionStatus>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!contactHistoryService.hasHistory}">
+                                <table class="slds-table slds-table--bordered" style= "font-size:12px;">
+                                    <thead>
+                                    <tr>
+                                        <th  scope="col" class = "slds-size--1-of-3"><strong>DATE/TIME</strong></th>
+                                        <th  scope="col" class = "slds-size--1-of-3"><strong>USER</strong></th>
+                                        <th  scope="col" class = "slds-size--1-of-3"><strong>DESCRIPTION</strong></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <apex:repeat value="{!contactHistoryService.customerHistory.customerHistories}" var="theContactHistory">
+                                        <tr class="slds-hint-parent">
+                                            <td>
+                                                <apex:outputText value="   {!theContactHistory.adjDateModifiedDT}"/></td>
+                                            <td>{!theContactHistory.modifiedBy}</td>
+                                            <td>{!theContactHistory.description}</td>
+                                        </tr>
+                                    </apex:repeat>
+                                    </tbody>
+                                </table>
+                            </apex:outputPanel>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <button class="slds-button slds-button--neutral"  onclick="history.go(-1);">Back to Contact</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="background" class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+
+        </apex:form>
+    </div>
+    </body>
+    </html>
+</apex:page>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>tm ext2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Extension - No NOA2</name>
+    <style>none</style>
+    <subject>Extension - No NOA2</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+ 
+Thank you for using LegalZoom.
+ 
+During the initial submission of your order, it was brought to your attention that the status of your trademark was still pending with the US Patent and Trademark Office. Because you had not been issued a Notice of Allowance, we were unable to process your Statement of Use Extension request at the time.
+ 
+This is a courtesy reminder to check the current status of your application at http://tarr.uspto.gov/. If you have received your Notice of Allowance at this point, please contact us to continue with the filing of your Statement of Use Extension Request. 
+ 
+Refunds must be requested within 60 days of purchase. If you have any questions, comments or concerns, please contact us. Simply reply to this email, or call us toll free at 1-800-773-0888.  
+ 
+Best Regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

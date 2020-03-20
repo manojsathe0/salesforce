@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>google</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>google apps</name>
+    <style>none</style>
+    <subject>google apps</subject>
+    <textOnly>Dear LegalZoom Customer,
+
+Thank you for choosing your free 30-day trial of Google Apps for Business. The suite of online apps can help you run your business and improve productivity.
+  
+Here’s what’s included:
+
+• Gmail for business – Get custom email addresses (@your_company.com), more storage, and access from anywhere—on the web, on your phone, and even offline.
+
+• Google Calendar – Centralize schedules in one company-wide calendar that&apos;s accessible from anywhere. Overlay calendars to see when people are available, send invites, and plan events.
+
+• Google Docs – Share and collaborate on documents, spreadsheets, presentations, and forms. Employees always have access to the most up-to-date versions of their work files from anywhere.
+
+• Google Sites – Centralize important company information and manage projects with an internal website that will help keep your team organized and connected. 
+
+Simply fill out the form to create your account. You don’t need a credit card. After your 30-day free trial, you can choose to continue for only $5 per month.
+
+Follow this link to get started: https://www.google.com/a/cpanel/premier/new3?hl=en
+
+Best Regards,
+
+LegalZoom Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

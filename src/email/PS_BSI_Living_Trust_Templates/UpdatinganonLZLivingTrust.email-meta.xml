@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LTUpdate</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Updating a non-LZ Living Trust</name>
+    <style>none</style>
+    <subject>Updating a non-LZ Living Trust</subject>
+    <textOnly>Dear Valued LegalZoom Customer,
+
+Thank you for your recent inquiry.  In regards to your question, LegalZoom at this time does not handle or revise documents that were not initially created through us.  You may choose to refer to the company or attorney you created your document through or visit http://www.legalzoom.com/attorney-locator/ for an attorney referral.
+
+If you wish to use LegalZoom&apos;s services to create a new Living Trust, you may do so in addition to revoking your current Trust through us.  I have included a complimentary &quot;Living Trust Guide&quot; to help you become familiar with the benefits of LegalZoom&apos;s Living Trusts, which includes the ability to revise your document through LegalZoom at any time.  If you would like to begin the process of creating a Trust through us, simply log onto www.legalzoom.com with your email address and begin the online questionnaire.  You are not obligated to submit payment until you have completed the questionnaire and are ready to do so.
+
+When creating a new Living Trust through us, you may request a Letter of Revocation to revoke your old Trust.  Please provide the following information in the &quot;Special Instructions&quot; box on the Payment Page:
+
+? Your intent to revoke your old Trust
+? The name of your old Trust
+? The date of your old Trust
+? The names of the Grantor(s)/Trustor(s)
+? Your current state of residence
+
+Please note that when you receive your new Living Trust documents from LegalZoom, the Revocation Letter must be signed and dated by you in the presence of a notary public and notarized before you sign any other Trust documents.
+
+Please remember to transfer ownership of Trust property from the previous Trust that you are revoking back to yourself before sending out the transfer letters and notices that we provide you for the new Trust, since LegalZoom does not provide transfer letters and notices for Trusts prepared by third parties.
+
+Please call us toll-free at (800) 962-7490 if we can be of further assistance.  We look forward to hearing from you soon.
+ 
+Best regards,
+ 
+The LegalZoom Team
+{!snippetVariable.lz_address}
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

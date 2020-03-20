@@ -1,0 +1,998 @@
+<apex:page controller="Custom_Email_Controller" showHeader="false" title="Compose Email - {!to}">
+<apex:includeScript value="/support/console/22.0/integration.js"/>
+<apex:includeScript value="{!URLFOR($Resource.JQueryValidation, 'jquery-validation/lib/jquery.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.JQueryValidation, 'jquery-validation/jquery.validate.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.JQuery, 'js/jquery-1.7.2.min.js')}"/>
+<apex:includescript value="{!URLFOR($Resource.CKEditor, 'ckeditor/ckeditor.js')}" />
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" />
+<apex:styleSheet value="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/smoothness/jquery-ui.css" />
+
+<script type="text/javascript">
+  var $jp = jQuery.noConflict();
+  $jp(document).ready(function()
+  {
+    $jp('[id="loadingHolder"]').hide();
+    $jp('img.remover').click(function(){
+      var fileopen = $jp(this).prev();
+      clone = fileopen.clone(true);
+      fileopen.replaceWith(clone);
+    });
+    $jp('[data-role = "fieldToHide"]').hide();
+    $jp('img.removerto').click(function(event){ 
+    $jp("[id$='to']").val($jp(this).html());
+    $jp("[id$='tohid']").val($jp(this).html());  
+    });
+    $jp('[data-role = "theSectionItem6a"]').hide(); //hides TemplateAttachment section on load
+    $jp('[data-role = "theSectionItem6b"]').hide(); //hides TemplateAttachment section on load
+    $jp('[id="snippetPreview"]').hide();
+    
+
+    setupTemplateBox();  
+    setUpSnippetBox();
+  });
+
+var suggestedTemplates;
+var queryTerm;
+function setupTemplateBox()
+{
+
+    $jp("[id$='templateCode']").autocomplete({
+        minLength: 3,
+        source: function(request, response) {
+          queryTerm = request.term;
+          Custom_Email_Controller.getSuggestedTemplateCode(request.term, function(result, event){
+          if(event.type == 'exception') {
+          alert(event.message);
+          } else {
+          suggestedTemplates = result;
+          response(suggestedTemplates);
+
+          }
+          });
+        },
+        focus: function( event, ui ) {
+          $jp("[id$='templateCode']").val( ui.item.Description );
+          getTemplateDetailsById(ui.item.Id);
+          return false;
+        },
+        select: function( event, ui ) {
+          $jp("[id$='templateCode']").val( ui.item.Description );
+          $jp("[id$='templateCode1']").val( ui.item.Description );
+          $jp("[id$='selectedTemplateId']").val( ui.item.Id );
+          getTemplateDetailsWithMergeFieldsById(ui.item.Id);
+          return false;
+        }
+
+    })
+    .data( "ui-Autocomplete" )._renderItem = function( ul, item ) {
+      var entry = "<a>" + item.Name;
+      entry = entry + "</a>";
+      return $jp( "<li style=\"font-size:10px;\"></li>" )
+      .data( "item.autocomplete", item )
+      .append( entry )
+      .appendTo( ul );
+    };
+ }
+
+  var suggestedSnippets;
+  var snippetQueryTerm;
+
+  function setUpSnippetBox()
+  {
+   
+    $jp("[id$='snippetCode']").autocomplete({
+        minLength: 3,
+        source: function(request, response) {
+          snippetQueryTerm = request.term;
+          Custom_Email_Controller.getSuggestedSnippetCode(request.term, function(result, event){
+          if(event.type == 'exception') {
+          alert(event.message);
+          } else {
+          suggestedSnippets = result;
+          response(suggestedSnippets);
+
+          }
+          });
+        },
+        focus: function( event, ui ) {
+          $jp("[id$='snippetCode']").val( ui.item.Description );
+          getSnippetDetailsById(ui.item.Id);
+          return false;
+        },
+        select: function( event, ui ) {
+          $jp("[id$='snippetCode']").val( ui.item.Description );
+          $jp("[id$='selectedSnippetId']").val( ui.item.Id );
+          getSnippetDetailsWithMergeFieldsById(ui.item.Id);
+          var theSnippetPreview = $jp("[id='snippetPreview']").html('');
+          theSnippetPreview.hide();
+          return false;
+        }
+
+    })
+    .data( "ui-Autocomplete" )._renderItem = function( ul, item ) {
+      var entry = "<a>" + item.Name;
+      entry = entry + "</a>";
+      return $jp( "<li style=\"font-size:10px;\"></li>" )
+      .data( "item.autocomplete", item )
+      .append( entry )
+      .appendTo( ul );
+    };
+  
+  }
+
+  function getSnippetDetailsWithMergeFieldsById(templateId)
+  {
+   
+    $jp('[id="loadingHolder"]').show();
+    Custom_Email_Controller.populateTemplateDetailsById( templateId,caseId, function(result, event)
+    {
+      if (event.status)
+      {
+      $jp('[id="loadingHolder"]').hide();
+      putTextOnCursorPoistion(result.templateBody);
+      getSnippetAttachmentSection(result.attachments);
+      } else if (event.type === 'exception') {
+      $jp('[id="loadingHolder"]').hide();
+      $jp('#errors-js').html(event.message);
+      } else {
+      $jp('[id="loadingHolder"]').hide();
+      $jp('#errors-js').html(event.message);
+      }
+    }, {escape:false});
+  }
+
+  function getSnippetDetailsById(templateId)
+  {
+    Custom_Email_Controller.populateTemplateDetailsById( templateId,caseId, function(result, event)
+    {
+    if (event.status)
+    {
+       $jp('[id= "snippetPreview"]').show();
+       $jp("[id='snippetPreview']").html( result.templateBody );
+    } else if (event.type === 'exception') {
+    $jp('#errors-js').html(event.message);
+    } else {
+    $jp('#errors-js').html(event.message);
+    }
+    }, {escape:false});
+  }
+
+  function putTextOnCursorPoistion(theContentToAdd)
+  {
+ 
+    var theEditor = $jp("[id$='templateDetail']");
+    CKEDITOR.instances[theEditor.attr('id')].insertHtml(theContentToAdd);
+        
+  } 
+
+  function showCCAndBCC()
+  {
+    $jp('[data-role = "fieldToHide"]').show();
+    $jp('[data-role = "showCcBccLabel"]').hide();
+  }
+
+  var noEmailMessage = '{!$Label.No_Email_On_Contact}';   
+  function SendEmail()
+  {
+    var toEmail = $jp("[id$='to']").val();
+    if(toEmail != '' && toEmail.indexOf('(') == -1)
+    {
+    alert(noEmailMessage);
+    return false;
+    }
+
+    if(validationEmail())
+    {
+      doSendEmail();
+    }
+    else
+    {
+      return false;
+    }
+
+  }
+
+
+
+  function saveTheDraft()
+  {
+    var toEmail = $jp("[id$='to']").val();
+    if(toEmail != '' && toEmail.indexOf('(') == -1)
+    {
+    alert(noEmailMessage);
+    return false;
+    }
+    if(validationEmail())
+    {
+      if (sforce.console.isInConsole()) 
+      {  
+      doSaveDraft();
+      }
+      else
+      { 
+      doSaveDraft();
+      closeTab();
+      }       
+    }      
+
+  } 
+
+  function checkCloseTab()
+  {
+    if (sforce.console.isInConsole())
+    {     
+      closeTab();
+    }
+  }
+
+  function Cancels()
+  {
+    if (sforce.console.isInConsole())
+    {
+    closeTab();
+    }
+    else
+    {
+    doCancel();
+    }
+  }
+  function setTabTitle() 
+  {
+    if (sforce.console.isInConsole())
+    {  
+    sforce.console.setTabTitle('Send an Email');
+    }
+  }       
+
+  var previousOnload = window.onload;        
+  window.onload = function() { 
+  if (previousOnload) { 
+  previousOnload();
+  }                
+  setTimeout('setTitle()', '500'); 
+  }
+
+
+  var caseId = '{!caseId}'
+  function nl2br (str, is_xhtml)
+  {
+    var breakTag = '<br/>';
+    if (typeof is_xhtml != 'undefined' && !is_xhtml) 
+    {
+      breakTag = '<br>';
+    }
+    return (str + '').replace(/([^>]?)\n/g, '$1'+ breakTag +'\n');
+  }
+
+  function getTemplateDetailsById(templateId)
+  {
+    Custom_Email_Controller.populateTemplateDetailsById( templateId,caseId, function(result, event)
+    {
+    if (event.status)
+    {
+      $jp('.cke_contents iframe' ).contents().find( 'body' ).html(result.templateBody);
+      $jp("[id$='theHiddenInputTemplateID']").val( result.templateID );
+      $jp("[id$='theHiddenInputTemplateName']").val( result.templateName );
+      $jp("[id$='theHiddenInputTemplateDeveloperName']").val( result.templateDeveloperName );
+      $jp("[id$='theHiddenInputTemplateDescription']").val( result.templateDescription );
+      $jp("[id$='theHiddenInputTemplateFolderID']").val( result.templateFolderId );
+    } else if (event.type === 'exception') {
+    $jp('#errors-js').html(event.message);
+    } else {
+    $jp('#errors-js').html(event.message);
+    }
+    }, {escape:false});
+  }
+
+  function getTemplateDetailsWithMergeFieldsById(templateId)
+  {
+    Custom_Email_Controller.populateTemplateDetailsWithMergeFieldsById( templateId,caseId, function(result, event)
+    {
+      if (event.status)
+      {
+      $jp('.cke_contents iframe' ).contents().find( 'body' ).html(result.templateBody);
+      $jp("[id$='theHiddenInputTemplateID']").val( result.templateID );
+      $jp("[id$='theHiddenInputTemplateName']").val( result.templateName );
+      $jp("[id$='theHiddenInputTemplateDeveloperName']").val( result.templateDeveloperName );
+      $jp("[id$='theHiddenInputTemplateDescription']").val( result.templateDescription );
+      $jp("[id$='theHiddenInputTemplateFolderID']").val( result.templateFolderId );
+      getTemplateAttachmentSection(result.attachments);
+      } else if (event.type === 'exception') {
+      $jp('#errors-js').html(event.message);
+      } else {
+      $jp('#errors-js').html(event.message);
+      }
+    }, {escape:false});
+  }
+
+  function getTemplateDetails()
+  {
+    var templateCode = $jp("[id$='templateCode1']").val();
+
+    if(templateCode.length != 0) 
+    {
+      Custom_Email_Controller.populateTemplateDetails( templateCode,caseId, function(result, event)
+      {
+      if (event.status)
+      {
+      $jp('.cke_contents iframe' ).contents().find( 'body' ).html(result.templateBody);
+      $jp("[id$='theHiddenInputTemplateID']").val( result.templateID );
+      $jp("[id$='theHiddenInputTemplateName']").val( result.templateName );
+      $jp("[id$='theHiddenInputTemplateDeveloperName']").val( result.templateDeveloperName );
+      $jp("[id$='theHiddenInputTemplateDescription']").val( result.templateDescription );
+      $jp("[id$='theHiddenInputTemplateFolderID']").val( result.templateFolderId );
+      getTemplateAttachmentSection(result.attachments);
+      } else if (event.type === 'exception') {
+      $jp('#errors-js').html(event.message);
+      } else {
+      $jp('#errors-js').html(event.message);
+      }
+      }, {escape:false});
+    }
+  }
+
+  var selectedAttachmentList;
+  function getTemplateAttachmentSection(theAttachments)
+  {
+    selectedAttachmentList = new Array();
+    var containerDiv = $jp("[id$='templateAttachmentpanel']");
+    containerDiv.children(".attachmentSpan").remove();
+    
+    $jp.each(theAttachments , function(index,value){
+    $jp('<span></span>').addClass('attachmentSpan').append($jp('<a></a>').click(function(){
+    window.open('/servlet/servlet.FileDownload?file='+value.Id+'&isdtp=vw');
+    }).addClass('handPointer').append(value.Name))
+    .append($jp('<img></img>').attr({src : '{!URLFOR($Resource.Icons, 'delete-icon.png')}'})
+    .addClass('imgDeleteStyle handPointer').click(function(){
+    removeTemplateAttachments(this , value.Id);
+    })).appendTo(containerDiv);
+    selectedAttachmentList.push(value.Id);
+    });
+    
+    setTemplateAttachmentIdHiddenElement(selectedAttachmentList);
+  }
+
+ 
+  function removeTemplateAttachments(theObject,theAttachmentId)
+  {
+    $jp(theObject).parent().remove();
+    var theIndex = $jp.inArray(theAttachmentId , selectedAttachmentList);
+    if(theIndex >= 0 )
+    {
+      selectedAttachmentList.splice(theIndex,1)
+    }
+    setTemplateAttachmentIdHiddenElement();
+  }
+
+  function setTemplateAttachmentIdHiddenElement()
+  {
+    var selectedAttachmentIds = '';
+    for (var i = 0; i < selectedAttachmentList.length; i++) {
+    selectedAttachmentIds += selectedAttachmentList[i]+',';
+    }
+    var templateAttachmentIdsElement = $jp("[id$='templateAttachmentIds']");
+    templateAttachmentIdsElement.val(selectedAttachmentIds);
+    if(selectedAttachmentList.length > 0)
+    $jp('[data-role = "theSectionItem6a"]').show();
+    else
+    $jp('[data-role = "theSectionItem6a"]').hide();
+  }
+
+  var selectedSnippetAttachmentList = new Array();;
+  function getSnippetAttachmentSection(theAttachments)
+  {
+    
+    var containerDiv = $jp("[id$='snippetAttachmentpanel']");
+    //containerDiv.children(".attachmentSpan").remove();
+    
+    $jp.each(theAttachments , function(index,value){
+    $jp('<span></span>').addClass('attachmentSpan').append($jp('<a></a>').click(function(){
+    window.open('/servlet/servlet.FileDownload?file='+value.Id+'&isdtp=vw');
+    }).addClass('handPointer').append(value.Name))
+    .append($jp('<img></img>').attr({src : '{!URLFOR($Resource.Icons, 'delete-icon.png')}'})
+    .addClass('imgDeleteStyle handPointer').click(function(){
+    removeSnippetAttachments(this , value.Id);
+    })).appendTo(containerDiv);
+    selectedSnippetAttachmentList.push(value.Id);
+    });
+ 
+    setSnippetAttachmentIdHiddenElement(selectedSnippetAttachmentList);
+  }
+
+  function removeSnippetAttachments(theObject,theAttachmentId)
+  {
+    $jp(theObject).parent().remove();
+    var theIndex = $jp.inArray(theAttachmentId , selectedSnippetAttachmentList);
+    if(theIndex >= 0 )
+    {
+      selectedSnippetAttachmentList.splice(theIndex,1)
+    }
+    setSnippetAttachmentIdHiddenElement();
+  }
+
+  function setSnippetAttachmentIdHiddenElement()
+  {
+    var selectedAttachmentIds = '';
+    for (var i = 0; i < selectedSnippetAttachmentList.length; i++) {
+    selectedAttachmentIds += selectedSnippetAttachmentList[i]+',';
+    }
+    var snippetAttachmentIdsElement = $jp("[id$='snippetAttachmentIds']");
+    snippetAttachmentIdsElement.val(selectedAttachmentIds);
+    if(selectedSnippetAttachmentList.length > 0)
+    $jp('[data-role = "theSectionItem6b"]').show();
+    else
+    $jp('[data-role = "theSectionItem6b"]').hide();
+  }
+
+
+
+
+  function checkEmail(o) 
+  {    
+    if (o.val().length > 0){
+    var newVal = o.val().replace(/\,/g,';');
+    var emails = newVal.split(new RegExp( "\\s*;\\s*", "gi" ) );
+    valid = true;
+    for(i=0;i<emails.length;i++) {
+    valid=valid && checkRegexp(Trim(emails[i]),
+    /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i
+    );
+    }
+    return valid; 
+    }
+    return true;
+  }
+
+  function checkRegexp(value, regexp)
+  {   
+    if (!(regexp.test(value))) {
+    return false;
+    }else{
+    return true;
+    }
+  }
+  function LTrim(str)
+  {
+    if (str==null){return null;}
+    for(var i=0;str.charAt(i)==" ";i++);
+    return str.substring(i,str.length);
+  }
+  function RTrim(str)
+  {
+    if (str==null){return null;}
+    for(var i=str.length-1;str.charAt(i)==" ";i--);
+    return str.substring(0,i+1);
+  }
+  function Trim(str){return LTrim(RTrim(str));}
+
+  function clrErrInf()
+  {
+    $jp("#errmesgaddto").html('');$jp("#errmesgcc").html('');$jp("#errmesgbcc").html('');$jp("#errmesgsubject").html('');
+    $jp('[id$=additionalTo]').removeClass("errMessage");
+    $jp('[id$=emailcc]').removeClass("errMessage");
+    $jp('[id$=bcc]').removeClass("errMessage");
+    $jp('[id$=subject]').removeClass("errMessage");
+  }
+  function validationEmail()
+  {
+    var valid = true;
+    clrErrInf();
+    var to = $jp('[id$=to]');var tohid = $jp('[id$=tohid]');var addto = $jp('[id$=additionalTo]');var cc = $jp('[id$=emailcc]');
+    var bcc = $jp('[id$=bcc]');   var errto = $jp('#errmesgaddto');  var errcc = $jp('#errmesgcc');var errbcc = $jp('#errmesgbcc');
+    var subject = $jp('[id$=subject]');var errsubject = $jp('#errmesgsubject');
+
+    var errBody = $jp('#errbody')
+    var bodyContent =  $jp('.cke_contents iframe' ).contents().find( 'body' ).html();
+    if(bodyContent == '')
+    {
+    errBody.html('<span style="color:#C00">Please enter the body of the message</span>');
+    errBody.css('border','none');
+    valid = false;
+    }
+
+    if(to.val() == '' && addto.val() == ''){
+    errto.html('<span style="color:#C00">Please specify either a To: or Additional To:</span>');
+    addto.addClass("errMessage");
+    errto.css('border','none');
+    valid = false;
+    }
+
+    if(subject.val() == ''){
+    errsubject.html('<span style="color:#C00">Please specify Subject</span>');
+    subject.addClass("errMessage");
+    errsubject.css('border','none');
+    valid = false;
+    } 
+    if(!checkEmail(addto)){
+    errto.html('<span style="color:#C00">Found invalid email address</span>');
+    addto.addClass("errMessage"); 
+    errto.css('border','none');
+    valid = false;
+    }  
+    if(!checkEmail(cc)){
+    errcc.html('<span style="color:#C00">Found invalid email address</span>');
+    cc.addClass("errMessage");
+    errcc.css('border','none');
+    valid = false;
+    }
+    if(!checkEmail(bcc)){
+    errbcc.html('<span style="color:#C00">Found invalid email address</span>');
+    bcc.addClass("errMessage");
+    errbcc.css('border','none');
+    valid = false;
+    }  
+    return valid;
+  }
+
+  var newWin=null;
+  var urlo=null;  
+  function openLookupPopup(area)
+  {
+    if(area=="Template")
+    {   
+    urlo="/apex/Lookup_Template_Dialog"+"?id={!$CurrentPage.parameters.Id}"; 
+    }
+    if(area=="toAddress")
+    {  
+    var arg = document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value;
+    var urlo="/apex/Lookup_To_Dialog"+"?lksrch="+arg+"&id={!$CurrentPage.parameters.Id}"; 
+    }
+    if(area=="additionalTo" || area=="CC" || area=="BCC" )
+    {    
+    urlo ="/apex/Email_CCBCC_Page"+"?id={!$CurrentPage.parameters.Id}";
+    }  
+    newWin=window.open(urlo, 'Lookup','height=700,width=600,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,status=no');   
+    if (window.focus){    
+    newWin.focus();   
+    }
+
+    return false;     
+  }
+            
+  function closeLookupPopup() 
+  {     
+    if (null!=newWin)     {        
+    newWin.close();      
+    }    
+  } 
+  function grabExName()
+  {
+    var ex = document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.text}').value;
+    alert(ex);
+  }
+  var delim = ";";
+  function pickupValue(additionalToValue, ccValue, bccValue)
+  { 
+    if(additionalToValue != '') {
+    if (document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem3.additionalTo}').value != '') { 
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem3.additionalTo}').value += delim;
+    }
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem3.additionalTo}').value += additionalToValue;
+    }
+    if(ccValue != '') {
+    if (document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem4.emailcc}').value != '') {
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem4.emailcc}').value += delim;
+    }
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem4.emailcc}').value += ccValue;
+    }
+    if(bccValue != '') {
+    if (document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem5.bcc}').value != '') {
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem5.bcc}').value += delim;
+    }
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem5.bcc}').value += bccValue;
+    }
+
+  } 
+  function pickupValue22(to)
+  {
+    if(to != '') {
+    if (document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value != '') { 
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value += delim;
+    }
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value += to;
+    }
+  }
+  function pickupValue2(name,contactId,email)
+  {
+    if(name != '') {
+    if (document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value != '') { 
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value += delim;
+    }
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.to}').value = name+' ('+email+')';
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.tohid}').value='';
+    document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem2.tohid}').value=contactId;
+    }
+  }
+  function pickupValue3(templateId){
+  getTemplateDetailsById(templateId);
+  }
+
+  function AttachFile(a)
+  {
+    var url2="/apex/Input_File_Attachment?attach={!$CurrentPage.parameters.Id}";   
+    var newWin2=window.open(url2, 'AttachFile','height=550,width=550,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');   
+    if (window.focus)    {    
+    newWin2.focus();
+    }           
+    return false;     
+  }
+  function toggle2(showHideDiv,switchTextDiv)
+  {
+    var ele = $jp("[id$='"+showHideDiv+"']").get(0);
+    var text = document.getElementById(switchTextDiv);
+    if(ele!=undefined)
+    {
+      if(ele.style.display == "block") {
+      ele.style.display = "none";
+      text.innerHTML = "";
+      }
+      else {
+      ele.style.display = "block";
+      text.innerHTML = "";
+      }
+    }
+  }    
+
+  function backtocase()
+  {
+    if (sforce.console.isInConsole()) {            
+    closeTab();
+    }else{
+    var url = "/{!theCase.Id}";
+    window.open(url, '_parent');            
+    }    
+  }
+
+  function openLink(url)
+  {
+    if(typeof(srcUp) != 'undefined') {
+    url = url + "&isdtp=vw";
+    srcUp(url);
+    }else{
+    window.open(url,'_blank');
+    }
+  }
+
+  function bodyOnFocus() {
+  closePopup();
+  }
+  function closePopup()
+  {
+    if (newWin != null) {
+    try {
+    newWin.close();
+    } catch(ex) {
+    }
+    newWin = null;
+    }
+  }
+  function bodyOnUnload() {
+  }
+
+  var url = null;
+  var titlename = null;
+  function openPrimaryTab() {
+  sforce.console.openPrimaryTab(undefined, 'http://www.salesforce.com', true, 'salesforce');
+  }
+
+  var callOpenSubtab=function callOpenSubtab(result) {
+  sforce.console.openSubtab(result.id, url , true,titlename );
+  };
+
+  function openSubtab(urllink,title)
+  {
+    url = urllink;
+    titlename = title;
+    if (sforce.console.isInConsole())
+    {            
+      sforce.console.getEnclosingPrimaryTabId(callOpenSubtab);
+    }
+    else
+    {
+      window.open(url, '_blank');            
+    }           
+  }
+
+  function setTitle() {
+  sforce.console.setTabTitle('Send an Email');
+  }
+
+
+  var callCloseTab= function callCloseTab(result) {
+  sforce.console.closeTab(result.id);
+  };
+
+  function closeTab() {
+  sforce.console.getEnclosingTabId(callCloseTab);
+  }
+  var closeSubtab = function closeSubtab(result) {
+  var tabId = result.id;
+  sforce.console.closeTab(tabId);
+  };
+  function refreshSubTab() {
+  sforce.console.getEnclosingTabId(refreshActiveSubtab);
+  return true;
+  }
+  var refreshActiveSubtab = function refreshActiveSubtab(result) {
+  var tabId = result.id;
+  sforce.console.refreshSubtabById(tabId, true);
+  };
+</script>
+
+<style type="text/css">
+.cke_contents {
+height: 500px !important;
+}
+.attachmentSpan{display:block;margin:4px;}
+.imgDeleteStyle {margin-left:10px;}
+.handPointer{cursor: pointer;}
+.ui-helper-hidden-accessible { position: absolute; left: -9999px; } //hiding autocomplete helper text
+</style>
+<style>
+.errMessage{
+border:2px solid #C00;
+}
+
+.pbSubheader{
+color: black !important;
+background-color: lightblue !important;
+border-color: none !important;
+}
+
+#templateHolder{position: fixed;top: 60px;left: 0;padding-top:150px;z-index: 999;}
+#snippetHolder{position: fixed;top: 410px;left: 0;z-index: 999;}
+#loadingHolder{position: fixed;top: 60px;left: 0;padding-top:400px;z-index: 1000;}
+
+
+#snippetPreview{position: fixed;top: 457px;left: 195px;width:200px;padding:10px;z-index: 1000; background-color: lightblue}
+
+#ui-id-1
+{
+    position:fixed;
+}
+</style>
+<style type="text/css">
+    .remover{cursor: pointer;padding-left:5px;}
+    .removerto{cursor: pointer;padding-left:5px;}
+</style>
+    <apex:sectionHeader title="Task" subtitle="Send an Email" />
+<!--<left>
+    <apex:outputPanel >
+        <apex:outputText value="« " style="color:rgb(50,120,180)"/>
+        <a href="#" onclick="backtocase()"  style="color:rgb(50,120,180)">Back To Case: {!theCase.CaseNumber}</a>
+    </apex:outputPanel>
+</left>-->
+
+<body onLoad="if (this.bodyOnLoad) bodyOnLoad();" onFocus="if (this.bodyOnFocus) bodyOnFocus();">
+    <apex:form id="theForm"> 
+    <apex:actionFunction name="doCancel" action="{!Cancel}" id="func1">
+    </apex:actionFunction>
+    <apex:actionFunction name="doSendEmail" action="{!sendemail}" id="func2">
+    </apex:actionFunction>
+    <apex:actionFunction name="doSaveDraft" action="{!saveDraft}">
+        <apex:param name="editMode" value="{!editMode}" assignTo="{!editMode}"/>
+    </apex:actionFunction>
+     
+    <apex:outputPanel >    
+    <apex:pageMessage rendered="{!NOT(ISBLANK($CurrentPage.parameters.message))}" summary="{!$CurrentPage.parameters.message}" severity="ERROR" strength="3" title="Fail"/>
+    </apex:outputPanel> 
+        <apex:pageBlock id="pbForm">
+            <apex:pageBlockButtons location="both">
+            <apex:outputPanel >
+            <!--<apex:commandButton value="Send" onclick="SendEmail()" id="Send"/>-->
+            <input type="button" value="Send" onclick="this.disabled=true;SendEmail()" id="Send" class = "btn"/>
+            <!-- input type="button" class="btn" value="Save as Draft" onclick="SaveDraft('{!$CurrentPage.parameters.Id}')" /-->
+            <!--<apex:commandButton value="Save as Draft" id="saveDraft"  onclick="saveTheDraft()" /> -->
+            <input type="button" value="Save as Draft" onclick="saveTheDraft()" id="saveDraft" class = "btn"/>   
+            <!--<input type="button" class="btn" value="Send" onclick="SendEmail(this.form.toAddressD.value,document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem3.additionalTo}').value,document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem4.cc}').value,document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem5.bcc}').value,document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem6.subject}').value,document.getElementById('{!$Component.theform.pbForm.theSection.theSectionItem7.body}').value,'{!$CurrentPage.parameters.Id}')" />-->
+            <input type="button" class="btn" value="Cancel" onclick="Cancels();return false" /> 
+            </apex:outputPanel>
+            </apex:pageBlockButtons>
+            <apex:outputPanel >
+            <div id="snippetPreview">
+
+            </div>
+
+            <div id="templateHolder">
+                    <apex:outputPanel >
+                    
+                        <div style="padding:15px;background:#C0DDF0">
+                              <apex:outputLabel value="Template Name:" /><br />
+                              <apex:inputText value="{!templateCode}" id="templateCode"/>
+                              <br />
+                               <apex:inputHidden value="{!selectedTemplateId}" id="selectedTemplateId"/>
+                        </div>
+                    </apex:outputPanel>
+           </div>
+            
+            <div id="snippetHolder">
+                    <apex:outputPanel >
+                    
+                        <div style="padding:15px;background:#C0DDF0">
+                              <apex:outputLabel value="Snippet Name:" /><br />
+                              <apex:inputText value="{!snippetCode}" id="snippetCode"/>
+                              <br />
+                               <apex:inputHidden value="{!selectedSnippetId}" id="selectedTSnippetId"/>
+                        </div>
+                    </apex:outputPanel>
+           </div>
+           <div id="loadingHolder">
+              Loading Snippet.....<img src ="{!$Resource.AjaxLoader}" height="30" width="30" /> 
+           </div> 
+            
+            <apex:outputPanel layout="block" style="padding-left:80px;">
+            <apex:pageBlockSection title="Edit Email" columns="1" id="theSection" collapsible="false"  >
+                <apex:pageBlockSectionItem id="theSectionItem1">
+                    <apex:outputLabel value="From:" for="emails__from" />
+                    <apex:selectList value="{!emails}" size="1">
+                        <apex:selectOptions value="{!emailsOptions}" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem2">
+                    <apex:outputLabel value="To:" />
+                     <apex:outputPanel >
+                        <apex:inputText value="{!to}" id="to" onfocus="this.blur();" style="width:280px;"></apex:inputText>&nbsp;
+                        &nbsp;<div id="errors-js"></div>
+                        <apex:inputHidden value="{!tohid}" id="tohid"/>
+                        <apex:inputHidden value="{!namehid}" id="namehid"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItemCase">
+                    <apex:outputLabel value="Case:"  />
+                    <apex:outputLabel value="{!caseNumber}"  />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem3">
+                    <apex:outputLabel value="Addition To:" />
+                    <apex:outputPanel >
+                        <apex:inputTextarea value="{!additionTo}" cols="70"
+                            id="additionalTo"></apex:inputTextarea>&nbsp;
+                      <apex:commandLink immediate="true"
+                            onclick="openLookupPopup('additionalTo'); return false"
+                            reRender="pbForm">
+                            <apex:image url="{!URLFOR($Resource.lsw2resource, 'lsw2resource/lookup.gif')}"
+                                width="15" height="15" style="vertical-align:top;"/>
+                        </apex:commandLink><div id="errmesgaddto"></div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem html-data-role="showCcBccLabel">
+                     <apex:outputPanel ></apex:outputPanel>
+                     <apex:commandLink value="Show CC and BCC"
+                        onclick="showCCAndBCC(); return false" />
+                     
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="theSectionItem4" html-data-role="fieldToHide">
+                    <apex:commandLink value="Cc:"
+                        onclick="openLookupPopup('CC'); return false" immediate="true" />
+                    <apex:outputPanel >
+                        <apex:inputTextarea value="{!cc}" cols="70" id="emailcc"></apex:inputTextarea>&nbsp;
+                      <apex:commandLink immediate="true"
+                            onclick="openLookupPopup('CC'); return false" reRender="pbForm">
+                            <apex:image url="{!URLFOR($Resource.lsw2resource, 'lsw2resource/lookup.gif')}"
+                                width="15" height="15" style="vertical-align:top;"/>
+                        </apex:commandLink><div id="errmesgcc"></div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem5" html-data-role="fieldToHide">
+                    <apex:commandLink value="Bcc:"
+                        onclick="openLookupPopup('BCC'); return false" immediate="true" />
+                    <apex:outputPanel >
+                        <apex:inputTextarea value="{!bcc}" cols="70" id="bcc"></apex:inputTextarea>&nbsp;
+                      <apex:commandLink immediate="true"
+                            onclick="openLookupPopup('BCC'); return false" reRender="pbForm">
+                            <apex:image url="{!URLFOR($Resource.lsw2resource, 'lsw2resource/lookup.gif')}"
+                                width="15" height="15" style="vertical-align:top;"/>
+                        </apex:commandLink><div id="errmesgbcc"></div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem6">
+                    <apex:outputLabel value="Subject:" for="emails__subject" />
+                    <apex:outputPanel id="subjectpanel" >
+                    <div class="requiredInput" lang="en" spellcheck="true"><div class="requiredBlock"></div>                  
+                    <apex:inputText id="subject" value="{!subject}" size="80" />
+                    </div><div id="errmesgsubject"></div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem id="theSectionItem6a" html-data-role="theSectionItem6a">
+                    <apex:outputLabel value="Template Attachments:" for="template__attachments" />
+                    <apex:outputPanel id="templateAttachmentpanel">
+                        <apex:inputHidden value="{!templateAttachmentIds}" id="templateAttachmentIds"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem6b" html-data-role="theSectionItem6b">
+                    <apex:outputLabel value="Snippet Attachments:" for="snippet__attachments" />
+                    <apex:outputPanel id="snippetAttachmentpanel">
+                        <apex:inputHidden value="{!snippetAttachmentIds}" id="snippetAttachmentIds"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="theSectionItem8">
+                     <apex:outputLabel value="Attachments:" />                  
+                    <apex:outputPanel >
+                        <apex:repeat value="{!draftAttachments}" var="theAttachment" id="draftAttachments">
+                               <div>
+                                    <apex:outputLink value="#" onClick="openLink('{!strURL}{!theAttachment.Id}&&fname={!theAttachment.Name}')"   style="color:rgb(50,120,180)" rendered="{!theAttachment.Id != null}">{!theAttachment.Name}</apex:outputLink>&nbsp;
+                                    &nbsp;                       
+                                    <apex:commandLink id="removelink1" action="{!removeAttachFile}"  style="color:rgb(50,120,180);"  >
+                                        <apex:param name="fileRemove" value="{!theAttachment.Id}" assignTo="{!attachmentToDelete}" />
+                                         <apex:image url="{!URLFOR($Resource.Icons, 'delete-icon.png')}" styleClass="remover" rendered="{!theAttachment.Id != null}" />                      
+                                    </apex:commandLink>
+                                </div>
+                        </apex:repeat> 
+                        <apex:repeat value="{!firstThreeAttachments}" var="theAttachment" id="firstThreeAttachments">
+                               <div>
+                                    <apex:inputFile id="theInput1" value="{!theAttachment.Body}" fileName="{!theAttachment.Name}" filesize="5000"  rendered="{!theAttachment.Id == null}" />
+                                    &nbsp;    
+                                   <apex:image id="img1" url="{!URLFOR($Resource.Icons, 'delete-icon.png')}"  styleClass="remover" rendered="{!theAttachment.Id == null}"/>                   
+                                    <apex:outputLink value="#" onClick="openLink('{!strURL}{!theAttachment.Id}&&fname={!theAttachment.Name}')"   style="color:rgb(50,120,180)" rendered="{!theAttachment.Id != null}">{!theAttachment.Name}</apex:outputLink>&nbsp;
+                                    &nbsp;                       
+                                   
+                                </div>
+                        </apex:repeat> 
+                    
+                     <a id="myHeader" href="javascript:toggle2('otherAttachments','myHeader')">More Attachments</a>
+                    </apex:outputPanel>                  
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="theSectionItem9">
+                    <apex:outputLabel value="" /> 
+                     <apex:outputPanel id="otherAttachments" style="display:none;">
+                        <apex:repeat value="{!remainingAttachments}" var="theAttachment" id="remainingAttachments">
+                               <div>
+                                    <apex:inputFile id="theInput1" value="{!theAttachment.Body}" fileName="{!theAttachment.Name}" filesize="5000"  rendered="{!theAttachment.Id == null}" />
+                                    &nbsp;    
+                                   <apex:image id="img1" url="{!URLFOR($Resource.Icons, 'delete-icon.png')}"  styleClass="remover" rendered="{!theAttachment.Id == null}"/>                   
+                                    <apex:outputLink value="#" onClick="openLink('{!strURL}{!theAttachment.Id}&&fname={!theAttachment.Name}')"   style="color:rgb(50,120,180)" rendered="{!theAttachment.Id != null}">{!theAttachment.Name}</apex:outputLink>&nbsp;
+                                    &nbsp;                       
+                                </div>
+                        </apex:repeat> 
+                       </apex:outputPanel>                   
+                </apex:pageBlockSectionItem>  
+               
+                 <apex:pageBlockSectionItem id="theSectionItem10">
+                    <apex:outputLabel value="Template Hotkey:" />
+                    <apex:outputPanel >
+                        <div style="width:280px;">
+                            <div style="float:left;">
+                                  <apex:inputText value="{!templateCode}" id="templateCode1" onchange="getTemplateDetails();"/>
+                                  <apex:inputHidden value="{!emailTemplateID}" id="theHiddenInputTemplateID"/>
+                                  <apex:inputHidden value="{!emailTemplateName}" id="theHiddenInputTemplateName"/>
+                                  <apex:inputHidden value="{!emailTemplateDeveloperName}" id="theHiddenInputTemplateDeveloperName"/>
+                                  <apex:inputHidden value="{!emailTemplateDescription}" id="theHiddenInputTemplateDescription"/>
+                                  <apex:inputHidden value="{!emailTemplateFolderId}" id="theHiddenInputTemplateFolderID"/>
+                            </div>
+                            <div style="float:right;">
+                                <input type="button" class="btn" value="Select Template" onclick="openLookupPopup('Template');"/> 
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>              
+                <div id="errbody" style="padding-left:220px;"></div>
+                <apex:pageBlockSectionItem id="theSectionItem7">
+                    <apex:outputLabel value="Body:" />
+                    <!--<div style="text-wrap:suppress;word-wrap:break-all;white-space:pre-wrap">-->
+                        <!--<apex:inputTextarea value="{! body }" id="body" cols="120" rows="10" richText="false" styleClass="ckeditor" />-->
+                    <apex:inputTextArea id="templateDetail"  value="{!templateDetails}" richText="false" styleClass="ckeditor"/>
+                    <!--</div>-->
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="theSectionItem11" rendered="{!originalEmailBody != null}">
+                         <apex:outputLabel value="Original Email:" />
+                        <apex:outputText escape="false" value="{!originalEmailBody}">
+                        </apex:outputText>
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+            </apex:outputPanel>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+      <script type="text/javascript">
+    //checkAttachmentMore3file();
+    function parentFunction(result)
+    { 
+        // alert('I am parent');
+         $jp('.cke_contents iframe' ).contents().find( 'body' ).html(result);
+    }
+    </script>
+    </body>
+</apex:page>

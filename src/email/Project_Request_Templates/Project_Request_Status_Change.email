@@ -1,0 +1,14 @@
+****STATUS CHANGE NOTIFICATION**** 
+
+Project Request Approver: {!Article_Project_Request__c.Project_Request_Approver__c}
+Request Number:{!Article_Project_Request__c.Request__c}
+Project Request Name: {!Article_Project_Request__c.Name}
+
+New Status: {!Article_Project_Request__c.Request_Status__c}
+
+Edited By: {!Article_Project_Request__c.LastModifiedBy}
+Edited On: {!Article_Project_Request__c.LastModifiedDate}
+
+Please click the following link to view Approved Project Request:
+------------------------------------- 
+{!Article_Project_Request__c.Link}

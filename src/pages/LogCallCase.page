@@ -1,0 +1,102 @@
+<apex:page standardcontroller="Case" extensions="LogCallCaseController" showHeader="false" id="Case">
+    <script type="text/javascript" src="/canvas/sdk/js/publisher.js"></script>
+   <apex:includeScript value="/support/console/31.0/integration.js"/>
+     <apex:includeScript value="{!URLFOR($Resource.zenform, 'jquery.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.zenform, 'style.css')}"/>
+     <apex:includeScript value="{!URLFOR($Resource.zenform, 'zen-form.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.zenform, 'zen-form.css')}"/> 
+      <script type="text/javascript">
+        function refreshCurrentTab() 
+        {
+            
+            sforce.console.getEnclosingTabId(refreshSubtab);
+        }
+        var refreshSubtab = function refreshSubtab(result) {
+            var tabId = result.id;
+            sforce.console.refreshSubtabById(tabId, true, refreshSuccess);
+        };
+
+        var refreshSuccess = function refreshSuccess(result) {
+        console.log(result);
+        //Report whether refreshing the subtab was successful
+        if (result.success == true) {
+            console.log('Subtab refreshed successfully');
+        } else {
+            console.log('Subtab did not refresh');
+        }
+        };
+        
+        function validateFields()
+        {
+            
+            if($('.description').val() != '' && $('.contactStatus').val() != '--None--')
+                createTaskSuccess();
+            else
+                createTaskFail();
+        }
+
+     </script>    
+    <div> 
+        <apex:form id="Case"> 
+           <apex:actionFunction action="{!createTask}" name="createTaskFail" rerender="out" status="statusUpdating" 
+            /> 
+            <apex:actionFunction action="{!createTask}" name="createTaskSuccess" rerender="out" status="statusUpdating" oncomplete="refreshCurrentTab();"
+            /> 
+        <apex:outputPanel id="out" > 
+        
+            
+             <div class="input-wrap">
+                <label>Case Status&nbsp;<apex:image url="{!URLFOR($Resource.requiredImage)}"  width="7"/></label>
+                <apex:actionRegion >
+                <apex:selectList value="{!status}" size="1" required="true" styleClass="contactStatus" id="CaseStatus">
+                  <apex:selectOptions value="{!CaseStatus}"/>
+                  <apex:actionSupport event="onchange" rerender="Case,problemResolution"/>
+                </apex:selectList>
+                </apex:actionRegion>
+             </div>
+             
+              <div class="input-wrap" id="problemResolution">
+                <label> Problem Resolution&nbsp;<apex:image url="{!URLFOR($Resource.requiredImage)}"  width="7"/></label>
+                <apex:actionRegion >
+                <apex:selectList value="{!resolution}" size="1" styleClass="contactStatus" id="ProblemResolution" required="true">
+                  <apex:selectOptions value="{!CaseProblemResolution}"/>
+                   <apex:actionSupport event="onchange" rerender="Case"/>
+                </apex:selectList>
+                </apex:actionRegion>
+             </div>
+             <apex:outputPanel rendered="{!IF(resolution == 'Unresolved – Other' || resolution == 'Resolved – Other', true, false)}">
+             <div class="input-wrap"  >
+                <label> Other&nbsp;<apex:image url="{!URLFOR($Resource.requiredImage)}"  width="7"/></label>
+                <apex:inputText value="{!resolutionOther}" styleClass="description" maxlength="50" id="Other" />
+             </div>
+             </apex:outputPanel>
+             <div class="input-wrap">
+                <label>Activity type&nbsp;<apex:image url="{!URLFOR($Resource.requiredImage)}"  width="7"/></label>
+                <apex:inputField value="{!theTask.Inbound_Outbound__c}" required="true" label="Activity" styleClass="contactStatus"/>
+             </div>
+             <div class="input-wrap">
+                <label>Comments&nbsp;<apex:image url="{!URLFOR($Resource.requiredImage)}"  width="7"/></label>
+                <apex:inputField value="{!theTask.Description}" required="true" style="height:92px;" styleClass="description"/>
+             </div>
+             
+             
+             <button type="button" onclick="this.disabled=true;validateFields();" 
+        style="padding:5px 10px;float:right; 
+        font-size:13px; font-weight:bold; line-height: 
+        18px;background-color:#0271BF;background-image:-moz-linear-gradient(#2DADDC, #0271BF);background-repeat:repeat-x;border-color:#096EB3;" 
+        id="addopportunitybutton">Log a Call</button>
+            <apex:actionStatus id="statusUpdating">
+                  <apex:facet name="start">
+                    <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+                  </apex:facet>
+                  <apex:facet name="stop">
+                      <apex:pageMessages /> 
+                  </apex:facet>
+            </apex:actionStatus>
+        </apex:outputPanel>
+        </apex:form>
+            
+      
+        
+    </div>  
+</apex:page>

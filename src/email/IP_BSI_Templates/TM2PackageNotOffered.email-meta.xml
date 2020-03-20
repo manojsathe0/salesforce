@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>TM2px</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TM 2-Package Not Offered</name>
+    <style>none</style>
+    <subject>TM 2-Package Not Offered</subject>
+    <textOnly>Dear &lt;Customer Name&gt;,
+
+Thank you for your interest in LegalZoom&apos;s trademark services. We received your inquiry about the pricing of the LegalZoom Trademark Package and wanted to address your questions.
+
+Our trademark application pricing varies by state. In some states, we are able to offer 2 packages ? a Basic Package for $169 and a Complete Coverage Package for $189 which includes access to our Business Advantage Pro service.  In states where we do not offer the Business Advantage Pro service, we offer 3 LegalZoom Trademark Packages ? a Standard Package for $169, a Plus Package for $289, and a Gold Package for $389. Note: The pricing listed does not include the government filing fee. Each package will require a government filing fee of at least $325 to be paid at or prior to LegalZoom&apos;s filing of your trademark application.
+
+We understand your concern and assure you that we are working with all 50 states so that we can provide consistent offerings for all our customers. 
+
+Please call us at 888-791-0227 M-F from 6am to 7pm Pacific so that we can assist you. We value you as a customer and would like to work with you to determine the package that would best fit your trademark needs.
+
+Best regards,
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

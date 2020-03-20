@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>General SNE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>General SNE</name>
+    <style>freeForm</style>
+    <subject>LegalZoom.com-Intellectual Property Services Follow-Up</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Thank you very much for you calling in today and speaking with me.  As we discussed on the phone, I will reach out to you on [Date][Time] to continue getting you the protection that you are looking for. 
+
+Legal Zoom’s goal is to make this process easy for you, so if anything comes up that you need to reach out to me sooner, please feel free to contact me.  You can find my information in my signature below.  I want to thank you for choosing LegalZoom and have a great day.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>html</type>
+</EmailTemplate>

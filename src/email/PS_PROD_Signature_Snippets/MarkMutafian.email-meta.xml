@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>109</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Mark Mutafian</name>
+    <style>none</style>
+    <textOnly>{!snippetVariable.lz_address}
+www.LegalZoom.com
+{!snippetVariable.ccphone}
+x109</textOnly>
+    <type>custom</type>
+</EmailTemplate>

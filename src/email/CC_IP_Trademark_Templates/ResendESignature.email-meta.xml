@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>EsigResend</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Resend E-Signature</name>
+    <style>none</style>
+    <subject>Resend E-Signature</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for considering LegalZoom for your Intellectual Property needs.
+
+As requested, we will have a specialist resend your e-signature email. When you receive this email, please check to make sure that the information in your application is accurate, and electronically sign it by typing your name between two forward slashes. For example:
+
+/John Doe/
+
+Please keep in mind that once you click on the &quot;Sign It&quot; button, no further changes can be made to your application. If any changes should be made to your application, please disregard your application and reply to this email with your requested revisions. Once we make the desired changes, a new e-signature request will be sent.
+
+Please note that you only have two (2) weeks to sign the document, otherwise your trademark application will expire, and a $25.00 non-refundable reprocessing charge will be assessed. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

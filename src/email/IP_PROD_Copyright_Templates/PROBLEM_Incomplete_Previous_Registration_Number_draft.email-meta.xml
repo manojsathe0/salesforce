@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>cr51_draft</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PROBLEM - Incomplete Previous Registration Number_draft</name>
+    <style>none</style>
+    <subject>Incomplete Previous Registration Number</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for choosing LegalZoom.
+
+During review of your file, we noticed an issue that may delay the registration of your work. The electronic material(s) we received to be included in your Copyright application is not in a file format accepted by the Copyright Office. The Copyright Office accepts electronic versions of [INSERT TYPE OF APPLICATION] materials in the following file formats:
+
+[INSERT LIST OF APPROPRIATE FILE TYPES)
+
+Please resubmit a copy of your work in one of the acceptable formats listed above. If you are unable to meet these requirements and would like to mail a hard copy of your work, please send it to:
+
+{!snippetVariable.ip_address_cr_materials}
+
+If you have any questions or would like additional information, please call our customer care team at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT or email us here.
+
+Best Regards,
+
+{!User.Name}, {!User.Title}
+{!User.CompanyName}
+{!User.Street}, {!User.City}, {!User.State} {!User.PostalCode}
+{!User.Phone}, ext. {!User.Extension}
+
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

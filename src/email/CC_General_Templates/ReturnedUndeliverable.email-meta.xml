@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>returned1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Returned Undeliverable</name>
+    <style>none</style>
+    <subject>Returned Undeliverable</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your order. 
+
+We recently shipped out your final package to you containing your legal documents.  However, the package was returned to our office marked &quot;undeliverable.&quot;
+
+The mailing address we have on file for your account is:
+
+Recipient&apos;s Name
+Address
+City, State, Zip
+
+Please confirm the address that is noted above or provide an updated shipping address as soon as possible so that we can resend your documents.  We sincerely apologize for any inconvenience that you may have experienced as a result of this delay.
+
+It is very important to us to get your legal documents delivered to you in a timely manner.  As a reassurance to our commitment, we&apos;ve attached a copy of the completed documents to this e-mail.  
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

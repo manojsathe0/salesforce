@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SF Temp Outbound AR Temp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>SF Temp Outbound AR Temp</name>
+    <style>freeForm</style>
+    <subject>LegalZoom.com Order XXXXXX: Information regarding our Annual Report services</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for choosing LegalZoom.com for your business filing needs.  
+
+Per our phone conversation today, I have provided pricing information for the Annual Report services that LegalZoom provides.  
+
+An Annual Report is a requirement in order for your company to remain in good standing with the Secretary of State.  Most states require either an annual or biannual report for as long as your company exists.
+
+For your convenience, I have provided our Annual Report packages below.
+ 
+Standard Package | $35.00 + $XX.XX state filing fee + $9.95 shipping fee | 20-35 Business Days
+Rush Package | $55.00 + $XX.XX state filing fee | 7-10 Business Days
+
+TO GET STARTED:
+http://www.legalzoom.com/additional-business-services/annual-reports.html
+
+For further assistance, please contact me at 877-672-9666 ext. {!User.Extension}
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

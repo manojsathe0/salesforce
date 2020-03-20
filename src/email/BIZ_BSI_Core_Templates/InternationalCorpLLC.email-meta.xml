@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>intlbsi</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>International Corp/LLC</name>
+    <style>none</style>
+    <subject>International Corp/LLC</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+Thank you for contacting LegalZoom for your business services needs.  LegalZoom can assist in forming a company in the U.S. even if you are not a U.S. citizen or resident.  
+
+Please be aware that if you do not have a Social Security Number you may need to obtain an Individual Taxpayer Identification Number (ITIN), which will allow you to report and pay taxes in the U.S.  Only the Internal Revenue Service (IRS) can issue an ITIN.  Please contact the IRS directly for more information on obtaining an ITIN: (800) 829- 1040. 
+
+Please keep in mind that if you would like to form a Corporation you may not be able to form an S-Corporation, which is a type of Corporation that requires all of its stockholders to be U.S. citizens or residents.  However, there are no citizenship or residency restrictions under a C-Corporation.  
+
+For your reference, I have included the fees and links to our LLC/Incorporation service below:
+LLC
+Economy Package | $149.00 + state fee + shipping (20 - 35 business days)
+Standard Package | $249.00 + state fee + shipping (20 - 35 business days)
+Express Gold Package | $359.00 + state fee (7 - 10 business days)
+
+OPTIONAL SERVICES
+Federal Tax Identification Number (FEIN) Application Preparation | $30.00 (Included in Express Gold Package)
+FEIN Obtainment | $79.00 ($49.00 with Express Gold Package)
+
+Registered Agent Service | $149.00 for the first year
+
+TO GET STARTED:
+http://www.legalzoom.com/limited-liability-company/limited-liability-company-overview.html
+FOR MORE INFORMATION:
+http://www.legalzoom.com/limited-liability-company/limited-liability-company-services.html
+
+INCORPORATION
+Economy Package | $139.00 + state fee + shipping (20 - 35 business days)
+Standard Package | $239.00 + state fee + shipping (20 - 35 business days)
+Express Gold Package | $369.00 + state fee (7 - 10 business days)
+
+OPTIONAL SERVICES
+Federal Tax Identification Number (FEIN) Application Preparation | $30.00 (Included in Express Gold Package)
+FEIN Obtainment | $79.00 ($49.00 with Express Gold Package)
+
+Registered Agent Service | $149.00 for the first year
+
+TO GET STARTED:
+http://www.legalzoom.com/legal-incorporation/incorporation-overview.html
+FOR MORE INFORMATION:
+http://www.legalzoom.com/incorporation-guide/definition-of-a-corporation.html
+
+Please keep in mind that being a part of a company is not necessarily the same as having the authorization to do business.  Please speak with an attorney or the U.S. Citizenship and Immigration Services for more information about doing business under a visa.  Even if you are a partner of a U.S. company, you may not be authorized to do business under your specific visa classification. 
+
+Please note that you must designate a Registered Agent in the state in which you register your LLC or Corporation.  The Registered Agent is the party designated to receive official correspondence on behalf of your Corporation or LLC.  Also, in the event that your Corporation or LLC is ever sued, the Registered Agent is responsible to receive the subpoena on its behalf.  The Registered Agent must be an adult with a physical street address in the state of formation, or it can be an authorized provider like LegalZoom.  Many customers choose LegalZoom to serve as the Registered Agent on their behalf as the contact information of the Registered Agent is made public.  As such, the Registered Agent is sent a significant amount of unsolicited mail.  LegalZoom provides Registered Agent services for an annual fee of $159.00; the first year?s service is offered for $149.00.  Additionally, you will be provided with a LegalZoom Compliance Calendar that notifies you of any upcoming filings required to maintain your company.
+
+Please feel free to contact LegalZoom at (888) 381-8758 if you have any further questions.  Our Business Formations Team business hours are {!snippetVariable.bizbsi_hours}.
+
+
+Best regards,
+
+{!User.FirstName} {!User.LastName} 
+{!User.Title} 
+{!User.CompanyName} 
+{!User.Address} 
+{!User.Phone} ext. {!User.Extension}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

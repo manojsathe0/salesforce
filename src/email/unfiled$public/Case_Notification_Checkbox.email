@@ -1,0 +1,25 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<P>Oops! Someone accidentally checked the "Send Notification Email" checkbox when reassigning a case.</P>
+<P>&nbsp;</P>
+<P>Please delete this message. Our apologies for any inconvenience.</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Did you know you can set up an Outlook rule to automatically send these messages to your Deleted Items folder? Simply open your Outlook and complete the following steps:</P>
+<P>&nbsp;</P>
+<OL>
+<LI>Go to File</LI>
+<LI>Go to Manage Rules and Alerts</LI>
+<LI>Under Email Rules, click New Rule</LI>
+<LI>Choose "Move Messages with specific words in the subject to a folder" and click Next</LI>
+<LI>Click on the <FONT color=#000099><U>specific words</U> </FONT>hyperlink and enter Please disregard this message</LI>
+<LI>Click on the <U><FONT color=#000099>specified</FONT></U> hyperlink and choose Deleted Items</LI>
+<LI>Click Finish</LI>
+<LI>Enjoy never seeing this message again</LI></OL>
+<P>&nbsp;</P>
+<P>Thank you!</P>
+<P>&nbsp;</P>
+<P><FONT color=#ffffff>{!User.Name}</FONT></P>]]></td>
+</tr>
+</table>

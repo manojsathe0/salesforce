@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BAM Starter</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BAM 1</name>
+    <style>none</style>
+    <subject>Your New Business</subject>
+    <textOnly>Congratulations!
+
+
+Dear [FIRST NAME],
+
+Congratulations on taking the first steps to start your new business and open the door to opportunity.  At LegalZoom, we strive to provide the best possible service to business planners like you and ask that you take a minute to complete the following short survey so that we can continue to improve our offerings:  Click Here to begin survey &lt; https://www.surveymonkey.com/s/BizStarter&gt;
+
+Post a Review
+
+Sincerely,
+
+[REP NAME]
+[REP TITLE]
+
+Privacy Policy  Call Customer Care: (888) 678-5952
+
+LegalZoom is not a law firm and is not a substitute for an attorney or law firm. LegalZoom cannot provide legal advice and can only provide self-help services at your specific direction. LegalZoom is a registered and bonded legal document assistant, #0104, Los Angeles County (exp. 12/13). Prices, features, terms and conditions are subject to change without notice.
+
+Please add services@emails.legalzoom.com to your address book.
+
+LegalZoom is located at 101 N. Brand Blvd., 11th Floor, Glendale, CA 91203
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

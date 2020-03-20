@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>scp</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SC Filing Fee Payment Issue</name>
+    <style>none</style>
+    <subject>SC Filing Fee Payment Issue</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+During a recent systsems upgrade, we discovered that some of our customers were not charged for the court filing fees when placing an order for our Small Claims product.  You were one of the impacted customers, and as a result, we will need to place an additional charge on your account before we can file your claim with the court.  In California, court fees are based based on the amount the plaintiff is suing for.  In your case, because your claims is [claim amount], the filing fee will be [filing fee]. 
+
+To resolve this issue and proceed with filing, we will need your approval to apply the charge to your account.  Please contact our Customer Support staff by replying to this e-mail or toll free at 800-773-0888 between the hours of 7:00 a.m. and 5:00 p.m. Pacific Standard Time, and let us know whether we may apply the appropriate charge.  
+
+We appreciate the opportunity to serve you and regret the billing error.  We hope you will continue to look to LegalZoom for all of your future legal document needs.  
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,69 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p><p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Dear
+{!Contact.FirstName} {!Contact.LastName},</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Thank you for
+contacting&nbsp;us for your business needs.&nbsp;
+In response to your inquiry, I'd like to let you know how we can help your company document its meetings and actions, which is vital to help protect its owners from being personally responsible for the company's debts and liabilities.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">With LegalZoom Minutes Manager, we make it easy to create records for your company's meetings and actions. Use it as often as you wish throughout the year for a one-time fee. Just sign up by answering a few simple questions and you can download your minutes today.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Sign up today at&nbsp;<a href="http://www.legalzoom.com/additional-business-services/corporate-minutes.html">http://www.legalzoom.com/additional-business-services/corporate-minutes.html</a>&nbsp;It's just $99/year.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">If you have any
+additional questions,&nbsp;give me a call&nbsp;at the phone
+number below and I'll be happy to help.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">Best regards,</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 10pt;"><p style="margin: 0in; font-size: 10pt;">{!User.FirstName}</p>
+
+<p style="margin: 0in; font-size: 10pt;">(800) 773-0888
+x{!User.Extension}</p>
+
+<p style="margin: 0in; font-size: 10pt;"><a href="http://www.legalzoom.com">www.legalzoom.com</a></p><p></p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0pt 0pt 12pt; font-family: Calibri;"><a href="http://www.legalzoom.com/privacy-policy-popup.html"><span style="font-size: 7.5pt;">Privacy Policy</span></a></p>
+
+<p style="margin: 0pt 0pt 12pt; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">Call Customer Care:
+1.800.773.0888</p>
+
+<p style="margin: 0pt 0pt 12pt; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">This is a service email
+related to your LegalZoom account.</p>
+
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">Please
+add services@emails.legalzoom.com to your address book. </p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">This
+email was sent to: {!Contact.Email}</p>
+
+<p style="margin: 0in; font-family: Calibri; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; color: rgb(102, 102, 102); font-family: Calibri; font-size: 7.5pt;">©
+LegalZoom.com, Inc. All rights reserved.</p>]]></td>
+</tr>
+</table>

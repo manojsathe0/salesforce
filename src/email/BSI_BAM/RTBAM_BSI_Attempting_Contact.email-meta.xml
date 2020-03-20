@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>RTBAM BSI - Attempting Contact</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>RTBAM BSI - Attempting Contact</name>
+    <style>freeForm</style>
+    <subject>LegalZoom - Retail Business Account Manager</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for choosing LegalZoom for your [RETAIL/FOOD SERVICE] business needs.  We have assisted thousands of customers in establishing and operating successful [RETAIL/FOOD SERVICE] businesses, and we would like to speak with you regarding the next steps for your business.  These next steps are part of our [RETAIL/FOOD SERVICE] program, and include a combination of state-required compliance matters as well as operational decisions to be made to ensure proper protection of your personal assets.
+ 
+You will have a dedicated Account Manager with whom you will be able to discuss next steps for your business.  Your Account Manager will be your single point of contact at LegalZoom for managing your business needs. 
+Furthermore, your Account Manager will assist you with scheduling attorney and tax specialist consultations to help ensure that your business is sound from a legal and tax standpoint.
+ 
+In addition to these next steps, your Account Manager will be able to assist you with additional matters including license and permit research, marketing and web promotions, tax issues, employees, and more.
+ 
+Please contact me upon receiving this email so that I can put you in contact with your Account Manager.  Thank you for choosing LegalZoom as your premiere business resource, and we look forward to assisting you in growing your business.
+
+Best regards,
+
+{!User.FirstName}
+(800) 773-0888 x{!User.Extension}
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

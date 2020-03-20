@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Returned1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Returned Undeliverable</name>
+    <style>none</style>
+    <subject>Customer Compliments</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting us about your order.
+
+We recently shipped out your final package to you containing your legal documents. However, the package was returned to our office marked &quot;undeliverable.&quot;
+
+The mailing address we have on file for your account is:
+
+Recipient&apos;s Name
+Address
+City, State, Zip
+
+Please confirm the address that is noted above or provide an updated shipping address as soon as possible so that we can resend your documents. We sincerely apologize for any inconvenience that you may have experienced as a result of this delay.
+
+It is very important to us to get your legal documents delivered to you in a timely manner. As a reassurance to our commitment, we&apos;ve attached a copy of the completed documents to this e-mail.
+
+Please feel free to contact our Customer Care Team if we can be of further assistance.  Simply reply to this email, or call us toll free at 1.800.773.0888. Our Customer Care Team is available Mon-Fri  5am to 7pm PT; Saturday  7am to 4pm PT.
+
+Best regards,
+
+The LegalZoom Team
+
+tel 877.818.8787 | fax 323.389.0658
+www.LegalZoom.com | 9900 Spectrum Drive, Austin, TX 78717
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy.
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.
+
+Please add services@emails.legalzoom.com to your address book.
+
+This email was sent to: {!Contact.Email}
+
+
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

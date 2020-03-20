@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>llenom</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Logo &amp; Literal Elemant No Match</name>
+    <style>none</style>
+    <subject>Logo &amp; Literal Elemant No Match</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for submitting logo for your trademark application. However, the U.S. Patent and Trademark Office requires the literal element (word description) from your application match the graphic element (logo) exactly. It cannot contain additional words, letters or punctuation, and the combination, spacing and organization of letters must match exactly.
+
+Currently, your logo and literal element are the following:
+
+Logo: [insert]
+Literal element: [insert]
+
+To correct the inconsistency and continue with your application, we need to know how you would like to proceed. Choose ONE of the options below and reply to this email:
+
+1. Submit a different logo that matches the literal element you provided in your application
+
+2. Request to change the application to match the literal element displayed on your logo
+
+3. Confirm you want us to submit the logo and literal element as is. During the examination process by the USPTO, you will be responsible to respond to questions from your assigned examining attorney
+
+4. Request to place your order on hold while you consult with an attorney*
+
+You can find out more information on literal elements at the following link: 
+http://legalzoom.force.com/LZPKB/articles/Answer/2396?retURL=%2Fapex%2FknowledgeHome&amp;popup=false&amp;lang=en_US
+
+If you have any questions or would like additional information, please call us at (800) 773-0888 Monday?Friday from 6 a.m.?7p.m. PT or email us at customercare@legalzoom.com.
+
+We appreciate you choosing LegalZoom and look forward to hearing from you soon.
+
+Best regards,
+
+The LegalZoom Team
+
+* Members of Business Advantage Pro can receive further guidance from an attorney as part of their subscription. If you purchased the Complete Coverage package, you have a 30-day trial. Simply sign in and request a consultation through the Member Center link in your account. To sign in, click here: https://www.legalzoom.com/LZWeb/ASMemberCenter/AttorneyConsultations.aspx?SubPlanTypeId=1
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

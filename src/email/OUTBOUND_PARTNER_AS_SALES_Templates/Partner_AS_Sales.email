@@ -1,0 +1,82 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Hello {!Contact.FirstName},<br/><br/> 
+ 
+My name is {!User.FirstName} with LegalZoom and I am contacting you on behalf of our Strategic Business Partners, (PARTNER).<br/><br/>
+
+LegalZoom is your premier online legal resource and I am reaching out to you today to make sure that you and your business are well protected – In fact, thousands of our business owners have benefited from our legal plan.<br/><br/>  
+ 
+Here’s a quick run-down of our service:<br/><br/>
+
+For a low annual or monthly fee (as low as $23.99/month), you can set up your attorney consultation on a range of business, intellectual property and personal matters.  Please keep in mind each legal matter must be unique with the typical attorney consultation lasting 30 minutes.<br/><br/>  
+ 
+Benefits Include:<ul><li>Attorney advice and consultations. Speak with an experienced attorney on an unlimited number of new legal matters*<br/><li>Tax Professional advice and consultations.  Speak with an experienced Tax Professional on an unlimited number of new tax issues<br/><li> Attorney drafted letters. Your attorney can draft legal letters on your behalf <br/><li> Unlimited access to LegalZoom legal forms. Download hundreds of blank legal forms for business or personal use <br/><li>1 Free copyright per month, all you pay is the Federal filing fee<br/><li>Access to CreditAlert Plus from Dun & Bradstreet Credibility Corp.  Establish & monitor your Business Credit Profile.<br/><li>25% savings on additional attorney services. Get significant savings on additional attorney work if you need it <br/><li>20% savings on any additional tax services<br/><li>10% savings on any LegalZoom legal documents. Get any LegalZoom business or personal documents at a discount</ul>
+*Excludes Patent-related matters, violent crimes.<br/><br/>
+
+Please call me directly and I will be happy to discuss this service in more detail.  
+Thank you for choosing LegalZoom and have a great day.<br/><br/>
+
+I look forward to speaking with you,<br/><br/>
+
+{!User.FirstName} {!User.LastName}<br/> 
+{!User.Title}<br/>
+{!User.CompanyName}<br/> 
+{!User.Address}<br/>
+{!User.Phone} ext. {!User.Extension}<br/>
+
+</p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>bizforms1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BIZ BSI Legal Forms</name>
+    <style>none</style>
+    <subject>LegalZoom.com-Legal Forms Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for your interest in LegalZoom’s Forms. I have included a link below for more information on our forms.
+
+To view our Legal Forms library please visit https://www.legalzoom.com/legalforms/. From there, select an apporpriate category for the type of form you are looking for. After Selecting the category, simply select the specific form to learn and a brief description of the form will be provided to. From there, it&apos;s as easy as clicking on &quot;Go&quot; to start a Membership in our Business Advantage Subscription. This subscription, for only $7.99 per month, would give you unlimited access to, and downloads from, our entire Legal Forms Library.
+
+If you have any issues or further questions I can be reached at {!User.Phone} ext. {!User.Extension} Monday-Friday 9am cst - 6pm cst. I appreciated speaking with you and look forward to the opportunity to discuss further how LegalZoom can help you with your Legal and/or Business needs.
+
+Best regards,
+
+{!User.FirstName} {!User.LastName}
+{!User.Title}
+{!User.CompanyName}
+{!User.Address}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,65 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p style="margin:0in;font-family:Calibri;font-size:10.0pt"><p style="margin: 0in; font-size: 10pt;">Dear
+{!Contact.FirstName} {!Contact.LastName},</p>
+
+<p style="margin: 0in; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 10pt;">Thank you for
+contacting LegalZoom for your business needs.&nbsp;
+In regard to your inquiry, LegalZoom does not currently assist with
+filing Doing Business As (DBA) names for Non-Profit Corporations.&nbsp; Please contact your county or state for
+further assistance with this filing.</p>
+
+<p style="margin: 0in; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 10pt;">If you have any
+additional questions, please feel free to contact us by phone at the phone
+number listed below.</p>
+
+<p style="margin: 0in; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 10pt;">Best regards,</p>
+
+<p style="margin: 0in; font-size: 10pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 10pt;">{!User.FirstName}</p>
+
+<p style="margin: 0in; font-size: 10pt;">(800) 773-0888
+x{!User.Extension}</p>
+
+<p style="margin: 0in; font-size: 10pt;"><a href="http://www.legalzoom.com">www.legalzoom.com</a></p>
+
+<p style="margin: 0in; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0pt 0pt 12pt;"><a href="http://www.legalzoom.com/privacy-policy-popup.html"><span style="font-size:7.5pt">Privacy Policy</span></a></p>
+
+<p style="margin: 0pt 0pt 12pt; font-size: 7.5pt; color: rgb(102, 102, 102);">Call Customer Care:
+1.800.773.0888</p>
+
+<p style="margin: 0pt 0pt 12pt; font-size: 7.5pt; color: rgb(102, 102, 102);">This is a service email
+related to your LegalZoom account.</p>
+
+<p style="margin: 0in; font-size: 7.5pt; color: rgb(102, 102, 102);">LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717.</p>
+
+<p style="margin: 0in; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 7.5pt; color: rgb(102, 102, 102);">Please
+add services@emails.legalzoom.com to your address book. </p>
+
+<p style="margin: 0in; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 7.5pt; color: rgb(102, 102, 102);">This
+email was sent to: {!Contact.Email}</p>
+
+<p style="margin: 0in; font-size: 11pt;">&nbsp;</p>
+
+<p style="margin: 0in; font-size: 7.5pt; color: rgb(102, 102, 102);">©
+LegalZoom.com, Inc. All rights reserved.</p></p>]]></td>
+</tr>
+</table>

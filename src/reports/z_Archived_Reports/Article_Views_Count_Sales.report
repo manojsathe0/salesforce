@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>RowCount</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Article View Count</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_2652286</developerName>
+        <masterLabel>Funtional Area</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Knowledge_Article_View__c$Article_Viewed_by__c.UserRole</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Customer Care Management</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Customer Care Specialist</sourceValue>
+            </sourceValues>
+            <value>Customer Care</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Specialist</sourceValue>
+            </sourceValues>
+            <value>Sales</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>BCS Management</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BCS Specialist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Business Account Manager</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Compliance Specialist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Corporate</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Production Management</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Production Specialist</sourceValue>
+            </sourceValues>
+            <value>Other Users</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Knowledge_Article_View__c$Name</field>
+    </columns>
+    <columns>
+        <field>BucketField_2652286</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Viewed_by__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Viewed_by__c.Manager_Text__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Viewed_by__c.Lead_Supervisor_Text__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Viewed_by__c.Assistant_Manager_Text__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Viewed_by__c.UserRole</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Viewed_by__c.Profile</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Id__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Number__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_URL__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Id</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Owner</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>BucketField_2652286</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Sales</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Knowledge_Article_View__c$Article_Title__c</field>
+        <sortByName>FORMULA1</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>CustomSummaryFormula</sortType>
+    </groupingsDown>
+    <name>Article Views Count - Sales</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Knowledge_Article_Views_By_User__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Knowledge_Article_View__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_THISMONTH</interval>
+    </timeFrameFilter>
+</Report>

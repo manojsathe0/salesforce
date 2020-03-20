@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>LWUpsell-T</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LW Upsell from Trust</name>
+    <style>none</style>
+    <subject>LW Upsell from Trust</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName}:
+
+You are receiving this message because you recently completed a LegalZoom Living Trust order in which you gave specific directives concerning life support and/or health care.
+
+Perhaps you may be interested in a different document that we provide in addition to your Living Trust.  In fact, many of our customers who order a Living Trust, also order a Living Will to protect themselves on all levels, and gain added peace of mind.
+
+A Living Trust and a Living Will are two distinct documents, both extremely important. 
+
+A Living Trust ensures that your wishes regarding your estate are carried out while avoiding probate court. For more information, click here:
+
+http://www.legalzoom.com/law_library/living_trust/vs.html
+
+A Living Will goes into effect if you are rendered unconscious and unable to communicate your wishes regarding life support and care. The LegalZoom Living Will comes standard with a Health Care Power of Attorney which also allows you to nominate someone to make these decisions for you if you are incapacitated. For more information, click here:
+
+http://www.legalzoom.com/law_library/living_wills/introduction.html
+
+Should you have any additional questions or concerns, please do not hesitate to contact us at 800-773-0888 or at customersupport@legalzoom.com. Thank you.
+
+The LegalZoom Team
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

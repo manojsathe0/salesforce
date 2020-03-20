@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>snippetVariable.bizbsiqueuefull</name>
+    <style>none</style>
+    <subject>bizbsiqueuefull</subject>
+    <textOnly>Biz BSI Queue, 5204</textOnly>
+    <type>custom</type>
+</EmailTemplate>

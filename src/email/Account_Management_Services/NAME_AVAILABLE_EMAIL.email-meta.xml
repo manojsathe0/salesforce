@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>AMAVAIL</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NAME AVAILABLE EMAIL</name>
+    <style>none</style>
+    <subject>Your Business Name is Available</subject>
+    <textOnly>[Business Name] is Initially Cleared
+
+Dear {!Contact.FirstName},
+
+Good news! Based on our preliminary name search, your proposed business name, [Business Name], appears to be available for an [Entity Type] in the state of [State of Formation].  We will now move forward with processing your documents and filing them  with the proper state agency.  I will call you and send you another email status within a few days.
+
+If you have any questions or need help scheduling a 30-minute consultation to address any new legal or tax matters, contact me at 877-808-1908.
+
+I look forward to speaking with you soon.
+
+Best Regards,
+
+[Account Manager] [ext.XXXX]
+Account Management Services
+T: 877-808-1918, M-F 9:00 am – 6 pm PT
+
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

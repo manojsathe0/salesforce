@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Project Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Project Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Type --></label>
+        <name>Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Create New</masterLabel>
+            <translation><!-- Create New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Current</masterLabel>
+            <translation><!-- Update Current --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Article/Project Request Type --></label>
+        <name>Article_Project_Request__c</name>
+        <picklistValues>
+            <masterLabel>Article Update</masterLabel>
+            <translation><!-- Article Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Update</masterLabel>
+            <translation><!-- Email Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi Article Change</masterLabel>
+            <translation><!-- Multi Article Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Article</masterLabel>
+            <translation><!-- New Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Email</masterLabel>
+            <translation><!-- New Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Source Doc</masterLabel>
+            <translation><!-- New Source Doc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Training</masterLabel>
+            <translation><!-- New Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Release</masterLabel>
+            <translation><!-- Project Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Test</masterLabel>
+            <translation><!-- Project Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Source Doc Update</masterLabel>
+            <translation><!-- Source Doc Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training Update</masterLabel>
+            <translation><!-- Training Update --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Client Service Notes --></label>
+        <name>Client_Service_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact/SME/PM --></label>
+        <name>Contact_SME_PM__c</name>
+        <relationshipLabel><!-- Project Requests (Contact/SME/PM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- County --></label>
+        <name>County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Needed By (If Applicable) --></label>
+        <name>Date_Needed_By_If_Applicable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Type --></label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer Article</masterLabel>
+            <translation><!-- Customer Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Temp</masterLabel>
+            <translation><!-- Email Temp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LZ Article</masterLabel>
+            <translation><!-- LZ Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Article</masterLabel>
+            <translation><!-- Partner Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Article</masterLabel>
+            <translation><!-- Public Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Source Doc</masterLabel>
+            <translation><!-- Source Doc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Functional Area --></label>
+        <name>Functional_Area__c</name>
+        <picklistValues>
+            <masterLabel>Customer Care</masterLabel>
+            <translation><!-- Customer Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfillment</masterLabel>
+            <translation><!-- Fulfillment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Goals/Objective --></label>
+        <name>Goals_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Worked --></label>
+        <name>Hours_Worked__c</name>
+    </fields>
+    <fields>
+        <label><!-- ImplementerID --></label>
+        <name>ImplementerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line of Business --></label>
+        <name>Line_of_Business__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attorney Services</masterLabel>
+            <translation><!-- Attorney Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Services</masterLabel>
+            <translation><!-- Business Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Care</masterLabel>
+            <translation><!-- Customer Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intellectual Property Services</masterLabel>
+            <translation><!-- Intellectual Property Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Services</masterLabel>
+            <translation><!-- Personal Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process Improvement</masterLabel>
+            <translation><!-- Process Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tech</masterLabel>
+            <translation><!-- Tech --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- My Open Requests - Approver --></label>
+        <name>My_Open_Requests_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- My Open Requests - Implementor --></label>
+        <name>My_Open_Requests_Implementor__c</name>
+    </fields>
+    <fields>
+        <label><!-- My Submitted Requests --></label>
+        <name>My_Submitted_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order # --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>(LLC) Limited Liability Company</masterLabel>
+            <translation><!-- (LLC) Limited Liability Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(LLP) Limited Liability Partnership</masterLabel>
+            <translation><!-- (LLP) Limited Liability Partnership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>(LP) Limited Partnership</masterLabel>
+            <translation><!-- (LP) Limited Partnership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>501(c)3 Preparation</masterLabel>
+            <translation><!-- 501(c)3 Preparation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All Products</masterLabel>
+            <translation><!-- All Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amendment Annual Reports</masterLabel>
+            <translation><!-- Amendment Annual Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Attorney-Prepared Provisional Application for Patent</masterLabel>
+            <translation><!-- Attorney-Prepared Provisional Application for Patent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bankruptcy</masterLabel>
+            <translation><!-- Bankruptcy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Advantage Pro Plan</masterLabel>
+            <translation><!-- Business Advantage Pro Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certificate of Good Standing</masterLabel>
+            <translation><!-- Certificate of Good Standing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certified Copies</masterLabel>
+            <translation><!-- Certified Copies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compliance</masterLabel>
+            <translation><!-- Compliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compliance Calendar</masterLabel>
+            <translation><!-- Compliance Calendar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conversion</masterLabel>
+            <translation><!-- Conversion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copyright</masterLabel>
+            <translation><!-- Copyright --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Minutes</masterLabel>
+            <translation><!-- Corporate Minutes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DBA (Doing Business As)</masterLabel>
+            <translation><!-- DBA (Doing Business As) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design Patent</masterLabel>
+            <translation><!-- Design Patent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dissolution</masterLabel>
+            <translation><!-- Dissolution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Divorce</masterLabel>
+            <translation><!-- Divorce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EIN Obtainment/Federal Tax ID</masterLabel>
+            <translation><!-- EIN Obtainment/Federal Tax ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entity Name Availability Check</masterLabel>
+            <translation><!-- Entity Name Availability Check --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foreign Qualification</masterLabel>
+            <translation><!-- Foreign Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Partnership Agreement</masterLabel>
+            <translation><!-- General Partnership Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorporation</masterLabel>
+            <translation><!-- Incorporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initial Reports</masterLabel>
+            <translation><!-- Initial Reports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joint Venture Agreement</masterLabel>
+            <translation><!-- Joint Venture Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Last Will &amp; Testament</masterLabel>
+            <translation><!-- Last Will &amp; Testament --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Advantage Plus Plan</masterLabel>
+            <translation><!-- Legal Advantage Plus Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Trust</masterLabel>
+            <translation><!-- Living Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Will</masterLabel>
+            <translation><!-- Living Will --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Name Change</masterLabel>
+            <translation><!-- Name Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Profit Corporation</masterLabel>
+            <translation><!-- Non-Profit Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Call Attorney Advantage Plan</masterLabel>
+            <translation><!-- On Call Attorney Advantage Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Legal Forms</masterLabel>
+            <translation><!-- Other Legal Forms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Patent Products</masterLabel>
+            <translation><!-- Other Patent Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Trademark Products</masterLabel>
+            <translation><!-- Other Trademark Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pet Protection Agreement</masterLabel>
+            <translation><!-- Pet Protection Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power of Attorney</masterLabel>
+            <translation><!-- Power of Attorney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prenuptial Agreements</masterLabel>
+            <translation><!-- Prenuptial Agreements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provisional Application for Patent</masterLabel>
+            <translation><!-- Provisional Application for Patent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Deed Transfer</masterLabel>
+            <translation><!-- Real Estate Deed Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real Estate Lease</masterLabel>
+            <translation><!-- Real Estate Lease --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered Agent</masterLabel>
+            <translation><!-- Registered Agent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-Corp Preparation</masterLabel>
+            <translation><!-- S-Corp Preparation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seller’s Permit</masterLabel>
+            <translation><!-- Seller’s Permit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Tax ID</masterLabel>
+            <translation><!-- State Tax ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trademark</masterLabel>
+            <translation><!-- Trademark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trademark Search</masterLabel>
+            <translation><!-- Trademark Search --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utility Patent</masterLabel>
+            <translation><!-- Utility Patent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project Description --></label>
+        <name>Project_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who is responsible for implementing this approved project/article request? --></help>
+        <label><!-- Project Implementer --></label>
+        <name>Project_Implementer__c</name>
+        <relationshipLabel><!-- Project Requests (Project Implementer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Request Approver --></label>
+        <name>Project_Request_Approver__c</name>
+        <relationshipLabel><!-- Project Requests (Project Request Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Request Submitter --></label>
+        <name>Project_Request_Submitter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Request Type --></label>
+        <name>Project_Request__c</name>
+        <picklistValues>
+            <masterLabel>Article (Customer-Facing)</masterLabel>
+            <translation><!-- Article (Customer-Facing) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Article (Internal)</masterLabel>
+            <translation><!-- Article (Internal) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Article Update</masterLabel>
+            <translation><!-- Article Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communication</masterLabel>
+            <translation><!-- Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Request (Document Revision)</masterLabel>
+            <translation><!-- Customer Request (Document Revision) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Request (LZ Signature as RA)</masterLabel>
+            <translation><!-- Customer Request (LZ Signature as RA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Request (Legal Research)</masterLabel>
+            <translation><!-- Customer Request (Legal Research) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Request (Release Documents for Deceased)</masterLabel>
+            <translation><!-- Customer Request (Release Documents for Deceased) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Request (Urgent Legal Action)</masterLabel>
+            <translation><!-- Customer Request (Urgent Legal Action) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document (Final Packet Instructions)</masterLabel>
+            <translation><!-- Document (Final Packet Instructions) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document (Legal Form or Template)</masterLabel>
+            <translation><!-- Document (Legal Form or Template) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document (Rejected Document or Form)</masterLabel>
+            <translation><!-- Document (Rejected Document or Form) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Template</masterLabel>
+            <translation><!-- Email Template --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Update</masterLabel>
+            <translation><!-- Email Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi Article Change</masterLabel>
+            <translation><!-- Multi Article Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Article</masterLabel>
+            <translation><!-- New Article --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Email</masterLabel>
+            <translation><!-- New Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Source Doc</masterLabel>
+            <translation><!-- New Source Doc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Training</masterLabel>
+            <translation><!-- New Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Release</masterLabel>
+            <translation><!-- Project Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Test</masterLabel>
+            <translation><!-- Project Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Source Doc Update</masterLabel>
+            <translation><!-- Source Doc Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training Materials</masterLabel>
+            <translation><!-- Training Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training Update</masterLabel>
+            <translation><!-- Training Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Website or Questionnaire Content</masterLabel>
+            <translation><!-- Website or Questionnaire Content --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Status --></label>
+        <name>Request_Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Review</masterLabel>
+            <translation><!-- In Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Researching</masterLabel>
+            <translation><!-- Researching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting</masterLabel>
+            <translation><!-- Waiting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working</masterLabel>
+            <translation><!-- Working --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request # --></label>
+        <name>Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Completion Date --></label>
+        <name>Requested_Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Start Date --></label>
+        <name>Requested_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requesting Department --></label>
+        <name>Requesting_Department__c</name>
+        <picklistValues>
+            <masterLabel>Account Management</masterLabel>
+            <translation><!-- Account Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Care</masterLabel>
+            <translation><!-- Customer Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fulfillment</masterLabel>
+            <translation><!-- Fulfillment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Knowledge Management</masterLabel>
+            <translation><!-- Knowledge Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process Improvement</masterLabel>
+            <translation><!-- Process Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requestor --></label>
+        <name>Requestor__c</name>
+        <relationshipLabel><!-- Project Requests (Requestor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sponsor --></label>
+        <name>Sponsor__c</name>
+        <relationshipLabel><!-- Project Requests (Sponsor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation><!-- Alabama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation><!-- Alaska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation><!-- Arizona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation><!-- Arkansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation><!-- California --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation><!-- Colorado --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation><!-- Connecticut --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation><!-- Delaware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation><!-- Georgia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation><!-- Hawaii --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation><!-- Idaho --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation><!-- Illinois --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation><!-- Indiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation><!-- Iowa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation><!-- Kansas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation><!-- Kentucky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation><!-- Louisiana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation><!-- Maine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation><!-- Maryland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation><!-- Massachusetts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation><!-- Michigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation><!-- Minnesota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation><!-- Mississippi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation><!-- Missouri --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation><!-- Montana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation><!-- Nebraska --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation><!-- Nevada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation><!-- New Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation><!-- New Jersey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation><!-- New Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation><!-- New York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation><!-- North Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation><!-- North Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation><!-- Ohio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation><!-- Oklahoma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation><!-- Oregon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation><!-- Pennsylvania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation><!-- Rhode Island --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation><!-- South Carolina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation><!-- South Dakota --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation><!-- Tennessee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation><!-- Utah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation><!-- Vermont --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation><!-- Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation><!-- Washington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington, D.C.</masterLabel>
+            <translation><!-- Washington, D.C. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation><!-- West Virginia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation><!-- Wisconsin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation><!-- Wyoming --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Article/Project Request Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Implementation Details --></label>
+            <section>Implementation Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Operations Request Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label><!-- Project Request Details --></label>
+            <section>Project Request Details</section>
+        </sections>
+        <sections>
+            <label><!-- Work Completed By --></label>
+            <section>Work Completed By</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Product Request Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- For CC Use Only --></label>
+            <section>For CC Use Only</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+        <sections>
+            <label><!-- Request Detail --></label>
+            <section>Request Detail</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Operations Project Request --></label>
+        <name>Operations_Request</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Knowledge Management should only choose Communication as a Request Type. If you have any questions please see the Change Management Team. --></errorMessage>
+        <name>Knowledge_Management_Comm_Project</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Helpdesk --></label>
+        <name>Helpdesk</name>
+    </webLinks>
+</CustomObjectTranslation>

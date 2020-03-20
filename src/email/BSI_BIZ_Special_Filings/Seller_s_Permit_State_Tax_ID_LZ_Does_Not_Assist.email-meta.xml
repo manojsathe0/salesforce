@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Seller&apos;s Permit + State Tax ID - LZ Does Not Assist</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LZLogoHeader</letterhead>
+    <name>Seller&apos;s Permit + State Tax ID - LZ Does Not Assist</name>
+    <style>freeForm</style>
+    <subject>Your LegalZoom Inquiry</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+ 
+Thank you for contacting LegalZoom for your business needs.  In regard to your inquiry, while LegalZoom does not currently directly assist with Seller&apos;s Permit and State Tax ID registrations in your situation, we do offer a Business License Compliance Package which will assist you in determining any required license or permit for your specific business, including a Seller&apos;s Permit and  State Tax ID.  
+
+This service is offered in two packages, the first of which is our Basic Compliance Report.  This Report will provide you with blank copies of the applications necessary to obtain these permits or licenses.  The second package is the Preparation package, which will assist you by completing all of the applications on your behalf, and supplying you with detailed instructions on how to submit the applications to the appropriate authority.
+ 
+For your convenience, we have listed all relevant pricing below.
+ 
+BUSINESS LICENSE PACKAGE
+Compliance Report - $99.99
+Preparation Service - $199.99
+ 
+GET STARTED
+http://www.businesslicenses.com/lz_blcp_73008
+
+Thank you for contacting LegalZoom with your business inquiries, and we look forward to assisting you.  If you have any additional questions, please feel free to contact us by phone at the phone number listed below.
+ 
+ 
+Best regards,
+ 
+The LegalZoom Team
+(888) 381-8758
+www.legalzoom.com
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>html</type>
+</EmailTemplate>

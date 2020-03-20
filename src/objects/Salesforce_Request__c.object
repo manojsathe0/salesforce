@@ -1,0 +1,2608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SF_Request_Layout_Main</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>SF_Request_Layout_Main</fullName>
+        <fields>Name</fields>
+        <fields>Category__c</fields>
+        <fields>Type__c</fields>
+        <fields>Status__c</fields>
+        <label>SF Request - Layout Main</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Captures all Salesforce related requests for fixes to bugs or requests for enhancements.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.IsActive</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Active Owner</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Salesforce_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Activity Salesforce ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Adjustment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Adjustment Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Positive Adjustment</fullName>
+                    <default>false</default>
+                    <label>Positive Adjustment</label>
+                </value>
+                <value>
+                    <fullName>Negative Adjustment</fullName>
+                    <default>false</default>
+                    <label>Negative Adjustment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Admin_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Admin Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Access - Deactivated Employee</fullName>
+                    <default>false</default>
+                    <label>Access - Deactivated Employee</label>
+                </value>
+                <value>
+                    <fullName>Access - Existing Employee</fullName>
+                    <default>false</default>
+                    <label>Access - Existing Employee</label>
+                </value>
+                <value>
+                    <fullName>Access - New Employee</fullName>
+                    <default>false</default>
+                    <label>Access - New Employee</label>
+                </value>
+                <value>
+                    <fullName>Access - Reports &amp; Dashboards</fullName>
+                    <default>false</default>
+                    <label>Access - Reports &amp; Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Access - Role and Profile Permissions</fullName>
+                    <default>false</default>
+                    <label>Access - Role and Profile Permissions</label>
+                </value>
+                <value>
+                    <fullName>Access - System (App)</fullName>
+                    <default>false</default>
+                    <label>Access - System (App)</label>
+                </value>
+                <value>
+                    <fullName>Access - UAT/Pilot</fullName>
+                    <default>false</default>
+                    <label>Access - UAT/Pilot</label>
+                </value>
+                <value>
+                    <fullName>Bugs and Issues - Error Messages</fullName>
+                    <default>false</default>
+                    <label>Bugs and Issues - Error Messages</label>
+                </value>
+                <value>
+                    <fullName>Bugs and Issues - Release Fixes</fullName>
+                    <default>false</default>
+                    <label>Bugs and Issues - Release Fixes</label>
+                </value>
+                <value>
+                    <fullName>Bugs and Issues - ServiceDesk</fullName>
+                    <default>false</default>
+                    <label>Bugs and Issues - ServiceDesk</label>
+                </value>
+                <value>
+                    <fullName>Bugs and Issues - User Error</fullName>
+                    <default>false</default>
+                    <label>Bugs and Issues - User Error</label>
+                </value>
+                <value>
+                    <fullName>Dashboard - Change Existing</fullName>
+                    <default>false</default>
+                    <label>Dashboard - Change Existing</label>
+                </value>
+                <value>
+                    <fullName>Dashboard - New</fullName>
+                    <default>false</default>
+                    <label>Dashboard - New</label>
+                </value>
+                <value>
+                    <fullName>Data Fix</fullName>
+                    <default>false</default>
+                    <label>Data Fix</label>
+                </value>
+                <value>
+                    <fullName>Enhancement - Content</fullName>
+                    <default>false</default>
+                    <label>Enhancement - Content</label>
+                </value>
+                <value>
+                    <fullName>Enhancement - Flows</fullName>
+                    <default>false</default>
+                    <label>Enhancement - Flows</label>
+                </value>
+                <value>
+                    <fullName>Enhancement - List Views</fullName>
+                    <default>false</default>
+                    <label>Enhancement - List Views</label>
+                </value>
+                <value>
+                    <fullName>Enhancement - New Fields</fullName>
+                    <default>false</default>
+                    <label>Enhancement - New Fields</label>
+                </value>
+                <value>
+                    <fullName>Enhancement - Objects</fullName>
+                    <default>false</default>
+                    <label>Enhancement - Objects</label>
+                </value>
+                <value>
+                    <fullName>Enhancement - Page Layout</fullName>
+                    <default>false</default>
+                    <label>Enhancement - Page Layout</label>
+                </value>
+                <value>
+                    <fullName>Enhancement - System (App)</fullName>
+                    <default>false</default>
+                    <label>Enhancement - System (App)</label>
+                </value>
+                <value>
+                    <fullName>Enhancement - Workflows and Approval Processes</fullName>
+                    <default>false</default>
+                    <label>Enhancement - Workflows and Approval Processes</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - 3rd Party Applications</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - 3rd Party Applications</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - CRM Configuration/Development</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - CRM Configuration/Development</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - Data Fix</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - Data Fix</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - Data Migration</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - Data Migration</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - Data Storage</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - Data Storage</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - Process Documentation</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - Process Documentation</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - Salesforce1</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - Salesforce1</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - SFDC Release Notification/Maintenance</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - SFDC Release Notification/Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Internal Improvements - SSO</fullName>
+                    <default>false</default>
+                    <label>Internal Improvements - SSO</label>
+                </value>
+                <value>
+                    <fullName>Report - Change Existing</fullName>
+                    <default>false</default>
+                    <label>Report - Change Existing</label>
+                </value>
+                <value>
+                    <fullName>Report - New</fullName>
+                    <default>false</default>
+                    <label>Report - New</label>
+                </value>
+                <value>
+                    <fullName>Report Requiring Coding</fullName>
+                    <default>false</default>
+                    <label>Report Requiring Coding</label>
+                </value>
+                <value>
+                    <fullName>Report Requiring Configuration</fullName>
+                    <default>false</default>
+                    <label>Report Requiring Configuration</label>
+                </value>
+                <value>
+                    <fullName>Report Requiring Data Fix</fullName>
+                    <default>false</default>
+                    <label>Report Requiring Data Fix</label>
+                </value>
+                <value>
+                    <fullName>Technical Debt</fullName>
+                    <default>false</default>
+                    <label>Technical Debt</label>
+                </value>
+                <value>
+                    <fullName>Training - Existing Users</fullName>
+                    <default>false</default>
+                    <label>Training - Existing Users</label>
+                </value>
+                <value>
+                    <fullName>Training - New Hire</fullName>
+                    <default>false</default>
+                    <label>Training - New Hire</label>
+                </value>
+                <value>
+                    <fullName>Training - Trainer</fullName>
+                    <default>false</default>
+                    <label>Training - Trainer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Assigned_Administrator__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned Administrator</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Salesforce_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Accounts</fullName>
+                    <default>false</default>
+                    <label>Accounts</label>
+                </value>
+                <value>
+                    <fullName>Attachments</fullName>
+                    <default>false</default>
+                    <label>Attachments</label>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                    <label>Case</label>
+                </value>
+                <value>
+                    <fullName>Chatter</fullName>
+                    <default>false</default>
+                    <label>Chatter</label>
+                </value>
+                <value>
+                    <fullName>Console</fullName>
+                    <default>false</default>
+                    <label>Console</label>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                    <label>Contact</label>
+                </value>
+                <value>
+                    <fullName>Content</fullName>
+                    <default>false</default>
+                    <label>Content</label>
+                </value>
+                <value>
+                    <fullName>Error Message</fullName>
+                    <default>false</default>
+                    <label>Error Message</label>
+                </value>
+                <value>
+                    <fullName>Knowledge Article</fullName>
+                    <default>false</default>
+                    <label>Knowledge Article</label>
+                </value>
+                <value>
+                    <fullName>Lead</fullName>
+                    <default>false</default>
+                    <label>Lead</label>
+                </value>
+                <value>
+                    <fullName>Library</fullName>
+                    <default>false</default>
+                    <label>Library</label>
+                </value>
+                <value>
+                    <fullName>Opportunities</fullName>
+                    <default>false</default>
+                    <label>Opportunities</label>
+                </value>
+                <value>
+                    <fullName>Order</fullName>
+                    <default>false</default>
+                    <label>Order</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>User</fullName>
+                    <default>false</default>
+                    <label>User</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Communication_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Communication Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Complexity_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Complexity__c ,&quot;Low&quot;, 5, &quot;Medium&quot;, 3, &quot;High&quot;, 1, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Complexity Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Complexity__c</fullName>
+        <externalId>false</externalId>
+        <label>Complexity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Desired_Completion_Date__c</fullName>
+        <description>The date which you need the request to be completed by</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date which you need the request to be completed by</inlineHelpText>
+        <label>Desired Completion Date</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Environment__c</fullName>
+        <externalId>false</externalId>
+        <label>Environment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prod</fullName>
+                    <default>true</default>
+                    <label>Prod</label>
+                </value>
+                <value>
+                    <fullName>QA</fullName>
+                    <default>false</default>
+                    <label>QA</label>
+                </value>
+                <value>
+                    <fullName>IAD</fullName>
+                    <default>false</default>
+                    <label>IAD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Estimated_Burned_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Burned Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Completion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>First_Contacted__c</fullName>
+        <externalId>false</externalId>
+        <label>First Contacted</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Impact__c</fullName>
+        <externalId>false</externalId>
+        <label>Impact</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Emergency</fullName>
+                    <default>false</default>
+                    <label>Emergency</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Intake_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Intake Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Review</fullName>
+                    <default>false</default>
+                    <label>Review</label>
+                </value>
+                <value>
+                    <fullName>Migrate</fullName>
+                    <default>false</default>
+                    <label>Migrate</label>
+                </value>
+                <value>
+                    <fullName>SFDC</fullName>
+                    <default>false</default>
+                    <label>SFDC</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Active Sprint</fullName>
+                    <default>false</default>
+                    <label>Active Sprint</label>
+                </value>
+                <value>
+                    <fullName>Form Required</fullName>
+                    <default>false</default>
+                    <label>Form Required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Number__c</fullName>
+        <displayFormat>{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Order_Matching_Activity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Order Matching Activity</label>
+        <referenceTo>Order_Matching_Activity__c</referenceTo>
+        <relationshipLabel>Salesforce Requests</relationshipLabel>
+        <relationshipName>Salesforce_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For the requester to easily tie a salesforce request with the order in question</description>
+        <externalId>false</externalId>
+        <label>Related Order</label>
+        <referenceTo>Order__c</referenceTo>
+        <relationshipLabel>Salesforce Requests</relationshipLabel>
+        <relationshipName>Salesforce_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Priority__c , &quot;Low&quot;, 2, &quot;Medium&quot;, 3, &quot;High&quot;, 4, &quot;Showstopper&quot;, 5, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Priority Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Showstopper</fullName>
+                    <default>false</default>
+                    <label>Showstopper</label>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Adjustment__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Adjustment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Extended System Downtime</fullName>
+                    <default>false</default>
+                    <label>Extended System Downtime</label>
+                </value>
+                <value>
+                    <fullName>Integration Delay</fullName>
+                    <default>false</default>
+                    <label>Integration Delay</label>
+                </value>
+                <value>
+                    <fullName>Internet Downtime</fullName>
+                    <default>false</default>
+                    <label>Internet Downtime</label>
+                </value>
+                <value>
+                    <fullName>New Bug Discovered</fullName>
+                    <default>false</default>
+                    <label>New Bug Discovered</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Related_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Bugs_and_Enhancements</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipName>Bugs_and_Enhancements</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Salesforce Requests</relationshipLabel>
+        <relationshipName>Salesforce_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Salesforce Requests</relationshipLabel>
+        <relationshipName>Salesforce_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Release_Process__c</fullName>
+        <description>Requires going thru release process</description>
+        <externalId>false</externalId>
+        <label>Release Process</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unsure</fullName>
+                    <default>false</default>
+                    <label>Unsure</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Response_Within_24_hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(First_Contacted__c),null,
+IF(
+CASE(MOD(DATEVALUE(CreatedDate) - DATE(1985,6,24),7), 
+0,CASE(MOD(First_Contacted__c-CreatedDate,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1,CASE(MOD(First_Contacted__c-CreatedDate,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2,CASE(MOD(First_Contacted__c-CreatedDate,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3,CASE(MOD(First_Contacted__c-CreatedDate,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4,CASE(MOD(First_Contacted__c-CreatedDate,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5,CASE(MOD(First_Contacted__c-CreatedDate,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6,CASE(MOD(First_Contacted__c-CreatedDate,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999)+(FLOOR((First_Contacted__c- CreatedDate)/7)*5)&gt; 1, &quot;NO&quot;,&quot;YES&quot;))</formula>
+        <label>Response Within 24 hours?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Launch_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled Launch Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (Complexity_Value__c = 0 || Priority_Value__c = 0, -99, Complexity_Value__c  +  Priority_Value__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>If value is -99, Complexity and/or Priority is not populated.</inlineHelpText>
+        <label>Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Status Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>true</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Researching</fullName>
+                    <default>false</default>
+                    <label>Researching</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>In Project Queue</fullName>
+                    <default>false</default>
+                    <label>In Project Queue</label>
+                </value>
+                <value>
+                    <fullName>In Servicedesk Queue</fullName>
+                    <default>false</default>
+                    <label>In Servicedesk Queue</label>
+                </value>
+                <value>
+                    <fullName>In TFS Queue</fullName>
+                    <default>false</default>
+                    <label>In TFS Queue</label>
+                </value>
+                <value>
+                    <fullName>Ready for UAT</fullName>
+                    <default>false</default>
+                    <label>Ready for UAT</label>
+                </value>
+                <value>
+                    <fullName>On Hold</fullName>
+                    <default>false</default>
+                    <label>On Hold</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Reopened</fullName>
+                    <default>false</default>
+                    <label>Reopened</label>
+                </value>
+                <value>
+                    <fullName>Waiting on Feedback</fullName>
+                    <default>false</default>
+                    <label>Waiting on Feedback</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Targeted_Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Targeted Department</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account Manager</fullName>
+                    <default>false</default>
+                    <label>Account Manager</label>
+                </value>
+                <value>
+                    <fullName>Customer Care</fullName>
+                    <default>false</default>
+                    <label>Customer Care</label>
+                </value>
+                <value>
+                    <fullName>Finance</fullName>
+                    <default>false</default>
+                    <label>Finance</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Production</fullName>
+                    <default>false</default>
+                    <label>Production</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Team (Internal)</fullName>
+                    <default>false</default>
+                    <label>Salesforce Team (Internal)</label>
+                </value>
+                <value>
+                    <fullName>Technology</fullName>
+                    <default>false</default>
+                    <label>Technology</label>
+                </value>
+                <value>
+                    <fullName>Corporate</fullName>
+                    <default>false</default>
+                    <label>Corporate</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Ticket_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ticket_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Training_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Training Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type_Sub_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Sub-Category</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Password Reset</fullName>
+                    <default>false</default>
+                    <label>Password Reset</label>
+                </value>
+                <value>
+                    <fullName>Missing Fields</fullName>
+                    <default>false</default>
+                    <label>Missing Fields</label>
+                </value>
+                <value>
+                    <fullName>Create User</fullName>
+                    <default>false</default>
+                    <label>Create User</label>
+                </value>
+                <value>
+                    <fullName>Permissions/Privileges</fullName>
+                    <default>false</default>
+                    <label>Permissions/Privileges</label>
+                </value>
+                <value>
+                    <fullName>Cases</fullName>
+                    <default>false</default>
+                    <label>Cases</label>
+                </value>
+                <value>
+                    <fullName>Scorecard</fullName>
+                    <default>false</default>
+                    <label>Scorecard</label>
+                </value>
+                <value>
+                    <fullName>Missing Items</fullName>
+                    <default>false</default>
+                    <label>Missing Items</label>
+                </value>
+                <value>
+                    <fullName>Error Messages</fullName>
+                    <default>false</default>
+                    <label>Error Messages</label>
+                </value>
+                <value>
+                    <fullName>Queues</fullName>
+                    <default>false</default>
+                    <label>Queues</label>
+                </value>
+                <value>
+                    <fullName>Fields</fullName>
+                    <default>false</default>
+                    <label>Fields</label>
+                </value>
+                <value>
+                    <fullName>Leads</fullName>
+                    <default>false</default>
+                    <label>Leads</label>
+                </value>
+                <value>
+                    <fullName>Email Routing</fullName>
+                    <default>false</default>
+                    <label>Email Routing</label>
+                </value>
+                <value>
+                    <fullName>Reports/Dashboard</fullName>
+                    <default>false</default>
+                    <label>Reports/Dashboard</label>
+                </value>
+                <value>
+                    <fullName>Requirements/Functionality Review</fullName>
+                    <default>false</default>
+                    <label>Requirements/Functionality Review</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Access</controllingFieldValue>
+                <controllingFieldValue>Administration Request</controllingFieldValue>
+                <valueName>Password Reset</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Access</controllingFieldValue>
+                <controllingFieldValue>Administration Request</controllingFieldValue>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Missing Fields</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Access</controllingFieldValue>
+                <controllingFieldValue>Administration Request</controllingFieldValue>
+                <valueName>Create User</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Access</controllingFieldValue>
+                <controllingFieldValue>Administration Request</controllingFieldValue>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Permissions/Privileges</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Access</controllingFieldValue>
+                <controllingFieldValue>Administration Request</controllingFieldValue>
+                <controllingFieldValue>Issues</controllingFieldValue>
+                <controllingFieldValue>New Features/improvements</controllingFieldValue>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Issues</controllingFieldValue>
+                <controllingFieldValue>New Features/improvements</controllingFieldValue>
+                <valueName>Cases</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Issues</controllingFieldValue>
+                <valueName>Scorecard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Issues</controllingFieldValue>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Missing Items</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Issues</controllingFieldValue>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Error Messages</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Issues</controllingFieldValue>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Queues</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Issues</controllingFieldValue>
+                <controllingFieldValue>New Features/improvements</controllingFieldValue>
+                <valueName>Leads</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Issues</controllingFieldValue>
+                <controllingFieldValue>New Features/improvements</controllingFieldValue>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Email Routing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>New Features/improvements</controllingFieldValue>
+                <valueName>Fields</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Reports/Dashboard</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Working Session</controllingFieldValue>
+                <valueName>Requirements/Functionality Review</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Access</fullName>
+                    <default>false</default>
+                    <label>Access</label>
+                </value>
+                <value>
+                    <fullName>Administration Request</fullName>
+                    <default>false</default>
+                    <label>Administration Request</label>
+                </value>
+                <value>
+                    <fullName>Bugs &amp; Issues</fullName>
+                    <default>false</default>
+                    <label>Bugs &amp; Issues</label>
+                </value>
+                <value>
+                    <fullName>Enhancements &amp; Changes</fullName>
+                    <default>false</default>
+                    <label>Enhancements &amp; Changes</label>
+                </value>
+                <value>
+                    <fullName>Issues</fullName>
+                    <default>false</default>
+                    <label>Issues</label>
+                </value>
+                <value>
+                    <fullName>New Features/improvements</fullName>
+                    <default>false</default>
+                    <label>New Features/improvements</label>
+                </value>
+                <value>
+                    <fullName>Project</fullName>
+                    <default>false</default>
+                    <label>Project</label>
+                </value>
+                <value>
+                    <fullName>Reports &amp; Dashboards</fullName>
+                    <default>false</default>
+                    <label>Reports &amp; Dashboards</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Working Session</fullName>
+                    <default>false</default>
+                    <label>Working Session</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UAT_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>UAT Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>User_Affected__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Select the main user that the request affects (if specific to one user)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the main user that the request affects (if specific to one user)</inlineHelpText>
+        <label>User Affected</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Salesforce_Requests1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Assigned_Requests__c</fullName>
+        <description>this field allows the user to view their assigned sfr list view from the assigned admin field.</description>
+        <externalId>false</externalId>
+        <formula>if(Assigned_Administrator__c=$User.Id,1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User Assigned Requests</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>V1_Story_Number__c</fullName>
+        <description>Version One Story</description>
+        <externalId>false</externalId>
+        <label>V1 Story Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Salesforce Request</label>
+    <listViews>
+        <fullName>Completed</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Category__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Completed_Date__c</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>On Hold,Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>SalesForce Requests - All Closed</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Completed_Last_7_Days</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Category__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Completed_Date__c</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Completed,Completed - Now Live,Cancelled</value>
+        </filters>
+        <filters>
+            <field>Completed_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:30</value>
+        </filters>
+        <label>Completed - Last 7 Days</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Completed_This_Week</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Category__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Completed_Date__c</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Completed,Cancelled</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>Completed - This Week</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Created_Last_7_Days</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Category__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Completed_Date__c</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed,Completed - Now Live</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Created - Last 7 Days</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Assigned_Requests_Closed</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>Desired_Completion_Date__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>Number__c</columns>
+        <columns>Type__c</columns>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Assigned_Requests__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>My Assigned Requests - Closed</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>SalesforceSupport296281</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Assigned_Requests_Open</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>Desired_Completion_Date__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>Number__c</columns>
+        <columns>Type__c</columns>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_Assigned_Requests__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>My Assigned Requests - Open</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>SalesforceSupport296281</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Salesforce_Requests_Closed</fullName>
+        <columns>Number__c</columns>
+        <columns>Type__c</columns>
+        <columns>Category__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>Comments__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>My Salesforce Requests - Closed</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Salesforce_Requests_Closed2days</fullName>
+        <columns>Completed_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Number__c</columns>
+        <columns>Type__c</columns>
+        <columns>Category__c</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Cancelled,Completed,Completed - Now Live,Rejected</value>
+        </filters>
+        <filters>
+            <field>Completed_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>My Salesforce Requests - Closed 7 Days</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Salesforce_Requests_Open</fullName>
+        <columns>Number__c</columns>
+        <columns>Type__c</columns>
+        <columns>Category__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>My Salesforce Requests - Open</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Submitted_Requests_Closed</fullName>
+        <columns>Number__c</columns>
+        <columns>Type__c</columns>
+        <columns>Category__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>Comments__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>My Submitted Requests - Closed</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Submitted_Requests_Open</fullName>
+        <columns>Number__c</columns>
+        <columns>Type__c</columns>
+        <columns>Category__c</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>My Submitted Requests - Open</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>SFR_Team_Member_Jane</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Release_Process__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Number__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,On Hold,Rejected,Completed,Completed - Now Live,Completed - Transfer</value>
+        </filters>
+        <filters>
+            <field>Assigned_Administrator__c</field>
+            <operation>equals</operation>
+            <value>Jane Boles</value>
+        </filters>
+        <label>SFR Team Member - Jane</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SFR_Team_Member_Scott</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Release_Process__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Number__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,On Hold,Rejected,Completed,Completed - Now Live,Completed - Transfer</value>
+        </filters>
+        <filters>
+            <field>Assigned_Administrator__c</field>
+            <operation>equals</operation>
+            <value>Scott Luikart</value>
+        </filters>
+        <label>SFR Team Member - Scott</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Request_All</fullName>
+        <booleanFilter>(1 AND 2) OR (1 AND 3)</booleanFilter>
+        <columns>Active_Owner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Number__c</columns>
+        <columns>Status__c</columns>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Type__c</columns>
+        <columns>Category__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted,Researching,In Progress,In Project Queue,In Servicedesk Queue</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In TFS Queue,Ready for UAT,On Hold,Waiting on Feedback</value>
+        </filters>
+        <label>Salesforce Requests - All Open</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>SalesforceSupport296281</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Request_Basu</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Release_Process__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Number__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,On Hold,Rejected,Completed,Completed - Now Live,Completed - Transfer</value>
+        </filters>
+        <filters>
+            <field>Assigned_Administrator__c</field>
+            <operation>equals</operation>
+            <value>Basudev Khakurel</value>
+        </filters>
+        <label>SFR Team Member - Basu</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Request_Emily</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Release_Process__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Number__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,On Hold,Rejected,Completed,Completed - Now Live,Completed - Transfer</value>
+        </filters>
+        <filters>
+            <field>Assigned_Administrator__c</field>
+            <operation>equals</operation>
+            <value>Emily Meeks</value>
+        </filters>
+        <label>SFR Team Member - Emily</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Request_Tamara</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>Release_Process__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Number__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,On Hold,Rejected,Completed,Completed - Now Live,Completed - Transfer</value>
+        </filters>
+        <filters>
+            <field>Assigned_Administrator__c</field>
+            <operation>equals</operation>
+            <value>Tamara Blue</value>
+        </filters>
+        <label>SFR Team Member - Tamara</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Request_Vishnu</fullName>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Release_Process__c</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Number__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,On Hold,Rejected,Completed,Completed - Now Live,Completed - Transfer</value>
+        </filters>
+        <filters>
+            <field>Assigned_Administrator__c</field>
+            <operation>equals</operation>
+            <value>Vishnu Yadavalli</value>
+        </filters>
+        <label>SFR Team Member - Vishnu</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Requests_New</fullName>
+        <columns>CREATEDBY_USER</columns>
+        <columns>NAME</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>Status__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Complexity__c</columns>
+        <columns>Impact__c</columns>
+        <columns>Score__c</columns>
+        <columns>Release_Process__c</columns>
+        <columns>First_Contacted__c</columns>
+        <columns>Response_Within_24_hours__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Salesforce Requests - Last 7 Days</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Requests_Not_Assigned_Admin</fullName>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Number__c</columns>
+        <columns>Type__c</columns>
+        <columns>NAME</columns>
+        <columns>Estimated_Completion_Date__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Intake_Status__c</columns>
+        <columns>Admin_Category__c</columns>
+        <columns>Status__c</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Assigned_Administrator__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>On Hold,Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>Salesforce Requests - Not Assigned Admin</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Requests_Not_Done</fullName>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Assigned_Administrator__c</columns>
+        <columns>Targeted_Department__c</columns>
+        <columns>NAME</columns>
+        <columns>Number__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>Release_Process__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Admin_Category__c</columns>
+        <columns>Intake_Status__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Rejected,Cancelled,Completed</value>
+        </filters>
+        <label>Salesforce Requests - Not Done</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>SalesforceSupport296281</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Salesforce_Requests_On_Hold</fullName>
+        <columns>Active_Owner__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Priority__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Number__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Category__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>On Hold,Cancelled,Completed</value>
+        </filters>
+        <label>Salesforce Requests - On Hold</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Salesforce_Team</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Title</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Salesforce Requests</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Salesforce_Request</fullName>
+        <active>true</active>
+        <label>Salesforce Request</label>
+        <picklistValues>
+            <picklist>Adjustment_Type__c</picklist>
+            <values>
+                <fullName>Negative Adjustment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive Adjustment</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Admin_Category__c</picklist>
+            <values>
+                <fullName>Access - Deactivated Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access - Existing Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access - New Employee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access - Reports %26 Dashboards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access - Role and Profile Permissions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access - System %28App%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access - UAT%2FPilot</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bugs and Issues - Error Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bugs and Issues - Release Fixes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bugs and Issues - ServiceDesk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bugs and Issues - User Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dashboard - Change Existing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dashboard - New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Fix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement - Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement - Flows</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement - List Views</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement - New Fields</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement - Objects</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement - Page Layout</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement - System %28App%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enhancement - Workflows and Approval Processes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - 3rd Party Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - CRM Configuration%2FDevelopment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - Data Fix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - Data Migration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - Data Storage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - Process Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - SFDC Release Notification%2FMaintenance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - SSO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Improvements - Salesforce1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report - Change Existing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report - New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Requiring Coding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Requiring Configuration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Report Requiring Data Fix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Debt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Existing Users</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - New Hire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training - Trainer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Accounts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attachments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chatter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Console</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Knowledge Article</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Library</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Complexity__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environment__c</picklist>
+            <values>
+                <fullName>IAD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>QA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Impact__c</picklist>
+            <values>
+                <fullName>Emergency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Intake_Status__c</picklist>
+            <values>
+                <fullName>Active Sprint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Migrate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Showstopper</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason_for_Adjustment__c</picklist>
+            <values>
+                <fullName>Extended System Downtime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integration Delay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internet Downtime</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Bug Discovered</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Release_Process__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Project Queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Servicedesk Queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In TFS Queue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for UAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reopened</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Researching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on Feedback</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Targeted_Department__c</picklist>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Sub_Category__c</picklist>
+            <values>
+                <fullName>Cases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Routing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Error Messages</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fields</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Fields</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Password Reset</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Permissions%2FPrivileges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Queues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reports%2FDashboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requirements%2FFunctionality Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scorecard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Administration Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Features%2Fimprovements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working Session</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Category__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Estimated_Completion_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Assigned_Administrator__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Estimated_Completion_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Assigned_Administrator__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Category__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATEDBY_USER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATED_DATE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Estimated_Completion_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Assigned_Administrator__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Category__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Estimated_Completion_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Changing_SFR_Description</fullName>
+        <active>true</active>
+        <description>Non-admins can&apos;t update description (must be a Chatter post)</description>
+        <errorConditionFormula>IF(ISCHANGED(Description__c)  &amp;&amp;  NOT($User.UserRoleId = &apos;00EG0000000RCtZ&apos;), true, false)</errorConditionFormula>
+        <errorDisplayField>Description__c</errorDisplayField>
+        <errorMessage>Updates to the description of the issue need to be done via a Chatter post. You can @mention Salesforce Support and the same group will be notified that would be notified by email.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Non_Showstopper_Completion_Date_Match</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(NOT(ISPICKVAL(Priority__c, &apos;Showstopper&apos;)) , NOT(Desired_Completion_Date__c &gt; TODAY()),  NOT($User.ProfileId = &apos;G0000007d680IAA&apos;)  )</errorConditionFormula>
+        <errorMessage>Your Priority and Desired Completion Date do not match. Desired Completion Date must be after today.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Showstopper_Completion_Date_Match</fullName>
+        <active>true</active>
+        <description>Match priority field and desired completion date field to make sure they make sense if showstopper</description>
+        <errorConditionFormula>IF(AND(ISPICKVAL(Priority__c, &apos;Showstopper&apos;),   Desired_Completion_Date__c &gt;  TODAY()), true, false)</errorConditionFormula>
+        <errorMessage>You chose &apos;Showstopper&apos; priority, but the desired completion date is not today. Please review your priority.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>User_Affected_Needed</fullName>
+        <active>true</active>
+        <description>if user selects type that applies to a specific user, require that fied</description>
+        <errorConditionFormula>IF(AND(ISPICKVAL(Type__c, &apos;Administration Request&apos;),  ISPICKVAL( Type_Sub_Category__c, &apos;Password Reset&apos;) ,ISBLANK(User_Affected__c)), true, false)</errorConditionFormula>
+        <errorMessage>For password reset issues please fill out the User Affected field. If there is more than one user affected please fill in one and include the rest in the description field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validation_Complete_Must_Comments</fullName>
+        <active>true</active>
+        <description>In order to update the STATUS field to Completed, On Hold, Rejected the COMMENTS field must be entered.</description>
+        <errorConditionFormula>IF(  OR(ISPICKVAL( Status__c , &apos;Completed&apos;), ISPICKVAL( Status__c , &apos;On Hold&apos;), ISPICKVAL( Status__c , &apos;Rejected&apos;)) &amp;&amp;  Comments__c  = null, true, false)</errorConditionFormula>
+        <errorDisplayField>Comments__c</errorDisplayField>
+        <errorMessage>In order to update the status field to Completed, On Hold, Rejected the comment field must be entered.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Attach_Files</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Attach Files</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/DragDropAttach__AttachFiles?recordid={!Salesforce_Request__c.Id}&amp;recordname={!Salesforce_Request__c.Name}&amp;recordtype=Salesforce Request</url>
+    </webLinks>
+</CustomObject>

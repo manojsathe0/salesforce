@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>txdbara</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DBA Texas County for Corp_LLC</name>
+    <style>none</style>
+    <subject>DBA Texas County for Corp_LLC</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your inquiry. 
+
+When a DBA is filed for an LLC or Corporation in TX, in addition to filing the DBA with the State, the DBA must also be filed in the county where the entity&apos;s Registered Agent is located. In certain cases, the DBA must be registered in a third place, which is the county where the business will be conducted (if different from the county the Registered Agent is located in). 
+
+The forms for your DBA were created according the information we have for your Registered Agent, however if this needs to be changed, or if the Registered Agent is not located in the county indicated on your forms, please let us know. 
+
+{!snippetVariable.cccontactline} {!snippetVariable.cc_dept_full} {!snippetVariable.ccassistline} {!snippetVariable.ccphone}.  {!snippetVariable.ourrr} {!snippetVariable.cc_dept_full} {!snippetVariable.ccbizhourline} {!snippetVariable.cchours}.
+
+{!snippetVariable.ccsincerely}
+
+{!snippetVariable.cclegalzoomline} {!snippetVariable.cc_dept_full}
+{!snippetVariable.ccphone} | {!snippetVariable.lz_address}
+{!snippetVariable.lz_website}
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

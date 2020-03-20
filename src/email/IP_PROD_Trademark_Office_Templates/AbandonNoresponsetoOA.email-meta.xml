@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>abandon2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Abandon - No response to OA</name>
+    <style>none</style>
+    <subject>Abandon - No response to OA</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for contacting LegalZoom.
+
+Based on the records of the US Patent and Trademark Office (USPTO), your Trademark application has been deemed abandoned because you did not respond to the Office Action mailed to you on DD/MM/YYYY within the six-month response period.
+
+If you would like to continue with your application, you have two (2) months from the date the Notice of Abandonment issued to file a Petition to Revive with the USPTO and pay a $100 fee. If you want to revive your application, please reply to this email and indicate that you would like to file a Petition to Revive. LegalZoom will file your petition for you with no additional fee—we charge your credit card only the required $100 USPTO fee. When submitting your Petition to Revive application, LegalZoom will also address your Office Action.
+
+Office Actions are direct correspondences from the US Patent and Trademark Office (USPTO), and are generally either requesting additional information or updating you on the status of your application (or both). If you wish to view and/or download your Office Action, please visit here.
+
+Based on the Office Action received, it also appears that your Examining Attorney at the USPTO has some additional questions:
+
+****INSERT OFFICE ACTION ISSUES****
+
+PLEASE NOTE: You have 2 months from the date your Notice of Abandonment issued to file your Petition and response to all issues raised by your Office Action.  Otherwise, you may contact the USPTO Assistance Center at 800-786-9199 or call your Examining Attorney: XXXXXX at XXX-XXX-XXXX. Additional instructions can be found at the bottom of your Office Action.
+
+If you have any questions, comments, or concerns, simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our Customer Care business hours are {!snippetVariable.cchours}.
+
+Regards,
+
+The LegalZoom Team
+
+* {!snippetVariable.tmoa_bap}
+
+
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

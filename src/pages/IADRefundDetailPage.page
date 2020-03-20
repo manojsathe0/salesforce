@@ -1,0 +1,79 @@
+<apex:page standardstylesheets="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <head>
+        <apex:includeScript value="{!$Resource.svg4everybody}" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" />
+        <apex:includeScript value="/support/console/36.0/integration.js" />
+        <apex:stylesheet value="{!URLFOR($Resource.SLDS0122, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+        <apex:include pageName="MomentJS" />
+        <apex:stylesheet value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+        <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" />
+   </head>
+    
+    <div class="slds" id = "mainContainer">
+        <apex:form id="theForm" styleClass="slds-form--inline">
+     <div class="slds-text-heading--small detailMode">Payment Detail</div>
+
+        <br/>
+
+         <table id="dataTable" >
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="detailMode">
+                            <!--<a id="edit" onclick="clearMessages();return false;" href="#">Edit </a>-->
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Refund #</td>
+                        <td>2002 </td>
+                    </tr>
+                    <tr>
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td>Modified Date</td>
+                        <td>
+                            <apex:outputtext value=" 7/7/2016 8:15 AM" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td><b>Refunded</b></td>
+                    </tr>
+                    <tr >
+                        <td>Amount</td>
+                        <td>$561.25</td>
+                    </tr>
+                    
+                </tbody>
+                
+            </table>
+            <apex:outputPanel id="spinner">
+           <apex:actionStatus id="statusUpdating">
+                  <apex:facet name="start">
+                   <div class="slds-spinner_container">
+                      <div class="slds-spinner slds-spinner--small" aria-hidden="false" role="alert">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                      </div>
+                    </div>
+                  </apex:facet>
+                  <apex:facet name="stop">
+                  </apex:facet>
+           </apex:actionStatus>
+           </apex:outputPanel>
+       
+      </apex:form>  
+    </div>
+     
+    
+    </html>
+</apex:page>

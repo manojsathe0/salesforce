@@ -1,0 +1,58 @@
+<html>
+<div class="emailHeader">
+<body bgcolor="#FFFFFF" style="margin-top:0px;">
+<img height="1" width="1" src="https://f.chtah.com/i/45/497541096/snippet.gif" alt=""><br>
+<table width="614" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td style="padding:5px; font-size: 10px; font-family:Arial, Helvetica, sans-serif; color: #707070;">
+
+</td>
+</tr>
+</table>
+<table cellpadding="4" cellspacing="0" border="0" width="614" align="center">
+
+<tr><td align="left" style="border:1px solid #CCCCCC;"><img src="http://a248.e.akamai.net/f/248/112531/14d/ig.rsys5.net/responsysimages/content/legalz/LegalZoom%20Logo.gif"  alt="LegalZoom.com"></td></tr>
+<tr>
+  <td style="padding:15px 15px 15px 15px; font-family: Arial, Helvetica, sans-serif; font-size:11.5px; line-height:17px; border:1px solid #CCCCCC;">Dear {!Contact.FirstName},<br/><br/>Thank you for choosing LegalZoom.<br/> <br/>Because you have elected to file your application on a &#34;Used in Commerce&#34; basis, you must provide a specimen with your application to the U.S. Patent and Trademark Office (USPTO). A specimen is a real world example of how your mark is currently being used in commerce, and is more than just a picture of your Trademark or logo. Please read below for more information.<br/><br/>For services, acceptable specimens include brochures, flyers, advertisements, yellow page listings and internet websites. Business cards or stationery are usually not acceptable. For goods (products), acceptable specimens include labels or tags attached to the product, packaging material, instruction manuals and containers which display the Trademark.<br/><br/>If you do not currently have a specimen to show proof that you are currently using your mark or logo in commerce, you can switch your application to an &#8220;Intent to Use&#8221; basis. By switching to &#8220;Intent to Use,&#8221; the following will need to be submitted to the U.S. Patent and Trademark Office within 6 months of receiving your Notice of Allowance:<br/> <br/>1. A Statement of Use: a sworn statement attesting to the use of the mark in commerce<br/>2. $100 filing fee per class of goods or services<br/>3. A specimen that demonstrates how the mark is being used in commerce for each classification of goods and/or services listed on your application<br/><br/>The Notice of Allowance is often issued approximately 6-7 months from your filing date. You must file a Statement of Use within six (6) months of the mailing date stamped on the Notice of Allowance UNLESS, within that same period, you submit a request for a six-month extension of time to file the Statement of Use. For more information on how to file a Statement of Use or extension, please visit <a href=http://www.uspto.gov/teas/eTEASpageB2.htm>here</a>.<br/><br/>For a minimal fee, LegalZoom can assist you with filing your Statement of Use or Statement of Use Extension forms; to do so, please visit <a href=http://www.legalzoom.com/trademarks-patents-copyrights/trademark-ancillary-products-overview.html>here</a>.<br/><br/>Please feel free to contact our {!snippetVariable.cc_dept_full} if we can be of further assistance. Simply reply to this email, or call us toll free at {!snippetVariable.ccphone}. Our {!snippetVariable.cc_dept_full} business hours are {!snippetVariable.cchours}.<br/><br/>Thank you again for choosing LegalZoom.<br/><br/>Best regards,<br/><br/>LegalZoom {!snippetVariable.ipdtm_dept_full}<br/>{!snippetVariable.ccphone} | {!snippetVariable.lz_address}<br/>{!snippetVariable.lz_website}<br/> </p></div>
+<div class="emailBody">
+<p class="templateBody"></p>
+</div>
+<div class="emailFooter"><p>
+
+<br>
+
+</td>
+</tr></table>
+<table width="614" border="0" cellspacing="0" cellpadding="5" align="center">
+  <tr>
+    <td><span style="font-family:verdana,sans-serif; font-size:10px; line-height:14px; color: #999999;"> 
+    This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the <a style="color: #336699;" href="https://www.legalzoom.com/privacy-policy-popup.html?footer">Privacy Policy</a>. 
+  <br>  <br>
+  LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+<br /><br />
+    Please add services@emails.legalzoom.com to your address book. 
+  <br /><br />
+  This email was sent to: {!Contact.Email}
+  <br /><br />
+   <br>
+<br>
+
+  &copy; LegalZoom.com, Inc. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+</span></td>
+  </tr>
+</table>
+
+</body>
+</p></div>
+</html>

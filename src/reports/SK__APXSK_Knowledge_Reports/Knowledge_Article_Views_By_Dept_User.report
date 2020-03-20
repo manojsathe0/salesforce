@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_42630113</developerName>
+        <masterLabel>Department</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Knowledge_Article_View__c$Article_Viewed_by__c.UserRole</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Customer Care Management</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Customer Care Specialist</sourceValue>
+            </sourceValues>
+            <value>Customer Care</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Management</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Specialist</sourceValue>
+            </sourceValues>
+            <value>Sales</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Production Management</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Production Specialist</sourceValue>
+            </sourceValues>
+            <value>Production</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_21494484</developerName>
+        <masterLabel>User Role</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Knowledge_Article_View__c$Article_Viewed_by__c.UserRole</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Customer Care Management</sourceValue>
+            </sourceValues>
+            <value>CC Management</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Customer Care Specialist</sourceValue>
+            </sourceValues>
+            <value>CC Specialist</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Production Management</sourceValue>
+            </sourceValues>
+            <value>Production Management</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Production Specialist</sourceValue>
+            </sourceValues>
+            <value>Production Specialist</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Management</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Lead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sales Manager</sourceValue>
+            </sourceValues>
+            <value>Sales Management</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sales Specialist</sourceValue>
+            </sourceValues>
+            <value>Sales Specialist</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Knowledge_Article_View__c$Name</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Id__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Number__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_Title__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Article_URL__c</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Id</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Knowledge_Article_View__c$Owner</field>
+    </columns>
+    <description>Requested by Dewi Smith for Knowledge User Metrics.</description>
+    <filter>
+        <criteriaItems>
+            <column>Knowledge_Article_View__c$Article_Viewed_by__c.UserRole</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Customer Care,Sales,Production</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Knowledge_Article_View__c$Article_Viewed_by__c.Profile</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>CC,Sales,Production</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_42630113</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_21494484</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <aggregateType>RowCount</aggregateType>
+        <dateGranularity>Day</dateGranularity>
+        <field>Knowledge_Article_View__c$Article_Viewed_by__c</field>
+        <sortByName>RowCount</sortByName>
+        <sortOrder>Desc</sortOrder>
+        <sortType>Aggregate</sortType>
+    </groupingsDown>
+    <name>Knowledge Article Views By Dept. &amp; User</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Knowledge_Article_Views_By_User__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Knowledge_Article_View__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,95 @@
+<apex:page standardcontroller="Opportunity" extensions="LogCallOppController" showHeader="false">
+    <script type="text/javascript" src="/canvas/sdk/js/publisher.js"></script>
+   <apex:includeScript value="/support/console/31.0/integration.js"/>
+     <apex:includeScript value="{!URLFOR($Resource.zenform, 'jquery.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.zenform, 'style.css')}"/>
+     <apex:includeScript value="{!URLFOR($Resource.zenform, 'zen-form.js')}"/>
+     <apex:stylesheet value="{!URLFOR($Resource.zenform, 'zen-form.css')}"/>
+      <script type="text/javascript">
+        function refreshCurrentTab() 
+        {
+            
+            sforce.console.getEnclosingTabId(refreshTab);
+        }
+        var refreshTab = function refreshTab(result) {
+            var tabId = result.id;
+            sforce.console.refreshSubtabById(tabId, true, null);
+        };
+
+        function validateFields()
+        {
+            
+            if($('.description').val() != '' && $('.contactStatus').val() != '--None--' && $('.callType').val() != '--None--' && $('.leadStatus').val() != '--None--')
+            {
+                if($('.contactStatus').val() == 'Email')
+                    createEmailTaskSuccess();
+                if($('.contactStatus').val() != 'Email')
+                    createTaskSuccess();
+            }
+            else
+                createTaskFail();
+        }
+
+     </script>
+    <div>
+        <apex:form > 
+           <apex:actionFunction action="{!createTask}" name="createTaskFail" rerender="out" status="statusUpdating"/> 
+            <apex:actionFunction action="{!createTask}" name="createTaskSuccess" rerender="out" status="statusUpdating" oncomplete="refreshCurrentTab();"/> 
+            <apex:actionFunction action="{!createEmailTask}" name="createEmailTaskSuccess" rerender="out" status="statusUpdating" oncomplete="refreshCurrentTab();"/>
+        <apex:outputPanel id="out" >
+            <div class="input-wrap">
+                <label>Contact Status</label>
+                <apex:inputField value="{!theTask.Contact_Status__c}" required="true" styleClass="contactStatus"/>
+             </div>
+
+            <div class="input-wrap">
+                <label>Reason for Contact</label>
+                <apex:actionRegion >
+                    <apex:inputField value="{!theTask.Reason_For_Contact__c}" required="true" styleClass="leadStatus">
+                        <apex:actionSupport event="onchange" rerender="transferToAndOther"/>
+                    </apex:inputField>
+                </apex:actionRegion>
+            </div>
+
+            <apex:outputPanel id="transferToAndOther">
+                <apex:outputPanel id="TransferTo" rendered="{!IF(theTask.Reason_For_Contact__c = 'Transfer', TRUE, FALSE)}">
+                <div class="input-wrap">
+                    <label>Transfer To</label>
+                    <apex:inputField value="{!theTask.Reason_For_Transfer__c}" required="true" styleClass="leadStatus" />
+                </div>
+                </apex:outputPanel>
+
+                <apex:outputPanel id="OtherReason" rendered="{!IF(theTask.Reason_For_Contact__c = 'Other', TRUE, FALSE)}">
+                    <div class="input-wrap">
+                        <label>Other Reason</label>
+                        <apex:inputField value="{!theTask.Other_Reason__c}" required="true" styleClass="leadStatus" />
+                    </div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+
+
+             <div class="input-wrap">
+                <label>Comments</label>
+                <apex:inputField value="{!theTask.Description}" required="true" style="height:92px;" styleClass="description"/>
+             </div>
+             
+               <button type="button" onclick="this.disabled=true;validateFields();" 
+        style="padding:5px 10px;float:right; 
+        font-size:13px; font-weight:bold; line-height: 
+        18px;background-color:#0271BF;background-image:-moz-linear-gradient(#2DADDC, #0271BF);background-repeat:repeat-x;border-color:#096EB3;" 
+        id="addopportunitybutton">Log a Call</button>
+            <apex:actionStatus id="statusUpdating">
+                  <apex:facet name="start">
+                    <apex:image value="/img/loading.gif" style="vertical-align: middle;" />
+                  </apex:facet>
+                  <apex:facet name="stop">
+                      <apex:pageMessages /> 
+                  </apex:facet>
+            </apex:actionStatus>
+        </apex:outputPanel>
+        </apex:form>
+            
+      
+        
+    </div>  
+</apex:page>

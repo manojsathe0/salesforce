@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_47069256</developerName>
+        <masterLabel>Rickey Mosser&apos;s Team</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>User$Name</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>carrie frizzell</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>robyn robertson</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>sandra balderas</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>susie battle</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jeanelle clum</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>alex perales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>darnisha yates,</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jennifer phung</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>lisa rodriguez</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>jason furstenberg</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>caryn neal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>summer rosales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>keith robinson</sourceValue>
+            </sourceValues>
+            <value>CC PS</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>User.Case$CreatedById$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Order_Number__c</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Origin</field>
+    </columns>
+    <columns>
+        <field>User.Case$CreatedById$Subject</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User.Case$CreatedById$Product_Line__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Personal Services</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>jason jackson,sivetra carter,carrie frizzell,robyn robertson,sandra balderas,susie battle,jeanelle clum,alex perales,darnisha yates,jennifer phung,lisa rodriguez,jason furstenberg,caryn neal,summer rosales,keith robinson</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.Case$CreatedById$Subject</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>LZM</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>CC PS Closed &quot;LZM&quot; Cases</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Users_Cases_Created_By__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User.Case$CreatedById$ClosedDate</dateColumn>
+        <interval>INTERVAL_YESTERDAY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Divorce POR delivery</name>
+    <style>none</style>
+    <subject>LegalZoom: Order Number XXXXXXXXX (TEST)</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+
+Thank you for choosing LegalZoom.
+
+A preliminary review of your questionnaire indicates that required information is either missing or left out.  Please complete the attached form and return it  to our support team at your earliest convenience. You can simply reply this email or send your completed form to customercare@legalzoom.com. 
+
+Your response is critical.  We cannot complete your divorce documents until we receive the required information.   As soon as we receive the information, your document specialist will complete the preparation of your order within 3-5 business days. Should you have further questions or require faster service, please contact our customer care team at (800) 773-0888 Monday–Friday from 6 a.m.–7 p.m. PT.
+
+We truly appreciate your business and look forward to serving you.
+
+Best regards,
+
+The LegalZoom Team
+
+
+*You must have the Acrobat® Reader® application to view the attached files.  You can download this application for free from: http://get.adobe.com/reader/.&quot;
+
+
+This is a service email related to your LegalZoom account. For more information about how LegalZoom uses your information, please see the Privacy Policy: http://www.legalzoom.com/privacy-policy-popup.html
+
+LegalZoom provides access to independent attorneys and self-help services at your specific direction. We are not a law firm or a substitute for an attorney or law firm. Prices, features, terms and conditions are subject to change without notice.  LegalZoom is located at 9900 Spectrum Drive, Austin, TX 78717. 
+
+Please add services@emails.legalzoom.com to your address book. 
+
+This email was sent to: {!Contact.Email} 
+
+  
+
+© LegalZoom.com, Inc. All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>
